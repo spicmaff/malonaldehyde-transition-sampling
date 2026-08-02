@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "Equal-budget transition-focused sampling for proton transfer in malonaldehyde"
+type: software
+authors:
+  - family-names: "Fofonov"
+    given-names: "Mikhail"
+repository-code: "https://github.com/spicmaff/malonaldehyde-transition-sampling"
+version: "v001"
+date-released: 2026-08-01
+license: "MIT"
+keywords:
+  - machine-learned interatomic potentials
+  - moment tensor potentials
+  - proton transfer
+  - active learning
+  - nudged elastic band

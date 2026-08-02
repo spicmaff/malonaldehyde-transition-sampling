@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Runtime outputs
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+attempt_*/
+scratch/
+work/
+tmp/
+
+# Heavy scientific outputs
+*.wfc*
+*.save/
+*.cube
+*.traj
+*.lammpstrj
+*.dump
+*.restart
+*.model
+*.mtp
+*.npy
+*.npz
+*.pkl
+
+# Private configuration
+.env
+.env.*
+!.env.example
+credentials*
+secrets*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Large release assets are published separately
+release_assets/
