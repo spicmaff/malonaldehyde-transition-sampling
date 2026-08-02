@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "core_script_count": 12,
+  "pipeline_start": "v024 independent PBE NEB",
+  "pipeline_end": "v033 project closeout",
+  "authoritative_primary_metrics": "v030r",
+  "absolute_local_paths_in_manifest": false,
+  "network_operation": "NONE"
+}

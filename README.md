@@ -42,6 +42,16 @@ conda activate malonaldehyde-transition-sampling
 ./reproduce/run_stage63_quantum_figure.sh /path/to/malonaldehyde_mtp_al
 ```
 
+## Reproducibility status
+
+The repository includes final renderers for Figures 1–4, Supplementary
+Figures S1–S3, Supplementary Table S1, and all three final videos, together
+with the frozen-path quantum audit and source-oracle diagnostics.
+
+The exact upstream chain from raw DFT input generation through dataset
+construction and MTP training is being promoted separately. See
+[`docs/REPRODUCIBILITY_STATUS.md`](docs/REPRODUCIBILITY_STATUS.md).
+
 ## Scientific scope
 
 The PBE NEB path is an internal fixed reference. The one-dimensional H/D level
@@ -60,8 +70,7 @@ See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
 
 ## Citation
 
-GitHub renders citation metadata from [`CITATION.cff`](CITATION.cff). Replace
-the placeholder repository URL and verify author metadata before public push.
+GitHub renders citation metadata from [`CITATION.cff`](CITATION.cff).
 
 ## Licensing
 
