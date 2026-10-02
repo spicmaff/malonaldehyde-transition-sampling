@@ -35,3 +35,11 @@ Targeted is better on both primary metrics in 3/5 paired seeds. Seed 3 reverses 
 Basin is better on basin12 force RMSE in all 5 paired seeds.
 
 The original v030r numbers are not replaced by these runs. They remain the result for the original locked model pair; the robustness audit changes the strength of the interpretation.
+
+## Execution-order provenance and repair
+
+The historical five-seed execution did **not** strictly follow the requested train-all-then-evaluate order: nine Audit21 evaluations were run before the final training finished. This is retained as a procedural nonconformance rather than rewritten.
+
+A separate evaluation-only repair was frozen after all ten trained models already existed. It ran exactly ten new `calc-efs` evaluations, with zero new training, zero DFT, zero dynamics, no retries, and no best-seed selection. All ten repair prediction CFGs are byte-identical to the corresponding historical predictions and the maximum absolute difference in recomputed reported metrics is 0.0.
+
+Therefore the repair confirms that the ordering deviation did not change the saved numerical robustness result, while the historical execution remains nonconforming. The scientific classification remains **SEED_SENSITIVE**.

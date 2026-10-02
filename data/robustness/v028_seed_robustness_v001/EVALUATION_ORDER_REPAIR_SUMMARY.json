@@ -1,0 +1,19 @@
+{
+  "schema": "v028-rng-evaluation-order-repair-summary-v001",
+  "created_utc": "2026-10-02T18:30:55.738908+00:00",
+  "status": "PASS_EVALUATION_ORDER_REPAIR_REPLAY",
+  "classification": "SEED_SENSITIVE",
+  "all_ten_trainings_preexisted_before_first_repair_evaluation": true,
+  "repair_calc_efs_calls": 10,
+  "new_training": 0,
+  "new_DFT": 0,
+  "new_dynamics": 0,
+  "automatic_retries": 0,
+  "best_seed_selected": false,
+  "prediction_byte_identical_count": 10,
+  "max_abs_metric_difference_vs_historical": 0.0,
+  "targeted_better_both_primary_count": 3,
+  "basin_better_basin12_force_count": 5,
+  "historical_nonconformance_preserved": true,
+  "interpretation": "A new evaluation-only replay was executed after all ten pre-existing trainings. It reproduces the saved historical results but does not retroactively erase the historical interleaved evaluation-order nonconformance."
+}

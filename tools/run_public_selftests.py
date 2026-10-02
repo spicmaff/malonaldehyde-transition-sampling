@@ -13,6 +13,7 @@ REQUIRED=(
  "provenance/PUBLIC_ASSET_MANIFEST.tsv","provenance/PUBLIC_CLAIM_LEDGER.tsv","reports/REPRODUCIBILITY_MATRIX.tsv",
  "data/publication_source_v005/PUBLICATION_SOURCE_MANIFEST.tsv",
  "data/frozen_models_v028/MANIFEST.tsv",
+ "data/robustness/v028_seed_robustness_v001/MANIFEST.tsv","data/post_publication/MANIFEST.tsv",
  "tools/audit_public_repo.py","tools/run_public_selftests.py","tools/recompute_primary_metrics.py",
  ".github/workflows/audit.yml",".github/workflows/selftest.yml","reproduce/run_repository_selftests.sh",
 )
@@ -24,6 +25,11 @@ def sha(p):
  return h.hexdigest()
 def rows(p):
  with Path(p).open(newline='',encoding='utf-8') as f:return list(csv.DictReader(f,delimiter='\t'))
+def manifest_bool(value):
+ raw=str(value).strip().lower()
+ if raw in {'true','1','yes'}:return True
+ if raw in {'false','0','no'}:return False
+ raise ValueError(f'Invalid manifest boolean: {value!r}')
 def close(a,b,tol=1e-9):return math.isfinite(float(a)) and abs(float(a)-float(b))<=tol
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('root',nargs='?',type=Path,default=Path('.'));root=ap.parse_args().root.resolve()
@@ -65,17 +71,36 @@ def main():
   if not p.is_file():failures.append(f"Missing public asset: {rel}");continue
   if sha(p)!=r['repository_sha256']:failures.append(f"Public asset checksum mismatch: {rel}")
   if p.stat().st_size!=int(r['size_bytes']):failures.append(f"Public asset size mismatch: {rel}")
+  try:sanitized=manifest_bool(r.get('sanitized',''))
+  except ValueError as e:failures.append(f"Public asset {rel}: {e}");sanitized=False
+  if r.get('source_sha256') and r['source_sha256']!=r['repository_sha256'] and not sanitized:
+   failures.append(f"Public asset source/repository hash differs without sanitized=TRUE: {rel}")
  checks['public_asset_manifest_entries']=len(asset)
 
- for manifest,base in [('data/publication_source_v005/PUBLICATION_SOURCE_MANIFEST.tsv','data/publication_source_v005'),
-                       ('data/frozen_models_v028/MANIFEST.tsv','.')]:
-  rr=rows(root/manifest)
+ data_specs=[
+  ('data/publication_source_v005/PUBLICATION_SOURCE_MANIFEST.tsv','relative_path','data/publication_source_v005'),
+  ('data/frozen_models_v028/MANIFEST.tsv','repository_path','data/frozen_models_v028'),
+  ('data/robustness/v028_seed_robustness_v001/MANIFEST.tsv','relative_path','data/robustness/v028_seed_robustness_v001'),
+  ('data/post_publication/MANIFEST.tsv','relative_path','data/post_publication'),
+ ]
+ for manifest,field,subtree in data_specs:
+  rr=rows(root/manifest);seen=set();manifested=set()
   for r in rr:
-   rel=r.get('relative_path') or r.get('repository_path')
-   p=(root/base/rel) if 'relative_path' in r else root/rel
-   if not p.is_file():failures.append(f"Missing data-manifest file: {p.relative_to(root)}");continue
-   if sha(p)!=r['repository_sha256']:failures.append(f"Data-manifest checksum mismatch: {p.relative_to(root)}")
-   if p.stat().st_size!=int(r['repository_bytes']):failures.append(f"Data-manifest size mismatch: {p.relative_to(root)}")
+   rel=r[field];repo_rel=(f"{subtree}/{rel}" if field=='relative_path' else rel)
+   if repo_rel in seen:failures.append(f"Duplicate data-manifest path: {repo_rel}")
+   seen.add(repo_rel);manifested.add(repo_rel);p=root/repo_rel
+   if not p.is_file():failures.append(f"Missing data-manifest file: {repo_rel}");continue
+   if sha(p)!=r['repository_sha256']:failures.append(f"Data-manifest checksum mismatch: {repo_rel}")
+   if p.stat().st_size!=int(r['repository_bytes']):failures.append(f"Data-manifest size mismatch: {repo_rel}")
+   try:sanitized=manifest_bool(r.get('sanitized',''))
+   except ValueError as e:failures.append(f"Data manifest {repo_rel}: {e}");sanitized=False
+   if r.get('source_sha256') and r['source_sha256']!=r['repository_sha256'] and not sanitized:
+    failures.append(f"Data source/repository hash differs without sanitized=TRUE: {repo_rel}")
+   if r.get('source_bytes') and int(r['source_bytes'])!=int(r['repository_bytes']) and not sanitized:
+    failures.append(f"Data source/repository size differs without sanitized=TRUE: {repo_rel}")
+  actual={x.relative_to(root).as_posix() for x in (root/subtree).rglob('*') if x.is_file() and x.relative_to(root).as_posix()!=manifest}
+  if manifested!=actual:
+   failures.append(f"Data-manifest coverage mismatch for {subtree}: missing={sorted(actual-manifested)} extra={sorted(manifested-actual)}")
  checks['data_manifests']=True
 
  pr=subprocess.run([sys.executable,'tools/recompute_primary_metrics.py'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
@@ -98,8 +123,13 @@ def main():
  if 'same independent nine-image pbe neb path' in docs:failures.append("Obsolete whole-NEB independence claim remains")
  if '24 candidates' not in (root/'README.md').read_text().lower():failures.append("README lacks 24-candidate/K=24 sampling caveat")
  if 'training randomness' not in (root/'README.md').read_text().lower():failures.append("README lacks training-randomness caveat")
+ renderers=sorted((root/'scripts/figures').glob('*.py'))+[root/'scripts/tables/build_supplementary_table_s1_complete_numerical_audit_v023.py']+sorted((root/'scripts/videos').glob('*.py'))+[root/'scripts/quantum/stage62_frozen_path_1d_tunneling_audit_v003.py',root/'scripts/quantum/render_stage63_supplementary_figure_s3_quantum_audit_v005.py']
+ for script in renderers:
+  if '--source-root' not in script.read_text(errors='replace'):failures.append(f"Renderer lacks explicit --source-root: {script.relative_to(root)}")
+ checks['source_root_cli_scripts']=len(renderers)
  workflow=(root/'.github/workflows/selftest.yml').read_text()
  if 'run_public_selftests.py' not in workflow or 'recompute_primary_metrics.py' not in workflow:failures.append("Selftest workflow lacks required checks")
+ if 'render_all_figures.sh' not in workflow or 'build_supplementary_table_s1.sh' not in workflow:failures.append("Reproduction-smoke workflow does not perform actual figure/table render")
  audit=subprocess.run([sys.executable,'tools/audit_public_repo.py','.'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  if audit.returncode:failures.append("Public repository audit failed:\n"+audit.stdout)
  checks['public_audit']=audit.returncode==0

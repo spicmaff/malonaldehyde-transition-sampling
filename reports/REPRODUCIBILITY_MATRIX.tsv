@@ -12,3 +12,5 @@ Inspect post-publication 5-seed robustness results	YES	NO	NO	NO	RESULTS INCLUDED
 Repeat post-publication seeded robustness trainings	NO	YES_PATCHED_SEEDED_BUILD	NO	NO	PROTOCOL/DATA INCLUDED; binary not redistributed
 Full PBE single-point/NEB recomputation	NO	NO	YES_PLUS_PSEUDOPOTENTIALS	NO_FOR_METHOD; raw exact scratch not included	NOT_CONTAINERIZED
 Reproduce full Stage69-91 adaptive history	NO	YES	YES	YES_FOR_EXACT_HISTORICAL_ATTEMPTS	NOT_PUBLICLY_CONTAINERIZED
+Inspect v028 evaluation-order repair	YES	NO	NO	NO	COMPACT REPAIR SUMMARY/REVIEW/CLOSURE INCLUDED
+CI render figures/table/frozen-path quantum chain	YES_WITH_PYTHON_DEPS	NO	NO	NO	GITHUB ACTIONS REPRODUCTION-SMOKE

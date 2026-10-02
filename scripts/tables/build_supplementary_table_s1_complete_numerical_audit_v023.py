@@ -473,38 +473,46 @@ def verify_checksum_entry(
     return observed_hash
 
 
-def resolve_input_attempt(root: Path) -> Path:
-    version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+def resolve_input_attempt(root: Path, source_root: Path | None = None) -> Path:
     public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
-    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+    if source_root is None:
+        if not (public_attempt / STATUS_FILE).is_file():
+            raise TableAuditError(
+                "Repo-local publication source is missing; pass --source-root explicitly "
+                "for a compatible external source tree or exact v005 source directory."
+            )
         observed = read_text(public_attempt / STATUS_FILE).strip()
         if observed != EXPECTED_INPUT_STATUS:
-            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+            raise TableAuditError(f"Unexpected public v005 status: {observed}")
         return public_attempt
-    pointer = require_file(version_root / INPUT_POINTER, "v005 current pointer")
+
+    explicit = Path(source_root).expanduser().resolve()
+    if (explicit / STATUS_FILE).is_file():
+        observed = read_text(explicit / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise TableAuditError(f"Unexpected explicit v005 status: {observed}")
+        return explicit
+
+    version_root = (explicit / INPUT_RELATIVE_ROOT).resolve()
+    pointer = require_file(version_root / INPUT_POINTER, "explicit v005 current pointer")
     raw = pointer.read_text(encoding="utf-8").strip()
     if not raw:
-        raise TableAuditError(f"Empty v005 pointer: {pointer}")
+        raise TableAuditError(f"Empty explicit v005 pointer: {pointer}")
     attempt = Path(raw).expanduser().resolve()
     try:
         attempt.relative_to(version_root)
-    except ValueError as exc:
-        raise TableAuditError(
-            f"v005 pointer escapes expected version root: {attempt}"
-        ) from exc
+    except ValueError as err:
+        raise TableAuditError(f"Explicit v005 pointer escapes expected version root: {attempt}") from err
     if not attempt.is_dir():
-        raise TableAuditError(f"v005 pointer target is absent: {attempt}")
-    status = read_text(attempt / STATUS_FILE).strip()
-    if status != EXPECTED_INPUT_STATUS:
-        raise TableAuditError(
-            f"Unexpected v005 status: {status}; "
-            f"expected {EXPECTED_INPUT_STATUS}"
-        )
+        raise TableAuditError(f"Explicit v005 pointer target is absent: {attempt}")
+    observed = read_text(attempt / STATUS_FILE).strip()
+    if observed != EXPECTED_INPUT_STATUS:
+        raise TableAuditError(f"Unexpected explicit v005 status: {observed}; expected {EXPECTED_INPUT_STATUS}")
     return attempt
 
 
-def load_locked_inputs(root: Path) -> LockedInputs:
-    attempt = resolve_input_attempt(root)
+def load_locked_inputs(root: Path, source_root: Path | None = None) -> LockedInputs:
+    attempt = resolve_input_attempt(root, source_root)
     checksum_rows = read_tsv(attempt / CHECKSUM_FILE)
     relatives = (
         COVERAGE_FILE,
@@ -1551,12 +1559,12 @@ def snapshot_inputs(inputs: LockedInputs, attempt: Path) -> dict[str, Path]:
     return outputs
 
 
-def run(root: Path, validate_only: bool = False) -> int:
+def run(root: Path, validate_only: bool = False, source_root: Path | None = None) -> int:
     root = root.expanduser().resolve()
     if not root.is_dir():
         raise TableAuditError(f"Project root is not a directory: {root}")
 
-    inputs = load_locked_inputs(root)
+    inputs = load_locked_inputs(root, source_root=source_root)
     validations = validate_inputs(inputs)
     rows = build_table_rows(inputs)
 
@@ -2072,7 +2080,7 @@ def self_test() -> int:
     with tempfile.TemporaryDirectory(prefix="supp_table_s1_v023_test_") as temp:
         root = Path(temp)
         make_synthetic_fixture(root)
-        inputs = load_locked_inputs(root)
+        inputs = load_locked_inputs(root, source_root=root)
         validations = validate_inputs(inputs)
         rows = build_table_rows(inputs)
         if not rows:
@@ -2104,6 +2112,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Project root",
     )
     parser.add_argument(
+        "--source-root",
+        type=Path,
+        default=None,
+        help="Explicit compact v005 source directory or compatible external project root",
+    )
+    parser.add_argument(
         "--validate-only",
         action="store_true",
         help="Validate locked input without creating an output attempt",
@@ -2124,6 +2138,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         return run(
             Path(arguments.root),
             validate_only=arguments.validate_only,
+            source_root=arguments.source_root,
         )
     except TableAuditError as exc:
         print(f"TABLE_AUDIT_ERROR: {exc}", file=sys.stderr)
