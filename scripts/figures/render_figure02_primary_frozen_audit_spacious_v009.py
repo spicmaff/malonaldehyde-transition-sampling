@@ -833,7 +833,7 @@ def render_figure(
     )
     ax_a.set_ylabel("Relative energy (meV)")
     ax_a.set_title(
-        "Frozen independent PBE NEB9 profile",
+        "Frozen PBE NEB9 profile",
         loc="left",
         x=0.05,
         pad=10,
@@ -1381,7 +1381,7 @@ def write_caption(path: Path, figure_data: Mapping[str, Any]) -> None:
     force_factor = figure_data["force_improvement_factor"]
     caption = f"""# Figure 2. Transition-focused equal-budget sampling improves static PBE-path fidelity
 
-**a,** Relative-energy profiles along the frozen independent nine-image PBE
+**a,** Relative-energy profiles along the frozen nine-image PBE reference
 proton-transfer path. The shaded interval marks the preregistered transition
 region, $|q_{{\\mathrm{{PT}}}}| \\le 0.15$ Angstrom. **b,** Lower-endpoint barriers, defined as the maximum path energy minus the
 lower endpoint. **c,** Absolute barrier error relative to the locked PBE

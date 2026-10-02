@@ -444,7 +444,7 @@ def make_synthetic_fixture(root: Path) -> Path:
     manifest = [
         {
             "figure_id": "Figure_2",
-            "title": "Frozen independent PBE NEB9 reference",
+            "title": "Frozen PBE NEB9 reference",
             "status": "SOURCE_DATA_READY",
             "primary_source_data": PROFILE_FILE,
             "geometry_sources": DFT_GEOMETRY_FILE,

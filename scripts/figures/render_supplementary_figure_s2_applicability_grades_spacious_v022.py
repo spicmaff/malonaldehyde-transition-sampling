@@ -1016,7 +1016,7 @@ def render_figure(
         marker="o",
         facecolor="white",
         edgecolor=dft_color,
-        label="independent NEB9 image",
+        label="NEB9 image",
     )
     ax_a.plot(
         [],
@@ -1531,7 +1531,7 @@ def write_caption(
     caption = f"""# Supplementary Figure S2. Static accuracy improvement does not make the reaction-path region interpolative
 
 **a,** Per-configuration MaxVol applicability grades for the 21 held-out
-frozen-audit structures, separated into basin12 and independent NEB9 subsets
+frozen-audit structures, separated into basin12 and NEB9 subsets
 and evaluated by the basin-trained and transition-targeted models. Horizontal
 bars show subset medians. Nineteen of 21 configurations exceed gamma = 10 for
 both models. **b,** Median-to-maximum grade summaries for frozen NEB9 and

@@ -955,7 +955,7 @@ Training and frozen-audit configurations in proton-transfer coordinate and
 oxygen-oxygen distance. The transition-focused additions cluster more strongly
 inside the central reaction corridor, whereas the basin-focused additions stay
 closer to endpoint regions. The 21 held-out audit structures comprise 12 basin
-configurations and an independent nine-image NEB path. **c,**
+configurations and a separately computed nine-image NEB path. **c,**
 Held-out evaluation hierarchy linking the frozen audit (Figure 2), relaxed
 MTP-NEB path validation (Figure 4), and first-update applicability diagnostic
 (Figure 3).

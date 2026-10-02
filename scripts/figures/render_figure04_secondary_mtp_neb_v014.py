@@ -1465,7 +1465,7 @@ def write_caption(
 ) -> None:
     caption = f"""# Figure 4. Targeted relaxed MTP-NEB remains structurally plausible, whereas the basin path collapses
 
-**a,** Frozen independent PBE NEB9 profile and the targeted relaxed MTP-NEB
+**a,** Frozen PBE NEB9 profile and the targeted relaxed MTP-NEB
 profile. The targeted optimized path retains a central maximum at image
 {figure_data["targeted_maximum_image"]}, with a lower-endpoint barrier of
 {figure_data["targeted_relaxed_barrier_mev"]:.2f} meV versus
