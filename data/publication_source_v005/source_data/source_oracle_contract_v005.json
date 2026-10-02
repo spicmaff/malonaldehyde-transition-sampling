@@ -1,0 +1,25 @@
+{
+  "adapter_path": "${PROJECT_ROOT}/scripts/source_oracle_replay_v032d_v004.py",
+  "adapter_sha256": "47b4f9760e4d7418a95118b16a4e2fa5d5c0b428dbe5dde7e2b72de5a7b0db60",
+  "alternative_mapping_search": false,
+  "alternative_reference_search": false,
+  "canonical_function": "canonicalize_cfg_to_endpoint",
+  "case_count": 6,
+  "classification": "EXACT_SOURCE_ORACLE_REPLAY_PASS",
+  "deployment_interpretation": "Immediate rejection by the MaxVol applicability criterion after the first attempted integration update.",
+  "frozen_module_top_level_execution": false,
+  "locked_sanitized_source_sha256": "c4221207b4f568c02914352df6884348890f077c34547513ad5f735934e66b07",
+  "persistent_lammps_id_claim_allowed": false,
+  "physical_dft_error_measured": false,
+  "required_definitions": [
+    "canonicalize_cfg_to_endpoint",
+    "coordinate_delta",
+    "minimum_image_to_reference",
+    "normalize_mlip_types",
+    "pair_distance_matrix"
+  ],
+  "sanitized_source_sha256": "c4221207b4f568c02914352df6884348890f077c34547513ad5f735934e66b07",
+  "source_path": "${PROJECT_ROOT}/09_strict_comparison/versions/v032_selection_interface_diagnostic/attempt_20260723T001022Z/provenance/step34c_v032_selection_interface_diagnostic_v032d.py",
+  "source_sha256": "8585a400029d74b7c5c13c4f37220e3954b5a4d90015d4f4cbee478f80de91be",
+  "usable_md_trajectory": false
+}

@@ -1,34 +1,14 @@
-# Publishing to GitHub
+# Publishing a release
 
-## Review first
+Before publishing:
 
-```bash
-python3 tools/audit_public_repo.py .
-git status --short
-git diff --cached
-```
+    python3 tools/run_public_selftests.py .
+    python3 tools/audit_public_repo.py .
+    git status --short
+    git diff --cached
 
-Verify author metadata, licenses, private-path removal, credentials, and the
-redistribution rights for every figure and video.
+Confirm that the release tag matches CITATION.cff, CI is green, public manifests have been regenerated, and no private paths or credentials are tracked.
 
-## Authenticate
+Create releases with a semantic version matching the repository state. Do not reuse or move an existing release tag.
 
-```bash
-gh auth login
-gh auth status
-```
-
-## Create and push the public repository
-
-```bash
-./PUSH_PUBLIC_GITHUB.sh OWNER malonaldehyde-transition-sampling I_UNDERSTAND_THIS_WILL_BE_PUBLIC
-```
-
-## Publish large media
-
-```bash
-gh release create v0.1.0 /path/to/release_assets/* \
-  --repo OWNER/malonaldehyde-transition-sampling \
-  --title "Initial public release" \
-  --notes "Initial public release of figures and videos."
-```
+Large release assets are optional when the same media are already tracked in Git. Release notes should state the scientific wording changes separately from numerical-result changes.

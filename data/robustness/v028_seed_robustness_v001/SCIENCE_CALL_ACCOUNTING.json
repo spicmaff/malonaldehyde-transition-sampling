@@ -1,0 +1,7 @@
+{
+  "automatic_retries": 0,
+  "best_seed_selection": false,
+  "calc_efs_calls": 10,
+  "new_DFT": 0,
+  "training_calls": 10
+}

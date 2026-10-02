@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-07-27T15:30:24Z",
+  "export": {
+    "raster": {
+      "format": "PNG",
+      "minimum_dpi": 300,
+      "preferred_dpi": 600
+    },
+    "vector": [
+      "PDF",
+      "SVG"
+    ],
+    "video": [
+      "MP4 H.264",
+      "WebM"
+    ]
+  },
+  "fonts": {
+    "family_policy": "Use a journal-compatible sans-serif available on the host; do not embed unlicensed fonts.",
+    "panel_label_weight": "bold"
+  },
+  "line_width_pt": {
+    "auxiliary": 1.0,
+    "model": 1.8,
+    "reference": 2.2
+  },
+  "marker_size_pt": {
+    "main": 5.0,
+    "secondary": 4.0
+  },
+  "name": "malonaldehyde_q1_dataviz_v005",
+  "palette": {
+    "audit": "#CC79A7",
+    "background": "#FFFFFF",
+    "basin_model": "#D55E00",
+    "common_dataset": "#9E9E9E",
+    "dft_reference": "#111111",
+    "failure": "#A50026",
+    "targeted_model": "#0072B2",
+    "transition_region_fill": "#E6E6E6"
+  },
+  "schema_version": "1.4",
+  "scientific_rules": {
+    "barrier_reference": "lower endpoint",
+    "deployment_result": "v032d geometry provenance exactly recovered by v032k; immediate MaxVol applicability rejection after the first attempted integration update",
+    "md_claim": "No usable MD trajectory; source-oracle pairs are two-frame diagnostics only",
+    "primary_result": "v029 plus v030r",
+    "secondary_mtp_neb": "v031r; targeted path is high-grade, basin path is invalid collapse",
+    "transition_region": "abs(qPT) <= 0.15 Angstrom"
+  },
+  "units": {
+    "distance": "Angstrom",
+    "energy_profile": "meV relative to the lower endpoint",
+    "extrapolation_grade": "dimensionless; logarithmic axis",
+    "force_error": "eV/Angstrom"
+  }
+}

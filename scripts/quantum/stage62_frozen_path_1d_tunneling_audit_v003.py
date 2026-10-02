@@ -261,7 +261,13 @@ def parse_xyz(path: Path) -> list[XYZFrame]:
 
 def resolve_source_attempt(root: Path) -> Path:
     version_root = (root / INPUT_VERSION_ROOT).resolve()
+    public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
     pointer = version_root / INPUT_POINTER
+    if not pointer.is_file() and (public_attempt / INPUT_STATUS_FILE).is_file():
+        status = read_text(public_attempt / INPUT_STATUS_FILE).strip()
+        if status != EXPECTED_INPUT_STATUS:
+            raise AuditError(f"Unexpected public v005 status: {status}")
+        return public_attempt
     if pointer.is_file():
         raw = pointer.read_text(encoding="utf-8").strip()
         if not raw:

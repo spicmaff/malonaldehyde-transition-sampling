@@ -1,31 +1,19 @@
-# Pipeline execution order
+# Historical pipeline order
 
-The original stage scripts are preserved with their accepted versioned names.
-Run them only inside a compatible project checkout.
+The historical versioned script names are retained for provenance.
 
-```text
-v024  independent PBE NEB
-  ↓
-v025  PBE single points on NEB9
-  ↓
-v026  transition-tube selection
-  ↓
-v027  equal-budget DFT labels
-  ↓
-v028  equal-budget L12 MTP training
-  ↓
-v029  frozen audit21
-  ↓
-v030  primary analysis
-  ↓
-v030r repaired authoritative primary metrics
-  ↓
-v031  secondary relaxed MTP-NEB
-  ↓
-v032/v032d first-update and interface diagnostics
-  ↓
-v033  closeout
-```
+v024 PBE NEB path
+-> v025 PBE single points
+-> v026 equal-budget spatial allocation
+-> v027 branch-specific DFT labels
+-> v028 stochastic L12 training
+-> v029 frozen Audit21 evaluation
+-> v030 superseded analysis
+-> v030r authoritative repaired primary metrics
+-> v031 secondary relaxed MTP-NEB
+-> v032/v032d/v032k first-update applicability diagnostics
+-> v033 historical closeout
 
-Do not replace `v030r` with the unrepaired `v030` metric protocol when
-reproducing the final barrier-error and transition-force numbers.
+Important: the two NEB endpoints overlap common36. Only the seven interior NEB geometries are training-independent in the frozen geometry-overlap audit.
+
+For the post-publication continuation and training-randomness audit, see docs/POST_PUBLICATION_CONTINUATION.md and docs/TRAINING_RANDOMNESS.md.

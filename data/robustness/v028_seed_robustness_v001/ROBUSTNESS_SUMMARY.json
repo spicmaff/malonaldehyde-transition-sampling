@@ -1,0 +1,126 @@
+{
+  "basin_better_basin12_force_count": 5,
+  "best_seed_selected": false,
+  "calc_efs_calls": 10,
+  "classification": "SEED_SENSITIVE",
+  "created_utc": "2026-10-02T06:55:21.518463+00:00",
+  "new_DFT": 0,
+  "original_v030r_values_replaced": false,
+  "paired_results": [
+    {
+      "barrier_error_basin": 27.55000203706004,
+      "barrier_error_targeted": 6.630604755173408,
+      "basin_better_basin12_force": true,
+      "seed_index": 0,
+      "seed_u64": 4172185641970229070,
+      "targeted_better_barrier": true,
+      "targeted_better_transition_force": true,
+      "transition_force_basin": 0.08128164951259025,
+      "transition_force_targeted": 0.05701813137362402
+    },
+    {
+      "barrier_error_basin": 31.713202528862894,
+      "barrier_error_targeted": 1.3687309660781466,
+      "basin_better_basin12_force": true,
+      "seed_index": 1,
+      "seed_u64": 10780126852447763956,
+      "targeted_better_barrier": true,
+      "targeted_better_transition_force": true,
+      "transition_force_basin": 0.09372108823508342,
+      "transition_force_targeted": 0.08736456890891237
+    },
+    {
+      "barrier_error_basin": 23.077775075989848,
+      "barrier_error_targeted": 3.2494652389232215,
+      "basin_better_basin12_force": true,
+      "seed_index": 2,
+      "seed_u64": 16937122512019790775,
+      "targeted_better_barrier": true,
+      "targeted_better_transition_force": true,
+      "transition_force_basin": 0.21292318069827557,
+      "transition_force_targeted": 0.11167892038075454
+    },
+    {
+      "barrier_error_basin": 7.131742423098331,
+      "barrier_error_targeted": 9.29451995079944,
+      "basin_better_basin12_force": true,
+      "seed_index": 3,
+      "seed_u64": 12250469658613881511,
+      "targeted_better_barrier": false,
+      "targeted_better_transition_force": false,
+      "transition_force_basin": 0.045883369996525133,
+      "transition_force_targeted": 0.07421293311695278
+    },
+    {
+      "barrier_error_basin": 11.239288648994261,
+      "barrier_error_targeted": 8.288791589848188,
+      "basin_better_basin12_force": true,
+      "seed_index": 4,
+      "seed_u64": 18149779474148714524,
+      "targeted_better_barrier": true,
+      "targeted_better_transition_force": false,
+      "transition_force_basin": 0.11794735514301743,
+      "transition_force_targeted": 0.1267492273805023
+    }
+  ],
+  "paired_seed_count": 5,
+  "ranges": {
+    "basin": {
+      "basin12_force_component_RMSE_eV_A": {
+        "max": 0.004298139446075672,
+        "median": 0.003962603302389797,
+        "min": 0.003523545395777469
+      },
+      "lower_endpoint_barrier_abs_error_meV": {
+        "max": 31.713202528862894,
+        "median": 23.077775075989848,
+        "min": 7.131742423098331
+      },
+      "neb7_interior_centered_energy_RMSE_eV": {
+        "max": 0.011113644203332003,
+        "median": 0.008490047873917272,
+        "min": 0.0025874192736045944
+      },
+      "neb7_interior_force_component_RMSE_eV_A": {
+        "max": 0.1545939078952987,
+        "median": 0.07085489018145828,
+        "min": 0.03655886043309115
+      },
+      "transition_region_force_component_RMSE_eV_A": {
+        "max": 0.21292318069827557,
+        "median": 0.09372108823508342,
+        "min": 0.045883369996525133
+      }
+    },
+    "targeted": {
+      "basin12_force_component_RMSE_eV_A": {
+        "max": 0.006540872521229461,
+        "median": 0.00424915615431481,
+        "min": 0.003976179832458739
+      },
+      "lower_endpoint_barrier_abs_error_meV": {
+        "max": 9.29451995079944,
+        "median": 6.630604755173408,
+        "min": 1.3687309660781466
+      },
+      "neb7_interior_centered_energy_RMSE_eV": {
+        "max": 0.0031081493021572525,
+        "median": 0.0026529066006154463,
+        "min": 0.0005485735896207116
+      },
+      "neb7_interior_force_component_RMSE_eV_A": {
+        "max": 0.09106829015308969,
+        "median": 0.06331547612684187,
+        "min": 0.04090976277485873
+      },
+      "transition_region_force_component_RMSE_eV_A": {
+        "max": 0.1267492273805023,
+        "median": 0.08736456890891237,
+        "min": 0.05701813137362402
+      }
+    }
+  },
+  "schema": "v028-seed-robustness-summary-v001",
+  "targeted_better_both_primary_count": 3,
+  "training_calls": 10
+}

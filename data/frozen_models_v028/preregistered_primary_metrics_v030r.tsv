@@ -1,0 +1,3 @@
+metric	definition	basin	targeted	targeted_minus_basin	basin_over_targeted	targeted_better
+transition_force_component_rmse_ev_ang	combined components over NEB images with abs(qPT)<=0.15 A	0.1760826457854536	0.07868490481909636	-0.09739774096635724	2.237819899385827	True
+lower_endpoint_barrier_abs_error_mev	abs[(max E - min(endpoint E))_model - (max E - min(endpoint E))_DFT]	35.245734070031176	4.10039360394876	-31.145340466082416	8.595695309857287	True

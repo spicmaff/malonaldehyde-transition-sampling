@@ -1,7 +1,7 @@
 Data and media license
 
-Unless a file states otherwise, compact tabular data and original figures in
-this repository are released under CC-BY-4.0.
+Unless a file states otherwise, project-owned compact tabular data, derived geometry files, original figures and original videos in this repository are released under CC BY 4.0.
 
-Before public release, verify that every included figure, video, and data table
-is owned by the project or distributable under the stated license.
+External software and pseudopotential binaries are not distributed under this file. Their names, hashes and provenance are documented only for reproducibility.
+
+Sanitized provenance fields may replace private absolute filesystem paths; numerical scientific fields are preserved.

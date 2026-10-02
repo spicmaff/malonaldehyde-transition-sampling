@@ -282,6 +282,12 @@ def atomic_write_tsv(path: Path, fieldnames: Sequence[str], rows: Sequence[Mappi
 
 def resolve_input_attempt(root: Path) -> Path:
     version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+    public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
+    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+        observed = read_text(public_attempt / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+        return public_attempt
     pointer_path = require_file(version_root / INPUT_POINTER, "v005 current pointer")
     raw = pointer_path.read_text(encoding="utf-8").strip()
     if not raw:

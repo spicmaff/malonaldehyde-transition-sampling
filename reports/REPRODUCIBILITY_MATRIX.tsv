@@ -1,0 +1,14 @@
+task	clean_clone_only	external_MLIP	external_QE	private_project_tree	status
+Verify repository/data/script/public-asset checksums	YES	NO	NO	NO	SUPPORTED
+Recompute original v030r primary metrics from included saved CFGs	YES	NO	NO	NO	SUPPORTED
+Reproduce Train60/Audit21 endpoint geometry overlaps	YES	NO	NO	NO	SUPPORTED
+Validate publication renderer inputs	YES	NO	NO	NO	SUPPORTED
+Rerender final figures and supplementary table	YES_WITH_PYTHON_DEPS	NO	NO	NO	UNDER_FINAL_SMOKE_TEST
+Rerender videos	YES_WITH_PYTHON_DEPS_AND_FFMPEG	NO	NO	NO	INPUT_VALIDATION_SUPPORTED; full render optional QA
+Run frozen-path 1D quantum audit	YES_WITH_PYTHON_DEPS	NO	NO	NO	VALIDATE_ONLY_CONFIRMED; full run via wrapper
+Evaluate included original MTP models on new CFGs	NO	YES	NO	NO	MODEL FILES INCLUDED; external executable required
+Retrain original v028 models	NO	YES	NO	NO	DATA/TEMPLATE INCLUDED; exact original RNG unavailable
+Inspect post-publication 5-seed robustness results	YES	NO	NO	NO	RESULTS INCLUDED
+Repeat post-publication seeded robustness trainings	NO	YES_PATCHED_SEEDED_BUILD	NO	NO	PROTOCOL/DATA INCLUDED; binary not redistributed
+Full PBE single-point/NEB recomputation	NO	NO	YES_PLUS_PSEUDOPOTENTIALS	NO_FOR_METHOD; raw exact scratch not included	NOT_CONTAINERIZED
+Reproduce full Stage69-91 adaptive history	NO	YES	YES	YES_FOR_EXACT_HISTORICAL_ATTEMPTS	NOT_PUBLICLY_CONTAINERIZED
