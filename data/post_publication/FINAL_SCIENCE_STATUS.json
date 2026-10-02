@@ -1,0 +1,56 @@
+{
+  "schema": "malonaldehyde-final-science-status-v001",
+  "created_utc": "2026-10-02T06:57:16.482209+00:00",
+  "public_original_result": {
+    "status": "NUMERICALLY_RECONFIRMED_FOR_ORIGINAL_LOCKED_V028_ARTIFACTS",
+    "basin_barrier_abs_error_meV": 35.245734070031176,
+    "targeted_barrier_abs_error_meV": 4.10039360394876,
+    "basin_transition_force_RMSE_eV_A": 0.1760826457854536,
+    "targeted_transition_force_RMSE_eV_A": 0.07868490481909637,
+    "whole_audit21_independent_holdout": false,
+    "neb_endpoint_training_overlaps": 2,
+    "interpretation": "Artifact-specific equal-budget comparison; not a seed-robust causal estimate of sampling strategy."
+  },
+  "v028_seed_robustness": {
+    "classification": "SEED_SENSITIVE",
+    "paired_seed_count": 5,
+    "targeted_better_both_primary_count": 3,
+    "basin_better_basin12_force_count": 5,
+    "summary_sha256": "71a8c1388b8dfc08f1a0461ff973ceac533d7b5c5f61f585d6927afe2be50ed4",
+    "new_DFT": 0,
+    "training_calls": 10,
+    "calc_efs_calls": 10,
+    "best_seed_selected": false,
+    "interpretation": "Training randomness materially changes absolute results and can reverse the basin-vs-targeted ordering. The original v028 directional result is seed-sensitive."
+  },
+  "Train119_completion": {
+    "Stage91J_manifest_sha256": "f610820ef4485e8d7dd66ceff5582b4df94fcfa37655e58258b8245b3fff2c7c",
+    "fresh_force_weight": 0.023830373366530842,
+    "fresh_self_gamma_max": 1.0000000129969648,
+    "fresh_stop": 1.0000012996964838,
+    "Replay228_crossing_count": 5,
+    "Replay228_crossing_indices": [
+      143,
+      144,
+      145,
+      146,
+      147
+    ],
+    "Validation11_raw_all_11_A2_pass": true,
+    "Validation11_independent_holdout_claim_allowed": false,
+    "Validation11_pair_serialization_guard_pass": false,
+    "primary_classification": "STATIC_APPLICABILITY_FAIL",
+    "Train119_force_accuracy_failure_established": false,
+    "Challenge4_calc_efs_executed": false,
+    "Gate1_executed_after_Train119": false,
+    "Blind12_revealed": false,
+    "final_model_promotion_authorized": false
+  },
+  "global_conclusion": {
+    "deployment_ready_reactive_dynamics_established": false,
+    "gamma_is_universal_accuracy_calibrator": false,
+    "independent_final_generalization_test_completed": false,
+    "Blind12_preserved": true,
+    "further_adaptive_training_in_this_workflow": false
+  }
+}

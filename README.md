@@ -1,119 +1,83 @@
 # malonaldehyde-transition-sampling
 
-Code, compact source tables, and publication-facing outputs for an equal-budget
-comparison of basin-focused and transition-focused training data for proton
-transfer in malonaldehyde.
+This repository records an equal-DFT-budget comparison of two Moment Tensor Potentials for proton transfer in malonaldehyde, together with the later checks that exposed important limits of the original interpretation.
 
-## Main result
+## What the original locked artifacts show
 
-Both Moment Tensor Potential (MTP) models used 60 DFT configurations: 36 shared
-configurations and 24 strategy-specific additions. Relative to placing the 24
-additional configurations near the stable basins, placing them in the
-proton-transfer region reduced the frozen-PBE-path barrier error from 35.25 to
-4.10 meV and the transition-region force-component RMSE from 0.1760 to
-0.0787 eV/Å.
+Both v028 models used 60 DFT configurations: 36 shared configurations plus 24 branch-specific additions. For the single stochastic training realization that produced the original locked models, transition-focused placement reduced the frozen-PBE-path lower-endpoint barrier error from 35.25 to 4.10 meV and the transition-region force-component RMSE from 0.1760 to 0.0787 eV/Å.
 
-The conclusion is deliberately limited: static reaction-path fidelity did not
-establish deployment-ready dynamics. All six first unconstrained updates
-exceeded the predefined applicability threshold.
+Those numerical statements are reproducible from the compact CFG payloads included here. They describe the original locked model pair.
 
-> Transition-focused equal-budget sampling improves static barrier fidelity,
-> but does not by itself guarantee deployable reactive dynamics.
+Training randomness is therefore an explicit limitation. These values should not be read as a seed-robust causal estimate of the sampling strategy. A post-publication five-seed paired retraining audit found that the basin-versus-targeted ordering is training-seed sensitive: targeted was better on both primary metrics in 3 of 5 paired seeds; one seed reversed both metrics, and one seed favored targeted on the barrier but basin on transition-force RMSE.
 
-## Repository contents
+## What was actually varied
 
-- `scripts/core_pipeline/` — accepted strict-comparison scripts from the
-  independent PBE NEB calculation through project closeout.
-- `scripts/figures/` — final renderers for Main Figures 1–4 and Supplementary
-  Figures S1–S2.
-- `scripts/quantum/` — frozen-path H/D audit and Supplementary Figure S3.
-- `scripts/tables/` — Supplementary Table S1 builder.
-- `scripts/videos/` — final renderers for all three videos.
-- `scripts/audits/` — exact replay, source-oracle, and provenance diagnostics.
-- `data/` — compact frozen-path and quantum-audit source tables.
-- `docs/` — methods, limitations, provenance, and execution boundaries.
-- `tools/` — public-release audit and repository-integrity self-tests.
+The experiment is primarily about spatial allocation under equal data budget.
 
-Large release assets may be attached to a GitHub Release instead of stored in
-ordinary Git history.
+The transition candidate pool in v026 contained exactly 24 candidates and K was 24, so all 24 were selected. The result therefore does not demonstrate competitive MaxVol subset ranking within a larger transition candidate pool.
+
+## Frozen PBE path and holdout boundary
+
+The nine-image PBE NEB path was computed independently of the MTP evaluations. Its seven interior images were absent from both Train60 sets in the frozen geometry audit. The two endpoint geometries overlap the shared common36 training set. Consequently the whole NEB9 path, and Audit21 as a whole, are not fully independent holdouts.
+
+The transition-force primary metric uses the three central images with absolute qPT <= 0.15 A and is not affected by those endpoint overlaps.
+
+## Dynamics and applicability
+
+The public first-update diagnostic captures six first attempted unconstrained integration updates at 100, 300 and 500 K from both minima. Exact source-oracle replay confirms that all six captured updated geometries exceeded the historical MaxVol applicability threshold.
+
+That diagnostic did not produce a usable free MD trajectory and did not measure DFT error on those frames. Later PBE checks showed that applicability grade is not a universal scalar predictor of force error.
+
+## Post-publication continuation
+
+A later transition-tube program separated force accuracy from applicability coverage, introduced deterministic training and force-aware selector diagnostics, and ended with Train119.
+
+The final frozen Train119 check did not pass static applicability: five of 228 replay configurations exceeded the fresh Train119 numerical stop. The saved Validation11 force payload is 11/11 below A2 = 0.09 eV/A, but Validation11 is not an independent holdout and its frozen pair-distance serialization guard remains formally nonconforming. No Train119 Gate1, longer deployment run, or Blind12 reveal was performed.
+
+See docs/POST_PUBLICATION_CONTINUATION.md.
 
 ## Clean-clone verification
 
-A clean clone can verify repository integrity, manifests, checksums, Python
-syntax, dependency declarations, and public-release hygiene:
+A clean clone can now:
 
-```bash
-python3 tools/run_public_selftests.py .
-python3 tools/audit_public_repo.py .
-```
+- verify repository, script, data and public-asset manifests;
+- independently recompute the original v030r barrier and force metrics from saved v029 reference/prediction CFGs;
+- reproduce the two known NEB endpoint geometry overlaps;
+- validate the publication figure, table, video and quantum inputs from repo-local compact source data;
+- rerender publication figures and tables with the declared Python dependencies;
+- inspect the post-publication RNG robustness and Train119 closure data.
 
-Equivalent wrapper:
+Run:
 
-```bash
-./reproduce/run_repository_selftests.sh
-```
+    python3 tools/run_public_selftests.py .
+    python3 tools/recompute_primary_metrics.py
 
-## Scientific reproduction
-
-The accepted scientific pipeline is ordered in
-[`docs/PIPELINE.md`](docs/PIPELINE.md). It requires a compatible project tree
-containing the locked upstream inputs and the external scientific programs used
-by the original calculation.
-
-```bash
-conda env create -f environment.yml
-conda activate malonaldehyde-transition-sampling
-```
-
-Examples using an existing compatible project root:
-
-```bash
-./reproduce/run_quantum_audit.sh /path/to/malonaldehyde_mtp_al
-./reproduce/render_all_figures.sh /path/to/malonaldehyde_mtp_al
-./reproduce/build_supplementary_table_s1.sh /path/to/malonaldehyde_mtp_al
-./reproduce/render_all_videos.sh /path/to/malonaldehyde_mtp_al
-```
-
-The video renderers require the `ffmpeg` executable. It is included in the
-Conda environment specification but is not installed by `pip`.
+For plotting and quantum reproduction, create the declared environment and use the scripts under reproduce/.
 
 ## Reproducibility boundary
 
-This repository contains the accepted versioned code and compact public inputs.
-It does not redistribute Quantum ESPRESSO, MLIP, LAMMPS/MLIP, pseudopotential
-files, all historical attempt directories, or large scratch outputs.
+Full DFT and model-training recomputation is not containerized in this repository. Quantum ESPRESSO, MLIP and LAMMPS/MLIP are external scientific programs; pseudopotential binaries are not redistributed. Exact software identifiers and hashes from the project are documented in docs/SOFTWARE_PROVENANCE.md.
 
-Therefore:
-
-- repository-integrity verification works from a clean clone;
-- final renderers and audits work with a compatible project tree;
-- the complete heavy DFT/MTP calculation is not containerized into this Git
-  repository.
-
-See [`docs/EXECUTION_BOUNDARY.md`](docs/EXECUTION_BOUNDARY.md) and
-[`docs/REPRODUCIBILITY_STATUS.md`](docs/REPRODUCIBILITY_STATUS.md).
+The included trained models and compact CFG data allow substantially more verification than the original v1.0.0 release without publishing the approximately 80 GB private calculation tree.
 
 ## Scientific scope
 
-The PBE NEB path is an internal fixed reference. The one-dimensional H/D level
-gaps are frozen-path spectral diagnostics, not experimental tunneling rates and
-not full-dimensional quantum dynamics. MaxVol applicability grade is an
-extrapolation diagnostic, not a quantitative DFT error.
+PBE is an internal computational reference, not experimental ground truth. The H/D calculation is a frozen-path one-dimensional spectral diagnostic, not a reaction-rate calculation or full-dimensional quantum dynamics. MaxVol grade is an applicability/coverage diagnostic, not a DFT-error bar.
 
-See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
+## Repository map
+
+- data/publication_source_v005: sanitized compact source package used by final renderers.
+- data/frozen_models_v028: original Train60 sets, templates, models, Audit21 labels and predictions.
+- data/robustness: post-publication fixed-seed training-randomness audit.
+- data/post_publication: compact final scientific status.
+- scripts: frozen scientific, audit and publication scripts.
+- provenance: public manifests and the sanitized canonical ledger.
+- docs: methods, limitations, software provenance and execution boundaries.
 
 ## References
 
-- [Shapeev 2016: Moment Tensor Potentials](https://doi.org/10.1137/15M1054183)
-- [Podryabinkin and Shapeev 2017: Active Learning of Linearly Parametrized Interatomic Potentials](https://doi.org/10.1016/j.commatsci.2017.08.031)
-- [Henkelman, Uberuaga, and Jónsson 2000: Climbing-image NEB](https://doi.org/10.1063/1.1329672)
-- [Tikhonov 2022: A Simplistic Computational Procedure for Tunneling Splittings Caused by Proton Transfer](https://doi.org/10.1007/s11224-021-01845-4)
+Shapeev 2016, Moment Tensor Potentials.
+Podryabinkin and Shapeev 2017, active learning for linearly parametrized interatomic potentials.
+Henkelman, Uberuaga and Jonsson 2000, climbing-image NEB.
 
-## Citation
-
-GitHub renders citation metadata from [`CITATION.cff`](CITATION.cff).
-
-## Licensing
-
-- Code: MIT.
-- Original compact data and media: CC BY 4.0, unless noted otherwise.
+Code is MIT licensed. Project-owned compact data and media are CC BY 4.0 unless a file states otherwise.

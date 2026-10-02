@@ -1,29 +1,23 @@
 # Execution boundary
 
-This document separates three different reproducibility claims.
+The repository distinguishes four levels of reproducibility.
 
-## Clean-clone repository verification
+## 1. Repository integrity
 
-A fresh clone is sufficient to compile public Python, verify manifests and
-SHA-256 values, check dependency declarations, and run the public-release
-audit. Run:
+No external scientific software is needed. CI verifies required files, Python syntax, script manifests, the public-asset manifest, compact-data manifests, private-path hygiene and checksums.
 
-```bash
-python3 tools/run_public_selftests.py .
-python3 tools/audit_public_repo.py .
-```
+## 2. Compact numerical reproduction
 
-These checks do not execute Quantum ESPRESSO, MLIP, LAMMPS, NEB, MTP training,
-or the full scientific calculation.
+No MLIP or QE executable is needed. tools/recompute_primary_metrics.py reads saved v029 reference and prediction CFGs and recomputes the original v030r primary metrics and endpoint overlaps.
 
-## Regeneration from a compatible project tree
+## 3. Publication rendering and quantum diagnostics
 
-The public renderers and late-stage audits require accepted input/output tables
-under a compatible `malonaldehyde_mtp_al` project root.
+The declared Python dependencies are required. Final renderers use data/publication_source_v005 when no compatible external project root is supplied. Video rendering requires ffmpeg.
 
-## Heavy scientific recomputation
+The one-dimensional quantum audit is a numerical post-processing calculation on the frozen path; it is not DFT or molecular dynamics.
 
-The versioned core scripts are public, but complete recomputation also requires
-separately installed scientific software, pseudopotentials, and compatible
-upstream project inputs. The repository is not a containerized redistribution
-of all external software and scratch data.
+## 4. Heavy scientific recomputation
+
+Retraining the MTPs requires external MLIP. Recomputing DFT labels and NEB requires Quantum ESPRESSO plus the documented pseudopotentials. Deployment trajectories require the historical LAMMPS/MLIP interface.
+
+The repository does not redistribute those executables, the pseudopotential binaries, or the approximately 80 GB raw project tree.

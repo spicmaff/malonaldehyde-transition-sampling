@@ -1,0 +1,107 @@
+{
+  "schema": "v028-seed-robustness-protocol-v001",
+  "created_utc": "2026-10-02T06:42:51.607767+00:00",
+  "status": "FROZEN_BEFORE_TRAINING",
+  "purpose": "Post-publication paired seeded robustness audit of original v028 basin60 vs targeted60 training; does not replace original v030r primary numbers.",
+  "inputs": {
+    "train_basin": {
+      "path": "${PROJECT_ROOT}/09_strict_comparison/versions/v028_equal_budget_l12_training/attempt_20260722T183142Z/inputs/train_basin_v001.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8"
+    },
+    "train_targeted": {
+      "path": "${PROJECT_ROOT}/09_strict_comparison/versions/v028_equal_budget_l12_training/attempt_20260722T183142Z/inputs/train_targeted_v001.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f"
+    },
+    "template": {
+      "path": "${PROJECT_ROOT}/09_strict_comparison/versions/v028_equal_budget_l12_training/attempt_20260722T183142Z/templates/locked_untrained_l12_v028.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1"
+    },
+    "audit21": {
+      "path": "${PROJECT_ROOT}/09_strict_comparison/versions/v029_frozen_audit21_evaluation/attempt_20260722T193925Z/inputs/frozen_audit21_labels_v029.cfg",
+      "sha256": "f7281f4aa8b6a85de0d4ad86995f26e6bf74dbc9dd0dea5a963472fe2306e421"
+    },
+    "seeded_binary": {
+      "path": "${PROJECT_ROOT}/12_transition_tube/versions/v091f_train119_deterministic_training_execution_v001/attempt_20260915T214939Z/TRAIN119_TRAINING/PRIMARY/mlp_seeded_random_stage71d_v004",
+      "sha256": "fd6e96bdd5c070c4b3728768cc29338a0e7fd43a77ec0c18b292c0170ab386fe"
+    },
+    "v028_lock": {
+      "path": "${PROJECT_ROOT}/09_strict_comparison/versions/v028_equal_budget_l12_training/attempt_20260722T183142Z/EQUAL_BUDGET_L12_MODEL_LOCK_v001.json",
+      "sha256": "fd19cecfa2abcb74117cc2972bf79dfb514e786ff8a191f25e6afbe5ccd843c7"
+    }
+  },
+  "seeds": [
+    {
+      "index": 0,
+      "seed_u64": 4172185641970229070,
+      "sha256": "39e694bc769edf4e7bb59fa04cda60b769d6e8a504e8e12785b86e5634835f1b"
+    },
+    {
+      "index": 1,
+      "seed_u64": 10780126852447763956,
+      "sha256": "959ab441b9cc7df4170aeb31f2d4bc1f8f31e6844bbb9db71717ae6b6d46225f"
+    },
+    {
+      "index": 2,
+      "seed_u64": 16937122512019790775,
+      "sha256": "eb0cbf301e361bb79df53791c5c12713a2bf4ba4218dc4289588bc6f1876f8ad"
+    },
+    {
+      "index": 3,
+      "seed_u64": 12250469658613881511,
+      "sha256": "aa02693fad619aa7e39a4c95791888035973dd3f81935eeccaf24f74298ba22f"
+    },
+    {
+      "index": 4,
+      "seed_u64": 18149779474148714524,
+      "sha256": "fbe0f845244f681cc4d9fd1b6668d5eba47ec80f11b315467dfa616695002639"
+    }
+  ],
+  "branches": [
+    "basin",
+    "targeted"
+  ],
+  "paired_seed_rule": "same seed_u64 is used for basin and targeted branch at each seed index",
+  "training_argv_suffix": [
+    "--max-iter=2000",
+    "--energy-weight=1",
+    "--force-weight=0.01",
+    "--stress-weight=0"
+  ],
+  "init_params": "random (MLIP default; explicitly recorded, not changed)",
+  "seed_interface": "MLIP_RANDOM_SEED environment variable",
+  "determinism_env": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "MALLOC_ARENA_MAX": "1",
+    "PYTHONHASHSEED": "0",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TZ": "UTC"
+  },
+  "automatic_retry": false,
+  "best_seed_selection_forbidden": true,
+  "model_selection_forbidden": true,
+  "warm_start_forbidden": true,
+  "new_DFT": 0,
+  "planned_training_calls": 10,
+  "planned_calc_efs_calls": 10,
+  "evaluation_source": "same frozen v029 Audit21 labels; v030r lower-endpoint barrier and abs(qPT)<=0.15 transition-force definitions",
+  "reported_metrics": [
+    "lower_endpoint_barrier_abs_error_meV",
+    "transition_region_force_component_RMSE_eV_A",
+    "basin12_force_component_RMSE_eV_A",
+    "neb7_interior_force_component_RMSE_eV_A",
+    "neb7_interior_centered_energy_RMSE_eV"
+  ],
+  "classification_only": [
+    "ROBUST_DIRECTIONAL_EFFECT",
+    "SEED_SENSITIVE",
+    "INCONCLUSIVE"
+  ],
+  "original_v030r_numbers_replaced": false
+}

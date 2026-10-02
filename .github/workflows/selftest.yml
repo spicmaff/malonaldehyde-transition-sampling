@@ -1,16 +1,33 @@
-name: repository-integrity-selftest
+name: repository-and-reproduction-selftest
 
 on:
   push:
   pull_request:
 
 jobs:
-  selftest:
+  integrity:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Run repository-integrity self-tests
+      - name: Run repository self-tests
         run: python tools/run_public_selftests.py .
+      - name: Recompute primary metrics
+        run: python tools/recompute_primary_metrics.py
+
+  reproduction-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r requirements.txt
+      - name: Validate publication inputs
+        run: |
+          for s in scripts/figures/*.py; do python "$s" --root "$PWD" --validate-only; done
+          python scripts/tables/build_supplementary_table_s1_complete_numerical_audit_v023.py --root "$PWD" --validate-only
+          for s in scripts/videos/*.py; do python "$s" --root "$PWD" --validate-only; done
+          python scripts/quantum/stage62_frozen_path_1d_tunneling_audit_v003.py --root "$PWD" --validate-only

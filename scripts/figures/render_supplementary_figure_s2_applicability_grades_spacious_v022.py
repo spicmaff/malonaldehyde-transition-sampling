@@ -370,6 +370,12 @@ def verify_checksum_entry(
 
 def resolve_input_attempt(root: Path) -> Path:
     version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+    public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
+    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+        observed = read_text(public_attempt / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+        return public_attempt
     pointer = require_file(version_root / INPUT_POINTER, "v005 current pointer")
     raw = pointer.read_text(encoding="utf-8").strip()
     if not raw:
@@ -1010,7 +1016,7 @@ def render_figure(
         marker="o",
         facecolor="white",
         edgecolor=dft_color,
-        label="independent NEB9 image",
+        label="NEB9 image",
     )
     ax_a.plot(
         [],
@@ -1525,7 +1531,7 @@ def write_caption(
     caption = f"""# Supplementary Figure S2. Static accuracy improvement does not make the reaction-path region interpolative
 
 **a,** Per-configuration MaxVol applicability grades for the 21 held-out
-frozen-audit structures, separated into basin12 and independent NEB9 subsets
+frozen-audit structures, separated into basin12 and NEB9 subsets
 and evaluated by the basin-trained and transition-targeted models. Horizontal
 bars show subset medians. Nineteen of 21 configurations exceed gamma = 10 for
 both models. **b,** Median-to-maximum grade summaries for frozen NEB9 and

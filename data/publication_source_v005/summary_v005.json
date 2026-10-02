@@ -1,0 +1,121 @@
+{
+  "authoritative_metrics": {
+    "authoritative_primary_stage": "v030r",
+    "basin_barrier_abs_error_mev": 35.245734070031176,
+    "basin_lower_endpoint_barrier_mev": 0.8263598228950286,
+    "created_utc": "2026-07-27T15:30:24Z",
+    "dft_lower_endpoint_barrier_mev": 36.072093892926205,
+    "improvement_factors": {
+      "barrier_abs_error_basin_over_targeted": 8.595695309857287,
+      "transition_force_rmse_basin_over_targeted": 2.237819899385827
+    },
+    "schema_version": "1.4",
+    "scientific_scope": "Static PBE-reference equal-budget comparison; not validated reactive MD.",
+    "targeted_barrier_abs_error_mev": 4.10039360394876,
+    "targeted_lower_endpoint_barrier_mev": 31.971700288977445,
+    "transition_force_component_rmse_ev_ang": {
+      "basin": 0.1760826457854536,
+      "targeted": 0.07868490481909636
+    }
+  },
+  "counts": {
+    "all_coverage_points": 105,
+    "audit21": 21,
+    "basin24": 24,
+    "basin60": 60,
+    "common36": 36,
+    "targeted24": 24,
+    "targeted60": 60
+  },
+  "created_utc": "2026-07-27T15:30:24Z",
+  "execution": {
+    "lammps": false,
+    "md": false,
+    "mlp_calc_efs": false,
+    "mlp_calc_grade": false,
+    "mlp_train": false,
+    "neb_x": false,
+    "pw_x": false
+  },
+  "implementation_id": "VISUALIZATION_STEP01_SOURCE_AUDIT_V005",
+  "next_stage": "Render Figure 2 first, then Figure 3 from exact source-oracle geometry; no scientific recalculation.",
+  "outputs": {
+    "environment": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/provenance/environment_v005.txt",
+    "figure_manifest": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/figure_manifest_v005.tsv",
+    "geometry": {
+      "audit21_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/audit21_v005.xyz",
+      "audit_neb9_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/dft_independent_neb9_v005.xyz",
+      "basin24_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/basin24_v005.xyz",
+      "common36_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/common36_v005.xyz",
+      "first_step_break_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_break_configurations_source_oracle_endpoint_frame_v005.xyz",
+      "first_step_break_geometry_raw": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_break_configurations_raw_canonical_v005.xyz",
+      "first_step_pair_T100_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_pairs/T100_left_endpoint_and_first_step_v005.xyz",
+      "first_step_pair_T100_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_pairs/T100_right_endpoint_and_first_step_v005.xyz",
+      "first_step_pair_T300_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_pairs/T300_left_endpoint_and_first_step_v005.xyz",
+      "first_step_pair_T300_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_pairs/T300_right_endpoint_and_first_step_v005.xyz",
+      "first_step_pair_T500_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_pairs/T500_left_endpoint_and_first_step_v005.xyz",
+      "first_step_pair_T500_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_pairs/T500_right_endpoint_and_first_step_v005.xyz",
+      "first_step_raw_T100_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_raw_canonical/T100_left_first_step_raw_canonical_v005.xyz",
+      "first_step_raw_T100_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_raw_canonical/T100_right_first_step_raw_canonical_v005.xyz",
+      "first_step_raw_T300_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_raw_canonical/T300_left_first_step_raw_canonical_v005.xyz",
+      "first_step_raw_T300_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_raw_canonical/T300_right_first_step_raw_canonical_v005.xyz",
+      "first_step_raw_T500_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_raw_canonical/T500_left_first_step_raw_canonical_v005.xyz",
+      "first_step_raw_T500_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_raw_canonical/T500_right_first_step_raw_canonical_v005.xyz",
+      "first_step_source_oracle_T100_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_source_oracle/T100_left_first_step_source_oracle_v005.xyz",
+      "first_step_source_oracle_T100_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_source_oracle/T100_right_first_step_source_oracle_v005.xyz",
+      "first_step_source_oracle_T300_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_source_oracle/T300_left_first_step_source_oracle_v005.xyz",
+      "first_step_source_oracle_T300_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_source_oracle/T300_right_first_step_source_oracle_v005.xyz",
+      "first_step_source_oracle_T500_left": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_source_oracle/T500_left_first_step_source_oracle_v005.xyz",
+      "first_step_source_oracle_T500_right": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/first_step_source_oracle/T500_right_first_step_source_oracle_v005.xyz",
+      "geometry_manifest": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry_manifest_v005.tsv",
+      "mtp_neb_basin_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/mtp_neb_basin_v005.xyz",
+      "mtp_neb_targeted_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/mtp_neb_targeted_v005.xyz",
+      "relaxed_endpoints_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/relaxed_endpoints_v005.xyz",
+      "targeted24_geometry": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/geometry/targeted24_v005.xyz"
+    },
+    "report": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/reports/visual_source_audit_report_v005.md",
+    "source_data": {
+      "audit21_grade_metrics": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/audit21_grade_metrics_v005.tsv",
+      "audit21_per_configuration": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/audit21_per_configuration_metrics_v005.tsv",
+      "audit21_subset_metrics": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/audit21_subset_metrics_v005.tsv",
+      "authoritative_metric_lock": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/authoritative_metric_lock_v005.json",
+      "dataset_coverage": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/dataset_coverage_v005.tsv",
+      "first_step_extrapolation": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/first_step_extrapolation_v005.tsv",
+      "mtp_neb_classification": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/mtp_neb_classification_v005.tsv",
+      "mtp_neb_paths": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/mtp_neb_paths_v005.tsv",
+      "neb9_barrier_summary": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/neb9_barrier_summary_v005.tsv",
+      "neb9_energy_profiles": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/neb9_energy_profiles_v005.tsv",
+      "primary_metric_summary": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/primary_metric_summary_v005.tsv",
+      "run0_selection_consistency": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/run0_selection_consistency_v005.tsv",
+      "source_oracle_bindings": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/source_oracle_bindings_v005.tsv",
+      "source_oracle_contract": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/source_oracle_contract_v005.json",
+      "source_oracle_metric_evidence": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/source_oracle_metric_evidence_v005.tsv",
+      "source_oracle_return_leaves": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/source_oracle_return_leaves_v005.tsv",
+      "source_oracle_sanitized_module": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/provenance/sanitized_v032d_geometry_oracle_v005.py",
+      "source_oracle_summary": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/source_oracle_summary_v005.tsv",
+      "transition_region_force_rows": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_data/transition_region_force_rows_v005.tsv"
+    },
+    "source_manifest": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/source_manifest_v005.tsv",
+    "validation_checks": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/reports/validation_checks_v005.tsv",
+    "video_manifest": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/video_manifest_v005.tsv",
+    "visual_style_lock": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z/visual_style_lock_v005.json"
+  },
+  "project_root": "${PROJECT_ROOT}",
+  "run_root": "${PROJECT_ROOT}/10_visualization/versions/v005_q1_dataviz_source_audit_source_oracle_recovery/attempt_20260727T153023Z",
+  "schema_version": "1.4",
+  "scientific_freeze": {
+    "deployment": "v032d + exact geometry-provenance recovery v032k",
+    "post_audit_training": false,
+    "primary": "v029 + v030r",
+    "secondary_mtp_neb": "v031r",
+    "usable_md_trajectory": false
+  },
+  "source_record_count": 85,
+  "source_snapshot_count": 83,
+  "status": "PASS_VISUAL_SOURCE_AUDIT_V005_SOURCE_ORACLE_DATA_READY",
+  "validation": {
+    "check_count": 140,
+    "failed": 0,
+    "passed": 140
+  }
+}

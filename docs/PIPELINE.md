@@ -1,38 +1,27 @@
-# Reproducible pipeline included in this repository
+# Pipeline and authority order
 
-The public repository now contains the accepted strict-comparison scripts from
-the independent PBE NEB calculation through the final deployment diagnostics.
+Historical script filenames are preserved because they are part of the provenance record. Names containing independent refer to the independently computed PBE path, not to a claim that every evaluation geometry is training-independent.
 
-## Ordered pipeline
+## Original public pipeline
 
-1. `step26_independent_neb_dft_v024.py`
-2. `step27_independent_neb_single_points_v025.py`
-3. `step28_fresh_tube_active_selection_v026.py`
-4. `step29_equal_budget_dft_labels_v027.py`
-5. `step30_train_equal_budget_l12_v028.py`
-6. `step31_frozen_audit21_evaluation_v029.py`
-7. `step32_final_primary_analysis_v030.py`
-8. `step32b_primary_metric_protocol_recovery_v030r.py`
-9. `step33_secondary_mtp_neb_v031.py`
-10. `step34_targeted_md_diagnostics_v032.py`
-11. `step34c_v032_selection_interface_diagnostic_v032d.py`
-12. `step35_project_closeout_v033.py`
+1. v024 / step26: compute the nine-image PBE NEB path.
+2. v025 / step27: PBE single points on NEB9.
+3. v026 / step28: construct branch-specific equal-budget additions. The transition pool has 24 candidates and K = 24.
+4. v027 / step29: DFT labels for the 48 branch-specific configurations.
+5. v028 / step30: train the two 60-configuration L12 MTPs.
+6. v029 / step31: evaluate frozen Audit21.
+7. v030: superseded primary-metric implementation.
+8. v030r / step32b: authoritative repaired primary metrics.
+9. v031: secondary relaxed MTP-NEB.
+10. v032 plus v032d/v032k: first-update applicability and exact source-oracle diagnostics.
+11. v033: historical closeout.
 
-The repaired `step32b` metrics are authoritative for the final primary
-barrier and transition-force comparison.
+The v030r repair changes metric definitions only; it does not retrain models.
 
-## Additional public code
+## Holdout correction
 
-The repository also includes final figure, table, and video renderers; the
-frozen-path H/D quantum audit; and exact source-oracle/forensic diagnostics.
+Audit21 is not a completely independent holdout. audit_neb_01 and audit_neb_09 are endpoint geometries also present in common36. The seven interior NEB geometries are not present in Train60 in the frozen geometry audit.
 
-## Execution boundary
+## Later continuation
 
-These scripts require a compatible project tree, Quantum ESPRESSO, MLIP, and
-LAMMPS/MLIP installations. Heavy DFT working directories, pseudopotential
-files, installed external binaries, and transient attempt directories are not
-stored in ordinary Git.
-
-The repository therefore supports audited reconstruction from the accepted
-project inputs and compact tables. It is not a containerized redistribution of
-all external scientific software or all raw scratch files.
+The transition-tube Stage69–91 program is documented separately in docs/POST_PUBLICATION_CONTINUATION.md. Later adaptive development is not folded into the original pipeline or presented as a single preregistered validation experiment.

@@ -1,133 +1,108 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-
-import argparse
-import csv
-import hashlib
-import json
-import subprocess
-import sys
+import argparse,csv,hashlib,json,math,subprocess,sys
 from pathlib import Path
 
-STATUS = "PASS_PUBLIC_REPOSITORY_SELFTESTS_V001"
-REQUIRED = (
-    "README.md", "CITATION.cff", "environment.yml", "requirements.txt",
-    "docs/PIPELINE.md", "docs/REPRODUCIBILITY_STATUS.md",
-    "docs/EXECUTION_BOUNDARY.md", "docs/CI_SCOPE.md",
-    "scripts/SCRIPT_INDEX.tsv",
-    "scripts/core_pipeline/CORE_PIPELINE_MANIFEST.tsv",
-    "tools/audit_public_repo.py", "tools/run_public_selftests.py",
-    ".github/workflows/audit.yml", ".github/workflows/selftest.yml",
-    "reproduce/run_repository_selftests.sh",
+STATUS="PASS_PUBLIC_REPOSITORY_SELFTESTS_V002"
+REQUIRED=(
+ "README.md","CITATION.cff","environment.yml","requirements.txt",
+ "docs/METHODS.md","docs/LIMITATIONS.md","docs/PIPELINE.md","docs/REPRODUCIBILITY_STATUS.md",
+ "docs/EXECUTION_BOUNDARY.md","docs/CI_SCOPE.md","docs/SOFTWARE_PROVENANCE.md",
+ "docs/TRAINING_RANDOMNESS.md","docs/POST_PUBLICATION_CONTINUATION.md",
+ "scripts/SCRIPT_INDEX.tsv","scripts/core_pipeline/CORE_PIPELINE_MANIFEST.tsv",
+ "provenance/PUBLIC_ASSET_MANIFEST.tsv","provenance/PUBLIC_CLAIM_LEDGER.tsv","reports/REPRODUCIBILITY_MATRIX.tsv",
+ "data/publication_source_v005/PUBLICATION_SOURCE_MANIFEST.tsv",
+ "data/frozen_models_v028/MANIFEST.tsv",
+ "tools/audit_public_repo.py","tools/run_public_selftests.py","tools/recompute_primary_metrics.py",
+ ".github/workflows/audit.yml",".github/workflows/selftest.yml","reproduce/run_repository_selftests.sh",
 )
-DEPRECATED = (
-    "scripts/stage62_frozen_path_1d_tunneling_audit_v003.py",
-    "scripts/render_stage63_supplementary_figure_s3_quantum_audit_v005.py",
-)
+DEPRECATED=("scripts/stage62_frozen_path_1d_tunneling_audit_v003.py","scripts/render_stage63_supplementary_figure_s3_quantum_audit_v005.py")
+def sha(p):
+ h=hashlib.sha256()
+ with Path(p).open('rb') as f:
+  for b in iter(lambda:f.read(1<<20),b''):h.update(b)
+ return h.hexdigest()
+def rows(p):
+ with Path(p).open(newline='',encoding='utf-8') as f:return list(csv.DictReader(f,delimiter='\t'))
+def close(a,b,tol=1e-9):return math.isfinite(float(a)) and abs(float(a)-float(b))<=tol
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('root',nargs='?',type=Path,default=Path('.'));root=ap.parse_args().root.resolve()
+ failures=[];checks={}
+ miss=[x for x in REQUIRED if not (root/x).is_file()]
+ if miss:failures.append(f"Missing required files: {miss}")
+ checks['required_files']=len(REQUIRED)-len(miss)
+ for x in DEPRECATED:
+  if (root/x).exists():failures.append(f"Deprecated duplicate exists: {x}")
+ cp=subprocess.run([sys.executable,'-m','compileall','-q','scripts','tools'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+ if cp.returncode:failures.append("Python compilation failed:\n"+cp.stdout)
+ checks['python_compile']=cp.returncode==0
 
-def sha(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
+ core=rows(root/'scripts/core_pipeline/CORE_PIPELINE_MANIFEST.tsv')
+ if len(core)!=12:failures.append(f"Expected 12 core scripts, found {len(core)}")
+ seen=set()
+ for r in core:
+  rel=r['repository_path'];p=root/rel
+  if rel in seen:failures.append(f"Duplicate core path: {rel}")
+  seen.add(rel)
+  if not p.is_file():failures.append(f"Missing core script: {rel}")
+  elif sha(p)!=r['repository_sha256']:failures.append(f"Core checksum mismatch: {rel}")
+ checks['core_manifest_entries']=len(core)
 
-def rows(path: Path):
-    with path.open("r", encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f, delimiter="\t"))
+ idxrows=rows(root/'scripts/SCRIPT_INDEX.tsv');index={r['repository_path']:r for r in idxrows}
+ actual={p.relative_to(root).as_posix():p for p in sorted((root/'scripts').rglob('*.py'))}
+ if set(index)!=set(actual):failures.append(f"SCRIPT_INDEX mismatch missing={sorted(set(actual)-set(index))} extra={sorted(set(index)-set(actual))}")
+ for rel,p in actual.items():
+  r=index.get(rel)
+  if r and (r['sha256']!=sha(p) or r['size_bytes']!=str(p.stat().st_size)):failures.append(f"Script-index metadata mismatch: {rel}")
+ checks['script_index_entries']=len(index)
 
-def main() -> int:
-    p = argparse.ArgumentParser()
-    p.add_argument("root", nargs="?", type=Path, default=Path("."))
-    root = p.parse_args().root.resolve()
-    failures = []
-    checks = {}
+ asset=rows(root/'provenance/PUBLIC_ASSET_MANIFEST.tsv');names=set();paths=set()
+ for r in asset:
+  rel=r['repository_path'];p=root/rel
+  if r['logical_name'] in names:failures.append(f"Duplicate public asset logical name: {r['logical_name']}")
+  if rel in paths:failures.append(f"Duplicate public asset path: {rel}")
+  names.add(r['logical_name']);paths.add(rel)
+  if not p.is_file():failures.append(f"Missing public asset: {rel}");continue
+  if sha(p)!=r['repository_sha256']:failures.append(f"Public asset checksum mismatch: {rel}")
+  if p.stat().st_size!=int(r['size_bytes']):failures.append(f"Public asset size mismatch: {rel}")
+ checks['public_asset_manifest_entries']=len(asset)
 
-    missing = [x for x in REQUIRED if not (root / x).is_file()]
-    if missing:
-        failures.append(f"Missing required files: {missing}")
-    checks["required_files"] = len(REQUIRED) - len(missing)
+ for manifest,base in [('data/publication_source_v005/PUBLICATION_SOURCE_MANIFEST.tsv','data/publication_source_v005'),
+                       ('data/frozen_models_v028/MANIFEST.tsv','.')]:
+  rr=rows(root/manifest)
+  for r in rr:
+   rel=r.get('relative_path') or r.get('repository_path')
+   p=(root/base/rel) if 'relative_path' in r else root/rel
+   if not p.is_file():failures.append(f"Missing data-manifest file: {p.relative_to(root)}");continue
+   if sha(p)!=r['repository_sha256']:failures.append(f"Data-manifest checksum mismatch: {p.relative_to(root)}")
+   if p.stat().st_size!=int(r['repository_bytes']):failures.append(f"Data-manifest size mismatch: {p.relative_to(root)}")
+ checks['data_manifests']=True
 
-    for rel in DEPRECATED:
-        if (root / rel).exists():
-            failures.append(f"Deprecated duplicate exists: {rel}")
+ pr=subprocess.run([sys.executable,'tools/recompute_primary_metrics.py'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+ if pr.returncode:failures.append("Primary recomputation failed:\n"+pr.stderr)
+ else:
+  try:
+   x=json.loads(pr.stdout);m=x['metrics']
+   exp={'basin':(35.245734070031176,0.1760826457854536),'targeted':(4.10039360394876,0.07868490481909636)}
+   for b,(eb,ef) in exp.items():
+    if not close(m[b]['lower_endpoint_barrier_abs_error_meV'],eb):failures.append(f"Primary barrier mismatch {b}")
+    if not close(m[b]['transition_force_component_RMSE_eV_A'],ef):failures.append(f"Primary force mismatch {b}")
+   if len(x['audit21_train60_geometry_overlaps'])!=4:failures.append("Expected two endpoint overlaps in each Train60 branch")
+   checks['primary_recompute']=True
+  except Exception as e:failures.append(f"Primary recomputation parse failure: {e}")
 
-    cp = subprocess.run(
-        [sys.executable, "-m", "compileall", "-q", "scripts", "tools"],
-        cwd=root, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-    )
-    if cp.returncode:
-        failures.append("Python compilation failed:\n" + cp.stdout)
-    checks["python_compile"] = cp.returncode == 0
-
-    core = rows(root / "scripts/core_pipeline/CORE_PIPELINE_MANIFEST.tsv")
-    if len(core) != 12:
-        failures.append(f"Expected 12 core scripts, found {len(core)}")
-    seen = set()
-    for row in core:
-        rel = row["repository_path"]
-        if rel in seen:
-            failures.append(f"Duplicate core manifest path: {rel}")
-        seen.add(rel)
-        path = root / rel
-        if not path.is_file():
-            failures.append(f"Missing core script: {rel}")
-        elif sha(path) != row["repository_sha256"]:
-            failures.append(f"Core checksum mismatch: {rel}")
-    checks["core_manifest_entries"] = len(core)
-
-    index = {r["repository_path"]: r for r in rows(root / "scripts/SCRIPT_INDEX.tsv")}
-    actual = {
-        p.relative_to(root).as_posix(): p
-        for p in sorted((root / "scripts").rglob("*.py"))
-    }
-    if set(index) != set(actual):
-        failures.append("SCRIPT_INDEX.tsv does not exactly match scripts/**/*.py")
-    for rel, path in actual.items():
-        row = index.get(rel)
-        if not row:
-            continue
-        if row["sha256"] != sha(path):
-            failures.append(f"Script-index checksum mismatch: {rel}")
-        if row["size_bytes"] != str(path.stat().st_size):
-            failures.append(f"Script-index size mismatch: {rel}")
-    checks["script_index_entries"] = len(index)
-
-    env = (root / "environment.yml").read_text(encoding="utf-8").lower()
-    req = (root / "requirements.txt").read_text(encoding="utf-8").lower()
-    for token, text, name in (("pillow", env, "environment.yml"),
-                              ("ffmpeg", env, "environment.yml"),
-                              ("pillow", req, "requirements.txt")):
-        if token not in text:
-            failures.append(f"{token} missing from {name}")
-
-    readme = (root / "README.md").read_text(encoding="utf-8").lower()
-    if "being promoted separately" in readme:
-        failures.append("README contains obsolete promotion statement")
-    if "clean-clone verification" not in readme:
-        failures.append("README lacks clean-clone verification section")
-    if "reproducibility boundary" not in readme:
-        failures.append("README lacks reproducibility boundary")
-
-    workflow = (root / ".github/workflows/selftest.yml").read_text(encoding="utf-8")
-    if "run_public_selftests.py" not in workflow:
-        failures.append("Self-test workflow does not invoke public self-tests")
-
-    audit = subprocess.run(
-        [sys.executable, "tools/audit_public_repo.py", "."],
-        cwd=root, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-    )
-    if audit.returncode:
-        failures.append("Public repository audit failed:\n" + audit.stdout)
-    checks["public_audit"] = audit.returncode == 0
-
-    result = {
-        "status": STATUS if not failures else "FAIL",
-        "root": str(root), "checks": checks,
-        "failure_count": len(failures), "failures": failures,
-    }
-    print(json.dumps(result, indent=2))
-    return 0 if not failures else 1
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+ env=(root/'environment.yml').read_text().lower();req=(root/'requirements.txt').read_text().lower()
+ for token,text,name in [('pillow',env,'environment.yml'),('ffmpeg',env,'environment.yml'),('pillow',req,'requirements.txt')]:
+  if token not in text:failures.append(f"{token} missing from {name}")
+ docs='\n'.join((root/x).read_text(errors='replace').lower() for x in ['README.md','docs/METHODS.md','docs/PIPELINE.md','docs/LIMITATIONS.md'])
+ if 'same independent nine-image pbe neb path' in docs:failures.append("Obsolete whole-NEB independence claim remains")
+ if '24 candidates' not in (root/'README.md').read_text().lower():failures.append("README lacks 24-candidate/K=24 sampling caveat")
+ if 'training randomness' not in (root/'README.md').read_text().lower():failures.append("README lacks training-randomness caveat")
+ workflow=(root/'.github/workflows/selftest.yml').read_text()
+ if 'run_public_selftests.py' not in workflow or 'recompute_primary_metrics.py' not in workflow:failures.append("Selftest workflow lacks required checks")
+ audit=subprocess.run([sys.executable,'tools/audit_public_repo.py','.'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+ if audit.returncode:failures.append("Public repository audit failed:\n"+audit.stdout)
+ checks['public_audit']=audit.returncode==0
+ result={'status':STATUS if not failures else 'FAIL','root':str(root),'checks':checks,'failure_count':len(failures),'failures':failures}
+ print(json.dumps(result,indent=2));return 0 if not failures else 1
+if __name__=='__main__':raise SystemExit(main())

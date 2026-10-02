@@ -267,6 +267,12 @@ def verify_checksum_entry(
 
 def resolve_input_attempt(root: Path) -> Path:
     version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+    public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
+    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+        observed = read_text(public_attempt / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+        return public_attempt
     pointer = require_file(version_root / INPUT_POINTER, "v005 current pointer")
     raw = pointer.read_text(encoding="utf-8").strip()
     if not raw:
@@ -827,7 +833,7 @@ def render_figure(
     )
     ax_a.set_ylabel("Relative energy (meV)")
     ax_a.set_title(
-        "Frozen independent PBE NEB9 profile",
+        "Frozen PBE NEB9 profile",
         loc="left",
         x=0.05,
         pad=10,
@@ -1375,7 +1381,7 @@ def write_caption(path: Path, figure_data: Mapping[str, Any]) -> None:
     force_factor = figure_data["force_improvement_factor"]
     caption = f"""# Figure 2. Transition-focused equal-budget sampling improves static PBE-path fidelity
 
-**a,** Relative-energy profiles along the frozen independent nine-image PBE
+**a,** Relative-energy profiles along the frozen nine-image PBE reference
 proton-transfer path. The shaded interval marks the preregistered transition
 region, $|q_{{\\mathrm{{PT}}}}| \\le 0.15$ Angstrom. **b,** Lower-endpoint barriers, defined as the maximum path energy minus the
 lower endpoint. **c,** Absolute barrier error relative to the locked PBE

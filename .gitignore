@@ -29,6 +29,7 @@ tmp/
 *.restart
 *.model
 *.mtp
+!data/frozen_models_v028/*.mtp
 *.npy
 *.npz
 *.pkl

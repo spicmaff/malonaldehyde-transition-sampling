@@ -6,8 +6,8 @@ authors:
   - family-names: "Fofonov"
     given-names: "Mikhail"
 repository-code: "https://github.com/spicmaff/malonaldehyde-transition-sampling"
-version: "v001"
-date-released: 2026-08-01
+version: "v1.1.0"
+date-released: 2026-10-02
 license: "MIT"
 keywords:
   - machine-learned interatomic potentials

@@ -251,6 +251,12 @@ def verify_checksum_entry(
 
 def resolve_input_attempt(root: Path) -> Path:
     version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+    public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
+    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+        observed = read_text(public_attempt / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+        return public_attempt
     pointer = require_file(version_root / INPUT_POINTER, "v005 current pointer")
     raw = pointer.read_text(encoding="utf-8").strip()
     if not raw:
@@ -949,7 +955,7 @@ Training and frozen-audit configurations in proton-transfer coordinate and
 oxygen-oxygen distance. The transition-focused additions cluster more strongly
 inside the central reaction corridor, whereas the basin-focused additions stay
 closer to endpoint regions. The 21 held-out audit structures comprise 12 basin
-configurations and an independent nine-image NEB path. **c,**
+configurations and a separately computed nine-image NEB path. **c,**
 Held-out evaluation hierarchy linking the frozen audit (Figure 2), relaxed
 MTP-NEB path validation (Figure 4), and first-update applicability diagnostic
 (Figure 3).
