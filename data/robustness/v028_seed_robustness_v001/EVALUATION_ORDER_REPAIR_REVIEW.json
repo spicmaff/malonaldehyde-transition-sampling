@@ -1,0 +1,17 @@
+{
+  "schema": "v028-rng-evaluation-order-repair-review-v001",
+  "created_utc": "2026-10-02T18:33:54.747672+00:00",
+  "status": "PASS_REPAIR_INDEPENDENT_SAVED_OUTPUT_REVIEW",
+  "repair_calls_confirmed": 10,
+  "all_repair_calls_after_last_training": true,
+  "prediction_byte_identical_count": 10,
+  "max_abs_metric_difference_vs_historical": 0.0,
+  "classification": "SEED_SENSITIVE",
+  "execution_manifest_entries_verified": 45,
+  "review_scientific_calls": 0,
+  "new_training": 0,
+  "new_DFT": 0,
+  "new_dynamics": 0,
+  "historical_nonconformance_erased": false,
+  "interpretation": "Independent saved-output checks confirm the post-hoc evaluation-only replay; historical v002 interleaved order remains documented."
+}

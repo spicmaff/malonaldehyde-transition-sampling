@@ -259,32 +259,41 @@ def parse_xyz(path: Path) -> list[XYZFrame]:
     return frames
 
 
-def resolve_source_attempt(root: Path) -> Path:
-    version_root = (root / INPUT_VERSION_ROOT).resolve()
+def resolve_source_attempt(root: Path, source_root: Path | None = None) -> Path:
     public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
-    pointer = version_root / INPUT_POINTER
-    if not pointer.is_file() and (public_attempt / INPUT_STATUS_FILE).is_file():
+    if source_root is None:
+        if not (public_attempt / INPUT_STATUS_FILE).is_file():
+            raise AuditError(
+                "Repo-local publication source is missing; pass --source-root explicitly "
+                "for a compatible external source tree or exact v005 source directory."
+            )
         status = read_text(public_attempt / INPUT_STATUS_FILE).strip()
         if status != EXPECTED_INPUT_STATUS:
             raise AuditError(f"Unexpected public v005 status: {status}")
         return public_attempt
-    if pointer.is_file():
-        raw = pointer.read_text(encoding="utf-8").strip()
-        if not raw:
-            raise AuditError(f"Empty pointer: {pointer}")
-        attempt = Path(raw).expanduser().resolve()
-    else:
-        candidates = sorted(path for path in version_root.glob("attempt_*") if path.is_dir())
-        if not candidates:
-            raise AuditError(f"No v005 source attempt found under {version_root}")
-        attempt = candidates[-1].resolve()
+    explicit = Path(source_root).expanduser().resolve()
+    if (explicit / INPUT_STATUS_FILE).is_file():
+        status = read_text(explicit / INPUT_STATUS_FILE).strip()
+        if status != EXPECTED_INPUT_STATUS:
+            raise AuditError(f"Unexpected explicit v005 status: {status}")
+        return explicit
+    version_root = (explicit / INPUT_VERSION_ROOT).resolve()
+    pointer = version_root / INPUT_POINTER
+    if not pointer.is_file():
+        raise AuditError(f"Explicit external project root lacks v005 pointer: {pointer}")
+    raw = pointer.read_text(encoding="utf-8").strip()
+    if not raw:
+        raise AuditError(f"Empty explicit v005 pointer: {pointer}")
+    attempt = Path(raw).expanduser().resolve()
     try:
         attempt.relative_to(version_root)
     except ValueError as exc:
-        raise AuditError(f"Resolved attempt escapes expected v005 root: {attempt}") from exc
-    observed_status = read_text(attempt / INPUT_STATUS_FILE).strip()
-    if observed_status != EXPECTED_INPUT_STATUS:
-        raise AuditError(f"Unexpected v005 status {observed_status!r}; expected {EXPECTED_INPUT_STATUS!r}")
+        raise AuditError(f"Explicit v005 pointer escapes expected version root: {attempt}") from exc
+    if not attempt.is_dir():
+        raise AuditError(f"Explicit v005 source attempt missing: {attempt}")
+    status = read_text(attempt / INPUT_STATUS_FILE).strip()
+    if status != EXPECTED_INPUT_STATUS:
+        raise AuditError(f"Unexpected explicit v005 status {status!r}; expected {EXPECTED_INPUT_STATUS!r}")
     return attempt
 
 
@@ -308,8 +317,8 @@ def verify_checksum(attempt: Path, checksum_rows: Sequence[Mapping[str, str]], r
     return observed_sha
 
 
-def load_locked_source(root: Path) -> LockedSource:
-    attempt = resolve_source_attempt(root)
+def load_locked_source(root: Path, source_root: Path | None = None) -> LockedSource:
+    attempt = resolve_source_attempt(root, source_root)
     checksum_rows = read_tsv(attempt / CHECKSUM_REL)
     source_hashes = {
         PROFILE_REL: verify_checksum(attempt, checksum_rows, PROFILE_REL),
@@ -1164,8 +1173,8 @@ def conclusion_from_robustness(robustness: Sequence[Mapping[str, Any]], primary:
     }
 
 
-def execute(root: Path, grid_points: int, extension_fraction: float, validate_only: bool = False) -> int:
-    source = load_locked_source(root)
+def execute(root: Path, grid_points: int, extension_fraction: float, validate_only: bool = False, source_root: Path | None = None) -> int:
+    source = load_locked_source(root, source_root=source_root)
     prepared = prepare_input(source)
     if validate_only:
         print("VALIDATE_ONLY=PASS")
@@ -1550,7 +1559,7 @@ def self_test() -> int:
     with tempfile.TemporaryDirectory(prefix="stage62_tunneling_selftest_") as temporary:
         root = Path(temporary) / "project"
         make_synthetic_fixture(root)
-        source = load_locked_source(root)
+        source = load_locked_source(root, source_root=root)
         prepared = prepare_input(source)
         if prepared.qpt_series_diagnostics["basin"]["status"] != "IDENTICAL_FROZEN_DFT_PATH":
             raise AuditError(f"SELF_TEST unexpected basin qPT status: {prepared.qpt_series_diagnostics['basin']}")
@@ -1558,8 +1567,8 @@ def self_test() -> int:
             raise AuditError(f"SELF_TEST unexpected targeted qPT status: {prepared.qpt_series_diagnostics['targeted']}")
         if not np.allclose(prepared.q_ang, SYNTHETIC_Q, atol=0.0, rtol=0.0):
             raise AuditError("SELF_TEST canonical qPT coordinate changed")
-        execute(root, grid_points=801, extension_fraction=DEFAULT_EXTENSION_FRACTION, validate_only=True)
-        execute(root, grid_points=801, extension_fraction=DEFAULT_EXTENSION_FRACTION, validate_only=False)
+        execute(root, grid_points=801, extension_fraction=DEFAULT_EXTENSION_FRACTION, validate_only=True, source_root=root)
+        execute(root, grid_points=801, extension_fraction=DEFAULT_EXTENSION_FRACTION, validate_only=False, source_root=root)
         pointer = root / "10_visualization" / "versions" / VERSION_DIR / POINTER_FILE
         run_dir = Path(read_text(pointer).strip())
         required = [
@@ -1593,6 +1602,7 @@ def self_test() -> int:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("${PROJECT_ROOT}"))
+    parser.add_argument("--source-root", type=Path, default=None, help="Explicit compact v005 source directory or compatible external project root")
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--grid-points", type=int, default=DEFAULT_GRID)
@@ -1602,7 +1612,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         return self_test()
     if not (0.15 <= args.extension_fraction <= 0.75):
         raise AuditError("extension-fraction must lie between 0.15 and 0.75")
-    return execute(args.root.resolve(), args.grid_points, args.extension_fraction, args.validate_only)
+    return execute(args.root.resolve(), args.grid_points, args.extension_fraction, args.validate_only, source_root=args.source_root)
 
 
 if __name__ == "__main__":

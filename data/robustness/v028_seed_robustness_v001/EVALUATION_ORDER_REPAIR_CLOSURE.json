@@ -1,0 +1,17 @@
+{
+  "schema": "v028-rng-evaluation-order-repair-closure-v001",
+  "created_utc": "2026-10-02T18:33:54.749164+00:00",
+  "status": "CLOSED_EVALUATION_ORDER_REPAIR_PASS_WITH_HISTORICAL_NONCONFORMANCE_PRESERVED",
+  "source_review": "data/robustness/v028_seed_robustness_v001/EVALUATION_ORDER_REPAIR_REVIEW.json",
+  "source_review_sha256": "29741e2cca14c766327aefa658bc839636160af13a6e6a153949fddd446b6e38",
+  "current_robustness_classification": "SEED_SENSITIVE",
+  "repair_result": "All 10 evaluation-only calls occurred after all ten pre-existing trainings and reproduced historical predictions byte-for-byte and metrics exactly.",
+  "historical_execution_status": "HISTORICAL_V002_INTERLEAVED_EVALUATION_ORDER_NONCONFORMING",
+  "historical_nonconformance_erased": false,
+  "original_v030r_numbers_replaced": false,
+  "best_seed_selected": false,
+  "new_training": 0,
+  "new_DFT": 0,
+  "new_dynamics": 0,
+  "additional_model_evaluations": 10
+}

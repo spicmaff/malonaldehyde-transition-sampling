@@ -8,10 +8,10 @@ A clean clone is sufficient to:
 - reproduce the two NEB endpoint geometry overlaps with Train60;
 - validate final publication figure, table and video inputs from repo-local compact v005 data;
 - inspect original v028 datasets, models and Audit21 predictions;
-- inspect the fixed-seed robustness audit and final Train119 status;
+- inspect the fixed-seed robustness audit, its evaluation-order repair, and final Train119 status;
 - run the frozen-path quantum diagnostic with the declared Python environment.
 
-Publication figures and the supplementary table can be rerendered from the clean clone. Video rendering additionally requires ffmpeg.
+Publication figures and the supplementary table can be rerendered from the clean clone. The CI reproduction-smoke job now performs the figure/table/frozen-path quantum render chain rather than only validating inputs. Video rendering additionally requires ffmpeg and remains input-validated in CI; full video rendering was verified separately in clean-copy QA.
 
 ## External MLIP
 
@@ -28,3 +28,7 @@ The private approximately 80 GB project tree is no longer required for the compa
 ## Scope of CI
 
 CI verifies the public package and compact reproduction boundary. It does not claim to rerun QE, MTP training, LAMMPS dynamics or the complete scientific project.
+
+## Source resolution
+
+Publication renderers use an explicit input order: `--source-root` when supplied, otherwise repo-local `data/publication_source_v005`. They do not silently fall back to a private project pointer. A compatible external project tree can be used only by passing it explicitly through `--source-root`.

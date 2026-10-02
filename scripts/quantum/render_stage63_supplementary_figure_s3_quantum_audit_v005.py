@@ -168,8 +168,12 @@ def parse_bool(row: Mapping[str, str], key: str, context: str) -> bool:
     raise FigureAuditError(f"Invalid boolean {context}.{key}: {raw!r}")
 
 
-def resolve_source_run(root: Path) -> Path:
-    pointer = root / "10_visualization" / "versions" / SOURCE_DIRNAME / SOURCE_POINTER_NAME
+def resolve_source_run(root: Path, source_root: Path | None = None) -> Path:
+    base = Path(source_root).expanduser().resolve() if source_root is not None else root.resolve()
+    if source_root is not None and (base / PRIMARY_TABLE).is_file() and (base / SOURCE_STATUS_FILE).is_file():
+        return base
+    version_root = (base / "10_visualization" / "versions" / SOURCE_DIRNAME).resolve()
+    pointer = version_root / SOURCE_POINTER_NAME
     require_file(pointer, "v039 source pointer")
     lines = [line.strip() for line in pointer.read_text(encoding="utf-8").splitlines() if line.strip()]
     if not lines:
@@ -177,13 +181,22 @@ def resolve_source_run(root: Path) -> Path:
     run_dir = Path(lines[-1])
     if not run_dir.is_absolute():
         run_dir = (pointer.parent / run_dir).resolve()
+    else:
+        run_dir = run_dir.resolve()
+    try:
+        run_dir.relative_to(version_root)
+    except ValueError as exc:
+        raise FigureAuditError(
+            "v039 source pointer escapes its source root; pass --source-root explicitly "
+            "to a compatible external v039 run or project tree."
+        ) from exc
     if not run_dir.is_dir():
         raise FigureAuditError(f"Source run directory does not exist: {run_dir}")
     return run_dir
 
 
-def load_source(root: Path) -> SourceData:
-    run_dir = resolve_source_run(root)
+def load_source(root: Path, source_root: Path | None = None) -> SourceData:
+    run_dir = resolve_source_run(root, source_root)
     status = require_file(run_dir / SOURCE_STATUS_FILE, "v039 status").read_text(encoding="utf-8").strip()
     if status != SOURCE_STATUS_EXPECTED:
         raise FigureAuditError(f"Unexpected v039 status: {status!r}; expected {SOURCE_STATUS_EXPECTED!r}")
@@ -612,8 +625,8 @@ def write_checksums(run_dir: Path) -> Path:
     return path
 
 
-def render_run(root: Path, validate_only: bool = False) -> RenderOutputs | None:
-    source = load_source(root)
+def render_run(root: Path, validate_only: bool = False, source_root: Path | None = None) -> RenderOutputs | None:
+    source = load_source(root, source_root)
     validated = validate_source(source)
     if validate_only:
         print("VALIDATE_ONLY=PASS")
@@ -909,12 +922,13 @@ def self_test() -> int:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path("${PROJECT_ROOT}"))
+    parser.add_argument("--source-root", type=Path, default=None, help="Explicit v039 run directory or compatible external project root")
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args(argv)
     if args.self_test:
         return self_test()
-    render_run(args.root.resolve(), validate_only=args.validate_only)
+    render_run(args.root.resolve(), validate_only=args.validate_only, source_root=args.source_root)
     return 0
 
 

@@ -10,6 +10,8 @@ Those numerical statements are reproducible from the compact CFG payloads includ
 
 Training randomness is therefore an explicit limitation. These values should not be read as a seed-robust causal estimate of the sampling strategy. A post-publication five-seed paired retraining audit found that the basin-versus-targeted ordering is training-seed sensitive: targeted was better on both primary metrics in 3 of 5 paired seeds; one seed reversed both metrics, and one seed favored targeted on the barrier but basin on transition-force RMSE.
 
+The historical five-seed execution interleaved each Audit21 evaluation with training, rather than completing all ten trainings before any evaluation. That procedural nonconformance is preserved in provenance. A later evaluation-only repair replay evaluated the same ten already-trained models only after all trainings existed; all 10 prediction CFGs were byte-identical to the historical outputs and every recomputed metric was identical. The robustness classification remains `SEED_SENSITIVE`.
+
 ## What was actually varied
 
 The experiment is primarily about spatial allocation under equal data budget.
@@ -45,7 +47,7 @@ A clean clone can now:
 - reproduce the two known NEB endpoint geometry overlaps;
 - validate the publication figure, table, video and quantum inputs from repo-local compact source data;
 - rerender publication figures and tables with the declared Python dependencies;
-- inspect the post-publication RNG robustness and Train119 closure data.
+- inspect the post-publication RNG robustness, its evaluation-order repair, and the Train119 closure data.
 
 Run:
 

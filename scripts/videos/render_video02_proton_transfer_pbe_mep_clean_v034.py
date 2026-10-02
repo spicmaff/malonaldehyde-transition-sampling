@@ -263,30 +263,39 @@ def geometry_metrics(xyz: np.ndarray) -> tuple[float, float, float, float]:
     return qpt, roo, d_left, d_right
 
 
-def resolve_input_attempt(root: Path) -> Path:
-    version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+def resolve_input_attempt(root: Path, source_root: Path | None = None) -> Path:
     public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
-    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+    if source_root is None:
+        if not (public_attempt / STATUS_FILE).is_file():
+            raise RenderError(
+                "Repo-local publication source is missing; pass --source-root explicitly "
+                "for a compatible external source tree or exact v005 source directory."
+            )
         observed = read_text(public_attempt / STATUS_FILE).strip()
         if observed != EXPECTED_INPUT_STATUS:
-            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+            raise RenderError(f"Unexpected public v005 status: {observed}")
         return public_attempt
-    pointer = require_file(version_root / INPUT_POINTER, "v005 pointer")
+    explicit = Path(source_root).expanduser().resolve()
+    if (explicit / STATUS_FILE).is_file():
+        observed = read_text(explicit / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise RenderError(f"Unexpected explicit v005 status: {observed}")
+        return explicit
+    version_root = (explicit / INPUT_RELATIVE_ROOT).resolve()
+    pointer = require_file(version_root / INPUT_POINTER, "explicit v005 current pointer")
     raw = pointer.read_text(encoding="utf-8").strip()
     if not raw:
-        raise RenderError(f"Empty v005 pointer: {pointer}")
+        raise RenderError(f"Empty explicit v005 pointer: {pointer}")
     attempt = Path(raw).expanduser().resolve()
     try:
         attempt.relative_to(version_root)
-    except ValueError as exc:
-        raise RenderError(f"v005 pointer escapes expected root: {attempt}") from exc
+    except ValueError as err:
+        raise RenderError(f"Explicit v005 pointer escapes expected version root: {attempt}") from err
     if not attempt.is_dir():
-        raise RenderError(f"v005 pointer target missing: {attempt}")
-    observed_status = read_text(attempt / STATUS_FILE).strip()
-    if observed_status != EXPECTED_INPUT_STATUS:
-        raise RenderError(
-            f"Unexpected v005 status: {observed_status}; expected {EXPECTED_INPUT_STATUS}"
-        )
+        raise RenderError(f"Explicit v005 pointer target is absent: {attempt}")
+    observed = read_text(attempt / STATUS_FILE).strip()
+    if observed != EXPECTED_INPUT_STATUS:
+        raise RenderError(f"Unexpected explicit v005 status: {observed}; expected {EXPECTED_INPUT_STATUS}")
     return attempt
 
 
@@ -314,8 +323,8 @@ def verify_checksum_entry(
     return observed_sha
 
 
-def load_locked_inputs(root: Path) -> LockedInputs:
-    attempt = resolve_input_attempt(root)
+def load_locked_inputs(root: Path, source_root: Path | None = None) -> LockedInputs:
+    attempt = resolve_input_attempt(root, source_root)
     checksum_rows = read_tsv(attempt / CHECKSUM_FILE)
     required = (
         PROFILE_FILE,
@@ -1309,8 +1318,8 @@ def write_outputs(
     return 0
 
 
-def perform_validate_only(root: Path) -> int:
-    inputs = load_locked_inputs(root)
+def perform_validate_only(root: Path, source_root: Path | None = None) -> int:
+    inputs = load_locked_inputs(root, source_root=source_root)
     validation = validate_inputs(inputs)
     prepared = prepare_path(inputs)
     print("VALIDATE_ONLY=PASS")
@@ -1331,7 +1340,7 @@ def self_test() -> int:
         root = Path(temporary) / "root"
         ensure_dir(root)
         make_synthetic_fixture(root)
-        inputs = load_locked_inputs(root)
+        inputs = load_locked_inputs(root, source_root=root)
         validation = validate_inputs(inputs)
         write_outputs(
             root,
@@ -1372,6 +1381,7 @@ def self_test() -> int:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path("${PROJECT_ROOT}"))
+    parser.add_argument("--source-root", type=Path, default=None, help="Explicit compact v005 source directory or compatible external project root")
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--width", type=int, default=DEFAULT_WIDTH)
@@ -1388,8 +1398,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.self_test:
         return self_test()
     if args.validate_only:
-        return perform_validate_only(args.root)
-    inputs = load_locked_inputs(args.root)
+        return perform_validate_only(args.root, source_root=args.source_root)
+    inputs = load_locked_inputs(args.root, source_root=args.source_root)
     return write_outputs(
         args.root,
         inputs,

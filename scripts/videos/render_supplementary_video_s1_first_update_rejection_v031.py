@@ -280,28 +280,39 @@ def atomic_write_tsv(path: Path, fieldnames: Sequence[str], rows: Sequence[Mappi
     os.replace(temporary, path)
 
 
-def resolve_input_attempt(root: Path) -> Path:
-    version_root = (root / INPUT_RELATIVE_ROOT).resolve()
+def resolve_input_attempt(root: Path, source_root: Path | None = None) -> Path:
     public_attempt = (Path(__file__).resolve().parents[2] / "data" / "publication_source_v005").resolve()
-    if not (version_root / INPUT_POINTER).is_file() and (public_attempt / STATUS_FILE).is_file():
+    if source_root is None:
+        if not (public_attempt / STATUS_FILE).is_file():
+            raise VideoAuditError(
+                "Repo-local publication source is missing; pass --source-root explicitly "
+                "for a compatible external source tree or exact v005 source directory."
+            )
         observed = read_text(public_attempt / STATUS_FILE).strip()
         if observed != EXPECTED_INPUT_STATUS:
-            raise RuntimeError(f"Unexpected public v005 status: {observed}")
+            raise VideoAuditError(f"Unexpected public v005 status: {observed}")
         return public_attempt
-    pointer_path = require_file(version_root / INPUT_POINTER, "v005 current pointer")
-    raw = pointer_path.read_text(encoding="utf-8").strip()
+    explicit = Path(source_root).expanduser().resolve()
+    if (explicit / STATUS_FILE).is_file():
+        observed = read_text(explicit / STATUS_FILE).strip()
+        if observed != EXPECTED_INPUT_STATUS:
+            raise VideoAuditError(f"Unexpected explicit v005 status: {observed}")
+        return explicit
+    version_root = (explicit / INPUT_RELATIVE_ROOT).resolve()
+    pointer = require_file(version_root / INPUT_POINTER, "explicit v005 current pointer")
+    raw = pointer.read_text(encoding="utf-8").strip()
     if not raw:
-        raise VideoAuditError(f"Empty v005 pointer: {pointer_path}")
+        raise VideoAuditError(f"Empty explicit v005 pointer: {pointer}")
     attempt = Path(raw).expanduser().resolve()
     try:
         attempt.relative_to(version_root)
-    except ValueError as exc:
-        raise VideoAuditError(f"v005 pointer escapes expected version root: {attempt}") from exc
+    except ValueError as err:
+        raise VideoAuditError(f"Explicit v005 pointer escapes expected version root: {attempt}") from err
     if not attempt.is_dir():
-        raise VideoAuditError(f"v005 pointer target is absent: {attempt}")
-    status = read_text(attempt / STATUS_FILE).strip()
-    if status != EXPECTED_INPUT_STATUS:
-        raise VideoAuditError(f"Unexpected v005 status: observed={status}; expected={EXPECTED_INPUT_STATUS}")
+        raise VideoAuditError(f"Explicit v005 pointer target is absent: {attempt}")
+    observed = read_text(attempt / STATUS_FILE).strip()
+    if observed != EXPECTED_INPUT_STATUS:
+        raise VideoAuditError(f"Unexpected explicit v005 status: {observed}; expected {EXPECTED_INPUT_STATUS}")
     return attempt
 
 
@@ -322,8 +333,8 @@ def verify_checksum_entry(attempt: Path, checksum_rows: Sequence[Mapping[str, st
     return observed_hash
 
 
-def load_locked_inputs(root: Path) -> LockedInputs:
-    attempt = resolve_input_attempt(root)
+def load_locked_inputs(root: Path, source_root: Path | None = None) -> LockedInputs:
+    attempt = resolve_input_attempt(root, source_root)
     checksum_rows = read_tsv(attempt / CHECKSUM_FILE)
     relatives = (
         FIRST_STEP_FILE,
@@ -1042,8 +1053,8 @@ def make_synthetic_fixture(root: Path) -> Path:
     return attempt
 
 
-def perform_validate_only(root: Path) -> int:
-    inputs = load_locked_inputs(root)
+def perform_validate_only(root: Path, source_root: Path | None = None) -> int:
+    inputs = load_locked_inputs(root, source_root=source_root)
     validation = validate_inputs(inputs)
     print("VALIDATE_ONLY=PASS")
     print(f"INPUT_ATTEMPT={inputs.attempt}")
@@ -1061,7 +1072,7 @@ def self_test() -> int:
         root = Path(temporary) / "root"
         ensure_dir(root)
         make_synthetic_fixture(root)
-        inputs = load_locked_inputs(root)
+        inputs = load_locked_inputs(root, source_root=root)
         validation = validate_inputs(inputs)
         result = render_attempt(
             root,
@@ -1088,6 +1099,7 @@ def self_test() -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path("${PROJECT_ROOT}"))
+    parser.add_argument("--source-root", type=Path, default=None, help="Explicit compact v005 source directory or compatible external project root")
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--width", type=int, default=DEFAULT_WIDTH)
@@ -1104,8 +1116,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         if arguments.self_test:
             return self_test()
         if arguments.validate_only:
-            return perform_validate_only(arguments.root)
-        inputs = load_locked_inputs(arguments.root)
+            return perform_validate_only(arguments.root, source_root=arguments.source_root)
+        inputs = load_locked_inputs(arguments.root, source_root=arguments.source_root)
         result = render_attempt(
             arguments.root,
             inputs,

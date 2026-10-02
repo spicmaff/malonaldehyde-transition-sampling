@@ -25,9 +25,37 @@ jobs:
         with:
           python-version: "3.11"
       - run: python -m pip install -r requirements.txt
-      - name: Validate publication inputs
+      - name: Validate all publication inputs
         run: |
-          for s in scripts/figures/*.py; do python "$s" --root "$PWD" --validate-only; done
-          python scripts/tables/build_supplementary_table_s1_complete_numerical_audit_v023.py --root "$PWD" --validate-only
-          for s in scripts/videos/*.py; do python "$s" --root "$PWD" --validate-only; done
-          python scripts/quantum/stage62_frozen_path_1d_tunneling_audit_v003.py --root "$PWD" --validate-only
+          for s in scripts/figures/*.py; do python "$s" --root "$RUNNER_TEMP/validate-root" --validate-only; done
+          python scripts/tables/build_supplementary_table_s1_complete_numerical_audit_v023.py --root "$RUNNER_TEMP/validate-root" --validate-only
+          for s in scripts/videos/*.py; do python "$s" --root "$RUNNER_TEMP/validate-root" --validate-only; done
+          python scripts/quantum/stage62_frozen_path_1d_tunneling_audit_v003.py --root "$RUNNER_TEMP/validate-root" --validate-only
+      - name: Render figures, table, and frozen-path quantum chain
+        run: |
+          mkdir -p "$RUNNER_TEMP/render-root"
+          bash reproduce/render_all_figures.sh "$RUNNER_TEMP/render-root"
+          bash reproduce/build_supplementary_table_s1.sh "$RUNNER_TEMP/render-root"
+          test -s "$RUNNER_TEMP/render-root/10_visualization/versions/v023_supplementary_table_s1_complete_numerical_audit/"*/tables/supplementary_table_s1_complete_numerical_audit_v023.tsv
+      - name: Reject private-path fallback
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          needles = ["/home/" + "spicmaff", "/mnt/c/Users/" + "highs"]
+          roots = ["README.md", "docs", "data", "provenance", "reports", "reproduce", "scripts", "tools", ".github"]
+          hits = []
+          for root_name in roots:
+              root = Path(root_name)
+              paths = [root] if root.is_file() else [p for p in root.rglob("*") if p.is_file()]
+              for path in paths:
+                  try:
+                      text = path.read_text(encoding="utf-8")
+                  except (UnicodeDecodeError, OSError):
+                      continue
+                  for needle in needles:
+                      if needle in text:
+                          hits.append(f"{path}: {needle}")
+          if hits:
+              raise SystemExit("private path found in tracked public material:\n" + "\n".join(hits))
+          print("PASS_PRIVATE_PATH_SCAN")
+          PY
