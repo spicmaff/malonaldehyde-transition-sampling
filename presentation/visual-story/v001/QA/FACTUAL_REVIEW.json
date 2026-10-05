@@ -1,0 +1,148 @@
+{
+  "status": "PASS_ARITHMETIC_AND_SCOPE_REVIEW",
+  "checks": [
+    {
+      "check": "saved source hash neb9.xyz",
+      "pass": true,
+      "details": "139d231dc033230b50b5d5dde825be523290c2f77b9ce558caa3802694c6f626"
+    },
+    {
+      "check": "saved source hash energy_profiles.tsv",
+      "pass": true,
+      "details": "b7efc556d0c4ed1109a0a4c0740decaf166159a5ee06eebc9a9d846e520b9898"
+    },
+    {
+      "check": "saved source hash seed_metrics.tsv",
+      "pass": true,
+      "details": "e1c126c51cf2da357fd52c29cb5e02c51821d96b1d29d1a4468e259f77f14443"
+    },
+    {
+      "check": "saved source hash replay228_gamma.tsv",
+      "pass": true,
+      "details": "2b670a415b50c69312ac65c350637511391d5ae02b89414563432a52731d309c"
+    },
+    {
+      "check": "saved source hash validation11_force.tsv",
+      "pass": true,
+      "details": "b75dbbb567ace79e2e2a768a142148a1bf78bd84153122db6fb3f7d76e14f453"
+    },
+    {
+      "check": "saved source hash serialization_guard.json",
+      "pass": true,
+      "details": "117f83be0de342281b0f4339dd68f7a28c8eb84e7565eba2d31a175872beeaaa"
+    },
+    {
+      "check": "saved source hash science_status.json",
+      "pass": true,
+      "details": "74e78df0de6d20ecf70b705bab35963ab60e50eeb0e2c3aa6260faf056c3a5bf"
+    },
+    {
+      "check": "original barrier basin",
+      "pass": true,
+      "details": 35.245734070031176
+    },
+    {
+      "check": "original barrier targeted",
+      "pass": true,
+      "details": 4.10039360394876
+    },
+    {
+      "check": "paired seed identity 0",
+      "pass": true,
+      "details": "4172185641970229070"
+    },
+    {
+      "check": "paired seed identity 1",
+      "pass": true,
+      "details": "10780126852447763956"
+    },
+    {
+      "check": "paired seed identity 2",
+      "pass": true,
+      "details": "16937122512019790775"
+    },
+    {
+      "check": "paired seed identity 3",
+      "pass": true,
+      "details": "12250469658613881511"
+    },
+    {
+      "check": "paired seed identity 4",
+      "pass": true,
+      "details": "18149779474148714524"
+    },
+    {
+      "check": "all-five-seed wins",
+      "pass": true,
+      "details": [
+        4,
+        3,
+        3
+      ]
+    },
+    {
+      "check": "replay size and crossings",
+      "pass": true,
+      "details": [
+        143,
+        144,
+        145,
+        146,
+        147
+      ]
+    },
+    {
+      "check": "gamma maximum",
+      "pass": true,
+      "details": 1.0010924700706225
+    },
+    {
+      "check": "raw Validation11 A2",
+      "pass": true,
+      "details": 0.027210918763907334
+    },
+    {
+      "check": "raw maximum",
+      "pass": true,
+      "details": 0.027210918763907334
+    },
+    {
+      "check": "formal pair guard remains FAIL",
+      "pass": true,
+      "details": {
+        "all_pass": false,
+        "cell_max_abs_ang": 0.0,
+        "cell_pass": true,
+        "cell_tolerance_ang": 1e-12,
+        "direct_max_abs_ang": 4.982412766807442e-07,
+        "direct_pass": true,
+        "direct_tolerance_ang": 5.1e-07,
+        "output_sha256": "02849c563e4afdace68f2a7861be1629feca9809f02482876fdd8a706e4cbe15",
+        "pair_distance_max_abs_ang": 1.1282837444337446e-06,
+        "pair_pass": false,
+        "pair_tolerance_ang": 1.1e-06
+      }
+    },
+    {
+      "check": "terminal science",
+      "pass": true,
+      "details": "STATIC_APPLICABILITY_FAIL"
+    },
+    {
+      "check": "no force-accuracy-failure claim",
+      "pass": true,
+      "details": false
+    },
+    {
+      "check": "no Gate1 or Blind12",
+      "pass": true,
+      "details": false
+    },
+    {
+      "check": "independent raw-coordinate qPT",
+      "pass": true,
+      "details": 5.551115123125783e-17
+    }
+  ],
+  "review_scope": "Separate arithmetic plus explicit claim-scope review; no new physical validation or third-party reviewer"
+}

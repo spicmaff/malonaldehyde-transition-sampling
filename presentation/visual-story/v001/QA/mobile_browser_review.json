@@ -1,0 +1,72 @@
+{
+  "viewport": [
+    390,
+    844
+  ],
+  "scrollWidth": 390,
+  "clientWidth": 390,
+  "overflow": [],
+  "media": [
+    {
+      "id": "teaser",
+      "ready": 4,
+      "width": 1920,
+      "height": 1080,
+      "duration": 20,
+      "error": null,
+      "controls": true,
+      "autoplay": false
+    },
+    {
+      "id": "path",
+      "ready": 4,
+      "width": 1920,
+      "height": 1080,
+      "duration": 34,
+      "error": null,
+      "controls": true,
+      "autoplay": false
+    },
+    {
+      "id": "vertical",
+      "ready": 4,
+      "width": 1080,
+      "height": 1920,
+      "duration": 22,
+      "error": null,
+      "controls": true,
+      "autoplay": false
+    },
+    {
+      "id": "budget",
+      "ready": 4,
+      "width": 1920,
+      "height": 1080,
+      "duration": 46,
+      "error": null,
+      "controls": true,
+      "autoplay": false
+    },
+    {
+      "id": "boundary",
+      "ready": 4,
+      "width": 1920,
+      "height": 1080,
+      "duration": 40,
+      "error": null,
+      "controls": true,
+      "autoplay": false
+    }
+  ],
+  "restart": {
+    "paused": false,
+    "time": 0.387228
+  },
+  "images": [
+    {
+      "complete": true,
+      "width": 1400
+    }
+  ],
+  "fontSize": "19px"
+}
