@@ -1,0 +1,73 @@
+{
+  "status": "LOCAL_VISUAL_STORY_ACCEPTED",
+  "reviewed_media": [
+    "01_proton_path.mp4",
+    "02_equal_budget.mp4",
+    "03_applicability_boundary.mp4",
+    "04_story_teaser.mp4",
+    "05_proton_vertical.mp4"
+  ],
+  "actual_decoded_sample_times": {
+    "01_proton_path.mp4": [
+      0,
+      3.8,
+      4.3,
+      10,
+      16,
+      24,
+      27.8,
+      33.7
+    ],
+    "02_equal_budget.mp4": [
+      0,
+      9.7,
+      10.25,
+      15,
+      23.8,
+      24.25,
+      29,
+      37.8,
+      38.25,
+      45.7
+    ],
+    "03_applicability_boundary.mp4": [
+      0,
+      7,
+      13.8,
+      14.25,
+      20,
+      26.8,
+      27.25,
+      33,
+      39.7
+    ],
+    "04_story_teaser.mp4": [
+      0,
+      6,
+      8.8,
+      9.2,
+      12,
+      14.8,
+      15.2,
+      19.7
+    ],
+    "05_proton_vertical.mp4": [
+      0,
+      3,
+      7,
+      11,
+      16,
+      21.7
+    ]
+  },
+  "frames_total": 9720,
+  "technical_decode": "PASS",
+  "factual_review": "PASS",
+  "desktop_and_mobile_browser": "PASS",
+  "reduced_motion": "PASS",
+  "new_scientific_calls": 0,
+  "Blind12_revealed": false,
+  "review_limit": "Short preview, sequential frames, transitions, contact sheets and browser screenshots; no claimed third-party reviewer or unperformed real-time full-clip playback.",
+  "historical_scientific_authority_unchanged": true,
+  "subjective_design_assessment": "Accepted calm editorial design after corrections."
+}

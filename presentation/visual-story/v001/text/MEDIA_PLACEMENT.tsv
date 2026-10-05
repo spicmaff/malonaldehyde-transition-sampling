@@ -1,0 +1,6 @@
+episode	file	caption	alt	source
+01 / molecular path	media/01_proton_path.mp4	9 сохранённых PBE NEB images. Плавное движение — display interpolation, время не физическое.	Молекула с выделенным H* и синхронным указателем на энергетическом профиле.	sources/inputs/neb9.xyz; energy_profiles.tsv
+02–05 / budget, original metrics, seeds	media/02_equal_budget.mp4	Одинаковый бюджет common36+24. Исходная locked-пара, overlap и все пять seeds.	Две схемы sampling, ошибки барьера/сил и пять пар точек.	sources/inputs/science_status.json; seed_metrics.tsv
+07 / Train119 closure	media/03_applicability_boundary.mp4	Пять crossings 143–147. Raw силы ниже A2, но independence и serialization caveats сохраняются.	Полный γ replay, увеличенный диапазон, 11 force RMSE и terminal FAIL.	sources/inputs/replay228_gamma.tsv; validation11_force.tsv; serialization_guard.json
+hero / short introduction	media/04_story_teaser.mp4	Краткий вопрос, исходное статическое сравнение и отдельный итог поздней модели.	Три сцены визуальной истории.	sources/MEDIA_SOURCE_MANIFEST.tsv
+01 / phone fallback	media/05_proton_vertical.mp4	Самостоятельный вертикальный layout; NEB presentation interpolation.	Молекула над графиком PBE с крупной координатой qPT.	sources/inputs/neb9.xyz; energy_profiles.tsv

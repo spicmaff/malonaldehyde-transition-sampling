@@ -1,0 +1,44 @@
+[
+  {
+    "file": "neb9.xyz",
+    "source_ref": "v1.1.2:data/publication_source_v005/geometry/dft_independent_neb9_v005.xyz",
+    "source_sha256": "139d231dc033230b50b5d5dde825be523290c2f77b9ce558caa3802694c6f626",
+    "role": "saved scientific data; no new model calls"
+  },
+  {
+    "file": "energy_profiles.tsv",
+    "source_ref": "v1.1.2:data/frozen_audit/neb9_energy_profiles_v005.tsv",
+    "source_sha256": "b7efc556d0c4ed1109a0a4c0740decaf166159a5ee06eebc9a9d846e520b9898",
+    "role": "saved scientific data; no new model calls"
+  },
+  {
+    "file": "seed_metrics.tsv",
+    "source_ref": "v1.1.2:data/robustness/v028_seed_robustness_v001/ALL_METRICS.tsv",
+    "source_sha256": "e1c126c51cf2da357fd52c29cb5e02c51821d96b1d29d1a4468e259f77f14443",
+    "role": "saved scientific data; no new model calls"
+  },
+  {
+    "file": "replay228_gamma.tsv",
+    "source_ref": "${PROJECT_ROOT}/12_transition_tube/versions/v091j_train119_post_training_validation_and_applicability_execution_v001/attempt_20261002T063825Z/REPLAY228_GRADE/REPLAY228_GAMMA.tsv",
+    "source_sha256": "2b670a415b50c69312ac65c350637511391d5ae02b89414563432a52731d309c",
+    "role": "saved scientific data; no new model calls"
+  },
+  {
+    "file": "validation11_force.tsv",
+    "source_ref": "${PROJECT_ROOT}/12_transition_tube/versions/v091j_train119_post_training_validation_and_applicability_execution_v001/attempt_20261002T063825Z/MODEL_VALIDATION11/VALIDATION11_FORCE_METRICS.tsv",
+    "source_sha256": "b75dbbb567ace79e2e2a768a142148a1bf78bd84153122db6fb3f7d76e14f453",
+    "role": "saved scientific data; no new model calls"
+  },
+  {
+    "file": "serialization_guard.json",
+    "source_ref": "${PROJECT_ROOT}/12_transition_tube/versions/v091j_train119_post_training_validation_and_applicability_execution_v001/attempt_20261002T063825Z/MODEL_VALIDATION11/SERIALIZATION_GUARD.json",
+    "source_sha256": "117f83be0de342281b0f4339dd68f7a28c8eb84e7565eba2d31a175872beeaaa",
+    "role": "saved scientific data; no new model calls"
+  },
+  {
+    "file": "science_status.json",
+    "source_ref": "v1.1.2:data/post_publication/FINAL_SCIENCE_STATUS.json",
+    "source_sha256": "74e78df0de6d20ecf70b705bab35963ab60e50eeb0e2c3aa6260faf056c3a5bf",
+    "role": "saved scientific data; no new model calls"
+  }
+]

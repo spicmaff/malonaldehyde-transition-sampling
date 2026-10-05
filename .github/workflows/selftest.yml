@@ -60,3 +60,22 @@ jobs:
               raise SystemExit("private path found in tracked public material:\n" + "\n".join(hits))
           print("PASS_PRIVATE_PATH_SCAN")
           PY
+
+  visual-story:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r requirements.txt
+      - name: Install presentation encoder and system font
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - name: Check saved visual inputs and arithmetic
+        run: python scripts/visual_story/verify_visual_story.py --data data/visual_story/v001 --out "$RUNNER_TEMP/visual-review"
+      - name: Render actual four-second 60 fps visual proof
+        run: python scripts/visual_story/render_visual_story.py --data data/visual_story/v001 --out "$RUNNER_TEMP/visual-proof" --proof
+      - name: Build the portable longread and verify local references
+        run: |
+          python scripts/visual_story/build_story.py --data data/visual_story/v001 --baseline data/visual_story/v001/editorial_baseline --out "$RUNNER_TEMP/visual-story"
+          python scripts/visual_story/check_presentation.py --repo . --built "$RUNNER_TEMP/visual-story"

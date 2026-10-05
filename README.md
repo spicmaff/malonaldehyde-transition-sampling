@@ -2,6 +2,12 @@
 
 This repository records an equal-DFT-budget comparison of two Moment Tensor Potentials for proton transfer in malonaldehyde, together with the later checks that exposed important limits of the original interpretation.
 
+## New visual story · v1.2.0
+
+[![Watch the new visual story](presentation/visual-story/v001/media/04_story_teaser_poster.jpg)](https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/04_story_teaser.mp4)
+
+Three new 60 fps chapters, a teaser, a vertical clip and a Russian longread in one portable HTML package. [Download the complete story with all videos](https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/MALONALDEHYDE_VISUAL_STORY_20261005_v001.zip), extract and open `index.html`. [Read the longread](presentation/visual-story/v001/text/LONGREAD_FULL.md) · [Rendering and scientific boundaries](docs/VISUAL_STORY.md). This presentation upgrade preserves the v1.1.2 science, seed sensitivity and terminal Train119 applicability FAIL.
+
 ## What the original locked artifacts show
 
 Both v028 models used 60 DFT configurations: 36 shared configurations plus 24 branch-specific additions. For the single stochastic training realization that produced the original locked models, transition-focused placement reduced the frozen-PBE-path lower-endpoint barrier error from 35.25 to 4.10 meV and the transition-region force-component RMSE from 0.1760 to 0.0787 eV/Å.

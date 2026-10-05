@@ -1,0 +1,13 @@
+{
+  "all_pass": false,
+  "cell_max_abs_ang": 0.0,
+  "cell_pass": true,
+  "cell_tolerance_ang": 1e-12,
+  "direct_max_abs_ang": 4.982412766807442e-07,
+  "direct_pass": true,
+  "direct_tolerance_ang": 5.1e-07,
+  "output_sha256": "02849c563e4afdace68f2a7861be1629feca9809f02482876fdd8a706e4cbe15",
+  "pair_distance_max_abs_ang": 1.1282837444337446e-06,
+  "pair_pass": false,
+  "pair_tolerance_ang": 1.1e-06
+}

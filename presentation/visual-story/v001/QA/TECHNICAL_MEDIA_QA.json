@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "file": "01_proton_path.mp4",
+      "sha256": "4b6a5a26ae3cf14eb82fb2be8038cfb355d601873cd0d09f37653e1abc80abdd",
+      "bytes": 1034073,
+      "duration_s": 34.0,
+      "fps": 60,
+      "frames": 2040,
+      "size": [
+        1920,
+        1080
+      ],
+      "full_decode": "PASS",
+      "inspected_sample_times_s": [
+        0,
+        3.8,
+        4.3,
+        10,
+        16,
+        24,
+        27.8,
+        33.7
+      ]
+    },
+    {
+      "file": "02_equal_budget.mp4",
+      "sha256": "92f7f18f1171994f7eabaf1bfb8d871e3180265007773437aa66984335b28868",
+      "bytes": 989751,
+      "duration_s": 46.0,
+      "fps": 60,
+      "frames": 2760,
+      "size": [
+        1920,
+        1080
+      ],
+      "full_decode": "PASS",
+      "inspected_sample_times_s": [
+        0,
+        9.7,
+        10.25,
+        15,
+        23.8,
+        24.25,
+        29,
+        37.8,
+        38.25,
+        45.7
+      ]
+    },
+    {
+      "file": "03_applicability_boundary.mp4",
+      "sha256": "4e09b6f338662394f331dd12960c04a4426b09656d1054b37d930905f3138923",
+      "bytes": 872013,
+      "duration_s": 40.0,
+      "fps": 60,
+      "frames": 2400,
+      "size": [
+        1920,
+        1080
+      ],
+      "full_decode": "PASS",
+      "inspected_sample_times_s": [
+        0,
+        7,
+        13.8,
+        14.25,
+        20,
+        26.8,
+        27.25,
+        33,
+        39.7
+      ]
+    },
+    {
+      "file": "04_story_teaser.mp4",
+      "sha256": "cad8d878592d4d47871536b698d2407e88981def0a5caa5d715ee5162c8a11b4",
+      "bytes": 799665,
+      "duration_s": 20.0,
+      "fps": 60,
+      "frames": 1200,
+      "size": [
+        1920,
+        1080
+      ],
+      "full_decode": "PASS",
+      "inspected_sample_times_s": [
+        0,
+        6,
+        8.8,
+        9.2,
+        12,
+        14.8,
+        15.2,
+        19.7
+      ]
+    },
+    {
+      "file": "05_proton_vertical.mp4",
+      "sha256": "a07fd7caf7adfba5cd6a1866d02f9dd6541f659565f178b998f726d9bf60d4ca",
+      "bytes": 619136,
+      "duration_s": 22.0,
+      "fps": 60,
+      "frames": 1320,
+      "size": [
+        1080,
+        1920
+      ],
+      "full_decode": "PASS",
+      "inspected_sample_times_s": [
+        0,
+        3,
+        7,
+        11,
+        16,
+        21.7
+      ]
+    }
+  ],
+  "motion_cadence": [
+    {
+      "file": "01_proton_path.mp4",
+      "start_s": 9,
+      "cadence_s": 0.016666666666666666,
+      "consecutive_frames": 30,
+      "changed_pairs": 29,
+      "mean_pixel_difference_range": [
+        0.0013715277777777777,
+        0.08032986111111111
+      ],
+      "interpretation": "New render positions at each 60 fps sample; deliberate reading holds elsewhere are allowed."
+    },
+    {
+      "file": "05_proton_vertical.mp4",
+      "start_s": 9,
+      "cadence_s": 0.016666666666666666,
+      "consecutive_frames": 30,
+      "changed_pairs": 29,
+      "mean_pixel_difference_range": [
+        0.026988137082601053,
+        0.09754869654364381
+      ],
+      "interpretation": "New render positions at each 60 fps sample; deliberate reading holds elsewhere are allowed."
+    }
+  ]
+}
