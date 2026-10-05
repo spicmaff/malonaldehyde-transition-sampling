@@ -161,20 +161,22 @@ def footer(im,t,duration,s,second=None):
 
 def curve(im,data,p,box=(1110,400,670,355),vertical=False):
     x,y,w,h=box
+    axis_font=32 if vertical else 24
+    title_font=35 if vertical else 30
     for e in (0,20,40):
         yy=y+h-e/40*h;line(im,[(x,yy),(x+w,yy)],LINE,1)
-        text(im,(x-20,yy),str(e),24,MUTED,anchor='rm')
+        text(im,(x-20,yy),str(e),axis_font,MUTED,anchor='rm')
     pts=[(x+(q+.5)*w,y+h-e/40*h) for q,e in zip(data.q,data.energy)]
     line(im,pts,FG,3)
     for xx,yy in pts:circle(im,xx,yy,6,FG)
     _,q,_,en=data.state(p);xx=x+(q+.5)*w;yy=y+h-en/40*h
     circle(im,xx,yy,14,PROTON,BG,3)
-    text(im,(x,y-65),'PBE · ΔE, meV',30,FG)
-    text(im,(x+w,y-65),'36,072 meV',30,PROTON,anchor='ra')
-    for qq in (-.5,0,.5):text(im,(x+(qq+.5)*w,y+h+25),fmt(qq,1),24,MUTED,anchor='ma')
-    text(im,(x+w/2,y+h+62),'qPT, Å',26,MUTED,anchor='ma')
-    text(im,(x,y+h+112),'● 9 сохранённых точек',24,MUTED)
-    text(im,(x,y+h+150),'Линии — визуальная интерполяция',23,MUTED)
+    text(im,(x,y-65),'PBE · ΔE, meV',title_font,FG)
+    text(im,(x+w,y-65),'36,072 meV',title_font,PROTON,anchor='ra')
+    for qq in (-.5,0,.5):text(im,(x+(qq+.5)*w,y+h+25),fmt(qq,1),axis_font,MUTED,anchor='ma')
+    text(im,(x+w/2,y+h+62),'qPT, Å',32 if vertical else 26,MUTED,anchor='ma')
+    text(im,(x,y+h+112),'● 9 сохранённых точек',30 if vertical else 24,MUTED)
+    text(im,(x,y+h+150),'Линии — визуальная интерполяция',28 if vertical else 23,MUTED)
 
 def path_progress(t,duration=34):
     return ease((t-4)/(duration-10))
@@ -382,8 +384,9 @@ def frame_vertical(data,t):
     p=ease((t-3)/14); q,roo,_=molecule(im,data,p,t,540,820,155)
     text(im,(72,1117),f'qPT = {fmt(q)} Å',49,PROTON)
     curve(im,data,p,(135,1280,810,255),True)
-    text(im,(72,1805),'Интерполированная визуализация NEB-пути.',23,MUTED)
-    text(im,(72,1844),'Время воспроизведения не физическое время.',23,MUTED)
+    text(im,(72,1778),'Интерполированная визуализация',32,MUTED)
+    text(im,(72,1820),'замороженного NEB-пути. Время',32,MUTED)
+    text(im,(72,1862),'воспроизведения не физическое время.',32,MUTED)
     line(im,[(72,1765),(72+936*min(t/22,1),1765)],TARGETED,3)
     return im
 
