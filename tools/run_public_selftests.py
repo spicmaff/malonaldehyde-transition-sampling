@@ -3,8 +3,9 @@ from __future__ import annotations
 import argparse,csv,hashlib,json,math,subprocess,sys
 from pathlib import Path
 
-STATUS="PASS_PUBLIC_REPOSITORY_SELFTESTS_V002"
+STATUS="PASS_PUBLIC_REPOSITORY_SELFTESTS_V003"
 REQUIRED=(
+ "provenance/CURRENT_CANONICAL_LEDGER.json","provenance/PROJECT_CANONICAL_LEDGER_V005.tsv","tools/check_ledger_semantics.py",
  "README.md","CITATION.cff","environment.yml","requirements.txt",
  "docs/METHODS.md","docs/LIMITATIONS.md","docs/PIPELINE.md","docs/REPRODUCIBILITY_STATUS.md",
  "docs/EXECUTION_BOUNDARY.md","docs/CI_SCOPE.md","docs/SOFTWARE_PROVENANCE.md",
@@ -133,6 +134,9 @@ def main():
  audit=subprocess.run([sys.executable,'tools/audit_public_repo.py','.'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  if audit.returncode:failures.append("Public repository audit failed:\n"+audit.stdout)
  checks['public_audit']=audit.returncode==0
+ semantic=subprocess.run([sys.executable,'tools/check_ledger_semantics.py'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+ if semantic.returncode:failures.append('Ledger semantic review failed:\n'+semantic.stdout)
+ checks['ledger_source_semantics_and_mutations']=semantic.returncode==0
  result={'status':STATUS if not failures else 'FAIL','root':str(root),'checks':checks,'failure_count':len(failures),'failures':failures}
  print(json.dumps(result,indent=2));return 0 if not failures else 1
 if __name__=='__main__':raise SystemExit(main())

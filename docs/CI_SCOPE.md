@@ -19,3 +19,7 @@ A green CI status therefore means that the published compact package is internal
 ## Reproduction smoke
 
 The `reproduction-smoke` job installs the declared Python dependencies, validates figure/table/video/quantum inputs, then performs actual figure, supplementary-table, and frozen-path quantum rendering in a temporary clean-checkout output root. It does not run QE, MLIP training, LAMMPS dynamics, or DFT. Video inputs are validated in CI; full video encoding additionally requires ffmpeg and is documented as a separate clean-copy verification boundary.
+
+## Ledger semantic regression
+
+The integrity selftest also runs `tools/check_ledger_semantics.py`. It reads the accepted V005 ledger and source-verdict excerpts, preserves scientific-negative and superseded cases, and rejects twenty deliberate ledger mutations. Hash consistency alone is not treated as semantic correctness.

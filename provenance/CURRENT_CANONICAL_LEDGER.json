@@ -1,0 +1,18 @@
+{
+  "schema": "current-canonical-ledger-v005",
+  "canonical_ledger": "provenance/PROJECT_CANONICAL_LEDGER_V005.tsv",
+  "canonical_ledger_source_sha256": "8110ca8e80f0beacd49cec33b9d101e29d90ee8ab13f2f5e29f2cd75fafedfaf",
+  "canonical_ledger_repository_sha256": "65ef3d7d9ffc9a70df873c6a861ba4591cc9139b9f5f28203d41206f8cd7ea49",
+  "historical_v004": "provenance/PROJECT_CANONICAL_LEDGER_V004.tsv",
+  "historical_v004_repository_sha256": "929ae3e3aabe056ff0b695d1c9eef2c50ffd056ab410c0b196479cb4ca6e35a5",
+  "historical_v004_status": "PRESERVED_WITH_KNOWN_SEMANTIC_ERRORS; USE_V005",
+  "semantic_adjudication": "provenance/ledger_v005/SEMANTIC_ADJUDICATION_FROZEN.json",
+  "source_excerpts": "provenance/ledger_v005/SEMANTIC_SOURCE_EXCERPTS.json",
+  "correction_manifest": "provenance/ledger_v005/CORRECTION_MANIFEST.tsv",
+  "independent_review": "provenance/ledger_v005/INDEPENDENT_REVIEW.json",
+  "semantic_review": "PASS",
+  "final_science_authority": "data/post_publication/FINAL_SCIENCE_STATUS.json",
+  "science_authority_unchanged": true,
+  "Train119_terminal": "STATIC_APPLICABILITY_FAIL",
+  "RNG_robustness": "SEED_SENSITIVE"
+}

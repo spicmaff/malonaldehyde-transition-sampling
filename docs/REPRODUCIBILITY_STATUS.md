@@ -32,3 +32,7 @@ CI verifies the public package and compact reproduction boundary. It does not cl
 ## Source resolution
 
 Publication renderers use an explicit input order: `--source-root` when supplied, otherwise repo-local `data/publication_source_v005`. They do not silently fall back to a private project pointer. A compatible external project tree can be used only by passing it explicitly through `--source-root`.
+
+## Current canonical ledger
+
+V005 is the accepted source-bound authority. Historical V004 contains known semantic classification errors and is preserved for comparison. Public CI covers compact semantic regression; it does not reproduce all raw private source documents or the complete historical physics lineage.
