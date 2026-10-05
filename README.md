@@ -38,6 +38,10 @@ The final frozen Train119 check did not pass static applicability: five of 228 r
 
 See docs/POST_PUBLICATION_CONTINUATION.md.
 
+## Current provenance authority
+
+Canonical ledger V005 corrects seven source-interpretation classes and 21 authority bindings, while retaining historical ledgers and all genuine scientific FAILs. See [ledger reconciliation](docs/LEDGER_RECONCILIATION.md) and [the current pointer](provenance/CURRENT_CANONICAL_LEDGER.json). This documentation repair does not change the model results.
+
 ## Clean-clone verification
 
 A clean clone can now:

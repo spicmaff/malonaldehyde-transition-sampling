@@ -1,0 +1,1274 @@
+{
+  "schema": "independent-source-ledger-review-v001",
+  "status": "PASS",
+  "review_implementation": "separate script reads live JSON verdicts and resulting TSV; does not import or execute builder or classifier",
+  "checks_passed": 313,
+  "records": 290,
+  "source_bound_records": 235,
+  "inventory_only_records": 55,
+  "class_changes": {
+    "56": "TECHNICAL_FAIL",
+    "157": "AUTHORITATIVE_WITH_CAVEAT",
+    "230": "AUTHORITATIVE_WITH_CAVEAT",
+    "232": "AUTHORITATIVE_WITH_CAVEAT",
+    "247": "AUTHORITATIVE_WITH_CAVEAT",
+    "248": "AUTHORITATIVE_WITH_CAVEAT",
+    "254": "TECHNICAL_FAIL"
+  },
+  "scientific_fail_records": 12,
+  "boundary": "Source semantics and hashes reviewed, not a rerun of physical calculations or proof of every historical claim. Unknown early attempts remain unknown.",
+  "checks": [
+    {
+      "check": "exact_record_identity_sequence_preserved",
+      "pass": true
+    },
+    {
+      "check": "unique_record_identities",
+      "pass": true
+    },
+    {
+      "check": "source_adjudicated_class_changes_only",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_0",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_1",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_2",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_3",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_4",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_5",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_6",
+      "pass": true
+    },
+    {
+      "check": "source_binding_7",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_8",
+      "pass": true
+    },
+    {
+      "check": "source_binding_9",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_10",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_11",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_12",
+      "pass": true
+    },
+    {
+      "check": "source_binding_13",
+      "pass": true
+    },
+    {
+      "check": "source_binding_14",
+      "pass": true
+    },
+    {
+      "check": "source_binding_15",
+      "pass": true
+    },
+    {
+      "check": "source_binding_16",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_17",
+      "pass": true
+    },
+    {
+      "check": "source_binding_18",
+      "pass": true
+    },
+    {
+      "check": "source_binding_19",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_20",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_21",
+      "pass": true
+    },
+    {
+      "check": "source_binding_22",
+      "pass": true
+    },
+    {
+      "check": "source_binding_23",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_24",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_25",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_26",
+      "pass": true
+    },
+    {
+      "check": "source_binding_27",
+      "pass": true
+    },
+    {
+      "check": "source_binding_28",
+      "pass": true
+    },
+    {
+      "check": "source_binding_29",
+      "pass": true
+    },
+    {
+      "check": "source_binding_30",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_31",
+      "pass": true
+    },
+    {
+      "check": "source_binding_32",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_33",
+      "pass": true
+    },
+    {
+      "check": "source_binding_34",
+      "pass": true
+    },
+    {
+      "check": "source_binding_35",
+      "pass": true
+    },
+    {
+      "check": "source_binding_36",
+      "pass": true
+    },
+    {
+      "check": "source_binding_37",
+      "pass": true
+    },
+    {
+      "check": "source_binding_38",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_39",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_40",
+      "pass": true
+    },
+    {
+      "check": "source_binding_41",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_42",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_43",
+      "pass": true
+    },
+    {
+      "check": "source_binding_44",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_45",
+      "pass": true
+    },
+    {
+      "check": "source_binding_46",
+      "pass": true
+    },
+    {
+      "check": "source_binding_47",
+      "pass": true
+    },
+    {
+      "check": "source_binding_48",
+      "pass": true
+    },
+    {
+      "check": "source_binding_49",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_50",
+      "pass": true
+    },
+    {
+      "check": "source_binding_51",
+      "pass": true
+    },
+    {
+      "check": "source_binding_52",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_53",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_54",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_55",
+      "pass": true
+    },
+    {
+      "check": "source_binding_56",
+      "pass": true
+    },
+    {
+      "check": "source_binding_57",
+      "pass": true
+    },
+    {
+      "check": "source_binding_58",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_59",
+      "pass": true
+    },
+    {
+      "check": "source_binding_60",
+      "pass": true
+    },
+    {
+      "check": "source_binding_61",
+      "pass": true
+    },
+    {
+      "check": "source_binding_62",
+      "pass": true
+    },
+    {
+      "check": "source_binding_63",
+      "pass": true
+    },
+    {
+      "check": "source_binding_64",
+      "pass": true
+    },
+    {
+      "check": "source_binding_65",
+      "pass": true
+    },
+    {
+      "check": "source_binding_66",
+      "pass": true
+    },
+    {
+      "check": "source_binding_67",
+      "pass": true
+    },
+    {
+      "check": "source_binding_68",
+      "pass": true
+    },
+    {
+      "check": "source_binding_69",
+      "pass": true
+    },
+    {
+      "check": "source_binding_70",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_71",
+      "pass": true
+    },
+    {
+      "check": "source_binding_72",
+      "pass": true
+    },
+    {
+      "check": "source_binding_73",
+      "pass": true
+    },
+    {
+      "check": "source_binding_74",
+      "pass": true
+    },
+    {
+      "check": "source_binding_75",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_76",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_77",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_78",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_79",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_80",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_81",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_82",
+      "pass": true
+    },
+    {
+      "check": "source_binding_83",
+      "pass": true
+    },
+    {
+      "check": "source_binding_84",
+      "pass": true
+    },
+    {
+      "check": "source_binding_85",
+      "pass": true
+    },
+    {
+      "check": "source_binding_86",
+      "pass": true
+    },
+    {
+      "check": "source_binding_87",
+      "pass": true
+    },
+    {
+      "check": "source_binding_88",
+      "pass": true
+    },
+    {
+      "check": "source_binding_89",
+      "pass": true
+    },
+    {
+      "check": "source_binding_90",
+      "pass": true
+    },
+    {
+      "check": "source_binding_91",
+      "pass": true
+    },
+    {
+      "check": "source_binding_92",
+      "pass": true
+    },
+    {
+      "check": "source_binding_93",
+      "pass": true
+    },
+    {
+      "check": "source_binding_94",
+      "pass": true
+    },
+    {
+      "check": "source_binding_95",
+      "pass": true
+    },
+    {
+      "check": "source_binding_96",
+      "pass": true
+    },
+    {
+      "check": "source_binding_97",
+      "pass": true
+    },
+    {
+      "check": "source_binding_98",
+      "pass": true
+    },
+    {
+      "check": "source_binding_99",
+      "pass": true
+    },
+    {
+      "check": "source_binding_100",
+      "pass": true
+    },
+    {
+      "check": "source_binding_101",
+      "pass": true
+    },
+    {
+      "check": "source_binding_102",
+      "pass": true
+    },
+    {
+      "check": "source_binding_103",
+      "pass": true
+    },
+    {
+      "check": "source_binding_104",
+      "pass": true
+    },
+    {
+      "check": "source_binding_105",
+      "pass": true
+    },
+    {
+      "check": "source_binding_106",
+      "pass": true
+    },
+    {
+      "check": "source_binding_107",
+      "pass": true
+    },
+    {
+      "check": "source_binding_108",
+      "pass": true
+    },
+    {
+      "check": "source_binding_109",
+      "pass": true
+    },
+    {
+      "check": "source_binding_110",
+      "pass": true
+    },
+    {
+      "check": "source_binding_111",
+      "pass": true
+    },
+    {
+      "check": "source_binding_112",
+      "pass": true
+    },
+    {
+      "check": "source_binding_113",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_114",
+      "pass": true
+    },
+    {
+      "check": "source_binding_115",
+      "pass": true
+    },
+    {
+      "check": "source_binding_116",
+      "pass": true
+    },
+    {
+      "check": "source_binding_117",
+      "pass": true
+    },
+    {
+      "check": "source_binding_118",
+      "pass": true
+    },
+    {
+      "check": "source_binding_119",
+      "pass": true
+    },
+    {
+      "check": "source_binding_120",
+      "pass": true
+    },
+    {
+      "check": "source_binding_121",
+      "pass": true
+    },
+    {
+      "check": "source_binding_122",
+      "pass": true
+    },
+    {
+      "check": "source_binding_123",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_124",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_125",
+      "pass": true
+    },
+    {
+      "check": "source_binding_126",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_127",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_128",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_129",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_130",
+      "pass": true
+    },
+    {
+      "check": "source_binding_131",
+      "pass": true
+    },
+    {
+      "check": "source_binding_132",
+      "pass": true
+    },
+    {
+      "check": "source_binding_133",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_134",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_135",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_136",
+      "pass": true
+    },
+    {
+      "check": "source_binding_137",
+      "pass": true
+    },
+    {
+      "check": "source_binding_138",
+      "pass": true
+    },
+    {
+      "check": "source_binding_139",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_140",
+      "pass": true
+    },
+    {
+      "check": "source_binding_141",
+      "pass": true
+    },
+    {
+      "check": "source_binding_142",
+      "pass": true
+    },
+    {
+      "check": "source_binding_143",
+      "pass": true
+    },
+    {
+      "check": "source_binding_144",
+      "pass": true
+    },
+    {
+      "check": "source_binding_145",
+      "pass": true
+    },
+    {
+      "check": "source_binding_146",
+      "pass": true
+    },
+    {
+      "check": "source_binding_147",
+      "pass": true
+    },
+    {
+      "check": "source_binding_148",
+      "pass": true
+    },
+    {
+      "check": "source_binding_149",
+      "pass": true
+    },
+    {
+      "check": "source_binding_150",
+      "pass": true
+    },
+    {
+      "check": "source_binding_151",
+      "pass": true
+    },
+    {
+      "check": "source_binding_152",
+      "pass": true
+    },
+    {
+      "check": "source_binding_153",
+      "pass": true
+    },
+    {
+      "check": "source_binding_154",
+      "pass": true
+    },
+    {
+      "check": "source_binding_155",
+      "pass": true
+    },
+    {
+      "check": "source_binding_156",
+      "pass": true
+    },
+    {
+      "check": "source_binding_157",
+      "pass": true
+    },
+    {
+      "check": "source_binding_158",
+      "pass": true
+    },
+    {
+      "check": "source_binding_159",
+      "pass": true
+    },
+    {
+      "check": "source_binding_160",
+      "pass": true
+    },
+    {
+      "check": "source_binding_161",
+      "pass": true
+    },
+    {
+      "check": "source_binding_162",
+      "pass": true
+    },
+    {
+      "check": "source_binding_163",
+      "pass": true
+    },
+    {
+      "check": "source_binding_164",
+      "pass": true
+    },
+    {
+      "check": "source_binding_165",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_166",
+      "pass": true
+    },
+    {
+      "check": "source_binding_167",
+      "pass": true
+    },
+    {
+      "check": "source_binding_168",
+      "pass": true
+    },
+    {
+      "check": "source_binding_169",
+      "pass": true
+    },
+    {
+      "check": "source_binding_170",
+      "pass": true
+    },
+    {
+      "check": "source_binding_171",
+      "pass": true
+    },
+    {
+      "check": "source_binding_172",
+      "pass": true
+    },
+    {
+      "check": "source_binding_173",
+      "pass": true
+    },
+    {
+      "check": "source_binding_174",
+      "pass": true
+    },
+    {
+      "check": "source_binding_175",
+      "pass": true
+    },
+    {
+      "check": "source_binding_176",
+      "pass": true
+    },
+    {
+      "check": "source_binding_177",
+      "pass": true
+    },
+    {
+      "check": "source_binding_178",
+      "pass": true
+    },
+    {
+      "check": "source_binding_179",
+      "pass": true
+    },
+    {
+      "check": "source_binding_180",
+      "pass": true
+    },
+    {
+      "check": "source_binding_181",
+      "pass": true
+    },
+    {
+      "check": "source_binding_182",
+      "pass": true
+    },
+    {
+      "check": "source_binding_183",
+      "pass": true
+    },
+    {
+      "check": "source_binding_184",
+      "pass": true
+    },
+    {
+      "check": "source_binding_185",
+      "pass": true
+    },
+    {
+      "check": "source_binding_186",
+      "pass": true
+    },
+    {
+      "check": "source_binding_187",
+      "pass": true
+    },
+    {
+      "check": "source_binding_188",
+      "pass": true
+    },
+    {
+      "check": "source_binding_189",
+      "pass": true
+    },
+    {
+      "check": "source_binding_190",
+      "pass": true
+    },
+    {
+      "check": "source_binding_191",
+      "pass": true
+    },
+    {
+      "check": "source_binding_192",
+      "pass": true
+    },
+    {
+      "check": "source_binding_193",
+      "pass": true
+    },
+    {
+      "check": "source_binding_194",
+      "pass": true
+    },
+    {
+      "check": "source_binding_195",
+      "pass": true
+    },
+    {
+      "check": "source_binding_196",
+      "pass": true
+    },
+    {
+      "check": "source_binding_197",
+      "pass": true
+    },
+    {
+      "check": "source_binding_198",
+      "pass": true
+    },
+    {
+      "check": "source_binding_199",
+      "pass": true
+    },
+    {
+      "check": "source_binding_200",
+      "pass": true
+    },
+    {
+      "check": "source_binding_201",
+      "pass": true
+    },
+    {
+      "check": "source_binding_202",
+      "pass": true
+    },
+    {
+      "check": "source_binding_203",
+      "pass": true
+    },
+    {
+      "check": "source_binding_204",
+      "pass": true
+    },
+    {
+      "check": "source_binding_205",
+      "pass": true
+    },
+    {
+      "check": "source_binding_206",
+      "pass": true
+    },
+    {
+      "check": "source_binding_207",
+      "pass": true
+    },
+    {
+      "check": "source_binding_208",
+      "pass": true
+    },
+    {
+      "check": "source_binding_209",
+      "pass": true
+    },
+    {
+      "check": "source_binding_210",
+      "pass": true
+    },
+    {
+      "check": "source_binding_211",
+      "pass": true
+    },
+    {
+      "check": "source_binding_212",
+      "pass": true
+    },
+    {
+      "check": "source_binding_213",
+      "pass": true
+    },
+    {
+      "check": "source_binding_214",
+      "pass": true
+    },
+    {
+      "check": "source_binding_215",
+      "pass": true
+    },
+    {
+      "check": "source_binding_216",
+      "pass": true
+    },
+    {
+      "check": "source_binding_217",
+      "pass": true
+    },
+    {
+      "check": "source_binding_218",
+      "pass": true
+    },
+    {
+      "check": "source_binding_219",
+      "pass": true
+    },
+    {
+      "check": "source_binding_220",
+      "pass": true
+    },
+    {
+      "check": "source_binding_221",
+      "pass": true
+    },
+    {
+      "check": "source_binding_222",
+      "pass": true
+    },
+    {
+      "check": "source_binding_223",
+      "pass": true
+    },
+    {
+      "check": "source_binding_224",
+      "pass": true
+    },
+    {
+      "check": "source_binding_225",
+      "pass": true
+    },
+    {
+      "check": "source_binding_226",
+      "pass": true
+    },
+    {
+      "check": "source_binding_227",
+      "pass": true
+    },
+    {
+      "check": "source_binding_228",
+      "pass": true
+    },
+    {
+      "check": "source_binding_229",
+      "pass": true
+    },
+    {
+      "check": "source_binding_230",
+      "pass": true
+    },
+    {
+      "check": "source_binding_231",
+      "pass": true
+    },
+    {
+      "check": "source_binding_232",
+      "pass": true
+    },
+    {
+      "check": "source_binding_233",
+      "pass": true
+    },
+    {
+      "check": "source_binding_234",
+      "pass": true
+    },
+    {
+      "check": "source_binding_235",
+      "pass": true
+    },
+    {
+      "check": "source_binding_236",
+      "pass": true
+    },
+    {
+      "check": "source_binding_237",
+      "pass": true
+    },
+    {
+      "check": "source_binding_238",
+      "pass": true
+    },
+    {
+      "check": "source_binding_239",
+      "pass": true
+    },
+    {
+      "check": "source_binding_240",
+      "pass": true
+    },
+    {
+      "check": "source_binding_241",
+      "pass": true
+    },
+    {
+      "check": "source_binding_242",
+      "pass": true
+    },
+    {
+      "check": "source_binding_243",
+      "pass": true
+    },
+    {
+      "check": "source_binding_244",
+      "pass": true
+    },
+    {
+      "check": "source_binding_245",
+      "pass": true
+    },
+    {
+      "check": "source_binding_246",
+      "pass": true
+    },
+    {
+      "check": "source_binding_247",
+      "pass": true
+    },
+    {
+      "check": "source_binding_248",
+      "pass": true
+    },
+    {
+      "check": "source_binding_249",
+      "pass": true
+    },
+    {
+      "check": "source_binding_250",
+      "pass": true
+    },
+    {
+      "check": "source_binding_251",
+      "pass": true
+    },
+    {
+      "check": "source_binding_252",
+      "pass": true
+    },
+    {
+      "check": "source_binding_253",
+      "pass": true
+    },
+    {
+      "check": "source_binding_254",
+      "pass": true
+    },
+    {
+      "check": "source_binding_255",
+      "pass": true
+    },
+    {
+      "check": "source_binding_256",
+      "pass": true
+    },
+    {
+      "check": "source_binding_257",
+      "pass": true
+    },
+    {
+      "check": "source_binding_258",
+      "pass": true
+    },
+    {
+      "check": "source_binding_259",
+      "pass": true
+    },
+    {
+      "check": "source_binding_260",
+      "pass": true
+    },
+    {
+      "check": "source_binding_261",
+      "pass": true
+    },
+    {
+      "check": "source_binding_262",
+      "pass": true
+    },
+    {
+      "check": "source_binding_263",
+      "pass": true
+    },
+    {
+      "check": "source_binding_264",
+      "pass": true
+    },
+    {
+      "check": "source_binding_265",
+      "pass": true
+    },
+    {
+      "check": "source_binding_266",
+      "pass": true
+    },
+    {
+      "check": "source_binding_267",
+      "pass": true
+    },
+    {
+      "check": "source_binding_268",
+      "pass": true
+    },
+    {
+      "check": "source_binding_269",
+      "pass": true
+    },
+    {
+      "check": "source_binding_270",
+      "pass": true
+    },
+    {
+      "check": "source_binding_271",
+      "pass": true
+    },
+    {
+      "check": "source_binding_272",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_273",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_274",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_275",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_276",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_277",
+      "pass": true
+    },
+    {
+      "check": "uncertainty_not_promoted_278",
+      "pass": true
+    },
+    {
+      "check": "source_binding_279",
+      "pass": true
+    },
+    {
+      "check": "source_binding_280",
+      "pass": true
+    },
+    {
+      "check": "source_binding_281",
+      "pass": true
+    },
+    {
+      "check": "source_binding_282",
+      "pass": true
+    },
+    {
+      "check": "source_binding_283",
+      "pass": true
+    },
+    {
+      "check": "source_binding_284",
+      "pass": true
+    },
+    {
+      "check": "source_binding_285",
+      "pass": true
+    },
+    {
+      "check": "source_binding_286",
+      "pass": true
+    },
+    {
+      "check": "source_binding_287",
+      "pass": true
+    },
+    {
+      "check": "source_binding_288",
+      "pass": true
+    },
+    {
+      "check": "source_binding_289",
+      "pass": true
+    },
+    {
+      "check": "all_authority_placeholders_removed",
+      "pass": true
+    },
+    {
+      "check": "failed_neb_process_is_technical",
+      "pass": true
+    },
+    {
+      "check": "postmortem_own_pass_prior_gate_fail_preserved",
+      "pass": true
+    },
+    {
+      "check": "89t_successful_review_of_prior_technical_failure",
+      "pass": true
+    },
+    {
+      "check": "89u_successful_closure_without_gamma_a2_adjudication",
+      "pass": true
+    },
+    {
+      "check": "90i_own_partial_technical_failure_retained",
+      "pass": true
+    },
+    {
+      "check": "90j_pass_is_review_not_new_scientific_fail",
+      "pass": true
+    },
+    {
+      "check": "90k_pass_is_technical_closure_not_model_promotion",
+      "pass": true
+    },
+    {
+      "check": "90q_own_serialization_failure_bound",
+      "pass": true
+    },
+    {
+      "check": "91j_technical_stop_preserved",
+      "pass": true
+    },
+    {
+      "check": "91l_negative_scientific_closure_preserved",
+      "pass": true
+    },
+    {
+      "check": "genuine_gate_fail_not_erased",
+      "pass": true
+    },
+    {
+      "check": "85b_supersession_not_erased",
+      "pass": true
+    },
+    {
+      "check": "pass_closure_can_preserve_negative_science",
+      "pass": true
+    },
+    {
+      "check": "pass_execution_can_fail_readiness",
+      "pass": true
+    },
+    {
+      "check": "all_scientific_negative_records_retained",
+      "pass": true
+    },
+    {
+      "check": "stage72_phase_and_l2_scope_retained",
+      "pass": true
+    },
+    {
+      "check": "prior_failed_review_is_not_promoted",
+      "pass": true
+    },
+    {
+      "check": "85b_original_does_not_replace_r1",
+      "pass": true
+    },
+    {
+      "check": "science_authority_bytes_unchanged",
+      "pass": true
+    }
+  ]
+}
