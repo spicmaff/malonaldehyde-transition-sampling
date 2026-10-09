@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a bilingual static research exhibit from the public, frozen evidence.
+"""Build a English-only static research exhibit from the public, frozen evidence.
 No network, inference, training, selectors or physical simulation. Python 3.11+.
 """
 from __future__ import annotations
@@ -76,7 +76,7 @@ def scientific_data():
  evidence={k:{'path':p,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),'url':f'{REPO}/blob/{BASE}/{p}'} for k,p in SOURCES.items()}
  return {'schema':'malonaldehyde-research-site-v1','science_commit':BASE,'molecule':mol,'profiles':profiles,'metrics':metrics,'sampling':sampling,'seeds':seeds,'replay':replay,'local':local,'stop':STOP,'a2':A2,'static':verified['static'],'overlaps':verified['audit_train_overlap'],'evidence':evidence,'boundaries':{'MD':False,'independent_Train119_test':False,'seed_status':'SEED_SENSITIVE','Train119_status':'STATIC_APPLICABILITY_FAIL','new_scientific_calls':0}}
 def md(text):
- """Small escaped Markdown subset used by the two curated longreads."""
+ """Small escaped Markdown subset used by the curated English longread."""
  out=[];paragraph=[]
  def flush():
   if paragraph:out.append('<p>'+html.escape(' '.join(paragraph))+'</p>');paragraph.clear()
@@ -98,17 +98,20 @@ def build(out):
  # Page module only renders project-owned editorial strings; all scientific data come from above.
  sys.path.insert(0,str(ROOT/'site'))
  from pages import render
- for lang,name in [('en','index.html'),('ru','ru.html')]:
-  article=(ROOT/f'site/longread.{lang}.md').read_text()
-  (out/name).write_text(render(lang,data,md(article)),encoding='utf-8')
-  (out/f'longread.{lang}.md').write_text('\n'.join(('Sources / Источники: '+ ' · '.join('['+SOURCES[k].split('/')[-1]+']('+REPO+'/blob/'+BASE+'/'+SOURCES[k]+')' for k in line.split(':',1)[1].split())) if line.startswith('@sources:') else line for line in article.splitlines())+'\n')
+ article=(ROOT/'site/longread.en.md').read_text()
+ (out/'index.html').write_text(render(data,md(article)),encoding='utf-8')
+ (out/'longread.en.md').write_text('\n'.join(('Sources: '+ ' · '.join('['+SOURCES[k].split('/')[-1]+']('+REPO+'/blob/'+BASE+'/'+SOURCES[k]+')' for k in line.split(':',1)[1].split())) if line.startswith('@sources:') else line for line in article.splitlines())+'\n')
+ # This is a compatibility redirect, not a retained Russian-language edition.
+ (out/'ru.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://spicmaff.github.io/malonaldehyde-transition-sampling/"><title>Continue to Proton / Potential</title><script src="redirect.mjs" type="module"></script></head><body><h1>This exhibit is now English-only.</h1><p><a href="index.html">Continue to Proton / Potential</a></p></body></html>')
+ (out/'redirect.mjs').write_text("location.replace(new URL('index.html'+location.search+location.hash,location.href).href);\n")
+ if (out/'longread.ru.md').exists():(out/'longread.ru.md').unlink()
  for name in ['style.css','app.mjs','core.mjs','favicon.svg','social-preview.svg','social-preview.png']:
   shutil.copyfile(ROOT/'site'/name,out/name)
  for dirname in ['assets','media']:
   shutil.copytree(ROOT/'site'/dirname,out/dirname,dirs_exist_ok=True)
  (out/'.nojekyll').write_text('')
  (out/'404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Page not found</title><h1>Page not found</h1><p><a href="./">Return to the malonaldehyde exhibit</a></p></html>')
- (out/'README.txt').write_text('Malonaldehyde research exhibit. Serve this folder with: python3 -m http.server 8000\nOpen http://localhost:8000/ or /ru.html . Static text remains readable without JavaScript.\nScience: '+BASE+'\nSources and licences: https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/main/docs/RESEARCH_SITE.md\n')
+ (out/'README.txt').write_text('Malonaldehyde research exhibit. Serve this folder with: python3 -m http.server 8000\nOpen http://localhost:8000/ . Static text remains readable without JavaScript.\nScience: '+BASE+'\nSources and licences: https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/main/docs/RESEARCH_SITE.md\n')
  (out/'build-manifest.json').write_text(json.dumps({p.relative_to(out).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(out.rglob('*')) if p.is_file() and p.name!='build-manifest.json'},sort_keys=True,indent=2)+'\n')
  return data
 if __name__=='__main__':
