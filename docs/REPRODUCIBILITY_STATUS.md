@@ -36,3 +36,15 @@ Publication renderers use an explicit input order: `--source-root` when supplied
 ## Current canonical ledger
 
 V005 is the accepted source-bound authority. Historical V004 contains known semantic classification errors and is preserved for comparison. Public CI covers compact semantic regression; it does not reproduce all raw private source documents or the complete historical physics lineage.
+
+## October 2026 local Train119 diagnostic
+
+A clean clone now also contains an allowlisted set of the original Train119
+model/dataset, the exact Crossing7/Challenge4 inputs, all eleven recorded
+PBE inputs/outputs/XML, saved model predictions, original Audit21, and
+Validation11 predictions with source/public SHA-256 records.
+`python3 tools/verify_train119_diagnostic.py --data
+data/post_publication/train119_diagnostic_v001` checks the saved evidence
+without invoking QE, MLIP, selectors or dynamics. Unit tests run in CI.
+External physical recomputation and prospective generalization remain outside
+this compact reproducer.

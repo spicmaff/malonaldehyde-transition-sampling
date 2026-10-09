@@ -16,6 +16,12 @@ jobs:
         run: python tools/run_public_selftests.py .
       - name: Recompute primary metrics
         run: python tools/recompute_primary_metrics.py
+      - name: Verify Train119 post-publication saved evidence
+        run: |
+          python -B -m unittest discover -s tests -q
+          python -B tools/verify_train119_diagnostic.py --data data/post_publication/train119_diagnostic_v001 --report "$RUNNER_TEMP/train119_check.json"
+          python -O -B tools/verify_train119_diagnostic.py --data data/post_publication/train119_diagnostic_v001 --report "$RUNNER_TEMP/train119_check_optimized.json"
+
 
   reproduction-smoke:
     runs-on: ubuntu-latest

@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-10-05T07:14:39.221483+00:00",
+  "schema": "train119-physical-diagnosis-technical-lock-v1",
+  "model_sha256": "6eb35503605214a886f3e3d884e93743d66bcaaec05ae58a30111c8c55de2df6",
+  "old_binary_sha256": "30b8ff5686f79d9ec7d55d406a2fad4de0975906880b9d239fdea953af33b9e4",
+  "source_root": "${PROJECT_ROOT}/12_transition_tube/versions/v091ib_selector_calibration_cardinality_guard_repair_v001/attempt_20261002T063437Z/SOURCE",
+  "io_patch": "Only calc-efs cfg.Save(ofs) -> cfg.Save(ofs, Configuration::SAVE_NO_LOSS)",
+  "build": {
+    "type": "Release",
+    "WITH_MPI": "ON",
+    "WITH_SYSTEM_BLAS": "ON",
+    "WITH_SELFTEST": "ON",
+    "WITH_LOSSLESS_CFG": "OFF",
+    "compiler": "/usr/bin/c++",
+    "jobs": 2
+  },
+  "runtime": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "qualification_input_sha256": "308c079a69f3c2ab6f6a69f4a2962ba3e10266213bdf8fa9fc96212552c01e22",
+  "saved_prediction_sha256": "02849c563e4afdace68f2a7861be1629feca9809f02482876fdd8a706e4cbe15",
+  "guards": {
+    "direct_A": 5.1e-07,
+    "cell_A": 1e-12,
+    "pair_distance_A": 1.1e-06
+  },
+  "numerical_equivalence": {
+    "force_component_eV_A": 5.00001e-07,
+    "energy_eV": 2e-12,
+    "justification": "Old Save writes forces fixed to 6 decimals and energy to 12; half-unit rounding plus bounded double/decimal comparison slack (energy ~1949 eV ULP 2.27e-13)."
+  },
+  "budget": {
+    "normal_MTP": 4,
+    "absolute_MTP": 5,
+    "new_DFT_geometries": 7,
+    "normal_pw_x": 7,
+    "absolute_pw_x": 9,
+    "recovery_pw_x_total": 2,
+    "recovery_per_geometry": 1
+  },
+  "qualification_recovery": "At most one same-input inference, only a documented technical IO/build cause with an append-only repair lock; no force-error-driven retries",
+  "no_training": true,
+  "no_dynamics": true,
+  "no_selector_calls": true,
+  "no_blind_payload": true,
+  "old_scientific_status": "STATIC_APPLICABILITY_FAIL"
+}

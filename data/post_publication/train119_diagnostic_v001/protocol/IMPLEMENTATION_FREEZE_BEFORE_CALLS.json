@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-05T07:26:07.422138+00:00",
+  "code_sha256": {
+    "train119_diag_parser_tests.py": "94a011d78065da73ed219a1f5a2a2bb0f7ed20353198527b29f85fc73f633e3b",
+    "train119_diag_preflight.py": "3bc146efc0cebc43a8a433e5da28f83efd3d7bfd4bcb6692e42c7f621869100e",
+    "train119_diag_run.py": "4990f66e0e43eec15ebb8324bf9f217bcbf136901a4c3e9d7d5bdc9234b21d1d"
+  },
+  "active_locks": {
+    "PBE_RUNTIME_RESOURCE_AMENDMENT_BEFORE_CALLS.json": "531effacf1b839bf2d641749c7768619e67076f54d7c517142d3521ecd6b8bdb",
+    "DIAGNOSTIC_SCIENCE_LOCK.json": "f4fabd48bd1e8c68df4fd718955cdb6ab71ac7bdc5e606fa3fb0fcd314d31f0e",
+    "TECHNICAL_QUALIFICATION_LOCK.json": "dc7c58680573832b675dafe3469aed28f9f70c15f7eed564fbdaf88b5435806a",
+    "GEOMETRY_UNIT_CORRECTION_BEFORE_CALLS.json": "19bd0b286fd8203d46397fa813959f5def100f957cfb74b3104f638248c7018c"
+  },
+  "reference_audit_sha256": {
+    "REFERENCE_DECISION_TABLE.json": "92163c95d1a70f98613f2b2615833beb952717b7ca8ef178b301a33d731ccda9",
+    "ROTATION_PERMUTATION_CANDIDATE_SCREEN.json": "1a9053cd0729872676d02d27e6db910017e5c3bab0e4a29dc9093070c5c97e47",
+    "TRAIN119_EXISTING_EVALUATION_CALL_AUDIT.json": "41309b203341d0bbc488f38a0b5f6f48449f66b19ecf2b0bfd14c39fbd040482"
+  },
+  "tests": "8 parser-risk tests PASS, no executable science calls",
+  "scientific_calls_so_far": 0
+}

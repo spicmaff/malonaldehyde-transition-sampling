@@ -15,3 +15,6 @@
 *.pdf binary
 *.mp4 binary
 *.webm binary
+
+# Frozen Train119 source bytes (including original CRLF) must stay hash-identical.
+data/post_publication/train119_diagnostic_v001/** -text -eol whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab

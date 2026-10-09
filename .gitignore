@@ -30,6 +30,7 @@ tmp/
 *.model
 *.mtp
 !data/frozen_models_v028/*.mtp
+!data/post_publication/train119_diagnostic_v001/inputs/TRAIN119_MODEL_EXACT.mtp
 *.npy
 *.npz
 *.pkl

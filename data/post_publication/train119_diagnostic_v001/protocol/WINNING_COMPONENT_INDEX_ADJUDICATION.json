@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-05T07:28:19.126513+00:00",
+  "source_sha256": "291d1aa3d006f957e9440168a4fa65dcb7fd4cb718555e0ae0932472ea06b253",
+  "winning_component_raw_atom_index": 2,
+  "winning_component_index_base": 0,
+  "winning_component_one_based_atom": 3,
+  "winning_element": "C",
+  "axis": "y",
+  "proton_one_based_atom": 2,
+  "proton_zero_based_atom": 1,
+  "proton_element": "H",
+  "old_EXECUTION_metric_field": "winning_atom2_y_error_eV_A uses row1 (proton) in execution helper; retain raw output and correct label in accepted independent-review table; full component errors remain correct",
+  "force_metric_A2_unchanged": true,
+  "reason": "Source column is explicitly winning_atom_0based=2, not atom2 in one-based CFG. Source mapping established before Crossing7 evaluation; no post-result threshold choice."
+}

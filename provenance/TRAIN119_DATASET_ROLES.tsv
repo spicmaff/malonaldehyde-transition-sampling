@@ -1,0 +1,124 @@
+dataset	CFG_block_1based	candidate_id	source_condition	source_step	origin_training_eligible_feature	final_train119_membership	role_authority	interpretation
+Train119	1	seed_v001_basin_L_s012_r01				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	2	seed_v001_basin_L_s018_r02				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	3	seed_v001_basin_L_s026_r03				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	4	seed_v001_basin_L_s034_r04				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	5	seed_v001_basin_R_s012_r01				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	6	seed_v001_basin_R_s018_r02				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	7	seed_v001_basin_R_s026_r03				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	8	seed_v001_basin_R_s034_r04				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	9	strict_common_L_pair001				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	10	strict_common_R_pair001				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	11	strict_common_L_pair002				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	12	strict_common_R_pair002				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	13	strict_common_L_pair003				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	14	strict_common_R_pair003				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	15	strict_common_L_pair004				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	16	strict_common_R_pair004				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	17	strict_common_L_pair006				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	18	strict_common_R_pair006				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	19	strict_common_L_pair007				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	20	strict_common_R_pair007				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	21	strict_common_L_pair008				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	22	strict_common_R_pair008				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	23	strict_common_L_pair009				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	24	strict_common_R_pair009				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	25	strict_common_L_pair010				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	26	strict_common_R_pair010				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	27	strict_common_L_pair011				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	28	strict_common_R_pair011				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	29	strict_common_L_pair012				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	30	strict_common_R_pair012				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	31	strict_common_L_pair013				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	32	strict_common_R_pair013				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	33	strict_common_L_pair014				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	34	strict_common_R_pair014				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	35	strict_common_L_pair015				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	36	strict_common_R_pair015				TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	37	tube_l01_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	38	tube_l01_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	39	tube_l01_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	40	tube_l02_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	41	tube_l02_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	42	tube_l02_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	43	tube_l03_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	44	tube_l03_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	45	tube_l03_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	46	tube_l04_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	47	tube_l04_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	48	tube_l04_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	49	tube_l05_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	50	tube_l05_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	51	tube_l05_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	52	tube_l06_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	53	tube_l06_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	54	tube_l06_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	55	tube_l07_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	56	tube_l07_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	57	tube_l07_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	58	tube_l08_in_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	59	tube_l08_isotropic_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	60	tube_l08_out_of_plane_micro_v001			true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	61					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	62					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	63					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	64					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	65					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	66					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	67					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	68					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	69					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	70					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	71					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	72					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	73					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	74					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	75					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	76					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	77					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	78					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	79					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	80					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	81					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	82					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	83					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	84					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	85					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	86					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	87					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	88					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	89					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	90					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	91					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	92					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	93		T100_left	10	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	94		T100_left	25	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	95		T100_left	45	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	96		T100_left	100	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	97		T100_right	27	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	98		T100_right	50	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	99		T100_right	70	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	100		T100_right	85	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	101		T300_left	18	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	102		T300_left	20	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	103		T300_left	22	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	104		T300_left	23	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	105		T300_left	24	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	106		T300_left	25	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	107		T300_left	26	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	108		T300_left	27	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	109		T300_left	28	true	TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	110					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	111					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	112					TRUE	Inherited Train115 or prior accepted training lineage	Training membership verified from exact 119-block model input
+Train119	113	traj_T100_right_step0096	T100_right	96	false	TRUE	Stage90D-R1 appended TRAIN3 frames 196/198/200	Historical source feature explicitly false, but frozen later training contract includes this block; matched to original Replay228 frame via exact same-order pair distances
+Train119	114	traj_T100_right_step0098	T100_right	98	false	TRUE	Stage90D-R1 appended TRAIN3 frames 196/198/200	Historical source feature explicitly false, but frozen later training contract includes this block; matched to original Replay228 frame via exact same-order pair distances
+Train119	115	traj_T100_right_step0100	T100_right	100	false	TRUE	Stage90D-R1 appended TRAIN3 frames 196/198/200	Historical source feature explicitly false, but frozen later training contract includes this block; matched to original Replay228 frame via exact same-order pair distances
+Train119	116	traj_T100_left_step0097	T100_left	97		TRUE	Stage91A/Stage91B appended Replay97-100	Appended canonical PBE labels from frozen Stage90X; matched to original Replay228 frame via exact same-order pair distances
+Train119	117	traj_T100_left_step0098	T100_left	98		TRUE	Stage91A/Stage91B appended Replay97-100	Appended canonical PBE labels from frozen Stage90X; matched to original Replay228 frame via exact same-order pair distances
+Train119	118	traj_T100_left_step0099	T100_left	99		TRUE	Stage91A/Stage91B appended Replay97-100	Appended canonical PBE labels from frozen Stage90X; matched to original Replay228 frame via exact same-order pair distances
+Train119	119	traj_T100_left_step0100	T100_left	100		TRUE	Stage91A/Stage91B appended Replay97-100	Appended canonical PBE labels from frozen Stage90X; matched to original Replay228 frame via exact same-order pair distances
+Challenge4		traj_T100_left_step0093	T100_left	93	false	FALSE	Stage91A protected Replay93-96	Local correlated development challenge; Replay97-100 are Train119 additions
+Challenge4		traj_T100_left_step0094	T100_left	94	false	FALSE	Stage91A protected Replay93-96	Local correlated development challenge; Replay97-100 are Train119 additions
+Challenge4		traj_T100_left_step0095	T100_left	95	false	FALSE	Stage91A protected Replay93-96	Local correlated development challenge; Replay97-100 are Train119 additions
+Challenge4		traj_T100_left_step0096	T100_left	96	false	FALSE	Stage91A protected Replay93-96	Local correlated development challenge; Replay97-100 are Train119 additions

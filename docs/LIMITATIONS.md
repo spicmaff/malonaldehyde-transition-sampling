@@ -16,3 +16,15 @@
 14. Blind12 remains unrevealed and was not used for training.
 15. The H/D audit is one-dimensional and is not a rate model or full-dimensional quantum dynamics.
 16. Full DFT and model-training recomputation requires external scientific software and pseudopotentials that are not redistributed here.
+
+## Limits of the later local Train119 diagnostic
+
+The October 5 follow-up does not change limitations 10-14. Crossing7 and
+Challenge4 comprise correlated, post-selected development configurations at
+100 K. Challenge4 is adjacent to training additions from the same trajectory.
+Its A2 pass is not a maximum-component bound, and the separate 0.123 meV
+Audit21 barrier error is not an error bound for the full energy profile.
+The historical serialization failure and later output-only qualification
+remain distinct facts. Small local PBE errors do not authorize relaxing the
+applicability stop or establish prospective dynamics or experimental accuracy.
+See [the full scoped diagnostic](TRAIN119_LOCAL_DIAGNOSTIC.md).

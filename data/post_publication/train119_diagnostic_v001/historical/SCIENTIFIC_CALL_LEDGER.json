@@ -1,0 +1,235 @@
+{
+  "calls": [
+    {
+      "call_index": 1,
+      "kind": "MTP_EVALUATION",
+      "role": "VALIDATION11_QUALIFICATION",
+      "argv": [
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/technical_repair/BUILD/mlp",
+        "calc-efs",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/TRAIN119_MODEL_EXACT.mtp",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/VALIDATION11_EXACT.cfg",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/VALIDATION11_QUALIFICATION/predictions.cfg"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/VALIDATION11_QUALIFICATION",
+      "started_utc": "2026-10-05T07:26:09.827617+00:00",
+      "status": "COMPLETED",
+      "threads": 1,
+      "executable_sha256": "3167757fbae99a748c8314cbb78113a32431e0132032317d7465c149a4ec1c24",
+      "pid": 32572,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T07:26:12.303994+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 2,
+      "kind": "MTP_EVALUATION",
+      "role": "CHALLENGE4",
+      "argv": [
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/technical_repair/BUILD/mlp",
+        "calc-efs",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/TRAIN119_MODEL_EXACT.mtp",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/LOCAL_CHALLENGE4_REPLAY93_96_EXACT.cfg",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/CHALLENGE4/predictions.cfg"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/CHALLENGE4",
+      "started_utc": "2026-10-05T07:26:12.603985+00:00",
+      "status": "COMPLETED",
+      "threads": 1,
+      "executable_sha256": "3167757fbae99a748c8314cbb78113a32431e0132032317d7465c149a4ec1c24",
+      "pid": 32580,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T07:26:15.885112+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 3,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_142",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay142/attempt_01",
+      "started_utc": "2026-10-05T07:26:16.558620+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 32586,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T07:53:48.806480+00:00",
+      "stdout_sha256": "929c404ac536b21aa7b85af2131107389637d9b84af7d0acd151635c72d7505d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 4,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_143",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay143/attempt_01",
+      "started_utc": "2026-10-05T07:53:48.882175+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 32734,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T08:18:26.922894+00:00",
+      "stdout_sha256": "8ff2244b1478dfe38ae73c0b1f56e17b51f9d47b06adbfedee6e4b368ff70b98",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 5,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_144",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay144/attempt_01",
+      "started_utc": "2026-10-05T08:18:26.946214+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 444,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T08:44:01.180809+00:00",
+      "stdout_sha256": "ff10002a2cae161631c9c58c2273b1d37a77036d4d10beff4fc3bffc7e815c94",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 6,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_145",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay145/attempt_01",
+      "started_utc": "2026-10-05T08:44:01.202463+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 557,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T09:01:19.920498+00:00",
+      "stdout_sha256": "793e931e61050fa217b2804eb2461cabbe4f34212ebdb257860a045b47539b78",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 7,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_146",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay146/attempt_01",
+      "started_utc": "2026-10-05T09:01:19.926477+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 706,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T09:21:01.542995+00:00",
+      "stdout_sha256": "be90791ec4867a46068161165171b6e3dc701fc66ee956bb1f2e98ca5023ca30",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 8,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_147",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay147/attempt_01",
+      "started_utc": "2026-10-05T09:21:01.565600+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 921,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T09:50:32.963154+00:00",
+      "stdout_sha256": "3ce471affe9038bfe244bc4f32727672d47197f48fbf9d9c15cd879a72999100",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 9,
+      "kind": "PBE_PW_X",
+      "role": "CROSSING_REFERENCE_148",
+      "argv": [
+        "${HOME}/miniforge3/envs/malon_mtp/bin/pw.x",
+        "-in",
+        "pw.in"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay148/attempt_01",
+      "started_utc": "2026-10-05T09:50:32.983232+00:00",
+      "status": "COMPLETED",
+      "threads": 6,
+      "executable_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+      "pid": 1191,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T10:15:26.711553+00:00",
+      "stdout_sha256": "778196e20fa3ca77b73b845e0c38d438abdc0e95f58730e4b55fc21c5e2db533",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 10,
+      "kind": "MTP_EVALUATION",
+      "role": "CROSSING7",
+      "argv": [
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/technical_repair/BUILD/mlp",
+        "calc-efs",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/TRAIN119_MODEL_EXACT.mtp",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/CROSSING7_EXACT.cfg",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/CROSSING7/predictions.cfg"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/CROSSING7",
+      "started_utc": "2026-10-05T10:15:26.730113+00:00",
+      "status": "COMPLETED",
+      "threads": 1,
+      "executable_sha256": "3167757fbae99a748c8314cbb78113a32431e0132032317d7465c149a4ec1c24",
+      "pid": 1421,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T10:15:27.212508+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "call_index": 11,
+      "kind": "MTP_EVALUATION",
+      "role": "AUDIT21_STATIC",
+      "argv": [
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/technical_repair/BUILD/mlp",
+        "calc-efs",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/TRAIN119_MODEL_EXACT.mtp",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/AUDIT21_GEOMETRY_EXACT.cfg",
+        "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/AUDIT21_STATIC/predictions.cfg"
+      ],
+      "cwd": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/AUDIT21_STATIC",
+      "started_utc": "2026-10-05T10:15:27.222616+00:00",
+      "status": "COMPLETED",
+      "threads": 1,
+      "executable_sha256": "3167757fbae99a748c8314cbb78113a32431e0132032317d7465c149a4ec1c24",
+      "pid": 1427,
+      "returncode": 0,
+      "finished_utc": "2026-10-05T10:15:27.521624+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "new_training": 0,
+  "new_dynamics": 0,
+  "new_selector_or_grading": 0
+}

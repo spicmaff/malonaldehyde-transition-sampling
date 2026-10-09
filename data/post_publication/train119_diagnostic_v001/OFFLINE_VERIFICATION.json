@@ -1,0 +1,334 @@
+{
+  "status": "PASS_SAVED_PAYLOAD_NUMERICS_AND_MAPPING",
+  "local_results": [
+    {
+      "replay_index": 93,
+      "role": "CHALLENGE4",
+      "gamma_saved": 0.7934853942398995,
+      "above_stop": false,
+      "energy_error_eV": 0.0015214708153052925,
+      "force_component_RMSE_eV_A": 0.029451314732586328,
+      "max_abs_component_eV_A": 0.09038879939196287,
+      "proton_H2_y_error_eV_A": -0.012281247353292973,
+      "crossing_component_C3_y_error_eV_A": 0.0219557648996751,
+      "proton_H2_vector_error_eV_A": 0.0638769006033335,
+      "atom_vector_RMSE_eV_A": 0.05101117346654132,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 94,
+      "role": "CHALLENGE4",
+      "gamma_saved": 0.7941677457540877,
+      "above_stop": false,
+      "energy_error_eV": 0.0016138502980993508,
+      "force_component_RMSE_eV_A": 0.029578383831842317,
+      "max_abs_component_eV_A": 0.09046956539524974,
+      "proton_H2_y_error_eV_A": -0.012572751273454669,
+      "crossing_component_C3_y_error_eV_A": 0.022619422185253146,
+      "proton_H2_vector_error_eV_A": 0.06428042264497977,
+      "atom_vector_RMSE_eV_A": 0.0512312636025247,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 95,
+      "role": "CHALLENGE4",
+      "gamma_saved": 0.7947015377213335,
+      "above_stop": false,
+      "energy_error_eV": 0.0017068476204258332,
+      "force_component_RMSE_eV_A": 0.029701909461323086,
+      "max_abs_component_eV_A": 0.09047180918792404,
+      "proton_H2_y_error_eV_A": -0.012892774313352423,
+      "crossing_component_C3_y_error_eV_A": 0.02325752391022473,
+      "proton_H2_vector_error_eV_A": 0.06468646205789355,
+      "atom_vector_RMSE_eV_A": 0.05144521626882233,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 96,
+      "role": "CHALLENGE4",
+      "gamma_saved": 0.7950788550692242,
+      "above_stop": false,
+      "energy_error_eV": 0.001799899088609891,
+      "force_component_RMSE_eV_A": 0.029823155104733923,
+      "max_abs_component_eV_A": 0.0904557778085238,
+      "proton_H2_y_error_eV_A": -0.013185945112063197,
+      "crossing_component_C3_y_error_eV_A": 0.023933308750914817,
+      "proton_H2_vector_error_eV_A": 0.06506782903463587,
+      "atom_vector_RMSE_eV_A": 0.051655219883406274,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 142,
+      "role": "CROSSING7",
+      "gamma_saved": 0.9995821609018609,
+      "above_stop": false,
+      "energy_error_eV": 0.001113174091642577,
+      "force_component_RMSE_eV_A": 0.027497582260265326,
+      "max_abs_component_eV_A": 0.05656833786251245,
+      "proton_H2_y_error_eV_A": -0.01318894695384333,
+      "crossing_component_C3_y_error_eV_A": -0.005140866073255701,
+      "proton_H2_vector_error_eV_A": 0.015732701123145114,
+      "atom_vector_RMSE_eV_A": 0.04762720956008419,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 143,
+      "role": "CROSSING7",
+      "gamma_saved": 1.0004397824960853,
+      "above_stop": true,
+      "energy_error_eV": 0.0011161396273564606,
+      "force_component_RMSE_eV_A": 0.027623177742765407,
+      "max_abs_component_eV_A": 0.05567067025508721,
+      "proton_H2_y_error_eV_A": -0.013504912034133967,
+      "crossing_component_C3_y_error_eV_A": -0.005341375984816266,
+      "proton_H2_vector_error_eV_A": 0.015915433480845766,
+      "atom_vector_RMSE_eV_A": 0.04784474731697546,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 144,
+      "role": "CROSSING7",
+      "gamma_saved": 1.000940575558663,
+      "above_stop": true,
+      "energy_error_eV": 0.001119379677447796,
+      "force_component_RMSE_eV_A": 0.027722174152325592,
+      "max_abs_component_eV_A": 0.05468157810127455,
+      "proton_H2_y_error_eV_A": -0.013793674768692782,
+      "crossing_component_C3_y_error_eV_A": -0.005596918639284465,
+      "proton_H2_vector_error_eV_A": 0.01604379047059696,
+      "atom_vector_RMSE_eV_A": 0.048016214128100594,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 145,
+      "role": "CROSSING7",
+      "gamma_saved": 1.0010924700706225,
+      "above_stop": true,
+      "energy_error_eV": 0.0011230979202991875,
+      "force_component_RMSE_eV_A": 0.027805528985775842,
+      "max_abs_component_eV_A": 0.053517916690341893,
+      "proton_H2_y_error_eV_A": -0.014099322477751045,
+      "crossing_component_C3_y_error_eV_A": -0.005849817275950464,
+      "proton_H2_vector_error_eV_A": 0.01622727633353131,
+      "atom_vector_RMSE_eV_A": 0.04816058893469287,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 146,
+      "role": "CROSSING7",
+      "gamma_saved": 1.0009041765660966,
+      "above_stop": true,
+      "energy_error_eV": 0.0011270396330473886,
+      "force_component_RMSE_eV_A": 0.027874411385267955,
+      "max_abs_component_eV_A": 0.052501826414090264,
+      "proton_H2_y_error_eV_A": -0.014418372999407625,
+      "crossing_component_C3_y_error_eV_A": -0.006091292070968479,
+      "proton_H2_vector_error_eV_A": 0.016426726112308793,
+      "atom_vector_RMSE_eV_A": 0.048279896750360464,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 147,
+      "role": "CROSSING7",
+      "gamma_saved": 1.000385185586312,
+      "above_stop": true,
+      "energy_error_eV": 0.0011314847115500015,
+      "force_component_RMSE_eV_A": 0.02792529700822234,
+      "max_abs_component_eV_A": 0.05309096502150262,
+      "proton_H2_y_error_eV_A": -0.014742588230217873,
+      "crossing_component_C3_y_error_eV_A": -0.006397156106568658,
+      "proton_H2_vector_error_eV_A": 0.016630321981057617,
+      "atom_vector_RMSE_eV_A": 0.048368033234692256,
+      "A2_pass": true
+    },
+    {
+      "replay_index": 148,
+      "role": "CROSSING7",
+      "gamma_saved": 0.9995457661910677,
+      "above_stop": false,
+      "energy_error_eV": 0.0011362114278199442,
+      "force_component_RMSE_eV_A": 0.02796475205087673,
+      "max_abs_component_eV_A": 0.05362954481852056,
+      "proton_H2_y_error_eV_A": -0.015037247899042872,
+      "crossing_component_C3_y_error_eV_A": -0.006731344552210694,
+      "proton_H2_vector_error_eV_A": 0.01682513170098163,
+      "atom_vector_RMSE_eV_A": 0.048436371373184454,
+      "A2_pass": true
+    }
+  ],
+  "static": {
+    "reference_barrier_meV": 36.072093892926205,
+    "Train119_barrier_meV": 36.1950895917289,
+    "barrier_abs_error_meV": 0.122995698802697,
+    "transition_force_RMSE_eV_A": 0.013833988288767312,
+    "basin12_force_RMSE_eV_A": 0.009403992771207683,
+    "NEB9_force_RMSE_eV_A": 0.012964116066844158,
+    "transition_indices_1based": [
+      16,
+      17,
+      18
+    ],
+    "independent_holdout": false,
+    "formal_energy_pass_defined": false
+  },
+  "validation11": [
+    {
+      "force_component_RMSE_eV_A": 0.017913654331303083,
+      "max_abs_component_eV_A": 0.03603567535821195,
+      "proton_H2_y_error_eV_A": 0.018386189906211547,
+      "crossing_component_C3_y_error_eV_A": 0.0078007955262425765,
+      "proton_H2_vector_error_eV_A": 0.04293504769190291,
+      "atom_vector_RMSE_eV_A": 0.03102735945104322,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.019647983745904565,
+      "max_abs_component_eV_A": 0.03873625777353756,
+      "proton_H2_y_error_eV_A": 0.021725065726446613,
+      "crossing_component_C3_y_error_eV_A": 0.008104876128821548,
+      "proton_H2_vector_error_eV_A": 0.047111566393061986,
+      "atom_vector_RMSE_eV_A": 0.03403130611419417,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.02138976910661903,
+      "max_abs_component_eV_A": 0.04137752842010527,
+      "proton_H2_y_error_eV_A": 0.02499840481712856,
+      "crossing_component_C3_y_error_eV_A": 0.008203898373022489,
+      "proton_H2_vector_error_eV_A": 0.05127494573737475,
+      "atom_vector_RMSE_eV_A": 0.03704816685483131,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.027180499373521433,
+      "max_abs_component_eV_A": 0.06079216010547278,
+      "proton_H2_y_error_eV_A": -0.024354879955068742,
+      "crossing_component_C3_y_error_eV_A": -0.011492936311404134,
+      "proton_H2_vector_error_eV_A": 0.02886619838708845,
+      "atom_vector_RMSE_eV_A": 0.04707800589003316,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.027210884998778512,
+      "max_abs_component_eV_A": 0.06113035883698936,
+      "proton_H2_y_error_eV_A": -0.02393505086834795,
+      "crossing_component_C3_y_error_eV_A": -0.009818386420857528,
+      "proton_H2_vector_error_eV_A": 0.028695027066433808,
+      "atom_vector_RMSE_eV_A": 0.04713063533679817,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.005446091285091908,
+      "max_abs_component_eV_A": 0.013685010257036917,
+      "proton_H2_y_error_eV_A": -0.013685010257036917,
+      "crossing_component_C3_y_error_eV_A": 0.006808380989207403,
+      "proton_H2_vector_error_eV_A": 0.013835623829332358,
+      "atom_vector_RMSE_eV_A": 0.009432906808437263,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.006234499249631107,
+      "max_abs_component_eV_A": 0.01449362233891706,
+      "proton_H2_y_error_eV_A": -0.01449362233891706,
+      "crossing_component_C3_y_error_eV_A": 0.007400890683333858,
+      "proton_H2_vector_error_eV_A": 0.014497503453325535,
+      "atom_vector_RMSE_eV_A": 0.010798469460111117,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.006049338897861605,
+      "max_abs_component_eV_A": 0.01384786527826877,
+      "proton_H2_y_error_eV_A": -0.01384786527826877,
+      "crossing_component_C3_y_error_eV_A": 0.006492895778222339,
+      "proton_H2_vector_error_eV_A": 0.013894311971056651,
+      "atom_vector_RMSE_eV_A": 0.010477762323299014,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.005936766890241121,
+      "max_abs_component_eV_A": 0.013147334191126656,
+      "proton_H2_y_error_eV_A": -0.013147334191126656,
+      "crossing_component_C3_y_error_eV_A": 0.005643466882303938,
+      "proton_H2_vector_error_eV_A": 0.013305979651194176,
+      "atom_vector_RMSE_eV_A": 0.010282781886590306,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.005894020934274045,
+      "max_abs_component_eV_A": 0.012487408711159227,
+      "proton_H2_y_error_eV_A": -0.012487408711159227,
+      "crossing_component_C3_y_error_eV_A": 0.004817603007642002,
+      "proton_H2_vector_error_eV_A": 0.012823643706010567,
+      "atom_vector_RMSE_eV_A": 0.010208743719037228,
+      "A2_pass": true
+    },
+    {
+      "force_component_RMSE_eV_A": 0.00593509620413341,
+      "max_abs_component_eV_A": 0.011837315668522946,
+      "proton_H2_y_error_eV_A": -0.011837315668522946,
+      "crossing_component_C3_y_error_eV_A": 0.004103514862953128,
+      "proton_H2_vector_error_eV_A": 0.012430383134956344,
+      "atom_vector_RMSE_eV_A": 0.01027988817336825,
+      "A2_pass": true
+    }
+  ],
+  "audit_train_overlap": [
+    {
+      "query_index": 13,
+      "query_id": "audit_neb_01",
+      "training_index": 9,
+      "pair_max_A": 8.659739592076221e-15,
+      "pair_RMS_A": 3.896164039767034e-15,
+      "strict_1e_12": true,
+      "screen_2p1e_6": true,
+      "interpretation": "Known-order distance screen; not by itself force-vector mapping or statistical independence"
+    },
+    {
+      "query_index": 21,
+      "query_id": "audit_neb_09",
+      "training_index": 10,
+      "pair_max_A": 8.637268678057808e-11,
+      "pair_RMS_A": 4.5576436603073296e-11,
+      "strict_1e_12": false,
+      "screen_2p1e_6": true,
+      "interpretation": "Known-order distance screen; not by itself force-vector mapping or statistical independence"
+    }
+  ],
+  "validation_train_overlap": [
+    {
+      "query_index": 6,
+      "query_id": "traj_T300_left_step0001",
+      "training_index": 87,
+      "pair_max_A": 1.1601503522307155e-06,
+      "pair_RMS_A": 4.933503982863517e-07,
+      "strict_1e_12": false,
+      "screen_2p1e_6": true,
+      "interpretation": "Known-order distance screen; not by itself force-vector mapping or statistical independence"
+    },
+    {
+      "query_index": 7,
+      "query_id": "",
+      "training_index": 9,
+      "pair_max_A": 8.659739592076221e-15,
+      "pair_RMS_A": 3.896164039767034e-15,
+      "strict_1e_12": true,
+      "screen_2p1e_6": true,
+      "interpretation": "Known-order distance screen; not by itself force-vector mapping or statistical independence"
+    },
+    {
+      "query_index": 8,
+      "query_id": "",
+      "training_index": 85,
+      "pair_max_A": 1.3254165951437358e-06,
+      "pair_RMS_A": 5.555083461952769e-07,
+      "strict_1e_12": false,
+      "screen_2p1e_6": true,
+      "interpretation": "Known-order distance screen; not by itself force-vector mapping or statistical independence"
+    }
+  ],
+  "scientific_scope": "Development diagnostics; no independent final test, no new threshold calibration",
+  "deployment_ready": false,
+  "blind_payload_read": false,
+  "new_scientific_calls": 0,
+  "overlap_scope": "Known-order screen only; an exhaustive equivalent-atom permutation audit is not claimed."
+}

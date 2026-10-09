@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "force_difference_max_eV_A": 4.999721486646791e-07,
+  "energy_difference_max_eV": 4.547473508864641e-13,
+  "geometry": {
+    "rows": [
+      {
+        "index": 1,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 2,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 3,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 4,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 5,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 6,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 7,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 8,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 9,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 10,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      },
+      {
+        "index": 11,
+        "direct_A": 0.0,
+        "cell_A": 0.0,
+        "pair_distance_A": 0.0,
+        "finite": true,
+        "pass_guard": true
+      }
+    ],
+    "geometry_pass": true,
+    "finite_pass": true
+  },
+  "validation11_metrics": [
+    {
+      "index": 1,
+      "RMSE_F_eV_A": 0.017913654331303083
+    },
+    {
+      "index": 2,
+      "RMSE_F_eV_A": 0.019647983745904565
+    },
+    {
+      "index": 3,
+      "RMSE_F_eV_A": 0.02138976910661903
+    },
+    {
+      "index": 4,
+      "RMSE_F_eV_A": 0.02718049937352143
+    },
+    {
+      "index": 5,
+      "RMSE_F_eV_A": 0.027210884998778512
+    },
+    {
+      "index": 6,
+      "RMSE_F_eV_A": 0.005446091285091908
+    },
+    {
+      "index": 7,
+      "RMSE_F_eV_A": 0.006234499249631106
+    },
+    {
+      "index": 8,
+      "RMSE_F_eV_A": 0.006049338897861605
+    },
+    {
+      "index": 9,
+      "RMSE_F_eV_A": 0.005936766890241121
+    },
+    {
+      "index": 10,
+      "RMSE_F_eV_A": 0.005894020934274046
+    },
+    {
+      "index": 11,
+      "RMSE_F_eV_A": 0.00593509620413341
+    }
+  ],
+  "role": "NON_INDEPENDENT_DIAGNOSTIC",
+  "old_serialization_FAIL_preserved": true,
+  "new_binary_sha256": "3167757fbae99a748c8314cbb78113a32431e0132032317d7465c149a4ec1c24"
+}

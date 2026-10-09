@@ -1,0 +1,44 @@
+dataset	CFG_block_1based	identifier	closest_training_block_1based	ordered_pair_max_abs_A	ordered_pair_RMS_A	strict_1e_12	comparison_2p1e_6	scope
+Audit21	1	audit_basin_01	85	0.0087966842477338325	0.0045638237114252181	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	2	audit_basin_02	9	0.01931692434201171	0.0083258542294668315	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	3	audit_basin_03	85	0.016039237895506542	0.0072242106673272273	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	4	audit_basin_04	27	0.0087131749221085464	0.0039082395476767425	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	5	audit_basin_05	13	0.010649309537675844	0.0043872316031817859	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	6	audit_basin_06	85	0.0045829749698207412	0.0021474786797344068	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	7	audit_basin_07	90	0.0074089227278311132	0.0034375829425018901	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	8	audit_basin_08	86	0.017397528337292245	0.0069738282307003465	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	9	audit_basin_09	88	0.015044122063815557	0.0054038021626777481	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	10	audit_basin_10	28	0.0095680793728374347	0.0042228565348928077	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	11	audit_basin_11	92	0.0081072599613909446	0.0035506768708038444	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	12	audit_basin_12	30	0.004215512011567224	0.0018940458728777842	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	13	audit_neb_01	9	8.659739592076221e-15	3.8961640397670342e-15	TRUE	TRUE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	14	audit_neb_02	95	0.035333557828048479	0.016155202940444261	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	15	audit_neb_03	76	0.042011191809182336	0.016741059722980376	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	16	audit_neb_04	84	0.038545666256804445	0.014374763556822844	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	17	audit_neb_05	67	0.03664655455838961	0.017008395724999101	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	18	audit_neb_06	67	0.06718658160973634	0.024494406186092145	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	19	audit_neb_07	57	0.081109094534391968	0.028986332008043358	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	20	audit_neb_08	58	0.032322415658934123	0.017071117784599733	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Audit21	21	audit_neb_09	10	8.6372686780578078e-11	4.5576436603073296e-11	FALSE	TRUE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	1		104	0.0012013713671477078	0.00036657457024704006	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	2		106	0.0013964096550487248	0.00042210801708454968	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	3		108	0.0015978416494344394	0.00047969291304481346	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	4	traj_T100_right_step0097	113	0.0012592993175490896	0.00045658647627026935	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	5	traj_T100_right_step0099	114	0.0013369603761126392	0.00048805575949700797	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	6	traj_T300_left_step0001	87	1.1601503522307155e-06	4.9335039828635174e-07	FALSE	TRUE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	7		9	8.659739592076221e-15	3.8961640397670342e-15	TRUE	TRUE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	8		85	1.3254165951437358e-06	5.5550834619527689e-07	FALSE	TRUE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	9		85	0.00259950794980357	0.001034798450681911	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	10		85	0.0051908489424437043	0.0020650204852564811	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Validation11	11		85	0.0077703648418374627	0.0030881263929763221	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	1	traj_T100_right_step0042	98	0.011439316180180015	0.0043057523516397307	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	2	traj_T100_right_step0043	98	0.0096766951518518773	0.0037479885540025325	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	3	traj_T100_right_step0044	98	0.0079485434770547592	0.0031884419938631474	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	4	traj_T100_right_step0045	98	0.0062567997476468129	0.0026350018005665337	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	5	traj_T100_right_step0046	98	0.0049034909098435442	0.0021031190974775509	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	6	traj_T100_right_step0047	98	0.0041256576308974502	0.0016267718289506438	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Crossing7	7	traj_T100_right_step0048	98	0.0033251106413021425	0.0012841341371531831	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Challenge4	1	traj_T100_left_step0093	116	0.0064000891247748548	0.0024602557683759008	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Challenge4	2	traj_T100_left_step0094	116	0.0049133673098840092	0.0018999071600393741	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Challenge4	3	traj_T100_left_step0095	116	0.0033489410048508361	0.0013022734004341427	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
+Challenge4	4	traj_T100_left_step0096	116	0.0017100144509494264	0.00066852182592151319	FALSE	FALSE	Ordered-atom pair-distance screen; not exhaustive permutations/independence
