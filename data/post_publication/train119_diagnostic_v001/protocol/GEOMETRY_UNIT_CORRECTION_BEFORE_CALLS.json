@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-05T07:22:03.024638+00:00",
+  "supersedes_geometry_xml_bohr_value_only": "PBE_RUNTIME_RESOURCE_AMENDMENT_BEFORE_CALLS.json",
+  "geometry_xml_bohr_to_angstrom": 0.529177210903,
+  "evidence": "Actual 16/30.23561799401232 = .5291772109030001; matches accepted project constant. Earlier .52917721054482 was incorrect; exposed by geometry test before any new science call.",
+  "no_scientific_calls_yet": true,
+  "force_and_energy_units_unchanged": true
+}

@@ -1,0 +1,176 @@
+{
+  "created_utc": "2026-10-05T07:14:39.345954+00:00",
+  "technical_lock_sha256": "dc7c58680573832b675dafe3469aed28f9f70c15f7eed564fbdaf88b5435806a",
+  "reference_decision_sha256": "92163c95d1a70f98613f2b2615833beb952717b7ca8ef178b301a33d731ccda9",
+  "inputs": [
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay142/attempt_01/pw.in",
+      "sha256": "db4e3f9be3346c9392e968b2a93233cfd8d148cbe320fa1a0b3bba1f7add80a4",
+      "bytes": 1424
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay143/attempt_01/pw.in",
+      "sha256": "cd383b08a6134d3202938a120d04163617d1eab72bbe47282724437da105aefe",
+      "bytes": 1423
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay144/attempt_01/pw.in",
+      "sha256": "21781dd3416ef58bb3b468ec143dff7724252f29b140742e5b129443caa9d35a",
+      "bytes": 1426
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay145/attempt_01/pw.in",
+      "sha256": "14a283051c5621b03396906085ab8182e57d344bc52a1ba5c57ed5ba4649de42",
+      "bytes": 1425
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay146/attempt_01/pw.in",
+      "sha256": "09afcc55a4626eb05e676a079544c952a64de03fa3b76e0f019813ff261aad9c",
+      "bytes": 1425
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay147/attempt_01/pw.in",
+      "sha256": "4252698e789672370d9a538368d8c202808d75375d2af033ad9da1a8bd635144",
+      "bytes": 1426
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/execution/PBE/replay148/attempt_01/pw.in",
+      "sha256": "9ba7cc65aa233b2b38cefd0db94e86787f55de5626c797786dc580ea09ebe0c9",
+      "bytes": 1423
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/AUDIT21_GEOMETRY_EXACT.cfg",
+      "sha256": "1442f6dc9e8ca2327f9f47ee6dfe3b8a691619d836deef147deed1b7a58a0336",
+      "bytes": 19092
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/AUDIT21_REFERENCE_EXACT.cfg",
+      "sha256": "f7281f4aa8b6a85de0d4ad86995f26e6bf74dbc9dd0dea5a963472fe2306e421",
+      "bytes": 31709
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/CROSSING7_EXACT.cfg",
+      "sha256": "de9f1050c927fc6aff9b720a713a2d1fddce72eaf5a2cf2711d5448958ba9934",
+      "bytes": 5939
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/LOCAL_CHALLENGE4_REPLAY93_96_EXACT.cfg",
+      "sha256": "dba35a438b285bec4f18f7feed311eb3a81513ccd4e57053ac498a4778b71714",
+      "bytes": 3386
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/PBE8_REFERENCE_LABEL_INDEX.json",
+      "sha256": "e34cdcb32f020969be78c9b6b8c31d9e892786806ec3aa9330c0c4b7418d9367",
+      "bytes": 12419
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/TRAIN119_MODEL_EXACT.mtp",
+      "sha256": "6eb35503605214a886f3e3d884e93743d66bcaaec05ae58a30111c8c55de2df6",
+      "bytes": 9101
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/VALIDATION11_EXACT.cfg",
+      "sha256": "308c079a69f3c2ab6f6a69f4a2962ba3e10266213bdf8fa9fc96212552c01e22",
+      "bytes": 17001
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay142.cfg",
+      "sha256": "069a5c51762b97eff924215473a36a8db37c8aa1da58e8645b92ef8a2019ff71",
+      "bytes": 847
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay143.cfg",
+      "sha256": "534a5084580699b749ac1de00789ffb25457c64e08f43ba114a829aafe3b0300",
+      "bytes": 846
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay144.cfg",
+      "sha256": "edbd9d4d93dc2c709e4c1e4604a4699a1cce47b6618f7f8aa4c220b0e715a573",
+      "bytes": 849
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay145.cfg",
+      "sha256": "406873da0bf138368575b5f4e26a30f2307c5ae1078e86aa573d20c0d59cca99",
+      "bytes": 848
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay146.cfg",
+      "sha256": "945794e21e645e7cac39c8d98ceedf4f94c16cef259896e23e6632b1acb34503",
+      "bytes": 848
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay147.cfg",
+      "sha256": "f42ea28dfb2ac6e58c53b8903680b1e820b518d545a197483bafc717cf7c678e",
+      "bytes": 849
+    },
+    {
+      "path": "${PROJECT_ROOT}/13_completion_20261002/08_TRAIN119_PHYSICAL_DIAGNOSIS/versions/v001/attempt_20261005T070250Z/inputs/replay148.cfg",
+      "sha256": "3a14525559d3f439c9251272bbc2217781f82c8ac9a1feda78a4428f784f60d0",
+      "bytes": 846
+    }
+  ],
+  "order": [
+    "Qualification Validation11",
+    "Challenge4 inference",
+    "Missing Crossing7 PBE",
+    "Crossing7 inference",
+    "Audit21 inference",
+    "independent recomputation and closure"
+  ],
+  "crossing_indices": [
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148
+  ],
+  "challenge_indices": [
+    93,
+    94,
+    95,
+    96
+  ],
+  "old_stop": 1.0000012996964838,
+  "local_A2_eV_A": 0.09,
+  "force_RMSE": "sqrt(sum(error_component**2)/(3*N))",
+  "energy_anchor_replay": 142,
+  "static_scope": "Audit21 original v029 with NEB9 membership, original v030r central |qPT|<=0.15 definitions; development diagnostic",
+  "units": {
+    "coords": "angstrom",
+    "force": "eV/angstrom",
+    "energy": "eV",
+    "Ry_to_eV": 13.605693122994,
+    "bohr_to_angstrom": 0.529177210903
+  },
+  "PBE_setup": {
+    "template": "${PROJECT_ROOT}/12_transition_tube/versions/v090x_replay93_100_pbe8_reference_label_execution_v001/attempt_20260915T075033Z/FROZEN_INPUTS/QE_TEMPLATE_FROZEN.in",
+    "template_sha256": "3da2440149cdbd446c6c994eac5b6a63764bc2f10dfac257dd136159420a21f6",
+    "pw_x_sha256": "1d66c7856f5d6b3cd9c66b8578e01512b16bbe907b4360e54234890712ccd6a1",
+    "pseudo_hashes": {
+      "O.pbe-n-kjpaw_psl.1.0.0.UPF": "6d4f573d1f5d8fab1d334ed76fefbac21fdbb2c406af7f85ab8c6aab0e84ccc0",
+      "C.pbe-n-kjpaw_psl.1.0.0.UPF": "8a25fbf64c4fa257c68c01dc9a96e5b23c6a5ac0b09f45f271e1c946a65ed657",
+      "H.pbe-kjpaw_psl.1.0.0.UPF": "dd48be99c7a91c4163ed123cdac938af189a9f62f382c41e3f664d00a586839d"
+    },
+    "scf": "80/960 Ry; PBE PAW; 16A cell; Gamma; charge0 spin1 fixed occupations; nosym/noinv; conv_thr1e-10; max200; mixing_plain .30 david"
+  },
+  "runtime": {
+    "PBE_concurrent_processes": 3,
+    "threads_per_process": 1,
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "reason": "same original single-process/single-thread runtime per pw.x; bounded three-way concurrency on 6 CPUs, 14GB RAM"
+  },
+  "recovery": {
+    "max_total": 2,
+    "max_per_geometry": 1,
+    "external_failure": "repeat same input in fresh attempt_02 with changed outdir/prefix only, after original PID definitely ended",
+    "unconverged_SCF": "same geometry/Hamiltonian/pseudos/cutoffs/conv_thr; maxstep400 and mixing_beta0.15 from_scratch; fresh attempt_02, no selection among converged labels",
+    "validity_independent_of_model_error": true
+  },
+  "no_global_stop_change": true,
+  "no_deployment_acceptance": true,
+  "no_independent_generalization_claim": true
+}

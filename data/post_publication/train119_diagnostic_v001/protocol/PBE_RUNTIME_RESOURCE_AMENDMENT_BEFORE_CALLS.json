@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-05T07:16:58.346566+00:00",
+  "previous_science_lock_sha256": "f4fabd48bd1e8c68df4fd718955cdb6ab71ac7bdc5e606fa3fb0fcd314d31f0e",
+  "reason": "Historical pw.out reports maximum dynamical RAM per process >10.69 GB; host has14GB. Three simultaneous jobs unsafe. Freeze one pw.x process at a time before all science calls.",
+  "runtime": {
+    "PBE_concurrent_processes": 1,
+    "OMP_NUM_THREADS": "6",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "MPI_ranks": 1,
+    "pw_binary_unchanged": true
+  },
+  "geometry_xml_bohr_to_angstrom": 0.52917721054482,
+  "geometry_unit_authority": "QE7.5 frozen historical XML input cell 30.235617994012323 bohr for exactly16A; ratio16/cell matches .52917721054482. Used only for geometry matching; force conversion retains project .529177210903.",
+  "no_Hamiltonian_or_threshold_change": true,
+  "new_scientific_calls_before_amendment": 0
+}

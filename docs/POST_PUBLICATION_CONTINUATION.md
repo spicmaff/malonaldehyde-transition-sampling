@@ -40,3 +40,20 @@ No Train119 Gate1, Gate2, additional remediation, or Blind12 reveal was performe
 ## Final boundary
 
 The continuation does not establish deployment-ready reactive dynamics. Blind12 remains unrevealed.
+
+## Separate October 5, 2026 local physical diagnosis
+
+After frozen Stage91J closure, a distinct, bounded post-closure diagnostic
+qualified a lossless CFG writer and examined eleven already generated 100 K
+development geometries with authenticated PBE labels. Five saved applicability
+crossings in the right-minimum neighborhood coexisted with RMSE below A2.
+A further saved Audit21 evaluation gave a 0.123 meV lower-endpoint barrier
+error and 0.013834 eV/Å central-transition force-component RMSE, both
+development diagnostics with known training endpoint overlaps.
+
+This follow-up did not re-run Train119, re-grade Replay228, change the old
+numerical stop, create a Train119 trajectory, or clear the historical
+`STATIC_APPLICABILITY_FAIL`. The historical Validation11 serialization
+nonconformance remains recorded even though a later output-only patch
+qualifies on the same frozen inputs. See [the separate diagnostic](TRAIN119_LOCAL_DIAGNOSTIC.md)
+and [its corrections](TRAIN119_CORRECTIONS.md).

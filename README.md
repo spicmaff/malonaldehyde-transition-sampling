@@ -44,6 +44,33 @@ The final frozen Train119 check did not pass static applicability: five of 228 r
 
 See docs/POST_PUBLICATION_CONTINUATION.md.
 
+## October 2026: bounded local Train119 PBE diagnostic
+
+A separate post-closure audit of the **unchanged** Train119 model compared saved
+PBE references with selected 100 K development geometries: Crossing7 (Replay228
+142–148; seven new historical PBE single points) and Challenge4 (93–96; four
+reused PBE points). All eleven force-component RMSE values satisfy the inherited
+per-configuration A2 = 0.09 eV/Å criterion; their maxima are 0.027965 and
+0.029823 eV/Å, respectively. Five recorded gamma crossings coexist with small
+**local** force errors. No universal gamma/error calibration is implied.
+
+On the development Audit21, Train119's saved-path lower-endpoint barrier error
+is 0.122996 meV and central-three-image force-component RMSE is 0.013834 eV/Å.
+Both NEB endpoints geometrically overlap training configurations under the
+previously established comparison tolerance, so these are **not independent
+holdout metrics**. The barrier error is not a uniform profile-error bound.
+The historical `STATIC_APPLICABILITY_FAIL`, serialization nonconformance and
+`SEED_SENSITIVE` finding for the original comparison remain unchanged.
+
+[Full local diagnostic, precise caveats and data](docs/TRAIN119_LOCAL_DIAGNOSTIC.md)
+· [Corrections and geometric dependencies](docs/TRAIN119_CORRECTIONS.md)
+
+Reproduce all saved numerical comparisons without QE or MLIP:
+
+    python3 tools/verify_train119_diagnostic.py --data data/post_publication/train119_diagnostic_v001
+
+No Train119 Gate1, independent deployment validation, or Blind12 reveal was performed.
+
 ## Current provenance authority
 
 Canonical ledger V005 corrects seven source-interpretation classes and 21 authority bindings, while retaining historical ledgers and all genuine scientific FAILs. See [ledger reconciliation](docs/LEDGER_RECONCILIATION.md) and [the current pointer](provenance/CURRENT_CANONICAL_LEDGER.json). This documentation repair does not change the model results.

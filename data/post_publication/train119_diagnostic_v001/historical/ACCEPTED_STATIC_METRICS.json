@@ -1,0 +1,25 @@
+{
+  "scope": "FROZEN_AUDIT21_WITH_NEB9_DEVELOPMENT_DIAGNOSTIC",
+  "PBE_lower_endpoint_barrier_eV": 0.036072093892926205,
+  "Train119_lower_endpoint_barrier_eV": 0.0361950895917289,
+  "barrier_error_meV": 0.122995698802697,
+  "barrier_abs_error_meV": 0.122995698802697,
+  "transition_force_component_RMSE_eV_A": 0.01383398828876731,
+  "transition_image_indices": [
+    4,
+    5,
+    6
+  ],
+  "basin12_force_component_RMSE_eV_A": 0.009403992771207683,
+  "NEB9_force_component_RMSE_eV_A": 0.012964116066844158,
+  "Audit21_force_component_RMSE_eV_A": 0.011070844827406069,
+  "audit_training_ordered_distance_overlap": [
+    {
+      "audit_id": "audit_neb_01",
+      "training_index": 9,
+      "identity": "ordered pair-distance match only; used to restrict independence claims, not copy force vectors"
+    }
+  ],
+  "independent_holdout_claim": false,
+  "new_formal_energy_PASS": false
+}
