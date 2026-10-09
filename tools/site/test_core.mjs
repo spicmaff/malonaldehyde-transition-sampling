@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {distance,coordinate,interpolateFrame,interpolateValue,lowerEndpointProfile,pairedWins,validatedRoute,aboveStop} from '../../site/core.mjs';
+const xyz=[[0,0,0],[1,0,0],[0,1,0],[0,2,0],[1,1,0],[1,2,0],[2,1,0],[3,0,0],[3,1,0]];
+test('qPT is the difference between fixed oxygen/proton distances',()=>{assert.equal(coordinate(xyz).q,-1);assert.equal(coordinate(xyz).roo,3);});
+test('invalid and non-finite coordinates fail',()=>{assert.throws(()=>distance([NaN,0,0],[0,0,0]));assert.throws(()=>coordinate([]));});
+test('saved frames are preserved at integer positions',()=>{const f=[{xyz},{xyz:xyz.map(a=>a.map(v=>v+1))}];assert.deepEqual(interpolateFrame(f,0).xyz,xyz);assert.deepEqual(interpolateFrame(f,1).xyz,f[1].xyz);assert.equal(interpolateFrame(f,.5).exact,false);});
+test('display interpolation has explicit finite bounds',()=>{assert.equal(interpolateValue([0,10],.25),2.5);assert.throws(()=>interpolateValue([0,10],-1));assert.throws(()=>interpolateFrame([{xyz}],Infinity));});
+test('each energy series uses its own lower endpoint',()=>{assert.deepEqual(lowerEndpointProfile([1,2,3,4,5,4,3,2,0]),[1000,2000,3000,4000,5000,4000,3000,2000,0]);assert.throws(()=>lowerEndpointProfile([1,2]));});
+test('seed pairs require complete source identity',()=>{const r=Array.from({length:5},(_,i)=>[{index:i,model:'basin',barrier:2,force:.1},{index:i,model:'targeted',barrier:1,force:.05}]).flat();assert.deepEqual(pairedWins(r),{barrier:5,force:5,both:5});assert.throws(()=>pairedWins(r.slice(1)));});
+test('deep links retain route; unknown routes fail to the overview',()=>{assert.equal(validatedRoute('#longread/chapter-8'),'longread');assert.equal(validatedRoute('#not-a-page'),'overview');});
+test('gamma comparisons are not rounded before deciding',()=>{assert.equal(aboveStop(1.00000130,1.0000012996964838),true);assert.equal(aboveStop(1.0000012996964838,1.0000012996964838),false);assert.throws(()=>aboveStop(NaN,1));});

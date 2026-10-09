@@ -1,0 +1,72 @@
+name: research-site
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: research-site-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  site-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Offline source, numerical, bilingual and deterministic-build tests
+        run: |
+          python -B tools/site/test_site.py
+          python -O -B tools/site/test_site.py
+          node --test tools/site/test_core.mjs
+          python -B tools/build_research_site.py --out "$RUNNER_TEMP/site-preview"
+      - name: Install locked browser-only QA dependencies outside the repository
+        run: |
+          mkdir -p "$RUNNER_TEMP/site-browser"
+          cp tools/site/package.json tools/site/package-lock.json "$RUNNER_TEMP/site-browser/"
+          npm ci --prefix "$RUNNER_TEMP/site-browser" --ignore-scripts --no-audit --no-fund
+          command -v google-chrome
+      - name: Real browser, both languages, three widths, both themes, videos and accessibility
+        env:
+          BROWSER_DEPS: ${{ runner.temp }}/site-browser
+          QA_OUT: ${{ runner.temp }}/site-qa
+          SITE_URL: http://127.0.0.1:8765/
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 --directory "$RUNNER_TEMP/site-preview" > "$RUNNER_TEMP/site-http.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          node tools/site/browser_test.mjs
+      - name: Retain browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-site-browser-qa
+          path: ${{ runner.temp }}/site-qa
+          retention-days: 14
+      - name: Upload the tested static site
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/site-preview
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: site-check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Publish the verified artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

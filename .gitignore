@@ -48,3 +48,7 @@ id_ed25519*
 
 # Large release assets are published separately
 release_assets/
+
+# Rebuildable research-site and browser QA output
+/_site/
+/site-qa-output/
