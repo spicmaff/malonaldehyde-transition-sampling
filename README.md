@@ -2,6 +2,20 @@
 
 This repository records an equal-DFT-budget comparison of two Moment Tensor Potentials for proton transfer in malonaldehyde, together with the later checks that exposed important limits of the original interpretation.
 
+## Interactive research exhibit · Proton / Potential
+
+[![One proton, two ways to learn](site/social-preview.png)](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
+
+[Open the exhibit — English](https://spicmaff.github.io/malonaldehyde-transition-sampling/) · [Русская версия](https://spicmaff.github.io/malonaldehyde-transition-sampling/ru.html)
+
+Explore the nine saved molecular geometries, real training-set projections,
+three original energy profiles, all five paired seeds, and the separate local
+Train119 PBE diagnostic. Ten sections, light/dark themes, complete English and
+Russian longreads, source hashes, and the five original films. Every number
+comes from frozen public data; the browser does not run a potential or dynamics.
+`SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain unchanged.
+[Site methods, build instructions and boundaries](docs/RESEARCH_SITE.md).
+
 ## New visual story · v1.2.0
 
 [![Watch the new visual story](presentation/visual-story/v001/media/04_story_teaser_poster.jpg)](https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/04_story_teaser.mp4)

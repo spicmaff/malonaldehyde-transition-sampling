@@ -1,0 +1,10 @@
+/* Pure numerical/display utilities. No model, force or selector inference. */
+export const ROUTES=['overview','molecule','sampling','landscape','seeds','applicability','train119','story','longread','reproduce'];
+export function distance(a,b){if(a.length!==3||b.length!==3||![...a,...b].every(Number.isFinite))throw Error('Invalid coordinate');return Math.hypot(...a.map((v,i)=>v-b[i]));}
+export function coordinate(x){if(x.length!==9)throw Error('Expected nine atoms');const left=distance(x[0],x[1]),right=distance(x[7],x[1]);return {left,right,q:left-right,roo:distance(x[0],x[7])};}
+export function interpolateFrame(frames,value){if(!Number.isFinite(value)||value<0||value>frames.length-1)throw Error('Frame out of range');const i=Math.floor(value),j=Math.min(i+1,frames.length-1),a=value-i;const xyz=frames[i].xyz.map((r,k)=>r.map((x,l)=>x*(1-a)+frames[j].xyz[k][l]*a));return {xyz,...coordinate(xyz),exact:Number.isInteger(value),index:value};}
+export function interpolateValue(values,v){if(!Number.isFinite(v)||v<0||v>values.length-1)throw Error('Frame out of range');const i=Math.floor(v),a=v-i;return values[i]*(1-a)+values[Math.min(i+1,values.length-1)]*a;}
+export function lowerEndpointProfile(energies){if(energies.length!==9||!energies.every(Number.isFinite))throw Error('Nine finite energies required');const zero=Math.min(energies[0],energies.at(-1));return energies.map(e=>(e-zero)*1000);}
+export function pairedWins(rows){if(rows.length!==10)throw Error('Five complete pairs required');let barrier=0,force=0,both=0;for(let i=0;i<5;i++){const pair=rows.filter(r=>r.index===i),a=pair.find(r=>r.model==='basin'),b=pair.find(r=>r.model==='targeted');if(pair.length!==2||!a||!b)throw Error('Incomplete seed pair');const be=b.barrier<a.barrier,fe=b.force<a.force;barrier+=Number(be);force+=Number(fe);both+=Number(be&&fe);}return {barrier,force,both};}
+export function validatedRoute(hash){const name=hash.replace(/^#/,'').split('/')[0];return ROUTES.includes(name)?name:'overview';}
+export function aboveStop(gamma,stop){if(![gamma,stop].every(Number.isFinite))throw Error('Finite grades required');return gamma>stop;}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axe-core": "4.10.3",
+    "puppeteer-core": "24.22.3"
+  }
+}

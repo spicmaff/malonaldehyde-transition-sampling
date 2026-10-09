@@ -1,0 +1,37 @@
+[
+  {
+    "file": "01_proton_path.mp4",
+    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/01_proton_path.mp4",
+    "sha256": "4b6a5a26ae3cf14eb82fb2be8038cfb355d601873cd0d09f37653e1abc80abdd",
+    "bytes": 1034073,
+    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+  },
+  {
+    "file": "02_equal_budget.mp4",
+    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/02_equal_budget.mp4",
+    "sha256": "92f7f18f1171994f7eabaf1bfb8d871e3180265007773437aa66984335b28868",
+    "bytes": 989751,
+    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+  },
+  {
+    "file": "03_applicability_boundary.mp4",
+    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/03_applicability_boundary.mp4",
+    "sha256": "4e09b6f338662394f331dd12960c04a4426b09656d1054b37d930905f3138923",
+    "bytes": 872013,
+    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+  },
+  {
+    "file": "04_story_teaser.mp4",
+    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/04_story_teaser.mp4",
+    "sha256": "cad8d878592d4d47871536b698d2407e88981def0a5caa5d715ee5162c8a11b4",
+    "bytes": 799665,
+    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+  },
+  {
+    "file": "05_proton_vertical.mp4",
+    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/05_proton_vertical.mp4",
+    "sha256": "d8005278d7323dc80487408d235df384a7bd198cf1c4896d7af127aea97bf36f",
+    "bytes": 648984,
+    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+  }
+]
