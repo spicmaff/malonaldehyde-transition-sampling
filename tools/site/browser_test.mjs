@@ -1,4 +1,4 @@
-/* Real Chromium acceptance: routes, sizes, languages, motion, playback and axe. */
+/* Real Chromium acceptance: English routes, redirect, sizes, motion, playback and axe. */
 import {createRequire} from 'node:module';
 import {mkdir,writeFile} from 'node:fs/promises';
 import path from 'node:path';
@@ -15,7 +15,7 @@ const findings={status:'RUNNING',base,views:[],functional:[],video:[],accessibil
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 try{
  const page=await browser.newPage();page.on('pageerror',e=>findings.errors.push(e.message));
- for(const lang of ['en','ru'])for(const width of [1440,390,320]){
+ for(const lang of ['en'])for(const width of [1440,390,320]){
   await page.setViewport({width,height:width===1440?900:844,deviceScaleFactor:1});
   await page.goto(base+(lang==='ru'?'ru.html':'index.html')+'#overview',{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>window.__siteReady===true,{timeout:20000});
@@ -25,8 +25,9 @@ try{
     await page.evaluate(r=>location.hash=r,route);await wait(100);
     const state=await page.evaluate(()=>({active:document.querySelector('section.active')?.id,width:innerWidth,scrollWidth:document.documentElement.scrollWidth,language:document.documentElement.lang,theme:document.documentElement.dataset.theme,activeCount:document.querySelectorAll('section.active').length}));
     assert.equal(state.active,route);assert.equal(state.activeCount,1);assert.equal(state.language,lang);assert.equal(state.theme,theme);assert.ok(state.scrollWidth<=state.width+1,`Horizontal overflow ${lang}/${theme}/${width}/${route}: ${state.scrollWidth}`);
+    assert.equal(await page.evaluate(()=>/[\u0400-\u04ff]/.test(document.body.innerText)),false,'Non-English Cyrillic in active document');
     findings.views.push({lang,width,theme,route,overflow:false});
-    if((lang==='en'&&width===1440&&theme==='light'&&['overview','molecule','sampling','landscape','seeds','applicability','train119','story','longread'].includes(route))||(lang==='ru'&&width===390&&['overview','molecule','train119'].includes(route))||(lang==='en'&&width===1440&&theme==='dark'&&route==='overview'))await page.screenshot({path:path.join(out,`${lang}_${width}_${theme}_${route}.png`),fullPage:route==='overview'});
+    if((lang==='en'&&width===1440&&theme==='light'&&['overview','molecule','sampling','landscape','seeds','applicability','train119','story','longread'].includes(route))||(lang==='en'&&width===390&&['overview','molecule','train119'].includes(route))||(lang==='en'&&width===1440&&theme==='dark'&&route==='overview'))await page.screenshot({path:path.join(out,`${lang}_${width}_${theme}_${route}.png`),fullPage:route==='overview'});
    }
   }
  }
@@ -40,8 +41,8 @@ try{
  await page.evaluate(()=>location.hash='sampling');await wait(120);await page.select('#sampling-branch','basin');assert.equal(await page.$$eval('#sampling-chart circle',x=>x.length),24);await page.select('#sampling-branch','targeted');assert.equal(await page.$$eval('#sampling-chart circle',x=>x.length),24);findings.functional.push('24 additions and 36 shared configurations; real projection');
  await page.evaluate(()=>location.hash='seeds');await wait(120);await page.select('#seed-metric','force');await page.select('#seed-select','3');assert.match(await page.$eval('#seed-readout',e=>e.textContent),/12250469658613881511/);findings.functional.push('metric selection and exact 64-bit seed identity');
  await page.evaluate(()=>location.hash='applicability');await wait(120);await page.select('#gamma-window','crossing');assert.equal(await page.$$eval('#gamma-chart circle',els=>els.length),7);findings.functional.push('gamma zoom shows all seven crossing-neighborhood frames');
- await page.evaluate(()=>location.hash='train119');await wait(120);await page.select('#case-frame','145');assert.match(await page.$eval('#case-readout',e=>e.textContent),/CROSSING7 \/ 145/);await page.click('#language');await page.waitForFunction(()=>document.documentElement.lang==='ru'&&window.__siteReady===true);assert.equal(new URL(page.url()).hash,'#train119');findings.functional.push('RU/EN switch preserves the current section');
- await page.goto(base+'ru.html#longread/chapter-8',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__siteReady===true);assert.equal(await page.$eval('section.active',e=>e.id),'longread');assert.equal(await page.$$eval('#longread-content h2',h=>h.length),10);findings.functional.push('deep links and ten-chapter longread');
+ await page.evaluate(()=>location.hash='train119');await wait(120);await page.select('#case-frame','145');assert.match(await page.$eval('#case-readout',e=>e.textContent),/CROSSING7 \/ 145/);assert.equal(await page.$('#language'),null);findings.functional.push('single English interface; no language toggle');
+ await page.goto(base+'ru.html#longread/chapter-8',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__siteReady===true&&document.documentElement.lang==='en');assert.equal(new URL(page.url()).hash,'#longread/chapter-8');assert.ok(new URL(page.url()).pathname.endsWith('index.html'));assert.equal(await page.$eval('section.active',e=>e.id),'longread');assert.equal(await page.$$eval('#longread-content h2',h=>h.length),10);findings.functional.push('legacy Russian URL redirects to English and preserves deep link');
  // Native browser video playback, all five same-origin historical media files.
  await page.goto(base+'index.html#story',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__siteReady===true);
  for(let i=0;i<5;i++){
@@ -53,7 +54,7 @@ try{
   if(await page.$eval('html',e=>e.dataset.theme)!==theme)await page.click('#theme');
   for(const route of routes){await page.evaluate(r=>location.hash=r,route);await wait(100);await page.addScriptTag({path:axePath});const result=await page.evaluate(async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}}));findings.accessibility.push({theme,route,violations:result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))});}
  }
- const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(base+'ru.html',{waitUntil:'domcontentloaded'});assert.equal(await nojs.$$('section.page').then(a=>a.length),10);assert.ok(await nojs.$eval('#longread-content',e=>e.textContent.length)>14000);assert.equal(await nojs.$$eval('.chapter-source',a=>a.length),10);findings.functional.push('Russian full static text, source links and tables without JavaScript');await nojs.close();
+ const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(base+'index.html',{waitUntil:'domcontentloaded'});assert.equal(await nojs.$$('section.page').then(a=>a.length),10);assert.ok(await nojs.$eval('#longread-content',e=>e.textContent.length)>14000);assert.equal(await nojs.$$eval('.chapter-source',a=>a.length),10);findings.functional.push('English full static text, source links and tables without JavaScript');await nojs.close();
  const failed=await browser.newPage();await failed.setRequestInterception(true);failed.on('request',r=>r.url().endsWith('data/science.json')?r.abort():r.continue());await failed.goto(base+'index.html',{waitUntil:'domcontentloaded'});await failed.waitForSelector('#load-error:not([hidden])');assert.ok(await failed.$eval('#longread-content',e=>e.textContent.length)>14000);findings.functional.push('data-loading failure preserves the complete static narrative');await failed.close();
  assert.deepEqual(findings.errors,[],'Unexpected JavaScript errors');
  const violations=findings.accessibility.flatMap(a=>a.violations.map(v=>({theme:a.theme,route:a.route,...v})));

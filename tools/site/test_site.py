@@ -21,13 +21,13 @@ class SiteTests(unittest.TestCase):
   cls.tmp=tempfile.TemporaryDirectory();cls.out=Path(cls.tmp.name)/'build';cls.d=build.build(cls.out)
  @classmethod
  def tearDownClass(cls):cls.tmp.cleanup()
- def test_two_languages_have_all_ten_routes(self):
-  for lang,f in [('en','index.html'),('ru','ru.html')]:
+ def test_english_has_all_ten_routes(self):
+  for lang,f in [('en','index.html')]:
    p=Document();p.feed((self.out/f).read_text());self.assertEqual(p.lang,lang)
    self.assertEqual(len(p.ids),len(set(p.ids)))
    for r in ['overview','molecule','sampling','landscape','seeds','applicability','train119','story','longread','reproduce']:self.assertIn(r,p.ids)
  def test_local_assets_and_links_exist(self):
-  for f in ['index.html','ru.html']:
+  for f in ['index.html']:
    p=Document();p.feed((self.out/f).read_text())
    for ref in p.sources+p.links:
     if ref.startswith(('https:','http:')):continue
@@ -72,11 +72,11 @@ class SiteTests(unittest.TestCase):
  def test_endpoint_overlap_and_model_separation(self):
   self.assertEqual([r['training_index'] for r in self.d['overlaps']],[9,10])
   self.assertEqual(len(self.d['profiles']),4)
-  for f in ['index.html','ru.html']:
+  for f in ['index.html']:
    s=(self.out/f).read_text();section=s.split('id="landscape"',1)[1].split('</section>',1)[0]
    self.assertNotIn('data-series="Train119"',section)
  def test_longread_length_and_cited_chapters(self):
-  for lang in ['en','ru']:
+  for lang in ['en']:
    raw=(ROOT/f'site/longread.{lang}.md').read_text()
    self.assertEqual(raw.count('\n## '),10);self.assertEqual(raw.count('@sources:'),10)
    self.assertGreater(len(raw.split()),1700)
@@ -85,12 +85,28 @@ class SiteTests(unittest.TestCase):
  def test_media_identity(self):
   media=json.loads((ROOT/'site/media/manifest.json').read_text())
   self.assertEqual(len(media),5)
-  for item in media:self.assertEqual(hashlib.sha256((self.out/'media'/item['file']).read_bytes()).hexdigest(),item['sha256'])
+  for item in media:
+   self.assertEqual(item['language'],'en')
+   self.assertEqual(hashlib.sha256((self.out/'media'/item['file']).read_bytes()).hexdigest(),item['sha256'])
+ def test_english_only_active_text_and_redirect(self):
+  self.assertFalse((self.out/'longread.ru.md').exists())
+  html=(self.out/'index.html').read_text()
+  self.assertNotIn('id="language"',html)
+  self.assertNotIn('hreflang="ru"',html)
+  self.assertNotIn('ru.html',html)
+  for p in self.out.rglob('*'):
+   if p.suffix in ('.html','.mjs','.md','.json','.txt','.svg'):
+    self.assertIsNone(re.search('[\u0400-\u04ff]',p.read_text()),str(p))
+  redirect=(self.out/'ru.html').read_text()
+  self.assertIn('lang="en"',redirect)
+  self.assertIn('noindex',redirect)
+  self.assertNotIn('section class="page"',redirect)
+  self.assertIn('location.hash',(self.out/'redirect.mjs').read_text())
  def test_build_is_byte_deterministic(self):
   other=Path(self.tmp.name)/'second';build.build(other)
   self.assertEqual((self.out/'build-manifest.json').read_bytes(),(other/'build-manifest.json').read_bytes())
  def test_no_network_runtime_dependencies(self):
-  for f in ['index.html','ru.html']:
+  for f in ['index.html']:
    p=Document();p.feed((self.out/f).read_text());self.assertFalse(any(x.startswith(('http:','https:','//')) for x in p.sources))
  def test_no_blind_payload_or_private_paths(self):
   for p in self.out.rglob('*'):

@@ -1,37 +1,62 @@
 [
   {
     "file": "01_proton_path.mp4",
-    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/01_proton_path.mp4",
-    "sha256": "4b6a5a26ae3cf14eb82fb2be8038cfb355d601873cd0d09f37653e1abc80abdd",
-    "bytes": 1034073,
-    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+    "sha256": "e5d0e1572c320397634ca7927eb303b884b2df7b39aeef0ab3d4d64ae6057b8e",
+    "language": "en",
+    "duration_s": 34,
+    "fps": 60,
+    "derivative_type": "English-title remaster; same geometry, timing and numerical data",
+    "source_renderer": "scripts/visual_story/render_visual_story.py",
+    "source_renderer_sha256": "77a9a0b85082fe7936a53fb4ea9d62e29afcd52567237749ea20f86c04143949",
+    "source_release": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/tag/v1.2.0",
+    "new_physical_calls": 0
   },
   {
     "file": "02_equal_budget.mp4",
-    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/02_equal_budget.mp4",
-    "sha256": "92f7f18f1171994f7eabaf1bfb8d871e3180265007773437aa66984335b28868",
-    "bytes": 989751,
-    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+    "sha256": "695cf7b3c4a2fad7412665d3b04557b59b17f6c25f7ecb44375038f4432ea2c7",
+    "language": "en",
+    "duration_s": 46,
+    "fps": 60,
+    "derivative_type": "English-title remaster; same geometry, timing and numerical data",
+    "source_renderer": "scripts/visual_story/render_visual_story.py",
+    "source_renderer_sha256": "77a9a0b85082fe7936a53fb4ea9d62e29afcd52567237749ea20f86c04143949",
+    "source_release": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/tag/v1.2.0",
+    "new_physical_calls": 0
   },
   {
     "file": "03_applicability_boundary.mp4",
-    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/03_applicability_boundary.mp4",
-    "sha256": "4e09b6f338662394f331dd12960c04a4426b09656d1054b37d930905f3138923",
-    "bytes": 872013,
-    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+    "sha256": "04bf97555c136b0b19136879e429cdc94b88b21bbdaf012a1620f4378d516ec9",
+    "language": "en",
+    "duration_s": 40,
+    "fps": 60,
+    "derivative_type": "English-title remaster; same geometry, timing and numerical data",
+    "source_renderer": "scripts/visual_story/render_visual_story.py",
+    "source_renderer_sha256": "77a9a0b85082fe7936a53fb4ea9d62e29afcd52567237749ea20f86c04143949",
+    "source_release": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/tag/v1.2.0",
+    "new_physical_calls": 0
   },
   {
     "file": "04_story_teaser.mp4",
-    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/04_story_teaser.mp4",
-    "sha256": "cad8d878592d4d47871536b698d2407e88981def0a5caa5d715ee5162c8a11b4",
-    "bytes": 799665,
-    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+    "sha256": "79a6575f233c3af7bd32257685fd64e6aae8ced79521c48d212547bfb0b2c8d3",
+    "language": "en",
+    "duration_s": 20,
+    "fps": 60,
+    "derivative_type": "English-title remaster; same geometry, timing and numerical data",
+    "source_renderer": "scripts/visual_story/render_visual_story.py",
+    "source_renderer_sha256": "77a9a0b85082fe7936a53fb4ea9d62e29afcd52567237749ea20f86c04143949",
+    "source_release": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/tag/v1.2.0",
+    "new_physical_calls": 0
   },
   {
     "file": "05_proton_vertical.mp4",
-    "source": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/05_proton_vertical.mp4",
-    "sha256": "d8005278d7323dc80487408d235df384a7bd198cf1c4896d7af127aea97bf36f",
-    "bytes": 648984,
-    "role": "Unmodified historical video, October 5; Russian on-screen text, silent"
+    "sha256": "436c469ae4924875d319c163f86038bfb4dc271d283e37840192a8c6adf20f54",
+    "language": "en",
+    "duration_s": 22,
+    "fps": 60,
+    "derivative_type": "English-title remaster; same geometry, timing and numerical data",
+    "source_renderer": "scripts/visual_story/render_visual_story.py",
+    "source_renderer_sha256": "77a9a0b85082fe7936a53fb4ea9d62e29afcd52567237749ea20f86c04143949",
+    "source_release": "https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/tag/v1.2.0",
+    "new_physical_calls": 0
   }
 ]

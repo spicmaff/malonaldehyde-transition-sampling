@@ -1,22 +1,22 @@
 # Interactive research exhibit: Proton / Potential
 
-The bilingual exhibit is published at https://spicmaff.github.io/malonaldehyde-transition-sampling/ (English) and `ru.html` (Russian). Its scientific snapshot is commit `f44d28cc0b13defb747f625376b083055b577629`, including the bounded Train119 diagnostic merged in PR #7. A later website commit does not change that scientific authority.
+The English-only exhibit is published at https://spicmaff.github.io/malonaldehyde-transition-sampling/. The legacy `ru.html` URL redirects to the English section; it is not a second edition. Its scientific snapshot is commit `f44d28cc0b13defb747f625376b083055b577629`, including the bounded Train119 diagnostic merged in PR #7. A later website commit does not change that scientific authority.
 
 ## Editorial and visual design
 
-The exhibit has ten independently addressable sections: overview, molecule, sampling, energy landscape, five seeds, applicability, Train119, films, full longread, and reproduction. The ten-chapter Russian narrative is a revised account of the earlier v1.2.0 longread, with a separately edited English counterpart. Both include the October-5 diagnosis published on October 9. Each chapter has source links pinned to the scientific commit. The old longread and release remain unchanged.
+The exhibit has ten independently addressable sections: overview, molecule, sampling, energy landscape, five seeds, applicability, Train119, films, full longread, and reproduction. The ten-chapter English narrative is a revised account of the earlier v1.2.0 longread. It includes the October-5 diagnosis published on October 9. Each chapter has source links pinned to the scientific commit. The old longread and release remain unchanged.
 
 The visual reference is [Memory / Geometry](https://spicmaff.github.io/rendezvous-grid-mazes/): warm paper, academic serif headings, teal/rust accents, understated panels and a matching dark theme. This site has its own molecular SVG renderer and source-derived plots. It does not copy the reference's automaton simulator or claim to perform a molecular simulation. System fonts are used; no font files, CDN libraries, analytics or external runtime services are shipped.
 
 ## Source layout and repeatable build
 
-- `site/pages.py`: static bilingual page renderer, including readable no-JavaScript content.
-- `site/longread.en.md`, `site/longread.ru.md`: editorial source. `@sources:` directives become pinned links in both HTML and downloadable Markdown.
+- `site/pages.py`: static English-only page renderer, including readable no-JavaScript content.
+- `site/longread.en.md`: editorial source. `@sources:` directives become pinned links in both HTML and downloadable Markdown.
 - `site/style.css`: light/dark, responsive and print presentation.
-- `site/app.mjs`: route navigation, theme/language controls, SVG viewers and visual interactions.
+- `site/app.mjs`: route navigation, theme controls, SVG viewers and visual interactions.
 - `site/core.mjs`: pure, independently tested coordinate/interpolation/display utilities.
-- `site/assets/`: unmodified historical video posters.
-- `site/media/`: five original v1.2.0 MP4 assets, plus source URL, SHA-256 and size manifest.
+- `site/assets/`: English-remastered video posters.
+- `site/media/`: five English-title remasters of v1.2.0 MP4 assets, plus source-renderer SHA-256, English language and derivative manifest.
 - `tools/build_research_site.py`: standard-library build and scientific extraction.
 - `tools/site/test_site.py`, `test_core.mjs`, `browser_test.mjs`: offline, numerical and browser checks.
 - `.github/workflows/research-site.yml`: checked build, browser evidence and Pages deployment from main only.
@@ -28,7 +28,7 @@ python3 -B tools/build_research_site.py --out _site
 python3 -m http.server 8000 --directory _site
 ```
 
-Open `http://localhost:8000/` or `/ru.html`. The build uses saved CFG/TSV/JSON and the existing Train119 verifier; it makes no network or scientific executable calls. Outputs include deterministic `data/science.json`, an evidence map with input SHA-256 values, two static HTML pages, all runtime media, downloadable longreads, and `build-manifest.json`. Two builds from identical sources must have identical manifests. Direct `file://` viewing preserves static content but browsers may block module/data loading; the small HTTP server resolves that restriction.
+Open `http://localhost:8000/`. The build uses saved CFG/TSV/JSON and the existing Train119 verifier; it makes no network or scientific executable calls. Outputs include deterministic `data/science.json`, an evidence map with input SHA-256 values, one English HTML page plus a legacy-URL redirect, all runtime media, a downloadable English longread, and `build-manifest.json`. Two builds from identical sources must have identical manifests. Direct `file://` viewing preserves static content but browsers may block module/data loading; the small HTTP server resolves that restriction.
 
 ```bash
 python3 -B tools/site/test_site.py
@@ -47,7 +47,7 @@ BROWSER_DEPS="$QA_DEPS" SITE_URL=http://localhost:8000/ QA_OUT=site-qa-output \
   node tools/site/browser_test.mjs
 ```
 
-The test uses system Google Chrome (`CHROME_PATH` overrides its location). Browser acceptance covers ten sections × two languages × two themes × three widths (1440, 390, 320), keyboard controls, play/pause/reset, source values, language-preserving navigation, deep links, reduced motion, all five videos playing and advancing, JavaScript failures, no-JavaScript reading, and WCAG-tagged axe checks. Automated accessibility checks do not replace manual usability review. CI retains screenshots and JSON reports.
+The test uses system Google Chrome (`CHROME_PATH` overrides its location). Browser acceptance covers ten English sections × two themes × three widths (1440, 390, 320), keyboard controls, play/pause/reset, source values, legacy-URL redirect preserving the hash, deep links, reduced motion, all five videos playing and advancing, JavaScript failures, no-JavaScript reading, and WCAG-tagged axe checks. Automated accessibility checks do not replace manual usability review. CI retains screenshots and JSON reports.
 
 ## Data and plotting contracts
 
@@ -63,7 +63,16 @@ The nine-atom display uses fixed O1/H2/O8 identity, a selectable display rotatio
 
 ## Historical media and licensing
 
-All five MP4 files are the original silent, Russian-on-screen v1.2.0 films. They are copied byte-for-byte from that release into the self-contained Pages artifact; the URLs and hashes are in `site/media/manifest.json`. English and Russian explanatory captions identify what is being shown. These captions are not a claim that the historical films have been re-rendered or fully translated. The old Stage91J closure video remains a historical account; the new local diagnosis is described separately. Native playback controls, preload=none, local posters and same-origin MP4 delivery avoid autoplay and cross-origin dependency problems.
+All five active films are English-title derivatives of the original v1.2.0 release. `tools/site/remaster_english_films.py` verifies the frozen renderer SHA-256, replaces its 70 Russian text constants with reviewed English titles, and switches decimal punctuation to English. Geometry, paths, timing, reference numbers and scientific scope are unchanged. The build is presentation rendering only. Original release files and historical `presentation/visual-story/v001` remain untouched.
+
+To rebuild into a new directory (NumPy, Pillow and ffmpeg required):
+
+```bash
+python3 tools/site/remaster_english_films.py --out remaster-output
+```
+
+The English derivatives and posters were visually inspected across sixteen keyframes, fully decoded, and checked for original durations and 60 fps. Their hashes and source-renderer identity are in `site/media/manifest.json`. These are translated historical films, not the proposed future cinematic redesign. The Stage91J film retains its historical closure scope; later local diagnosis is explained separately. Native playback controls, preload=none and same-origin delivery remain.
+
 
 Project-owned code is covered by the repository MIT license. Project-owned data and media follow its CC BY 4.0 declaration; retain attribution to Mikhail Fofonov. New styling/rendering code is project-owned; the Memory / Geometry design reference is acknowledged above. Node dependencies are development/CI tools only, not shipped site runtime. The existing MLIP patch retains its own separate third-party notice in the scientific package. No QE/MLIP binaries, UPF files or font files are included.
 

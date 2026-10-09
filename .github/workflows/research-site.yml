@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Offline source, numerical, bilingual and deterministic-build tests
+      - name: Offline source, numerical, English-only and deterministic-build tests
         run: |
           python -B tools/site/test_site.py
           python -O -B tools/site/test_site.py
@@ -32,7 +32,7 @@ jobs:
           cp tools/site/package.json tools/site/package-lock.json "$RUNNER_TEMP/site-browser/"
           npm ci --prefix "$RUNNER_TEMP/site-browser" --ignore-scripts --no-audit --no-fund
           command -v google-chrome
-      - name: Real browser, both languages, three widths, both themes, videos and accessibility
+      - name: Real browser, English/legacy redirect, three widths, both themes, videos and accessibility
         env:
           BROWSER_DEPS: ${{ runner.temp }}/site-browser
           QA_OUT: ${{ runner.temp }}/site-qa
