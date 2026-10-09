@@ -1,0 +1,56 @@
+{
+  "schema": "english-cinematic-previews-v2",
+  "scientific_snapshot": "f44d28cc0b13defb747f625376b083055b577629",
+  "scope": "Screen time is not reaction time. All moving intermediate geometries and energies are display interpolation; force arrows show stored PBE/MTP vectors.",
+  "new_physical_calls": 0,
+  "films": [
+    {
+      "id": "hero",
+      "route": "overview",
+      "seconds": 18,
+      "title": "The moving scaffold",
+      "file": "01_moving_scaffold.mp4",
+      "poster": "01_moving_scaffold.jpg",
+      "fps": 60,
+      "frames": 1080,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "0074d25dcbce2da2d923f5a0c884ada5722c363c547c5b12150c09cbb3a996fc",
+      "poster_sha256": "6c7809bf03eba17a6a86a901b1ee8aab7eeabf43912c9a8fb53264353075d38b",
+      "english_on_frame_text": true,
+      "render_seconds": 60
+    },
+    {
+      "id": "train119",
+      "route": "train119",
+      "seconds": 10.5,
+      "title": "Coverage is not force error",
+      "file": "02_two_verdicts.mp4",
+      "poster": "02_two_verdicts.jpg",
+      "fps": 60,
+      "frames": 630,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e9fefbaa4016f8431da7171d66f4bda094ffdc69521be6a7c89c849411a098f5",
+      "poster_sha256": "726ea083cc1dc908a02d25723f0323b1c8468931599a115d27451bbc13a894f4",
+      "english_on_frame_text": true,
+      "render_seconds": 33
+    },
+    {
+      "id": "forces",
+      "route": "forces",
+      "seconds": 9,
+      "title": "Inside the force error",
+      "file": "03_inside_force_error.mp4",
+      "poster": "03_inside_force_error.jpg",
+      "fps": 60,
+      "frames": 540,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "5018c6607deca536bbe43e057395455c6fa87f3ac93fb34e6ad685ae2fe4b8c6",
+      "poster_sha256": "da903f32b2bd8981373ba84e6f8c728f2f2293131e6c8563ce1d5da28e87d2f2",
+      "english_on_frame_text": true,
+      "render_seconds": 31
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+name: verify-published-site
+
+on:
+  pull_request:
+  workflow_run:
+    workflows: [research-site]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-publication-${{ github.event.workflow_run.head_sha || github.head_ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-build:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate the exact build and unchanged scientific evidence
+        run: |
+          python -B tools/run_public_selftests.py .
+          python -B tools/site/test_site.py
+          node --test tools/site/test_core.mjs
+          python -B tools/build_research_site.py --out "$RUNNER_TEMP/publication-build"
+
+  verify-live:
+    if: >-
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconstruct the published commit in a clean checkout
+        run: |
+          python -B tools/run_public_selftests.py .
+          python -B tools/site/test_site.py
+          python -O -B tools/site/test_site.py
+          node --test tools/site/test_core.mjs
+          python -B tools/build_research_site.py --out "$RUNNER_TEMP/publication-build"
+          mkdir -p "$RUNNER_TEMP/live-publication"
+          git rev-parse HEAD > "$RUNNER_TEMP/live-publication/COMMIT.txt"
+      - name: Wait for and verify the actual served bytes
+        env:
+          PUBLICATION_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, time, urllib.request
+          from pathlib import Path
+          base = 'https://spicmaff.github.io/malonaldehyde-transition-sampling/'
+          root = Path(os.environ['RUNNER_TEMP']) / 'publication-build'
+          target = Path(os.environ['RUNNER_TEMP']) / 'live-publication'
+          sha = os.environ['PUBLICATION_SHA']
+          manifest = json.loads((root / 'build-manifest.json').read_text())
+          def fetch(rel):
+              url = base + rel + '?publication=' + sha
+              request = urllib.request.Request(url, headers={'User-Agent': 'Proton-Potential-publication-verifier'})
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  if response.status != 200:
+                      raise RuntimeError('Unexpected HTTP status: ' + str(response.status))
+                  return response.read()
+          for attempt in range(36):
+              try:
+                  if hashlib.sha256(fetch('index.html')).hexdigest() == manifest['index.html']:
+                      break
+              except OSError:
+                  pass
+              if attempt == 35:
+                  raise RuntimeError('The expected published index was not served within the bounded wait')
+              time.sleep(10)
+          checked = []
+          for rel, expected in manifest.items():
+              if rel.startswith('.'):
+                  continue  # Hosting control files are not public runtime resources.
+              actual = hashlib.sha256(fetch(rel)).hexdigest()
+              if actual != expected:
+                  raise RuntimeError('Published byte mismatch: ' + rel)
+              checked.append({'path': rel, 'sha256': actual})
+          payload = {'status': 'PASS_LIVE_PUBLICATION_BYTES', 'commit': sha,
+                     'site': base, 'checked_files': checked,
+                     'excluded_hosting_controls': ['.nojekyll'],
+                     'new_physical_calls': 0}
+          (target / 'SERVED_FILE_VERIFICATION.json').write_text(json.dumps(payload, indent=2) + '\n')
+          print(json.dumps({'status': payload['status'], 'files': len(checked), 'commit': sha}, indent=2))
+          PY
+      - name: Install locked browser QA dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/site-browser"
+          cp tools/site/package.json tools/site/package-lock.json "$RUNNER_TEMP/site-browser/"
+          npm ci --prefix "$RUNNER_TEMP/site-browser" --ignore-scripts --no-audit --no-fund
+      - name: Exercise the live English site and all three films
+        env:
+          BROWSER_DEPS: ${{ runner.temp }}/site-browser
+          SITE_URL: https://spicmaff.github.io/malonaldehyde-transition-sampling/
+          QA_OUT: ${{ runner.temp }}/live-publication/browser
+        run: node tools/site/browser_test.mjs
+      - name: Retain publication receipts and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-publication-evidence
+          path: ${{ runner.temp }}/live-publication
+          retention-days: 30
+      - name: Retain the reconstructed portable English site
+        uses: actions/upload-artifact@v4
+        with:
+          name: english-cinematic-site
+          path: ${{ runner.temp }}/publication-build
+          include-hidden-files: true
+          retention-days: 30
