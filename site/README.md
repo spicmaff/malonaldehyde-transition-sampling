@@ -1,5 +1,11 @@
-# Proton / Potential
+# Proton / Potential — English cinematic site
 
-Source for the bilingual research exhibit. Build from the repository root with `python3 tools/build_research_site.py --out _site`. Serve `_site` with `python3 -m http.server 8000 --directory _site`. See [build, numerical and media contracts](../docs/RESEARCH_SITE.md).
+The active site is English-only. The old language URL redirects to the same English section. Historical Russian presentation assets remain in their original release/presentation locations; copies previously bundled under this active site directory have been removed.
 
-Scientific authority stays at f44d28cc0b13defb747f625376b083055b577629; site construction performs no physical calculations. Original release media are retained byte-for-byte with their recorded SHA-256 values.
+Build: `python3 tools/build_research_site.py --out _site`
+
+Serve: `python3 -m http.server 8000 --directory _site`
+
+Read `docs/RESEARCH_SITE.md` for complete architecture, motion definitions, source/provenance boundaries and browser checks. The public entry point is generated from `pages.py`; `longread.en.md` and `brief.en.md` are the full and short editorial texts. Scientific inputs are pinned by the builder to the accepted scientific commit. Neither the site nor the exporter performs physical simulations.
+
+The molecular renderer is original Canvas2D code with rigid 3-D camera transforms and shaded atoms, not a WebGL physics engine. No font files or runtime CDN libraries are bundled.
