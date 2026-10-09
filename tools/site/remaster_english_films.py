@@ -90,6 +90,12 @@ def renderer():
   if isinstance(n,ast.Constant) and isinstance(n.value,str) and any('\u0400'<=c<='\u04ff' for c in n.value) and n.value not in old:old.append(n.value)
  if len(old)!=len(ENGLISH):raise ValueError('Text mapping cardinality changed')
  mapping=dict(zip(old,ENGLISH))
+ # Five preformatted numeric labels bypass fmt(); translate their punctuation too.
+ mapping.update({'36,072 meV':'36.072 meV',
+                 'stop = 1,0000012996964838':'stop = 1.0000012996964838',
+                 'max γ = 1,0010924700706225':'max γ = 1.0010924700706225',
+                 'A2 = 0,09 eV/Å':'A2 = 0.09 eV/Å',
+                 'Pair-distance guard FAIL: 1,128284×10⁻⁶ Å > 1,1×10⁻⁶ Å.':'Pair-distance guard FAIL: 1.128284×10⁻⁶ Å > 1.1×10⁻⁶ Å.'})
  class Strings(ast.NodeTransformer):
   def visit_Constant(self,node):
    if isinstance(node.value,str) and node.value in mapping:return ast.copy_location(ast.Constant(mapping[node.value]),node)
