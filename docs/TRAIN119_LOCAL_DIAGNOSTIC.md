@@ -12,7 +12,9 @@ A separate saved-data evaluation on the fixed PBE Audit21 path gives a discrete 
 
 A narrow lossless-output patch resolves the recorded CFG serialization problem in a separate executable copy; it does not alter the frozen model or remove historical nonconformance. Proton H2 and the historical crossing force component C3/y are identified separately.
 
-The selected data, source/public hashes, metric definitions, and corrections are documented in `docs/TRAIN119_LOCAL_DIAGNOSTIC.md`. The saved payload can be checked without QE, MLIP inference, or dynamics:
+The selected data and source/public hashes are described below;
+[the correction note](TRAIN119_CORRECTIONS.md) records historical reporting
+issues. The saved payload can be checked without QE, MLIP inference, or dynamics:
 
 ```bash
 python tools/verify_train119_diagnostic.py \
@@ -63,8 +65,8 @@ All eleven local test configurations are from two saved 100 K trajectory
 segments that were used in development; none is a Train119 free trajectory.
 
 The discrete barrier error of 0.123 meV is not a profile error bound: the
-maximum anchor-referenced energy-profile error in the nine saved NEB images is
-about 0.504 meV. No new formal energy PASS was defined.
+maximum energy-profile error in the nine saved NEB images, after referencing
+each series to its own lower endpoint, is about 0.504 meV. No new formal energy PASS was defined.
 A2=0.09 eV/Å is a per-configuration 27-component RMSE criterion; on Challenge4
 some individual component errors exceed 0.09 eV/Å without violating A2.
 No calibrated error tolerance across higher-temperature conditions is claimed.

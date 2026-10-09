@@ -1,6 +1,6 @@
 # Train119 diagnostic corrections and scope
 
-This is an additive correction draft. It does not rewrite frozen models, inputs,
+This is an additive correction note. It does not rewrite frozen models, inputs,
 predictions, historical protocols, or the original Stage91J outcome.
 
 ## Endpoint geometry dependence
@@ -10,7 +10,7 @@ criterion. That statement is correct for that criterion but is not a complete
 classification of relevant training dependence. The two known NEB endpoints
 match training configurations 9 and 10 under the previously used 2.1e-6 angstrom
 geometric screen. Their maximum ordered pair-distance discrepancies are about
-8.9e-15 and8.64e-11 angstrom, respectively.
+8.66e-15 and 8.64e-11 angstrom, respectively.
 
 For the right endpoint, a proper rotation of approximately 0.767609 degrees aligns
 the structures with maximum Cartesian residual about 4.81e-11 angstrom. Its force
@@ -19,9 +19,11 @@ reference-label force-component difference is approximately 3.04e-5 eV/angstrom.
 This small difference is not, by itself, evidence of a serious reference-label
 failure. Its physical cause was not established by the selected-frame check.
 
-Retain the historical strict-match count and add a separate geometric-dependence
-table. Do not claim that two known overlaps establish the absence of all other
-same-species permutation matches or statistical dependencies.
+The historical strict-match count is preserved in the saved report;
+[the geometric-dependence table](../provenance/TRAIN119_GEOMETRY_RELATIONS.tsv)
+records the two comparison thresholds separately. Two known overlaps do not
+establish the absence of all other same-species permutation matches or
+statistical dependencies.
 
 ## Force-component labels and chronology
 
@@ -40,8 +42,8 @@ force arrays and per-configuration RMSE are not changed by this annotation fix.
 
 Origin features such as `training_eligible=false` are not a substitute for the
 later, stage-specific authorization and membership index. Preserve the frozen
-CFG bytes; explain the subsequently authorized training role in an external
-provenance table. A held-out neighboring frame is still not an IID final test.
+CFG bytes. The subsequently authorized training role is recorded in the
+[external provenance table](../provenance/TRAIN119_DATASET_ROLES.tsv). A held-out neighboring frame is still not an IID final test.
 
 Preserve old Stage91J `STATIC_APPLICABILITY_FAIL`, the old output-serialization
 nonconformance, and the later local force-RMSE result as distinct outcomes.

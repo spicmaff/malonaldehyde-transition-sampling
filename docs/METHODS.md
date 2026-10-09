@@ -46,6 +46,23 @@ The final Stage91J execution constructed one fresh Train119 X0.1 force-aware sel
 
 Five Replay228 configurations, indices 143 through 147, exceed the fresh Train119 stop. The Train119 lineage is therefore closed as a static-applicability failure, without Gate1 promotion.
 
+## Separate October 5 Train119 saved-data diagnostic
+
+The post-closure study used the unchanged Train119 model on seven neighboring
+100 K right-minimum frames (Crossing7) and four left-minimum frames (Challenge4).
+Crossing7 received seven PBE single-point labels; Challenge4 reused four existing
+labels. Their later publication reuses those completed calculations, without
+new DFT, training, selector/grading or dynamics. A lossless-output-only MLIP
+copy was qualified separately on the frozen Validation11 geometries.
+
+The local A2 criterion is computed per configuration as
+`sqrt(sum((F_MTP - F_PBE)^2)/27)` in eV/angstrom. A distinct Audit21 evaluation
+retains the original v030r barrier and central-three-image definitions. These
+are adaptive development diagnostics, not a new equal-budget experiment or an
+independent validation. See [the diagnostic](TRAIN119_LOCAL_DIAGNOSTIC.md) and
+[corrections](TRAIN119_CORRECTIONS.md). The historical Stage91J status and
+threshold are unchanged.
+
 ## Quantum diagnostic
 
 A one-dimensional stationary Schrodinger equation was solved with PBE, basin-MTP and targeted-MTP energies on the same frozen PBE path. These level gaps are spectral diagnostics, not experimental tunneling rates or full-dimensional quantum dynamics.
