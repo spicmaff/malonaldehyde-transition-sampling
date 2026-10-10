@@ -18,3 +18,6 @@
 
 # Frozen Train119 source bytes (including original CRLF) must stay hash-identical.
 data/post_publication/train119_diagnostic_v001/** -text -eol whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+
+# Preserve the audited upstream renderer distribution, including its original indentation.
+site/vendor/three/** -text -eol whitespace=-space-before-tab

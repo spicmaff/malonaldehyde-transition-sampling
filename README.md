@@ -2,21 +2,25 @@
 
 This repository records an equal-DFT-budget comparison of two Moment Tensor Potentials for proton transfer in malonaldehyde, together with the later checks that exposed important limits of the original interpretation.
 
-## Interactive research exhibit · Proton / Potential
+## Proton / Potential — One Proton. Several Tests of Trust.
 
-[![One proton, two ways to learn](site/social-preview.png)](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
+[![Proton / Potential](site/social-preview.svg)](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
 
-[Open the exhibit — English](https://spicmaff.github.io/malonaldehyde-transition-sampling/) · [Русская версия](https://spicmaff.github.io/malonaldehyde-transition-sampling/ru.html)
+[Open the English research exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
 
-Explore the nine saved molecular geometries, real training-set projections,
-three original energy profiles, all five paired seeds, and the separate local
-Train119 PBE diagnostic. Ten sections, light/dark themes, complete English and
-Russian longreads, source hashes, and the five original films. Every number
-comes from frozen public data; the browser does not run a potential or dynamics.
+Explore an actual three-dimensional molecular stage, the changing heavy-atom
+scaffold, real training-set projections, original energy profiles and their
+residuals, all five paired seeds, two separate diagnostic criteria, and atom-wise
+PBE/MTP force differences reconstructed from 297 primary force components.
+A new English essay connects the evidence with 18 annotated research references.
+Two new English 1080p/60 fps films accompany the interactive six-scene story.
+
+The site is English-only, with light/dark themes, accessible manual controls,
+Canvas and no-JavaScript fallbacks, and pinned source evidence.
 `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain unchanged.
-[Site methods, build instructions and boundaries](docs/RESEARCH_SITE.md).
+[Rebuild the exhibit and inspect its scientific boundaries](docs/RESEARCH_SITE.md).
 
-## New visual story · v1.2.0
+## Historical visual story · v1.2.0
 
 [![Watch the new visual story](presentation/visual-story/v001/media/04_story_teaser_poster.jpg)](https://github.com/spicmaff/malonaldehyde-transition-sampling/releases/download/v1.2.0/04_story_teaser.mp4)
 

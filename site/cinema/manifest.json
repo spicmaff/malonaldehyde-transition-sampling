@@ -1,0 +1,44 @@
+{
+  "schema": "proton-cinema-v2",
+  "new_physical_calls": 0,
+  "films": [
+    {
+      "title": "The proton and the moving scaffold",
+      "file": "cinema/molecular-path.mp4",
+      "poster": "cinema/molecular-path.jpg",
+      "scope": "Nine saved PBE images with display interpolation; no physical reaction clock.",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60,
+      "frames": 720,
+      "duration_seconds": 12,
+      "sha256": "ed0a1d51e82bbdb6cd2295c0876ecf4d33ad59f1bc3b969a53efd0061e2e7240",
+      "poster_sha256": "2e619089fa46ff0a299eb72c20808c9bb3f90c2f273312f58825816f13636d41",
+      "source_science_commit": "f44d28cc0b13defb747f625376b083055b577629",
+      "source_evidence_commit": "3d430af343cf726d94ef8d2143fe7c24fa053c2b",
+      "renderer": "tools/site/render_cinema.mjs + site/app.mjs + site/molecule.mjs",
+      "physical_time": false,
+      "captions": "cinema/molecular-path.vtt",
+      "captions_sha256": "aab7eae6bbacc147e0993679dcbed95b01262669669aff4e1a12d8bce0de7902"
+    },
+    {
+      "title": "Several tests of trust",
+      "file": "cinema/research-story.mp4",
+      "poster": "cinema/research-story.jpg",
+      "scope": "Six data-driven research scenes. No new physical calculations or independent deployment claim.",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60,
+      "frames": 1800,
+      "duration_seconds": 30,
+      "sha256": "cd403e84c1341f9a68bab338bbcd199e0c006fbebcb0b867712158082f50812f",
+      "poster_sha256": "f2be0375e409948efdb63c5f232d307ebfc87acdaf2beb5c7e70c9deb81740e9",
+      "source_science_commit": "f44d28cc0b13defb747f625376b083055b577629",
+      "source_evidence_commit": "3d430af343cf726d94ef8d2143fe7c24fa053c2b",
+      "renderer": "tools/site/render_cinema.mjs + site/app.mjs + site/molecule.mjs",
+      "physical_time": false,
+      "captions": "cinema/research-story.vtt",
+      "captions_sha256": "09222fc07c75c78e30d6363d6007b97dedca9552a43d9636f8c0fb6db1062db9"
+    }
+  ]
+}

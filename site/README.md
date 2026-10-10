@@ -1,5 +1,19 @@
-# Proton / Potential
+# Proton / Potential — English cinematic exhibit
 
-Source for the bilingual research exhibit. Build from the repository root with `python3 tools/build_research_site.py --out _site`. Serve `_site` with `python3 -m http.server 8000 --directory _site`. See [build, numerical and media contracts](../docs/RESEARCH_SITE.md).
+The active site is English-only. Build it from the repository root:
 
-Scientific authority stays at f44d28cc0b13defb747f625376b083055b577629; site construction performs no physical calculations. Original release media are retained byte-for-byte with their recorded SHA-256 values.
+```bash
+python3 tools/build_research_site.py --out _site
+python3 -m http.server 8000 --directory _site
+```
+
+Open http://localhost:8000/ . No npm dependency is needed for the site itself.
+Three.js is locally vendored with its MIT notice; browser test dependencies are
+separate under `tools/site`. The complete essay and numerical tables are rendered
+as static HTML before JavaScript enhancement.
+
+The `cinema` directory contains new English 1080p/60 fps presentation captures.
+The previous Russian-captioned media and article remain in the historical
+presentation directory and release, not in this active build.
+
+See [the full reconstruction and scientific boundary](../docs/RESEARCH_SITE.md).
