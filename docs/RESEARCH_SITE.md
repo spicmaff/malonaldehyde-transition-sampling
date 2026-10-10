@@ -1,74 +1,86 @@
-# Interactive research exhibit: Proton / Potential
+# Proton / Potential: English cinematic research exhibit
 
-The bilingual exhibit is published at https://spicmaff.github.io/malonaldehyde-transition-sampling/ (English) and `ru.html` (Russian). Its scientific snapshot is commit `f44d28cc0b13defb747f625376b083055b577629`, including the bounded Train119 diagnostic merged in PR #7. A later website commit does not change that scientific authority.
+Live site: https://spicmaff.github.io/malonaldehyde-transition-sampling/
 
-## Editorial and visual design
+## Scope
 
-The exhibit has ten independently addressable sections: overview, molecule, sampling, energy landscape, five seeds, applicability, Train119, films, full longread, and reproduction. The ten-chapter Russian narrative is a revised account of the earlier v1.2.0 longread, with a separately edited English counterpart. Both include the October-5 diagnosis published on October 9. Each chapter has source links pinned to the scientific commit. The old longread and release remain unchanged.
+The English exhibit presents the existing scientific evidence through a new molecular renderer, linked numerical views, a directed research sequence and an edited research essay. It does not change the frozen scientific models, reference calculations, selectors or historical outcomes. The scientific result snapshot remains `f44d28cc0b13defb747f625376b083055b577629`; immutable source links refer to the public baseline `3d430af343cf726d94ef8d2143fe7c24fa053c2b`.
 
-The visual reference is [Memory / Geometry](https://spicmaff.github.io/rendezvous-grid-mazes/): warm paper, academic serif headings, teal/rust accents, understated panels and a matching dark theme. This site has its own molecular SVG renderer and source-derived plots. It does not copy the reference's automaton simulator or claim to perform a molecular simulation. System fonts are used; no font files, CDN libraries, analytics or external runtime services are shipped.
+The initial equal-budget comparison, its five-seed robustness audit, and the later adaptive Train119 diagnosis are distinct studies. `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain visible. No Train119 deployment promotion, prospective independent test, experimental accuracy or general gamma/error calibration is claimed.
 
-## Source layout and repeatable build
+## Architecture
 
-- `site/pages.py`: static bilingual page renderer, including readable no-JavaScript content.
-- `site/longread.en.md`, `site/longread.ru.md`: editorial source. `@sources:` directives become pinned links in both HTML and downloadable Markdown.
-- `site/style.css`: light/dark, responsive and print presentation.
-- `site/app.mjs`: route navigation, theme/language controls, SVG viewers and visual interactions.
-- `site/core.mjs`: pure, independently tested coordinate/interpolation/display utilities.
-- `site/assets/`: unmodified historical video posters.
-- `site/media/`: five original v1.2.0 MP4 assets, plus source URL, SHA-256 and size manifest.
-- `tools/build_research_site.py`: standard-library build and scientific extraction.
-- `tools/site/test_site.py`, `test_core.mjs`, `browser_test.mjs`: offline, numerical and browser checks.
-- `.github/workflows/research-site.yml`: checked build, browser evidence and Pages deployment from main only.
+`tools/build_research_site.py` uses the unchanged scientific CFG parser and Train119 verifier. It derives the site JSON from public CFG, TSV, JSON, Quantum ESPRESSO `pw.out` and XML files. The force viewer's 297 reference components are parsed afresh from the eleven official QE blocks and matched to the preserved MTP outputs. XML agreement, atomic identity and existing RMSE results are checked during every build.
 
-From a fresh checkout with Python 3.11+:
+`site/pages.py` renders the English document, essay, numerical tables, evidence panels and reference list before JavaScript runs. `site/core.mjs` contains the pure coordinate, force and routing functions. `site/molecule.mjs` supplies a locally vendored Three.js renderer with a Canvas fallback. `site/charts.mjs` creates SVG graphics from the generated data. `site/app.mjs` synchronizes selections and finite animation sequences. No runtime CDN, remote API or account is required.
+
+Ten addressable sections retain a short route to every source: overview, molecular path, training data, original profiles, five seeds, two diagnostic verdicts, atomic forces, directed story, essay and evidence. The old `#applicability` route resolves to the two-verdict view. Essay deep links expose the full essay. Unknown routes return to the overview.
+
+## Scientific display rules
+
+The nine true NEB supports are distinguished from interpolated display frames. Coordinate interpolation is linear between neighboring saved Cartesian images; displayed distances are recomputed from the interpolated geometry and displayed energy is explicitly interpolated between the saved values. Neither a physical clock nor a tunneling trajectory is inferred.
+
+The camera is orthographic. The same rigid transform is applied to coordinates and force arrows; x and y are not independently rescaled. Sphere radii, materials, shadows and connectivity rods are illustrative. Dashed O–H segments are distance guides, not evaluated bond orders.
+
+The force table remains in the original laboratory frame. Arrow length is proportional to force magnitude using one user-selected global scale: at 1×, 1 eV/Å is represented by one model-space Å. Arrows are not displacements. PBE, MTP and their difference are not normalized independently. H2* and C3/y remain distinct.
+
+Energy profiles use each series' own lower endpoint as zero. The original-model view never silently substitutes Train119 for one of the equal-budget branches. Train119 has its own development-only profile and residual panel. The latter exposes the difference between a 0.122996 meV barrier error and approximately 0.504072 meV maximum relative-profile error.
+
+The coverage view shows `(gamma - stop) * 1000`, with the rescaling stated on the axis. Force RMSE uses a separate panel and eV/Å units, retaining A2 = 0.09. The two recorded trajectory segments are selected independently in the interface and are never joined into a fictitious continuous trajectory. The numerical stop is not altered.
+
+All five paired seeds remain visible after their reveal. Their 64-bit identities are strings. No inferred distributions or confidence bands are added.
+
+## English-only migration and historical media
+
+There is no active Russian localization, language switch or Russian essay in the new build. The legacy `ru.html` is only a minimal English redirect, preserving its hash. Historical Russian source materials and the v1.2.0 release remain unchanged in their original locations.
+
+The former active `site/media` copies and Russian-captioned posters are no longer embedded or copied into the Pages artifact. New English cinematic editions live under `site/cinema/`, with frame rate, duration, frame count, source snapshots and SHA-256 recorded in their manifest. The silent historical films remain accessible only through an explicitly labelled archive link.
+
+## Rebuilding
+
+The scientific build needs Python 3.11 or later and the standard library:
 
 ```bash
-python3 -B tools/build_research_site.py --out _site
+python3 tools/build_research_site.py --out _site
 python3 -m http.server 8000 --directory _site
 ```
 
-Open `http://localhost:8000/` or `/ru.html`. The build uses saved CFG/TSV/JSON and the existing Train119 verifier; it makes no network or scientific executable calls. Outputs include deterministic `data/science.json`, an evidence map with input SHA-256 values, two static HTML pages, all runtime media, downloadable longreads, and `build-manifest.json`. Two builds from identical sources must have identical manifests. Direct `file://` viewing preserves static content but browsers may block module/data loading; the small HTTP server resolves that restriction.
+Open `http://localhost:8000/`. The output must be empty or carry this builder's ownership marker. Rebuilding removes only previously manifested generated files from that output, preventing stale Russian pages or obsolete media from persisting. The builder refuses repository or scientific-source destinations.
+
+The essay download contains real source and literature links rather than internal annotation tokens. `data/science.json` records immutable source URLs and hashes. `data/literature.json` records bibliographic identifiers, relevance, reading scope and limitations. The 18 selected references include original methods, nuclear calculations, uncertainty approaches and visualization research. They are not described as 18 completely read full texts: the access scope is explicit per record.
+
+## Re-rendering the English films
+
+Install the locked browser-test dependencies separately from the site:
 
 ```bash
-python3 -B tools/site/test_site.py
-python3 -O -B tools/site/test_site.py
+npm ci --prefix tools/site --ignore-scripts
+BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://localhost:8000/ \
+  CINEMA_OUT=/path/to/new-empty-render-directory \
+  node tools/site/render_cinema.mjs
+```
+
+Chrome and ffmpeg with libx264 must already be installed. The renderer captures deterministic scene positions at 1920×1080 and encodes 60 frames per second. The 12-second molecular edition and 30-second six-scene story are presentation exports, not recorded molecular simulations. Existing render destinations are not overwritten. The manifest contains checksums and the expected 720/1800 frame counts; ffprobe and full decoding are part of the renderer's acceptance.
+
+Encoded frame rate is not a promise that every device renders the interactive WebGL scene at a sustained 60 fps. Browser reports state the measured environment and timing distributions instead.
+
+## Tests and deployment
+
+```bash
+python3 tools/site/test_site.py
+python3 -O tools/site/test_site.py
 node --test tools/site/test_core.mjs
 python3 tools/run_public_selftests.py .
 ```
 
-The browser dependencies are pinned in `tools/site/package-lock.json`. Install them in a separate temporary directory, not the scientific repository:
+The browser runner uses `BROWSER_DEPS`, `SITE_URL`, `QA_OUT` and optional `CHROME_BIN`. Set `REQUIRE_FILMS=1` for complete acceptance. It tests 100 route/theme/viewport combinations at widths 1920, 1440, 768, 390 and 320, scientific controls, atom/frame selection, exact and interpolated states, both English films, the legacy redirect, reduced motion, Canvas fallback, no-JavaScript reading and a failed-data-request fallback. WCAG-tagged axe checks run in the documented scope; they are not a complete accessibility certification.
 
-```bash
-QA_DEPS=$(mktemp -d)
-cp tools/site/package.json tools/site/package-lock.json "$QA_DEPS/"
-npm ci --prefix "$QA_DEPS" --ignore-scripts
-BROWSER_DEPS="$QA_DEPS" SITE_URL=http://localhost:8000/ QA_OUT=site-qa-output \
-  node tools/site/browser_test.mjs
-```
+The `research-site` workflow uploads browser evidence, publishes the tested Pages artifact only from `main`, and keeps existing scientific workflows separate. Branch and pull-request jobs do not deploy. The usual science manifests and byte-preserving Git attributes remain in force.
 
-The test uses system Google Chrome (`CHROME_PATH` overrides its location). Browser acceptance covers ten sections × two languages × two themes × three widths (1440, 390, 320), keyboard controls, play/pause/reset, source values, language-preserving navigation, deep links, reduced motion, all five videos playing and advancing, JavaScript failures, no-JavaScript reading, and WCAG-tagged axe checks. Automated accessibility checks do not replace manual usability review. CI retains screenshots and JSON reports.
+## Third-party and research provenance
 
-## Data and plotting contracts
+The small-molecule renderer vendors the unmodified Three.js 0.180.0 `three.module.js`, `three.core.js` and MIT license. `site/vendor/three/manifest.json` binds these to the npm distribution and hashes. No font files, QE/MLIP executables, pseudopotentials or third-party molecular artwork are redistributed. System fonts are used for interface and film rendering.
 
-The NEB geometry and original pair metrics come from `data/frozen_models_v028/`. All 120 training records are projected using distances computed from their actual coordinates; exact candidate IDs establish 36 shared configurations. The visual axes are qPT and the O–O distance, not a learned free-energy surface. All 24 additional transition candidates were selected; no competitive subset-ranking advantage is claimed.
+The visual family is informed by the owner's Memory / Geometry research site. MolViewStories and visualization literature inform the evidence-linked storytelling approach; their scientific scenes are not copied. External-paper results are labelled as context, never silently mixed with this project's numerical results.
 
-The two original models appear together with PBE in the energy panel. Each nine-point series is zeroed against its own lower endpoint. Connecting segments are display guides, not additional electronic-structure evaluations. Central force-component RMSE uses the three images with |qPT| ≤ 0.15 Å. Train119's larger adaptive model is shown in a separate diagnostic, never as a third equal-budget branch.
-
-Five paired seeds are read from the authoritative robustness TSV. Their 64-bit identities remain strings in browser JSON, so JavaScript number rounding cannot corrupt them. All five pairs remain visible when a pair is highlighted. The descriptive counts are 4/5 barrier, 3/5 force and 3/5 both; no future win probability is estimated.
-
-Replay228 gamma comes from the saved visual source and is cross-checked against the eleven later local records. Crossings are decided using the unrounded stop `1.0000012996964838`, never using formatted display values. Archive index is not a continuous physical time axis. The local force plot uses eV/Å on its own scale; A2 = 0.09 applies to each configuration's 27-component RMSE, not its maximum component. Separate segments and the development dependence are explicit.
-
-The nine-atom display uses fixed O1/H2/O8 identity, a selectable display rotation and optional linear interpolation. Integer slider positions preserve exact saved geometry; intermediate coordinates/energies are visibly labelled as display interpolation. No physical clock, learned prediction or new force is implied. Reduced motion turns the continuous Play control into a discrete next-image step.
-
-## Historical media and licensing
-
-All five MP4 files are the original silent, Russian-on-screen v1.2.0 films. They are copied byte-for-byte from that release into the self-contained Pages artifact; the URLs and hashes are in `site/media/manifest.json`. English and Russian explanatory captions identify what is being shown. These captions are not a claim that the historical films have been re-rendered or fully translated. The old Stage91J closure video remains a historical account; the new local diagnosis is described separately. Native playback controls, preload=none, local posters and same-origin MP4 delivery avoid autoplay and cross-origin dependency problems.
-
-Project-owned code is covered by the repository MIT license. Project-owned data and media follow its CC BY 4.0 declaration; retain attribution to Mikhail Fofonov. New styling/rendering code is project-owned; the Memory / Geometry design reference is acknowledged above. Node dependencies are development/CI tools only, not shipped site runtime. The existing MLIP patch retains its own separate third-party notice in the scientific package. No QE/MLIP binaries, UPF files or font files are included.
-
-## Scientific boundaries
-
-`SEED_SENSITIVE`, `STATIC_APPLICABILITY_FAIL`, endpoint overlaps, adaptive benchmark reuse and the historical serialization nonconformance remain visible. The diagnostic verifies local PBE-relative accuracy on selected development frames, not prospective independent generalization or deployment-ready reactive MD. PBE is an internal reference, not experimental truth. No Gate1/Gate2 result is invented; Blind12 is neither read nor distributed. The optional 1D H/D context remains a bounded spectral diagnostic, not an experimental rate model.
-
-The repository's scientific arrays, frozen models, canonical ledgers, earlier presentation, release assets and tags are unchanged by this presentation layer. Pages uses a separate checked deployment artifact. A green site build means the exhibit and its saved-data contracts passed the documented checks; it does not mean a new physical experiment or a global scientific PASS.
+The important boundary is unchanged: the site is a reproducible presentation of saved evidence, not a new physical experiment.
