@@ -1,5 +1,6 @@
 """Editorial extension generated exclusively from the verified study payload."""
 from html import escape
+import math
 from pages import fallback
 
 LABELS={'OO_breathing':'O–O breathing','C_skeletal_bend':'Carbon skeletal bend','H_lateral':'Lateral hydrogen','H_out_of_plane':'Out-of-plane hydrogen'}
@@ -49,14 +50,14 @@ def slope_static(b,region):
 
 
 def direction_static(b):
-    upper=__import__('math').ceil(max(r['force_RMSE_eV_A'] for r in b['block_rows'])*10)/10
+    upper=math.ceil(max(r['force_RMSE_eV_A'] for r in b['block_rows'])*10)/10
     parts=[]
     for mode in LABELS:
         count='1 geometry' if mode=='H_out_of_plane' else '2 geometries'
         row='<div class="off-block-row"><div class="off-block-label">'+LABELS[mode]+'<small>'+count+'</small></div>'
         for branch in ['basin','targeted']:
             rr=[r['force_RMSE_eV_A'] for r in b['block_rows'] if r['region']=='TRANSITION_CENTER' and r['budget']==8000 and r['branch']==branch and r['mode']==mode]
-            value=sum(rr)/len(rr)
+            value=math.fsum(rr)/len(rr)
             row+=f'<div class="off-block-pair"><span>{branch.title()}</span><div class="off-block-track" aria-hidden="true"><div class="off-block-fill {branch}" style="width:{value/upper*100}%"></div></div><span class="off-block-value">{value:.6f}</span></div>'
         parts.append(row+'</div>')
     return ''.join(parts)+f'<p class="off-direction-axis">Shared bar scale: 0–{upper:.1f} eV/Å.</p>'

@@ -39,7 +39,7 @@ def figures(data):
     f3=frame('Every signed primary comparison.','PBE14 transition region, cap8000; Targeted minus Basin, block-averaged force RMSE.',body)
     rows=[]
     for mode in LABELS:
-        rr={br:sum(r['force_RMSE_eV_A'] for r in data['block_rows'] if r['region']=='TRANSITION_CENTER' and r['budget']==8000 and r['mode']==mode and r['branch']==br)/5 for br in ['basin','targeted']}
+        rr={br:math.fsum(r['force_RMSE_eV_A'] for r in data['block_rows'] if r['region']=='TRANSITION_CENTER' and r['budget']==8000 and r['mode']==mode and r['branch']==br)/5 for br in ['basin','targeted']}
         rows.append((mode,rr))
     upper=math.ceil(max(v for _,rr in rows for v in rr.values())*10)/10
     body=''
