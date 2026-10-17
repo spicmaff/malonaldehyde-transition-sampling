@@ -16,6 +16,10 @@ jobs:
           python -O -B -m unittest discover -s tests -p test_completed_studies.py -v
           python -B tools/verify_pbe14_offpath.py --out "$RUNNER_TEMP/completed-studies/pbe14"
           python -B tools/verify_optimizer_budget.py --out "$RUNNER_TEMP/completed-studies/budget"
+      - name: Build downloadable review site without deploying Pages
+        run: |
+          python -B tools/build_research_site.py --out "$RUNNER_TEMP/site-preview"
+          python -c 'import os,shutil; shutil.make_archive(os.environ["RUNNER_TEMP"]+"/completed-studies/site-preview", "zip", os.environ["RUNNER_TEMP"]+"/site-preview")'
       - name: Package exact public source for reviewer reproduction
         run: |
           git archive --format=zip --output="$RUNNER_TEMP/completed-studies/public-source.zip" HEAD
