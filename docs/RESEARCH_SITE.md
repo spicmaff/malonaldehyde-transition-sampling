@@ -47,7 +47,7 @@ python3 -m http.server 8000 --directory _site
 
 Open `http://localhost:8000/`. The output must be empty or carry this builder's ownership marker. Rebuilding removes only previously manifested generated files from that output, preventing stale Russian pages or obsolete media from persisting. The builder refuses repository or scientific-source destinations.
 
-The essay download contains real source and literature links rather than internal annotation tokens. `data/science.json` records immutable source URLs and hashes. `data/literature.json` records bibliographic identifiers, relevance, reading scope and limitations. The 18 selected references include original methods, nuclear calculations, uncertainty approaches and visualization research. They are not described as 18 completely read full texts: the access scope is explicit per record.
+The essay download contains real source and literature links rather than internal annotation tokens. `data/science.json` records immutable source URLs and hashes. `data/literature.json` records bibliographic identifiers, relevance, reading scope and limitations. The 21 selected references include original methods, nuclear calculations, uncertainty approaches and visualization research. They are not described as 21 completely read full texts: the access scope is explicit per record.
 
 ## Re-rendering the English films
 
@@ -84,3 +84,27 @@ The small-molecule renderer vendors the unmodified Three.js 0.180.0 `three.modul
 The visual family is informed by the owner's Memory / Geometry research site. MolViewStories and visualization literature inform the evidence-linked storytelling approach; their scientific scenes are not copied. External-paper results are labelled as context, never silently mixed with this project's numerical results.
 
 The important boundary is unchanged: the site is a reproducible presentation of saved evidence, not a new physical experiment.
+
+
+## Additive completed-study chapter
+
+The `#offpath` route has its own `proton-offpath-v1` payload and independent builder
+`tools/build_offpath.py`. It never substitutes PBE14 for the eleven Train119 force
+frames or changes the original `science.json` numerical arrays. A compact extension
+adds the page and navigation link after rendering the existing ten pages. Original
+`site/pages.py`, `site/app.mjs`, `site/molecule.mjs`, `site/style.css` and both films are
+preserved byte-for-byte. `site/core.mjs` only admits the new route.
+
+`site/offpath_page.py` renders static charts, definitions, geometry roles and all280
+case values before JavaScript. `site/offpath.mjs` supplies the shared molecular stage,
+a finite five-pair reveal, labeled fixed-axis contrasts, two-region budget comparisons
+and source-derived filters. No PBE14 interpolation or forces-as-displacements is shown.
+The filters cannot remove pairs from the primary chart. `offpath.css` is additive and
+uses the original palette and typography. Raw data hashes and source revision accompany
+the separate payload. Exports are based on actual saved arrays, not copied UI constants.
+
+The old browser runner now waits for route activation before clicking. This fixes an
+observed test race; scientific assertions and original route checks are not weakened.
+The additional `tools/site/browser_offpath_test.mjs` covers ten responsive/theme views,
+24 direction filter combinations, all14 actual geometries, finite reveal and keyboard,
+no-JS, request failure, reduced-motion, Canvas and real TSV download content.

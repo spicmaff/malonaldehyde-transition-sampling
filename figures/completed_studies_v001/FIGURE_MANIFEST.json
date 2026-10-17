@@ -1,0 +1,11 @@
+{
+  "source": "data/studies/pbe14_mtp20_v001/results/VERIFICATION.json",
+  "source_sha256": "be9af12c9b8d74919a5dfa30baa1805a6c0b7c98813dac6660ca23ecd21bf3f6",
+  "figures": {
+    "figure01_design.svg": "cc47abc879765a640844c780d32c689703ce537385b6e2f4e495d6b27fa2c2d7",
+    "figure02_budget_regions.svg": "72c852714f6fccb03d8a30223a78367f368db8dcf079e916e25c273cb6ec16e3",
+    "figure03_primary_seeds.svg": "b9b1443fca8bef72872c94b196e34585a7a6a3b0d32b0b67658d98c04b7b075b",
+    "figure04_directional_blocks.svg": "ea03eb3b8f74f5914495eb5168b9028d85e8db5e2b9ccf14afcdfbb26bf1da6b"
+  },
+  "new_scientific_calls": 0
+}

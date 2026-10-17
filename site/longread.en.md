@@ -155,3 +155,21 @@ The final test is whether the reader can follow a number backwards: from a claim
 
 @sources: science diagnostic randomness
 @papers: animation2007 trends2008 molstories2026
+
+
+## 13. Off the path, the budget remains part of the result
+
+A later study asks a narrower follow-up than a global test of the potential surface. It fixes fourteen local geometries around the left-minimum and central-transition anchors of the existing PBE path. Three physical directions have positive and negative displacements; the fourth, out-of-plane hydrogen motion, has one positive member. Each region therefore contains seven geometries and four blocks. The maximum single-atom displacement is 0.075 Å. These are stored configurations with completed electronic labels, not an animation of a molecular trajectory.
+
+Twenty model endpoints combine the same two fixed Train60 allocations, five matched initialization seeds and two main optimizer caps, 2000 and 8000. All twenty stopped at the step limit. Their saved predictions on the fourteen geometries can be checked without running a model: the independent verifier reads the physical QE force blocks, validates the CFG conversion and reconstructs all 280 component-RMSE values. The primary statistic first averages the signed geometries within a physical block, then gives the four blocks equal weight. It is not a pooled RMSE across all coordinates.
+
+On that predeclared transition-region endpoint at cap8000, Targeted has lower error in four of the five pairs. The signed mean Targeted−Basin difference is −0.146135 eV/Å and the median is −0.140839 eV/Å. The unfavorable seed remains visible. This **4/5** is not a correction to the earlier **3/5**: the earlier count concerns both original NEB primary metrics, whereas the later count concerns one off-path force endpoint at a specified cap.
+
+The secondary comparisons make the outcome less uniform. The mean transition error of Basin increases from 0.187751 to 0.309890 eV/Å between the two caps; Targeted changes from 0.167557 to 0.163755. Thus, the larger relative advantage at8000 reflects considerable Basin deterioration rather than a comparable improvement of Targeted. Around the minimum at8000, Basin has lower mean error, 0.055778 versus 0.064231 eV/Å. The site retains both regions, all seeds and all directions. Longer optimization does not become a proxy for demonstrated convergence.
+
+The source histories also remain distinct. An interrupted historical T02m electronic calculation was followed by an independently authorized recovery on the unchanged geometry; the accepted set contains fourteen outputs, not a claim that only fourteen jobs were ever started. The local geometry anchors were already known, nearby historical configurations are disclosed, and PBE14 was reused during later optimizer development. Neither five optimizer seeds nor correlated ± displacements replicate a general sampling policy.
+
+Transition tube sampling, including malonaldehyde, already appears in Brezina and colleagues' work. Transition1x develops broad reactive reference data; Landscape17 asks whether learned landscapes recover global stationary-point and network properties. This project's remaining contribution is more restricted: an inspectable, very small fixed-data experiment showing how initialization, finite optimizer budget and region affect its accuracy ranking. No new reactive-dynamics or global-topology verdict follows.
+
+@study: offpath
+@papers: brezina2023 transition1x2022 landscape172026

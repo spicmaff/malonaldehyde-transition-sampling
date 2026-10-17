@@ -48,3 +48,20 @@ data/post_publication/train119_diagnostic_v001` checks the saved evidence
 without invoking QE, MLIP, selectors or dynamics. Unit tests run in CI.
 External physical recomputation and prospective generalization remain outside
 this compact reproducer.
+
+
+## Completed PBE14 and optimizer-budget extension
+
+A clean checkout now independently recomputes14 accepted PBE reference force blocks,
+20 stored MTP predictions and all280 model–geometry errors. It derives160 physical
+block scores,40 region/model scores,5 primary signed contrasts and both region/cap
+comparisons. The second verifier checks20 training logs, STEP_LIMIT and the shared
+printed prefixes. Run `tools/verify_pbe14_offpath.py` and `tools/verify_optimizer_budget.py`.
+No physical program is invoked. Published model SHA identities are not equivalent
+to distributing every20-model binary or rerunning the original fitting process.
+
+`tools/render_completed_study_figures.py --out <new-directory>` regenerates four
+source-bound SVG figures. The separate off-path website chapter is built from the
+same raw-data verifier. Its original10 routes and new route have separate browser
+acceptance. Completed-study CI publishes a commit-bound reviewer source archive and
+recomputed tables; this is not a new DFT/MTP reproducibility claim.

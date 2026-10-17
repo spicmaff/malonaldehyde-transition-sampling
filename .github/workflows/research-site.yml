@@ -42,6 +42,7 @@ jobs:
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa" node tools/site/browser_test.mjs
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/offpath" node tools/site/browser_offpath_test.mjs
       - name: Preserve browser evidence
         if: always()
         uses: actions/upload-artifact@v4

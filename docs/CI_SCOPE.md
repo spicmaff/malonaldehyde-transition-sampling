@@ -23,3 +23,15 @@ The `reproduction-smoke` job installs the declared Python dependencies, validate
 ## Ledger semantic regression
 
 The integrity selftest also runs `tools/check_ledger_semantics.py`. It reads the accepted V005 ledger and source-verdict excerpts, preserves scientific-negative and superseded cases, and rejects twenty deliberate ledger mutations. Hash consistency alone is not treated as semantic correctness.
+
+
+## Completed studies and additive off-path chapter
+
+The completed-studies workflow runs saved-data mutation tests in normal and optimized
+Python and recomputes both new study bundles. Existing self-tests now invoke both
+new verifiers. The full unittest suite also checks preservation of the protected baseline files, new source identities, cardinalities,
+static fallbacks and exact four-figure regeneration. The authoritative protected
+count is stored in `provenance/COMPLETED_EXTENSION_BASELINE.json`, not this note.
+The research-site workflow separately tests the ten legacy routes and the off-path
+chapter. Route-activation waits remove a test race without disabling old assertions.
+No new QE, MLIP, selectors, training, reactive MD or Blind12 are run by these jobs.

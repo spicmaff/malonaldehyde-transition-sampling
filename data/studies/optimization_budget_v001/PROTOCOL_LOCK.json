@@ -1,0 +1,1176 @@
+{
+  "schema": "malonaldehyde-optimization-budget-8000-v001",
+  "status": "FROZEN_BEFORE_FIRST_NEW_TRAINING",
+  "created_utc": "2026-10-10T16:57:19.789532+00:00",
+  "workspace": "OWNER_HOME/malonaldehyde_optimization_budget_20261010_4m5s68_9",
+  "device": "spicmaff",
+  "github_main_read_only": "83f52b0fc6dd1b8d5af7832c657fa5361887fe54",
+  "research_question": "How do a-priori capped optimization budgets 2000 versus 8000 affect fixed Train60 regional errors and within-seed model ranking?",
+  "baseline_status": "Existing five fixed-seed pairs at 2000 iterations, previously evaluated on Audit21; retrospective baseline, not new blinded data",
+  "hypotheses": {
+    "H1": "Larger main-step limit may improve, worsen or leave regional errors unchanged.",
+    "H2": "Within-seed Basin/Targeted ranking may change.",
+    "H3": "Basin/transition regional differences may depend on optimization budget.",
+    "H4": "An 8000 cap may or may not meet the implementation stopping rule."
+  },
+  "primary_endpoint": {
+    "name": "paired_difference_in_differences_transition_force_RMSE",
+    "formula": "(targeted8000 - basin8000) - (targeted2000 - basin2000)",
+    "unit": "eV/angstrom",
+    "report": "All five signed differences, median, mean, range; no confirmatory p-value or selection"
+  },
+  "secondary_endpoints": [
+    "lower_endpoint_barrier_abs_error_meV",
+    "basin12_force_component_RMSE_eV_A",
+    "neb7_interior_force_component_RMSE_eV_A",
+    "neb7_interior_centered_energy_RMSE_eV",
+    "per_model_budget_changes",
+    "training_objective_trace_and_stopping_reason",
+    "signed_relative_profile_residuals"
+  ],
+  "metric_definitions": {
+    "barrier": "abs((max(model NEB9 E)-min(model endpoint E)) - (max(PBE NEB9 E)-min(PBE endpoint E)))*1000",
+    "transition_force": "sqrt(sum Cartesian force squared differences / 81), exactly three reference images with |qPT|<=0.15 A",
+    "qPT": "distance(O atom1,H atom2)-distance(O atom8,H atom2)",
+    "basin_force": "sqrt(sum errors squared / (12*27))",
+    "interior_force": "sqrt(sum errors squared / (7*27))",
+    "interior_energy": "RMS of seven energy errors after subtracting their mean; eV"
+  },
+  "training_settings": {
+    "level": 12,
+    "pretraining_steps": 75,
+    "max_main_steps": 8000,
+    "historical_main_steps": 2000,
+    "energy_weight": 1,
+    "force_weight": 0.01,
+    "stress_weight": 0,
+    "weighting_default": "vibrations",
+    "random_perturb": 0,
+    "bfgs_convergence_tolerance": 0.001,
+    "min_dist_A": 0.65,
+    "max_dist_A": 6.0,
+    "radial_basis_size": 8,
+    "random_initialization": "same binary and exact seeds; untrained template, no warm start",
+    "postprocessing": "same TrainLinear and Rescale then Save, no altered source",
+    "budget_rationale": "Fourfold finite sensitivity control, not proven optimal budget"
+  },
+  "comparison_controls": {
+    "only_intended_training_parameter_change": "max-iter 2000 -> 8000",
+    "historical_training_reexecutions": 0,
+    "prefix_check": "Compare all available first 2000 printed main objective values and pretraining sequence; report exact and max-absolute mismatch. A mismatch restricts causal interpretation, never authorizes retries.",
+    "platform_caveat": "Current linked library hashes recorded; historical linked-library byte hashes unavailable. Binary and all core inputs are byte-identical."
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "MALLOC_ARENA_MAX": "1",
+    "PYTHONHASHSEED": "0",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TZ": "UTC",
+    "PATH": "/usr/bin:/bin",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "environment_local_overrides": "HOME and TMPDIR per-call isolated directory; MLIP_RANDOM_SEED exact decimal string; no other inherited environment variables",
+  "implementation_sha256": {
+    "scripts/analysis_core.py": "d950e265ed0cab85f9977d05aaad8f0ca0b30aaa8b64c86b3e64a31ec1d7f78d",
+    "scripts/freeze_protocol.py": "7d4da3e49288d0ed5e254882ac95f810f79cdd994a55f6f486490d29eb66cdaf",
+    "scripts/run_experiment.py": "33da5180cef09f1fc1aea6b441a993f2a0ced24fc72bf99231d3a6dabf466dca"
+  },
+  "input_locks": [
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/METRICS.json",
+      "sha256": "52ab1f164c2330bbd966f850a4b9084049175e1a0d33d6142e417b16316c336d",
+      "bytes": 694
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/audit21_predictions.cfg",
+      "sha256": "0f7fa2dbaf961a559ebe1b69bda58f2164bfae58bf81102bd9d3b9b132d5380c",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/model_basin.mtp",
+      "sha256": "48b29892a602d1f408489f217285762128f1bb0d8bc512b2a9660764e3c8a8fe",
+      "bytes": 9095
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/train.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8",
+      "bytes": 123684
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/basin/training.stdout.txt",
+      "sha256": "b439a19a3911e0704d5a6259dffe49e54e8b546dd0b9a9c5c5e1f5e780afcf7b",
+      "bytes": 73942
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/METRICS.json",
+      "sha256": "c30309e423afaa1293d9fb796aba078da531e0d3702c3ba96b7110f6c79d3950",
+      "bytes": 697
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/audit21_predictions.cfg",
+      "sha256": "f9d3082feebc27174f8ff9cf4a9e825bc79c995b92128f8ef3a9a7dcde6a33c1",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/model_targeted.mtp",
+      "sha256": "745c3319e47e306bd895a1dde730baf23e50ed1df0dee1989d5ddd04b0346d58",
+      "bytes": 9107
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/train.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f",
+      "bytes": 118174
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_00_4172185641970229070/targeted/training.stdout.txt",
+      "sha256": "9ccb702df75007b7485278f6107995c7c039d63a7f99b423d56fcb974965a75f",
+      "bytes": 72358
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/METRICS.json",
+      "sha256": "083f4c4c1bf00827081f08e6ed4a74d3038b74a7574b8c223fba95e0a52a0a9c",
+      "bytes": 695
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/audit21_predictions.cfg",
+      "sha256": "e57b60a03c888aabb7909134472a99b11f4f59f5a5fbe08f0c209ac4eac38935",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/model_basin.mtp",
+      "sha256": "4680176a32d78afe07217cb7638e1fe808ee62086a3d219ce1f27eff7ed4611b",
+      "bytes": 9078
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/train.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8",
+      "bytes": 123684
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/basin/training.stdout.txt",
+      "sha256": "a7fa28edccf5dff9ceb3e8fc899639cf011a4a3277255156856dbc0b84dd7275",
+      "bytes": 74333
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/METRICS.json",
+      "sha256": "3326c6c8d36ff8b926933e3f4a6040006e363b05fece572aa6659198712a4489",
+      "bytes": 700
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/audit21_predictions.cfg",
+      "sha256": "95d4bf7ebf55917fbcff4673119253f5f711a81a4a0057380c6811bf5b53b80d",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/model_targeted.mtp",
+      "sha256": "144b68e3c78dc6aeddb626a32d242c1cb5e6c781da5b06ad4bdee7d551190161",
+      "bytes": 9086
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/train.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f",
+      "bytes": 118174
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_01_10780126852447763956/targeted/training.stdout.txt",
+      "sha256": "92b54d6ea1a34fa506d5a9e5075570c57e99b7ac45de6b751fe5ceb11a047009",
+      "bytes": 75526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/METRICS.json",
+      "sha256": "bbba72f8a917fa347fa2e96f95b61d938360fd000e5b66bf4752012e1afb64df",
+      "bytes": 694
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/audit21_predictions.cfg",
+      "sha256": "fc5457731b9b15d0d1b08952d3b4fd781ee599faa62dc35be0e1bc913966e7c7",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/model_basin.mtp",
+      "sha256": "b4e7bbe4e2c907b68e7dbde309876de9a7f5cfebf660325db66658b1d43bd3aa",
+      "bytes": 9102
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/train.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8",
+      "bytes": 123684
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/basin/training.stdout.txt",
+      "sha256": "b2830a8ff98d0714376b8b90432553f55504dd500f5b1b0167053853d72f4b58",
+      "bytes": 75410
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/METRICS.json",
+      "sha256": "94a7ef019a2b9d52d1cd1d0e04d30f3e6d20c8cb809f6efc946aebf0095087f5",
+      "bytes": 698
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/audit21_predictions.cfg",
+      "sha256": "e06a05533d7c12552caf42e5141748a396c1a4926032fcb7540fcb3b078e019a",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/model_targeted.mtp",
+      "sha256": "360af55a4d1c5abeeeec48a143c1fc78e42b919216c5d549bccfa838b85b52fe",
+      "bytes": 9106
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/train.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f",
+      "bytes": 118174
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_02_16937122512019790775/targeted/training.stdout.txt",
+      "sha256": "822412c64fdd00d6341be8486479cf183290cb154efe50f35e98b82f05e18117",
+      "bytes": 74297
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/METRICS.json",
+      "sha256": "9f0bd8f923f1f1666a656a6001b476618dab4d1c23f9b32c9eca913fcd1d7ef0",
+      "bytes": 697
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/audit21_predictions.cfg",
+      "sha256": "c0f306946bd63050fe76af7e3650b1dd6b52b38fd1cb1d74c3e749d6b5da5adc",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/model_basin.mtp",
+      "sha256": "c3a72e0fe133019054befc3affbe34a5603a1dafbafb9420b0324277cef32d18",
+      "bytes": 9097
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/train.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8",
+      "bytes": 123684
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/basin/training.stdout.txt",
+      "sha256": "9bd44f8b3ebfb5cd665ccc3356d2f0f197349aab612e547ac799803cb6d9f513",
+      "bytes": 74678
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/METRICS.json",
+      "sha256": "55c99f77adfc2fdb51579ef4405849e12fe0dfd09561fdd86ceca1ba57f0251a",
+      "bytes": 698
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/audit21_predictions.cfg",
+      "sha256": "1d7c4fdd1d8c30df3f6613ba160a7418c15859083772a125ea4bfc7fe8c6a5cb",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/model_targeted.mtp",
+      "sha256": "430a8b7e45a942495f09ddf44579b555c5deb5e60aa684092e2cbc999d7be99c",
+      "bytes": 9103
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/train.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f",
+      "bytes": 118174
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_03_12250469658613881511/targeted/training.stdout.txt",
+      "sha256": "13dee4c33d1ac6638ea8c366c9f42f45b7fdb978d59e3ef51cfe70c0709cd67f",
+      "bytes": 73896
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/METRICS.json",
+      "sha256": "26d8c4652f0652556515866d4bc5e3ff0e6ef55e23fc83025e16f293096c3a33",
+      "bytes": 695
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/audit21_predictions.cfg",
+      "sha256": "7c7053bf1d4255dd3b3d31d4760a580b18685e1e125420106e5065695e73e892",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/model_basin.mtp",
+      "sha256": "dd6caf9e459ee90e06fd163af2c46384ada45197597eda341dd0febe616479ca",
+      "bytes": 9090
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/train.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8",
+      "bytes": 123684
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/basin/training.stdout.txt",
+      "sha256": "20791356a7e8a7fb57860f590493a30f00e6286d980f2049cde23762a02e0e0a",
+      "bytes": 75531
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/METRICS.json",
+      "sha256": "039ff457a338cbed59216087f0e5a6ffd8fdc83d618b59a2250740b182789d42",
+      "bytes": 698
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/audit21_predictions.cfg",
+      "sha256": "5a9bf032aa25a60ec21d0efe4b671534f4343f72d3793088f6d27d52ff74411d",
+      "bytes": 34526
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/model_targeted.mtp",
+      "sha256": "146f03367d76d2d716fa1b639b8451a5236610ba01e9657afb026b816745f582",
+      "bytes": 9083
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/train.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f",
+      "bytes": 118174
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/training.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/baseline2000/seed_04_18149779474148714524/targeted/training.stdout.txt",
+      "sha256": "7a2b9d35b94ad76b453a4d36c2fd0db1c49d70c21cf05a316d4a843d4a990606",
+      "bytes": 75517
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v001_protocol_freeze/PROTOCOL_LOCK.json",
+      "sha256": "1a6ce45e11d5e118809492517b93e06df7e3ce3f20d3cc524ed268a33adb9a2a",
+      "bytes": 4382
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v002_execution/ALL_METRICS.tsv",
+      "sha256": "e1c126c51cf2da357fd52c29cb5e02c51821d96b1d29d1a4468e259f77f14443",
+      "bytes": 3315
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v002_execution/OUTPUT_MANIFEST.json",
+      "sha256": "16f41c7da0fbe7d98e10b8cb3dc4d108a1df984f12e61ab7a17b8f452caf4ad0",
+      "bytes": 19591
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v002_execution/SCIENTIFIC_CALL_LEDGER.json",
+      "sha256": "2d533034f0b66adbd440c10a81fe8d32e6fdda2d3053c7a534c827ac53119469",
+      "bytes": 29378
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v003_evaluation_order_repair_protocol/PROTOCOL_LOCK.json",
+      "sha256": "85d25b317169b315feb1cd133f483ccafbd750e695ae19815df67a5ff3b06162",
+      "bytes": 9570
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v004_evaluation_order_repair_execution/ALL_METRICS_REPAIR.tsv",
+      "sha256": "906170275ff4140910265627d1af512f45c8edcc2bbaccf3e9c421fc641a989c",
+      "bytes": 3494
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/historical/v006_evaluation_order_repair_closure/INTERPRETATION_CLOSURE.json",
+      "sha256": "968dc6f8a3abc93808e376bc4bd75b83c4d4fa55a507204d02308810de3c0ff0",
+      "bytes": 1012
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+      "sha256": "f7281f4aa8b6a85de0d4ad86995f26e6bf74dbc9dd0dea5a963472fe2306e421",
+      "bytes": 31709
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/inputs/init.mtp",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "bytes": 2989
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+      "sha256": "fd6e96bdd5c070c4b3728768cc29338a0e7fd43a77ec0c18b292c0170ab386fe",
+      "bytes": 1508072
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/inputs/train_basin.cfg",
+      "sha256": "748a84e333ae581a4527f0f709ebf05832645bfbac4af12cbcdf3c23a94fe3b8",
+      "bytes": 123684
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/inputs/train_targeted.cfg",
+      "sha256": "8700cffbbd5701d136ea8b63fcdece748fb7809ba47fdedd0fd5120b9f72533f",
+      "bytes": 118174
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/seed_patch/PATCHED_MLIP_BINARY/BINARY_BUILD_SEMANTICS.json",
+      "sha256": "937e511d2fae8f4f4b74e3b51fd716fef3f2ee87224c37536b89d6c655d6b299",
+      "bytes": 4084
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/seed_patch/PATCHED_MLIP_SOURCE/MLIP_SEEDED_RANDOM_V004.patch",
+      "sha256": "e75df0ac2ccb976e9803d731b5a458b385ac6cafd9387cbbe48771ecd6728e62",
+      "bytes": 699
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/seed_patch/PATCHED_MLIP_SOURCE/PATCHED_SOURCE_MANIFEST.tsv",
+      "sha256": "97778ef7f3281ea401ed08725861e88b5a89783de53381d821585aba80395ca0",
+      "bytes": 9633
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/seed_patch/PATCHED_MLIP_SOURCE/SOURCE_PATCH_REPORT.json",
+      "sha256": "0d9facffad7b0f3811d9782ac0a747b53162d9fe39b3dfa3d72e8eaaa3234347",
+      "bytes": 1026
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/seed_patch/exact_patched_source/dev_src/mlp/mlip_seed_override_v002.h",
+      "sha256": "a6964c07ae9da61bdfda33414ab6f1dd8247131b241abecba95718fcbe91189e",
+      "bytes": 2488
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/seed_patch/exact_patched_source/dev_src/mlp/mtpr_train.cpp",
+      "sha256": "02dbf1e4b133b84fd2026ed412cf1874e2c31d31e05b9a1f2e08c982a1b513f2",
+      "bytes": 12906
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/LICENSE",
+      "sha256": "3543579d168334f7bb792950ae04d4561faf661426348ef9e70627ea13182fe2",
+      "bytes": 1317
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/mlp/mtpr_train.cpp",
+      "sha256": "46f6261590c6d93f26bfa117a347597276374977880b90cc8ad22cc36d57b46f",
+      "bytes": 12861
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/mtpr.cpp",
+      "sha256": "90b830be1f08eb69f6f74b9d75a4cc08838f494be7b97a6802d9f972d51e9a18",
+      "bytes": 44082
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/mtpr.h",
+      "sha256": "1076079a255af37a266e79d89303ca1b511e14cabebbe14c3b988b5f252578d0",
+      "bytes": 6186
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/mtpr_trainer.cpp",
+      "sha256": "9ab44b9f99fbc25ce73c561a8aa8c0234feebd52b69458e8c945857387bdc929",
+      "bytes": 17594
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/mtpr_trainer.h",
+      "sha256": "7f1b3021e38234a490d6b304f8299dbf07ed8ab9757725823761cde213d1c872",
+      "bytes": 3091
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/non_linear_regression.cpp",
+      "sha256": "83e13e3ac7dec03f900d0cf90fc9f84ff8a23e4abe318e91b57e405e497ae600",
+      "bytes": 13122
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/dev_src/non_linear_regression.h",
+      "sha256": "de83cd785e05d8435526360c92282015303c40a4614fb4f221a56b8bef25ae8a",
+      "bytes": 1899
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/src/error_monitor.cpp",
+      "sha256": "e10f85a54645a08bff6a082497c180659d5c46ec1420c55c461c25a271bf5797",
+      "bytes": 9439
+    },
+    {
+      "snapshot": "02_SOURCE_SNAPSHOTS/source_code/src/error_monitor.h",
+      "sha256": "c26b008273a6987dfe23b52d8d53bc921743d690690d0ceaff1e17b810f9926a",
+      "bytes": 6410
+    }
+  ],
+  "seeds": [
+    {
+      "index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "index": 4,
+      "seed_u64": "18149779474148714524"
+    }
+  ],
+  "branch_order": [
+    "basin",
+    "targeted"
+  ],
+  "calls": [
+    {
+      "id": "TRAIN_seed_00_basin",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "branch": "basin",
+      "cwd": "03_TRAINING_8000/seed_00_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_00_basin/init.mtp",
+        "@/03_TRAINING_8000/seed_00_basin/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_00_basin/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_00_targeted",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "branch": "targeted",
+      "cwd": "03_TRAINING_8000/seed_00_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_00_targeted/init.mtp",
+        "@/03_TRAINING_8000/seed_00_targeted/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_00_targeted/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_01_basin",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "branch": "basin",
+      "cwd": "03_TRAINING_8000/seed_01_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_01_basin/init.mtp",
+        "@/03_TRAINING_8000/seed_01_basin/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_01_basin/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_01_targeted",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "branch": "targeted",
+      "cwd": "03_TRAINING_8000/seed_01_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_01_targeted/init.mtp",
+        "@/03_TRAINING_8000/seed_01_targeted/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_01_targeted/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_02_basin",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "branch": "basin",
+      "cwd": "03_TRAINING_8000/seed_02_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_02_basin/init.mtp",
+        "@/03_TRAINING_8000/seed_02_basin/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_02_basin/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_02_targeted",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "branch": "targeted",
+      "cwd": "03_TRAINING_8000/seed_02_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_02_targeted/init.mtp",
+        "@/03_TRAINING_8000/seed_02_targeted/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_02_targeted/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_03_basin",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "branch": "basin",
+      "cwd": "03_TRAINING_8000/seed_03_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_03_basin/init.mtp",
+        "@/03_TRAINING_8000/seed_03_basin/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_03_basin/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_03_targeted",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "branch": "targeted",
+      "cwd": "03_TRAINING_8000/seed_03_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_03_targeted/init.mtp",
+        "@/03_TRAINING_8000/seed_03_targeted/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_03_targeted/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_04_basin",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "branch": "basin",
+      "cwd": "03_TRAINING_8000/seed_04_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_04_basin/init.mtp",
+        "@/03_TRAINING_8000/seed_04_basin/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_04_basin/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "TRAIN_seed_04_targeted",
+      "kind": "MTP_TRAINING_8000",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "branch": "targeted",
+      "cwd": "03_TRAINING_8000/seed_04_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "train",
+        "@/03_TRAINING_8000/seed_04_targeted/init.mtp",
+        "@/03_TRAINING_8000/seed_04_targeted/train.cfg",
+        "--trained-pot-name=@WORK@/03_TRAINING_8000/seed_04_targeted/model.mtp",
+        "--max-iter=8000",
+        "--energy-weight=1",
+        "--force-weight=0.01",
+        "--stress-weight=0"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_00_basin",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/AUDIT21/seed_00_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_00_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_00_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_00_targeted",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/AUDIT21/seed_00_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_00_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_00_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_01_basin",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/AUDIT21/seed_01_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_01_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_01_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_01_targeted",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/AUDIT21/seed_01_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_01_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_01_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_02_basin",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/AUDIT21/seed_02_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_02_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_02_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_02_targeted",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/AUDIT21/seed_02_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_02_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_02_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_03_basin",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/AUDIT21/seed_03_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_03_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_03_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_03_targeted",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/AUDIT21/seed_03_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_03_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_03_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_04_basin",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/AUDIT21/seed_04_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_04_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_04_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_AUDIT21_seed_04_targeted",
+      "kind": "MTP_EVALUATE_AUDIT21",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/AUDIT21/seed_04_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_04_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/audit21.cfg",
+        "@/05_EVALUATION/AUDIT21/seed_04_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_00_basin",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_00_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_00_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_basin.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_00_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_00_targeted",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_00_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_00_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_targeted.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_00_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_01_basin",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_01_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_01_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_basin.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_01_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_01_targeted",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_01_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_01_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_targeted.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_01_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_02_basin",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_02_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_02_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_basin.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_02_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_02_targeted",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_02_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_02_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_targeted.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_02_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_03_basin",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_03_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_03_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_basin.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_03_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_03_targeted",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_03_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_03_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_targeted.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_03_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_04_basin",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "branch": "basin",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_04_basin",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_04_basin.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_basin.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_04_basin/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    },
+    {
+      "id": "EVAL_OWNTRAIN60_seed_04_targeted",
+      "kind": "MTP_EVALUATE_OWNTRAIN60",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "branch": "targeted",
+      "cwd": "05_EVALUATION/OWNTRAIN60/seed_04_targeted",
+      "argv": [
+        "@/02_SOURCE_SNAPSHOTS/inputs/mlp_seeded",
+        "calc-efs",
+        "@/04_FROZEN_MODELS/seed_04_targeted.mtp",
+        "@/02_SOURCE_SNAPSHOTS/inputs/train_targeted.cfg",
+        "@/05_EVALUATION/OWNTRAIN60/seed_04_targeted/predictions.cfg"
+      ],
+      "timeout_seconds": 300
+    }
+  ],
+  "call_accounting": {
+    "new_training": 10,
+    "new_audit21_evaluation": 10,
+    "new_owntrain60_evaluation": 10,
+    "training_binary_internal_owntrain_EFS": "part of each train invocation, not a separate process",
+    "new_DFT": 0,
+    "new_MD": 0,
+    "new_selectors": 0,
+    "new_Train119_work": 0,
+    "max_concurrent_MLIP_processes": 1
+  },
+  "execution_order": "Train all 10; freeze model files and ten-entry manifest; Audit21 evaluations for all 10; own-training evaluations for all 10; final independent analysis",
+  "failure_policy": {
+    "automatic_retry": false,
+    "halt_on_nonzero_exit": true,
+    "halt_on_timeout": true,
+    "halt_on_missing_or_invalid_model": true,
+    "halt_on_nonempty_stderr": true,
+    "halt_on_input_hash_change": true,
+    "halt_on_resource_failure": true,
+    "no_resume_after_process_orchestrator_failure_without_permission": true,
+    "negative_scientific_results_are_not_execution_failures": true,
+    "do_not_extend_beyond_8000": true
+  },
+  "analysis_policy": {
+    "descriptive_only": true,
+    "original_unseeded_pair_not_sixth_replicate": true,
+    "no_best_seed_selection": true,
+    "no_dropping_reversals": true,
+    "no_selective_early_checkpoint": true,
+    "no_independent_generalization_claim": true,
+    "convergence_claim": "Implementation decrease stopping criterion, not global optimum or gradient certificate",
+    "final_training_data_loss": "Reconstruct data term from fresh own-train saved predictions; excludes penalty; reconcile rounded footer"
+  },
+  "geometry_serialization_guard": {
+    "max_cartesian_A": 1.1e-06,
+    "max_ordered_pair_distance_A": 2.1e-06,
+    "species_and_cell_checks": true,
+    "note": "Identical historical calc-efs writer; no IO patch or strict Train119 serializer claim"
+  },
+  "historical_limitations": [
+    "NEB9 has two training endpoint overlaps",
+    "Interior points share one path",
+    "Five seeds vary optimization, not training-data generation",
+    "Audit21 is repeatedly used development data",
+    "Historical SEED_SENSITIVE remains unchanged",
+    "Train119 STATIC_APPLICABILITY_FAIL unchanged",
+    "PBE internal reference, not experimental truth",
+    "No Blind12 content access"
+  ],
+  "publication_policy": "No GitHub writes, DOI, releases or submissions; local reports and owner ZIP only"
+}

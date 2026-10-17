@@ -1,0 +1,53 @@
+&CONTROL
+  calculation = 'scf',
+  restart_mode = 'from_scratch',
+  prefix = 'pval_L03m',
+  pseudo_dir = './PSEUDO',
+  outdir = './tmp',
+  tprnfor = .true.,
+  tstress = .false.,
+  disk_io = 'low',
+  verbosity = 'high',
+/
+&SYSTEM
+  ibrav = 0,
+  nat = 9,
+  ntyp = 3,
+  ecutwfc = 80,
+  ecutrho = 960,
+  occupations = 'fixed',
+  input_dft = 'PBE',
+  tot_charge = 0,
+  nspin = 1,
+  nosym = .true.,
+  noinv = .true.,
+/
+&ELECTRONS
+  conv_thr = 1.0d-10,
+  electron_maxstep = 200,
+  mixing_mode = 'plain',
+  mixing_beta = 0.30,
+  diagonalization = 'david',
+/
+ATOMIC_SPECIES
+C   12.011000  C.pbe-n-kjpaw_psl.1.0.0.UPF
+H   1.008000  H.pbe-kjpaw_psl.1.0.0.UPF
+O   15.999000  O.pbe-n-kjpaw_psl.1.0.0.UPF
+
+CELL_PARAMETERS angstrom
+ 16.0000000000  0.0000000000  0.0000000000
+ 0.0000000000  16.0000000000  0.0000000000
+ 0.0000000000  0.0000000000  16.0000000000
+
+ATOMIC_POSITIONS angstrom
+O 6.487758386120 8.016311229862 8.000000418369
+H 7.089660198887 7.137310451051 8.000000490051
+C 7.288861446185 9.061646233906 8.000000137139
+H 6.765792255144 10.023221298508 8.000000643014
+C 8.661551188331 8.947025188653 8.000000141809
+H 9.296500230122 9.835378222618 8.000000255227
+C 9.227207659199 7.645708818262 7.999999896074
+O 8.535074477410 6.582877234017 7.999999335779
+H 10.325527145713 7.524747461768 8.000000426842
+
+K_POINTS gamma

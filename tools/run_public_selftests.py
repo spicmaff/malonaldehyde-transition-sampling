@@ -137,6 +137,10 @@ def main():
  semantic=subprocess.run([sys.executable,'tools/check_ledger_semantics.py'],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  if semantic.returncode:failures.append('Ledger semantic review failed:\n'+semantic.stdout)
  checks['ledger_source_semantics_and_mutations']=semantic.returncode==0
+ for verifier in ['verify_pbe14_offpath.py','verify_optimizer_budget.py']:
+  run=subprocess.run([sys.executable,'-B','tools/'+verifier],cwd=root,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+  checks[verifier]=run.returncode==0
+  if run.returncode:failures.append('Completed study verification failed: '+verifier+'\n'+run.stdout)
  result={'status':STATUS if not failures else 'FAIL','root':str(root),'checks':checks,'failure_count':len(failures),'failures':failures}
  print(json.dumps(result,indent=2));return 0 if not failures else 1
 if __name__=='__main__':raise SystemExit(main())

@@ -1,0 +1,118 @@
+{
+  "status": "COMPUTED_DESCRIPTIVE_OFFPATH_RESULTS",
+  "primary_name": "mean paired seed contrast of mean four-block transition-region force-vector-component RMSE",
+  "primary_unit": "eV/angstrom",
+  "primary_signed_targeted_minus_basin": [
+    {
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "primary_targeted_minus_basin_eV_A": -0.1408393764958256
+    },
+    {
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "primary_targeted_minus_basin_eV_A": -0.003129240660425192
+    },
+    {
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "primary_targeted_minus_basin_eV_A": -0.4562421225455178
+    },
+    {
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "primary_targeted_minus_basin_eV_A": 0.10056792328706676
+    },
+    {
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "primary_targeted_minus_basin_eV_A": -0.23103417988118108
+    }
+  ],
+  "descriptive_summary": {
+    "n": 5,
+    "mean": -0.1461353992591766,
+    "median": -0.1408393764958256,
+    "min": -0.4562421225455178,
+    "max": 0.10056792328706676,
+    "sd_descriptive": 0.21489260188995085
+  },
+  "targeted_better_count": 4,
+  "budget_region_cell_statistics": {
+    "BASIN_LEFT:2000:basin": {
+      "n": 5,
+      "mean": 0.05512734500584278,
+      "median": 0.05468557455220921,
+      "min": 0.049235423400724634,
+      "max": 0.062008418931966285,
+      "sd_descriptive": 0.0045431438312981635
+    },
+    "BASIN_LEFT:2000:targeted": {
+      "n": 5,
+      "mean": 0.06047030967478497,
+      "median": 0.05945417261669059,
+      "min": 0.039202578665697596,
+      "max": 0.09229176515090882,
+      "sd_descriptive": 0.0212235519909674
+    },
+    "BASIN_LEFT:8000:basin": {
+      "n": 5,
+      "mean": 0.05577833514083581,
+      "median": 0.04563074756426759,
+      "min": 0.04189334665005451,
+      "max": 0.08405956223102612,
+      "sd_descriptive": 0.01758683156703778
+    },
+    "BASIN_LEFT:8000:targeted": {
+      "n": 5,
+      "mean": 0.06423123719039314,
+      "median": 0.06072861717310767,
+      "min": 0.04854025336763967,
+      "max": 0.07953052637073278,
+      "sd_descriptive": 0.013574670245926417
+    },
+    "TRANSITION_CENTER:2000:basin": {
+      "n": 5,
+      "mean": 0.1877508856082289,
+      "median": 0.14570773941555346,
+      "min": 0.10603558943186606,
+      "max": 0.34742603689827867,
+      "sd_descriptive": 0.09547905001115214
+    },
+    "TRANSITION_CENTER:2000:targeted": {
+      "n": 5,
+      "mean": 0.16755708347341372,
+      "median": 0.12524008685890078,
+      "min": 0.10928316173116666,
+      "max": 0.30017739163696805,
+      "sd_descriptive": 0.08046300774273771
+    },
+    "TRANSITION_CENTER:8000:basin": {
+      "n": 5,
+      "mean": 0.30989016220618243,
+      "median": 0.25389865332824174,
+      "min": 0.15781031082375457,
+      "max": 0.5557026720549733,
+      "sd_descriptive": 0.1582778565918294
+    },
+    "TRANSITION_CENTER:8000:targeted": {
+      "n": 5,
+      "mean": 0.16375476294700583,
+      "median": 0.14001103499473228,
+      "min": 0.09946054950945545,
+      "max": 0.3115618832350959,
+      "sd_descriptive": 0.0854353842380455
+    }
+  },
+  "joint_region_preference_counts": {
+    "2000": 3,
+    "8000": 3
+  },
+  "new_PBE_labels": 14,
+  "processed_models": 20,
+  "new_MTP_training": 0,
+  "independent_sampling_policy_replications": 0,
+  "geometrical_blocks": 8,
+  "significance_test": false,
+  "no_independent_holdout_claim": true
+}

@@ -182,6 +182,8 @@ def article_html(text: str, data: dict, refs: list[dict]) -> str:
         elif line.startswith('@sources:'):
             flush(); keys = line.split(':', 1)[1].split(); check(all(k in data['evidence'] for k in keys), 'Unknown source')
             out.append('<p class="chapter-source">Project evidence: ' + ' · '.join(f'<a href="{data["evidence"][k]["url"]}">{html.escape(k.replace("_"," "))}</a>' for k in keys) + '</p>')
+        elif line == '@study: offpath':
+            flush(); out.append('<p class="chapter-source"><a href="#offpath">Completed off-path study: definitions, raw sources and independent reconstruction</a></p>')
         elif line.startswith('@papers:'):
             flush(); keys = line.split(':', 1)[1].split(); check(all(k in papers for k in keys), 'Unknown literature citation')
             out.append('<p class="chapter-source">Literature: ' + ' · '.join(f'<a href="{papers[k]["url"]}">{html.escape(papers[k]["short"])}</a>' for k in keys) + '</p>')
@@ -227,7 +229,11 @@ def build(out: Path) -> dict:
     sys.path.insert(0, str(ROOT / 'site'))
     from pages import render
     article = (ROOT / 'site/longread.en.md').read_text()
-    (out / 'index.html').write_text(render(data, article_html(article, data, refs), refs), encoding='utf-8')
+    from build_offpath import build as build_completed_study
+    from offpath_page import extend_document
+    offpath = build_completed_study(out)
+    document = extend_document(render(data, article_html(article, data, refs), refs), offpath)
+    (out / 'index.html').write_text(document, encoding='utf-8')
     download = []
     refmap = {r['id']: r for r in refs}
     for line in article.splitlines():
@@ -235,6 +241,8 @@ def build(out: Path) -> dict:
             line = 'Project sources: ' + ' · '.join('[' + key + '](' + data['evidence'][key]['url'] + ')' for key in line.split(':', 1)[1].split())
         elif line.startswith('@papers:'):
             line = 'Literature: ' + ' · '.join('[' + refmap[key]['short'] + '](' + refmap[key]['url'] + ')' for key in line.split(':', 1)[1].split())
+        if line == '@study: offpath':
+            line = 'Completed study and raw sources: https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath'
         download.append(line)
     (out / 'longread.en.md').write_text('\n'.join(download) + '\n', encoding='utf-8')
     for name in ('style.css', 'app.mjs', 'core.mjs', 'molecule.mjs', 'charts.mjs', 'favicon.svg', 'social-preview.svg'):

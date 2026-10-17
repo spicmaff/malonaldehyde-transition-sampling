@@ -12,7 +12,7 @@ Explore an actual three-dimensional molecular stage, the changing heavy-atom
 scaffold, real training-set projections, original energy profiles and their
 residuals, all five paired seeds, two separate diagnostic criteria, and atom-wise
 PBE/MTP force differences reconstructed from 297 primary force components.
-A new English essay connects the evidence with 18 annotated research references.
+A new English essay connects the evidence with 21 annotated research references.
 Two new English 1080p/60 fps films accompany the interactive six-scene story.
 
 The site is English-only, with light/dark themes, accessible manual controls,
@@ -88,6 +88,32 @@ Reproduce all saved numerical comparisons without QE or MLIP:
     python3 tools/verify_train119_diagnostic.py --data data/post_publication/train119_diagnostic_v001
 
 No Train119 Gate1, independent deployment validation, or Blind12 reveal was performed.
+
+## Completed fixed-budget and off-path follow-up
+
+The existing [Proton / Potential exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
+is extended on this review branch with a separate **Off the path** chapter. Its original
+molecular stage, films, ten routes and `3/5` original-NEB joint-metric result are retained.
+The later PBE14 transition metric at8000 gives **4/5** Targeted-favorable pairs, mean
+Targeted−Basin **−0.1461353993 eV/Å**. These are different studies, not competing counts.
+
+The new public package contains fourteen accepted PBE references, twenty saved
+prediction CFGs, twenty source training logs and their model/seed hashes. Both regions
+and caps2000/8000 are reported. All twenty historical models reached `STEP_LIMIT`;
+larger-cap Basin degradation and the basin-region tradeoff remain visible.
+
+```sh
+python3 -B tools/verify_pbe14_offpath.py
+python3 -B tools/verify_optimizer_budget.py
+python3 -B -m unittest discover -s tests -p test_completed_studies.py
+```
+
+These commands only process saved evidence. The new files do not contain new MLIP
+binaries, external source, pseudopotentials or Blind12 data. [Methods, recovery and
+geometric limitations](docs/COMPLETED_STUDIES.md) · [Study index](data/studies/STUDY_INDEX.json)
+· [Publication scope](docs/PUBLICATION_SCOPE.md) · [Paper scaffold](paper/v001/MANUSCRIPT_OUTLINE_EN.md).
+Existing release tags, scientific negatives and the production site are not changed
+until owner approval of this branch. The scaffold is not a completed journal article.
 
 ## Current provenance authority
 

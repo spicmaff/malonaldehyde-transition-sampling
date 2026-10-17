@@ -1,0 +1,6624 @@
+{
+  "block_rows": [
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.06560379128238779,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.08249122689833066,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.055787033419943885,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.014430819447909476,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.21375073476300424,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.10822917080515991,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.16796697743049976,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09288407466354988,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.030408143342954698,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11908356130646164,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.025581132993186435,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.007450152614467585,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.7779883837749961,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11212919853064042,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.0769198251474669,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.04855720585986358,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.11222373239313654,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.13335647687258934,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.10233690528703263,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.021249946050876767,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09520956569208322,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09735208028685885,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.18424915734924893,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.08487297977025778,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06014287773575192,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11502882737037137,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.032877008655796576,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.01312543151859996,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.184261397167319,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11258139665959799,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.08542841211231908,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06996590139042855,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.06036457867784997,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.0921106470900164,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.053799105008794784,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.0124679674321757,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.202844447393684,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.13716977510438444,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1270015845554136,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.08955509196725044,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.04680836269403498,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.08023693034761367,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.03948504675617788,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.015519849641720441,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.2778307447644108,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.10650120564928535,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.14082812880781145,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.1060811640735107,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.05508518428492218,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.12709566314193527,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.04258306774298788,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.013052775296917035,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.195280131169383,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09575186875195849,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1149310067953512,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09499734071891047,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05812806273750783,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.12881428845321535,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.0421717471225524,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.013800370379155116,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.26765412486941537,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.15088040283608978,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11208084667447729,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.08810890627333505,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.05097283054141429,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.14781431561686542,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.036951127190752865,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.012295402378832575,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.7259544786647919,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.2292375875340306,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.22680489904961618,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.20770718234467603,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.08233197631755731,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.16598358227808324,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.07121619973701962,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.016706490591444273,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 1.3015369681020827,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.35958182941202566,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.29922313905812253,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.2624687516476621,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.049898873425678905,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.16348537333932694,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.03931626037562607,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.018298494334998923,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.36594061843881664,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1509906026571673,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1270129880313624,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.10671111633433727,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.0679771744799409,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.18532314825343169,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05577307605541319,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.009048706694145382,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.14242773870614953,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.1090124974113666,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.09542398404794752,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05097797787235809,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.067424048542949,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09136974800482384,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.053274895228214394,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.008447669752696023,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1674968679557008,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09163859957551329,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.11725161495255942,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.04775527524369067,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.03944038823798124,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.09525081467893294,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.02238987578535997,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.010492307897943884,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.40735765497978244,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.17227770970702513,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.1340623455697994,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.13027812953550974,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.03549383504716864,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.08365912307928491,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.025568734257519862,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.01208862227881696,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1875600440196617,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.08185502201901894,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09344372394987838,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.07427385693610761,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.0395897205524027,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11046097461876991,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.03267341505767005,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.011436903241715993,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.8800410803803257,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.14346419987006265,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.10318813221170248,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11955412047829282,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.044276950406082136,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.10255673043551007,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.03417523699042132,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.015932775770885026,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.3615103833077629,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.15905062697954658,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1538029925681743,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.12740534730556896,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05356302442002338,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.12658840358311765,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05382539170302678,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.013205067889608436,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.9982481532250174,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.21996764498281182,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.14949114476885147,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11647391652697282,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.04801892580225911,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.0763579892852769,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.03550443487392135,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.014731776325423192,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.7568931570389781,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.13855043125149466,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.15124150588683627,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1540244723705631,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05067589140407068,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.18535386369874146,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06275357893298371,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.009469676845626768,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.23699935848189851,
+      "mode": "OO_breathing",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.1428087691676771,
+      "mode": "C_skeletal_bend",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11396807473722545,
+      "mode": "H_lateral",
+      "n_geometries": 2,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06626793759212796,
+      "mode": "H_out_of_plane",
+      "n_geometries": 1,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    }
+  ],
+  "case_rows": [
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.005672942613955456,
+      "force_RMSE_eV_A": 0.061346713638787624,
+      "max_component_abs_eV_A": 0.21005391039918697,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.0072010593307823,
+      "force_RMSE_eV_A": 0.06986086892598796,
+      "max_component_abs_eV_A": 0.22332036581918296,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.000522566038853256,
+      "force_RMSE_eV_A": 0.08573375137511077,
+      "max_component_abs_eV_A": 0.20346601682074716,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.007680401567313311,
+      "force_RMSE_eV_A": 0.07924870242155055,
+      "max_component_abs_eV_A": 0.2809983321483489,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.005093493729418697,
+      "force_RMSE_eV_A": 0.05197120001644462,
+      "max_component_abs_eV_A": 0.16375167872754992,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.006431396291418423,
+      "force_RMSE_eV_A": 0.059602866823443144,
+      "max_component_abs_eV_A": 0.21665937793574397,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0005581600655659713,
+      "force_RMSE_eV_A": 0.014430819447909476,
+      "max_component_abs_eV_A": 0.029356560658448,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.12961843335847334,
+      "force_RMSE_eV_A": 0.3467373285636548,
+      "max_component_abs_eV_A": 1.088393208617339,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.015928628683923307,
+      "force_RMSE_eV_A": 0.08076414096235367,
+      "max_component_abs_eV_A": 0.290855323200497,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.037227482992875593,
+      "force_RMSE_eV_A": 0.12529705434462812,
+      "max_component_abs_eV_A": 0.295540851783737,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.02804408419660831,
+      "force_RMSE_eV_A": 0.0911612872656917,
+      "max_component_abs_eV_A": 0.270575574291373,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.01929769937214587,
+      "force_RMSE_eV_A": 0.08592275375152217,
+      "max_component_abs_eV_A": 0.259469252885351,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.0716886529637577,
+      "force_RMSE_eV_A": 0.25001120110947733,
+      "max_component_abs_eV_A": 0.873575576703859,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.028829474686745016,
+      "force_RMSE_eV_A": 0.09288407466354988,
+      "max_component_abs_eV_A": 0.254499035494666,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": 0.002339845577125743,
+      "force_RMSE_eV_A": 0.030932743985213028,
+      "max_component_abs_eV_A": 0.07473662491507294,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.001350631535615321,
+      "force_RMSE_eV_A": 0.029883542700696368,
+      "max_component_abs_eV_A": 0.089246365819183,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.0009639718000471476,
+      "force_RMSE_eV_A": 0.12284607492957843,
+      "max_component_abs_eV_A": 0.4320900168207471,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.016590138411402222,
+      "force_RMSE_eV_A": 0.11532104768334485,
+      "max_component_abs_eV_A": 0.36921180810119125,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.0013634512563385215,
+      "force_RMSE_eV_A": 0.024350024397782635,
+      "max_component_abs_eV_A": 0.074510393545478,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.00046854646029714786,
+      "force_RMSE_eV_A": 0.02681224158859024,
+      "max_component_abs_eV_A": 0.057498780906998996,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 1.9435976810200373e-06,
+      "force_RMSE_eV_A": 0.007450152614467585,
+      "max_component_abs_eV_A": 0.023176086870248004,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.22504758320246765,
+      "force_RMSE_eV_A": 1.4749255284922531,
+      "max_component_abs_eV_A": 4.724575839114328,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.033016154669894604,
+      "force_RMSE_eV_A": 0.08105123905773919,
+      "max_component_abs_eV_A": 0.21008870678783986,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.01117910454286175,
+      "force_RMSE_eV_A": 0.09782127579137667,
+      "max_component_abs_eV_A": 0.2786345224833737,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.021839905706656282,
+      "force_RMSE_eV_A": 0.12643712126990417,
+      "max_component_abs_eV_A": 0.43402927666526736,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.012835397843218743,
+      "force_RMSE_eV_A": 0.03624860071350648,
+      "max_component_abs_eV_A": 0.112061901724027,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": -0.0052063091491163505,
+      "force_RMSE_eV_A": 0.1175910495814273,
+      "max_component_abs_eV_A": 0.311863663620759,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.005890600756629283,
+      "force_RMSE_eV_A": 0.04855720585986358,
+      "max_component_abs_eV_A": 0.11294921137194701,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.015119471618845637,
+      "force_RMSE_eV_A": 0.12235830290938675,
+      "max_component_abs_eV_A": 0.39765391039918696,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.007332003255669406,
+      "force_RMSE_eV_A": 0.10208916187688635,
+      "max_component_abs_eV_A": 0.3265327890826569,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.014490948226239198,
+      "force_RMSE_eV_A": 0.14930958589248752,
+      "max_component_abs_eV_A": 0.5203938626439175,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.0009085641822821344,
+      "force_RMSE_eV_A": 0.11740336785269118,
+      "max_component_abs_eV_A": 0.3157063321483491,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.013993529053323073,
+      "force_RMSE_eV_A": 0.11671334204717601,
+      "max_component_abs_eV_A": 0.3596646787275499,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.006088800535280825,
+      "force_RMSE_eV_A": 0.08796046852688924,
+      "max_component_abs_eV_A": 0.27824237793574413,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0007313122976029263,
+      "force_RMSE_eV_A": 0.021249946050876767,
+      "max_component_abs_eV_A": 0.044345560658448004,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.037504711187466455,
+      "force_RMSE_eV_A": 0.11860781417707851,
+      "max_component_abs_eV_A": 0.3535702086173389,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.005340717940953255,
+      "force_RMSE_eV_A": 0.07181131720708794,
+      "max_component_abs_eV_A": 0.25373432320049705,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.01309215945093456,
+      "force_RMSE_eV_A": 0.09952530134152797,
+      "max_component_abs_eV_A": 0.23206352248337403,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.006828924646470114,
+      "force_RMSE_eV_A": 0.09517885923218972,
+      "max_component_abs_eV_A": 0.24164120142146106,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.0006938449632798438,
+      "force_RMSE_eV_A": 0.032921257822125176,
+      "max_component_abs_eV_A": 0.091951252885351,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.0679874881127489,
+      "force_RMSE_eV_A": 0.3355770568763727,
+      "max_component_abs_eV_A": 1.244060576703859,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.012130081276609417,
+      "force_RMSE_eV_A": 0.08487297977025778,
+      "max_component_abs_eV_A": 0.24170678862805298,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0002125840178450744,
+      "force_RMSE_eV_A": 0.061238549544537585,
+      "max_component_abs_eV_A": 0.12931512305224202,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.002606865029747496,
+      "force_RMSE_eV_A": 0.05904720592696626,
+      "max_component_abs_eV_A": 0.19904623834449287,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.021632709061805144,
+      "force_RMSE_eV_A": 0.15761938553049676,
+      "max_component_abs_eV_A": 0.4562461373560831,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": -0.014740743803713485,
+      "force_RMSE_eV_A": 0.07243826921024599,
+      "max_component_abs_eV_A": 0.19615071937237216,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.004802901330322129,
+      "force_RMSE_eV_A": 0.04154338075736597,
+      "max_component_abs_eV_A": 0.095572781374379,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": -0.0015687549487211072,
+      "force_RMSE_eV_A": 0.024210636554227182,
+      "max_component_abs_eV_A": 0.065842973015521,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": -0.00038938999637139204,
+      "force_RMSE_eV_A": 0.01312543151859996,
+      "max_component_abs_eV_A": 0.041882077965917,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.003262248276541868,
+      "force_RMSE_eV_A": 0.33038763990127473,
+      "max_component_abs_eV_A": 0.9901651608856721,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.003050396181151882,
+      "force_RMSE_eV_A": 0.038135154433363294,
+      "max_component_abs_eV_A": 0.09995530075467696,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.03054626217885925,
+      "force_RMSE_eV_A": 0.13568459268085298,
+      "max_component_abs_eV_A": 0.30971747751662626,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.0020109873723868077,
+      "force_RMSE_eV_A": 0.089478200638343,
+      "max_component_abs_eV_A": 0.22296549361164208,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.00012109235672141949,
+      "force_RMSE_eV_A": 0.04995068353298973,
+      "max_component_abs_eV_A": 0.16523212861203707,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.03016671421482897,
+      "force_RMSE_eV_A": 0.12090614069164844,
+      "max_component_abs_eV_A": 0.324524818645982,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.012116545274693635,
+      "force_RMSE_eV_A": 0.06996590139042855,
+      "max_component_abs_eV_A": 0.162049788628053,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.005145219777887178,
+      "force_RMSE_eV_A": 0.05897988955692707,
+      "max_component_abs_eV_A": 0.16333991039918694,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.0017888102636334224,
+      "force_RMSE_eV_A": 0.06174926779877287,
+      "max_component_abs_eV_A": 0.18012178908265708,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.009313168546214001,
+      "force_RMSE_eV_A": 0.08846399356943166,
+      "max_component_abs_eV_A": 0.24166186264391687,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.0071129933903648634,
+      "force_RMSE_eV_A": 0.09575730061060113,
+      "max_component_abs_eV_A": 0.33621033214834894,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.004872027772307774,
+      "force_RMSE_eV_A": 0.05224708605067043,
+      "max_component_abs_eV_A": 0.17655667872755,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.0026839731033305725,
+      "force_RMSE_eV_A": 0.055351123966919144,
+      "max_component_abs_eV_A": 0.19515437793574408,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": -2.775964549073251e-05,
+      "force_RMSE_eV_A": 0.0124679674321757,
+      "max_component_abs_eV_A": 0.031221560658448003,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.029999264994330588,
+      "force_RMSE_eV_A": 0.30798786439636644,
+      "max_component_abs_eV_A": 0.7894226129839179,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.016907936714233074,
+      "force_RMSE_eV_A": 0.09770103039100161,
+      "max_component_abs_eV_A": 0.349097676799503,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": -0.0010765581462237606,
+      "force_RMSE_eV_A": 0.15224260925849706,
+      "max_component_abs_eV_A": 0.3480208509682079,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.049465220838328605,
+      "force_RMSE_eV_A": 0.12209694095027185,
+      "max_component_abs_eV_A": 0.381865425708627,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.013635925899734502,
+      "force_RMSE_eV_A": 0.07861441930127604,
+      "max_component_abs_eV_A": 0.203989611032907,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": -0.030321738471229764,
+      "force_RMSE_eV_A": 0.17538874980955116,
+      "max_component_abs_eV_A": 0.5412937105342921,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": -0.02956983482636133,
+      "force_RMSE_eV_A": 0.08955509196725044,
+      "max_component_abs_eV_A": 0.1997011827784,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0017897870159231388,
+      "force_RMSE_eV_A": 0.05267839555973099,
+      "max_component_abs_eV_A": 0.140771123052242,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": -0.0006548097283030074,
+      "force_RMSE_eV_A": 0.040938329828338976,
+      "max_component_abs_eV_A": 0.113592386986846,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.0007817138571226678,
+      "force_RMSE_eV_A": 0.08344429483347092,
+      "max_component_abs_eV_A": 0.20897169143306504,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": -0.006511239700785154,
+      "force_RMSE_eV_A": 0.07702956586175641,
+      "max_component_abs_eV_A": 0.18097500359992602,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.003904357712372075,
+      "force_RMSE_eV_A": 0.04714659398691027,
+      "max_component_abs_eV_A": 0.11707278137437899,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.0022285661714249727,
+      "force_RMSE_eV_A": 0.03182349952544549,
+      "max_component_abs_eV_A": 0.07153010907695098,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": -6.0883590322191594e-05,
+      "force_RMSE_eV_A": 0.015519849641720441,
+      "max_component_abs_eV_A": 0.033690475190882,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.05063048696251826,
+      "force_RMSE_eV_A": 0.5163814566265099,
+      "max_component_abs_eV_A": 1.432136612983918,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.008333514129162722,
+      "force_RMSE_eV_A": 0.03928003290231165,
+      "max_component_abs_eV_A": 0.08882623428882,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.021484012049768353,
+      "force_RMSE_eV_A": 0.10914720963057264,
+      "max_component_abs_eV_A": 0.220750851783737,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.0011257901933277026,
+      "force_RMSE_eV_A": 0.10385520166799805,
+      "max_component_abs_eV_A": 0.20595724238074498,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.0016295729317334917,
+      "force_RMSE_eV_A": 0.0556432233401917,
+      "max_component_abs_eV_A": 0.12160750551838802,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.033467723648755054,
+      "force_RMSE_eV_A": 0.2260130342754312,
+      "max_component_abs_eV_A": 0.5311845767038591,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.005411490299593424,
+      "force_RMSE_eV_A": 0.1060811640735107,
+      "max_component_abs_eV_A": 0.2532841827784,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": 0.0029233625400593155,
+      "force_RMSE_eV_A": 0.07189933735246212,
+      "max_component_abs_eV_A": 0.23151587725577,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": -0.0009562506772908819,
+      "force_RMSE_eV_A": 0.03827103121738223,
+      "max_component_abs_eV_A": 0.10399865964778901,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.008064810871246664,
+      "force_RMSE_eV_A": 0.1402838006973505,
+      "max_component_abs_eV_A": 0.3216205580329401,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": -0.0034991099366834533,
+      "force_RMSE_eV_A": 0.11390752558652006,
+      "max_component_abs_eV_A": 0.3369490035999261,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": 0.003108208360572462,
+      "force_RMSE_eV_A": 0.04751888402034177,
+      "max_component_abs_eV_A": 0.13599032127245003,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": -0.0034668867936034076,
+      "force_RMSE_eV_A": 0.037647251465634,
+      "max_component_abs_eV_A": 0.10989662206425599,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0001895356656405056,
+      "force_RMSE_eV_A": 0.013052775296917035,
+      "max_component_abs_eV_A": 0.039088475190882,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.1074688888604669,
+      "force_RMSE_eV_A": 0.3638791096710287,
+      "max_component_abs_eV_A": 1.039750160885672,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.0024530825980946247,
+      "force_RMSE_eV_A": 0.026681152667737275,
+      "max_component_abs_eV_A": 0.06433207045630907,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.03191654341185313,
+      "force_RMSE_eV_A": 0.1317325572077631,
+      "max_component_abs_eV_A": 0.30800157052454397,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.00025744047957232397,
+      "force_RMSE_eV_A": 0.05977118029615387,
+      "max_component_abs_eV_A": 0.12251475761925512,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.013687964338714664,
+      "force_RMSE_eV_A": 0.10742406782544194,
+      "max_component_abs_eV_A": 0.30291109827597296,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.024756483602686785,
+      "force_RMSE_eV_A": 0.12243794576526047,
+      "max_component_abs_eV_A": 0.302135261295842,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.0017218871296336147,
+      "force_RMSE_eV_A": 0.09499734071891047,
+      "max_component_abs_eV_A": 0.21354378862805298,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.004726271811932747,
+      "force_RMSE_eV_A": 0.06900472015815773,
+      "max_component_abs_eV_A": 0.21278119361536196,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": -0.0014049666842765873,
+      "force_RMSE_eV_A": 0.04725140531685793,
+      "max_component_abs_eV_A": 0.12620919173722,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.01337737231324354,
+      "force_RMSE_eV_A": 0.17927070617864949,
+      "max_component_abs_eV_A": 0.5492268626439172,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.00919516885437588,
+      "force_RMSE_eV_A": 0.07835787072778122,
+      "max_component_abs_eV_A": 0.15785547193560934,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.002006545357289724,
+      "force_RMSE_eV_A": 0.03669747577764512,
+      "max_component_abs_eV_A": 0.08929267872754998,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.004623484785270193,
+      "force_RMSE_eV_A": 0.04764601846745968,
+      "max_component_abs_eV_A": 0.11866437793574414,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0008609150515894726,
+      "force_RMSE_eV_A": 0.013800370379155116,
+      "max_component_abs_eV_A": 0.027716086870248003,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.1069873022554475,
+      "force_RMSE_eV_A": 0.5078347286607938,
+      "max_component_abs_eV_A": 1.5294957913826612,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.0004896544398889091,
+      "force_RMSE_eV_A": 0.027473521078036887,
+      "max_component_abs_eV_A": 0.06493827139550595,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.04035636361982142,
+      "force_RMSE_eV_A": 0.18520821737272686,
+      "max_component_abs_eV_A": 0.612155865602201,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.015552245234403017,
+      "force_RMSE_eV_A": 0.1165525882994527,
+      "max_component_abs_eV_A": 0.39425642570862707,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.000964138089784683,
+      "force_RMSE_eV_A": 0.05805568969495954,
+      "max_component_abs_eV_A": 0.135455848302254,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.015010272559720761,
+      "force_RMSE_eV_A": 0.16610600365399503,
+      "max_component_abs_eV_A": 0.470535236092219,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": -0.001230267369237481,
+      "force_RMSE_eV_A": 0.08810890627333505,
+      "max_component_abs_eV_A": 0.218779101953352,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.005534382764835755,
+      "force_RMSE_eV_A": 0.03879967818729488,
+      "max_component_abs_eV_A": 0.080263701801082,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": -0.009001634296282646,
+      "force_RMSE_eV_A": 0.0631459828955337,
+      "max_component_abs_eV_A": 0.15073821091734296,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.031879957914952683,
+      "force_RMSE_eV_A": 0.1977137460230313,
+      "max_component_abs_eV_A": 0.5180751373560826,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": -0.0007684352067371947,
+      "force_RMSE_eV_A": 0.09791488521069952,
+      "max_component_abs_eV_A": 0.26940168847418094,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": 0.0024546465176626953,
+      "force_RMSE_eV_A": 0.03562287734568672,
+      "max_component_abs_eV_A": 0.077870393545478,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": -0.0029618510657201114,
+      "force_RMSE_eV_A": 0.03827937703581901,
+      "max_component_abs_eV_A": 0.10715862206425597,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": -0.00028744880046360777,
+      "force_RMSE_eV_A": 0.012295402378832575,
+      "max_component_abs_eV_A": 0.03076780096432,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.3904846669925064,
+      "force_RMSE_eV_A": 1.4083366655082468,
+      "max_component_abs_eV_A": 4.077436208617339,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.012368251704174327,
+      "force_RMSE_eV_A": 0.04357229182133705,
+      "max_component_abs_eV_A": 0.136409676799503,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.06434071691774079,
+      "force_RMSE_eV_A": 0.33411176642949925,
+      "max_component_abs_eV_A": 1.001228755033585,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.010302885376404447,
+      "force_RMSE_eV_A": 0.12436340863856195,
+      "max_component_abs_eV_A": 0.28728357429137297,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.009014495892188279,
+      "force_RMSE_eV_A": 0.11760224789079522,
+      "max_component_abs_eV_A": 0.251113252885351,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.01836030835170277,
+      "force_RMSE_eV_A": 0.33600755020843714,
+      "max_component_abs_eV_A": 1.034851211884413,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.015388608942657811,
+      "force_RMSE_eV_A": 0.20770718234467603,
+      "max_component_abs_eV_A": 0.5634459792840439,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0045741316148451006,
+      "force_RMSE_eV_A": 0.08124554931352268,
+      "max_component_abs_eV_A": 0.218556564622861,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.008526220340627333,
+      "force_RMSE_eV_A": 0.08341840332159194,
+      "max_component_abs_eV_A": 0.20556543693943297,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.01205070962487298,
+      "force_RMSE_eV_A": 0.1959466133758382,
+      "max_component_abs_eV_A": 0.454642308286284,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": -0.006401644208608559,
+      "force_RMSE_eV_A": 0.1360205511803283,
+      "max_component_abs_eV_A": 0.3146875075395501,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.002992085808500633,
+      "force_RMSE_eV_A": 0.0683314131419545,
+      "max_component_abs_eV_A": 0.180438393545478,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.009650064910374567,
+      "force_RMSE_eV_A": 0.07410098633208474,
+      "max_component_abs_eV_A": 0.25871137793574395,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": -0.0002681283413039637,
+      "force_RMSE_eV_A": 0.016706490591444273,
+      "max_component_abs_eV_A": 0.044608475190882,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.564325494406603,
+      "force_RMSE_eV_A": 2.487163983725763,
+      "max_component_abs_eV_A": 8.067029208617338,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.013833720977800112,
+      "force_RMSE_eV_A": 0.1159099524784026,
+      "max_component_abs_eV_A": 0.37646070678784005,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.06625643247980406,
+      "force_RMSE_eV_A": 0.32448387234548776,
+      "max_component_abs_eV_A": 0.8543888656022016,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.04830597051750374,
+      "force_RMSE_eV_A": 0.3946797864785636,
+      "max_component_abs_eV_A": 1.265904574291373,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.02504389749310576,
+      "force_RMSE_eV_A": 0.19050332468552858,
+      "max_component_abs_eV_A": 0.601990252885351,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.10237628410186517,
+      "force_RMSE_eV_A": 0.40794295343071646,
+      "max_component_abs_eV_A": 1.2117978186459821,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.038496800174698365,
+      "force_RMSE_eV_A": 0.2624687516476621,
+      "max_component_abs_eV_A": 0.861970035494666,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.004312163704753402,
+      "force_RMSE_eV_A": 0.05226622228003385,
+      "max_component_abs_eV_A": 0.11347387725577002,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.0010986038746523263,
+      "force_RMSE_eV_A": 0.04753152457132395,
+      "max_component_abs_eV_A": 0.1386402383444929,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.043639876900897434,
+      "force_RMSE_eV_A": 0.20541615595522192,
+      "max_component_abs_eV_A": 0.5769211373560825,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.01912536420536526,
+      "force_RMSE_eV_A": 0.12155459072343197,
+      "max_component_abs_eV_A": 0.425533808101191,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.000346895929396851,
+      "force_RMSE_eV_A": 0.03745164191190064,
+      "max_component_abs_eV_A": 0.08985162130827598,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.004287956559437589,
+      "force_RMSE_eV_A": 0.0411808788393515,
+      "max_component_abs_eV_A": 0.113675377935744,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0006908893806212291,
+      "force_RMSE_eV_A": 0.018298494334998923,
+      "max_component_abs_eV_A": 0.045603475190882,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.14661061703554878,
+      "force_RMSE_eV_A": 0.7035386345494398,
+      "max_component_abs_eV_A": 2.2559747913826613,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.0010379909322182357,
+      "force_RMSE_eV_A": 0.028342602328193498,
+      "max_component_abs_eV_A": 0.06065644704217199,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.015389504401809972,
+      "force_RMSE_eV_A": 0.10368535330977367,
+      "max_component_abs_eV_A": 0.27439986521250903,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.001110351191528025,
+      "force_RMSE_eV_A": 0.1982958520045609,
+      "max_component_abs_eV_A": 0.5321732766652678,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.008832563007899807,
+      "force_RMSE_eV_A": 0.10879209498440731,
+      "max_component_abs_eV_A": 0.299273747114649,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.018667614370770025,
+      "force_RMSE_eV_A": 0.14523388107831747,
+      "max_component_abs_eV_A": 0.37452357670385894,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": -0.003321376286294253,
+      "force_RMSE_eV_A": 0.10671111633433727,
+      "max_component_abs_eV_A": 0.2494221827784,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.011887996241966903,
+      "force_RMSE_eV_A": 0.07867153176804505,
+      "max_component_abs_eV_A": 0.223324916684769,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.001299061918643929,
+      "force_RMSE_eV_A": 0.05728281719183675,
+      "max_component_abs_eV_A": 0.13300178908265703,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.042667973680863724,
+      "force_RMSE_eV_A": 0.20291872209923592,
+      "max_component_abs_eV_A": 0.620406137356083,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.02642426174134016,
+      "force_RMSE_eV_A": 0.16772757440762745,
+      "max_component_abs_eV_A": 0.5341828081011908,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.004320079180388348,
+      "force_RMSE_eV_A": 0.05705205606744088,
+      "max_component_abs_eV_A": 0.15124467872754999,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.006387922930343848,
+      "force_RMSE_eV_A": 0.054494096043385495,
+      "max_component_abs_eV_A": 0.199344377935744,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0003335144006086921,
+      "force_RMSE_eV_A": 0.009048706694145382,
+      "max_component_abs_eV_A": 0.023907560658448006,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.01020449031852877,
+      "force_RMSE_eV_A": 0.23678339716447136,
+      "max_component_abs_eV_A": 0.581638195147099,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.004284591527948578,
+      "force_RMSE_eV_A": 0.048072080247827685,
+      "max_component_abs_eV_A": 0.14932832320049702,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.009042375814942716,
+      "force_RMSE_eV_A": 0.08564163461363976,
+      "max_component_abs_eV_A": 0.19095975503358487,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.004051451461691613,
+      "force_RMSE_eV_A": 0.13238336020909344,
+      "max_component_abs_eV_A": 0.47256527666526793,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -2.6025933721030015e-05,
+      "force_RMSE_eV_A": 0.04130705644156458,
+      "max_component_abs_eV_A": 0.10335808965909798,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.02294670012088318,
+      "force_RMSE_eV_A": 0.14954091165433048,
+      "max_component_abs_eV_A": 0.521617576703859,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.0012317292787429324,
+      "force_RMSE_eV_A": 0.05097797787235809,
+      "max_component_abs_eV_A": 0.11834818277840001,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.009155214594784411,
+      "force_RMSE_eV_A": 0.07066001133894453,
+      "max_component_abs_eV_A": 0.19605291039918693,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.004271787626748846,
+      "force_RMSE_eV_A": 0.06418808574695349,
+      "max_component_abs_eV_A": 0.157283365819183,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": 0.006993744449118822,
+      "force_RMSE_eV_A": 0.10997740875116993,
+      "max_component_abs_eV_A": 0.37218345547491527,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.0031695912593932007,
+      "force_RMSE_eV_A": 0.07276208725847776,
+      "max_component_abs_eV_A": 0.21657162724631007,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.0064498319793528935,
+      "force_RMSE_eV_A": 0.05826480647483714,
+      "max_component_abs_eV_A": 0.20690967872754995,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.005088380335337206,
+      "force_RMSE_eV_A": 0.04828498398159165,
+      "max_component_abs_eV_A": 0.14455937793574414,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 5.017782154936867e-05,
+      "force_RMSE_eV_A": 0.008447669752696023,
+      "max_component_abs_eV_A": 0.022364520033029002,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.012751692885331067,
+      "force_RMSE_eV_A": 0.2020749698996963,
+      "max_component_abs_eV_A": 0.39411415020054996,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.030281344687864475,
+      "force_RMSE_eV_A": 0.1329187660117053,
+      "max_component_abs_eV_A": 0.35455770678784004,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.004961918442859314,
+      "force_RMSE_eV_A": 0.08624962764877817,
+      "max_component_abs_eV_A": 0.238765148216263,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.0014410438814138615,
+      "force_RMSE_eV_A": 0.09702757150224843,
+      "max_component_abs_eV_A": 0.240258070858412,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.017131664801127044,
+      "force_RMSE_eV_A": 0.07609749734619689,
+      "max_component_abs_eV_A": 0.21065440628764298,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.025075321735812395,
+      "force_RMSE_eV_A": 0.15840573255892196,
+      "max_component_abs_eV_A": 0.5021645767038591,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.007079435366676989,
+      "force_RMSE_eV_A": 0.04775527524369067,
+      "max_component_abs_eV_A": 0.106928898046648,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0009908121228363598,
+      "force_RMSE_eV_A": 0.03219898455404551,
+      "max_component_abs_eV_A": 0.10416966012920992,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.0017663997896306682,
+      "force_RMSE_eV_A": 0.04668179192191696,
+      "max_component_abs_eV_A": 0.15387523834449301,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.0002705209058149194,
+      "force_RMSE_eV_A": 0.1118798094637796,
+      "max_component_abs_eV_A": 0.25318369618244985,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.009928771377417434,
+      "force_RMSE_eV_A": 0.07862181989408629,
+      "max_component_abs_eV_A": 0.1675515280643909,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -7.776103143442015e-05,
+      "force_RMSE_eV_A": 0.02205791761501164,
+      "max_component_abs_eV_A": 0.056207393545478004,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.0009878072123683523,
+      "force_RMSE_eV_A": 0.022721833955708304,
+      "max_component_abs_eV_A": 0.053109660379658995,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": -5.143688144926273e-05,
+      "force_RMSE_eV_A": 0.010492307897943884,
+      "max_component_abs_eV_A": 0.023084560658448,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.18276481169846193,
+      "force_RMSE_eV_A": 0.7575003546097572,
+      "max_component_abs_eV_A": 2.538855791382661,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.015521204863944149,
+      "force_RMSE_eV_A": 0.057214955349807736,
+      "max_component_abs_eV_A": 0.1362263007546769,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.02144536312493983,
+      "force_RMSE_eV_A": 0.15241933539305175,
+      "max_component_abs_eV_A": 0.4808898656022018,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.012423535991501922,
+      "force_RMSE_eV_A": 0.19213608402099852,
+      "max_component_abs_eV_A": 0.600670425708627,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.012078306654757398,
+      "force_RMSE_eV_A": 0.14086479109222014,
+      "max_component_abs_eV_A": 0.480792747114649,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.008166325167849209,
+      "force_RMSE_eV_A": 0.1272599000473787,
+      "max_component_abs_eV_A": 0.366585181354018,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": -0.006339567721397543,
+      "force_RMSE_eV_A": 0.13027812953550974,
+      "max_component_abs_eV_A": 0.422591964505334,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0027080625079634046,
+      "force_RMSE_eV_A": 0.036013721665732794,
+      "max_component_abs_eV_A": 0.11095672689277691,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.0005005626946967823,
+      "force_RMSE_eV_A": 0.03497394842860448,
+      "max_component_abs_eV_A": 0.101503937776245,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.006525558819930666,
+      "force_RMSE_eV_A": 0.06856312267813659,
+      "max_component_abs_eV_A": 0.170760538281701,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": -0.001305482577663497,
+      "force_RMSE_eV_A": 0.09875512348043324,
+      "max_component_abs_eV_A": 0.21126052806439066,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.0013528418503483408,
+      "force_RMSE_eV_A": 0.023805934014263126,
+      "max_component_abs_eV_A": 0.049135270275640006,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": -0.00021726059776483453,
+      "force_RMSE_eV_A": 0.0273315345007766,
+      "max_component_abs_eV_A": 0.070012907774832,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 5.675542161043268e-05,
+      "force_RMSE_eV_A": 0.01208862227881696,
+      "max_component_abs_eV_A": 0.033606692495735,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.08676105591143823,
+      "force_RMSE_eV_A": 0.34110502005643933,
+      "max_component_abs_eV_A": 1.0008987913826612,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.002875850081863973,
+      "force_RMSE_eV_A": 0.03401506798288408,
+      "max_component_abs_eV_A": 0.08606069287891316,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.0021932469719558867,
+      "force_RMSE_eV_A": 0.0530811749277471,
+      "max_component_abs_eV_A": 0.14006614821626295,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.01105966748332321,
+      "force_RMSE_eV_A": 0.11062886911029077,
+      "max_component_abs_eV_A": 0.34377707085841197,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.0013625306198719045,
+      "force_RMSE_eV_A": 0.03510035988058785,
+      "max_component_abs_eV_A": 0.093872004614791,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": -0.029197930576174258,
+      "force_RMSE_eV_A": 0.1517870880191689,
+      "max_component_abs_eV_A": 0.394306181354018,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": -0.01008128285843668,
+      "force_RMSE_eV_A": 0.07427385693610761,
+      "max_component_abs_eV_A": 0.162502211371947,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.004893554149930424,
+      "force_RMSE_eV_A": 0.03671513790982892,
+      "max_component_abs_eV_A": 0.10862391039918695,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.002900624985613831,
+      "force_RMSE_eV_A": 0.04246430319497649,
+      "max_component_abs_eV_A": 0.12731478908265703,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.02109196093283572,
+      "force_RMSE_eV_A": 0.14971598786779194,
+      "max_component_abs_eV_A": 0.5719701373560824,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.00829188761235855,
+      "force_RMSE_eV_A": 0.07120596136974787,
+      "max_component_abs_eV_A": 0.16226652806439068,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.001548913454371359,
+      "force_RMSE_eV_A": 0.02793107019535095,
+      "max_component_abs_eV_A": 0.08730998141944099,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.003222218677365163,
+      "force_RMSE_eV_A": 0.03741575991998914,
+      "max_component_abs_eV_A": 0.13937137793574395,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.00040941320366982836,
+      "force_RMSE_eV_A": 0.011436903241715993,
+      "max_component_abs_eV_A": 0.025816115893924,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.38150305573458354,
+      "force_RMSE_eV_A": 1.721786995903907,
+      "max_component_abs_eV_A": 5.092258839114328,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.002371594233864016,
+      "force_RMSE_eV_A": 0.03829516485674447,
+      "max_component_abs_eV_A": 0.11141670678783999,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": -0.0032436788051199983,
+      "force_RMSE_eV_A": 0.13259985498954377,
+      "max_component_abs_eV_A": 0.325102851783737,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.0002234851856428577,
+      "force_RMSE_eV_A": 0.1543285447505815,
+      "max_component_abs_eV_A": 0.47737760193117,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.015334317925180585,
+      "force_RMSE_eV_A": 0.13365639505941884,
+      "max_component_abs_eV_A": 0.40893190172402705,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": -0.019644751991108933,
+      "force_RMSE_eV_A": 0.07271986936398611,
+      "max_component_abs_eV_A": 0.17818542329614095,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.00014568035771844734,
+      "force_RMSE_eV_A": 0.11955412047829282,
+      "max_component_abs_eV_A": 0.332275979284044,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.00039979815096558013,
+      "force_RMSE_eV_A": 0.05324069699672717,
+      "max_component_abs_eV_A": 0.18316819361536196,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": -0.0009018254572765727,
+      "force_RMSE_eV_A": 0.035313203815437094,
+      "max_component_abs_eV_A": 0.12146078237508098,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.010905615706860772,
+      "force_RMSE_eV_A": 0.11157514545552064,
+      "max_component_abs_eV_A": 0.2687101373560825,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.0031841074724070495,
+      "force_RMSE_eV_A": 0.0935383154154995,
+      "max_component_abs_eV_A": 0.29136337275368995,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.0012072147503658925,
+      "force_RMSE_eV_A": 0.034609089572185205,
+      "max_component_abs_eV_A": 0.123741388207496,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.0022774002022742934,
+      "force_RMSE_eV_A": 0.033741384408657434,
+      "max_component_abs_eV_A": 0.11406330097643501,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.00041099498457697337,
+      "force_RMSE_eV_A": 0.015932775770885026,
+      "max_component_abs_eV_A": 0.043449086870248003,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": 0.17477388465658805,
+      "force_RMSE_eV_A": 0.6682848012016099,
+      "max_component_abs_eV_A": 2.012172839114328,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": -0.006644145384143485,
+      "force_RMSE_eV_A": 0.0547359654139159,
+      "max_component_abs_eV_A": 0.13637629321215994,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.022574954659830837,
+      "force_RMSE_eV_A": 0.17044990716870786,
+      "max_component_abs_eV_A": 0.47430585178373696,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.012161767042471183,
+      "force_RMSE_eV_A": 0.14765134679038527,
+      "max_component_abs_eV_A": 0.39721760193117,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.00251964360677448,
+      "force_RMSE_eV_A": 0.0738416089606568,
+      "max_component_abs_eV_A": 0.18871690172402703,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.046119440611846585,
+      "force_RMSE_eV_A": 0.23376437617569182,
+      "max_component_abs_eV_A": 0.529135211884413,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.011250532094663868,
+      "force_RMSE_eV_A": 0.12740534730556896,
+      "max_component_abs_eV_A": 0.295374979284044,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0017579599477812735,
+      "force_RMSE_eV_A": 0.05431869040026786,
+      "max_component_abs_eV_A": 0.16051491039918697,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.0051391872007116035,
+      "force_RMSE_eV_A": 0.05280735843977889,
+      "max_component_abs_eV_A": 0.14207978908265695,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.00835554107675307,
+      "force_RMSE_eV_A": 0.13443639361619444,
+      "max_component_abs_eV_A": 0.4079010168207473,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.01590008472521731,
+      "force_RMSE_eV_A": 0.11874041355004088,
+      "max_component_abs_eV_A": 0.381052332148349,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.004646272543368468,
+      "force_RMSE_eV_A": 0.05203900128295874,
+      "max_component_abs_eV_A": 0.1920476787275499,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.005615645750367548,
+      "force_RMSE_eV_A": 0.055611782123094824,
+      "max_component_abs_eV_A": 0.19297037793574412,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0004959673835855938,
+      "force_RMSE_eV_A": 0.013205067889608436,
+      "max_component_abs_eV_A": 0.038878560658448004,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.2958167379124461,
+      "force_RMSE_eV_A": 1.9605248044930679,
+      "max_component_abs_eV_A": 6.224463791382661,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.008806111215790224,
+      "force_RMSE_eV_A": 0.03597150195696694,
+      "max_component_abs_eV_A": 0.10413493873354696,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.024668990289910653,
+      "force_RMSE_eV_A": 0.200510833227433,
+      "max_component_abs_eV_A": 0.622544851783737,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.016614484980436828,
+      "force_RMSE_eV_A": 0.23942445673819066,
+      "max_component_abs_eV_A": 0.805067425708627,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.0038497923717386584,
+      "force_RMSE_eV_A": 0.11088730012432473,
+      "max_component_abs_eV_A": 0.314993611032907,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.02795024175384242,
+      "force_RMSE_eV_A": 0.18809498941337824,
+      "max_component_abs_eV_A": 0.545361576703859,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.0015071669465669402,
+      "force_RMSE_eV_A": 0.11647391652697282,
+      "max_component_abs_eV_A": 0.281664492343984,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.000469683690880629,
+      "force_RMSE_eV_A": 0.044484493350636214,
+      "max_component_abs_eV_A": 0.13155180638463804,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.005156750917649333,
+      "force_RMSE_eV_A": 0.05155335825388201,
+      "max_component_abs_eV_A": 0.13247223834449295,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.015846003473825476,
+      "force_RMSE_eV_A": 0.08082579204818176,
+      "max_component_abs_eV_A": 0.24269154452508523,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.0066152323543064995,
+      "force_RMSE_eV_A": 0.07189018652237206,
+      "max_component_abs_eV_A": 0.23245899229136602,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.0027225976843965327,
+      "force_RMSE_eV_A": 0.03392848206860143,
+      "max_component_abs_eV_A": 0.0770896787275499,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.0019358813492544868,
+      "force_RMSE_eV_A": 0.037080387679241274,
+      "max_component_abs_eV_A": 0.09716896677611203,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.0005770238146851625,
+      "force_RMSE_eV_A": 0.014731776325423192,
+      "max_component_abs_eV_A": 0.034305120697319,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.34226628026044636,
+      "force_RMSE_eV_A": 1.4673548517371047,
+      "max_component_abs_eV_A": 4.599926791382661,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.004950455503831108,
+      "force_RMSE_eV_A": 0.046431462340851465,
+      "max_component_abs_eV_A": 0.12529570678783997,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.018158301856828984,
+      "force_RMSE_eV_A": 0.09351257740546029,
+      "max_component_abs_eV_A": 0.25671585096820815,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": -0.026723754215481677,
+      "force_RMSE_eV_A": 0.18358828509752903,
+      "max_component_abs_eV_A": 0.5436683980688299,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": -0.0075874379358538135,
+      "force_RMSE_eV_A": 0.12623310934965434,
+      "max_component_abs_eV_A": 0.39731274711464903,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.008048658817870091,
+      "force_RMSE_eV_A": 0.17624990242401822,
+      "max_component_abs_eV_A": 0.38784223609221896,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": -0.011775940295365217,
+      "force_RMSE_eV_A": 0.1540244723705631,
+      "max_component_abs_eV_A": 0.442168964505334,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01m",
+      "energy_residual_eV": -0.0013451214517772314,
+      "force_RMSE_eV_A": 0.04946384147682638,
+      "max_component_abs_eV_A": 0.14652891039918692,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L01p",
+      "energy_residual_eV": 0.005805306068623395,
+      "force_RMSE_eV_A": 0.05188794133131499,
+      "max_component_abs_eV_A": 0.15818378908265707,
+      "mode": "OO_breathing",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02m",
+      "energy_residual_eV": -0.03342044782789344,
+      "force_RMSE_eV_A": 0.19919629012697415,
+      "max_component_abs_eV_A": 0.6240425445250848,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L02p",
+      "energy_residual_eV": 0.03185516856729009,
+      "force_RMSE_eV_A": 0.17151143727050874,
+      "max_component_abs_eV_A": 0.46815180810119106,
+      "mode": "C_skeletal_bend",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03m",
+      "energy_residual_eV": -0.004000129047426526,
+      "force_RMSE_eV_A": 0.05609627553473155,
+      "max_component_abs_eV_A": 0.19081067872754998,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L03p",
+      "energy_residual_eV": 0.008640600747412464,
+      "force_RMSE_eV_A": 0.06941088233123587,
+      "max_component_abs_eV_A": 0.24123237793574392,
+      "mode": "H_lateral",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "L04p",
+      "energy_residual_eV": 0.00041522856463416247,
+      "force_RMSE_eV_A": 0.009469676845626768,
+      "max_component_abs_eV_A": 0.022949086870248003,
+      "mode": "H_out_of_plane",
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01m",
+      "energy_residual_eV": -0.06681472028139979,
+      "force_RMSE_eV_A": 0.43785738093825305,
+      "max_component_abs_eV_A": 1.3355287913826612,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T01p",
+      "energy_residual_eV": 0.004134464889830269,
+      "force_RMSE_eV_A": 0.03614133602554398,
+      "max_component_abs_eV_A": 0.11374332320049699,
+      "mode": "OO_breathing",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02m",
+      "energy_residual_eV": 0.015660327039768163,
+      "force_RMSE_eV_A": 0.13072702298677552,
+      "max_component_abs_eV_A": 0.301077851783737,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T02p",
+      "energy_residual_eV": 0.019639098960624324,
+      "force_RMSE_eV_A": 0.15489051534857864,
+      "max_component_abs_eV_A": 0.48865627666526734,
+      "mode": "C_skeletal_bend",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03m",
+      "energy_residual_eV": 0.001478814614301882,
+      "force_RMSE_eV_A": 0.05341151304878066,
+      "max_component_abs_eV_A": 0.151344089659098,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": -1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T03p",
+      "energy_residual_eV": 0.0370964553558224,
+      "force_RMSE_eV_A": 0.17452463642567023,
+      "max_component_abs_eV_A": 0.593582576703859,
+      "mode": "H_lateral",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "candidate_id": "T04p",
+      "energy_residual_eV": 0.0050493907206146105,
+      "force_RMSE_eV_A": 0.06626793759212796,
+      "max_component_abs_eV_A": 0.1765381827784,
+      "mode": "H_out_of_plane",
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524",
+      "sign": 1
+    }
+  ],
+  "cell_means": [
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.05512734500584278,
+      "region": "BASIN_LEFT"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.06047030967478497,
+      "region": "BASIN_LEFT"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.05577833514083581,
+      "region": "BASIN_LEFT"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06423123719039314,
+      "region": "BASIN_LEFT"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.1877508856082289,
+      "region": "TRANSITION_CENTER"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.16755708347341372,
+      "region": "TRANSITION_CENTER"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.30989016220618243,
+      "region": "TRANSITION_CENTER"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.16375476294700583,
+      "region": "TRANSITION_CENTER"
+    }
+  ],
+  "direction_contributions": [
+    {
+      "contribution_to_primary_mean": -0.10257891026205908,
+      "fraction_of_signed_primary": 0.7019442981103541,
+      "mode": "OO_breathing"
+    },
+    {
+      "contribution_to_primary_mean": -0.015585516116849713,
+      "fraction_of_signed_primary": 0.10665120289717221,
+      "mode": "C_skeletal_bend"
+    },
+    {
+      "contribution_to_primary_mean": -0.014521756678418995,
+      "fraction_of_signed_primary": 0.09937193008700182,
+      "mode": "H_lateral"
+    },
+    {
+      "contribution_to_primary_mean": -0.013449216201848824,
+      "fraction_of_signed_primary": 0.09203256890547194,
+      "mode": "H_out_of_plane"
+    }
+  ],
+  "geometries": [
+    {
+      "anchor_image": 1,
+      "id": "L01m",
+      "max_displacement_A": 0.0750000000000001,
+      "mode": "OO_breathing",
+      "q": -0.4838784838952759,
+      "region": "BASIN_LEFT",
+      "roo": 2.473411336185652,
+      "sign": -1,
+      "xyz": [
+        [
+          6.487303863799,
+          8.009454037632,
+          8.000000317338
+        ],
+        [
+          7.084145428846,
+          7.14176980954,
+          7.999998022704
+        ],
+        [
+          7.289222321873,
+          9.068920527251,
+          8.000000618322
+        ],
+        [
+          6.797151121695,
+          10.04380706441,
+          7.999998764446
+        ],
+        [
+          8.647827325606,
+          8.930820021335,
+          8.000000070939
+        ],
+        [
+          9.27293467931,
+          9.820882497081,
+          8.000000334357
+        ],
+        [
+          9.250035886825,
+          7.623481170725,
+          7.999999779813
+        ],
+        [
+          8.525658933184,
+          6.608428609924,
+          7.999999549655
+        ],
+        [
+          10.367121804347,
+          7.588758337918,
+          7.999999398702
+        ]
+      ]
+    },
+    {
+      "anchor_image": 1,
+      "id": "L01p",
+      "max_displacement_A": 0.0750000000000001,
+      "mode": "OO_breathing",
+      "q": -0.483868882942492,
+      "region": "BASIN_LEFT",
+      "roo": 2.525167804907811,
+      "sign": 1,
+      "xyz": [
+        [
+          6.481157090001,
+          8.021477258568,
+          8.000000470062
+        ],
+        [
+          7.183870819554,
+          7.25381822066,
+          8.000001704096
+        ],
+        [
+          7.285148437127,
+          9.053137624949,
+          7.999999902678
+        ],
+        [
+          6.748803021905,
+          10.01114802139,
+          8.000001555354
+        ],
+        [
+          8.670833954994,
+          8.959404111665,
+          8.000000176461
+        ],
+        [
+          9.30625019549,
+          9.841014925319,
+          8.000000216243
+        ],
+        [
+          9.212953561575,
+          7.652048091875,
+          7.999999951987
+        ],
+        [
+          8.544058256816,
+          6.565142400476,
+          7.999999229145
+        ],
+        [
+          10.304220731253,
+          7.492514511682,
+          8.000000926098
+        ]
+      ]
+    },
+    {
+      "anchor_image": 1,
+      "id": "L02m",
+      "max_displacement_A": 0.07500000000000062,
+      "mode": "C_skeletal_bend",
+      "q": -0.4839776406642149,
+      "region": "BASIN_LEFT",
+      "roo": 2.499280907266247,
+      "sign": -1,
+      "xyz": [
+        [
+          6.47737988697,
+          8.016726458032,
+          8.000000329101
+        ],
+        [
+          7.088847714758,
+          7.14685456603,
+          7.99999819236
+        ],
+        [
+          7.263509448142,
+          9.030177863934,
+          8.00000058147
+        ],
+        [
+          6.794922277731,
+          10.042301484848,
+          7.999998893107
+        ],
+        [
+          8.699938065453,
+          9.008167891151,
+          8.000000083525
+        ],
+        [
+          9.274470522239,
+          9.821810600592,
+          8.000000328912
+        ],
+        [
+          9.222801326333,
+          7.586783031119,
+          7.99999978389
+        ],
+        [
+          8.536141139269,
+          6.599720050333,
+          7.999999530161
+        ],
+        [
+          10.364222069347,
+          7.584321504368,
+          7.999999469115
+        ]
+      ]
+    },
+    {
+      "anchor_image": 1,
+      "id": "L02p",
+      "max_displacement_A": 0.07500000000000062,
+      "mode": "C_skeletal_bend",
+      "q": -0.4839601395708142,
+      "region": "BASIN_LEFT",
+      "roo": 2.4992809072662476,
+      "sign": 1,
+      "xyz": [
+        [
+          6.49108106683,
+          8.014204838168,
+          8.000000458299
+        ],
+        [
+          7.179168533642,
+          7.24873346417,
+          8.00000153444
+        ],
+        [
+          7.310861310858,
+          9.091880288266,
+          7.99999993953
+        ],
+        [
+          6.751031865869,
+          10.012653600952,
+          8.000001426693
+        ],
+        [
+          8.618723215147,
+          8.882056241849,
+          8.000000163875
+        ],
+        [
+          9.304714352561,
+          9.840086821808,
+          8.000000221688
+        ],
+        [
+          9.240188122067,
+          7.688746231481,
+          7.99999994791
+        ],
+        [
+          8.533576050731,
+          6.573850960067,
+          7.999999248639
+        ],
+        [
+          10.307120466253,
+          7.496951345232,
+          8.000000855685
+        ]
+      ]
+    },
+    {
+      "anchor_image": 1,
+      "id": "L03m",
+      "max_displacement_A": 0.0750000000000005,
+      "mode": "H_lateral",
+      "q": -0.4827715493683886,
+      "region": "BASIN_LEFT",
+      "roo": 2.4992471262561313,
+      "sign": -1,
+      "xyz": [
+        [
+          6.48775838612,
+          8.016311229862,
+          8.000000418369
+        ],
+        [
+          7.089660198887,
+          7.137310451051,
+          8.000000490051
+        ],
+        [
+          7.288861446185,
+          9.061646233906,
+          8.000000137139
+        ],
+        [
+          6.765792255144,
+          10.023221298508,
+          8.000000643014
+        ],
+        [
+          8.661551188331,
+          8.947025188653,
+          8.000000141809
+        ],
+        [
+          9.296500230122,
+          9.835378222618,
+          8.000000255227
+        ],
+        [
+          9.227207659199,
+          7.645708818262,
+          7.999999896074
+        ],
+        [
+          8.53507447741,
+          6.582877234017,
+          7.999999335779
+        ],
+        [
+          10.325527145713,
+          7.524747461768,
+          8.000000426842
+        ]
+      ]
+    },
+    {
+      "anchor_image": 1,
+      "id": "L03p",
+      "max_displacement_A": 0.0750000000000005,
+      "mode": "H_lateral",
+      "q": -0.4827141196374096,
+      "region": "BASIN_LEFT",
+      "roo": 2.499247126256133,
+      "sign": 1,
+      "xyz": [
+        [
+          6.48070256768,
+          8.014620066338,
+          8.000000369031
+        ],
+        [
+          7.178356049513,
+          7.258277579149,
+          7.999999236749
+        ],
+        [
+          7.285509312815,
+          9.060411918294,
+          8.000000383861
+        ],
+        [
+          6.780161888456,
+          10.031733787292,
+          7.999999676786
+        ],
+        [
+          8.657110092269,
+          8.943198944347,
+          8.000000105591
+        ],
+        [
+          9.282684644678,
+          9.826519199782,
+          8.000000295373
+        ],
+        [
+          9.235781789201,
+          7.629820444338,
+          7.999999835726
+        ],
+        [
+          8.53464271259,
+          6.590693776383,
+          7.999999443021
+        ],
+        [
+          10.345815389887,
+          7.556525387832,
+          7.999999897958
+        ]
+      ]
+    },
+    {
+      "anchor_image": 1,
+      "id": "L04p",
+      "max_displacement_A": 0.07500000000000022,
+      "mode": "H_out_of_plane",
+      "q": -0.4829481438808927,
+      "region": "BASIN_LEFT",
+      "roo": 2.499240468375503,
+      "sign": 1,
+      "xyz": [
+        [
+          6.484230404198,
+          8.015465652461,
+          7.997147448173
+        ],
+        [
+          7.13400810774,
+          7.197794015618,
+          8.0749998634
+        ],
+        [
+          7.287185356159,
+          9.061029085295,
+          7.999458796482
+        ],
+        [
+          6.77297727607,
+          10.027477677278,
+          8.000119930718
+        ],
+        [
+          8.659330602923,
+          8.945112037867,
+          8.000918179305
+        ],
+        [
+          9.289592284881,
+          9.830948616394,
+          8.002817949538
+        ],
+        [
+          9.231494846441,
+          7.637764448493,
+          7.999878516711
+        ],
+        [
+          8.534858602315,
+          6.586785624034,
+          7.997684315295
+        ],
+        [
+          10.335671537235,
+          7.540636839244,
+          8.001048262622
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T01m",
+      "max_displacement_A": 0.07499999999999991,
+      "mode": "OO_breathing",
+      "q": -0.0001809360221387557,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.240155163161003,
+      "sign": -1,
+      "xyz": [
+        [
+          6.589912714888,
+          7.94663714419,
+          7.999999976318
+        ],
+        [
+          7.363398899953,
+          7.100844783977,
+          7.99999984512
+        ],
+        [
+          7.275097832358,
+          9.041542663905,
+          8.000000486602
+        ],
+        [
+          6.761278880085,
+          10.015250700435,
+          8.000001288954
+        ],
+        [
+          8.673209947336,
+          8.951164413961,
+          7.999999860775
+        ],
+        [
+          9.300827767083,
+          9.837801928667,
+          7.999999941579
+        ],
+        [
+          9.223169618913,
+          7.662319360563,
+          7.999999536583
+        ],
+        [
+          8.41836684096,
+          6.652399660617,
+          7.999999184697
+        ],
+        [
+          10.312374307701,
+          7.501568913693,
+          8.000000028962
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T01p",
+      "max_displacement_A": 0.07499999999999991,
+      "mode": "OO_breathing",
+      "q": -0.00018086272838058193,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.5400885398690205,
+      "sign": 1,
+      "xyz": [
+        [
+          6.467512651912,
+          8.03334484041,
+          8.000000031082
+        ],
+        [
+          7.363363459847,
+          7.100870191823,
+          7.99999984668
+        ],
+        [
+          7.274982663442,
+          9.041413605095,
+          8.000000484998
+        ],
+        [
+          6.761363907515,
+          10.015269163165,
+          8.000001284246
+        ],
+        [
+          8.673305773264,
+          8.951096581239,
+          7.999999860825
+        ],
+        [
+          9.300867541917,
+          9.837773783933,
+          7.999999936821
+        ],
+        [
+          9.223252966087,
+          7.662470914637,
+          7.999999539817
+        ],
+        [
+          8.54071254924,
+          6.565730457783,
+          7.999999129303
+        ],
+        [
+          10.312385011499,
+          7.501482446307,
+          8.000000026838
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T02m",
+      "max_displacement_A": 0.07499999999999998,
+      "mode": "C_skeletal_bend",
+      "q": -0.00018027734588943467,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.390121850928921,
+      "sign": -1,
+      "xyz": [
+        [
+          6.528712656565,
+          7.989990493901,
+          8.000000003687
+        ],
+        [
+          7.363381466058,
+          7.100857282773,
+          7.999999845888
+        ],
+        [
+          7.253375618281,
+          9.010871096176,
+          8.000000493536
+        ],
+        [
+          6.761320714225,
+          10.015259784238,
+          8.000001286638
+        ],
+        [
+          8.716588194613,
+          9.012347179381,
+          7.999999845352
+        ],
+        [
+          9.300847336603,
+          9.837788081245,
+          7.999999939238
+        ],
+        [
+          9.201545076257,
+          7.631785856499,
+          7.999999545898
+        ],
+        [
+          8.479540156177,
+          6.609065250073,
+          7.999999157018
+        ],
+        [
+          10.312379574051,
+          7.501526371084,
+          8.000000027917
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T02p",
+      "max_displacement_A": 0.07499999999999998,
+      "mode": "C_skeletal_bend",
+      "q": -0.00018027734588876854,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.3901218509289195,
+      "sign": 1,
+      "xyz": [
+        [
+          6.528712710235,
+          7.989991490699,
+          8.000000003713
+        ],
+        [
+          7.363380893742,
+          7.100857693027,
+          7.999999845912
+        ],
+        [
+          7.296704877519,
+          9.072085172824,
+          8.000000478064
+        ],
+        [
+          6.761322073375,
+          10.015260079362,
+          8.000001286562
+        ],
+        [
+          8.629927525987,
+          8.889913815819,
+          7.999999876248
+        ],
+        [
+          9.300847972397,
+          9.837787631355,
+          7.999999939162
+        ],
+        [
+          9.244877508743,
+          7.693004418701,
+          7.999999530502
+        ],
+        [
+          8.479539234023,
+          6.609064868327,
+          7.999999156982
+        ],
+        [
+          10.312379745149,
+          7.501524988916,
+          8.000000027883
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T03m",
+      "max_displacement_A": 0.07499999999999993,
+      "mode": "H_lateral",
+      "q": -0.00017981565827085433,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.3901218509297673,
+      "sign": -1,
+      "xyz": [
+        [
+          6.529327493111,
+          7.990860678029,
+          8.000000004259
+        ],
+        [
+          7.320047236115,
+          7.039643361131,
+          7.999999831546
+        ],
+        [
+          7.275652777244,
+          9.042344066838,
+          8.000000485819
+        ],
+        [
+          6.761937886625,
+          10.016128773398,
+          8.000001286374
+        ],
+        [
+          8.673874504703,
+          8.951997547568,
+          7.999999860579
+        ],
+        [
+          9.301463253781,
+          9.838655646443,
+          7.999999938483
+        ],
+        [
+          9.223827621607,
+          7.66326644117,
+          7.999999538313
+        ],
+        [
+          8.480153244095,
+          6.609932963921,
+          7.999999157483
+        ],
+        [
+          10.31299456118,
+          7.502392274956,
+          8.000000027724
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T03p",
+      "max_displacement_A": 0.07499999999999993,
+      "mode": "H_lateral",
+      "q": -0.0001797956109022003,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.3901218509297664,
+      "sign": 1,
+      "xyz": [
+        [
+          6.528097873689,
+          7.989121306571,
+          8.000000003141
+        ],
+        [
+          7.406715123685,
+          7.162071614669,
+          7.999999860254
+        ],
+        [
+          7.274427718556,
+          9.040612202162,
+          8.000000485781
+        ],
+        [
+          6.760704900975,
+          10.014391090202,
+          8.000001286826
+        ],
+        [
+          8.672641215897,
+          8.950263447632,
+          7.999999861021
+        ],
+        [
+          9.300232055219,
+          9.836920066157,
+          7.999999939917
+        ],
+        [
+          9.222594963393,
+          7.66152383403,
+          7.999999538087
+        ],
+        [
+          8.478926146105,
+          6.608197154479,
+          7.999999156517
+        ],
+        [
+          10.31176475802,
+          7.500659085044,
+          8.000000028076
+        ]
+      ]
+    },
+    {
+      "anchor_image": 5,
+      "id": "T04p",
+      "max_displacement_A": 0.07500000000000037,
+      "mode": "H_out_of_plane",
+      "q": -0.0001799009047078748,
+      "region": "TRANSITION_CENTER",
+      "roo": 2.390121850928781,
+      "sign": 1,
+      "xyz": [
+        [
+          6.528712682636,
+          7.989990985955,
+          7.997496777364
+        ],
+        [
+          7.363381197277,
+          7.100857457477,
+          8.0749998459
+        ],
+        [
+          7.275040261241,
+          9.041478149638,
+          7.99962338612
+        ],
+        [
+          6.761321383388,
+          10.015259928796,
+          8.000445240496
+        ],
+        [
+          8.673257849329,
+          8.95113050552,
+          8.000833313511
+        ],
+        [
+          9.300847650594,
+          9.837787859058,
+          8.002624567688
+        ],
+        [
+          9.223211282523,
+          7.662395119778,
+          7.999622601674
+        ],
+        [
+          8.479539701507,
+          6.609065062986,
+          7.997496144086
+        ],
+        [
+          10.312379657616,
+          7.501525688894,
+          8.00044429286
+        ]
+      ]
+    }
+  ],
+  "geometry_guard": {
+    "coordinate_tolerance_A": 1.1e-06,
+    "max_coordinate_A": 4.970810003612769e-07,
+    "max_pair_distance_A": 1.086622735346765e-06,
+    "pair_tolerance_A": 2.1e-06
+  },
+  "limitations": [
+    "Two fixed allocations; seeds vary initialization, not allocation",
+    "Four dependent local blocks per region, not independent geometries",
+    "PBE computational reference, not experimental accuracy",
+    "Prespecified for the original comparison; reused development data for later optimizer changes",
+    "All 20 endpoints STEP_LIMIT; no convergence certification",
+    "No reactive dynamics, Blind12 or universal allocation-policy inference"
+  ],
+  "max_per_case_difference_from_original": 1.1102230246251565e-16,
+  "n_blocks_per_model": 8,
+  "n_errors": 280,
+  "n_geometries": 14,
+  "n_models": 20,
+  "n_seeds": 5,
+  "new_scientific_calls": 0,
+  "primary": {
+    "budget": 8000,
+    "contrasts": [
+      {
+        "basin": 0.25389865332824174,
+        "seed_index": 0,
+        "seed_u64": "4172185641970229070",
+        "targeted": 0.11305927683241615,
+        "targeted_minus_basin_eV_A": -0.1408393764958256
+      },
+      {
+        "basin": 0.15781031082375457,
+        "seed_index": 1,
+        "seed_u64": "10780126852447763956",
+        "targeted": 0.15468107016332938,
+        "targeted_minus_basin_eV_A": -0.003129240660425192
+      },
+      {
+        "basin": 0.5557026720549733,
+        "seed_index": 2,
+        "seed_u64": "16937122512019790775",
+        "targeted": 0.09946054950945543,
+        "targeted_minus_basin_eV_A": -0.4562421225455178
+      },
+      {
+        "basin": 0.21099395994802916,
+        "seed_index": 3,
+        "seed_u64": "12250469658613881511",
+        "targeted": 0.3115618832350959,
+        "targeted_minus_basin_eV_A": 0.10056792328706676
+      },
+      {
+        "basin": 0.37104521487591335,
+        "seed_index": 4,
+        "seed_u64": "18149779474148714524",
+        "targeted": 0.14001103499473225,
+        "targeted_minus_basin_eV_A": -0.2310341798811811
+      }
+    ],
+    "definition": "Mean of four block means of per-geometry component RMSE; Targeted minus Basin",
+    "mean": -0.1461353992591766,
+    "median": -0.1408393764958256,
+    "region": "TRANSITION_CENTER",
+    "targeted_better_count": 4,
+    "unit": "eV/angstrom"
+  },
+  "qe_quality": [
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 9e-06,
+      "id": "L01m",
+      "iterations": 42,
+      "max_force_component_abs_residual_eV_A": 4.877003952053448e-16,
+      "scf_accuracy_Ry": 2.6e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 1e-05,
+      "id": "L01p",
+      "iterations": 45,
+      "max_force_component_abs_residual_eV_A": 4.996003610813204e-16,
+      "scf_accuracy_Ry": 3.7e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 1.4e-05,
+      "id": "L02m",
+      "iterations": 43,
+      "max_force_component_abs_residual_eV_A": 8.881784197001252e-16,
+      "scf_accuracy_Ry": 9.9e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 1.3e-05,
+      "id": "L02p",
+      "iterations": 60,
+      "max_force_component_abs_residual_eV_A": 8.881784197001252e-16,
+      "scf_accuracy_Ry": 9.6e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 4e-06,
+      "id": "L03m",
+      "iterations": 63,
+      "max_force_component_abs_residual_eV_A": 4.868067754459915e-16,
+      "scf_accuracy_Ry": 1.3e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 1.4e-05,
+      "id": "L03p",
+      "iterations": 58,
+      "max_force_component_abs_residual_eV_A": 4.877003952053448e-16,
+      "scf_accuracy_Ry": 7.2e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 8e-06,
+      "id": "L04p",
+      "iterations": 64,
+      "max_force_component_abs_residual_eV_A": 4.947214513051357e-16,
+      "scf_accuracy_Ry": 2.1e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 4e-06,
+      "id": "T01m",
+      "iterations": 46,
+      "max_force_component_abs_residual_eV_A": 4.996003610813204e-16,
+      "scf_accuracy_Ry": 7.2e-12
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 5e-06,
+      "id": "T01p",
+      "iterations": 55,
+      "max_force_component_abs_residual_eV_A": 5.551115123125783e-16,
+      "scf_accuracy_Ry": 6.7e-12
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 7e-06,
+      "id": "T02m",
+      "iterations": 50,
+      "max_force_component_abs_residual_eV_A": 8.881784197001252e-16,
+      "scf_accuracy_Ry": 2.8e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 1.9e-05,
+      "id": "T02p",
+      "iterations": 54,
+      "max_force_component_abs_residual_eV_A": 4.579669976578771e-16,
+      "scf_accuracy_Ry": 9.1e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 1.7e-05,
+      "id": "T03m",
+      "iterations": 40,
+      "max_force_component_abs_residual_eV_A": 4.718447854656915e-16,
+      "scf_accuracy_Ry": 7.7e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 9e-06,
+      "id": "T03p",
+      "iterations": 48,
+      "max_force_component_abs_residual_eV_A": 4.996003610813204e-16,
+      "scf_accuracy_Ry": 3.6e-11
+    },
+    {
+      "energy_abs_residual_eV": 0.0,
+      "force_correction_Ry_bohr": 5e-06,
+      "id": "T04p",
+      "iterations": 36,
+      "max_force_component_abs_residual_eV_A": 4.926614671774132e-16,
+      "scf_accuracy_Ry": 6.9e-12
+    }
+  ],
+  "region_rows": [
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.05457821776214295,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.14570773941555346,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.04563074756426759,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.25389865332824174,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.09229176515090881,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.11542094577461219,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.055293536320129955,
+      "region": "BASIN_LEFT",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.11305927683241615,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 0,
+      "seed_u64": "4172185641970229070"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.05468557455220922,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.13914272475518313,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.045512547359886746,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.15781031082375457,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.05945417261669059,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.12524008685890078,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06072861717310767,
+      "region": "BASIN_LEFT",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.15468107016332938,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 1,
+      "seed_u64": "10780126852447763956"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.06200841893196629,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.34742603689827867,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.08405956223102612,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.5557026720549733,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.06774975036890771,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.18766383136542092,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.07953052637073278,
+      "region": "BASIN_LEFT",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.09946054950945543,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 2,
+      "seed_u64": "16937122512019790775"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.055129090382170814,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.10603558943186604,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.04189334665005451,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.21099395994802916,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.039202578665697596,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.10928316173116666,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.04854025336763966,
+      "region": "BASIN_LEFT",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.3115618832350959,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 3,
+      "seed_u64": "12250469658613881511"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.049235423400724634,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.2004423375402632,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.06179547189894406,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "basin",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.37104521487591335,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.04365328157172014,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 2000,
+      "force_RMSE_eV_A": 0.30017739163696805,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.07706325272035565,
+      "region": "BASIN_LEFT",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    },
+    {
+      "branch": "targeted",
+      "budget": 8000,
+      "force_RMSE_eV_A": 0.14001103499473225,
+      "region": "TRANSITION_CENTER",
+      "seed_index": 4,
+      "seed_u64": "18149779474148714524"
+    }
+  ],
+  "schema": "pbe14-mtp20-verified-v1",
+  "status": "PASS_SAVED_PBE14_MTP20_NUMERICS",
+  "study_id": "pbe14_mtp20_v001"
+}
