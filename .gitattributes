@@ -21,3 +21,6 @@ data/post_publication/train119_diagnostic_v001/** -text -eol whitespace=-blank-a
 
 # Preserve the audited upstream renderer distribution, including its original indentation.
 site/vendor/three/** -text -eol whitespace=-space-before-tab
+
+# New completed-study inputs retain source bytes, including CRLF and raw QE formatting.
+data/studies/** -text -eol whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
