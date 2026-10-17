@@ -250,5 +250,47 @@
     "scope": "Constructs molecular force fields in a gradient-domain representation that respects energy conservation.",
     "access": "Primary abstract and author institution publication record inspected",
     "limitation": "Conservative model construction does not by itself validate a finite learned surface or a long reactive trajectory."
+  },
+  {
+    "id": "brezina2023",
+    "short": "Brezina, Beck & Marsalek (2023)",
+    "title": "Reducing the Cost of Neural Network Potential Generation for Reactive Molecular Systems",
+    "authors": "Krystof Brezina; Harald Beck; Ondrej Marsalek",
+    "year": "2023",
+    "journal": "Journal of Chemical Theory and Computation 19(19), 6589–6604",
+    "doi": "10.1021/acs.jctc.3c00391",
+    "url": "https://doi.org/10.1021/acs.jctc.3c00391",
+    "kind": "Transition tube sampling",
+    "scope": "Generates thermally motivated configurations around transition paths and combines them with active learning, including malonaldehyde. Path-adjacent sampling is prior art, not a newly invented method of this project.",
+    "access": "Author preprint arXiv:2303.15521 abstract, introduction and method overview; publication metadata checked on 2026-10-17",
+    "limitation": "The present study compares two fixed small Train60 allocations with MTP and capped optimizations; it does not reproduce or outperform the complete TTS method."
+  },
+  {
+    "id": "transition1x2022",
+    "short": "Schreiner et al. (2022)",
+    "title": "Transition1x - a dataset for building generalizable reactive machine learning potentials",
+    "authors": "Mathias Schreiner; Arghya Bhowmik; Tejs Vegge; Jonas Busk; Ole Winther",
+    "year": "2022",
+    "journal": "Scientific Data 9, 779",
+    "doi": "10.1038/s41597-022-01870-w",
+    "url": "https://www.nature.com/articles/s41597-022-01870-w",
+    "kind": "Reactive reference data",
+    "scope": "Provides energies and forces on and around reaction paths across a broad set of chemical reactions, establishing the value of including reactive configurations.",
+    "access": "Open-access publisher abstract and methods overview inspected on 2026-10-17",
+    "limitation": "Different systems, data scale and electronic reference preclude treating this local PBE14 comparison as a direct numerical contest with Transition1x."
+  },
+  {
+    "id": "landscape172026",
+    "short": "Cărare et al. (2026)",
+    "title": "Global properties of the energy landscape: a testing and training arena for machine learned potentials",
+    "authors": "Vlad Cărare; Fabian L. Thiemann; Joe D. Morrow; David J. Wales; Edward O. Pyzer-Knapp; Luke Dicks",
+    "year": "2026 (online 2025)",
+    "journal": "npj Computational Materials 12, 9",
+    "doi": "10.1038/s41524-025-01878-x",
+    "url": "https://www.nature.com/articles/s41524-025-01878-x",
+    "kind": "Landscape17 / global surface tests",
+    "scope": "Tests energy-landscape and kinetic-network properties, including spurious stationary points, beyond pointwise local errors.",
+    "access": "Open-access publisher abstract, introduction and overview; online date 2025-12-04 and 2026 volume checked on 2026-10-17",
+    "limitation": "The present work did not perform Landscape17 network validation; small PBE14 errors do not demonstrate global PES topology or kinetics."
   }
 ]

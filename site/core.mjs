@@ -3,7 +3,7 @@ export const ATOMS = ['O1','H2*','C3','H4','C5','H6','C7','O8','H9'];
 export const ELEMENTS = ['O','H','C','H','C','H','C','O','H'];
 export const HEAVY = [0,2,4,6,7];
 export const BONDS = [[0,2],[2,3],[2,4],[4,5],[4,6],[6,7],[6,8]];
-export const ROUTES = ['overview','molecule','sampling','landscape','seeds','train119','forces','story','longread','reproduce'];
+export const ROUTES = ['overview','molecule','sampling','landscape','seeds','train119','forces','story','longread','reproduce','offpath'];
 export const clamp = (x,a,b) => Math.max(a,Math.min(b,x));
 export function finite(x) { if (!Number.isFinite(x)) throw new Error('Non-finite numerical input'); return x; }
 export const norm = a => Math.hypot(...a);

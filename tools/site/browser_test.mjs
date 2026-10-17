@@ -15,7 +15,7 @@ const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/u
 const p=await browser.newPage();
 p.on('pageerror',e=>report.errors.push(e.message));
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const locate=route=>p.evaluate(r=>location.hash='#'+r,route);
+const locate=async route=>{await p.evaluate(r=>location.hash='#'+r,route);await p.waitForFunction(r=>window.exhibit.getState().route===r.split('?')[0] && document.getElementById(r.split('?')[0]).classList.contains('active'),{},route);await new Promise(resolve=>setTimeout(resolve,100));};
 const ready=()=>p.waitForFunction(()=>document.body.dataset.ready==='true',{timeout:30000});
 async function theme(name){await p.evaluate(name=>{if((document.documentElement.dataset.theme==='dark')!==(name==='dark'))document.getElementById('theme').click();},name);}
 async function input(id,value){await p.$eval('#'+id,(e,v)=>{e.value=v;e.dispatchEvent(new Event('input',{bubbles:true}));},value);}

@@ -1,0 +1,7 @@
+claim	source	test	scope
+14 reference geometries /20 saved models	data/studies/pbe14_mtp20_v001/MODELS_AND_PREDICTIONS_SHA256.tsv	verify_pbe14_offpath.verify	Fixed local design
+Primary five deltas, mean and median	data/studies/pbe14_mtp20_v001/results/PRIMARY_PAIRED_SEEDS.tsv	Independent27-component and block arithmetic	Transition at8000; initialization pairs, not allocation replicates
+Both regions and budgets	data/studies/pbe14_mtp20_v001/results/BUDGET_REGION_MEANS.tsv	verify_pbe14_offpath.aggregate	Descriptive secondary contrast
+All20 STEP_LIMIT	data/studies/optimization_budget_v001/results/ENDPOINTS_20.tsv	verify_optimizer_budget.parse_log	No convergence certification
+Geometry dependence	data/studies/pbe14_mtp20_v001/provenance/HISTORICAL_NEAREST_GEOMETRIES.tsv	Archived geometric audit disclosed	No independent global holdout claim
+No reactive-dynamics promotion	data/post_publication/FINAL_SCIENCE_STATUS.json	Existing historical authority unchanged	STATIC_APPLICABILITY_FAIL preserved
