@@ -1,0 +1,29 @@
+{
+  "status": "PASS_INDEPENDENT_PROSPECTIVE_14_PBE_20_MTP",
+  "input_geometry_count": 14,
+  "verified_QE_raw_outputs": 14,
+  "predictor_model_count": 20,
+  "model_geometry_rmse_rows": 280,
+  "all_qe_output_shas_match_ledger": true,
+  "all_model_snapshot_hashes_match": true,
+  "maximum_raw_QE_vs_frozen_label_energy_error_eV": 0.0,
+  "maximum_raw_QE_vs_frozen_label_force_component_error_eV_A": 4.996003610813204e-16,
+  "primary_unit": "eV/angstrom",
+  "primary_direction": "negative favors Targeted",
+  "primary_seed_values": [
+    -0.1408393764958256,
+    -0.003129240660425192,
+    -0.4562421225455178,
+    0.10056792328706676,
+    -0.23103417988118108
+  ],
+  "primary_mean": -0.1461353992591766,
+  "primary_median": -0.1408393764958256,
+  "targeted_better_seed_count": 4,
+  "maximum_difference_to_frozen_primary_results": 0.0,
+  "independent_sampling_allocations": 1,
+  "optimizer_seed_pairs": 5,
+  "trained_new_models": 0,
+  "computed_additional_DFT": 0,
+  "no_confirmatory_p_value": true
+}

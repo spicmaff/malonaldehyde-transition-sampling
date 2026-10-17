@@ -1,0 +1,6 @@
+id	observation	resolution
+C01	Old 3/5 versus new 4/5	Different studies and primary metrics; both retained
+C02	PBE14 prospective versus development	Prespecified original comparison; reused for later optimizer changes
+C03	STEP_LIMIT versus guard early stop	Twenty historical endpoints distinct from single guarded seed3
+C04	T02m original interrupted output	Separate authorized recovery; not fourteen total historical starts
+C05	External MLIP license ambiguity	No new external source/binary redistribution

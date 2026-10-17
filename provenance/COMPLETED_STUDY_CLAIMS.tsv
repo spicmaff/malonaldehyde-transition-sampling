@@ -1,0 +1,7 @@
+claim	status	source	allowed	forbidden
+PBE14 transition @8000	SUPPORTED_FOR_FIXED_MODELS	data/studies/pbe14_mtp20_v001/results/PRIMARY_PAIRED_SEEDS.tsv	Targeted lower in four of these five paired initializations	80 percent probability of a policy win
+Budget interaction	SUPPORTED_DESCRIPTIVE	data/studies/pbe14_mtp20_v001/results/BUDGET_REGION_MEANS.tsv	Larger cap coexists with worse Basin transition error	More optimization monotonically improves accuracy
+Optimizer stop	SUPPORTED	data/studies/optimization_budget_v001/results/ENDPOINTS_20.tsv	All twenty endpoints reached STEP_LIMIT	Converged optimal models
+Data allocation	FIXED_NOT_POLICY_REPLICATES	docs/COMPLETED_STUDIES.md	Two fixed 60-point allocations	Five independently repeated sampling policies
+Off-path independence	BOUNDED_LOCAL	data/studies/pbe14_mtp20_v001/provenance/HISTORICAL_NEAREST_GEOMETRIES.tsv	Four dependent local blocks per region	Fourteen independent global holdouts
+Observer guard	NOT_PRIMARY	docs/PUBLICATION_SCOPE.md	Optional implementation-specific diagnostic with explicit limits	Validated universal optimizer repair

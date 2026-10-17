@@ -1,0 +1,27 @@
+name: completed-studies-offline
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  saved-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independent saved-data validation
+        run: |
+          python -B -m unittest discover -s tests -p test_completed_studies.py -v
+          python -O -B -m unittest discover -s tests -p test_completed_studies.py -v
+          python -B tools/verify_pbe14_offpath.py --out "$RUNNER_TEMP/completed-studies/pbe14"
+          python -B tools/verify_optimizer_budget.py --out "$RUNNER_TEMP/completed-studies/budget"
+      - name: Package exact public source for reviewer reproduction
+        run: |
+          git archive --format=zip --output="$RUNNER_TEMP/completed-studies/public-source.zip" HEAD
+          git rev-parse HEAD > "$RUNNER_TEMP/completed-studies/COMMIT.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: completed-studies-review
+          path: ${{ runner.temp }}/completed-studies
+          retention-days: 14

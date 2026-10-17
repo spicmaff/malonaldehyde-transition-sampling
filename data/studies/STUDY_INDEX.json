@@ -1,0 +1,46 @@
+{
+  "schema": "completed-study-index-v1",
+  "historical_authority_unchanged": "V005",
+  "new_scientific_calls": 0,
+  "studies": [
+    {
+      "id": "v028-original-and-robustness",
+      "role": "Historical frozen pair and later five-seed Audit21 audit",
+      "path": "data/robustness/v028_seed_robustness_v001",
+      "both_original_primary_wins": 3,
+      "status": "SEED_SENSITIVE"
+    },
+    {
+      "id": "optimization_budget_v001",
+      "path": "data/studies/optimization_budget_v001",
+      "models": 20,
+      "seeds": 5,
+      "caps": [
+        2000,
+        8000
+      ],
+      "stopping": "STEP_LIMIT",
+      "role": "Retrospective fixed-budget endpoint comparison"
+    },
+    {
+      "id": "pbe14_mtp20_v001",
+      "path": "data/studies/pbe14_mtp20_v001",
+      "models": 20,
+      "geometries": 14,
+      "role": "Prespecified local transverse comparison of already-fixed models; reused development for later changes",
+      "primary_transition_cap8000_wins": 4
+    },
+    {
+      "id": "train119-local-diagnostic",
+      "path": "data/post_publication/train119_diagnostic_v001",
+      "role": "Separate adaptive development; not an equal-budget third branch",
+      "status": "STATIC_APPLICABILITY_FAIL"
+    },
+    {
+      "id": "observer-xit",
+      "role": "Optional local optimizer diagnostic, excluded from primary inference",
+      "status": "EVENT_AND_RUNTIME_PROVENANCE_LIMITS",
+      "included_raw_private_data": false
+    }
+  ]
+}
