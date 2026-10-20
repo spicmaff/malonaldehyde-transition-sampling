@@ -184,6 +184,8 @@ def article_html(text: str, data: dict, refs: list[dict]) -> str:
             out.append('<p class="chapter-source">Project evidence: ' + ' · '.join(f'<a href="{data["evidence"][k]["url"]}">{html.escape(k.replace("_"," "))}</a>' for k in keys) + '</p>')
         elif line == '@study: offpath':
             flush(); out.append('<p class="chapter-source"><a href="#offpath">Completed off-path study: definitions, raw sources and independent reconstruction</a></p>')
+        elif line == '@study: optimization':
+            flush(); out.append('<p class="chapter-source"><a href="#optimization">Optimization chapter: reviewed aggregates, evidence tiers and limits</a></p>')
         elif line.startswith('@papers:'):
             flush(); keys = line.split(':', 1)[1].split(); check(all(k in papers for k in keys), 'Unknown literature citation')
             out.append('<p class="chapter-source">Literature: ' + ' · '.join(f'<a href="{papers[k]["url"]}">{html.escape(papers[k]["short"])}</a>' for k in keys) + '</p>')
@@ -233,6 +235,10 @@ def build(out: Path) -> dict:
     from offpath_page import extend_document
     offpath = build_completed_study(out)
     document = extend_document(render(data, article_html(article, data, refs), refs), offpath)
+    from build_optimizer_story import build as build_optimization
+    from optimization_page import extend_document as extend_optimization_document
+    optimization = build_optimization(out)
+    document = extend_optimization_document(document, optimization)
     (out / 'index.html').write_text(document, encoding='utf-8')
     download = []
     refmap = {r['id']: r for r in refs}
@@ -243,6 +249,8 @@ def build(out: Path) -> dict:
             line = 'Literature: ' + ' · '.join('[' + refmap[key]['short'] + '](' + refmap[key]['url'] + ')' for key in line.split(':', 1)[1].split())
         if line == '@study: offpath':
             line = 'Completed study and raw sources: https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath'
+        elif line == '@study: optimization':
+            line = 'Optimization chapter in this build: ./#optimization; reviewed aggregates: ./data/optimization/CLAIM_DATA_MAP.tsv'
         download.append(line)
     (out / 'longread.en.md').write_text('\n'.join(download) + '\n', encoding='utf-8')
     for name in ('style.css', 'app.mjs', 'core.mjs', 'molecule.mjs', 'charts.mjs', 'favicon.svg', 'social-preview.svg'):

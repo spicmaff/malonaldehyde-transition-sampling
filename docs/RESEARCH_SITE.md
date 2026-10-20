@@ -4,9 +4,14 @@ Live site: https://spicmaff.github.io/malonaldehyde-transition-sampling/
 
 ## Scope
 
-The English exhibit presents the existing scientific evidence through a new molecular renderer, linked numerical views, a directed research sequence and an edited research essay. It does not change the frozen scientific models, reference calculations, selectors or historical outcomes. The scientific result snapshot remains `f44d28cc0b13defb747f625376b083055b577629`; immutable source links refer to the public baseline `3d430af343cf726d94ef8d2143fe7c24fa053c2b`.
+The English exhibit presents saved scientific evidence through a molecular renderer, linked numerical views, a directed research sequence and an edited research essay. The original scientific result snapshot remains `f44d28cc0b13defb747f625376b083055b577629`; the original `science.json` source links retain baseline `3d430af343cf726d94ef8d2143fe7c24fa053c2b`. Later additive studies have their own source revisions. The optimization review identifies its existing public inputs at verified baseline `f5f4784d7cc186ae9cfcacbd97117b5dabbffb30`.
 
 The initial equal-budget comparison, its five-seed robustness audit, and the later adaptive Train119 diagnosis are distinct studies. `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain visible. No Train119 deployment promotion, prospective independent test, experimental accuracy or general gamma/error calibration is claimed.
+
+The published exhibit includes `#offpath`. This branch adds a review version of
+`#optimization`; its local or packaged preview must be identified separately from
+the production URL above. [Optimization methods and evidence tiers](OPTIMIZATION_STORY.md)
+· [Public/private boundary](PUBLIC_PRIVATE_BOUNDARY.md).
 
 ## Architecture
 
@@ -14,7 +19,7 @@ The initial equal-budget comparison, its five-seed robustness audit, and the lat
 
 `site/pages.py` renders the English document, essay, numerical tables, evidence panels and reference list before JavaScript runs. `site/core.mjs` contains the pure coordinate, force and routing functions. `site/molecule.mjs` supplies a locally vendored Three.js renderer with a Canvas fallback. `site/charts.mjs` creates SVG graphics from the generated data. `site/app.mjs` synchronizes selections and finite animation sequences. No runtime CDN, remote API or account is required.
 
-Ten addressable sections retain a short route to every source: overview, molecular path, training data, original profiles, five seeds, two diagnostic verdicts, atomic forces, directed story, essay and evidence. The old `#applicability` route resolves to the two-verdict view. Essay deep links expose the full essay. Unknown routes return to the overview.
+The original ten addressable sections retain their routes: overview, molecular path, training data, original profiles, five seeds, two diagnostic verdicts, atomic forces, directed story, essay and evidence. The published `#offpath` chapter is the eleventh; the additive review `#optimization` is the twelfth. The old `#applicability` route resolves to the two-verdict view. Essay deep links expose the full essay. Unknown routes return to the overview.
 
 ## Scientific display rules
 
@@ -75,6 +80,14 @@ python3 tools/run_public_selftests.py .
 
 The browser runner uses `BROWSER_DEPS`, `SITE_URL`, `QA_OUT` and optional `CHROME_BIN`. Set `REQUIRE_FILMS=1` for complete acceptance. It tests 100 route/theme/viewport combinations at widths 1920, 1440, 768, 390 and 320, scientific controls, atom/frame selection, exact and interpolated states, both English films, the legacy redirect, reduced motion, Canvas fallback, no-JavaScript reading and a failed-data-request fallback. WCAG-tagged axe checks run in the documented scope; they are not a complete accessibility certification.
 
+The complete review matrix also requires the off-path and optimization runners,
+each covering five widths and two themes. Together the three route sets cover
+120 distinct route/theme/viewport combinations. The optimization-specific runner
+must exercise its finite sequence, keyboard controls, focus, reduced motion,
+no-JavaScript reading and failed-payload fallback. Test commands and the boundary
+between required checks and completed evidence are recorded in
+[the optimization guide](OPTIMIZATION_STORY.md#review-preview-and-reproduction).
+
 The `research-site` workflow uploads browser evidence, publishes the tested Pages artifact only from `main`, and keeps existing scientific workflows separate. Branch and pull-request jobs do not deploy. The usual science manifests and byte-preserving Git attributes remain in force.
 
 ## Third-party and research provenance
@@ -83,7 +96,11 @@ The small-molecule renderer vendors the unmodified Three.js 0.180.0 `three.modul
 
 The visual family is informed by the owner's Memory / Geometry research site. MolViewStories and visualization literature inform the evidence-linked storytelling approach; their scientific scenes are not copied. External-paper results are labelled as context, never silently mixed with this project's numerical results.
 
-The important boundary is unchanged: the site is a reproducible presentation of saved evidence, not a new physical experiment.
+The site build reads saved evidence and performs no new physical experiment.
+Public sources support the original and completed-study numerical reconstruction.
+The optimization review additionally presents private native evidence through
+explicitly selected public aggregates; a private-source checksum does not make
+its full underlying experiment publicly reproducible.
 
 
 ## Additive completed-study chapter
@@ -91,9 +108,10 @@ The important boundary is unchanged: the site is a reproducible presentation of 
 The `#offpath` route has its own `proton-offpath-v1` payload and independent builder
 `tools/build_offpath.py`. It never substitutes PBE14 for the eleven Train119 force
 frames or changes the original `science.json` numerical arrays. A compact extension
-adds the page and navigation link after rendering the existing ten pages. Original
-`site/pages.py`, `site/app.mjs`, `site/molecule.mjs`, `site/style.css` and both films are
-preserved byte-for-byte. `site/core.mjs` only admits the new route.
+adds the page and navigation link after rendering the existing ten pages. That
+extension retains the original molecular presentation and both films; its separate
+payload does not replace the original scientific arrays. The new optimization
+review follows the same additive arrangement, with its own assets and route.
 
 `site/offpath_page.py` renders static charts, definitions, geometry roles and all280
 case values before JavaScript. `site/offpath.mjs` supplies the shared molecular stage,
@@ -108,3 +126,48 @@ observed test race; scientific assertions and original route checks are not weak
 The additional `tools/site/browser_offpath_test.mjs` covers ten responsive/theme views,
 24 direction filter combinations, all14 actual geometries, finite reveal and keyboard,
 no-JS, request failure, reduced-motion, Canvas and real TSV download content.
+
+## Additive optimization review chapter
+
+`tools/build_optimizer_story.py` validates the committed
+[`data/optimization_story/v001`](../data/optimization_story/v001/README.md) boundary
+and supplies the same canonical payload to `site/optimization_page.py` and
+`site/optimization.mjs`. The Python page renders definitions, charts, state values,
+scope notes and tables before JavaScript. The module adds finite manual or played
+state selection; `site/optimization.css` scopes the chapter's presentation. The
+full-site builder integrates the chapter after the original exhibit and off-path
+extension. Runtime network services and private-file access are unnecessary.
+
+Native J, fixed-D row objective Q and external force RMSE have different
+definitions and appear separately. The main4500 display uses a declared log scale
+for positive native J values; the large S1 value cannot silently set a clipped or
+moving scale. S1c and S2q are diagnostic branches, and S3 has no independently
+measured objective. Missing values remain missing in static HTML, charts and
+downloads. The short main50 control reports a decrease, preventing the selected
+long-run example from becoming a claim that every refit is harmful.
+
+The chapter's six modules connect the 248-parameter representation, one periodic
+interruption, checkpoint selection, a constrained COV candidate, T0/T1/T2 evidence
+and the existing seed/off-path/Train119/reproduction views. The essay's original
+thirteen section headings and anchors remain; section fourteen extends the
+discussion through `@study: optimization`. It does not introduce new literature
+records or change the two English film assets.
+
+The proposed COV saved-row decrease is separated from both physical model
+evaluation and historical synthetic engineering. Historical T1 remains
+`T1_PASS_ENGINEERING_SYNTHETIC_ONLY`. Necessary diagnostic recovery used one real
+training and six detached replays; its count is separate from T1's zero real-data
+fits. The old XI missing-journal and P1 runtime-snapshot failures remain visible,
+and TERMINAL PBE14 has a saved-error-table reaggregation tier. T2 and independent
+external validation remain unexecuted. The
+[claim map](../data/optimization_story/v001/CLAIM_DATA_MAP.tsv) and
+[provenance registry](../data/optimization_story/v001/PROVENANCE.json) identify the
+support and limits for every class of result.
+
+Review acceptance must preserve the original Python/Node/scientific assertions,
+the old route interactions and both media files, while adding meaningful
+optimization checks. Browser automation should wait for actual route and scroll
+stability before clicking a moving target; synchronization repairs must retain
+the existing behavioral assertions. A successful build alone is not a browser
+or scientific acceptance receipt. Final review evidence belongs to the actual
+tested branch revision and its CI/browser artifacts.

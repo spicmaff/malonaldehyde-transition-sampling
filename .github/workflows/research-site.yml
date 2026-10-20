@@ -31,6 +31,10 @@ jobs:
         run: |
           python -B tools/site/test_site.py
           python -O -B tools/site/test_site.py
+          python -B tools/build_optimizer_story.py --verify
+          python -O -B tools/build_optimizer_story.py --verify
+          python -B -m unittest discover -s tests -p test_optimization_story.py
+          python -O -B -m unittest discover -s tests -p test_optimization_story.py
           node --test tools/site/test_core.mjs
           python -B tools/build_research_site.py --out "$RUNNER_TEMP/proton-site"
       - name: Browser, animation, accessibility and English-film acceptance
@@ -43,6 +47,14 @@ jobs:
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa" node tools/site/browser_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/offpath" node tools/site/browser_offpath_test.mjs
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/optimization" node tools/site/browser_optimization_test.mjs
+      - name: Preserve the tested non-production preview
+        if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-site-preview
+          path: ${{ runner.temp }}/proton-site
+          retention-days: 14
       - name: Preserve browser evidence
         if: always()
         uses: actions/upload-artifact@v4

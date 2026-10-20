@@ -6,19 +6,40 @@ This repository records an equal-DFT-budget comparison of two Moment Tensor Pote
 
 [![Proton / Potential](site/social-preview.svg)](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
 
-[Open the English research exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
+[Open the published exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
+· [Published “Off the path” chapter](https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath)
+· [Build the optimization review preview](docs/OPTIMIZATION_STORY.md#review-preview-and-reproduction)
 
 Explore an actual three-dimensional molecular stage, the changing heavy-atom
 scaffold, real training-set projections, original energy profiles and their
 residuals, all five paired seeds, two separate diagnostic criteria, and atom-wise
 PBE/MTP force differences reconstructed from 297 primary force components.
-A new English essay connects the evidence with 21 annotated research references.
-Two new English 1080p/60 fps films accompany the interactive six-scene story.
+The English essay connects the evidence with 21 annotated research references.
+Two English 1080p/60 fps films accompany the interactive six-scene story.
 
 The site is English-only, with light/dark themes, accessible manual controls,
 Canvas and no-JavaScript fallbacks, and pinned source evidence.
 `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain unchanged.
 [Rebuild the exhibit and inspect its scientific boundaries](docs/RESEARCH_SITE.md).
+
+### In this review: The fit is not the finish.
+
+The additive `#optimization` chapter follows one captured periodic refit through
+the model's 248 parameters, its native training objective and two diagnostic
+branches. After that refit, native J is **18.4179 times** its preceding value.
+A high-precision linear solution changes the elevated J by only about
+**1.46 × 10⁻¹²**. A proposed COV correction lowers loss on the saved training rows
+by **0.988119%**; its superiority as a real-data optimizer remains unproved.
+[Exact values and evidence classes](data/optimization_story/v001/OPTIMIZATION_STORY.json)
+· [Claim-to-source map](data/optimization_story/v001/CLAIM_DATA_MAP.tsv).
+
+**This chapter is a review build, not a published production route.** The published
+site links above describe the existing exhibit; serve this branch locally to open
+`#optimization`. The chapter separates conditional mathematics, historical
+synthetic T1 qualification and an unexecuted T2 comparison. Necessary input recovery
+used one real diagnostic training and six detached physical replays, separately
+from T1. [Methods and scope](docs/OPTIMIZATION_STORY.md)
+· [Public and restricted evidence](docs/PUBLIC_PRIVATE_BOUNDARY.md).
 
 ## Historical visual story · v1.2.0
 
@@ -91,13 +112,13 @@ No Train119 Gate1, independent deployment validation, or Blind12 reveal was perf
 
 ## Completed fixed-budget and off-path follow-up
 
-The existing [Proton / Potential exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
-is extended on this review branch with a separate **Off the path** chapter. Its original
-molecular stage, films, ten routes and `3/5` original-NEB joint-metric result are retained.
-The later PBE14 transition metric at8000 gives **4/5** Targeted-favorable pairs, mean
+The published [Proton / Potential exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath)
+includes the separate **Off the path** chapter. Its original molecular stage, films
+and `3/5` original-NEB joint-metric result are retained. The later PBE14 transition
+metric at8000 gives **4/5** Targeted-favorable pairs, mean
 Targeted−Basin **−0.1461353993 eV/Å**. These are different studies, not competing counts.
 
-The new public package contains fourteen accepted PBE references, twenty saved
+The public package contains fourteen accepted PBE references, twenty saved
 prediction CFGs, twenty source training logs and their model/seed hashes. Both regions
 and caps2000/8000 are reported. All twenty historical models reached `STEP_LIMIT`;
 larger-cap Basin degradation and the basin-region tradeoff remain visible.
@@ -108,12 +129,13 @@ python3 -B tools/verify_optimizer_budget.py
 python3 -B -m unittest discover -s tests -p test_completed_studies.py
 ```
 
-These commands only process saved evidence. The new files do not contain new MLIP
+These commands only process saved evidence. The package does not contain new MLIP
 binaries, external source, pseudopotentials or Blind12 data. [Methods, recovery and
 geometric limitations](docs/COMPLETED_STUDIES.md) · [Study index](data/studies/STUDY_INDEX.json)
 · [Publication scope](docs/PUBLICATION_SCOPE.md) · [Paper scaffold](paper/v001/MANUSCRIPT_OUTLINE_EN.md).
-Existing release tags, scientific negatives and the production site are not changed
-until owner approval of this branch. The scaffold is not a completed journal article.
+The completed-study chapter is already published. Existing release tags and scientific
+negative results remain historical records; the paper scaffold is not a completed
+journal article. The new optimization chapter remains a separate review proposal.
 
 ## Current provenance authority
 
@@ -129,6 +151,8 @@ A clean clone can now:
 - validate the publication figure, table, video and quantum inputs from repo-local compact source data;
 - rerender publication figures and tables with the declared Python dependencies;
 - inspect the post-publication RNG robustness, its evaluation-order repair, and the Train119 closure data.
+- validate the optimization chapter's public aggregate boundary and repeat its
+  table arithmetic, without claiming access to restricted native evidence.
 
 Run:
 
@@ -143,6 +167,12 @@ Full DFT and model-training recomputation is not containerized in this repositor
 
 The included trained models and compact CFG data allow substantially more verification than the original v1.0.0 release without publishing the approximately 80 GB private calculation tree.
 
+The optimization review adds explicitly selected scalars and small tables, with
+source fields and checksums. It does not publish the private Observer/T0/T1
+implementation, recovered training journal, new model states or complete replay
+arrays. Public arithmetic and full native reproduction have different input
+requirements. [Precise boundary](docs/PUBLIC_PRIVATE_BOUNDARY.md).
+
 ## Scientific scope
 
 PBE is an internal computational reference, not experimental ground truth. The H/D calculation is a frozen-path one-dimensional spectral diagnostic, not a reaction-rate calculation or full-dimensional quantum dynamics. MaxVol grade is an applicability/coverage diagnostic, not a DFT-error bar.
@@ -153,6 +183,8 @@ PBE is an internal computational reference, not experimental ground truth. The H
 - data/frozen_models_v028: original Train60 sets, templates, models, Audit21 labels and predictions.
 - data/robustness: post-publication fixed-seed training-randomness audit.
 - data/post_publication: compact final scientific status.
+- data/optimization_story/v001: reviewed optimization aggregates, claim map,
+  source provenance and publication allowlist.
 - scripts: frozen scientific, audit and publication scripts.
 - provenance: public manifests and the sanitized canonical ledger.
 - docs: methods, limitations, software provenance and execution boundaries.
