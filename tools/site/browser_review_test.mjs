@@ -130,7 +130,7 @@ try{
   const response=await live.goto('https://spicmaff.github.io/malonaldehyde-transition-sampling/?utm_source=chatgpt.com&still#'+route,{waitUntil:'networkidle0',timeout:45000});
   await live.waitForFunction(()=>document.body.dataset.ready==='true');
   const d=await live.evaluate(()=>({route:window.exhibit.getState().route,routeCount:document.querySelectorAll('[data-page]').length,optimizationPublished:!!document.getElementById('optimization')}));
-  report.live.push({status:response.status(),...d});assert.equal(d.route,route);assert.equal(d.optimizationPublished,false);
+  report.live.push({status:response?.status()??null,navigation:response?'document':'same-document',...d});if(response)assert.equal(response.status(),200);assert.equal(d.route,route);assert.equal(d.optimizationPublished,false);
  }
  await live.close();await p.close();await old.close();await historical.close();
  assert.equal(report.views.length,120);assert.equal(report.before.length,120);assert.deepEqual(report.errors,[]);
