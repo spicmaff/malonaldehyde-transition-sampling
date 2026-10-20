@@ -142,7 +142,7 @@ try{
      cyrillic:/[\u0400-\u04ff]/.test(section.innerText),
      stateButtons:section.querySelectorAll('[data-opt-select]').length,
      forceUnitCorrect:section.querySelector('.opt-checkpoint-force .panel-heading .micro').innerText.includes('eV/Å'),
-     wrappedCounts:[...section.querySelectorAll('.opt-parameter-block>strong,.opt-gate-code')].filter(el=>{
+     wrappedCounts:[...section.querySelectorAll('.opt-parameter-block>strong,.opt-gate-code,.opt-state-row button strong')].filter(el=>{
       const range=document.createRange();range.selectNodeContents(el);
       return [...range.getClientRects()].filter(r=>r.width>0).length!==1;
      }).map(el=>el.textContent),
@@ -157,7 +157,7 @@ try{
    assert.ok(view.activeNavCurrent==='page'||view.activeNavCurrent==='true');
    assert.equal(view.cyrillic,false);assert.equal(view.stateButtons,7);
    assert.equal(view.forceUnitCorrect,true,`${width}/${mode} case-sensitive eV/Å unit`);
-   assert.deepEqual(view.wrappedCounts,[],`${width}/${mode} complete numbers and evidence codes`);
+   assert.deepEqual(view.wrappedCounts,[],`${width}/${mode} complete numbers, evidence codes and state identifiers`);
    assert.equal(view.staticCharts,4);assert.equal(view.logLabel,true);assert.equal(view.exactLimit,true);
    assert.match(view.title,/The fit is not the finish/);
    await exactStaticRows(p,payload);await exactPlottedValues(p,payload);assert.deepEqual(await axis(),axes);
