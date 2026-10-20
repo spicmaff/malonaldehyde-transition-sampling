@@ -41,11 +41,18 @@ def refine_document(document: str) -> str:
     document = replace_once(document, '<i>J</i><br>from S0 to S2', '<i>J</i> <span class="review-ratio-context">from S0 to S2</span>')
     document = replace_once(document, ESSAY_LINK, NEXT_LINKS)
     document = replace_once(document, '<div class="opt-downloads">', AVAILABILITY + '<div class="opt-downloads">')
-    return replace_once(document, '</head>', '<link rel="stylesheet" href="presentation_review.css"></head>')
+    document = replace_once(document, '</head>', '<link rel="stylesheet" href="presentation_review.css"></head>')
+    # The original builder has already validated this public edition.
+    import json
+    from cinematic import refine_document as refine_cinematic
+    payload = Path(__file__).resolve().parents[1] / 'data/optimization_story/v001/OPTIMIZATION_STORY.json'
+    return refine_cinematic(document, json.loads(payload.read_text(encoding='utf-8')))
 
 
 def copy_style(out: Path) -> None:
     (out / 'presentation_review.css').write_bytes(Path(__file__).with_suffix('.css').read_bytes())
+    from cinematic import copy_assets
+    copy_assets(out)
 
 
 def verify_registered_assets(root: Path) -> int:
@@ -64,8 +71,10 @@ def verify_registered_assets(root: Path) -> int:
                          'tools/run_public_selftests.py'}
     additions = {'site/presentation_review.py', 'site/presentation_review.css',
                  'tests/test_presentation_review.py', 'tools/site/browser_review_test.mjs',
-                 'docs/PRESENTATION_REVIEW.md'}
-    if {r['repository_path'] for r in delta} != allowed_overrides | additions or len(delta) != 8:
+                 'docs/PRESENTATION_REVIEW.md', 'site/cinematic.py', 'site/cinematic.css',
+                 'site/cinematic.mjs', 'tests/test_cinematic.py',
+                 'tools/site/browser_cinematic_test.mjs', 'docs/CINEMATIC_REVIEW.md'}
+    if {r['repository_path'] for r in delta} != allowed_overrides | additions or len(delta) != 14:
         raise ValueError('Unexpected presentation manifest scope')
     for r in delta:
         old = by_path.get(r['repository_path'])

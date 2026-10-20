@@ -85,7 +85,7 @@ class PresentationReviewTests(unittest.TestCase):
                 self.assertEqual((self.out / 'data/optimization' / p.name).read_bytes(), p.read_bytes())
 
     def test_all_registered_assets_and_explicit_deltas_match(self):
-        self.assertEqual(review.verify_registered_assets(ROOT), 294)
+        self.assertEqual(review.verify_registered_assets(ROOT), 300)
 
     def test_scientific_byte_tampering_is_rejected(self):
         original = Path.read_bytes

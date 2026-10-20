@@ -1,0 +1,64 @@
+/* Source-driven scene acceptance; complements all existing HTTP-browser suites. */
+import {createRequire} from 'node:module';
+import {execFileSync} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const require=createRequire(path.join(path.resolve(process.env.BROWSER_DEPS),'package.json'));
+const puppeteer=require('puppeteer-core'),axe=require.resolve('axe-core/axe.min.js');
+const url=process.env.SITE_URL,before=process.env.CIN_BEFORE_URL;
+if(!url||!before)throw new Error('Current and pinned previous HTTP builds are required');
+const out=path.resolve(process.env.QA_OUT||'cinematic-scenes-qa');fs.mkdirSync(out,{recursive:true});
+const report={status:'RUNNING',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),tree:execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim(),before_ref:'9cb1e603df1ad2df481988a31480122010931a5c',views:[],checks:[],screenshots:[],errors:[]};
+const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader']});report.browser=await browser.version();
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const p=await browser.newPage(),old=await browser.newPage();
+p.on('pageerror',e=>report.errors.push(e.message));old.on('pageerror',e=>report.errors.push(e.message));
+async function open(page,base){await page.goto(base+'?still#optimization',{waitUntil:'networkidle0'});await page.waitForFunction(()=>document.body.dataset.optimizationReady==='true');}
+async function choose(page,width,mode,route='optimization'){
+ await page.bringToFront();
+ await page.setViewport({width,height:width<768?844:1000,deviceScaleFactor:1});
+ await page.evaluate(({mode,route})=>{window.exhibit.stop();window.optimizationExhibit.stop();if((document.documentElement.dataset.theme==='dark')!==(mode==='dark'))document.getElementById('theme').click();location.hash=route;},{mode,route});
+ await page.waitForFunction(r=>document.getElementById(r).classList.contains('active'),{},route);await wait(220);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
+}
+async function shot(page,name,fullPage=false){await page.bringToFront();await page.screenshot({path:path.join(out,name+'.png'),fullPage});report.screenshots.push(name+'.png');}
+async function click(selector){await p.$eval(selector,e=>e.scrollIntoView({block:'center',behavior:'instant'}));await wait(100);await p.click(selector);}
+try{
+ await open(p,url);await open(old,before);await p.addScriptTag({path:axe});
+ const payload=await p.evaluate(()=>window.optimizationExhibit.data());
+ for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark']){
+  await choose(p,width,mode);
+  const result=await p.evaluate(async()=>{
+   const cells=[...document.querySelectorAll('[data-cin-cell]')],sizes=cells.map(e=>e.getBoundingClientRect().width);
+   const a=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});
+   return {count:cells.length,counts:Object.fromEntries(['radial','invariant','offset'].map(k=>[k,cells.filter(e=>e.dataset.cinCell===k).length])),widthSpread:Math.max(...sizes)-Math.min(...sizes),overflow:document.documentElement.scrollWidth>innerWidth+1,violations:a.violations,incomplete:a.incomplete,snapshots:[...document.querySelectorAll('[data-cin-snapshot]')].map(e=>({id:e.dataset.cinSnapshot,value:Number(e.dataset.cinJ),left:parseFloat(e.style.left)}))};
+  });
+  report.views.push({width,mode,...result});assert.equal(result.count,248);assert.deepEqual(result.counts,{radial:216,invariant:29,offset:3});assert.ok(result.widthSpread<.15,'one equal-size square per coefficient');assert.equal(result.overflow,false);assert.deepEqual(result.violations,[]);
+  for(const point of result.snapshots){assert.equal(point.value,payload.theory.main4500.states.find(s=>s.id===point.id).native_J);assert.ok(Math.abs(point.left-(Math.log10(point.value)+5)*50)<1e-9);}
+  if([390,1440].includes(width)){
+   await shot(p,`after_${mode}_${width}_optimization`,true);await choose(old,width,mode);await shot(old,`before_${mode}_${width}_optimization`,true);
+   for(const id of ['opt-coefficient-atlas','opt-episode','opt-candidate']){
+    await p.$eval('#'+id,e=>e.scrollIntoView({block:'start',behavior:'instant'}));await shot(p,`${id}_${mode}_${width}`);
+   }
+   await choose(p,width,mode,'overview');await choose(old,width,mode,'overview');await shot(p,`after_${mode}_${width}_overview`,true);await shot(old,`before_${mode}_${width}_overview`,true);
+  }
+  fs.writeFileSync(path.join(out,'CINEMATIC_PROGRESS.json'),JSON.stringify(report,null,2));
+ }
+ await choose(p,1440,'light');
+ for(const [key,count] of [['radial',216],['invariant',29],['offset',3],['all',248]]){
+  await click(`[data-cin-group-select="${key}"]`);assert.equal(await p.$eval('#cin-atlas-count',e=>Number(e.textContent)),count);assert.equal(await p.$eval(`[data-cin-group-select="${key}"]`,e=>e.getAttribute('aria-pressed')),'true');
+ }
+ await p.focus('[data-cin-group-select="all"]');await p.keyboard.press('ArrowRight');assert.equal(await p.$eval('#opt-coefficient-atlas',e=>e.dataset.selection),'radial');await p.keyboard.press('ArrowLeft');assert.equal(await p.$eval('#opt-coefficient-atlas',e=>e.dataset.selection),'all');await p.keyboard.press('End');assert.equal(await p.$eval('#opt-coefficient-atlas',e=>e.dataset.selection),'offset');await p.keyboard.press('Home');assert.equal(await p.$eval('#opt-coefficient-atlas',e=>e.dataset.selection),'all');report.checks.push('all four coefficient families, native pointer and Left/Right/Home/End');
+ for(const id of payload.theory.main4500.native_order){
+  await p.focus(`[data-cin-step="${id}"]`);await p.keyboard.press('Enter');await p.waitForFunction(s=>window.optimizationExhibit.getState().selectedState===s,{},id);await wait(20);assert.equal(await p.$eval(`[data-cin-step="${id}"]`,e=>e.getAttribute('aria-pressed')),'true');
+ }
+ await p.evaluate(()=>window.optimizationExhibit.selectState('S1c'));await wait(20);assert.equal(await p.$$eval('[data-cin-step][aria-pressed="true"]',e=>e.length),0);report.checks.push('native rail delegates to original controller; diagnostic copy never becomes a native node');
+ await p.evaluate(()=>window.optimizationExhibit.reset());await click('#opt-play');await p.waitForFunction(()=>document.querySelector('[data-cin-step="S1"]').getAttribute('aria-pressed')==='true');await click('#opt-play');assert.equal(await p.evaluate(()=>window.optimizationExhibit.getState().playing),false);report.checks.push('existing playback and pause synchronize rail without a second clock');
+ await p.focus('.skip-link');await p.keyboard.press('Enter');assert.equal(await p.evaluate(()=>location.hash),'#optimization');assert.equal(await p.evaluate(()=>document.activeElement.id),'optimization');report.checks.push('skip link retains current route and focuses chapter');
+ await choose(p,390,'dark','molecule');await click('#path-play');await wait(150);assert.equal(await p.$eval('#path-play',e=>e.getAttribute('aria-label')),await p.$eval('#path-play',e=>e.textContent.trim()));await click('#path-play');await wait(30);assert.equal(await p.$eval('#path-play',e=>e.getAttribute('aria-label')),await p.$eval('#path-play',e=>e.textContent.trim()));report.checks.push('legacy play/pause accessible name follows visible state');
+ await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);await choose(p,390,'dark');assert.equal(await p.$eval('.opt-hero-copy',e=>getComputedStyle(e).animationName),'none');await click('#opt-play');assert.equal(await p.evaluate(()=>window.optimizationExhibit.getState().playing),false);report.checks.push('reduced motion disables heading entrance and automatic sequence');
+ const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(url+'#optimization',{waitUntil:'networkidle0'});assert.equal(await nojs.$$eval('[data-cin-cell]',e=>e.length),248);assert.equal(await nojs.$$eval('#optimization button:not(:disabled)',e=>e.length),0);await nojs.close();report.checks.push('no-JS figures, definitions, unmeasured state and disabled controls');
+ const failed=await browser.newPage();await failed.setRequestInterception(true);failed.on('request',r=>r.url().endsWith('/data/optimization.json')?r.abort():r.continue());await failed.goto(url+'?still#optimization',{waitUntil:'networkidle0'});await failed.waitForFunction(()=>document.body.dataset.optimizationReady==='error');assert.equal(await failed.$$eval('#optimization button:not(:disabled)',e=>e.length),0);await failed.close();report.checks.push('missing JSON leaves every new and existing state control disabled');
+ assert.deepEqual(report.errors,[]);report.status='PASS';
+}catch(error){report.status='FAIL';report.failure=error.stack;throw error;}
+finally{fs.writeFileSync(path.join(out,'CINEMATIC_QA.json'),JSON.stringify(report,null,2));await browser.close();}
