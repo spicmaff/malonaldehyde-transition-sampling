@@ -9,7 +9,7 @@ const puppeteer=require('puppeteer-core'),axe=require.resolve('axe-core/axe.min.
 const url=process.env.SITE_URL,before=process.env.CIN_BEFORE_URL;
 if(!url||!before)throw new Error('Current and pinned previous HTTP builds are required');
 const out=path.resolve(process.env.QA_OUT||'cinematic-scenes-qa');fs.mkdirSync(out,{recursive:true});
-const report={status:'RUNNING',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),tree:execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim(),before_ref:'9cb1e603df1ad2df481988a31480122010931a5c',views:[],checks:[],screenshots:[],errors:[]};
+const report={status:'RUNNING',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),tree:execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim(),before_ref:'9cb1e603df1ad2df481988a31480122010931a5c',views:[],navigation_views:[],checks:[],screenshots:[],errors:[]};
 const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader']});report.browser=await browser.version();
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const p=await browser.newPage(),old=await browser.newPage();
@@ -44,6 +44,12 @@ try{
   }
   fs.writeFileSync(path.join(out,'CINEMATIC_PROGRESS.json'),JSON.stringify(report,null,2));
  }
+ for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark'])for(const route of ['overview','molecule','sampling','landscape','seeds','train119','forces','story','longread','reproduce','offpath','optimization']){
+  await p.focus('.site-header .brand');await choose(p,width,mode,route);
+  const nav=await p.evaluate(()=>{const n=document.querySelector('.nav-shell nav'),a=n.querySelector('[aria-current="page"]'),nr=n.getBoundingClientRect(),ar=a.getBoundingClientRect();return {route:a.dataset.route,left:ar.left,right:ar.right,containerLeft:nr.left,containerRight:nr.right,scrollY:window.scrollY,headerFocusRetained:document.activeElement===document.querySelector('.site-header .brand')};});
+  report.navigation_views.push({width,mode,requested:route,...nav});assert.equal(nav.route,route);assert.ok(nav.left>=nav.containerLeft-1&&nav.right<=nav.containerRight+1,'current route visible in horizontal menu');assert.equal(nav.scrollY,0);assert.equal(nav.headerFocusRetained,true);
+ }
+ report.checks.push('120 active-route navigation combinations visible without vertical scroll or focus theft');
  await choose(p,1440,'light');
  for(const [key,count] of [['radial',216],['invariant',29],['offset',3],['all',248]]){
   await click(`[data-cin-group-select="${key}"]`);assert.equal(await p.$eval('#cin-atlas-count',e=>Number(e.textContent)),count);assert.equal(await p.$eval(`[data-cin-group-select="${key}"]`,e=>e.getAttribute('aria-pressed')),'true');

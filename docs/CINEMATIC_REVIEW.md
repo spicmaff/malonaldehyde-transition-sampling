@@ -87,3 +87,14 @@ style attribute, and independently checks the rendered marker center against
 the track's border-adjusted geometry within 0.75 CSS pixel. No source tolerance,
 scientific number, marker position or existing acceptance test was weakened.
 The failed run and its actual JSON receipt remain part of the review record.
+
+## Active mobile navigation
+
+The real 43ee1149 browser screenshots also exposed a persistent-scroll usability
+problem: returning from Optimization to an early chapter could leave the active
+chapter outside the horizontally scrolled mobile menu. The scoped enhancement
+now observes the existing aria-current state and scrolls only the navigation
+container enough to reveal the active link. It does not move page focus or the
+document vertically. A new 120-combination route/theme/width check exercises
+all twelve routes, including the return to Overview. Scientific routing stays
+in the existing application; no second router or new route name is introduced.

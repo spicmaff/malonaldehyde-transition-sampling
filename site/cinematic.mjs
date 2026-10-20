@@ -58,6 +58,26 @@ document.querySelectorAll('button.play-button').forEach(button => {
   const sync = () => button.setAttribute('aria-label', button.textContent.trim());
   new MutationObserver(sync).observe(button, {childList: true, subtree: true, characterData: true}); sync();
 });
+// Keep the active chapter visible in the narrow horizontal menu without moving
+// the document or stealing focus. Returning from Optimization must reveal Overview.
+const navigation = document.querySelector('.nav-shell nav');
+let navigationFrame = 0;
+function revealActiveChapter() {
+  cancelAnimationFrame(navigationFrame);
+  navigationFrame = requestAnimationFrame(() => {
+    navigationFrame = 0;
+    const current = navigation?.querySelector('[aria-current="page"]');
+    if (!current) return;
+    const box = navigation.getBoundingClientRect(), link = current.getBoundingClientRect();
+    if (link.left < box.left + 8) navigation.scrollLeft -= box.left + 8 - link.left;
+    else if (link.right > box.right - 8) navigation.scrollLeft += link.right - box.right + 8;
+  });
+}
+if (navigation) {
+  new MutationObserver(revealActiveChapter).observe(navigation, {subtree: true, attributes: true, attributeFilter: ['aria-current']});
+  window.addEventListener('resize', revealActiveChapter);
+  revealActiveChapter();
+}
 // Motion only decorates the heading; recorded numerical positions never interpolate.
 document.documentElement.classList.add('cin-ready');
 if (new URLSearchParams(location.search).has('still')) document.documentElement.classList.add('cin-still');
