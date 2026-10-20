@@ -17,6 +17,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Snapshot the public review source
+        if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
+        run: |
+          mkdir -p "$RUNNER_TEMP/review-source"
+          git archive --format=zip --output="$RUNNER_TEMP/review-source/source.zip" HEAD
+          git rev-parse HEAD HEAD^{tree} > "$RUNNER_TEMP/review-source/IDENTITY.txt"
+          sha256sum "$RUNNER_TEMP/review-source/source.zip" | sed 's@  .*/@  @' > "$RUNNER_TEMP/review-source/SHA256SUMS"
+      - name: Preserve the exact public review source
+        if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-site-review-source
+          path: ${{ runner.temp }}/review-source
+          retention-days: 14
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
