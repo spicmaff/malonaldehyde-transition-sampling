@@ -74,3 +74,16 @@ registers this edition's additions and current-byte changes, without overriding
 any frozen scientific source or expected result. Additional tests check the exact
 partition, snapshot coordinates, empty S3 value, alternate outcomes, disabled
 fallback controls, unique identifiers and immutable public payload copies.
+
+## Retained negative receipt and coordinate-check correction
+
+The first scene runner at `43ee1149` failed after all original suites and the
+120-view presentation supplement had passed. Its numeric assertion compared the
+CSSOM-serialized `element.style.left` with a 12-decimal source percentage at
+1e-9 precision. Chrome serialized S0 as 29.9182%, versus the exact
+29.918230553342173% calculation. That is not a changed scientific value.
+The corrected check retains the 1e-9 source assertion by parsing the original
+style attribute, and independently checks the rendered marker center against
+the track's border-adjusted geometry within 0.75 CSS pixel. No source tolerance,
+scientific number, marker position or existing acceptance test was weakened.
+The failed run and its actual JSON receipt remain part of the review record.
