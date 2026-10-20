@@ -60,11 +60,12 @@ def verify_registered_assets(root: Path) -> int:
     by_path = {r['repository_path']: r for r in original}
     if len(by_path) != len(original):
         raise ValueError('Duplicate original asset path')
-    allowed_overrides = {'.github/workflows/research-site.yml', 'tools/build_research_site.py'}
+    allowed_overrides = {'.github/workflows/research-site.yml', 'tools/build_research_site.py',
+                         'tools/run_public_selftests.py'}
     additions = {'site/presentation_review.py', 'site/presentation_review.css',
                  'tests/test_presentation_review.py', 'tools/site/browser_review_test.mjs',
                  'docs/PRESENTATION_REVIEW.md'}
-    if {r['repository_path'] for r in delta} != allowed_overrides | additions or len(delta) != 7:
+    if {r['repository_path'] for r in delta} != allowed_overrides | additions or len(delta) != 8:
         raise ValueError('Unexpected presentation manifest scope')
     for r in delta:
         old = by_path.get(r['repository_path'])

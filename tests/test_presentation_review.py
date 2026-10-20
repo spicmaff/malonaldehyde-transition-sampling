@@ -2,6 +2,8 @@
 import sys
 import tempfile
 import unittest
+import csv
+from unittest.mock import patch
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -84,6 +86,32 @@ class PresentationReviewTests(unittest.TestCase):
 
     def test_all_registered_assets_and_explicit_deltas_match(self):
         self.assertEqual(review.verify_registered_assets(ROOT), 294)
+
+    def test_scientific_byte_tampering_is_rejected(self):
+        original = Path.read_bytes
+        target = ROOT / 'data/frozen_audit/neb9_energy_profiles_v005.tsv'
+        with patch.object(Path, 'read_bytes', lambda p: original(p) + b'\n' if p == target else original(p)):
+            with self.assertRaisesRegex(ValueError, 'Registered asset differs'):
+                review.verify_registered_assets(ROOT)
+
+    def test_delta_rejects_out_of_scope_and_wrong_previous_hash(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'provenance').mkdir()
+            for name in ('PUBLIC_ASSET_MANIFEST.tsv', 'PRESENTATION_REVIEW_DELTA.tsv'):
+                (root / 'provenance' / name).write_bytes((ROOT / 'provenance' / name).read_bytes())
+            delta = root / 'provenance/PRESENTATION_REVIEW_DELTA.tsv'
+            saved = delta.read_text()
+            delta.write_text(saved.replace('.github/workflows/research-site.yml', 'data/unauthorized.json', 1))
+            with self.assertRaisesRegex(ValueError, 'Unexpected presentation manifest scope'):
+                review.verify_registered_assets(root)
+            entries = list(csv.DictReader(saved.splitlines(), delimiter='\t'))
+            entries[0]['previous_repository_sha256'] = '0' * 64
+            with delta.open('w', newline='') as stream:
+                writer = csv.DictWriter(stream, list(entries[0]), delimiter='\t', lineterminator='\n')
+                writer.writeheader(); writer.writerows(entries)
+            with self.assertRaisesRegex(ValueError, 'previous hash mismatch'):
+                review.verify_registered_assets(root)
 
     def test_mobile_caption_keeps_a_word_boundary(self):
         self.assertIn('<i>J</i> <span class="review-ratio-context">from S0 to S2</span>', self.html)

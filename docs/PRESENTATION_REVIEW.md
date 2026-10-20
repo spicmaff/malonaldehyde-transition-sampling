@@ -45,11 +45,15 @@ is executed by these presentation changes or their tests.
 
 `provenance/PUBLIC_ASSET_MANIFEST.tsv` is retained byte-for-byte as the reviewed
 pre-refinement snapshot. `provenance/PRESENTATION_REVIEW_DELTA.tsv` explicitly
-supersedes its current-byte fields for only the workflow and full-site builder,
+supersedes its current-byte fields for only the workflow, full-site builder and selftest manifest integration,
 and registers the new review files. It does not override any scientific data,
 media, licenses, original source hashes or frozen manifest. The verifier checks
 all original registered files plus the explicit additions, refuses duplicate or
 unexpected overrides, and checks each previous hash against the retained snapshot.
+The original selftest retains its size, hash, duplicate-name and sanitization checks;
+its two current-byte comparisons consult the validated delta. No scientific source
+or expected numerical result is overridden. Mutation tests reject unauthorized
+scope, changed previous hashes and tampered scientific bytes.
 The delta does not hash itself; its identity is bound by the Git revision.
 
 ## Actual-browser review supplement
