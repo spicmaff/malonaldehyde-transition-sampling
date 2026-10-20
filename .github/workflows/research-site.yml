@@ -49,6 +49,8 @@ jobs:
           python -O -B tools/build_optimizer_story.py --verify
           python -B -m unittest discover -s tests -p test_optimization_story.py
           python -O -B -m unittest discover -s tests -p test_optimization_story.py
+          python -B -m unittest discover -s tests -p test_presentation_review.py
+          python -O -B -m unittest discover -s tests -p test_presentation_review.py
           node --test tools/site/test_core.mjs
           python -B tools/build_research_site.py --out "$RUNNER_TEMP/proton-site"
       - name: Browser, animation, accessibility and English-film acceptance
@@ -62,6 +64,27 @@ jobs:
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa" node tools/site/browser_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/offpath" node tools/site/browser_offpath_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/optimization" node tools/site/browser_optimization_test.mjs
+      - name: Full-width accessibility and controlled before-after review
+        if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: |
+          git fetch --no-tags --depth=1 origin f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35
+          for ITEM in baseline:f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 before:d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35; do
+            NAME="${ITEM%%:*}"
+            REF="${ITEM#*:}"
+            mkdir -p "$RUNNER_TEMP/review-$NAME-src"
+            git archive "$REF" | tar -x -C "$RUNNER_TEMP/review-$NAME-src"
+            PROTON_SOURCE_REF=f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 python "$RUNNER_TEMP/review-$NAME-src/tools/build_research_site.py" --out "$RUNNER_TEMP/review-$NAME-site"
+          done
+          python -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/proton-site" > "$RUNNER_TEMP/review-current.log" 2>&1 &
+          CURRENT=$!
+          python -m http.server 8769 --bind 127.0.0.1 --directory "$RUNNER_TEMP/review-baseline-site" > "$RUNNER_TEMP/review-baseline.log" 2>&1 &
+          BASELINE=$!
+          python -m http.server 8770 --bind 127.0.0.1 --directory "$RUNNER_TEMP/review-before-site" > "$RUNNER_TEMP/review-before.log" 2>&1 &
+          BEFORE=$!
+          trap 'kill "$CURRENT" "$BASELINE" "$BEFORE" 2>/dev/null || true' EXIT
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ REVIEW_BASELINE_URL=http://127.0.0.1:8769/ REVIEW_BEFORE_URL=http://127.0.0.1:8770/ QA_OUT="$RUNNER_TEMP/cinematic-qa/presentation-review" node tools/site/browser_review_test.mjs
       - name: Preserve the tested non-production preview
         if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4

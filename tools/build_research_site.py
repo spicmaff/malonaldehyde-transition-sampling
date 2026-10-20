@@ -239,6 +239,9 @@ def build(out: Path) -> dict:
     from optimization_page import extend_document as extend_optimization_document
     optimization = build_optimization(out)
     document = extend_optimization_document(document, optimization)
+    from presentation_review import refine_document, copy_style
+    document = refine_document(document)
+    copy_style(out)
     (out / 'index.html').write_text(document, encoding='utf-8')
     download = []
     refmap = {r['id']: r for r in refs}
