@@ -25,7 +25,7 @@ const report={status:'RUNNING',commit:execFileSync('git',['rev-parse','HEAD'],{e
 const routes=['overview','molecule','sampling','landscape','seeds','train119','forces','story','longread','reproduce','offpath','optimization'];
 const widths=[320,390,768,1440,1920],modes=['light','dark'];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true,
+const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true,protocolTimeout:60000,
  args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader']});
 report.browser=await browser.version();
 async function open(url){
@@ -36,6 +36,7 @@ async function open(url){
  await p.addScriptTag({path:axe});return p;
 }
 async function choose(p,route,mode,width){
+ await p.bringToFront();
  await p.setViewport({width,height:width===1920?1080:width<768?844:1000,deviceScaleFactor:1});
  await p.evaluate(({route,mode})=>{
   window.exhibit.stop();window.optimizationExhibit?.stop();
@@ -72,6 +73,7 @@ async function audit(p){
  });
 }
 async function shot(p,name,fullPage=false){
+ await p.bringToFront();
  const file=path.join(out,name+'.png');await p.screenshot({path:file,fullPage});
  report.screenshots.push({file:name+'.png',fullPage,bytes:fs.statSync(file).size,
   sha256:createHash('sha256').update(fs.readFileSync(file)).digest('hex')});
@@ -88,6 +90,7 @@ try{
   report.before.push({route,width,mode,...prior});
   await choose(p,route,mode,width);const current=await audit(p);
   report.views.push({route,width,mode,...current});
+  if(report.views.length%12===0){fs.writeFileSync(path.join(out,'PRESENTATION_REVIEW_PROGRESS.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({completedViews:report.views.length,width,mode}));}
   assert.equal(current.overflow,false,`${route}/${mode}/${width}: overflow`);
   assert.equal(current.activePages,1);assert.equal(current.routeCount,12);
   assert.deepEqual(current.violations,[],`${route}/${mode}/${width}: axe violations`);
