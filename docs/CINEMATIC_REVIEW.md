@@ -173,3 +173,18 @@ of theme and width, retaining a screenshot and measured receipt for each.
 Existing scene, navigation, keyboard and scientific assertions are unchanged.
 New CI qualification is required for this tree; earlier CI receipts remain
 attached to their own commits. This is a presentation fix, not new science.
+
+
+### Preserve the failed CSSOM spelling check
+
+Run 39586968484 at 9bf60f8 passed the original HTTP suites and the 120-view
+presentation supplement, then failed the new threshold test because Chrome
+serialized computed `paint-order: stroke fill` as `stroke`. SVG specifies that
+omitted operations follow in normal order; both values mean stroke, fill,
+markers. The corrected assertion expands those operations and still requires
+that exact order. Negative fixtures reject fill-first order. The label must
+remain the final SVG child, retain its text and measured size, and use a
+four-pixel opaque panel-colored halo. No site code or scientific value changes.
+Threshold screenshots now capture the actual chart, including at mobile widths
+where it is below the first viewport. The failed run is retained, not relabelled.
+Specification: https://www.w3.org/TR/SVG2/painting.html#PaintOrderProperty

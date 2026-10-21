@@ -11,6 +11,18 @@ if(!url||!before)throw new Error('Current and pinned previous HTTP builds are re
 const out=path.resolve(process.env.QA_OUT||'cinematic-scenes-qa');fs.mkdirSync(out,{recursive:true});
 const report={status:'RUNNING',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),tree:execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim(),before_ref:'9cb1e603df1ad2df481988a31480122010931a5c',views:[],navigation_views:[],checks:[],screenshots:[],errors:[]};
 const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader']});report.browser=await browser.version();
+// SVG appends omitted paint operations in their normal order. Chrome may
+// serialize `stroke fill` as `stroke`; compare semantics, not CSSOM spelling.
+function expandedPaintOrder(value) {
+ const normal=['fill','stroke','markers'];
+ const specified=value==='normal'?[]:value.trim().split(/\s+/);
+ assert.ok(specified.every(v=>normal.includes(v))&&new Set(specified).size===specified.length,'valid paint order');
+ return [...specified,...normal.filter(v=>!specified.includes(v))];
+}
+assert.deepEqual(expandedPaintOrder('stroke'),['stroke','fill','markers']);
+assert.deepEqual(expandedPaintOrder('stroke fill'),['stroke','fill','markers']);
+assert.deepEqual(expandedPaintOrder('normal'),['fill','stroke','markers']);
+assert.notDeepEqual(expandedPaintOrder('fill stroke'),['stroke','fill','markers']);
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const p=await browser.newPage(),old=await browser.newPage();
 p.on('pageerror',e=>report.errors.push(e.message));old.on('pageerror',e=>report.errors.push(e.message));
@@ -76,11 +88,15 @@ try{
   await choose(p,width,mode,'train119');
   await p.waitForFunction(()=>{const svg=document.querySelector('#gamma-chart svg'),label=svg?.querySelector('text.chart-label');return label?.textContent==='Frozen stop'&&svg.lastElementChild===label;});
   const annotation=await p.$eval('#gamma-chart text.chart-label',e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return {paintOrder:s.paintOrder,strokeWidth:parseFloat(s.strokeWidth),stroke:s.stroke,text:e.textContent,width:r.width,height:r.height};});
-  assert.equal(annotation.paintOrder,'stroke fill');assert.ok(annotation.strokeWidth>=4);assert.equal(annotation.text,'Frozen stop');assert.ok(annotation.width>0&&annotation.height>0);
+  assert.deepEqual(expandedPaintOrder(annotation.paintOrder),['stroke','fill','markers']);assert.ok(annotation.strokeWidth>=4);assert.equal(annotation.text,'Frozen stop');assert.ok(annotation.width>0&&annotation.height>0);
   const panelColor=await p.$eval('#gamma-chart',e=>{const probe=document.createElement('span');probe.style.color='var(--panel)';e.appendChild(probe);const color=getComputedStyle(probe).color;probe.remove();return color;});
   assert.equal(annotation.stroke,panelColor,'annotation halo uses the opaque chart panel color');
   report.threshold_views.push({width,mode,...annotation});
-  await shot(p,`threshold_${mode}_${width}`);
+  await p.$eval('#gamma-chart',e=>e.scrollIntoView({block:'center',behavior:'instant'}));
+  await wait(80);
+  const chartShot=`threshold_${mode}_${width}.png`;
+  await (await p.$('#gamma-chart')).screenshot({path:path.join(out,chartShot)});
+  report.screenshots.push(chartShot);
  }
  report.checks.push('threshold label draws after data marks with an opaque halo at all ten theme-width combinations');
 
