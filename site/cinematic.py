@@ -88,6 +88,17 @@ def refine_document(document: str, data: dict) -> str:
         raise ValueError('Cinematic extension already applied')
     theory = data['theory']
     document = replace_one(document, r'<div class="opt-before-after">.*?</div></div>', snapshots(theory['main4500']))
+    # State the ratio as after / before; "times higher" is needlessly ambiguous.
+    document = replace_one(document,
+        r'higher native training <i>J</i> <span class="review-ratio-context">from S0 to S2</span>',
+        'Ratio S2 / S0 · native training <i>J</i> <span class="review-ratio-context">from S0 to S2</span>')
+    document = replace_one(document,
+        r'<div class="opt-page-index" role="navigation" aria-label="Optimization chapter contents">',
+        '<div class="cin-chapter-map"><div class="cin-map-caption">'
+        '<span class="micro">Chapter guide</span><span id="cin-reading-position">Six connected questions</span>'
+        '</div><div class="opt-page-index" role="navigation" aria-label="Optimization chapter contents">')
+    document = replace_one(document, r'</div>\n<p id="opt-load-status"',
+        '</div></div>\n<p id="opt-load-status"')
     document = replace_one(document, r'<div class="opt-parameter-grid">', atlas(theory['architecture']) + '<div class="opt-parameter-grid">')
     document = replace_one(document, r'<div class="opt-native-path">.*?</p></div>', native_rail(theory['main4500']))
     document = replace_one(document, r'<div class="opt-transaction" role="group" aria-label="Conceptual future runtime transaction, not an executing optimizer">.*?</div></div>', transaction())

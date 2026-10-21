@@ -45,11 +45,30 @@ try{
   fs.writeFileSync(path.join(out,'CINEMATIC_PROGRESS.json'),JSON.stringify(report,null,2));
  }
  for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark'])for(const route of ['overview','molecule','sampling','landscape','seeds','train119','forces','story','longread','reproduce','offpath','optimization']){
-  await p.focus('.site-header .brand');await choose(p,width,mode,route);
+  await choose(p,width,mode,route);
+  // Fragment navigation has native focus semantics. Test our reveal helper in
+  // isolation AFTER that navigation, not against an unrelated prior focus.
+  const focusAfterRoute=await p.evaluate(()=>({tag:document.activeElement.tagName,id:document.activeElement.id}));
+  await p.focus('.site-header .brand');
+  assert.equal(await p.evaluate(()=>document.activeElement===document.querySelector('.site-header .brand')),true,'focus precondition');
+  await p.evaluate(()=>{const n=document.querySelector('.nav-shell nav');n.scrollLeft=n.scrollLeft>0?0:n.scrollWidth;window.dispatchEvent(new Event('resize'));});
+  await wait(220);
   const nav=await p.evaluate(()=>{const n=document.querySelector('.nav-shell nav'),a=n.querySelector('[aria-current="page"]'),nr=n.getBoundingClientRect(),ar=a.getBoundingClientRect();return {route:a.dataset.route,left:ar.left,right:ar.right,containerLeft:nr.left,containerRight:nr.right,scrollY:window.scrollY,headerFocusRetained:document.activeElement===document.querySelector('.site-header .brand')};});
-  report.navigation_views.push({width,mode,requested:route,...nav});assert.equal(nav.route,route);assert.ok(nav.left>=nav.containerLeft-1&&nav.right<=nav.containerRight+1,'current route visible in horizontal menu');assert.equal(nav.scrollY,0);assert.equal(nav.headerFocusRetained,true);
+  report.navigation_views.push({width,mode,requested:route,focusAfterRoute,...nav});assert.equal(nav.route,route);assert.ok(nav.left>=nav.containerLeft-1&&nav.right<=nav.containerRight+1,'current route visible in horizontal menu');assert.equal(nav.scrollY,0);assert.equal(nav.headerFocusRetained,true);
  }
  report.checks.push('120 active-route navigation combinations visible without vertical scroll or focus theft');
+ await choose(p,1440,'light');
+ for(const id of ['opt-parameters','opt-episode','opt-checkpoints','opt-candidate','opt-evidence','opt-next-study']){
+  await p.$eval('#'+id,e=>e.scrollIntoView({block:'start',behavior:'instant'}));
+  await p.waitForFunction(s=>document.querySelector('.cin-chapter-map').dataset.readingSection===s,{},id);
+  assert.equal(await p.$eval('.cin-chapter-map a[aria-current="location"]',e=>e.hash),'#'+id);
+  const beforeFocus=await p.evaluate(()=>{document.querySelector('.site-header .brand').focus({preventScroll:true});return window.scrollY;});
+  await p.evaluate(()=>window.dispatchEvent(new Event('scroll')));await wait(50);
+  assert.equal(await p.evaluate(()=>document.activeElement===document.querySelector('.site-header .brand')),true);
+  assert.equal(await p.evaluate(()=>window.scrollY),beforeFocus);
+ }
+ await choose(p,390,'light');assert.equal(await p.$eval('.cin-chapter-map',e=>getComputedStyle(e).position),'static');
+ report.checks.push('six reading locations; compass never changes focus or scroll and is not sticky on mobile');
  await choose(p,1440,'light');
  for(const [key,count] of [['radial',216],['invariant',29],['offset',3],['all',248]]){
   await click(`[data-cin-group-select="${key}"]`);assert.equal(await p.$eval('#cin-atlas-count',e=>Number(e.textContent)),count);assert.equal(await p.$eval(`[data-cin-group-select="${key}"]`,e=>e.getAttribute('aria-pressed')),'true');

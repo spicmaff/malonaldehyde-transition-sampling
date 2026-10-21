@@ -83,6 +83,24 @@ class CinematicTests(unittest.TestCase):
         s=(ROOT/'site/cinematic.mjs').read_text()
         for forbidden in ['fetch(', 'setInterval(', 'eval(', 'new Function(']:self.assertNotIn(forbidden,s)
         self.assertIn('data-optimization-ready',s)
+    def test_chapter_guide_has_six_real_targets(self):
+        self.assertEqual(self.html.count('id="cin-reading-position"'), 1)
+        self.assertIn('class="cin-chapter-map"', self.html)
+        for target in ['opt-parameters','opt-episode','opt-checkpoints','opt-candidate','opt-evidence','opt-next-study']:
+            self.assertEqual(self.html.count('id="'+target+'"'), 1)
+            self.assertIn('href="#'+target+'"', self.html)
+    def test_hero_ratio_is_explicit_after_over_before(self):
+        self.assertIn('Ratio S2 / S0 · native training', self.html)
+        self.assertNotIn('higher native training', self.html)
+    def test_reading_compass_has_no_navigation_or_focus_side_effect(self):
+        source=(ROOT/'site/cinematic.mjs').read_text().split('// Reading position is a quiet location cue.')[1]
+        for forbidden in ['location.hash =', '.focus(', '.scrollIntoView(', 'setTimeout(', 'setInterval(', 'fetch(']:
+            self.assertNotIn(forbidden,source)
+        self.assertIn("{passive: true}",source)
+        self.assertIn("attributeFilter: ['class']",source)
+        self.assertIn("Math.max(documentPadding",source)
+        self.assertIn("--cin-document-scroll-padding",source)
+        self.assertIn("scroll-margin-top:max(0px",(ROOT/'site/cinematic.css').read_text())
     def test_five_public_payloads_remain_identical(self):
         for p in (ROOT/'data/optimization_story/v001').iterdir():
             if p.is_file():self.assertEqual(p.read_bytes(),(self.out/'data/optimization'/p.name).read_bytes())

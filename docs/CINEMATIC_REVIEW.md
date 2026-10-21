@@ -98,3 +98,47 @@ container enough to reveal the active link. It does not move page focus or the
 document vertically. A new 120-combination route/theme/width check exercises
 all twelve routes, including the return to Overview. Scientific routing stays
 in the existing application; no second router or new route name is introduced.
+
+## Continuation from ee823433: reading guide and focus isolation
+
+The continuation keeps the existing scene implementation and public payloads.
+A quiet six-section chapter guide now follows the reader's position. On a wide
+screen it stays below the real measured header height; on a phone it remains an
+ordinary two-column index with 44-pixel targets. Position updates never move
+focus, change the hash or scroll the page. There is no continuous timer, external
+fetch or interpolated scientific number. With JavaScript disabled it is simply
+an ordinary set of six links. The hero names its multiplier explicitly as
+S2 / S0, after / before, rather than using the ambiguous phrase “times higher”.
+The Frozen stop SVG label receives a panel-colored halo so a graph stroke does
+not pass through its text; its value and coordinates are unchanged.
+
+The ee823433 scene CI failed on its first navigation-focus assertion. The runner
+focused the brand BEFORE changing the location fragment, then attributed the
+browser's native fragment-focus behavior to the menu enhancement. A minimal
+in-memory Chromium document reproduces the loss of that brand focus with no
+site script. The revised runner first completes navigation, checks the requested
+route, explicitly focuses the brand and verifies that precondition, then hides
+the active link horizontally and triggers the existing resize/reveal mechanism.
+It still requires a visible active link, unchanged document scroll and retained
+focus in all 120 combinations. Native focus after routing is also recorded.
+The negative CI receipt remains negative; no final HTTP PASS is inferred here.
+
+The relevant platform behavior is specified in the HTML Standard's fragment
+scrolling and focusing steps:
+https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment
+
+The retained ee823433 presentation receipt has 108 color-contrast incomplete
+rule instances across 120 views, not the earlier 90. The node-level color audit
+keeps SVG fill distinct from CSS color, checks the declared opaque backdrop and
+retains obscured/overlapping content as a separate visual question. Arithmetic
+color-pair success is not an axe PASS, does not establish lack of occlusion, and
+is not accessibility certification. The thresholds follow W3C's contrast and
+non-text-contrast guidance:
+https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
+
+The isolated browser check exposed a genuine new reading-guide issue: the original
+document scroll padding and section scroll margin were added twice. The guide now
+subtracts the measured document padding when setting its section offset, so the
+heading settles below the header/guide rather than leaving a second empty band.
+The negative component receipt is retained in the handoff; no assertion was relaxed.

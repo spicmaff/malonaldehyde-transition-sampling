@@ -81,3 +81,51 @@ if (navigation) {
 // Motion only decorates the heading; recorded numerical positions never interpolate.
 document.documentElement.classList.add('cin-ready');
 if (new URLSearchParams(location.search).has('still')) document.documentElement.classList.add('cin-still');
+
+// Reading position is a quiet location cue. It never changes hash, focus or scroll.
+const chapterMap = page?.querySelector('.cin-chapter-map');
+const chapterLinks = chapterMap ? [...chapterMap.querySelectorAll('a[href^="#opt-"]')] : [];
+const chapters = chapterLinks.map(link => document.getElementById(link.hash.slice(1)));
+const chapterHeader = document.querySelector('.site-header');
+let readingFrame = 0;
+function updateReadingPosition() {
+  readingFrame = 0;
+  if (!page?.classList.contains('active') || !chapterMap || document.hidden) return;
+  const headerHeight = Math.ceil(chapterHeader?.getBoundingClientRect().height || 0);
+  const guideHeight = Math.ceil(chapterMap.getBoundingClientRect().height);
+  const sticky = matchMedia('(min-width: 1101px)').matches;
+  const documentPadding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+  for (const [key, value] of [['--cin-header-height', headerHeight], ['--cin-guide-height', guideHeight],
+      ['--cin-guide-offset', sticky ? guideHeight : 0], ['--cin-document-scroll-padding', documentPadding]]) {
+    const next = value + 'px';
+    if (page.style.getPropertyValue(key) !== next) page.style.setProperty(key, next);
+  }
+  const readingLine = Math.max(documentPadding, headerHeight + (sticky ? guideHeight : 0) + 18) + 6;
+  let active = -1;
+  chapters.forEach((section, i) => { if (section && section.getBoundingClientRect().top <= readingLine) active = i; });
+  chapterLinks.forEach((link, i) => {
+    if (i === active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+  const label = document.getElementById('cin-reading-position');
+  const next = active < 0 ? 'Six connected questions' :
+    String(active + 1).padStart(2, '0') + ' / ' + String(chapterLinks.length).padStart(2, '0') +
+    ' · ' + chapterLinks[active].textContent.replace(/^\d+\s*·\s*/, '').trim();
+  if (label && label.textContent !== next) label.textContent = next;
+  chapterMap.dataset.readingSection = active < 0 ? '' : chapters[active].id;
+}
+function scheduleReadingPosition() {
+  if (!readingFrame) readingFrame = requestAnimationFrame(updateReadingPosition);
+}
+if (chapterMap) {
+  window.addEventListener('scroll', scheduleReadingPosition, {passive: true});
+  window.addEventListener('resize', scheduleReadingPosition);
+  document.addEventListener('visibilitychange', scheduleReadingPosition);
+  new MutationObserver(scheduleReadingPosition).observe(page, {attributes: true, attributeFilter: ['class']});
+  if (typeof ResizeObserver !== 'undefined') {
+    const sizes = new ResizeObserver(scheduleReadingPosition);
+    if (chapterHeader) sizes.observe(chapterHeader);
+    sizes.observe(chapterMap);
+  }
+  scheduleReadingPosition();
+}

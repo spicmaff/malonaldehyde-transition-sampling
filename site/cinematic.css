@@ -83,3 +83,23 @@
 }
 @media(max-width:360px){.cin-cells{gap:2px}.cin-cell-map{column-gap:2px}.cin-atlas-inspector{grid-template-columns:64px 1fr;gap:5px 11px}.cin-atlas-inspector>strong{font-size:44px}.cin-snapshot-row{grid-template-columns:58px minmax(25px,1fr) 63px}.cin-snapshot-axis{margin-left:65px;margin-right:66px}.cin-flow-outcomes{grid-template-columns:1fr}.cin-native-rail button{grid-template-columns:30px minmax(0,1fr) 68px;gap:7px}}
 @media(prefers-reduced-motion:reduce){.cin-ready #optimization.active .opt-hero-copy{animation:none}.cin-cell-block{transition:none}}
+
+/* A reading compass, not a second router or a scroll-driven numerical animation. */
+.optimization-page .cin-chapter-map{margin:0 0 12px;background:var(--bg);border-top:1px solid var(--line)}
+.optimization-page .cin-map-caption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px 18px;align-items:center;padding-top:13px;color:var(--muted)}
+.optimization-page .cin-map-caption .micro{font-size:10px;margin:0}
+.optimization-page #cin-reading-position{font-size:11px;font-variant-numeric:tabular-nums}
+.optimization-page .cin-chapter-map .opt-page-index{border-top:0;padding-top:10px;gap:8px 24px}
+.optimization-page .cin-chapter-map a[aria-current="location"]{color:var(--teal);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+.optimization-page .cin-chapter-map a:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:2px}
+.js-ready #optimization.active .opt-chapter,.js-ready #optimization.active .opt-source-section,.js-ready #optimization.active .opt-source-entry{scroll-margin-top:max(0px,calc(var(--cin-header-height,132px) + var(--cin-guide-offset,0px) + 18px - var(--cin-document-scroll-padding,150px)))}
+@media(min-width:1101px){
+ .js-ready #optimization.active .cin-chapter-map{position:sticky;top:var(--cin-header-height,132px);z-index:12}
+}
+@media(max-width:680px){
+ .optimization-page .cin-chapter-map .opt-page-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;padding-bottom:13px}
+ .optimization-page .cin-chapter-map a{min-height:44px;line-height:1.6}
+ .optimization-page #cin-reading-position{font-size:10px}
+}
+/* Give the named frozen threshold its own solid backdrop, rather than a line through text. */
+#train119 #gamma-chart text.chart-label{paint-order:stroke fill;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round}
