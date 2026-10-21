@@ -8,7 +8,7 @@ This repository records an equal-DFT-budget comparison of two Moment Tensor Pote
 
 [Open the published exhibit](https://spicmaff.github.io/malonaldehyde-transition-sampling/)
 · [Published “Off the path” chapter](https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath)
-· [Build the optimization review preview](docs/OPTIMIZATION_STORY.md#review-preview-and-reproduction)
+· [Optimization: The fit is not the finish](https://spicmaff.github.io/malonaldehyde-transition-sampling/#optimization)
 
 Explore an actual three-dimensional molecular stage, the changing heavy-atom
 scaffold, real training-set projections, original energy profiles and their
@@ -22,7 +22,7 @@ Canvas and no-JavaScript fallbacks, and pinned source evidence.
 `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain unchanged.
 [Rebuild the exhibit and inspect its scientific boundaries](docs/RESEARCH_SITE.md).
 
-### In this review: The fit is not the finish.
+### Optimization · The fit is not the finish.
 
 The additive `#optimization` chapter follows one captured periodic refit through
 the model's 248 parameters, its native training objective and two diagnostic
@@ -33,10 +33,14 @@ by **0.988119%**; its superiority as a real-data optimizer remains unproved.
 [Exact values and evidence classes](data/optimization_story/v001/OPTIMIZATION_STORY.json)
 · [Claim-to-source map](data/optimization_story/v001/CLAIM_DATA_MAP.tsv).
 
-**This chapter is a review build, not a published production route.** The published
-site links above describe the existing exhibit; serve this branch locally to open
-`#optimization`. The chapter separates conditional mathematics, historical
-synthetic T1 qualification and an unexecuted T2 comparison. Necessary input recovery
+The chapter is the **twelfth route of the same exhibit**, alongside the eleven
+previously published sections. Once this revision is deployed from `main`, visit
+[Optimization](https://spicmaff.github.io/malonaldehyde-transition-sampling/#optimization)
+directly; a checked-out branch can also be served locally at `#optimization`.
+The original `#overview`, `#offpath` and other deep links, original models,
+visualizations, films and scientific verdicts remain part of the same story.
+The chapter separates conditional mathematics, historical synthetic T1
+qualification and an unexecuted T2 comparison. Necessary input recovery
 used one real diagnostic training and six detached physical replays, separately
 from T1. [Methods and scope](docs/OPTIMIZATION_STORY.md)
 · [Public and restricted evidence](docs/PUBLIC_PRIVATE_BOUNDARY.md).
@@ -135,7 +139,8 @@ geometric limitations](docs/COMPLETED_STUDIES.md) · [Study index](data/studies/
 · [Publication scope](docs/PUBLICATION_SCOPE.md) · [Paper scaffold](paper/v001/MANUSCRIPT_OUTLINE_EN.md).
 The completed-study chapter is already published. Existing release tags and scientific
 negative results remain historical records; the paper scaffold is not a completed
-journal article. The new optimization chapter remains a separate review proposal.
+journal article. Optimization is an additive explanatory chapter and does not alter
+those completed-study results.
 
 ## Current provenance authority
 
