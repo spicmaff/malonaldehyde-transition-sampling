@@ -66,14 +66,22 @@ function revealActiveChapter() {
   cancelAnimationFrame(navigationFrame);
   navigationFrame = requestAnimationFrame(() => {
     navigationFrame = 0;
-    const current = navigation?.querySelector('[aria-current="page"]');
-    if (!current) return;
-    const box = navigation.getBoundingClientRect(), link = current.getBoundingClientRect();
-    if (link.left < box.left + 8) navigation.scrollLeft -= box.left + 8 - link.left;
-    else if (link.right > box.right - 8) navigation.scrollLeft += link.right - box.right + 8;
+    revealNavigationLink(navigation?.querySelector('[aria-current="page"]'));
   });
 }
+function revealNavigationLink(current) {
+  if (!current || !navigation?.contains(current)) return;
+  const box = navigation.getBoundingClientRect(), link = current.getBoundingClientRect();
+  if (link.left < box.left + 8) navigation.scrollLeft -= box.left + 8 - link.left;
+  else if (link.right > box.right - 8) navigation.scrollLeft += link.right - box.right + 8;
+}
 if (navigation) {
+  // Native Tab scrolling can leave the end of a partly visible label clipped.
+  // Reveal that focused link horizontally without moving focus or the document.
+  navigation.addEventListener('focusin', event => {
+    const link = event.target.closest('a[data-route]');
+    if (link) revealNavigationLink(link);
+  });
   new MutationObserver(revealActiveChapter).observe(navigation, {subtree: true, attributes: true, attributeFilter: ['aria-current']});
   window.addEventListener('resize', revealActiveChapter);
   revealActiveChapter();

@@ -57,6 +57,20 @@ try{
   report.navigation_views.push({width,mode,requested:route,focusAfterRoute,...nav});assert.equal(nav.route,route);assert.ok(nav.left>=nav.containerLeft-1&&nav.right<=nav.containerRight+1,'current route visible in horizontal menu');assert.equal(nav.scrollY,0);assert.equal(nav.headerFocusRetained,true);
  }
  report.checks.push('120 active-route navigation combinations visible without vertical scroll or focus theft');
+ // Walk the actual Tab order as well as testing the active-route observer.
+ for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark']){
+  await choose(p,width,mode);await p.focus('.site-header .brand');const seen=new Set();
+  for(let i=0;i<35&&seen.size<12;i++){
+   await p.keyboard.press('Tab');await wait(40);
+   const focused=await p.evaluate(()=>{const e=document.activeElement;if(!e.matches('.nav-shell nav a'))return null;const a=e.getBoundingClientRect(),n=e.closest('nav').getBoundingClientRect(),s=getComputedStyle(e);return {route:e.dataset.route,left:a.left,right:a.right,navLeft:n.left,navRight:n.right,focusVisible:e.matches(':focus-visible'),outline:s.outlineStyle,scrollY};});
+   if(!focused)continue;seen.add(focused.route);
+   (report.keyboard_navigation??=[]).push({width,mode,...focused});
+   assert.ok(focused.left>=focused.navLeft-1&&focused.right<=focused.navRight+1,'entire keyboard-focused label visible');
+   assert.ok(focused.focusVisible&&focused.outline!=='none','keyboard focus indicator');assert.equal(focused.scrollY,0);
+  }
+  assert.equal(seen.size,12,'all twelve chapter links in real Tab order');
+ }
+ report.checks.push('120 actual Tab-focus combinations: complete labels, visible focus, no document scrolling');
  await choose(p,1440,'light');
  for(const id of ['opt-parameters','opt-episode','opt-checkpoints','opt-candidate','opt-evidence','opt-next-study']){
   await p.$eval('#'+id,e=>e.scrollIntoView({block:'start',behavior:'instant'}));

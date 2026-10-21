@@ -142,3 +142,14 @@ document scroll padding and section scroll margin were added twice. The guide no
 subtracts the measured document padding when setting its section offset, so the
 heading settles below the header/guide rather than leaving a second empty band.
 The negative component receipt is retained in the handoff; no assertion was relaxed.
+
+
+## Final HTTP keyboard review
+
+The 4820013 CI suite passed, but a stricter actual Windows Tab-order supplement
+found a partly clipped chapter label at 320 px. The same failure remained after
+allowing native scrolling to settle, so it was not waived as a timing issue.
+A focusin listener now reveals the focused chapter link horizontally; it neither
+changes focus nor scrolls the document. The cinematic runner retains all prior
+assertions and adds 120 actual Tab-focus checks across the two themes and five
+widths. The earlier negative supplementary receipts are retained in the handoff.

@@ -101,6 +101,14 @@ class CinematicTests(unittest.TestCase):
         self.assertIn("Math.max(documentPadding",source)
         self.assertIn("--cin-document-scroll-padding",source)
         self.assertIn("scroll-margin-top:max(0px",(ROOT/'site/cinematic.css').read_text())
+    def test_keyboard_navigation_reveals_focused_not_only_active_link(self):
+        source=(ROOT/'site/cinematic.mjs').read_text()
+        self.assertIn("navigation.addEventListener('focusin'", source)
+        self.assertIn("event.target.closest('a[data-route]')", source)
+        helper=source.split('function revealNavigationLink(current) {',1)[1].split('\n}',1)[0]
+        self.assertIn('navigation.scrollLeft', helper)
+        for forbidden in ['.focus(', '.scrollIntoView(', 'location.hash']:
+            self.assertNotIn(forbidden, helper)
     def test_five_public_payloads_remain_identical(self):
         for p in (ROOT/'data/optimization_story/v001').iterdir():
             if p.is_file():self.assertEqual(p.read_bytes(),(self.out/'data/optimization'/p.name).read_bytes())
