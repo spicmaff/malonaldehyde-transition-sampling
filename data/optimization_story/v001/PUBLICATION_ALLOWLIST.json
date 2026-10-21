@@ -1,0 +1,38 @@
+{
+  "excluded": [
+    "native sources and executables",
+    "private checkpoints and fitted models",
+    "full journals and replay arrays",
+    "design and normal-equation matrices",
+    "pseudopotentials",
+    "private machine paths",
+    "credentials",
+    "protected holdout data"
+  ],
+  "files": [
+    {
+      "bytes": 94368,
+      "path": "OPTIMIZATION_STORY.json",
+      "sha256": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131"
+    },
+    {
+      "bytes": 57839,
+      "path": "CLAIM_DATA_MAP.tsv",
+      "sha256": "4456e169d82a0c12079e5e21f4a2d4c0dfd6d5576ca7078e076eb94b729719f9"
+    },
+    {
+      "bytes": 41001,
+      "path": "PROVENANCE.json",
+      "sha256": "fa5d7b72d0bdd9a94536c0e3cd4c6e5cdd20cebf53d5120b68d999db066c29bc"
+    },
+    {
+      "bytes": 2183,
+      "path": "README.md",
+      "sha256": "46ffbe8b8610c82d1845cf570fcaf91fa13842c6e8470419c9e0d3e9bd23e64f"
+    }
+  ],
+  "license_scope": "Owner-authored prose and aggregate numerical derivatives only; external software rights are unchanged.",
+  "schema": "proton-optimization-publication-allowlist-v1",
+  "self": "PUBLICATION_ALLOWLIST.json",
+  "self_digest_rule": "The manifest does not hash itself; the repository commit and final source manifest bind its bytes."
+}

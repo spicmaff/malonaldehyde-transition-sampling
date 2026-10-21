@@ -2,7 +2,7 @@
 
 The original v028 demonstration, its five-seed Audit21 audit, this later PBE14 study,
 and the adaptive Train119 program are **different experiments**. None replaces another.
-The original `3/5` describes simultaneous wins on two original NEB metrics; the new
+The original `3/5` describes simultaneous wins on two original NEB metrics; the later
 `4/5` describes Targeted's lower transition-region force error on PBE14 at cap8000.
 
 ## What was held fixed
@@ -85,6 +85,41 @@ separate local optimizer diagnostics. Guard and END_MAIN are not new primary mod
 in this dataset. The missing XI-T-R event journal and short-process runtime snapshot
 limit that optional diagnostic; neither invalidates nor upgrades this study's data.
 No general MTP improvement, PES topology, tunneling rate or reactive MD is established.
+
+## Separate optimization review
+
+The additive `#optimization` chapter follows the optimizer rather than adding a
+new primary model to the PBE14 comparison. It examines one long-run refit boundary,
+an END_MAIN/TERMINAL saved pair and the engineering status of a proposed COV
+correction. Its numbers live in a separate
+[optimization aggregate payload](../data/optimization_story/v001/OPTIMIZATION_STORY.json),
+with [field-level claim mapping](../data/optimization_story/v001/CLAIM_DATA_MAP.tsv).
+The completed PBE14 primary endpoint, all twenty model identities, both regions
+and both caps retain their original meanings.
+
+The short IXA main50 summary reports a decreasing refit boundary; the selected
+long-run main4500 example has an increased post-refit native objective. Counting
+the ten long printed traces gives 1163 positive adjacent changes at multiples of
+50. The ten cap2000 traces repeat 60 of those changes because they are exact
+prefixes; combining them as 1223 distinct observations would double-count the
+prefix. These counts describe printed observations, not independent causal
+experiments. Sources `OBS_LONG_RECOUNT`, the twenty `OBS_LOG_*` entries and
+`OBS_IXA_READER` make the scope explicit in the claim map.
+
+The necessary 2026-10-20 input recovery used one real diagnostic training and six
+detached physical replays. Four live-state replay files reproduce historical
+indexed bytes; S1c and S2q are new declared counterfactual states. This recovery
+does not restore the missing original M01 archive or the historical XI journal,
+and it does not amend the old XI-T P1 runtime failure. It also does not convert
+the historical synthetic T1 qualification into a real-data optimizer comparison.
+Source `OBS_RECOVERY_LEDGER` records the separate recovery scope.
+
+The optimization chapter remains a review build. The
+[published off-path chapter](https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath)
+already presents this completed study. For the new chapter's fixed-system
+mathematics, checkpoint counterexamples and evidence tiers, see
+[Optimization story](OPTIMIZATION_STORY.md) and
+[Public/private boundary](PUBLIC_PRIVATE_BOUNDARY.md).
 
 See [study index](../data/studies/STUDY_INDEX.json), [publication scope](PUBLICATION_SCOPE.md)
 and [data mapping](../data/studies/pbe14_mtp20_v001/SOURCE_TO_PUBLIC_MANIFEST.tsv).

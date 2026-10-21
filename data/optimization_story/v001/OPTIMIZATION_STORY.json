@@ -1,0 +1,1909 @@
+{
+  "edition": "2026-10-20-source-reviewed-recovery",
+  "evidence_taxonomy": {
+    "DERIVED_SAVED_ARITHMETIC": "Calculation from saved numbers or matrices; not a newly evaluated physical candidate.",
+    "FUTURE_UNTESTED": "Proposed work that has not been executed or authorized by this chapter.",
+    "KNOWN_LIMITATION": "Missing evidence, unqualified behavior or a preserved negative result.",
+    "MEASURED_SAVED_PHYSICAL": "Saved physical model evaluation; access and historical limitations are stated separately.",
+    "PUBLIC_RECOMPUTABLE": "Arithmetic can be repeated from the identified published inputs.",
+    "SOURCE_CODE_VERIFIED": "Paraphrase of the reviewed implementation; its source is not redistributed.",
+    "SYNTHETIC_ENGINEERING_PASS": "Engineering qualification on artificial fixtures; no real-data optimizer superiority follows.",
+    "THEOREM_UNDER_ASSUMPTIONS": "Mathematical statement limited to its explicit graph, rank, smoothness or fixed-system assumptions."
+  },
+  "limitations": {
+    "observer": [
+      "Original M01 archive and its historical raw C-long journal were not found. New diagnostic recovery supplies checked inputs but does not turn a new journal into the missing old artifact.",
+      "S1c and S2q are newly derived counterfactual states. Their current physical replays are measured; historical counterfactual byte identity is not claimed.",
+      "The new S2q physical point targets ROW_EXACT_FIXED_D. The high-precision ACTUAL_K_CAPTURE optimum is a separate saved-algebra diagnostic.",
+      "The historical XI training journal remains missing. The new C-long recovery does not reconstruct XI chronology or individually identify terminal operation contributions.",
+      "The historical XI-T P1 process produced complete numeric output with exit zero, but its actual-runtime snapshot was missing: FAIL_STOP_NO_RETRY remains unchanged.",
+      "PBE14 TERMINAL raw prediction vectors are missing. Its fourteen error scores and block/region aggregates can be reaggregated, not independently recomputed from raw terminal predictions.",
+      "PBE14 was already used for development. One Basin60 seed-3 saved pair, unequal trajectory lengths and dependent perturbation pairs do not establish external generalization or a cost-matched optimizer winner.",
+      "H/A/B/C provide observable replication of one seed trajectory; equality of printed losses and final model bytes does not certify every hidden optimizer state.",
+      "Long-log counts use printed decimal objectives. Periodicity is observed, and the short main50 decrease is a counterexample to uniformly harmful refits; the count is not a universal causal decomposition.",
+      "The recovered IXA short-run reader is a rounded historical summary. No separate new S1 or S3 measurement is supplied for main50.",
+      "New recovery call counts are separate from historical synthetic T1 and earlier XI experiments. Explicit wrapper counts do not count every internal native API operation."
+    ],
+    "t1": [
+      "Engineered and checked on synthetic runs. Not yet demonstrated to be a better real-data optimizer.",
+      "All T1 qualification numbers describe historical synthetic fixtures; they are not measurements of real-data optimizer superiority.",
+      "The later missing-input recovery includes one real training process and six physical replay processes. The historical T1 zero-real-fit statement applies only to T1.",
+      "Checkpoint reload is RELOAD_FOR_EVALUATION_ONLY; full BFGS continuation from a saved checkpoint remains unqualified.",
+      "Injected file errors and actual SIGTERM/SIGKILL cases do not establish power-loss durability or hardware-independent redundancy.",
+      "Two checkpoint copies share one filesystem; SHA integrity does not authenticate ownership or prevent valid stale-history rollback without an external sequence anchor.",
+      "External BLAS/LAPACK/Fortran were not sanitizer-instrumented.",
+      "Earlier failed or incomplete gates and unknown historical prototype counters remain recorded; final T1 does not retroactively turn them into passes.",
+      "PBE14 was already used in development. T2 optimization comparison and independent external physical validation remain unexecuted.",
+      "Native objective, weighted reload-vector error and external force RMSE are different quantities with different definitions.",
+      "Private source, full native journals, model coefficients, checkpoint blobs and binaries are excluded from this public contribution."
+    ],
+    "theory": [
+      "The original M01 archive remains missing; the new recovery is identified separately.",
+      "S1c and S2q are new derived states; no historical byte identity is claimed for them.",
+      "S2q is the new ROW_EXACT_FIXED_D solution. The native captured K solve has a separate high-precision analysis.",
+      "S3 objective remains unmeasured.",
+      "The COV and prediction-prox candidates are saved-row analyses, without new potential exports or native/external evaluation.",
+      "Mathematical guarantees retain their rank, smoothness, fixed-space and metric assumptions."
+    ]
+  },
+  "observer": {
+    "end_terminal": {
+      "checkpoint_rule": "Choose the checkpoint policy before comparing quality; the adjacent synthetic T1 example has BEST equal to TERMINAL.",
+      "cost_scope": {
+        "H_main_steps": 8000,
+        "XI_main_steps": 6350,
+        "cost_matched": false,
+        "paired_seed_and_data_cases": 1,
+        "source_id": "OBS_XI_PILOT_GATE"
+      },
+      "dataset": "Basin60",
+      "historical_status": {
+        "XI_T_P1_native_exit": 0,
+        "XI_T_P1_runtime_capture": "FAIL_STOP_NO_RETRY",
+        "XI_training_event_journal": "MISSING",
+        "new_recovery_repairs_historical_XI_chronology": false,
+        "source_id": "OBS_XIT_GATE"
+      },
+      "interpretation": "END_MAIN has lower native training J and lower force error in both PBE14 regions than TERMINAL for this saved pair. Against historical H, END_MAIN improves transition-region error but worsens basin error. This single development comparison does not establish an optimizer winner or a universal END_MAIN rule.",
+      "native_metric": {
+        "lower_is_better": true,
+        "name": "Native weighted training objective J",
+        "unit": "weighted objective; separate from eV/angstrom force error"
+      },
+      "native_rows": [
+        {
+          "energy_loss": 1.1546646453611874e-08,
+          "force_loss": 9.337431768426385e-06,
+          "native_J": 9.558201729682155e-06,
+          "radial_penalty": 2.0922331480215753e-07,
+          "source_id": "OBS_XIT_TRAIN_CONTRAST",
+          "state": "END_MAIN",
+          "status": "SAVED_NATIVE_REPLAY_VERIFIED"
+        },
+        {
+          "energy_loss": 3.40219151920905e-07,
+          "force_loss": 0.00013478500404039536,
+          "native_J": 0.00013512522319231626,
+          "radial_penalty": 1.5551999216242106e-25,
+          "source_id": "OBS_XIT_TRAIN_CONTRAST",
+          "state": "TERMINAL",
+          "status": "SAVED_NATIVE_REPLAY_VERIFIED"
+        }
+      ],
+      "pbe14": {
+        "aggregation": "Per geometry: RMSE of 27 Cartesian force-component errors. Average paired geometries within each physical block, then take an equal mean of the four block scores in each region.",
+        "block_rows": [
+          {
+            "END_MAIN": 0.08209608009736072,
+            "HISTORICAL_H": 0.09525081467893294,
+            "TERMINAL": 0.10242313372545414,
+            "block": "BASIN_LEFT__C_skeletal_bend",
+            "configurations": 2,
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.05805425774274906,
+            "HISTORICAL_H": 0.02238987578535997,
+            "TERMINAL": 0.06355301017171071,
+            "block": "BASIN_LEFT__H_lateral",
+            "configurations": 2,
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.007971834124078559,
+            "HISTORICAL_H": 0.010492307897943884,
+            "TERMINAL": 0.02782197809571106,
+            "block": "BASIN_LEFT__H_out_of_plane",
+            "configurations": 1,
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.0626295569077129,
+            "HISTORICAL_H": 0.03944038823798124,
+            "TERMINAL": 0.07169551354449778,
+            "block": "BASIN_LEFT__OO_breathing",
+            "configurations": 2,
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.11228435636076496,
+            "HISTORICAL_H": 0.17227770970702513,
+            "TERMINAL": 0.1612456451430097,
+            "block": "TRANSITION_CENTER__C_skeletal_bend",
+            "configurations": 2,
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.15017592511094396,
+            "HISTORICAL_H": 0.1340623455697994,
+            "TERMINAL": 0.17984272303382573,
+            "block": "TRANSITION_CENTER__H_lateral",
+            "configurations": 2,
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.09512607139209325,
+            "HISTORICAL_H": 0.13027812953550974,
+            "TERMINAL": 0.1433841562793399,
+            "block": "TRANSITION_CENTER__H_out_of_plane",
+            "configurations": 1,
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.18443514480885714,
+            "HISTORICAL_H": 0.40735765497978244,
+            "TERMINAL": 0.2515553372539842,
+            "block": "TRANSITION_CENTER__OO_breathing",
+            "configurations": 2,
+            "region": "TRANSITION_CENTER"
+          }
+        ],
+        "blocks": 8,
+        "case_scores": [
+          {
+            "END_MAIN": 0.05546134984142427,
+            "HISTORICAL_H": 0.03219898455404551,
+            "TERMINAL": 0.046646743561921916,
+            "block": "BASIN_LEFT__OO_breathing",
+            "candidate_id": "L01m",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.06979776397400152,
+            "HISTORICAL_H": 0.04668179192191696,
+            "TERMINAL": 0.09674428352707365,
+            "block": "BASIN_LEFT__OO_breathing",
+            "candidate_id": "L01p",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.08086675726640218,
+            "HISTORICAL_H": 0.1118798094637796,
+            "TERMINAL": 0.10958916343735638,
+            "block": "BASIN_LEFT__C_skeletal_bend",
+            "candidate_id": "L02m",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.08332540292831925,
+            "HISTORICAL_H": 0.07862181989408629,
+            "TERMINAL": 0.0952571040135519,
+            "block": "BASIN_LEFT__C_skeletal_bend",
+            "candidate_id": "L02p",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.060006003898556357,
+            "HISTORICAL_H": 0.02205791761501164,
+            "TERMINAL": 0.055221619837457776,
+            "block": "BASIN_LEFT__H_lateral",
+            "candidate_id": "L03m",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.05610251158694177,
+            "HISTORICAL_H": 0.022721833955708304,
+            "TERMINAL": 0.07188440050596365,
+            "block": "BASIN_LEFT__H_lateral",
+            "candidate_id": "L03p",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.007971834124078559,
+            "HISTORICAL_H": 0.010492307897943884,
+            "TERMINAL": 0.02782197809571106,
+            "block": "BASIN_LEFT__H_out_of_plane",
+            "candidate_id": "L04p",
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.24872638385481075,
+            "HISTORICAL_H": 0.7575003546097572,
+            "TERMINAL": 0.33824156863688215,
+            "block": "TRANSITION_CENTER__OO_breathing",
+            "candidate_id": "T01m",
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.12014390576290354,
+            "HISTORICAL_H": 0.057214955349807736,
+            "TERMINAL": 0.16486910587108625,
+            "block": "TRANSITION_CENTER__OO_breathing",
+            "candidate_id": "T01p",
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.10230823007708204,
+            "HISTORICAL_H": 0.15241933539305175,
+            "TERMINAL": 0.1673627848031333,
+            "block": "TRANSITION_CENTER__C_skeletal_bend",
+            "candidate_id": "T02m",
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.12226048264444789,
+            "HISTORICAL_H": 0.19213608402099852,
+            "TERMINAL": 0.15512850548288612,
+            "block": "TRANSITION_CENTER__C_skeletal_bend",
+            "candidate_id": "T02p",
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.09867569224064172,
+            "HISTORICAL_H": 0.14086479109222014,
+            "TERMINAL": 0.12866846959598435,
+            "block": "TRANSITION_CENTER__H_lateral",
+            "candidate_id": "T03m",
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.2016761579812462,
+            "HISTORICAL_H": 0.1272599000473787,
+            "TERMINAL": 0.2310169764716671,
+            "block": "TRANSITION_CENTER__H_lateral",
+            "candidate_id": "T03p",
+            "region": "TRANSITION_CENTER"
+          },
+          {
+            "END_MAIN": 0.09512607139209325,
+            "HISTORICAL_H": 0.13027812953550974,
+            "TERMINAL": 0.1433841562793399,
+            "block": "TRANSITION_CENTER__H_out_of_plane",
+            "candidate_id": "T04p",
+            "region": "TRANSITION_CENTER"
+          }
+        ],
+        "configurations": 14,
+        "end_better_blocks": 8,
+        "end_better_cases": 12,
+        "end_worse_cases": [
+          "L01m",
+          "L03m"
+        ],
+        "evidence_by_model": {
+          "END_MAIN": "SAVED_PREDICTION_VECTORS_RECOMPUTED_RUNTIME_GAP_PRESERVED",
+          "HISTORICAL_H": "PUBLIC_PREDICTION_VECTORS_RECOMPUTED",
+          "TERMINAL": "SAVED_14_CASE_ERROR_SCORES_REAGGREGATED_RAW_PREDICTIONS_MISSING"
+        },
+        "lower_is_better": true,
+        "name": "PBE14 development force error",
+        "regional_rows": [
+          {
+            "END_MAIN": 0.05268793221797531,
+            "HISTORICAL_H": 0.04189334665005451,
+            "TERMINAL": 0.06637340888434343,
+            "region": "BASIN_LEFT"
+          },
+          {
+            "END_MAIN": 0.13550537441816482,
+            "HISTORICAL_H": 0.21099395994802916,
+            "TERMINAL": 0.1840069654275399,
+            "region": "TRANSITION_CENTER"
+          }
+        ],
+        "role": "PREVIOUSLY_USED_DEVELOPMENT_NOT_INDEPENDENT_HOLDOUT",
+        "source_id": "OBS_XIT_PBE14",
+        "unit": "eV/angstrom"
+      },
+      "seed_index": 3,
+      "study": "XI / XI-T saved checkpoint pair",
+      "terminal_minus_end_main_J": 0.00012556702146263412,
+      "terminal_over_end_main": 14.137096811076582
+    },
+    "long_boundaries": {
+      "HABC": {
+        "independent_scientific_replicates": 1,
+        "printed_trace_and_final_model_byte_parity": true,
+        "printed_values_each": 8075,
+        "scope": "H/A/B/C reproduce the same seed trajectory at printed values and final model bytes; this does not certify all hidden optimizer states.",
+        "source_id": "OBS_SAVED_ARITHMETIC"
+      },
+      "all_increases_at_multiples_of_50": true,
+      "all_short_prefixes_exact": true,
+      "boundary_period": 50,
+      "data_allocations": 2,
+      "duplicate_short_prefix_increases": 60,
+      "interpretation": "1163 positive changes in ten long printed traces; these are observations at refit boundaries, not 1163 independent causal experiments. The ten short traces duplicate 60 of those changes and must not be added again.",
+      "long_logs": 10,
+      "main_steps_per_long_log": 8000,
+      "paired_optimizer_seeds": 5,
+      "positive_printed_increases": 1163,
+      "pretraining_steps_per_log": 75,
+      "rows": [
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "basin",
+          "duplicate_short_prefix_increases": 13,
+          "main_steps": 8000,
+          "positive_printed_increases": 133,
+          "seed": 0,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_00_basin_2000",
+          "source_id": "OBS_LOG_seed_00_basin_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "targeted",
+          "duplicate_short_prefix_increases": 15,
+          "main_steps": 8000,
+          "positive_printed_increases": 127,
+          "seed": 0,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_00_targeted_2000",
+          "source_id": "OBS_LOG_seed_00_targeted_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "basin",
+          "duplicate_short_prefix_increases": 0,
+          "main_steps": 8000,
+          "positive_printed_increases": 102,
+          "seed": 1,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_01_basin_2000",
+          "source_id": "OBS_LOG_seed_01_basin_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "targeted",
+          "duplicate_short_prefix_increases": 12,
+          "main_steps": 8000,
+          "positive_printed_increases": 132,
+          "seed": 1,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_01_targeted_2000",
+          "source_id": "OBS_LOG_seed_01_targeted_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "basin",
+          "duplicate_short_prefix_increases": 0,
+          "main_steps": 8000,
+          "positive_printed_increases": 117,
+          "seed": 2,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_02_basin_2000",
+          "source_id": "OBS_LOG_seed_02_basin_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "targeted",
+          "duplicate_short_prefix_increases": 7,
+          "main_steps": 8000,
+          "positive_printed_increases": 112,
+          "seed": 2,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_02_targeted_2000",
+          "source_id": "OBS_LOG_seed_02_targeted_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "basin",
+          "duplicate_short_prefix_increases": 0,
+          "main_steps": 8000,
+          "positive_printed_increases": 109,
+          "seed": 3,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_03_basin_2000",
+          "source_id": "OBS_LOG_seed_03_basin_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "targeted",
+          "duplicate_short_prefix_increases": 0,
+          "main_steps": 8000,
+          "positive_printed_increases": 84,
+          "seed": 3,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_03_targeted_2000",
+          "source_id": "OBS_LOG_seed_03_targeted_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "basin",
+          "duplicate_short_prefix_increases": 10,
+          "main_steps": 8000,
+          "positive_printed_increases": 127,
+          "seed": 4,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_04_basin_2000",
+          "source_id": "OBS_LOG_seed_04_basin_8000"
+        },
+        {
+          "all_increases_at_multiples_of_50": true,
+          "branch": "targeted",
+          "duplicate_short_prefix_increases": 3,
+          "main_steps": 8000,
+          "positive_printed_increases": 120,
+          "seed": 4,
+          "short_prefix_exact": true,
+          "short_source_id": "OBS_LOG_seed_04_targeted_2000",
+          "source_id": "OBS_LOG_seed_04_targeted_8000"
+        }
+      ],
+      "source_id": "OBS_LONG_RECOUNT",
+      "status": "PUBLIC_PRINTED_LOG_RECOUNT_PASS"
+    },
+    "recovery": {
+      "S2q_target": "ROW_EXACT_FIXED_D; the ACTUAL_K_CAPTURE optimum is separate saved algebra",
+      "actual_runtime_identity": "Seven native processes have matched actual mapped backing-object identity, input/output hashes and process receipts; no claim of in-memory code-page hashing.",
+      "date": "2026-10-20",
+      "detached_physical_replays": 6,
+      "explicit_detached_wrapper_calls": {
+        "CalcEFS": 360,
+        "CalcEFSComponents": 360,
+        "CalcObjectiveFunctionGrad": 6
+      },
+      "historical_live_result_byte_matches": 4,
+      "historical_live_states": [
+        "S0",
+        "S1",
+        "S2",
+        "S4"
+      ],
+      "new_COV_candidate_physical_evaluations": 0,
+      "new_DFT_runs": 0,
+      "new_MD_runs": 0,
+      "new_T2_runs": 0,
+      "new_counterfactual_states": [
+        "S1c",
+        "S2q"
+      ],
+      "new_counterfactuals_claim_original_bytes": false,
+      "new_protected_holdout_model_evaluations": 0,
+      "original_M01_archive_restored": false,
+      "original_historical_raw_journal_restored": false,
+      "purpose": "Necessary missing-input diagnostic recovery after a complete project-file search on the requested machine",
+      "real_diagnostic_training_runs": 1,
+      "relation_to_T1": "This new real-data diagnostic recovery is separate from the historical synthetic T1 qualification and is not a COV optimizer or T2 experiment.",
+      "retries": 0,
+      "scientific_processes": 7,
+      "serial_execution": true,
+      "source_id": "OBS_RECOVERY_LEDGER",
+      "status": "RECOVERY_PROCESS_RUNTIME_PROVENANCE_AND_CALL_LEDGER_PASS",
+      "training_main_steps": 8000,
+      "training_pretraining_steps": 75,
+      "training_printed_rows": 8075,
+      "wrapper_count_scope": "Explicit replay wrapper calls only. Training and replay internal API work was not separately instrumented."
+    },
+    "short_main50": {
+      "base_change_J": -5.443450089488407e-05,
+      "interpretation": "This short-run refit boundary decreases J. Periodic refits are not uniformly harmful.",
+      "logged_change_J": -5.714092688095958e-05,
+      "main_iteration": 50,
+      "metric": "Native weighted training J reported in saved reader; rounded binary64 summary",
+      "scope": "The original report and its rounded summary were recovered exactly. This exported summary is not a new main50 physical replay and contains no new separate S1 or S3 measurement.",
+      "search_change_J": -2.706425986075513e-06,
+      "source_id": "OBS_IXA_READER",
+      "states": [
+        {
+          "native_J": 0.0005931939787004071,
+          "source_field": "/live_main50/f_S0_via_previous_ACCEPTED",
+          "state": "S0",
+          "status": "REPORTED_PREVIOUS_ACCEPTED_HASH_LINK"
+        },
+        {
+          "native_J": 0.000538759477805523,
+          "source_field": "/live_main50/f_S2_equals_S3_via_first_BEFORE_ITERATE",
+          "state": "S2",
+          "status": "REPORTED_FIRST_BEFORE_ITERATE_LINK"
+        },
+        {
+          "native_J": 0.0005360530518194475,
+          "source_field": "/live_main50/f_S4_measured",
+          "state": "S4",
+          "status": "REPORTED_MEASURED_ACCEPTED"
+        }
+      ],
+      "status": "RECOVERED_HISTORICAL_READER_SUMMARY",
+      "study": "Recovered historical IXA short-run reader"
+    }
+  },
+  "schema": "proton-optimization-v1",
+  "scope": {
+    "COV_candidate_physical_evaluated_in_recovery": false,
+    "COV_real_data_optimizer_superiority_proven": false,
+    "PBE14_role": "development",
+    "T0_scope": "Conditional finite-graph algebra and saved-array checks; no universal rank or optimizer convergence claim.",
+    "T0_status": "T0_THEORY_VERIFIED",
+    "T2_authorized": false,
+    "T2_executed": false,
+    "historical_negative_receipts_preserved": true,
+    "new_scientific_calls_by_site_build": 0,
+    "public_reproduction": "Public aggregate and table arithmetic. Restricted native evidence is identified by source locator and SHA, not distributed or claimed publicly reproducible."
+  },
+  "sources": [
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 76875,
+      "file": "audit/theory_recovery/new_main4500_final/NEW_MAIN4500_DIAGNOSTIC_REPORT.json",
+      "id": "theory.new_main4500",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "New diagnostic: six actual physical replays and authenticated saved-array analysis. Original archive was not restored.",
+      "sha256": "2b458607b2e97771fa529c2abb81c90ba2107a10bbdb2aee5c6dae9f51681f8e",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 5489,
+      "file": "audit/theory_recovery/NEW_DIAGNOSTIC_NUMERICAL_POLICY.json",
+      "id": "theory.numerical_policy",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Preregistered numerical requirements; frozen before the new main4500 arrays.",
+      "sha256": "cf602eb372449410e6366aebe4ccf554dc07bf2646291f3fcf739e082ba89e05",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 2049,
+      "file": "audit/theory_work/INDEPENDENT_EXACT_MATH.json",
+      "id": "theory.exact_math",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Independent Fraction polynomial verification; finite graph, not an empirical rank measurement.",
+      "sha256": "87849e8e961aad4ef4f00b33449263141054bbf77635763b5493013db4edf3ea",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 15897,
+      "file": "audit_sources/theory/reports/02_PARAMETER_SPACE_ATLAS_RU.md",
+      "id": "theory.architecture_atlas",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Written architecture, geometry and regular-rank quotient arguments.",
+      "sha256": "a9687ac9fce25c753626c49bf052d2bd7e093c8c0857cebabf764a8aa4fb46f0",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 28510,
+      "file": "audit_sources/theory/reports/04_THEOREM_REGISTER_AND_PROOFS_RU.md",
+      "id": "theory.proof_register",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Conditional exact-arithmetic theorems and explicit limitations. For COV use projected stationarity in the declared subspace.",
+      "sha256": "c5ac5ebdbe0be4de93e7dc255d476493fb78253964150b0466f34edfbc27a2f6",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 886,
+      "file": "audit/theory_work/OFFSET_GAUGE_REGULARIZER_CAVEAT.json",
+      "id": "theory.offset_subspace_caveat",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Independent exact counterexample: restricting offsets selects a constrained step, not the unrestricted positive-metric minimizer.",
+      "sha256": "2c44160f13f4018ccc84de3fc3307e9bea45d03251c5feb8aaeb6b097ec43e21",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 2199,
+      "file": "audit/theory_work/MODEL_FIXTURE_BRIDGE.json",
+      "id": "theory.architecture_bridge",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Exact graph equality with the public untrained template and four copies of one historical model.",
+      "sha256": "a1f93b41cd901ae7f5c729c0112275f325fe3c41510a1f5cf747872ab72bd648",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PUBLIC_EXISTING",
+      "bytes": 2989,
+      "file": "data/frozen_models_v028/locked_untrained_l12_v028.mtp",
+      "id": "theory.public_template",
+      "locator_type": "repository_path",
+      "scope": "Existing public untrained architecture fixture; no new fitted model export.",
+      "sha256": "84937b7176b87004a55296f2ba908386aaaa7095df1b73e5e6c2288d119d7db1",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/frozen_models_v028/locked_untrained_l12_v028.mtp"
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 22622,
+      "file": "audit/r5_recovery/R5_SOURCE_CONTRACTS.tsv",
+      "id": "theory.native_contracts",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Source-body audit with exact source fields and original SHA; scalar paraphrases only.",
+      "sha256": "bd0c2e74515e2459278c711e677db7883b984e5f8f2b1348cec052097932610d",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 22423,
+      "file": "audit/native_recovery/r5_source/instrumented_source/dev_src/mtpr_trainer.cpp",
+      "id": "theory.native_trainer_source",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Frozen native objective normalization, refit and Gaussian elimination; source remains private.",
+      "sha256": "aa3a32eafdb4028f8a57483e464518dc1e6d00d26cd7cc26f6ca4bb3303230af",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 13122,
+      "file": "audit/native_recovery/r5_source/instrumented_source/dev_src/non_linear_regression.cpp",
+      "id": "theory.native_loss_source",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Frozen weighted E/F loss; source remains private.",
+      "sha256": "83e13e3ac7dec03f900d0cf90fc9f84ff8a23e4abe318e91b57e405e497ae600",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 44082,
+      "file": "audit/native_recovery/r5_source/instrumented_source/dev_src/mtpr.cpp",
+      "id": "theory.native_model_source",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Frozen radial penalty and softened Gram-Schmidt; source remains private.",
+      "sha256": "90b830be1f08eb69f6f74b9d75a4cc08838f494be7b97a6802d9f972d51e9a18",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 19311,
+      "file": "audit/theory_recovery/new_main4500_s1c/DERIVED_S1C_PROVENANCE.json",
+      "id": "theory.new_s1c_derivation",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "New independently derived compensated state; not byte-identical to historical S1c.",
+      "sha256": "e8000cc11372be179542780928df775857ae53d6a3422eae2f0abb5e5bb0076e",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 29620,
+      "file": "audit/theory_recovery/new_main4500_s2q/DERIVED_S2Q_PROVENANCE.json",
+      "id": "theory.new_s2q_derivation",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "New high-precision ROW_EXACT_FIXED_D state, distinct from ACTUAL_K_CAPTURE.",
+      "sha256": "a3a0f3ed71c5ee43fe585eda841c3bd7904ea40490ac2638d2ce8a1adafa2dc4",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1847952,
+      "file": "audit/observer_recovery/main4500_new_capture/BOUNDARY_4500_CAPTURE.json",
+      "id": "theory.new_boundary_capture",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "New full-run event-to-state link, live objective/gradient locks and null S3 measurement status.",
+      "sha256": "d44edd78c0ef6560815f3b3ddb22e2093d1727627a6758bc0f3cb42c972f4ec1",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1228599,
+      "file": "audit/native_recovery/runs/m01-recovery-20261020-main4500-s0/replay.json",
+      "id": "theory.replay.S0",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One actual detached native E/F/objective/gradient evaluation at main4500; only aggregate scalars are exported.",
+      "sha256": "aeb580351530a425f4358e81358423ed291daacf1e3f53618857d8932283b793",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1227220,
+      "file": "audit/native_recovery/runs/m01-recovery-20261020-main4500-s1/replay.json",
+      "id": "theory.replay.S1",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One actual detached native E/F/objective/gradient evaluation at main4500; only aggregate scalars are exported.",
+      "sha256": "b0ae4a5551c43fa8feeda8dc38cca7e5c052eeca7b99b9871cc6a4693cafe7ff",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1228902,
+      "file": "audit/native_recovery/runs/m01-recovery-20261020-main4500-s1c/replay.json",
+      "id": "theory.replay.S1c",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One actual detached native E/F/objective/gradient evaluation at main4500; only aggregate scalars are exported.",
+      "sha256": "a9d271e3dfd875c0ae9c1531696ae52cdc44e3fbaf64e54aa36a796815b39e08",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1228633,
+      "file": "audit/native_recovery/runs/m01-recovery-20261020-main4500-s2/replay.json",
+      "id": "theory.replay.S2",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One actual detached native E/F/objective/gradient evaluation at main4500; only aggregate scalars are exported.",
+      "sha256": "847155b67ffb48d1fc90f39812cca72fda23ac4a377e9f3a48454b9eeb90b18a",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1228626,
+      "file": "audit/native_recovery/runs/m01-recovery-20261020-main4500-s2q/replay.json",
+      "id": "theory.replay.S2q",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One actual detached native E/F/objective/gradient evaluation at main4500; only aggregate scalars are exported.",
+      "sha256": "b146b87f45f5d510518de2cadf39648edfcceef1a97bc3b6a3fcf503c0f4f38e",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PRIVATE_AUDITED_SOURCE",
+      "bytes": 1228390,
+      "file": "audit/native_recovery/runs/m01-recovery-20261020-main4500-s4/replay.json",
+      "id": "theory.replay.S4",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One actual detached native E/F/objective/gradient evaluation at main4500; only aggregate scalars are exported.",
+      "sha256": "47b20362a5199d19a2d6e0bf1245decf0210049084b40607e83029746fa13f39",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 2292,
+      "file": "audit_sources/observer/xi_t_physical/analysis_primary/TERMINAL_OBJECTIVE_CONTRAST.json",
+      "id": "OBS_XIT_TRAIN_CONTRAST",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Saved native Train60 END_MAIN/TERMINAL pair; individual loss contributions and comparison",
+      "sha256": "4c2fddd897efccc5f12afbf24d6554f22bdea376067c3b9ea708b6d8fdc111e2",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 32725,
+      "file": "audit_sources/observer/xi_t_physical/analysis_primary/PBE14_PAIRED_REGION_BLOCK_COMPARISON.json",
+      "id": "OBS_XIT_PBE14",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "END_MAIN and historical H prediction scores; TERMINAL scores reused from the historical 14-case error table",
+      "sha256": "0cf16f4c360f9c3c1c667b66aa0533a20251cca3ff2343190b442c4f2209349c",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 6160,
+      "file": "audit_sources/observer/xi_t_physical/FINAL_GATE.json",
+      "id": "OBS_XIT_GATE",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Original mixed gate with missing XI chronology and failed P1 runtime capture; no retrospective promotion",
+      "sha256": "da46e100d1ca4c689f9d538953eaffa1fdacf1790af04766ae43d63c0674daab",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 3337,
+      "file": "audit_sources/observer/xi_t_physical/SCIENCE_CALL_LEDGER.json",
+      "id": "OBS_XIT_CALL_LEDGER",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Original R1/R2 PASS and P1 FAIL_STOP_NO_RETRY statuses",
+      "sha256": "318973d85533d1b3a6f535d7bb407dc2b3da88e7c616bee680841ca7833d4b91",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 12809,
+      "file": "audit_sources/observer/xi_pilot/FINAL_GATE.json",
+      "id": "OBS_XI_PILOT_GATE",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One Basin60 seed-3 pilot: actual 6350 main steps versus historical H 8000; original strict cap failure preserved",
+      "sha256": "0afded417e62f38154c7c536c4420f4b3313ff20750da3061660202bc3df3e95",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 5598,
+      "file": "audit/observer_saved_arithmetic_check.json",
+      "id": "OBS_SAVED_ARITHMETIC",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Read-only array hashes and scalar arithmetic from saved E/F and public labels; only named HABC and XI_T_pair fields are used, not the superseded main4500 availability statement",
+      "sha256": "fb287c156b692e0b7f6e31074ec761942633b0c41ca485d4d4950ad38ded2793",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 8041,
+      "file": "audit/observer_recovery/ixa_reader_source/IXA_READER_SUMMARY.json",
+      "id": "OBS_IXA_READER",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Recovered original historical reader summary. Main50 scalars are rounded saved observations with reported state links, not new physical measurements",
+      "sha256": "0ff2d7b936059da9665221c7951c96dc92614a7f7fc4eebe9929a8ee52dbab70",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 4974,
+      "file": "audit/observer_recovery/M03_READER_CHECK.json",
+      "id": "OBS_IXA_RECOVERY_CHECK",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Exact recovered reader ZIP/member identities and Decimal subtraction checks; not an original raw event replay",
+      "sha256": "8f27b91bd1e7fe1de9a65b5b72a8fabe6cda289da407c2fa981d403eaae6aebc",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_EXPORT",
+      "bytes": 29301,
+      "file": "audit/observer_closure/RECOVERY_SCIENTIFIC_CALL_LEDGER.json",
+      "id": "OBS_RECOVERY_LEDGER",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "New necessary recovery: one real diagnostic training and six detached physical replays, input/runtime/result bindings; no T2 experiment",
+      "sha256": "3d2a0a987758c7b495326340acc34708bc685d68cf732850ba7aadc49656921b",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "AUDIT_DERIVED_FROM_PUBLIC_FILES",
+      "bytes": 19901,
+      "file": "audit/observer_1163_independent_recount.json",
+      "id": "OBS_LONG_RECOUNT",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Independent recount from the twenty existing public budget logs; the ten short traces duplicate long prefixes",
+      "sha256": "2d9d520843d79d5fa764bc1828c59b42cd3f7551952dc8e6147ff48434e6a89b",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 255791,
+      "file": "data/studies/optimization_budget_v001/logs/seed_00_basin_8000.txt",
+      "id": "OBS_LOG_seed_00_basin_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "351c361e7666c4b27006869a0653c724a96edbaf6c30e8d3bda85ee570877964",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_00_basin_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 73934,
+      "file": "data/studies/optimization_budget_v001/logs/seed_00_basin_2000.txt",
+      "id": "OBS_LOG_seed_00_basin_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "e585181d599088673f5a89b9ac6443c9bb4a0692e681e943a0e0aec521c71ccd",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_00_basin_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 255394,
+      "file": "data/studies/optimization_budget_v001/logs/seed_00_targeted_8000.txt",
+      "id": "OBS_LOG_seed_00_targeted_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "a844660ce98798e6eb49162bb884cb88ef0fb70c8212628218d977df77c67bf6",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_00_targeted_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 72350,
+      "file": "data/studies/optimization_budget_v001/logs/seed_00_targeted_2000.txt",
+      "id": "OBS_LOG_seed_00_targeted_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "2c342b519bd613a6b277f3f89752c05d4e331126c3844e227c22d0daaac59768",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_00_targeted_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 256520,
+      "file": "data/studies/optimization_budget_v001/logs/seed_01_basin_8000.txt",
+      "id": "OBS_LOG_seed_01_basin_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "a192e76bec08fd296f53091c251f92c2aab63de45f0fcc85ef8270bd6ada9fcb",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_01_basin_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 74325,
+      "file": "data/studies/optimization_budget_v001/logs/seed_01_basin_2000.txt",
+      "id": "OBS_LOG_seed_01_basin_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "7d0a27110e0d2321b5bdb99ef1c69f4503539235aff81d54dd74af6e86859a77",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_01_basin_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 253009,
+      "file": "data/studies/optimization_budget_v001/logs/seed_01_targeted_8000.txt",
+      "id": "OBS_LOG_seed_01_targeted_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "e436f1ea285f319fb7175b955c1555531b0634a6923c7da0baddfd3a9c00b3bd",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_01_targeted_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 75518,
+      "file": "data/studies/optimization_budget_v001/logs/seed_01_targeted_2000.txt",
+      "id": "OBS_LOG_seed_01_targeted_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "0cf3d351ed6de93600f7641e8c17851d1bfaf43c5ba672863b6e981999fec218",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_01_targeted_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 255212,
+      "file": "data/studies/optimization_budget_v001/logs/seed_02_basin_8000.txt",
+      "id": "OBS_LOG_seed_02_basin_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "a46728d1edc1299b3837499e278df9dead31d7ae9686d7b29d93afa23796ca23",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_02_basin_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 75402,
+      "file": "data/studies/optimization_budget_v001/logs/seed_02_basin_2000.txt",
+      "id": "OBS_LOG_seed_02_basin_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "35d8ebee1d40752726b1aad9df822f9d0600f5bcde80e40abcac00466602a0ee",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_02_basin_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 254510,
+      "file": "data/studies/optimization_budget_v001/logs/seed_02_targeted_8000.txt",
+      "id": "OBS_LOG_seed_02_targeted_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "a991f76a6a58659ef29338665e176f89c28c358600cd5d17752df53ea75b01a5",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_02_targeted_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 74289,
+      "file": "data/studies/optimization_budget_v001/logs/seed_02_targeted_2000.txt",
+      "id": "OBS_LOG_seed_02_targeted_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "c615d77adac1597f5f6e065d45070eca969df6f47302f11a6b91078f108eb19c",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_02_targeted_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 253692,
+      "file": "data/studies/optimization_budget_v001/logs/seed_03_basin_8000.txt",
+      "id": "OBS_LOG_seed_03_basin_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "ef038abff8d21387fdf170eaaf7cebbfdec4186eb8311764c562938dbab34334",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_03_basin_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 74670,
+      "file": "data/studies/optimization_budget_v001/logs/seed_03_basin_2000.txt",
+      "id": "OBS_LOG_seed_03_basin_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "e035d6d87094b9b42e8df67ba9f2fd01ff132ff6539125e08fe3fd8bd60a8ab5",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_03_basin_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 256451,
+      "file": "data/studies/optimization_budget_v001/logs/seed_03_targeted_8000.txt",
+      "id": "OBS_LOG_seed_03_targeted_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "e75f13163c8966217b3f0f3e969af6431d64760b6a9add544d8010c141fcde64",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_03_targeted_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 73888,
+      "file": "data/studies/optimization_budget_v001/logs/seed_03_targeted_2000.txt",
+      "id": "OBS_LOG_seed_03_targeted_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "836fc78d109ec51089313469c0b3923a5bcb104a69bb249cdcb0eb8973bb5c4e",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_03_targeted_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 255782,
+      "file": "data/studies/optimization_budget_v001/logs/seed_04_basin_8000.txt",
+      "id": "OBS_LOG_seed_04_basin_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "3e558c698edf21048a1b1c627e357e9100e6e4bddc9c474ff06023e280cdc250",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_04_basin_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 75523,
+      "file": "data/studies/optimization_budget_v001/logs/seed_04_basin_2000.txt",
+      "id": "OBS_LOG_seed_04_basin_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "2952b555edf25f88588e761b4bf21cfb7ffef7bd93403f570ae37e39b08221a0",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_04_basin_2000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 254558,
+      "file": "data/studies/optimization_budget_v001/logs/seed_04_targeted_8000.txt",
+      "id": "OBS_LOG_seed_04_targeted_8000",
+      "locator_type": "repository_path",
+      "scope": "Public printed native training objectives, 75 pretraining + 8000 main; decimal text precision",
+      "sha256": "6226213e6dbb4906c0ae7ebe05c194211359b312092c8722ff43240a32cedbda",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_04_targeted_8000.txt"
+    },
+    {
+      "access": "PUBLIC_REPOSITORY",
+      "bytes": 75509,
+      "file": "data/studies/optimization_budget_v001/logs/seed_04_targeted_2000.txt",
+      "id": "OBS_LOG_seed_04_targeted_2000",
+      "locator_type": "repository_path",
+      "scope": "Public 75+2000 trace; exact printed prefix of its paired long trace",
+      "sha256": "ff56d4b43855d73636d439ef8ea48754dcc733abd4830e71305fbbf8e79e9b39",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/optimization_budget_v001/logs/seed_04_targeted_2000.txt"
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 2902,
+      "file": "audit_sources/t1_closure/FINAL_GATE.json",
+      "id": "t1-gate",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Historical final T1 closure gate, 2026-10-19. Counts and no-real-science assertions refer to that synthetic qualification only.",
+      "sha256": "b439c2e1f63248c20c8c1d57216307da7fdc306a3f36227755097719b9f21d8e",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 1875,
+      "file": "audit_sources/t1_engineering/FINAL_GATE.json",
+      "id": "t1-prior-gate",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Historical prior T1_PARTIAL_INCONCLUSIVE gate; retained, not retroactively edited.",
+      "sha256": "5293d4a78c0bd144cf76ac10e10918d9c3e7ed4a9138b83f16955bfb235373c4",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 474,
+      "file": "audit_sources/t1_closure/runs/extended_native_01/EXTENDED_NATIVE_RESULT.json",
+      "id": "t1-native-assertions",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Saved native synthetic assertion result; repeats do not add independent assertions.",
+      "sha256": "78aa592a2c51642df5d5e59d3b9cbb34de4c9f8d722e12a2d743ba63d68e4614",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 6105,
+      "file": "audit_sources/t1_closure/evidence/CONTROL_A_COV_A_SYNTHETIC_PIPELINE.json",
+      "id": "t1-pipelines",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Saved aggregate of two complete synthetic lifecycle journals and their checkpoint roles.",
+      "sha256": "e6602ed855c2e389023843f1e1f647e0696fca3d4049b5c7176e81ed79c7379c",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 157,
+      "file": "audit_sources/t1_closure/evidence/CONTROL_A_RUNTIME_PARITY.json",
+      "id": "t1-control-parity",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Saved FROZEN/CONTROL_A runtime parity, independently crosschecked against raw journals.",
+      "sha256": "2aba32f84bdc4e6d96208ca0b356ef134e1a369072f1b17ca4a0f68788db001a",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 157,
+      "file": "audit_sources/t1_closure/evidence/CONTROL_OFF_RUNTIME_PARITY.json",
+      "id": "t1-off-parity",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Saved FROZEN/OFF runtime parity, independently crosschecked against raw journals.",
+      "sha256": "2aba32f84bdc4e6d96208ca0b356ef134e1a369072f1b17ca4a0f68788db001a",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 1239,
+      "file": "audit_sources/t1_closure/runs/COV_A_final/candidate_events.jsonl",
+      "id": "t1-boundary-events",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Two saved native synthetic C-PROX-COV acceptance events. Public subset includes only iteration, J and decision.",
+      "sha256": "64937c0552b5e529d40d4bf593fd40b31ebdfb510c552c8428473bba2a46518f",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 811,
+      "file": "audit_sources/t1_closure/CHECKPOINT_A_POLICY.json",
+      "id": "t1-checkpoint-policy",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Shared CHECKPOINT_A selection and evaluation-only reload policy; checkpoint bytes are not published.",
+      "sha256": "cf36039fca7b35aebecbb6ef0a6fabe969d024b81f12f73e410fedad8718e2a0",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 10712,
+      "file": "audit_sources/t1_closure/evidence/CHECKPOINT_A_RELOAD.json",
+      "id": "t1-reload",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Twelve historical synthetic physical-model evaluation reload receipts; full BFGS resume unqualified.",
+      "sha256": "b185c505a5d386632d51d56954b21c409bacb2e3dce029b9faaf8f439d1f81c7",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 10323,
+      "file": "audit_sources/t1_closure/runs/store_faults_01/RESULT.json",
+      "id": "t1-faults",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "One unique filesystem fault matrix. Two repetitions do not increase unique-case counts.",
+      "sha256": "73363e57db30f93fdc9d86cc830ea4883c2a4d5394b5a6358cb52b386578c6d5",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 480,
+      "file": "audit_sources/t1_closure/evidence/SANITIZER_ACCEPTANCE.json",
+      "id": "t1-sanitizer",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Qualified ASan/UBSan/LSan native/checkpoint scope; external BLAS/LAPACK/Fortran excluded.",
+      "sha256": "34e4109be426bccd5344b12985e73f09861eeebd6353701060ca79e995996e28",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 15872,
+      "file": "audit_sources/t1_closure/evidence/SYNTHETIC_CALL_COUNTERS.json",
+      "id": "t1-counters",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "New historical T1 closure attempt API accounting; nested categories are not independent calls, prior prototype totals unknown.",
+      "sha256": "b4e141249dda5a964f4af7b3d7d8eeee37b6d141549614422ff57c801cfe7a5d",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 5019,
+      "file": "audit_sources/t1_closure/reports/HISTORICAL_SCOPE_AND_NONCLAIMS.md",
+      "id": "t1-history",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Historical synthetic fixture identity and limits; no real Basin60/Targeted60 coordinates or labels used.",
+      "sha256": "c87400363fd0176abab72a0f65712fbcc87483e63e94677d664913ef4e76376c",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 4921,
+      "file": "audit_sources/t1_closure/tests/pipeline.cpp",
+      "id": "t1-fixture-source",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Private synthetic fixture source reviewed for the 60 configurations, 9 atoms and full lifecycle. No source code or coefficients are exported.",
+      "sha256": "5c2f036e3f63c1456c194a9ece60ff46fd0f899ef1f1112710fffd44739c93b1",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 4989,
+      "file": "audit_sources/t1_closure/T2_O_UPDATED_NOT_EXECUTED.md",
+      "id": "t1-future-t2o",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Unexecuted, unauthorized future cost-matched CONTROL_A/COV_A design; proposed budgets are not observations.",
+      "sha256": "26f7789333b33af481e9130470407532e1c8ec4efe86ced411401f1f950435b8",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 2089,
+      "file": "audit_sources/t1_closure/reports/T2_P_NOT_EXECUTED.md",
+      "id": "t1-future-t2p",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Unexecuted external physical-validation design; PBE14 is development, not a blind test.",
+      "sha256": "7425c3738fe9ad2e210b56e6e89ec77e1daf3e54e34009ebb6dc7f25dd2f7fc1",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 22057,
+      "file": "audit/t1_independent_results.json",
+      "id": "t1-independent-audit",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Independent read-only journal/hash/arithmetic audit of delivered T1 evidence, without native execution.",
+      "sha256": "c3191be64f245c039f5a9a840951aa781783f2641e973c7114d2923f4e7c6e5c",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "RESTRICTED_SOURCE_AGGREGATE_ONLY",
+      "bytes": 29301,
+      "file": "audit/observer_closure/RECOVERY_SCIENTIFIC_CALL_LEDGER.json",
+      "id": "t1-context-new-recovery",
+      "locator_type": "restricted_audit_relative_locator",
+      "scope": "Separate 2026-10-20 user-authorized missing-input recovery; these counts must not be merged with historical T1 synthetic qualification.",
+      "sha256": "3d2a0a987758c7b495326340acc34708bc685d68cf732850ba7aadc49656921b",
+      "source_access": "RESTRICTED",
+      "url": null
+    },
+    {
+      "access": "PUBLIC_EXISTING",
+      "bytes": 18575,
+      "file": "data/studies/pbe14_mtp20_v001/references/PBE14_EXACT.cfg",
+      "id": "OBS_PUBLIC_PBE14_REFERENCES",
+      "locator_type": "repository_path",
+      "scope": "Existing public PBE14 reference force components and geometry/region/block identities; development data.",
+      "sha256": "c5faaa3764e7d86af34e1172fce7bae0a8147c27cef684734a52ca9c28879dde",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/pbe14_mtp20_v001/references/PBE14_EXACT.cfg"
+    },
+    {
+      "access": "PUBLIC_EXISTING",
+      "bytes": 21900,
+      "file": "data/studies/pbe14_mtp20_v001/predictions/seed_03_basin_8000.cfg",
+      "id": "OBS_PUBLIC_H_PREDICTIONS",
+      "locator_type": "repository_path",
+      "scope": "Existing public historical H prediction force components for the 14 matching geometries; no new inference.",
+      "sha256": "8217fcc08df23461acf27e6d246912643c22a29794949de1e43c78990cb4a986",
+      "source_access": "PUBLIC",
+      "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/blob/f5f4784d7cc186ae9cfcacbd97117b5dabbffb30/data/studies/pbe14_mtp20_v001/predictions/seed_03_basin_8000.cfg"
+    }
+  ],
+  "subtitle": "What 248 parameters, one periodic refit, and a safer candidate actually tell us.",
+  "t1": {
+    "checkpoint_example": {
+      "interpretation": "TERMINAL wins this synthetic example in both arms. No universal END_MAIN selection rule or real-data optimizer superiority follows.",
+      "metric": "native_synthetic_J",
+      "policy": "CHECKPOINT_A",
+      "policy_sha256": "cf36039fca7b35aebecbb6ef0a6fabe969d024b81f12f73e410fedad8718e2a0",
+      "rows": [
+        {
+          "BEST_J": 0.0276391134081855,
+          "BEST_role": "TERMINAL",
+          "BEST_sequence": 228,
+          "END_MAIN_J": 0.02765254365259238,
+          "TERMINAL_J": 0.0276391134081855,
+          "arm": "CONTROL_A",
+          "captures": 228,
+          "source_id": "t1-pipelines",
+          "status": "SYNTHETIC_ENGINEERING_PASS"
+        },
+        {
+          "BEST_J": 0.027639062868514943,
+          "BEST_role": "TERMINAL",
+          "BEST_sequence": 228,
+          "END_MAIN_J": 0.027652470729675208,
+          "TERMINAL_J": 0.027639062868514943,
+          "arm": "COV_A",
+          "captures": 228,
+          "source_id": "t1-pipelines",
+          "status": "SYNTHETIC_ENGINEERING_PASS"
+        }
+      ],
+      "same_policy_for_both_arms": true,
+      "selection_rule": "strict binary64 <; exact == keeps earliest sequence",
+      "source_ids": [
+        "t1-pipelines",
+        "t1-checkpoint-policy"
+      ],
+      "status": "SYNTHETIC_ENGINEERING_PASS",
+      "unit": "weighted_native_objective"
+    },
+    "qualification": {
+      "additional_assertions": 22,
+      "baseline_parity": {
+        "accepted_states": 225,
+        "arms": [
+          "FROZEN",
+          "OFF",
+          "CONTROL_A"
+        ],
+        "objective_gradient_parameters_bitwise": true,
+        "saved_BFGS_snapshots_bitwise": true,
+        "source_ids": [
+          "t1-control-parity",
+          "t1-off-parity"
+        ]
+      },
+      "evidence_status": "SYNTHETIC_ENGINEERING_PASS",
+      "faults": {
+        "filesystem_assertions_per_suite": 98,
+        "filesystem_child_processes_per_suite": 144,
+        "hardware_replica_independence": false,
+        "power_loss_tested": false,
+        "source_id": "t1-faults",
+        "unique_file_error_points": 21,
+        "unique_signal_crash_cases": 9
+      },
+      "fixture": {
+        "atoms_per_configuration": 9,
+        "configurations": 60,
+        "coordinates_and_labels": "synthetic",
+        "source_id": "t1-fixture-source"
+      },
+      "inherited_assertions": 72,
+      "native_core_assertions": 94,
+      "pipeline": {
+        "accepted_per_arm": 225,
+        "arms": [
+          "CONTROL_A",
+          "COV_A"
+        ],
+        "candidate_prefix_equal": 125,
+        "cov_boundaries": [
+          {
+            "J_after": 0.027864081471241486,
+            "J_before": 0.027876284211607583,
+            "decision": "ACCEPT",
+            "iteration": 50,
+            "metric": "native_synthetic_J",
+            "source_id": "t1-boundary-events",
+            "status": "SYNTHETIC_ENGINEERING_PASS",
+            "unit": "weighted_native_objective"
+          },
+          {
+            "J_after": 0.027733140899053085,
+            "J_before": 0.027751214093044332,
+            "decision": "ACCEPT",
+            "iteration": 100,
+            "metric": "native_synthetic_J",
+            "source_id": "t1-boundary-events",
+            "status": "SYNTHETIC_ENGINEERING_PASS",
+            "unit": "weighted_native_objective"
+          }
+        ],
+        "main_accepted": 150,
+        "pretraining_accepted": 75,
+        "source_id": "t1-pipelines"
+      },
+      "reload": {
+        "full_BFGS_resume_qualified": false,
+        "gradient_max_abs_error": 0,
+        "objective_max_abs_error": 0,
+        "processes": 12,
+        "scope": "RELOAD_FOR_EVALUATION_ONLY",
+        "source_id": "t1-reload",
+        "weighted_EF_definition": "max absolute difference in [energy/3, force \u00d7 0.1]; not force RMSE",
+        "weighted_EF_max_abs_error": 4.390932062392494e-14
+      },
+      "sanitizers": {
+        "ASan": true,
+        "LeakSanitizer": true,
+        "UBSan": true,
+        "diagnostic_count": 0,
+        "external_BLAS_LAPACK_Fortran_instrumented": false,
+        "scope": "Qualified C++ native/checkpoint tests and full 75+150 synthetic pipeline",
+        "source_id": "t1-sanitizer"
+      },
+      "source_id": "t1-gate",
+      "status": "T1_PASS_ENGINEERING_SYNTHETIC_ONLY"
+    },
+    "scope": {
+      "historical_t1": {
+        "Blind12_read": 0,
+        "date": "2026-10-19",
+        "earlier_prototype_counter_status": "HISTORICAL_COUNT_UNKNOWN_PRESERVED",
+        "native_synthetic_process_records": 29,
+        "new_DFT": 0,
+        "new_MD": 0,
+        "new_real_replays": 0,
+        "new_real_train60_fits": 0,
+        "source_ids": [
+          "t1-gate",
+          "t1-counters"
+        ]
+      },
+      "optimizer_superiority_proven": false,
+      "public_reproduction": "Published aggregates support table arithmetic. Native T1 reproduction needs separately provided private licensed source and inputs.",
+      "separate_missing_input_recovery": {
+        "T2_runs": 0,
+        "date": "2026-10-20",
+        "detached_physical_replay_processes": 6,
+        "interpretation": "Authorized reconstruction of necessary missing diagnostic inputs; separate from T1 qualification and not an optimizer comparison.",
+        "source_id": "t1-context-new-recovery",
+        "training_processes": 1
+      }
+    },
+    "statuses": {
+      "PBE14_role": "development",
+      "T1": "T1_PASS_ENGINEERING_SYNTHETIC_ONLY",
+      "T2": "T2_NOT_AUTHORIZED_NOT_EXECUTED",
+      "T2_authorized": false,
+      "T2_executed": false,
+      "future_design": {
+        "cost_matched": true,
+        "description": "Proposed design requiring a separate locked authorization and independent external validation.",
+        "fixed_Train60_allocations": 2,
+        "fixed_seeds": 5,
+        "methods": [
+          "CONTROL_A",
+          "COV_A"
+        ],
+        "proposed_training_count": 20,
+        "same_checkpoint_policy": true,
+        "status": "FUTURE_UNTESTED"
+      },
+      "independent_physical_validation": "VALIDATION_NOT_AVAILABLE_YET",
+      "prior": "T1_PARTIAL_INCONCLUSIVE",
+      "visible_limit": "Engineered and checked on synthetic runs. Not yet demonstrated to be a better real-data optimizer."
+    }
+  },
+  "theory": {
+    "COV": {
+      "D0_origin": "NEW PROPOSED metric from pre-radial physical A0 column norms with math.fsum; not native captured D0",
+      "QR_SVD_prediction_maxabs": 8.53356244887185e-16,
+      "acceptance_scope": "The saved-row candidate here was not exported as a potential or tested by native J/E/F/gradient. A future runtime transaction must separately evaluate the original native objective and accept or fully restore state under its fixed numerical tolerance.",
+      "candidate_coefficients_exported": false,
+      "candidate_data_loss_saved_matrix_only": 3.926892714784233e-05,
+      "candidate_native_EF_or_gradient": "NOT_EVALUATED",
+      "checkpoint_scope": "Checkpoint selection uses completed, genuinely evaluated eligible states and the same objective policy for candidate and control. A model reload is not a full BFGS resume.",
+      "coefficient_increment_l2": 12120.143455723832,
+      "covariance_scope": "For one already chosen D0, transporting M = T D0 T^T preserves its quadratic increment penalty. Rebuilding a diagonal D0 in an arbitrary starting gauge does not make the whole policy gauge invariant.",
+      "data_loss_decrease": 3.918962388313964e-07,
+      "data_loss_incumbent": 3.9660823386673726e-05,
+      "data_loss_normalization": "squared weighted residual divided by60",
+      "descent_expression": 3.9189623883139277e-07,
+      "descent_identity": "ell(beta_c) \u2212 ell(beta_c+delta) = delta^T(A^T A+2M)delta/60 \u2265 0",
+      "descent_identity_absolute_residual": 3.65282958503417e-21,
+      "feasible_space": "delta=T_g z; T_g32x30 with offsets(3,4,2)/sqrt(29) and I29",
+      "feature_transport_maxabs": 6.938893903907228e-17,
+      "full_unprojected_stationarity_required": false,
+      "objective": "min_z ||r+A1 T_g z||^2 + ||sqrt(D0) T^T T_g z||^2",
+      "off_training_accuracy": "NOT_QUALIFIED",
+      "penalty_orientation": "B=sqrt(D0)T^T; M=B^T B=T D0 T^T",
+      "percent_of_total_data_loss_removed": 0.9881192707740806,
+      "physical_accuracy_conclusion": "No evidence here of a better real-data optimizer, better external forces or MD suitability.",
+      "projected_stationarity": "Tg^T [A^T r + (A^T A+M) delta] = 0; delta = Tg z",
+      "projected_stationarity_normalized": 1.2755662442517983e-22,
+      "regularized_stack_condition_number": 81237169.35929134,
+      "regularized_stack_shape": [
+        1712,
+        30
+      ],
+      "status": "NEW_SAVED_MATRIX_CONSTRAINED_COV_ONLY",
+      "theorem": "For fixed A, r and positive M on V, choose delta in V = image(Tg) minimizing ||r+A delta||\u00b2 + delta^T M delta. Because zero is feasible and the penalty is nonnegative, the exact minimizer cannot increase data loss."
+    },
+    "architecture": {
+      "atoms": 9,
+      "auxiliary_state": "Scaling, linear multipliers, cutoff settings, caches, inverse Hessian and line-search state are not additional independent coordinates of the same 248-vector.",
+      "cartesian_coordinates": 27,
+      "flag": "F1 \u2282 F2 \u2282 F3 \u2282 R72, dimensions 1, 2, 3",
+      "flag_dimension_calculation": "71 + 70 + 69 = 210 = 216 \u2212 6",
+      "generic_internal_coordinates": 21,
+      "geometry_scope": "Isolated nonlinear nine-atom geometry in a regular local region, after three translations and three rotations. Special geometries require separate treatment.",
+      "known_channel_gauge_dimension": 6,
+      "known_offset_null_dimension": 2,
+      "known_quotient_dimension": 240,
+      "linear_parameters": 32,
+      "nominal_parameters": 248,
+      "objective": {
+        "energy_row_scale": "binary64 division by 3",
+        "energy_rows": 60,
+        "external_metric": "Force RMSE in eV/\u00c5 is evaluated separately, with its own per-geometry and region aggregation.",
+        "force_row_scale": "binary64 multiplication by 0.1",
+        "force_rows": 1620,
+        "inner_formula": "Q_D = (||A beta\u2212y||\u00b2 + beta^T D beta)/60",
+        "inner_symbol": "Q_D",
+        "native_formula": "J = (1/60) \u03a3_i [(E_i\u2212E_i_ref)\u00b2/9 + 0.01 \u03a3_a,d (F_iad\u2212F_iad_ref)\u00b2] + 10^\u22129 P(Theta)",
+        "native_symbol": "J",
+        "normalization_configurations": 60,
+        "radial_penalty_formula": "P = \u03a3_k (S_kk\u22121)\u00b2 + \u03a3_(k<l) S_kl\u00b2; S = Theta Theta^T",
+        "row_formula": "ell = ||A beta\u2212y||\u00b2/60",
+        "row_symbol": "ell",
+        "scope": "Frozen Train60, nine atoms, energy weight 1, force weight 0.01, stress weight 0, vibrations, no relative-force normalization. The radial penalty is not divided by 60 a second time; cross-channel terms appear once.",
+        "unit": "weighted objective under the stated training convention; not force RMSE",
+        "weighted_rows": 1680
+      },
+      "parameter_blocks": [
+        {
+          "count": 216,
+          "factorization": "3 species \u00d7 3 directed neighbor species \u00d7 3 channels \u00d7 8 radial functions",
+          "id": "radial",
+          "label": "Radial coefficients"
+        },
+        {
+          "count": 29,
+          "definition": "Effective coefficients include the stored linear multipliers.",
+          "id": "invariant",
+          "label": "Invariant coefficients"
+        },
+        {
+          "count": 3,
+          "definition": "One offset per species; only one composition-weighted combination is observed on C3H4O2.",
+          "id": "offset",
+          "label": "Species offsets"
+        }
+      ],
+      "physical_rank_240_asserted": false,
+      "quotient_scope": "Local quotient by the identified symmetries at radial rank 3 and fixed composition. The physical E/F Jacobian rank is at most 240 here; exact rank 240 and completeness of the symmetry group are not established.",
+      "radial_channel_shape": [
+        3,
+        72
+      ],
+      "regular_radial_flag_dimension": 210
+    },
+    "linear_system": {
+      "K_condition_2": "1933688137783571.64105877358556007100903640227227555706392424536986377520398610219088842466936133635375455",
+      "fixed_D_definition": "D_i = binary64(gamma * binary64(1 + Gc_ii)), gamma=binary64(1e-13)",
+      "fixed_D_origin": "reconstructed from captured Gc using exact reviewed binary64 source operations; not separately captured",
+      "float64_residual_then_high_precision_correction_gap": "0.00000000000016184099591420962524572033889431174302413017695220812368459530423319047243166800518756296004245541810117",
+      "float_residual_gap_divided_by_resolved_gap": "10.6672291301760288934785058928296127347181900639530552348566941741899651983116400266331737222616875682273",
+      "interval_certificate": false,
+      "native_solver": "Gaussian elimination without pivoting, followed by back substitution",
+      "physical_model_accuracy_inferred": false,
+      "precision_digits": [
+        85,
+        110
+      ],
+      "row_Q_minus_captured_Q": "0.000000000956555959959160051769899996536009751617647001192232378015136204115578303794251385194491855178431300096122",
+      "row_loss_table": [
+        {
+          "Q_fixed_D": "1.52647361424755378486089257049520434016325775887284473528780283422014045276240041694336848991532745918121",
+          "data_loss": "1.52507456056058013097821350826817012402478195091868951248626120520609834457116826088456075975713738486574",
+          "ridge_penalty": "0.00139905368697365388267906222703421613847580795415522280154162901404210819123215605880773015819007431547314",
+          "row_gap": "1.52397366321146323009106851602024932474254206386078610426849228031217467509376229665739448416048364061907",
+          "state": "S1"
+        },
+        {
+          "Q_fixed_D": "0.00350343010955958296693067574311168503996428714372544179218991408438814982467582064049982028960087433264404",
+          "data_loss": "0.0000396608233866766558267217878384881485236825002046581156010861901606970197575279839686622730399000881361454",
+          "ridge_penalty": "0.00346376928617290631110395395527319689144060464352078367658882789422745280491829265653115801656097424450789",
+          "row_gap": "0.00100347907346902819710662126815666961924859213166681077287936017642237215603770035452581453475705577050442",
+          "state": "S1c"
+        },
+        {
+          "Q_fixed_D": "0.00249995103957862387092565458692158549823857439668757587441242099540815645724499223187572728752077649875646",
+          "data_loss": "0.000730472334955356338264488032044035365841512085847185980445514014294246529111018985726718167607327377375028",
+          "ridge_penalty": "0.00176947870462326753266116655487755013239706231084038989396690698111390992813397324614900911991344912138143",
+          "row_gap": "0.00000000000348806910110160011196657007752287938462894485510186708744237878860687194590172153267695793661684319045127",
+          "state": "S2"
+        },
+        {
+          "Q_fixed_D": "0.00249995103609055476982405448058081363694252076050616779874009312721476808409959186863495605535620207804668",
+          "data_loss": "0.000730472333492974720063405794210835587696237498515712020821785600293064776395164198312412242120469741734731",
+          "ridge_penalty": "0.00176947870259758004976064868636997804924628326199045577791830752692170330770442767032254381323573233631195",
+          "row_gap": "0.00000000000000000000000000000562579821622682574844753677942953921924899041546147158266095030051238351590706331128886514517026495704011",
+          "state": "S2q"
+        }
+      ],
+      "scope": "Each gap is defined in one fixed system and divided by 60. Row-Q minus captured-Q is a difference between problems, not a solve gap or native J. High-precision agreement is numerical resolution, not an interval proof.",
+      "signed_ridge_balance": {
+        "closure": "1.36268323121357162563004976377660282051945679996324400528022528106042742894753614953756447933317423653219e-106",
+        "data_change_S2_minus_S1c": "0.000690811511568679682437766244205547217317829585642527864844427824133549509353491001758055894567427289238883",
+        "definition": "ell(S2)-ell(S1c) = -[Q(S1c)-Q(beta*)] + [R(S1c)-R(S2)] + [Q(S2)-Q(beta*)]",
+        "effective_native_solver_row_gap": "0.00000000000348806910110160011196657007752287938462894485510186708744237878860687194590172153267695793661684319045127",
+        "normalization": 60,
+        "physical_causal_percentages": false,
+        "regularized_improvement_from_compensated": "0.00100347907346902819710662126815666961924859213166681077287936017642237215603770035452581453475705577050456",
+        "ridge_tradeoff": "0.00169429058154963877844278740039564675904354233268039378262192091311354287678431941038214889664752512312646",
+        "status": "NEW_SAME_FIXED_SYSTEM_SIGNED_RIDGE_BALANCE_PASS",
+        "system": "ROW_EXACT_FIXED_D"
+      },
+      "solver_gap_on_ACTUAL_K_CAPTURE": "0.0000000000000151717933438202007807929319354575415147690663790707435352351338482849473350086409043430454180713290416686",
+      "systems": [
+        {
+          "definition": "Exact dyadic scalar products of the recorded binary64 A and y, plus the reconstructed fixed native D.",
+          "id": "ROW_EXACT_FIXED_D",
+          "new_S2q_physical_target": true
+        },
+        {
+          "definition": "Recorded native Gc and bc, with D added in high precision.",
+          "id": "CAPTURE_G_PLUS_EXACT_D",
+          "new_S2q_physical_target": false
+        },
+        {
+          "definition": "The actual recorded binary64 K after the native rounded diagonal addition, with recorded bc.",
+          "id": "ACTUAL_K_CAPTURE",
+          "new_S2q_physical_target": false
+        }
+      ],
+      "total_effective_beta_gap_on_ROW_EXACT_FIXED_D": "0.00000000000348806910110160011196657007752287938462894485510186708744237878860687194590172153267695793661684319045127",
+      "verification": [
+        {
+          "LU_Cholesky_relative_solution": "3.32584698970975873544157642051238335064859462476119484725188857547082934176008484564981896290737207904199e-102",
+          "cross_precision_relative_solution": "2.55410551649701155699190403391191702695359673431315860931369404391042812993238934066385035877323875635814e-77",
+          "normalized_backward_error": "7.46414017740595378719996348507279757358627860596477760562644795984821292712423334273368168609420216544237e-119",
+          "system": "ROW_EXACT_FIXED_D"
+        },
+        {
+          "LU_Cholesky_relative_solution": "1.98977307161240025425612344836724242323394270902321647748695325290171486480710606388527564273929499071725e-102",
+          "cross_precision_relative_solution": "4.61675070618730635575165117753085401204054271081535675911504072859289483752280951332444088171463515085048e-77",
+          "normalized_backward_error": "4.27362914878287387467375384987999863824262240796465098991523597085664482772672144946372239441278995354339e-117",
+          "system": "CAPTURE_G_PLUS_EXACT_D"
+        },
+        {
+          "LU_Cholesky_relative_solution": "3.02788235348594502279956237288448133694362774845045883265804864572838334568115144602923059531527362980506e-102",
+          "cross_precision_relative_solution": "4.26571243164288195039119270530460511678239165064557169633061295824636465780829716535763160024346974338562e-77",
+          "normalized_backward_error": "9.44135099823613714757522942679550585498273455324479456473450402002409240891253008026177884169087276383188e-119",
+          "system": "ACTUAL_K_CAPTURE"
+        }
+      ]
+    },
+    "main4500": {
+      "S2_to_S0_ratio": 18.41785975079139,
+      "S2q_minus_S2_native_J": -1.4624392192033597e-12,
+      "boundary": {
+        "cap": 8000,
+        "iteration": 4500,
+        "refit": 244,
+        "session": 2
+      },
+      "diagnostic_branches": [
+        {
+          "from": "S1",
+          "to": "S1c"
+        },
+        {
+          "from": "S2",
+          "to": "S2q"
+        }
+      ],
+      "evidence_mode": "NEW_DIAGNOSTIC_NOT_ORIGINAL_M01",
+      "native_order": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "native_telescope": {
+        "S0_to_S2": 0.0006908112481169217,
+        "S0_to_S4": 0.0006573537719331161,
+        "S2_to_S4": -3.345747618380558e-05,
+        "interpretation": "State differences in one diagnostic, not unique causal allocation to BFGS or refit."
+      },
+      "original_archive_restored": false,
+      "plot_scale": "log10, explicitly labeled; S3 has no plotted objective",
+      "scope": "One selected boundary. S1c and S2q are newly derived counterfactual copies, not additional optimizer transitions or independent training replicates. S1's large temporary objective is distinct from the logged S0-to-S4 jump.",
+      "states": [
+        {
+          "aggregate_source_field": "$.state_objectives[0]",
+          "aggregate_source_id": "theory.new_main4500",
+          "evidence_status": "MEASURED_SAVED_PHYSICAL",
+          "id": "S0",
+          "label": "Before periodic refit",
+          "native_J": 3.96610868384983e-05,
+          "native_trajectory": true,
+          "physical_data_loss": 3.966082338667441e-05,
+          "radial_penalty": 2.6345182382806335e-10,
+          "scope": "The preceding accepted model, after main iteration 4499.",
+          "separate_live_objective_parity": true,
+          "source_field": "$.printed_objective",
+          "source_id": "theory.replay.S0",
+          "status": "LIVE_STATE_DETACHED_EVALUATION"
+        },
+        {
+          "aggregate_source_field": "$.state_objectives[1]",
+          "aggregate_source_id": "theory.new_main4500",
+          "evidence_status": "MEASURED_SAVED_PHYSICAL",
+          "id": "S1",
+          "label": "Radial basis changed",
+          "native_J": 1.525074560560527,
+          "native_trajectory": true,
+          "physical_data_loss": 1.5250745605605278,
+          "radial_penalty": 1.0310534607549654e-25,
+          "scope": "Native softened Gram-Schmidt without coefficient compensation; the objective here is detached, not a live S1 measurement.",
+          "separate_live_objective_parity": false,
+          "source_field": "$.printed_objective",
+          "source_id": "theory.replay.S1",
+          "status": "LIVE_STATE_DETACHED_EVALUATION"
+        },
+        {
+          "aggregate_source_field": "$.state_objectives[2]",
+          "aggregate_source_id": "theory.new_main4500",
+          "evidence_status": "MEASURED_SAVED_PHYSICAL",
+          "id": "S1c",
+          "label": "Compensated copy",
+          "native_J": 3.966082338667537e-05,
+          "native_trajectory": false,
+          "physical_data_loss": 3.96608233866754e-05,
+          "radial_penalty": 1.0310534607549654e-25,
+          "scope": "Diagnostic branch using inverse-transpose coefficient transport; not a live optimizer step.",
+          "separate_live_objective_parity": false,
+          "source_field": "$.printed_objective",
+          "source_id": "theory.replay.S1c",
+          "status": "NEW_DERIVED_DETACHED_EVALUATION"
+        },
+        {
+          "aggregate_source_field": "$.state_objectives[3]",
+          "aggregate_source_id": "theory.new_main4500",
+          "evidence_status": "MEASURED_SAVED_PHYSICAL",
+          "id": "S2",
+          "label": "Native ridge refit",
+          "native_J": 0.00073047233495542,
+          "native_trajectory": true,
+          "physical_data_loss": 0.0007304723349554203,
+          "radial_penalty": 1.0310534607549654e-25,
+          "scope": "Actual native Gaussian-elimination coefficient result after the periodic refit.",
+          "separate_live_objective_parity": true,
+          "source_field": "$.printed_objective",
+          "source_id": "theory.replay.S2",
+          "status": "LIVE_STATE_DETACHED_EVALUATION"
+        },
+        {
+          "aggregate_source_field": "$.state_objectives[4]",
+          "aggregate_source_id": "theory.new_main4500",
+          "evidence_status": "MEASURED_SAVED_PHYSICAL",
+          "id": "S2q",
+          "label": "High-precision row solution",
+          "native_J": 0.0007304723334929808,
+          "native_trajectory": false,
+          "physical_data_loss": 0.0007304723334929814,
+          "radial_penalty": 1.0310534607549654e-25,
+          "scope": "Diagnostic branch solving ROW_EXACT_FIXED_D at high precision; captured native K is analyzed separately.",
+          "separate_live_objective_parity": false,
+          "source_field": "$.printed_objective",
+          "source_id": "theory.replay.S2q",
+          "status": "NEW_DERIVED_DETACHED_EVALUATION"
+        },
+        {
+          "event_source_field": "$.event_provenance[phase=S3]",
+          "event_source_id": "theory.new_boundary_capture",
+          "evidence_status": "KNOWN_LIMITATION",
+          "id": "S3",
+          "label": "Optimizer rebase",
+          "native_J": null,
+          "native_trajectory": true,
+          "physical_data_loss": null,
+          "radial_penalty": null,
+          "scope": "Set_x resets line search and retains the same-size inverse Hessian. Saved S2/S3 physical-state identity does not create an independent objective measurement.",
+          "separate_live_objective_parity": false,
+          "source_field": "R5_C17; R5_C22; R5_C23; R5_C24 (no independently evaluated J)",
+          "source_id": "theory.native_contracts",
+          "status": "NOT_MEASURED"
+        },
+        {
+          "aggregate_source_field": "$.state_objectives[5]",
+          "aggregate_source_id": "theory.new_main4500",
+          "evidence_status": "MEASURED_SAVED_PHYSICAL",
+          "id": "S4",
+          "label": "Next accepted BFGS model",
+          "native_J": 0.0006970148587716144,
+          "native_trajectory": true,
+          "physical_data_loss": 0.0006970148574244893,
+          "radial_penalty": 1.347125706154887e-12,
+          "scope": "The evaluated and accepted main4500 model, distinct from the next unassessed trial x.",
+          "separate_live_objective_parity": true,
+          "source_field": "$.printed_objective",
+          "source_id": "theory.replay.S4",
+          "status": "LIVE_STATE_DETACHED_EVALUATION"
+        }
+      ],
+      "unit": "weighted native J under the frozen training convention"
+    },
+    "prediction_prox": {
+      "basis_covariance": "Exact column-space statement; numerical rank selection remains a caveat.",
+      "candidate_coefficients_exported": false,
+      "candidate_native_EF_or_gradient": "NOT_EVALUATED",
+      "coefficient_increment_l2": 265353.9590385707,
+      "condition_number": 12771079508.469141,
+      "data_loss_candidate_saved_matrix_only": 3.913034740668799e-05,
+      "data_loss_incumbent": 3.9660823386673726e-05,
+      "data_loss_reduced_row_subspace_minimum_estimate": 3.895352208002608e-05,
+      "feasible_space": "delta=T_g z, T_g32x30, fixed-composition offset direction plus29 invariant coefficients",
+      "fraction_of_available_gap_removed": 0.75,
+      "lambda": 1.0,
+      "native_ridge_direction": {
+        "best_alpha_on_0_1": 0.0,
+        "derivative_at_zero": 1.550659387180681e-05,
+        "second_derivative": 0.0013506098353938862,
+        "unconstrained_alpha": -0.011481179438682624
+      },
+      "off_training_accuracy": "NOT_QUALIFIED",
+      "percent_of_total_data_loss_removed": 1.3375314345187754,
+      "rank": 30,
+      "rank_threshold": 5.187346972982408e-12,
+      "scope": "At lambda 1, 75% refers to the available projected least-squares gap; the reduction of the whole incumbent data loss is about 1.338%. Large coefficient increments and numerical rank selection remain limitations.",
+      "status": "NEW_SAVED_MATRIX_PREDICTION_PROX_ONLY"
+    },
+    "proof_scope": {
+      "exact": "Finite graph identities and conditional fixed-space inequalities are mathematical results; numeric recovery verifies one authenticated training case.",
+      "new_physical_call_scope": "This contribution makes no new scientific calls. Six recovered physical replay results are consumed as saved inputs. The separate session ledger records the full recovery cost.",
+      "not_proved": [
+        "Exact physical parameter rank 240",
+        "Complete classification of all channel symmetries",
+        "Global convergence of the hybrid optimizer",
+        "A globally optimal nonlinear fit",
+        "Lower external force error from lower training J",
+        "A faster or better real-data COV optimizer",
+        "Safe molecular dynamics"
+      ],
+      "publication_boundary": "Only the named aggregate scalars, small state tables, source-relative identifiers, SHA-256 values and explanatory formulas are allowlisted here. No source code, fitted coefficients, checkpoints, full matrices, replay arrays or event journals are exported.",
+      "status": "CONDITIONAL_MATHEMATICS_AND_ONE_DIAGNOSTIC"
+    },
+    "transport": {
+      "L_condition": 1.1517630320108951,
+      "T_condition": 1.852754699296404,
+      "component_bound": "abs(new-old) <= 1e-12*max(1,abs(old),abs(new))",
+      "conditions": "The specific finite L12 graph; an invertible lower-triangular channel map common to the channels; force equality on a smooth geometry region.",
+      "determinant": "a^65*c^10*f^2",
+      "energy_maxabs_difference_eV": 9.094947017729282e-13,
+      "exact_identities": 29,
+      "finite_precision_is_approximate": true,
+      "force_maxabs_difference_eV_per_A": 7.904787935331115e-14,
+      "formal_monomials": 134,
+      "group_law_entries_verified": 841,
+      "literal_GS_bitwise_matches_S1": true,
+      "nonzero_transport_entries": 43,
+      "orientation": "Phi1=T Phi0, A1=A0 T^T, beta1c=T^{-T} beta0",
+      "physical_EF": {
+        "full_J_gauge_equality_required": false,
+        "native_J_difference": -2.6345182292501507e-10,
+        "physical_data_loss_difference": 9.893344823930228e-19,
+        "radial_penalty_difference": -2.6345182382806324e-10,
+        "scope": "Transport on the authenticated Train60 configurations only.",
+        "status": "NEW_PHYSICAL_EF_TRANSPORT_PARITY_PASS"
+      },
+      "physical_EF_all_components_pass": true,
+      "scope": "Exact algebra proves functional transport under its assumptions. The new numerical parity check covers the authenticated Train60 points; it does not prove unseen prediction accuracy or full-J gauge invariance.",
+      "theta_reconstruction_maxabs": 2.220446049250313e-16
+    }
+  },
+  "title": "The fit is not the finish."
+}

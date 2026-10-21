@@ -1,0 +1,18 @@
+/* Review-only editorial refinements. Original palette and molecular stage stay intact. */
+#overview .review-note-links{display:grid;gap:12px;min-width:0}
+#overview .review-note-links a{font-size:13px;line-height:1.65;margin:0;text-underline-offset:4px}
+#overview .review-optimization-entry{font-weight:600}
+.optimization-page .review-ratio-context{display:block}
+.optimization-page #opt-recovery-availability{margin-top:0;margin-bottom:25px}
+@media(max-width:680px){
+ #overview .review-note-links{margin-top:18px;gap:14px}
+ #overview .review-note-links a{font-size:12px}
+}
+@media(max-width:420px){
+ .optimization-page .opt-hero-ratio{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:21px}
+ .optimization-page .opt-hero-ratio>p{font-size:13px;line-height:1.7;max-width:31ch}
+ .optimization-page .review-ratio-context{display:inline}
+ .optimization-page .opt-hero-candidate{grid-template-columns:1fr;gap:9px;margin-top:18px}
+ .optimization-page .opt-hero-candidate div>span{font-size:14px;line-height:1.65;max-width:32ch}
+ .optimization-page .opt-hero-candidate div>p{font-size:12px;line-height:1.7}
+}

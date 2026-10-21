@@ -14,6 +14,22 @@ const p=await browser.newPage();p.on('pageerror',e=>report.errors.push(e.message
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function ready(){await p.waitForFunction(()=>document.body.dataset.ready==='true'&&document.body.dataset.offpathReady==='true',{timeout:30000});await p.waitForFunction(()=>document.getElementById('offpath').classList.contains('active'));await wait(300);}
 async function choose(id,value){await p.select('#'+id,String(value));await wait(80);}
+// The page intentionally smooth-scrolls. Wait for a stable, hittable target
+// before the native click; an immediate click could hit the moving status line.
+async function scrollForClick(selector){
+ await p.$eval(selector,el=>new Promise((resolve,reject)=>{
+  let previous=null,stable=0;const began=performance.now();
+  el.scrollIntoView({block:'center'});
+  function inspect(){
+   const r=el.getBoundingClientRect(),box=[r.x,r.y,r.width,r.height];
+   stable=previous&&box.every((x,i)=>Math.abs(x-previous[i])<.1)?stable+1:0;previous=box;
+   const x=r.left+r.width/2,y=r.top+r.height/2,hit=document.elementFromPoint(x,y);
+   if(stable>=6&&r.width>0&&r.height>0&&x>0&&x<innerWidth&&y>0&&y<innerHeight&&(hit===el||el.contains(hit))){resolve();return;}
+   if(performance.now()-began>5000){reject(new Error('Scroll target did not settle: '+el.id));return;}
+   requestAnimationFrame(inspect);
+  }requestAnimationFrame(inspect);
+ }));
+}
 try{
  await p.setViewport({width:1440,height:1000});await p.goto(base+'?still#offpath',{waitUntil:'networkidle0'});await ready();
  for(const width of [1920,1440,768,390,320]){
@@ -43,12 +59,12 @@ try{
  for(const id of geometries){await choose('off-geometry',id);const d=await p.evaluate(id=>{const g=window.offpathExhibit.data().benchmark.geometries.find(g=>g.id===id);return {q:Math.abs(Number(document.getElementById('off-q').textContent)-g.q),roo:Math.abs(Number(document.getElementById('off-roo').textContent)-g.roo),id:document.getElementById('off-geometry-id').textContent};},id);assert.ok(d.q<=.0000501&&d.roo<=.0000501);assert.ok(d.id.startsWith(id));}
  report.functional.push('All fourteen exact stored geometries and qPT/O-O readouts');
  await choose('off-geometry','T01p');await choose('off-region','TRANSITION_CENTER');await choose('off-cap','8000');await choose('off-seed','all');
- await p.$eval('#off-primary-chart',e=>e.scrollIntoView({block:'center'}));await p.click('#off-reveal');await wait(350);assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),true);await p.click('#off-reveal');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),false);await p.click('#off-reveal-reset');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().progress),1);
+ await scrollForClick('#off-reveal');await p.click('#off-reveal');await wait(350);assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),true);await p.click('#off-reveal');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),false);await p.click('#off-reveal-reset');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().progress),1);
  await p.focus('#off-progress');await p.keyboard.press('ArrowLeft');assert.ok(await p.evaluate(()=>window.offpathExhibit.getState().progress<1));await p.click('#off-reveal-reset');
  report.functional.push('Finite fixed-axis reveal, pause, show-all, keyboard scrubbing');
  await p.evaluate(()=>location.hash='#molecule');await p.waitForFunction(()=>window.exhibit.getState().route==='molecule');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),false);
  await p.evaluate(()=>location.hash='#offpath');await ready();await p.reload({waitUntil:'networkidle0'});await ready();report.functional.push('Old route and offpath deep-link reload');
- await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);await p.$eval('#off-reveal',e=>e.scrollIntoView({block:'center'}));await p.click('#off-reveal');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),false);assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().progress),1);report.functional.push('Reduced-motion keeps all final marks and manual controls');
+ await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);await scrollForClick('#off-reveal');await p.click('#off-reveal');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),false);assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().progress),1);report.functional.push('Reduced-motion keeps all final marks and manual controls');
  await p.goto(base+'?fallback&still#offpath',{waitUntil:'networkidle0'});await ready();assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().renderer),'canvas-fallback');report.functional.push('Shared Canvas renderer fallback');
  const download=await p.evaluate(async url=>{const r=await fetch(url);return {status:r.status,text:await r.text()};},base+'data/offpath/PER_GEOMETRY_280.tsv');assert.equal(download.status,200);assert.equal(download.text.trim().split('\n').length,281);report.functional.push('Actual downloadable 280-row table');
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(base+'#offpath',{waitUntil:'networkidle0'});const staticView=await nojs.$eval('#offpath',e=>({text:e.innerText,svg:e.querySelectorAll('svg').length,rows:e.querySelectorAll('tbody tr').length}));assert.ok(staticView.text.includes('−0.146135'));assert.ok(staticView.svg>=4);assert.ok(staticView.rows>=280);await nojs.close();report.functional.push('No-JavaScript full static charts, tables and numerical primary');

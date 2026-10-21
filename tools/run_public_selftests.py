@@ -64,14 +64,26 @@ def main():
  checks['script_index_entries']=len(index)
 
  asset=rows(root/'provenance/PUBLIC_ASSET_MANIFEST.tsv');names=set();paths=set()
+ # Presentation edits use an explicit, scope-checked delta, not unrecorded hash changes.
+ overlay={}
+ delta=root/'provenance/PRESENTATION_REVIEW_DELTA.tsv'
+ if delta.is_file():
+  try:
+   sys.path.insert(0,str(root/'site'))
+   from presentation_review import verify_registered_assets
+   checks['registered_assets_with_presentation_delta']=verify_registered_assets(root)
+   overlay={r['repository_path']:r for r in rows(delta)}
+  except (ValueError,OSError,ImportError,KeyError) as e:
+   failures.append(f"Presentation asset delta rejected: {e}")
  for r in asset:
   rel=r['repository_path'];p=root/rel
   if r['logical_name'] in names:failures.append(f"Duplicate public asset logical name: {r['logical_name']}")
   if rel in paths:failures.append(f"Duplicate public asset path: {rel}")
   names.add(r['logical_name']);paths.add(rel)
   if not p.is_file():failures.append(f"Missing public asset: {rel}");continue
-  if sha(p)!=r['repository_sha256']:failures.append(f"Public asset checksum mismatch: {rel}")
-  if p.stat().st_size!=int(r['size_bytes']):failures.append(f"Public asset size mismatch: {rel}")
+  current=overlay.get(rel,r)
+  if sha(p)!=current['repository_sha256']:failures.append(f"Public asset checksum mismatch: {rel}")
+  if p.stat().st_size!=int(current['size_bytes']):failures.append(f"Public asset size mismatch: {rel}")
   try:sanitized=manifest_bool(r.get('sanitized',''))
   except ValueError as e:failures.append(f"Public asset {rel}: {e}");sanitized=False
   if r.get('source_sha256') and r['source_sha256']!=r['repository_sha256'] and not sanitized:
