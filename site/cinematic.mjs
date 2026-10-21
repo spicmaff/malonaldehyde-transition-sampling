@@ -137,3 +137,18 @@ if (chapterMap) {
   }
   scheduleReadingPosition();
 }
+
+// SVG paint order is DOM order: put the threshold annotation AFTER the data
+// marks, so its existing solid halo actually separates text from the curve.
+// Observe only container replacement; moving children within the SVG cannot
+// trigger this observer again. Source values and chart geometry stay intact.
+const thresholdChart = document.getElementById('gamma-chart');
+if (thresholdChart) {
+  const raiseThresholdAnnotation = () => {
+    const svg = thresholdChart.querySelector('svg');
+    if (!svg) return;
+    svg.querySelectorAll('text.chart-label').forEach(label => svg.appendChild(label));
+  };
+  new MutationObserver(raiseThresholdAnnotation).observe(thresholdChart, {childList: true});
+  raiseThresholdAnnotation();
+}

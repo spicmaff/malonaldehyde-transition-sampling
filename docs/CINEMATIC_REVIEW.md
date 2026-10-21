@@ -153,3 +153,23 @@ A focusin listener now reveals the focused chapter link horizontally; it neither
 changes focus nor scrolls the document. The cinematic runner retains all prior
 assertions and adds 120 actual Tab-focus checks across the two themes and five
 widths. The earlier negative supplementary receipts are retained in the handoff.
+
+
+## Final threshold-label legibility pass
+
+The successful 8b247b0 build still paints the Train119 data curve over its
+“Frozen stop” label: the renderer appends its annotation before the marks.
+The existing panel-colored halo cannot cover a curve painted later. A narrow
+progressive enhancement raises the existing annotation after each complete
+chart replacement. It changes neither text, value, coordinates nor data paths.
+Only direct child replacement is observed, avoiding a subtree mutation loop.
+The original renderer, source datasets, both films and keyboard-navigation fix
+remain unchanged. This follows SVG's document-order painting model:
+https://www.w3.org/TR/SVG2/render.html#RenderingOrder
+
+The additional actual-HTTP acceptance checks the label's final DOM paint order,
+its four-pixel panel-colored halo, text and visibility at all ten combinations
+of theme and width, retaining a screenshot and measured receipt for each.
+Existing scene, navigation, keyboard and scientific assertions are unchanged.
+New CI qualification is required for this tree; earlier CI receipts remain
+attached to their own commits. This is a presentation fix, not new science.

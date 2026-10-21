@@ -109,6 +109,13 @@ class CinematicTests(unittest.TestCase):
         self.assertIn('navigation.scrollLeft', helper)
         for forbidden in ['.focus(', '.scrollIntoView(', 'location.hash']:
             self.assertNotIn(forbidden, helper)
+    def test_threshold_annotation_layers_above_marks_without_loop(self):
+        source=(ROOT/'site/cinematic.mjs').read_text().split('// SVG paint order is DOM order:')[1]
+        self.assertIn("svg.appendChild(label)", source)
+        self.assertIn("observe(thresholdChart, {childList: true})", source)
+        self.assertNotIn('subtree: true', source)
+        for forbidden in ['setAttribute(', 'location.', '.focus(', 'fetch(', 'setInterval(']:
+            self.assertNotIn(forbidden, source)
     def test_five_public_payloads_remain_identical(self):
         for p in (ROOT/'data/optimization_story/v001').iterdir():
             if p.is_file():self.assertEqual(p.read_bytes(),(self.out/'data/optimization'/p.name).read_bytes())

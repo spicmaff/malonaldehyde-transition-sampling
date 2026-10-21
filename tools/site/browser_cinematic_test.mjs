@@ -71,6 +71,19 @@ try{
   assert.equal(seen.size,12,'all twelve chapter links in real Tab order');
  }
  report.checks.push('120 actual Tab-focus combinations: complete labels, visible focus, no document scrolling');
+ report.threshold_views=[];
+ for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark']){
+  await choose(p,width,mode,'train119');
+  await p.waitForFunction(()=>{const svg=document.querySelector('#gamma-chart svg'),label=svg?.querySelector('text.chart-label');return label?.textContent==='Frozen stop'&&svg.lastElementChild===label;});
+  const annotation=await p.$eval('#gamma-chart text.chart-label',e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return {paintOrder:s.paintOrder,strokeWidth:parseFloat(s.strokeWidth),stroke:s.stroke,text:e.textContent,width:r.width,height:r.height};});
+  assert.equal(annotation.paintOrder,'stroke fill');assert.ok(annotation.strokeWidth>=4);assert.equal(annotation.text,'Frozen stop');assert.ok(annotation.width>0&&annotation.height>0);
+  const panelColor=await p.$eval('#gamma-chart',e=>{const probe=document.createElement('span');probe.style.color='var(--panel)';e.appendChild(probe);const color=getComputedStyle(probe).color;probe.remove();return color;});
+  assert.equal(annotation.stroke,panelColor,'annotation halo uses the opaque chart panel color');
+  report.threshold_views.push({width,mode,...annotation});
+  await shot(p,`threshold_${mode}_${width}`);
+ }
+ report.checks.push('threshold label draws after data marks with an opaque halo at all ten theme-width combinations');
+
  await choose(p,1440,'light');
  for(const id of ['opt-parameters','opt-episode','opt-checkpoints','opt-candidate','opt-evidence','opt-next-study']){
   await p.$eval('#'+id,e=>e.scrollIntoView({block:'start',behavior:'instant'}));
