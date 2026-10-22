@@ -30,6 +30,18 @@ try{
   const axis=await p.$$eval('#energy-chart .chart-axis',n=>n.map(x=>x.textContent));
   await p.click('[data-model="Basin60"]');assert.deepEqual(await p.$$eval('#energy-chart .chart-axis',n=>n.map(x=>x.textContent)),axis);
   report.checks.push('energy geometry linkage; comparison axis unchanged when a branch is hidden');
+  await p.setViewport({width:390,height:1000});await go('overview');
+  await p.waitForFunction(()=>document.body.dataset.offpathReady==='true'&&document.body.dataset.optimizationReady==='true');
+  await p.select('#ed-contents','offpath');
+  await p.waitForFunction(()=>document.querySelector('#offpath.active')&&window.offpathExhibit?.getState().renderer);
+  assert.equal(await p.$eval('#ed-contents',n=>document.activeElement===n),true);
+  await p.click('#off-reveal');assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),true);
+  await p.select('#ed-contents','optimization');
+  await p.waitForFunction(()=>document.querySelector('#optimization.active'));
+  assert.equal(await p.evaluate(()=>window.offpathExhibit.getState().playing),false);
+  await p.goBack();await p.waitForFunction(()=>document.querySelector('#offpath.active'));
+  report.checks.push('compact chapter navigation initializes independent modules, stops prior playback, retains focus and supports browser Back');
+
   const axe=fs.readFileSync(require.resolve('axe-core/axe.min.js'),'utf8');
   for(const theme of ['light','dark'])for(const width of [1440,390,320]){
     await p.setViewport({width,height:1000});
