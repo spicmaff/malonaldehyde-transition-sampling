@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: research-site-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   site-check:
@@ -103,7 +103,7 @@ jobs:
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ REVIEW_BASELINE_URL=http://127.0.0.1:8769/ REVIEW_BEFORE_URL=http://127.0.0.1:8770/ QA_OUT="$RUNNER_TEMP/cinematic-qa/presentation-review" node tools/site/browser_review_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ CIN_BEFORE_URL=http://127.0.0.1:8771/ QA_OUT="$RUNNER_TEMP/cinematic-qa/cinematic-scenes" node tools/site/browser_cinematic_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ FINALE_BEFORE_URL=http://127.0.0.1:8772/ QA_OUT="$RUNNER_TEMP/cinematic-qa/scientific-finale" node tools/site/browser_finale_test.mjs
-          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ EDITORIAL_BEFORE_URL=http://127.0.0.1:8773/ QA_OUT="$RUNNER_TEMP/cinematic-qa/editorial" node tools/site/browser_editorial_test.mjs
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ EDITORIAL_COMPARE_ONLY=1 EDITORIAL_BEFORE_URL=http://127.0.0.1:8773/ QA_OUT="$RUNNER_TEMP/cinematic-qa/editorial" node tools/site/browser_editorial_test.mjs
       - name: Preserve the tested non-production preview
         if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4

@@ -65,13 +65,27 @@ try{
   assert.equal(await p.evaluate(()=>document.activeElement===document.querySelector('.site-header .brand')),true,'focus precondition');
   await p.evaluate(()=>{const n=document.querySelector('.nav-shell nav');n.scrollLeft=n.scrollLeft>0?0:n.scrollWidth;window.dispatchEvent(new Event('resize'));});
   await wait(220);
-  const nav=await p.evaluate(()=>{const n=document.querySelector('.nav-shell nav'),a=n.querySelector('[aria-current="page"]'),nr=n.getBoundingClientRect(),ar=a.getBoundingClientRect();return {route:a.dataset.route,left:ar.left,right:ar.right,containerLeft:nr.left,containerRight:nr.right,scrollY:window.scrollY,headerFocusRetained:document.activeElement===document.querySelector('.site-header .brand')};});
-  report.navigation_views.push({width,mode,requested:route,focusAfterRoute,...nav});assert.equal(nav.route,route);assert.ok(nav.left>=nav.containerLeft-1&&nav.right<=nav.containerRight+1,'current route visible in horizontal menu');assert.equal(nav.scrollY,0);assert.equal(nav.headerFocusRetained,true);
+  const nav=await p.evaluate(()=>{const select=document.getElementById('ed-contents');const compact=select?.getClientRects().length>0;const n=compact?select:document.querySelector('.nav-shell nav'),a=compact?select:n.querySelector('[aria-current="page"]'),nr=n.getBoundingClientRect(),ar=a.getBoundingClientRect();return {kind:compact?'select':'links',visible:nr.width>0&&nr.height>0,route:compact?select.value:a.dataset.route,left:ar.left,right:ar.right,containerLeft:nr.left,containerRight:nr.right,scrollY:window.scrollY,headerFocusRetained:document.activeElement===document.querySelector('.site-header .brand')};});
+  report.navigation_views.push({width,mode,requested:route,focusAfterRoute,...nav});assert.equal(nav.route,route);assert.equal(nav.visible,true,'current chapter control visible');assert.ok(nav.left>=nav.containerLeft-1&&nav.right<=nav.containerRight+1,'current route visible in horizontal menu');assert.equal(nav.scrollY,0);assert.equal(nav.headerFocusRetained,true);
  }
  report.checks.push('120 active-route navigation combinations visible without vertical scroll or focus theft');
  // Walk the actual Tab order as well as testing the active-route observer.
  for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark']){
   await choose(p,width,mode);await p.focus('.site-header .brand');const seen=new Set();
+  const compact=await p.$eval('#ed-contents',e=>e.getClientRects().length>0);
+  if(compact){
+   // The compact design replaces the horizontal links with a native select.
+   // Exercise all twelve choices with real keys, keeping the control focused.
+   await p.focus('#ed-contents');await p.keyboard.press('Home');
+   for(let i=0;i<12;i++){
+    if(i)await p.keyboard.press('ArrowDown');
+    await p.waitForFunction(i=>document.querySelector('[data-page].active')?.id===document.getElementById('ed-contents').options[i].value,{},i);
+    const focused=await p.$eval('#ed-contents',e=>({route:e.value,focused:document.activeElement===e,focusVisible:e.matches(':focus-visible'),outline:getComputedStyle(e).outlineStyle,scrollY}));
+    assert.ok(focused.focused&&focused.focusVisible&&focused.outline!=='none','native chapter selector keeps visible keyboard focus');assert.equal(focused.scrollY,0);seen.add(focused.route);
+    (report.keyboard_navigation??=[]).push({width,mode,kind:'select',...focused});
+   }
+   assert.equal(seen.size,12,'all twelve chapter choices work with real keys');continue;
+  }
   for(let i=0;i<35&&seen.size<12;i++){
    await p.keyboard.press('Tab');await wait(40);
    const focused=await p.evaluate(()=>{const e=document.activeElement;if(!e.matches('.nav-shell nav a'))return null;const a=e.getBoundingClientRect(),n=e.closest('nav').getBoundingClientRect(),s=getComputedStyle(e);return {route:e.dataset.route,left:a.left,right:a.right,navLeft:n.left,navRight:n.right,focusVisible:e.matches(':focus-visible'),outline:s.outlineStyle,scrollY};});
@@ -82,7 +96,7 @@ try{
   }
   assert.equal(seen.size,12,'all twelve chapter links in real Tab order');
  }
- report.checks.push('120 actual Tab-focus combinations: complete labels, visible focus, no document scrolling');
+ report.checks.push('120 actual keyboard route choices: desktop Tab links and compact native selector, visible focus, no document scrolling');
  report.threshold_views=[];
  for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark']){
   await choose(p,width,mode,'train119');

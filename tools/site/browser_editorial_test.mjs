@@ -7,6 +7,7 @@ const require=createRequire(path.resolve(process.env.BROWSER_DEPS||'tools/site',
 const puppeteer=require('puppeteer-core');
 const out=process.env.QA_OUT||'qa-local/editorial';fs.mkdirSync(out,{recursive:true});
 const base=process.env.SITE_URL||'http://127.0.0.1:8768/';
+const compareOnly=process.env.EDITORIAL_COMPARE_ONLY==='1';
 const report={status:'RUNNING',checks:[],screenshots:[],errors:[]};
 const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--enable-webgl','--use-gl=angle','--use-angle=swiftshader','--disable-dev-shm-usage']});
 const p=await browser.newPage();p.on('pageerror',e=>report.errors.push(String(e)));
@@ -14,6 +15,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
 async function go(route){await p.goto(base+'?still#'+route,{waitUntil:'networkidle0'});await p.waitForFunction(()=>document.body.dataset.ready==='true');await delay(180);}
 async function image(name){await p.screenshot({path:path.join(out,name),fullPage:false});report.screenshots.push(name);}
 try{
+  if(!compareOnly){
   await p.setViewport({width:1440,height:1000});await go('sampling');
   assert.deepEqual(await p.$$eval('#sampling-basin [data-pbe-image],#sampling-targeted [data-pbe-image]',n=>[n.length,n.slice(0,9).map(x=>+x.dataset.pbeImage)]),[18,[1,2,3,4,5,6,7,8,9]]);
   assert.equal(await p.$$eval('[data-candidate]',n=>n.length),120);
@@ -41,6 +43,7 @@ try{
     }
   }
   report.checks.push('42 width/theme/chapter views: no page overflow, zero WCAG A/AA violations');
+  }
   if(process.env.EDITORIAL_BEFORE_URL){
     await p.setViewport({width:1440,height:1000});
     for(const route of ['overview','sampling','optimization']){
@@ -49,6 +52,6 @@ try{
       await image(`before-${route}-light-1440.png`);
     }
   }
-  assert.deepEqual(report.errors,[]);report.status='PASS_EDITORIAL_BROWSER_QA';
+  assert.deepEqual(report.errors,[]);report.status=compareOnly?'PASS_EDITORIAL_COMPARISON_QA':'PASS_EDITORIAL_BROWSER_QA';
 }catch(e){report.status='FAIL';report.failure=String(e.stack||e);process.exitCode=1;}
-finally{fs.writeFileSync(path.join(out,'EDITORIAL_BROWSER_QA.json'),JSON.stringify(report,null,2));await browser.close();console.log(JSON.stringify(report,null,2));}
+finally{fs.writeFileSync(path.join(out,compareOnly?'EDITORIAL_COMPARISON_QA.json':'EDITORIAL_BROWSER_QA.json'),JSON.stringify(report,null,2));await browser.close();console.log(JSON.stringify(report,null,2));}

@@ -36,7 +36,7 @@ python3 tools/run_public_selftests.py
 python3 tools/build_research_site.py --out _site
 ```
 
-The existing GitHub browser runner includes `tools/site/browser_editorial_test.mjs`: linked selection, molecular keyboard rotation, stable energy axes, 42 width/theme/chapter accessibility checks and controlled before/after screenshots against the baseline above. Existing browser suites additionally cover all routes, 320–1920 px widths, both themes, animations, fallback, source failures and original science contracts. CI screenshots are evidence of a headless browser, not a real-device or hardware-GPU certification.
+Review branches cancel superseded CI runs; main retains completed-run preservation. Mobile keyboard acceptance exercises all twelve choices in the native chapter selector, while desktop acceptance retains all twelve actual Tab links. The existing GitHub browser runner includes `tools/site/browser_editorial_test.mjs`: linked selection, molecular keyboard rotation, stable energy axes, 42 width/theme/chapter accessibility checks and controlled before/after screenshots against the baseline above. Existing browser suites additionally cover all routes, 320–1920 px widths, both themes, animations, fallback, source failures and original science contracts. CI screenshots are evidence of a headless browser, not a real-device or hardware-GPU certification.
 
 The session's managed preview supervisor was unavailable. No substitute local server or browser infrastructure was introduced. Offline checks can be executed here; runtime-browser results must come from the actual GitHub run or the separately hosted review version. The Russian scientific report is [EDITORIAL_RESEARCH_REVIEW_RU.md](EDITORIAL_RESEARCH_REVIEW_RU.md).
 

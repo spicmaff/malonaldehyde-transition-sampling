@@ -108,7 +108,7 @@ EDITORIAL_ASSETS = {
     'site/core.mjs', 'site/molecule.mjs', 'site/literature.json',
     'tests/test_presentation_review.py', 'tests/test_editorial.py', 'tests/test_offpath_extension.py',
     'tools/verify_editorial_findings.py', 'tools/site/test_editorial.mjs',
-    'tools/site/browser_editorial_test.mjs', 'docs/editorial-findings.json',
+    'tools/site/browser_editorial_test.mjs', 'tools/site/browser_cinematic_test.mjs', 'docs/editorial-findings.json',
     'docs/EDITORIAL_RESEARCH_REVIEW_RU.md', 'docs/EDITORIAL_REDESIGN.md',
     'docs/RESEARCH_SITE.md',
 }
