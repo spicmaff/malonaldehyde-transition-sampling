@@ -248,8 +248,14 @@ def build(out: Path) -> dict:
     document = refine_finale(document, finale)
     write_finale(out, finale)
     copy_finale(out)
-    from editorial import build as build_editorial
+    from editorial import build as build_editorial, ESSAY_SCOPE
     document = build_editorial(document, data, out)
+    from build_identity import write_identity
+    identity = write_identity(ROOT, out)
+    label = identity['source_commit'][:12] if identity['source_commit'] else 'source archive'
+    if identity['working_copy_clean'] is False:
+        label += ' + local changes'
+    document = document.replace('</footer>', '<p class="wrap small">Website build: <a href="build-identity.json">' + label + '</a>. <a href="build-manifest.json">File hashes</a>.</p></footer>')
     (out / 'index.html').write_text(document, encoding='utf-8')
     download = []
     refmap = {r['id']: r for r in refs}
@@ -259,12 +265,14 @@ def build(out: Path) -> dict:
         elif line.startswith('@papers:'):
             line = 'Literature: ' + ' · '.join('[' + refmap[key]['short'] + '](' + refmap[key]['url'] + ')' for key in line.split(':', 1)[1].split())
         if line == '@study: offpath':
-            line = 'Completed study and raw sources: https://spicmaff.github.io/malonaldehyde-transition-sampling/#offpath'
+            line = 'Completed study in this build: ./#offpath; saved benchmark: ./data/offpath.json'
         elif line == '@study: optimization':
             line = 'Optimization chapter in this build: ./#optimization; reviewed aggregates: ./data/optimization/CLAIM_DATA_MAP.tsv'
         download.append(line)
+        if line.startswith('# '):
+            download.extend(['', 'Reading scope after the coordinate and evidence audit: ' + ESSAY_SCOPE, ''])
     (out / 'longread.en.md').write_text('\n'.join(download) + '\n', encoding='utf-8')
-    for name in ('style.css', 'app.mjs', 'core.mjs', 'molecule.mjs', 'charts.mjs', 'favicon.svg', 'social-preview.svg'):
+    for name in ('style.css', 'app.mjs', 'core.mjs', 'molecule.mjs', 'charts.mjs', 'payload_validation.mjs', 'favicon.svg', 'social-preview.svg'):
         shutil.copyfile(ROOT / 'site' / name, out / name)
     for dirname in ('vendor', 'cinema'):
         source = ROOT / 'site' / dirname

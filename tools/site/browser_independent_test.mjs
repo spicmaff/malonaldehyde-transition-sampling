@@ -97,13 +97,15 @@ try{
   });
   await check('No JS, missing / corrupt / partial data and Canvas fallback',async()=>{
     const details=[];
+    const partial=await fetch(root+'current/data/science.json').then(r=>r.json());
+    delete partial.profiles.Targeted60;
     for(const scenario of ['nojs','missing-science','corrupt-science','partial-science','missing-opt','corrupt-opt','missing-off','fallback']){
       const q=await browser.newPage();
       try{
         if(scenario==='nojs')await q.setJavaScriptEnabled(false);
         if(scenario.includes('science')||scenario.includes('-opt')||scenario.includes('-off')){
           await q.setRequestInterception(true);
-          q.on('request',r=>{const file=scenario.includes('science')?'science':scenario.includes('-opt')?'optimization':'offpath';if(!r.url().endsWith('/data/'+file+'.json'))return r.continue();if(scenario.startsWith('missing'))return r.abort();return r.respond({status:200,contentType:'application/json',body:scenario.startsWith('partial')?'{"schema":"proton-potential-cinematic-v2","molecule":[]}':'{invalid JSON'});});
+          q.on('request',r=>{const file=scenario.includes('science')?'science':scenario.includes('-opt')?'optimization':'offpath';if(!r.url().endsWith('/data/'+file+'.json'))return r.continue();if(scenario.startsWith('missing'))return r.abort();return r.respond({status:200,contentType:'application/json',body:scenario.startsWith('partial')?JSON.stringify(partial):'{invalid JSON'});});
         }
         await q.goto(root+'current/'+(scenario==='fallback'?'?fallback':'?still')+'#optimization',{waitUntil:'networkidle0'});
         if(scenario==='nojs')assert.ok(await q.$eval('article.prose',e=>e.textContent.length>5000));
@@ -115,6 +117,20 @@ try{
       }finally{await q.close();}
     }
     return details;
+  });
+  await check('Actual WebGL context loss retains the selected geometry',async()=>{
+    await open(p,'current','molecule');await choose(p,1440,'light','molecule');
+    await p.focus('#path-slider');await p.keyboard.press('End');
+    await p.waitForFunction(()=>window.exhibit.renderers()['path-molecule']==='webgl');
+    const before=await p.$eval('#path-roo',e=>e.textContent);
+    const supported=await p.$eval('#path-molecule canvas',canvas=>{const gl=canvas.getContext('webgl2'),ext=gl?.getExtension('WEBGL_lose_context');if(!ext)return false;ext.loseContext();return true;});
+    assert.equal(supported,true,'the CI software renderer exposes context-loss injection');
+    await p.waitForFunction(()=>window.exhibit.renderers()['path-molecule']==='canvas-fallback');
+    assert.equal(await p.$eval('#path-roo',e=>e.textContent),before);
+    assert.match(await p.$eval('#path-state',e=>e.textContent),/Saved image 9/);
+    assert.equal(await p.$eval('#path-molecule canvas',e=>Boolean(e.getContext('2d'))),true);
+    const image=await shot(p,'current-context-loss-image9');
+    return {renderer:'canvas-fallback',savedImage:9,OO:before,image};
   });
   await check('No unexpected runtime or network errors in normal loads',async()=>{assert.deepEqual(report.errors,[]);assert.deepEqual(report.requests,[]);return 'normal routes only; injected failure requests use separate pages';});
 }finally{

@@ -99,16 +99,16 @@
   },
   {
     "id": "fu2022",
-    "short": "Fu et al. (2022 preprint)",
+    "short": "Fu et al. (2023; preprint 2022)",
     "title": "Forces Are Not Enough: Benchmark and Critical Evaluation for Machine Learning Force Fields with Molecular Simulations",
     "authors": "Xiang Fu; Zhenghao Wu; Wujie Wang; Tian Xie; Sinan Keten; Rafael Gómez-Bombarelli; Tommi Jaakkola",
-    "year": "2022",
-    "journal": "arXiv:2210.07237",
+    "year": "2023 (first preprint 2022)",
+    "journal": "Transactions on Machine Learning Research (2023); arXiv:2210.07237",
     "doi": null,
     "url": "https://arxiv.org/abs/2210.07237",
-    "kind": "Preprint / simulation benchmark",
+    "kind": "Simulation benchmark",
     "scope": "Examines simulation behavior beyond held-out force errors, motivating separate checks of molecular stability and downstream observables.",
-    "access": "Author preprint abstract and benchmark description inspected",
+    "access": "Author preprint abstract and TMLR journal reference checked on 2026-10-22",
     "limitation": "The benchmark is not a direct experiment on Train119; it supports the distinction between pointwise errors and dynamics, not a new failure claim here."
   },
   {

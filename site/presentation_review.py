@@ -13,8 +13,10 @@ NAMED_GROUPS = (
 )
 AVAILABILITY = (
     '<p id="opt-recovery-availability" class="opt-visible-limit" role="note">'
-    '<strong>Evidence availability.</strong> The complete private main4500 recovery '
-    'bundle is currently unavailable after a failed persistent save and workspace reset. '
+    '<strong>Evidence availability.</strong> The earlier review describes the complete '
+    'private main4500 recovery bundle as currently unavailable after a failed persistent save '
+    'and workspace reset. The incident itself is not independently established by the public '
+    'files. This edition confirms the absence of the native recovery package from its public sources. '
     'The previously reviewed aggregate values and source hashes remain available; '
     'they do not replace the missing native arrays, model states or process receipts. '
     'This review verifies the public arithmetic and presentation, not a fresh native '
@@ -91,6 +93,16 @@ def verify_registered_assets(root: Path) -> int:
         if r['previous_repository_sha256'] != (old['repository_sha256'] if old else 'NEW'):
             raise ValueError('Editorial manifest previous hash mismatch')
         by_path[r['repository_path']] = r
+    independent_path = root / 'provenance/INDEPENDENT_REVIEW_DELTA.tsv'
+    if independent_path.is_file():
+        independent = records('INDEPENDENT_REVIEW_DELTA.tsv')
+        if {r['repository_path'] for r in independent} != INDEPENDENT_ASSETS or len(independent) != len(INDEPENDENT_ASSETS):
+            raise ValueError('Unexpected independent review manifest scope')
+        for r in independent:
+            old = by_path.get(r['repository_path'])
+            if r['previous_repository_sha256'] != (old['repository_sha256'] if old else 'NEW'):
+                raise ValueError('Independent review manifest previous hash mismatch')
+            by_path[r['repository_path']] = r
     for relative, r in by_path.items():
         p = root / relative
         if not p.is_file() or p.is_symlink():
@@ -111,4 +123,16 @@ EDITORIAL_ASSETS = {
     'tools/site/browser_editorial_test.mjs', 'tools/site/browser_cinematic_test.mjs', 'docs/editorial-findings.json',
     'docs/EDITORIAL_RESEARCH_REVIEW_RU.md', 'docs/EDITORIAL_REDESIGN.md',
     'docs/RESEARCH_SITE.md',
+}
+
+# Explicit fourth layer; scientific arrays, models and earlier manifests are excluded.
+INDEPENDENT_ASSETS = {
+    '.github/workflows/independent-review.yml', '.github/workflows/research-site.yml',
+    'site/app.mjs', 'site/editorial.py', 'site/presentation_review.py',
+    'site/payload_validation.mjs', 'site/literature.json', 'site/molecule.mjs',
+    'tools/build_research_site.py', 'tools/build_identity.py',
+    'tools/audit_independent_science.py', 'tools/run_public_selftests.py',
+    'tools/site/browser_cinematic_test.mjs', 'tools/site/browser_independent_test.mjs',
+    'tools/site/test_payload_validation.mjs', 'tests/test_independent_review.py',
+    'tests/test_presentation_review.py', 'tests/test_offpath_extension.py',
 }

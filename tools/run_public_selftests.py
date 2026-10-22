@@ -74,6 +74,8 @@ def main():
    checks['registered_assets_with_presentation_delta']=verify_registered_assets(root)
    overlay={r['repository_path']:r for r in rows(delta)}
    overlay.update({r['repository_path']:r for r in rows(root/'provenance/EDITORIAL_REDESIGN_DELTA.tsv')})
+   independent=root/'provenance/INDEPENDENT_REVIEW_DELTA.tsv'
+   if independent.is_file():overlay.update({r['repository_path']:r for r in rows(independent)})
   except (ValueError,OSError,ImportError,KeyError) as e:
    failures.append(f"Presentation asset delta rejected: {e}")
  for r in asset:

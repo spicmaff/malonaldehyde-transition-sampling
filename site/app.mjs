@@ -2,6 +2,7 @@
 import {ATOMS,ROUTES,clamp,pathState,pairedSeeds,route,journeyState,norm,finite} from './core.mjs';
 import {MolecularStage} from './molecule.mjs';
 import {linePlot,samplingPlot,seedPlot,diagnosticPlots,colors} from './charts.mjs';
+import {validateScience} from './payload_validation.mjs';
 const $=id=>document.getElementById(id);
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const state={route:route(location.hash),hero:4,path:4,sampling:1,samplingImage:4,energy:1,energyImage:4,models:{Basin60:true,Targeted60:true},seeds:1,seed:'all',frame:145,group:'CROSSING7',atom:1,scale:2,vectors:{pbe:true,mtp:true,error:true},story:0};
@@ -18,6 +19,7 @@ function profiles(names){return names.map(name=>({name,values:data.molecule.map(
 function stop(){if(raf)cancelAnimationFrame(raf);raf=0;motion=null;for(const[k,id]of Object.entries(buttons)){text(id,labels[k]);$(id)?.setAttribute('aria-pressed','false');}}
 function play(key,duration,update,start=0){
   userAction=true;if(motion?.key===key){stop();return;}stop();
+  if(reduce.matches)return;
   motion={key,duration,update,start:clamp(start,0,1),t0:performance.now(),last:0};text(buttons[key],'Ⅱ Pause');$(buttons[key]).setAttribute('aria-pressed','true');
   function tick(now){if(!motion||document.hidden)return;const m=motion,before=performance.now();
     if(m.last){stats.intervals.push(now-m.last);if(stats.intervals.length>600)stats.intervals.shift();}m.last=now;
@@ -78,6 +80,7 @@ function navigate(){if(!data)return;stop();userAction=true;state.route=route(loc
   if(location.hash.startsWith('#read-'))setTimeout(()=>$(location.hash.slice(1))?.scrollIntoView({behavior:'auto',block:'start'}),0);else window.scrollTo({top:0,behavior:'auto'});
 }
 function theme(){const dark=document.documentElement.dataset.theme==='dark';text('theme',dark?'Light mode':'Dark mode');$('theme').setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');for(const s of stages.values())s.setTheme(dark);}
+function motionPreference(){if(reduce.matches)stop();for(const id of Object.values(buttons))$(id).disabled=reduce.matches;}
 function bind(){
   document.addEventListener('pointerdown',()=>{userAction=true;},{passive:true});
   const event=(id,kind,fn)=>$(id).addEventListener(kind,fn);
@@ -93,13 +96,13 @@ function bind(){
   document.querySelector('.sub-study').addEventListener('toggle',e=>{if(e.target.open&&state.route==='train119')renderTrainProfile();});
   event('force-frame','change',e=>{stop();forceFrame(+e.target.value);});document.querySelectorAll('[data-atom]').forEach(b=>b.addEventListener('click',()=>{stop();forceFrame(state.frame,+b.dataset.atom);}));event('force-scale','change',e=>{stop();state.scale=+e.target.value;forceFrame();});document.querySelectorAll('[data-vector]').forEach(b=>b.addEventListener('change',()=>{stop();state.vectors[b.dataset.vector]=b.checked;forceFrame();}));event('force-reset','click',()=>stage('force-molecule',datum(state.frame).xyz).resetView());event('forces-play','click',()=>play('forces',7200,forceReveal));
   event('story-play','click',()=>play('story',30000,story,state.story>=1?0:state.story));event('story-slider','input',e=>{stop();story(+e.target.value);});event('story-reset','click',()=>{stop();story(0);});document.querySelectorAll('[data-chapter]').forEach(b=>b.addEventListener('click',()=>{stop();story(+b.dataset.chapter/6);}));
-  window.addEventListener('hashchange',navigate);let timer;window.addEventListener('resize',()=>{clearTimeout(timer);timer=setTimeout(()=>{stop();drawActive();},140);});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});reduce.addEventListener('change',()=>{if(reduce.matches)stop();});
+  window.addEventListener('hashchange',navigate);let timer;window.addEventListener('resize',()=>{clearTimeout(timer);timer=setTimeout(()=>{stop();drawActive();},140);});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});reduce.addEventListener('change',motionPreference);motionPreference();
 }
 function films(){const area=$('film-area');if(!data.films?.length)return;const h=document.createElement('h2');h.textContent='English cinematic editions';const wrap=document.createElement('div');wrap.className='film-grid';for(const film of data.films){const fig=document.createElement('figure'),v=document.createElement('video');v.controls=true;v.preload='none';v.playsInline=true;v.poster=film.poster;v.setAttribute('aria-label',film.title);const source=document.createElement('source');source.src=film.file;source.type='video/mp4';v.append(source);if(film.captions){const track=document.createElement('track');track.kind='captions';track.srclang='en';track.label='English scene descriptions';track.src=film.captions;v.append(track);}const cap=document.createElement('figcaption');cap.textContent=film.title+'. '+film.scope;fig.append(v,cap);wrap.append(fig);}area.append(h,wrap);}
 
 try{
   try{const saved=localStorage.getItem('proton-theme');if(saved==='dark')document.documentElement.dataset.theme='dark';}catch{}theme();
-  const response=await fetch('data/science.json');if(!response.ok)throw new Error(`Data request returned ${response.status}`);data=await response.json();if(data.schema!=='proton-potential-cinematic-v2'||data.molecule.length!==9||data.forces.length!==11)throw new Error('Unexpected scientific payload');
+  const response=await fetch('data/science.json');if(!response.ok)throw new Error(`Data request returned ${response.status}`);data=validateScience(await response.json());
   document.documentElement.classList.add('js-ready');bind();films();navigate();userAction=false;document.body.dataset.ready='true';
   window.exhibit={getState:()=>({...state,motion:motion?.key||null}),stop,seek:(key,t)=>{stop();finite(t);({hero,path:molecularPath,sampling,energy,seeds:seedReveal,story})[key]?.(t);},setFrame:(index,atom=1)=>{stop();if(state.route==='forces')forceFrame(index,atom);else diagnosticFrame(index);},renderers:()=>Object.fromEntries([...stages].map(([k,s])=>[k,s.el.dataset.renderer])),stats:()=>JSON.parse(JSON.stringify(stats)),science:()=>data};
   // The complete result is the initial state; motion starts only on request.

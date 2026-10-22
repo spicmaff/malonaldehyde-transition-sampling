@@ -34,7 +34,7 @@ export class MolecularStage {
     const up=e=>{if(this.drag&&!this.drag.moved)this.pick(e);this.drag=null;};
     this.el.addEventListener('pointerup',up);this.el.addEventListener('pointerleave',()=>this.drag=null);
     this.resize();
-    this.ready=this.initialize().catch(()=>{this.el.dataset.renderer='canvas-fallback';this.render();});
+    this.ready=this.initialize().catch(()=>this.useCanvasFallback());
   }
   async initialize() {
     if(new URLSearchParams(location.search).has('fallback')){this.el.dataset.renderer='canvas-fallback';return;}
@@ -65,7 +65,14 @@ export class MolecularStage {
     this.raycaster=new T.Raycaster();this.mouse=new T.Vector2();
     const gl=renderer.domElement;gl.className='molecule-canvas';gl.setAttribute('aria-hidden','true');this.canvas.replaceWith(gl);this.canvas=gl;
     this.el.dataset.renderer='webgl';this.el.classList.add('rendered');this.resize();
-    this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.el.dataset.renderer='context-lost';this.el.classList.remove('rendered');});
+    this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.useCanvasFallback();});
+  }
+  useCanvasFallback(){
+    if(this.disposed)return;
+    this.renderer?.dispose();this.renderer=null;
+    const canvas=document.createElement('canvas');canvas.className='molecule-canvas';canvas.setAttribute('aria-hidden','true');canvas.style.touchAction='pan-y';
+    this.canvas.replaceWith(canvas);this.canvas=canvas;this.ctx=canvas.getContext('2d');
+    this.el.dataset.renderer='canvas-fallback';this.resize();
   }
   update(xyz,{selected=this.selected,forces=this.forces,scale=this.forceScale,layers=this.layers}={}) {
     this.xyz=xyz;this.points=center(xyz);this.selected=selected;this.forces=forces;this.forceScale=scale;this.layers=layers;this.render();
