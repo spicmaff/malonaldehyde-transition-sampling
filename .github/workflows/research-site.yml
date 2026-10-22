@@ -70,6 +70,7 @@ jobs:
           python -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/proton-site" > "$RUNNER_TEMP/site-server.log" 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/editorial" node tools/site/browser_editorial_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa" node tools/site/browser_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/offpath" node tools/site/browser_offpath_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/optimization" node tools/site/browser_optimization_test.mjs
@@ -79,7 +80,7 @@ jobs:
           CHROME_BIN: /usr/bin/google-chrome
         run: |
           git fetch --no-tags --depth=1 origin f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 9cb1e603df1ad2df481988a31480122010931a5c d713f60a3050f6a7b27a0d3e679e0bf58b93ddf0 76e0e22967f408480b5a713d8f94f6c9e9981105
-          for ITEM in baseline:f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 before:d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 cinematic-before:9cb1e603df1ad2df481988a31480122010931a5c finale-before:d713f60a3050f6a7b27a0d3e679e0bf58b93ddf0; do
+          for ITEM in baseline:f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 before:d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 cinematic-before:9cb1e603df1ad2df481988a31480122010931a5c finale-before:d713f60a3050f6a7b27a0d3e679e0bf58b93ddf0 editorial-before:76e0e22967f408480b5a713d8f94f6c9e9981105; do
             NAME="${ITEM%%:*}"
             REF="${ITEM#*:}"
             mkdir -p "$RUNNER_TEMP/review-$NAME-src"

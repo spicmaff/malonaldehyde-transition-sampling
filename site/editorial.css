@@ -1,5 +1,5 @@
 /* Scientific editorial edition. Color, shape and wording carry the same distinctions. */
-:root{--paper:#f7f4ec;--panel:#fffdf7;--ink:#183e34;--muted:#53665e;--line:#d5dcd1;--pale:#edf0e6;--tint:#f3e7dd;--teal:#197869;--targeted:#197869;--basin:#ad513a;--pbe:#244d40;--oxygen:#ba503a;--carbon:#526561;--hydrogen:#eee9dd}
+:root{--paper:#f7f4ec;--panel:#fffdf7;--ink:#183e34;--muted:#53665e;--line:#d5dcd1;--pale:#edf0e6;--tint:#f3e7dd;--teal:#166e60;--targeted:#166e60;--basin:#a34731;--pbe:#244d40;--oxygen:#ba503a;--carbon:#526561;--hydrogen:#eee9dd}
 :root[data-theme=dark]{--paper:#12251f;--panel:#192e27;--ink:#eeeedd;--muted:#b7c4b9;--line:#3c5246;--pale:#203a30;--tint:#3e2e25;--teal:#76c6b6;--targeted:#76c6b6;--basin:#efa68a;--pbe:#e1e8d7}
 body{background:var(--paper);color:var(--ink);font-feature-settings:"ss01" 1;-webkit-font-smoothing:antialiased}
 .wrap{width:min(1300px,calc(100% - 88px))}.site-header{background:var(--paper)}
