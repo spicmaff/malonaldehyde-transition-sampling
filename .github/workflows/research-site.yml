@@ -53,6 +53,10 @@ jobs:
           python -O -B -m unittest discover -s tests -p test_presentation_review.py
           python -B -m unittest discover -s tests -p test_cinematic.py
           python -O -B -m unittest discover -s tests -p test_cinematic.py
+          python -B tools/build_scientific_finale.py
+          python -O -B tools/build_scientific_finale.py
+          python -B -m unittest discover -s tests -p test_scientific_finale.py
+          python -O -B -m unittest discover -s tests -p test_scientific_finale.py
           node --test tools/site/test_core.mjs
           python -B tools/build_research_site.py --out "$RUNNER_TEMP/proton-site"
       - name: Browser, animation, accessibility and English-film acceptance
@@ -71,8 +75,8 @@ jobs:
         env:
           CHROME_BIN: /usr/bin/google-chrome
         run: |
-          git fetch --no-tags --depth=1 origin f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 9cb1e603df1ad2df481988a31480122010931a5c
-          for ITEM in baseline:f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 before:d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 cinematic-before:9cb1e603df1ad2df481988a31480122010931a5c; do
+          git fetch --no-tags --depth=1 origin f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 9cb1e603df1ad2df481988a31480122010931a5c d713f60a3050f6a7b27a0d3e679e0bf58b93ddf0
+          for ITEM in baseline:f5f4784d7cc186ae9cfcacbd97117b5dabbffb30 before:d37e7ceb209f0eb68fa4e36a0bec5af20e58fc35 cinematic-before:9cb1e603df1ad2df481988a31480122010931a5c finale-before:d713f60a3050f6a7b27a0d3e679e0bf58b93ddf0; do
             NAME="${ITEM%%:*}"
             REF="${ITEM#*:}"
             mkdir -p "$RUNNER_TEMP/review-$NAME-src"
@@ -87,9 +91,12 @@ jobs:
           BEFORE=$!
           python -m http.server 8771 --bind 127.0.0.1 --directory "$RUNNER_TEMP/review-cinematic-before-site" > "$RUNNER_TEMP/review-cinematic-before.log" 2>&1 &
           CIN_BEFORE=$!
-          trap 'kill "$CURRENT" "$BASELINE" "$BEFORE" "$CIN_BEFORE" 2>/dev/null || true' EXIT
+          python -m http.server 8772 --bind 127.0.0.1 --directory "$RUNNER_TEMP/review-finale-before-site" > "$RUNNER_TEMP/review-finale-before.log" 2>&1 &
+          FINALE_BEFORE=$!
+          trap 'kill "$CURRENT" "$BASELINE" "$BEFORE" "$CIN_BEFORE" "$FINALE_BEFORE" 2>/dev/null || true' EXIT
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ REVIEW_BASELINE_URL=http://127.0.0.1:8769/ REVIEW_BEFORE_URL=http://127.0.0.1:8770/ QA_OUT="$RUNNER_TEMP/cinematic-qa/presentation-review" node tools/site/browser_review_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ CIN_BEFORE_URL=http://127.0.0.1:8771/ QA_OUT="$RUNNER_TEMP/cinematic-qa/cinematic-scenes" node tools/site/browser_cinematic_test.mjs
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ FINALE_BEFORE_URL=http://127.0.0.1:8772/ QA_OUT="$RUNNER_TEMP/cinematic-qa/scientific-finale" node tools/site/browser_finale_test.mjs
       - name: Preserve the tested non-production preview
         if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
