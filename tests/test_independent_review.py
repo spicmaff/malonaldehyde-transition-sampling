@@ -34,6 +34,10 @@ class IndependentReviewTests(unittest.TestCase):
         self.assertIn('nonnegative and vanishes at zero',self.html)
         self.assertIn('An approximate numerical solution must verify',self.html)
 
+    def test_evidence_disclosure_precedes_the_sticky_map(self):
+        self.assertEqual(self.html.count('class="ed-evidence-limit"'),1)
+        self.assertLess(self.html.index('class="ed-evidence-limit"'),self.html.index('class="cin-chapter-map"'))
+
     def test_build_identity_is_a_hash_bound_output_separate_from_science(self):
         identity=json.loads((self.out/'build-identity.json').read_text())
         self.assertEqual(identity['source_commit'],subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip())

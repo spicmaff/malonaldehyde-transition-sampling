@@ -56,11 +56,24 @@ try{
         await choose(p,width,theme,route);
         const view=await p.evaluate(async()=>{const a=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return {overflow:document.documentElement.scrollWidth>innerWidth+1,active:document.querySelectorAll('[data-page].active').length,violations:a.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.map(n=>n.target)})),incomplete:a.incomplete.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))};});
         report.views.push({width,theme,route,...view});save();
+        if([390,1440].includes(width))await shot(p,`view-${route}-${theme}-${width}`);
       }
       console.log(JSON.stringify({views:report.views.length,width,theme}));
     }
     assert.equal(report.views.length,120);assert.deepEqual(report.views.filter(v=>v.overflow||v.active!==1||v.violations.length),[]);
     return {views:120,incomplete:report.views.reduce((n,v)=>n+v.incomplete.length,0)};
+  });
+  await check('Scientific figures and disclosures at desktop / mobile sizes',async()=>{
+    const panels={molecule:['#path-molecule','#path-chart'],landscape:['.profile-layout'],seeds:['#seeds-barrier','#seeds-force'],train119:['#gamma-chart','#force-error-chart'],forces:['.force-layout'],offpath:['#off-primary-chart','.ed-budget-audit','.ed-sensitivity'],optimization:['.ed-q-ledger','.ed-cov-limit','.cin-chapter-map'],reproduce:['.ed-methods']};
+    const images=[];
+    for(const width of [390,1440])for(const theme of ['light','dark'])for(const [route,selectors] of Object.entries(panels)){
+      await choose(p,width,theme,route);
+      for(const selector of selectors){const el=await p.$(selector);if(!el){images.push({width,theme,route,selector,status:'ABSENT'});continue;}
+        await el.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await delay(80);
+        images.push({width,theme,route,selector,file:await shot(p,`figure-${route}-${selector.replace(/[^a-zA-Z0-9]/g,'')}-${theme}-${width}`)});
+      }
+    }
+    report.figures=images;save();return {images:images.length,missing:images.filter(x=>x.status==='ABSENT')};
   });
   await check('Controlled baseline / PR / repaired comparisons',async()=>{
     for(const edition of ['baseline','pr','current']){
@@ -131,6 +144,12 @@ try{
     assert.equal(await p.$eval('#path-molecule canvas',e=>Boolean(e.getContext('2d'))),true);
     const image=await shot(p,'current-context-loss-image9');
     return {renderer:'canvas-fallback',savedImage:9,OO:before,image};
+  });
+  await check('Normal-load resource and animation timing sample',async()=>{
+    await open(p,'current','molecule');await choose(p,1440,'light','molecule');
+    await click(p,'#path-play');await delay(1600);await p.evaluate(()=>window.exhibit.stop());
+    const sample=await p.evaluate(()=>{const s=window.exhibit.stats(),q=a=>{a=[...a].sort((x,y)=>x-y);return {n:a.length,median:a[Math.floor(a.length*.5)]??null,p95:a[Math.floor(a.length*.95)]??null};};return {renderer:window.exhibit.renderers(),frames:s.frames,frame_intervals_ms:q(s.intervals),update_work_ms:q(s.work),resources:performance.getEntriesByType('resource').map(r=>({name:new URL(r.name).pathname,bytes:r.transferSize,duration_ms:r.duration})),user_agent:navigator.userAgent,scope:'Headless software-rendered sample; not real-device or hardware-GPU certification.'};});
+    report.performance=sample;save();return sample;
   });
   await check('No unexpected runtime or network errors in normal loads',async()=>{assert.deepEqual(report.errors,[]);assert.deepEqual(report.requests,[]);return 'normal routes only; injected failure requests use separate pages';});
 }finally{

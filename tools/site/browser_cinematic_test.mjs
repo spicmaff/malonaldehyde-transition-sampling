@@ -139,8 +139,8 @@ try{
  report.playback={beforeReset:await playbackSnapshot()};
  await p.evaluate(()=>window.optimizationExhibit.reset());report.playback.afterReset=await playbackSnapshot();
  await click('#opt-play');report.playback.afterClick=await playbackSnapshot();
- try{await p.waitForFunction(()=>document.querySelector('[data-cin-step="S1"]').getAttribute('aria-pressed')==='true');}
- catch(error){report.playback.onTimeout=await playbackSnapshot();console.log(JSON.stringify({playback:report.playback}));throw error;}
+ try{assert.equal(report.playback.afterClick.state.playing,true,'ordinary pointer click reaches Play');assert.equal(report.playback.afterClick.route,'#optimization','sticky navigation must not intercept Play');await p.waitForFunction(()=>document.querySelector('[data-cin-step="S1"]').getAttribute('aria-pressed')==='true');}
+ catch(error){report.playback.onTimeout=await playbackSnapshot();await shot(p,'playback-hit-failure');console.log(JSON.stringify({playback:report.playback}));throw error;}
  report.playback.atS1=await playbackSnapshot();
  await click('#opt-play');assert.equal(await p.evaluate(()=>window.optimizationExhibit.getState().playing),false);report.checks.push('existing playback and pause synchronize rail without a second clock');
  await p.focus('.skip-link');await p.keyboard.press('Enter');assert.equal(await p.evaluate(()=>location.hash),'#optimization');assert.equal(await p.evaluate(()=>document.activeElement.id),'optimization');report.checks.push('skip link retains current route and focuses chapter');
