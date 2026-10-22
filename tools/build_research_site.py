@@ -242,6 +242,12 @@ def build(out: Path) -> dict:
     from presentation_review import refine_document, copy_style
     document = refine_document(document)
     copy_style(out)
+    from build_scientific_finale import load as load_finale, write as write_finale
+    from scientific_finale import refine_document as refine_finale, copy_assets as copy_finale
+    finale = load_finale()
+    document = refine_finale(document, finale)
+    write_finale(out, finale)
+    copy_finale(out)
     (out / 'index.html').write_text(document, encoding='utf-8')
     download = []
     refmap = {r['id']: r for r in refs}

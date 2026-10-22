@@ -22,6 +22,15 @@ Canvas and no-JavaScript fallbacks, and pinned source evidence.
 `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain unchanged.
 [Rebuild the exhibit and inspect its scientific boundaries](docs/RESEARCH_SITE.md).
 
+### In this review: a scientific conclusion
+
+The proposed finale makes the diagnosed tradeoff explicit: in one audited refit,
+the coefficient penalty falls enough to improve inner Q while data loss rises.
+The fixed-row comparison, precision control and derived direction curve are
+separate from native J and future real-data COV qualification. The twelve-route
+exhibit and original scientific values remain intact.
+[Sources, limits and preview instructions](docs/SCIENTIFIC_FINALE.md).
+
 ### Optimization · The fit is not the finish.
 
 The additive `#optimization` chapter follows one captured periodic refit through
