@@ -14,3 +14,5 @@
 Оба Sites-предпросмотра остались приватными, их версии и аудитория не изменялись. Исторические отчёты и сравнения находятся в [основной ветке](https://github.com/spicmaff/malonaldehyde-transition-sampling/tree/main/reports/site-acceptance-81efe611). Эти свидетельства дополняют их последующим публичным развёртыванием.
 
 Для повторения live-сверки используется verify_public_pages.py с аргументами: каталог идентифицированной сборки, путь JSON-отчёта и публичный URL. Авторизация для GitHub Pages не передаётся. CI-журналы нормализуют только пути /home/USER/; статусы и научные числа сохранены.
+
+The current public copy of `SITES_UNCHANGED.json` omits the former private preview URLs. Its identifiers, versions, access settings and statuses are unchanged. The original snapshot is preserved in the history at `3b676c406a8f71a11c997d166d3aa071266cd9f6`.
