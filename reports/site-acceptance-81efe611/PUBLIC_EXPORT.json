@@ -1,0 +1,23 @@
+{
+  "scope": "Public CI runner home paths are normalized to /home/USER/ to satisfy the existing repository path policy; assertions, statuses, units and scientific numbers are unchanged. Compressed original reports retain their historical bytes. No credential is added.",
+  "files": [
+    {
+      "file": "INDEPENDENT_SITE_CI.log",
+      "source_sha256": "6bd1ce1e44c63ef9a3577004edbd379076895b24f42fba68e9af309981a32428",
+      "export_sha256": "83dcd24ce348facb1b52fbb014d742c0cf35f809b27c7be72f35db805a2d138f",
+      "runner_path_replacements": 10
+    },
+    {
+      "file": "PLAYBACK_COMPARISON.json",
+      "source_sha256": "836a86f20982eb86b0f18e31caf89284ed04fefadc104eb85474c71d123e2f3c",
+      "export_sha256": "a7a1e7bf6094c1b805352eb2daf5b6729dbe00947f3a4ac2d2475a8f0051e704",
+      "runner_path_replacements": 1
+    },
+    {
+      "file": "RESEARCH_SITE_CI.log",
+      "source_sha256": "d39c7cc13068d12e92d2d058dcd001d15a2114bc2eb6cbfa9460c555ba091c23",
+      "export_sha256": "7b2073a13e796cc376cfc276badbd479c1620b156d4f445b0683bc4285b24f13",
+      "runner_path_replacements": 17
+    }
+  ]
+}

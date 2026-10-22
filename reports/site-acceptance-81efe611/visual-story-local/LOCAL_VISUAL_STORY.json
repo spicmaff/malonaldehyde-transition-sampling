@@ -1,0 +1,58 @@
+{
+  "source_commit": "81efe61100d4913b9306f38616dde1720636d377",
+  "status": "PASS",
+  "scope": "Existing system ffmpeg/font and Python dependencies; no apt installation. Actual final source commit. Not a claim about pending GitHub runner setup.",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "scripts/visual_story/verify_visual_story.py",
+        "--data",
+        "data/visual_story/v001",
+        "--out",
+        "/workspace/scratch/73ce71730111/acceptance-evidence/visual-story-local/review"
+      ],
+      "exit_code": 0,
+      "log": "1.log"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/visual_story/render_visual_story.py",
+        "--data",
+        "data/visual_story/v001",
+        "--out",
+        "/workspace/scratch/73ce71730111/acceptance-evidence/visual-story-local/proof",
+        "--proof"
+      ],
+      "exit_code": 0,
+      "log": "2.log"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/visual_story/build_story.py",
+        "--data",
+        "data/visual_story/v001",
+        "--baseline",
+        "data/visual_story/v001/editorial_baseline",
+        "--out",
+        "/workspace/scratch/73ce71730111/acceptance-evidence/visual-story-local/story"
+      ],
+      "exit_code": 0,
+      "log": "3.log"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/visual_story/check_presentation.py",
+        "--repo",
+        ".",
+        "--built",
+        "/workspace/scratch/73ce71730111/acceptance-evidence/visual-story-local/story"
+      ],
+      "exit_code": 0,
+      "log": "4.log"
+    }
+  ]
+}

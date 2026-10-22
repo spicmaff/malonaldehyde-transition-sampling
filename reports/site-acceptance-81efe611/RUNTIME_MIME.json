@@ -1,0 +1,367 @@
+{
+  "schema": "runtime-mime-v1",
+  "scope": "post-deployment authenticated exact-resource reads",
+  "status": "PASS",
+  "checks": [
+    {
+      "site": "original",
+      "path": "app.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "build-manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "charts.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "cinema/manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "cinematic.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "cinematic.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "core.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/editorial.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/finale.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/literature.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/offpath.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/optimization.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/optimization/OPTIMIZATION_STORY.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/optimization/PROVENANCE.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/optimization/PUBLICATION_ALLOWLIST.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "data/science.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "editorial.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "molecule.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "offpath.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "offpath.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "optimization.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "optimization.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "presentation_review.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "scientific_finale.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "scientific_finale.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "style.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "vendor/three/manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "vendor/three/three.core.js",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "original",
+      "path": "vendor/three/three.module.js",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "app.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "build-identity.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "build-manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "charts.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "cinema/manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "cinematic.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "cinematic.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "core.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/editorial.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/finale.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/literature.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/offpath.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/optimization.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/optimization/OPTIMIZATION_STORY.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/optimization/PROVENANCE.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/optimization/PUBLICATION_ALLOWLIST.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "data/science.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "editorial.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "molecule.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "offpath.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "offpath.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "optimization.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "optimization.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "payload_validation.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "presentation_review.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "scientific_finale.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "scientific_finale.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "style.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "vendor/three/manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "vendor/three/three.core.js",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "site": "review",
+      "path": "vendor/three/three.module.js",
+      "content_type": "text/javascript",
+      "pass": true
+    }
+  ]
+}

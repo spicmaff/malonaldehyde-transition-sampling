@@ -1,0 +1,78 @@
+[
+  {
+    "tag": "v1.2.0",
+    "published_at": "2026-10-05T05:18:21Z",
+    "assets": [
+      {
+        "name": "01_proton_path.mp4",
+        "size": 1034073,
+        "updated_at": "2026-10-05T05:18:20Z"
+      },
+      {
+        "name": "02_equal_budget.mp4",
+        "size": 989751,
+        "updated_at": "2026-10-05T05:18:20Z"
+      },
+      {
+        "name": "03_applicability_boundary.mp4",
+        "size": 872013,
+        "updated_at": "2026-10-05T05:18:19Z"
+      },
+      {
+        "name": "04_story_teaser.mp4",
+        "size": 799665,
+        "updated_at": "2026-10-05T05:18:20Z"
+      },
+      {
+        "name": "05_proton_vertical.mp4",
+        "size": 648984,
+        "updated_at": "2026-10-05T05:18:20Z"
+      },
+      {
+        "name": "LONGREAD_COMPACT.md",
+        "size": 12192,
+        "updated_at": "2026-10-05T05:18:20Z"
+      },
+      {
+        "name": "LONGREAD_FULL.md",
+        "size": 32589,
+        "updated_at": "2026-10-05T05:18:20Z"
+      },
+      {
+        "name": "MALONALDEHYDE_VISUAL_STORY_20261005_v001.zip",
+        "size": 7624191,
+        "updated_at": "2026-10-05T05:18:21Z"
+      },
+      {
+        "name": "MALONALDEHYDE_VISUAL_STORY_20261005_v001.zip.sha256",
+        "size": 111,
+        "updated_at": "2026-10-05T05:18:19Z"
+      },
+      {
+        "name": "TELEGRAM_READY.md",
+        "size": 13006,
+        "updated_at": "2026-10-05T05:18:20Z"
+      }
+    ]
+  },
+  {
+    "tag": "v1.1.2",
+    "published_at": "2026-10-05T00:31:25Z",
+    "assets": []
+  },
+  {
+    "tag": "v1.1.1",
+    "published_at": "2026-10-02T20:07:49Z",
+    "assets": []
+  },
+  {
+    "tag": "v1.1.0",
+    "published_at": "2026-10-02T17:56:39Z",
+    "assets": []
+  },
+  {
+    "tag": "v1.0.0",
+    "published_at": "2026-08-02T20:22:56Z",
+    "assets": []
+  }
+]

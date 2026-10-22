@@ -1,0 +1,78 @@
+{
+  "original": {
+    "id": "appgprj_6ada1822d82c8191a5130cfbc907ff94",
+    "url": "https://proton-potential-editorial-review.fancybead14.chatgpt.site",
+    "role": "owner",
+    "access_mode": "custom",
+    "revision": 1,
+    "allowed_users": 1,
+    "external_visitors": 0,
+    "versions": [
+      {
+        "id": "appgprj_6ada1822d82c8191a5130cfbc907ff94~appgver_8f7a3b55e7448191ae1b4b1fbdaab1be",
+        "version_number": 4,
+        "source": {
+          "commit_sha": "33659957250e19bddc8bdcaf7338f834b4411a98"
+        },
+        "deployment_id": "appgdep_6ada288c030081919ab9acfdcd17b28e"
+      },
+      {
+        "id": "appgprj_6ada1822d82c8191a5130cfbc907ff94~appgver_7a60bf46eb808191bf63216cf875cced",
+        "version_number": 3,
+        "source": {
+          "commit_sha": "454da0ed7a1c220fcbc8b388730c83c774b267e2"
+        },
+        "deployment_id": "appgdep_6ada268421248191965df37158761a7e"
+      },
+      {
+        "id": "appgprj_6ada1822d82c8191a5130cfbc907ff94~appgver_6f93118ba38c8191b47a1b92ec97832f",
+        "version_number": 2,
+        "source": {
+          "commit_sha": "ccd84300f0d6f01114ff76e40a87ccefc8d3e9ef"
+        },
+        "deployment_id": "appgdep_6ada1e161c508191b541e820c55ff875"
+      },
+      {
+        "id": "appgprj_6ada1822d82c8191a5130cfbc907ff94~appgver_7717f4c6f03881919f2d20d048cf7ee6",
+        "version_number": 1,
+        "source": {
+          "commit_sha": "3eaa6407e6c2e7bbc53b539e6d628aead93242af"
+        },
+        "deployment_id": "appgdep_6ada1a227cf48191bc68c12c30d62852"
+      }
+    ]
+  },
+  "review": {
+    "id": "appgprj_6ada524a12a481918aac17bb1f53ffb5",
+    "url": "https://proton-potential-independent-review.fancybead14.chatgpt.site",
+    "role": "owner",
+    "access_mode": "custom",
+    "revision": 1,
+    "allowed_users": 1,
+    "external_visitors": 0,
+    "versions": [
+      {
+        "id": "appgprj_6ada524a12a481918aac17bb1f53ffb5~appgver_55897aecb910819199e49ef506052b16",
+        "version_number": 2,
+        "source": {
+          "commit_sha": "106784a4b596e8b13556e79fd67bc41c50f2560c"
+        },
+        "deployment_id": "appgdep_6ada603017f88191bc4bb09070cd61ac"
+      },
+      {
+        "id": "appgprj_6ada524a12a481918aac17bb1f53ffb5~appgver_24e08ab3f7288191860ec61fff1aa282",
+        "version_number": 1,
+        "source": {
+          "commit_sha": "1caba961a1678bf85ab18c3dfc12b6fb98d2520b"
+        },
+        "deployment_id": "appgdep_6ada579876308191b80aed278c2e4551"
+      }
+    ]
+  },
+  "PR": {
+    "state": "open",
+    "merged": false,
+    "draft": true,
+    "url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/pull/15"
+  }
+}

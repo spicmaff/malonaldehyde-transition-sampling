@@ -1,0 +1,43 @@
+✔ qPT uses fixed oxygen and proton identities (1.739237ms)
+✔ centering preserves all pair distances (0.337229ms)
+✔ rigid camera rotation preserves vector magnitude (0.703402ms)
+✔ orthographic projection is isotropic in its plane (0.345091ms)
+✔ saved path images are returned exactly (2.474626ms)
+✔ interpolation is explicitly not a saved image (0.220363ms)
+✔ interpolated distances are recomputed from the display geometry (0.224199ms)
+✔ NaN interpolation is rejected (0.374996ms)
+✔ out-of-range path input is clamped (0.196337ms)
+✔ force error is MTP minus PBE, without per-arrow normalization (0.559314ms)
+✔ RMSE denominator is 27, not 9 (0.282907ms)
+✔ truncated force arrays fail closed (0.201304ms)
+✔ truncated component arrays fail closed (0.149145ms)
+✔ nonfinite forces fail closed (0.515579ms)
+✔ source vector and geometry use the same rigid transform (1.237089ms)
+✔ legacy applicability route remains useful (0.147352ms)
+✔ deep link query does not change route identity (0.119321ms)
+✔ unknown routes fail to overview (0.061553ms)
+✔ essay anchors resolve to visible essay (0.397656ms)
+✔ paired seed identities remain exact strings (0.271821ms)
+✔ mismatched paired seeds fail closed (0.22518ms)
+✔ directed story has six bounded chapters (0.367495ms)
+✔ reveal count never exceeds available data (0.118689ms)
+✔ ticks remain round inside a fixed molecular comparison domain (2.197028ms)
+✔ reversed seed axes and invalid domains are handled explicitly (0.466534ms)
+✔ the real saved payload qualifies for progressive enhancement (2.333624ms)
+✔ rejects finite-shaped but missing energy series (2.209847ms)
+✔ rejects nonfinite energy (0.826268ms)
+✔ rejects wrong selected geometry (1.295125ms)
+✔ rejects permuted atom identities (0.919849ms)
+✔ rejects reversed force-difference sign (1.743413ms)
+✔ rejects pooled normalization replacing component RMSE (0.826308ms)
+✔ rejects rounded numeric uint64 seed (1.044637ms)
+✔ rejects mismatched shared training descriptor (0.950114ms)
+✔ rejects wrong saved gamma / frame mapping (0.963395ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1225.97114

@@ -1,0 +1,43 @@
+{
+  "scientific_source_commit": "81efe61100d4913b9306f38616dde1720636d377",
+  "source_tree": "6fb366fa2148bab395234951630d1417ad9bd7d5",
+  "branch": "final-site-acceptance",
+  "site_source_commit": "45cbd16ab850d479f7b08476bc32c64666177513",
+  "site_version_number": 3,
+  "deployment": {
+    "id": "appgdep_6ada822c82dc8191819d36fbbfcd6dbf",
+    "project_id": "appgprj_6ada524a12a481918aac17bb1f53ffb5",
+    "title": "Proton / Potential — Independent Review",
+    "version_id": "appgprj_6ada524a12a481918aac17bb1f53ffb5~appgver_68e1b33394d081918106ae8326e9d5ea",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://proton-potential-independent-review.fancybead14.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ada524a12a481918aac17bb1f53ffb5",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-22T21:38:02.284386+00:00"
+  },
+  "access_after": {
+    "original": {
+      "project_id": "appgprj_6ada1822d82c8191a5130cfbc907ff94",
+      "mode": "custom",
+      "revision": 1,
+      "current_user_role": "owner",
+      "allowed_users": 1,
+      "allowed_groups": 0,
+      "external_visitors": 0
+    },
+    "review": {
+      "project_id": "appgprj_6ada524a12a481918aac17bb1f53ffb5",
+      "mode": "custom",
+      "revision": 1,
+      "current_user_role": "owner",
+      "allowed_users": 1,
+      "allowed_groups": 0,
+      "external_visitors": 0
+    }
+  },
+  "private_policy_revision_unchanged": true
+}

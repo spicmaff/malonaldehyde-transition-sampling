@@ -1,0 +1,52 @@
+[
+  {
+    "id": 39856887047,
+    "name": "independent-review",
+    "head_sha": "81efe61100d4913b9306f38616dde1720636d377",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39856887047",
+    "created_at": "2026-10-22T21:23:39Z",
+    "updated_at": "2026-10-22T21:30:45Z"
+  },
+  {
+    "id": 39856886819,
+    "name": "public-repository-audit",
+    "head_sha": "81efe61100d4913b9306f38616dde1720636d377",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39856886819",
+    "created_at": "2026-10-22T21:23:39Z",
+    "updated_at": "2026-10-22T21:23:52Z"
+  },
+  {
+    "id": 39856886371,
+    "name": "completed-studies-offline",
+    "head_sha": "81efe61100d4913b9306f38616dde1720636d377",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39856886371",
+    "created_at": "2026-10-22T21:23:39Z",
+    "updated_at": "2026-10-22T21:23:55Z"
+  },
+  {
+    "id": 39856886473,
+    "name": "research-site",
+    "head_sha": "81efe61100d4913b9306f38616dde1720636d377",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39856886473",
+    "created_at": "2026-10-22T21:23:39Z",
+    "updated_at": "2026-10-22T21:34:16Z"
+  },
+  {
+    "id": 39856886775,
+    "name": "repository-and-reproduction-selftest",
+    "head_sha": "81efe61100d4913b9306f38616dde1720636d377",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39856886775",
+    "created_at": "2026-10-22T21:23:39Z",
+    "updated_at": "2026-10-22T21:56:33Z"
+  }
+]

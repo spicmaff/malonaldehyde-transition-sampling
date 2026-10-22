@@ -1,0 +1,714 @@
+﻿2026-10-22T21:23:44.3967988Z Current runner version: '2.338.0'
+2026-10-22T21:23:44.3992614Z ##[group]Runner Image Provisioner
+2026-10-22T21:23:44.3993456Z Hosted Compute Agent
+2026-10-22T21:23:44.3994217Z Version: 20261012.601
+2026-10-22T21:23:44.3994884Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-22T21:23:44.3995580Z Build Date: 2026-10-12T17:48:21Z
+2026-10-22T21:23:44.3996235Z Worker ID: {e3327d24-3536-411a-9ecc-db09323526fd}
+2026-10-22T21:23:44.3997053Z Region: westus3
+2026-10-22T21:23:44.3997589Z Cloud: Azure
+2026-10-22T21:23:44.3998172Z ##[endgroup]
+2026-10-22T21:23:44.3999466Z ##[group]Operating System
+2026-10-22T21:23:44.4000048Z Ubuntu
+2026-10-22T21:23:44.4000645Z 24.04.5
+2026-10-22T21:23:44.4001176Z LTS
+2026-10-22T21:23:44.4002113Z ##[endgroup]
+2026-10-22T21:23:44.4002674Z ##[group]Runner Image
+2026-10-22T21:23:44.4003284Z Image: ubuntu-24.04
+2026-10-22T21:23:44.4004208Z Version: 20261012.334.1
+2026-10-22T21:23:44.4005401Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-22T21:23:44.4006940Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-22T21:23:44.4007872Z ##[endgroup]
+2026-10-22T21:23:44.4009041Z ##[group]GITHUB_TOKEN Permissions
+2026-10-22T21:23:44.4011135Z Contents: write
+2026-10-22T21:23:44.4011812Z Metadata: read
+2026-10-22T21:23:44.4012362Z ##[endgroup]
+2026-10-22T21:23:44.4015052Z Secret source: Actions
+2026-10-22T21:23:44.4016041Z Cache mode: write
+2026-10-22T21:23:44.4016745Z Prepare workflow directory
+2026-10-22T21:23:44.4378835Z Prepare all required actions
+2026-10-22T21:23:44.4426520Z Getting action download info
+2026-10-22T21:23:44.7456382Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-22T21:23:44.8834265Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-22T21:23:45.0337785Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-22T21:23:45.2274680Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-22T21:23:45.6504262Z Complete job name: browser-evidence
+2026-10-22T21:23:45.7451449Z ##[group]Run actions/checkout@v4
+2026-10-22T21:23:45.7452631Z with:
+2026-10-22T21:23:45.7453308Z   fetch-depth: 0
+2026-10-22T21:23:45.7454449Z   repository: spicmaff/malonaldehyde-transition-sampling
+2026-10-22T21:23:45.7462612Z   token: ***
+2026-10-22T21:23:45.7463373Z   ssh-strict: true
+2026-10-22T21:23:45.7464290Z   ssh-user: git
+2026-10-22T21:23:45.7465033Z   persist-credentials: true
+2026-10-22T21:23:45.7465833Z   clean: true
+2026-10-22T21:23:45.7466564Z   sparse-checkout-cone-mode: true
+2026-10-22T21:23:45.7467440Z   fetch-tags: false
+2026-10-22T21:23:45.7468163Z   show-progress: true
+2026-10-22T21:23:45.7468908Z   lfs: false
+2026-10-22T21:23:45.7469601Z   submodules: false
+2026-10-22T21:23:45.7470349Z   set-safe-directory: true
+2026-10-22T21:23:45.7471208Z   allow-unsafe-pr-checkout: false
+2026-10-22T21:23:45.7472392Z ##[endgroup]
+2026-10-22T21:23:45.8500245Z Syncing repository: spicmaff/malonaldehyde-transition-sampling
+2026-10-22T21:23:45.8503096Z ##[group]Getting Git version info
+2026-10-22T21:23:45.8505141Z Working directory is '/home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling'
+2026-10-22T21:23:45.8507518Z [command]/usr/bin/git version
+2026-10-22T21:23:45.8628512Z git version 2.55.0
+2026-10-22T21:23:45.8655647Z ##[endgroup]
+2026-10-22T21:23:45.8670521Z Temporarily overriding HOME='/home/USER/work/_temp/ce5ea90b-4f66-481c-8751-383a1727d668' before making global git config changes
+2026-10-22T21:23:45.8674409Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T21:23:45.8679084Z [command]/usr/bin/git config --global --add safe.directory /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling
+2026-10-22T21:23:45.8736905Z Deleting the contents of '/home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling'
+2026-10-22T21:23:45.8745500Z ##[group]Initializing the repository
+2026-10-22T21:23:45.8750646Z [command]/usr/bin/git init /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling
+2026-10-22T21:23:45.8869693Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-22T21:23:45.8874294Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-22T21:23:45.8876453Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-22T21:23:45.8878025Z hint: call:
+2026-10-22T21:23:45.8879234Z hint:
+2026-10-22T21:23:45.8880543Z hint: 	git config --global init.defaultBranch <name>
+2026-10-22T21:23:45.8881835Z hint:
+2026-10-22T21:23:45.8883325Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-22T21:23:45.8885651Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-22T21:23:45.8887218Z hint:
+2026-10-22T21:23:45.8888270Z hint: 	git branch -m <name>
+2026-10-22T21:23:45.8889413Z hint:
+2026-10-22T21:23:45.8891051Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-22T21:23:45.8893898Z Initialized empty Git repository in /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling/.git/
+2026-10-22T21:23:45.8917127Z [command]/usr/bin/git remote add origin https://github.com/spicmaff/malonaldehyde-transition-sampling
+2026-10-22T21:23:45.8974427Z ##[endgroup]
+2026-10-22T21:23:45.8976355Z ##[group]Disabling automatic garbage collection
+2026-10-22T21:23:45.8978495Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-22T21:23:45.9026104Z ##[endgroup]
+2026-10-22T21:23:45.9027940Z ##[group]Setting up auth
+2026-10-22T21:23:45.9029969Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T21:23:45.9057782Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T21:23:45.9440868Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T21:23:45.9477434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T21:23:45.9739159Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T21:23:45.9777438Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T21:23:46.0009664Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-22T21:23:46.0068110Z ##[endgroup]
+2026-10-22T21:23:46.0077287Z ##[group]Fetching the repository
+2026-10-22T21:23:46.0079480Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-10-22T21:23:49.1136933Z From https://github.com/spicmaff/malonaldehyde-transition-sampling
+2026-10-22T21:23:49.1138061Z  * [new branch]      completion/final-reconciliation-2026-10-05 -> origin/completion/final-reconciliation-2026-10-05
+2026-10-22T21:23:49.1139172Z  * [new branch]      completion/prompt3-final-2026-10-02 -> origin/completion/prompt3-final-2026-10-02
+2026-10-22T21:23:49.1140051Z  * [new branch]      final-site-acceptance -> origin/final-site-acceptance
+2026-10-22T21:23:49.1140818Z  * [new branch]      independent-review-evidence -> origin/independent-review-evidence
+2026-10-22T21:23:49.1141666Z  * [new branch]      independent-scientific-review -> origin/independent-scientific-review
+2026-10-22T21:23:49.1142402Z  * [new branch]      main                  -> origin/main
+2026-10-22T21:23:49.1143334Z  * [new branch]      paper/offpath-finite-budget-20261017-v001 -> origin/paper/offpath-finite-budget-20261017-v001
+2026-10-22T21:23:49.1145407Z  * [new branch]      presentation/english-cinematic-research-20261009 -> origin/presentation/english-cinematic-research-20261009
+2026-10-22T21:23:49.1146800Z  * [new branch]      presentation/english-cinematic-science-20261010 -> origin/presentation/english-cinematic-science-20261010
+2026-10-22T21:23:49.1148033Z  * [new branch]      presentation/english-only-research-20261009 -> origin/presentation/english-only-research-20261009
+2026-10-22T21:23:49.1149238Z  * [new branch]      presentation/interactive-research-site-20261009 -> origin/presentation/interactive-research-site-20261009
+2026-10-22T21:23:49.1150333Z  * [new branch]      presentation/visual-story-2026-10-05 -> origin/presentation/visual-story-2026-10-05
+2026-10-22T21:23:49.1151372Z  * [new branch]      research/optimization-story-20261020 -> origin/research/optimization-story-20261020
+2026-10-22T21:23:49.1152569Z  * [new branch]      research/scientific-finale-20261022 -> origin/research/scientific-finale-20261022
+2026-10-22T21:23:49.1154058Z  * [new branch]      science/train119-local-pbe-diagnostic-20261009 -> origin/science/train119-local-pbe-diagnostic-20261009
+2026-10-22T21:23:49.1155264Z  * [new branch]      scientific-editorial-redesign -> origin/scientific-editorial-redesign
+2026-10-22T21:23:49.1156078Z  * [new tag]         v1.0.0                -> v1.0.0
+2026-10-22T21:23:49.1156646Z  * [new tag]         v1.1.0                -> v1.1.0
+2026-10-22T21:23:49.1157202Z  * [new tag]         v1.1.1                -> v1.1.1
+2026-10-22T21:23:49.1157746Z  * [new tag]         v1.1.2                -> v1.1.2
+2026-10-22T21:23:49.1158270Z  * [new tag]         v1.2.0                -> v1.2.0
+2026-10-22T21:23:49.1160538Z [command]/usr/bin/git branch --list --remote origin/final-site-acceptance
+2026-10-22T21:23:49.1193799Z   origin/final-site-acceptance
+2026-10-22T21:23:49.1203096Z [command]/usr/bin/git rev-parse refs/remotes/origin/final-site-acceptance
+2026-10-22T21:23:49.1230568Z 81efe61100d4913b9306f38616dde1720636d377
+2026-10-22T21:23:49.1234313Z ##[endgroup]
+2026-10-22T21:23:49.1309795Z ##[group]Determining the checkout info
+2026-10-22T21:23:49.1311132Z ##[endgroup]
+2026-10-22T21:23:49.1312184Z [command]/usr/bin/git sparse-checkout disable
+2026-10-22T21:23:49.1317848Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-22T21:23:49.1331056Z ##[group]Checking out the ref
+2026-10-22T21:23:49.1335398Z [command]/usr/bin/git checkout --progress --force -B final-site-acceptance refs/remotes/origin/final-site-acceptance
+2026-10-22T21:23:49.2372928Z Switched to a new branch 'final-site-acceptance'
+2026-10-22T21:23:49.2377214Z branch 'final-site-acceptance' set up to track 'origin/final-site-acceptance'.
+2026-10-22T21:23:49.2389395Z ##[endgroup]
+2026-10-22T21:23:49.2435254Z [command]/usr/bin/git log -1 --format=%H
+2026-10-22T21:23:49.2462544Z 81efe61100d4913b9306f38616dde1720636d377
+2026-10-22T21:23:49.2712729Z ##[group]Run actions/setup-python@v5
+2026-10-22T21:23:49.2713078Z with:
+2026-10-22T21:23:49.2713331Z   python-version: 3.11
+2026-10-22T21:23:49.2713755Z   check-latest: false
+2026-10-22T21:23:49.2716128Z   token: ***
+2026-10-22T21:23:49.2716380Z   update-environment: true
+2026-10-22T21:23:49.2716658Z   allow-prereleases: false
+2026-10-22T21:23:49.2716928Z   freethreaded: false
+2026-10-22T21:23:49.2717182Z ##[endgroup]
+2026-10-22T21:23:49.3943151Z ##[group]Installed versions
+2026-10-22T21:23:49.4454109Z (node:2078) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T21:23:49.4454893Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T21:23:49.4455606Z Successfully set up CPython (3.11.17)
+2026-10-22T21:23:49.4456374Z ##[endgroup]
+2026-10-22T21:23:49.4692929Z ##[group]Run actions/setup-node@v4
+2026-10-22T21:23:49.4693421Z with:
+2026-10-22T21:23:49.4693990Z   node-version: 22
+2026-10-22T21:23:49.4694376Z   always-auth: false
+2026-10-22T21:23:49.4694982Z   check-latest: false
+2026-10-22T21:23:49.4699294Z   token: ***
+2026-10-22T21:23:49.4699653Z env:
+2026-10-22T21:23:49.4700112Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:49.4700867Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T21:23:49.4701580Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:49.4702216Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:49.4702847Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:49.4703488Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T21:23:49.4704184Z ##[endgroup]
+2026-10-22T21:23:49.6894197Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-22T21:23:49.6899090Z (node:2087) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T21:23:49.6899839Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T21:23:49.6901865Z ##[group]Environment details
+2026-10-22T21:23:54.6737403Z node: v22.23.3
+2026-10-22T21:23:54.6737796Z npm: 10.9.9
+2026-10-22T21:23:54.6738086Z yarn: 1.22.22
+2026-10-22T21:23:54.6739290Z ##[endgroup]
+2026-10-22T21:23:54.6908008Z ##[group]Run npm ci --prefix tools/site --ignore-scripts --no-audit --no-fund
+2026-10-22T21:23:54.6908565Z [36;1mnpm ci --prefix tools/site --ignore-scripts --no-audit --no-fund[0m
+2026-10-22T21:23:54.7371682Z shell: /usr/bin/bash -e {0}
+2026-10-22T21:23:54.7371953Z env:
+2026-10-22T21:23:54.7372228Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:54.7372640Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T21:23:54.7373038Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:54.7373399Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:54.7373916Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:54.7374269Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T21:23:54.7374596Z ##[endgroup]
+2026-10-22T21:23:58.1991255Z 
+2026-10-22T21:23:58.2001276Z added 81 packages in 3s
+2026-10-22T21:23:58.3212093Z ##[group]Run python3 -B tools/build_research_site.py --out "$RUNNER_TEMP/web/current"
+2026-10-22T21:23:58.3213010Z [36;1mpython3 -B tools/build_research_site.py --out "$RUNNER_TEMP/web/current"[0m
+2026-10-22T21:23:58.3214221Z [36;1mfor ITEM in baseline:76e0e22967f408480b5a713d8f94f6c9e9981105 pr:3e6eeb9803078fa7a8e7b984389ce0b55d34d816; do[0m
+2026-10-22T21:23:58.3214996Z [36;1m  NAME="${ITEM%%:*}"[0m
+2026-10-22T21:23:58.3215347Z [36;1m  REF="${ITEM#*:}"[0m
+2026-10-22T21:23:58.3215785Z [36;1m  git worktree add --detach "$RUNNER_TEMP/$NAME" "$REF"[0m
+2026-10-22T21:23:58.3216548Z [36;1m  python3 -B "$RUNNER_TEMP/$NAME/tools/build_research_site.py" --out "$RUNNER_TEMP/web/$NAME"[0m
+2026-10-22T21:23:58.3217189Z [36;1mdone[0m
+2026-10-22T21:23:58.3286774Z shell: /usr/bin/bash -e {0}
+2026-10-22T21:23:58.3287040Z env:
+2026-10-22T21:23:58.3287304Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:58.3287773Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T21:23:58.3288181Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:58.3288574Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:58.3288931Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:23:58.3289286Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T21:23:58.3289601Z ##[endgroup]
+2026-10-22T21:24:00.5966435Z {"status": "PASS_ENGLISH_CINEMATIC_BUILD", "science_commit": "f44d28cc0b13defb747f625376b083055b577629", "NEB_images": 9, "force_frames_from_primary_data": 11, "force_components": 297, "paired_seeds": 5, "new_physical_calls": 0}
+2026-10-22T21:24:00.6124670Z Preparing worktree (detached HEAD 76e0e22)
+2026-10-22T21:24:00.7207662Z HEAD is now at 76e0e22 Publish the source-verified scientific finale in Optimization
+2026-10-22T21:24:01.3117850Z {"status": "PASS_ENGLISH_CINEMATIC_BUILD", "science_commit": "f44d28cc0b13defb747f625376b083055b577629", "NEB_images": 9, "force_frames_from_primary_data": 11, "force_components": 297, "paired_seeds": 5, "new_physical_calls": 0}
+2026-10-22T21:24:01.3255245Z Preparing worktree (detached HEAD 3e6eeb9)
+2026-10-22T21:24:01.4256203Z HEAD is now at 3e6eeb9 Keep all chapter modules synchronized through compact navigation
+2026-10-22T21:24:02.4768285Z {"status": "PASS_ENGLISH_CINEMATIC_BUILD", "science_commit": "f44d28cc0b13defb747f625376b083055b577629", "NEB_images": 9, "force_frames_from_primary_data": 11, "force_components": 297, "paired_seeds": 5, "new_physical_calls": 0}
+2026-10-22T21:24:02.5541032Z ##[group]Run python3 -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/web" > "$RUNNER_TEMP/http.log" 2>&1 &
+2026-10-22T21:24:02.5542147Z [36;1mpython3 -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/web" > "$RUNNER_TEMP/http.log" 2>&1 &[0m
+2026-10-22T21:24:02.5542867Z [36;1mSERVER_PID=$![0m
+2026-10-22T21:24:02.5543273Z [36;1mtrap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT[0m
+2026-10-22T21:24:02.5544634Z [36;1mBROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/pr/ CIN_BEFORE_URL=http://127.0.0.1:8768/baseline/ QA_OUT="$RUNNER_TEMP/evidence/legacy-pr" node tools/site/browser_cinematic_test.mjs || true[0m
+2026-10-22T21:24:02.5546181Z [36;1mBROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/evidence" node tools/site/browser_independent_test.mjs[0m
+2026-10-22T21:24:02.5610436Z shell: /usr/bin/bash -e {0}
+2026-10-22T21:24:02.5610676Z env:
+2026-10-22T21:24:02.5610976Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:24:02.5611391Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T21:24:02.5611787Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:24:02.5612135Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:24:02.5612488Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:24:02.5612838Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T21:24:02.5613163Z   CHROME_BIN: /usr/bin/google-chrome
+2026-10-22T21:24:02.5613406Z ##[endgroup]
+2026-10-22T21:26:51.9687636Z {"name":"Optimization S1 playback / pr","status":"PASS","detail":{"before":{"state":{"ready":true,"interactive":true,"selectedState":"S0","selectedIndex":0,"nativeIndex":0,"readerOrder":["S0","S1","S1c","S2","S2q","S3","S4"],"nativeOrder":["S0","S1","S2","S3","S4"],"playing":false,"reducedMotion":false},"hidden":false,"focus":true,"route":"#optimization","selected":"S0","rail":[{"id":"S0","pressed":"true"},{"id":"S1","pressed":"false"},{"id":"S2","pressed":"false"},{"id":"S3","pressed":"false"},{"id":"S4","pressed":"false"}],"play":{"disabled":false,"label":"Play native sequence"},"scrollY":9},"immediately":{"state":{"ready":true,"interactive":true,"selectedState":"S0","selectedIndex":0,"nativeIndex":0,"readerOrder":["S0","S1","S1c","S2","S2q","S3","S4"],"nativeOrder":["S0","S1","S2","S3","S4"],"playing":true,"reducedMotion":false},"hidden":false,"focus":true,"route":"#optimization","selected":"S0","rail":[{"id":"S0","pressed":"true"},{"id":"S1","pressed":"false"},{"id":"S2","pressed":"false"},{"id":"S3","pressed":"false"},{"id":"S4","pressed":"false"}],"play":{"disabled":false,"label":"Pause native sequence"},"scrollY":7198},"after":{"state":{"ready":true,"interactive":true,"selectedState":"S1","selectedIndex":1,"nativeIndex":1,"readerOrder":["S0","S1","S1c","S2","S2q","S3","S4"],"nativeOrder":["S0","S1","S2","S3","S4"],"playing":true,"reducedMotion":false},"hidden":false,"focus":true,"route":"#optimization","selected":"S1","rail":[{"id":"S0","pressed":"false"},{"id":"S1","pressed":"true"},{"id":"S2","pressed":"false"},{"id":"S3","pressed":"false"},{"id":"S4","pressed":"false"}],"play":{"disabled":false,"label":"Pause native sequence"},"scrollY":7198},"screenshot":"playback-pr.png"}}
+2026-10-22T21:26:55.1188879Z {"name":"Optimization S1 playback / current","status":"PASS","detail":{"before":{"state":{"ready":true,"interactive":true,"selectedState":"S0","selectedIndex":0,"nativeIndex":0,"readerOrder":["S0","S1","S1c","S2","S2q","S3","S4"],"nativeOrder":["S0","S1","S2","S3","S4"],"playing":false,"reducedMotion":false},"hidden":false,"focus":true,"route":"#optimization","selected":"S0","rail":[{"id":"S0","pressed":"true"},{"id":"S1","pressed":"false"},{"id":"S2","pressed":"false"},{"id":"S3","pressed":"false"},{"id":"S4","pressed":"false"}],"play":{"disabled":false,"label":"Play native sequence"},"scrollY":21},"immediately":{"state":{"ready":true,"interactive":true,"selectedState":"S0","selectedIndex":0,"nativeIndex":0,"readerOrder":["S0","S1","S1c","S2","S2q","S3","S4"],"nativeOrder":["S0","S1","S2","S3","S4"],"playing":true,"reducedMotion":false},"hidden":false,"focus":true,"route":"#optimization","selected":"S0","rail":[{"id":"S0","pressed":"true"},{"id":"S1","pressed":"false"},{"id":"S2","pressed":"false"},{"id":"S3","pressed":"false"},{"id":"S4","pressed":"false"}],"play":{"disabled":false,"label":"Pause native sequence"},"scrollY":7225},"after":{"state":{"ready":true,"interactive":true,"selectedState":"S1","selectedIndex":1,"nativeIndex":1,"readerOrder":["S0","S1","S1c","S2","S2q","S3","S4"],"nativeOrder":["S0","S1","S2","S3","S4"],"playing":true,"reducedMotion":false},"hidden":false,"focus":true,"route":"#optimization","selected":"S1","rail":[{"id":"S0","pressed":"false"},{"id":"S1","pressed":"true"},{"id":"S2","pressed":"false"},{"id":"S3","pressed":"false"},{"id":"S4","pressed":"false"}],"play":{"disabled":false,"label":"Pause native sequence"},"scrollY":7225},"screenshot":"playback-current.png"}}
+2026-10-22T21:27:10.1930990Z {"views":12,"width":320,"theme":"light"}
+2026-10-22T21:27:23.2589343Z {"views":24,"width":320,"theme":"dark"}
+2026-10-22T21:27:36.3610279Z {"views":36,"width":390,"theme":"light"}
+2026-10-22T21:27:49.6440194Z {"views":48,"width":390,"theme":"dark"}
+2026-10-22T21:28:03.7222835Z {"views":60,"width":768,"theme":"light"}
+2026-10-22T21:28:17.7544745Z {"views":72,"width":768,"theme":"dark"}
+2026-10-22T21:28:32.2668161Z {"views":84,"width":1440,"theme":"light"}
+2026-10-22T21:28:46.4673989Z {"views":96,"width":1440,"theme":"dark"}
+2026-10-22T21:29:00.9716950Z {"views":108,"width":1920,"theme":"light"}
+2026-10-22T21:29:15.2540518Z {"views":120,"width":1920,"theme":"dark"}
+2026-10-22T21:29:15.2636855Z {"name":"120 route / width / theme layouts with accessibility","status":"PASS","detail":{"views":120,"incomplete":90}}
+2026-10-22T21:29:56.1475047Z {"name":"Scientific figures and disclosures at desktop / mobile sizes","status":"PASS","detail":{"images":150,"missing":[]}}
+2026-10-22T21:29:56.7098365Z {"name":"Settled shared-training marker contrast in both themes","status":"PASS","detail":[{"theme":"light","markers":72,"minimum_contrast":3.464934807578958},{"theme":"dark","markers":72,"minimum_contrast":5.154269559696165}]}
+2026-10-22T21:30:00.9415134Z {"name":"No-JavaScript sampling graphics preserve readable scientific marks","status":"PASS","detail":[{"edition":"pr","theme":"light","width":320,"markers":120,"minimum_contrast":2.8378901591623458,"below_3":96,"minimum_effective_font_px":5.672727272727273},{"edition":"pr","theme":"dark","width":320,"markers":120,"minimum_contrast":3.873574519699756,"below_3":0,"minimum_effective_font_px":5.672727272727273},{"edition":"pr","theme":"light","width":390,"markers":120,"minimum_contrast":2.8378901591623458,"below_3":96,"minimum_effective_font_px":6.9818181818181815},{"edition":"pr","theme":"dark","width":390,"markers":120,"minimum_contrast":3.873574519699756,"below_3":0,"minimum_effective_font_px":6.9818181818181815},{"edition":"pr","theme":"light","width":768,"markers":120,"minimum_contrast":2.8378901591623458,"below_3":96,"minimum_effective_font_px":15.229090909090909},{"edition":"pr","theme":"dark","width":768,"markers":120,"minimum_contrast":3.873574519699756,"below_3":0,"minimum_effective_font_px":15.229090909090909},{"edition":"pr","theme":"light","width":1440,"markers":120,"minimum_contrast":2.8378901591623458,"below_3":96,"minimum_effective_font_px":13.898181818181818},{"edition":"pr","theme":"dark","width":1440,"markers":120,"minimum_contrast":3.873574519699756,"below_3":0,"minimum_effective_font_px":13.898181818181818},{"edition":"pr","theme":"light","width":1920,"markers":120,"minimum_contrast":2.8378901591623458,"below_3":96,"minimum_effective_font_px":15.552727272727273},{"edition":"pr","theme":"dark","width":1920,"markers":120,"minimum_contrast":3.873574519699756,"below_3":0,"minimum_effective_font_px":15.552727272727273},{"edition":"current","theme":"light","width":320,"markers":120,"minimum_contrast":3.464934807578958,"below_3":0,"minimum_effective_font_px":12.290909090909091},{"edition":"current","theme":"dark","width":320,"markers":120,"minimum_contrast":5.154269559696165,"below_3":0,"minimum_effective_font_px":12.290909090909091},{"edition":"current","theme":"light","width":390,"markers":120,"minimum_contrast":3.464934807578958,"below_3":0,"minimum_effective_font_px":15.127272727272727},{"edition":"current","theme":"dark","width":390,"markers":120,"minimum_contrast":5.154269559696165,"below_3":0,"minimum_effective_font_px":15.127272727272727},{"edition":"current","theme":"light","width":768,"markers":120,"minimum_contrast":3.464934807578958,"below_3":0,"minimum_effective_font_px":15.229090909090909},{"edition":"current","theme":"dark","width":768,"markers":120,"minimum_contrast":5.154269559696165,"below_3":0,"minimum_effective_font_px":15.229090909090909},{"edition":"current","theme":"light","width":1440,"markers":120,"minimum_contrast":3.464934807578958,"below_3":0,"minimum_effective_font_px":13.898181818181818},{"edition":"current","theme":"dark","width":1440,"markers":120,"minimum_contrast":5.154269559696165,"below_3":0,"minimum_effective_font_px":13.898181818181818},{"edition":"current","theme":"light","width":1920,"markers":120,"minimum_contrast":3.464934807578958,"below_3":0,"minimum_effective_font_px":15.552727272727273},{"edition":"current","theme":"dark","width":1920,"markers":120,"minimum_contrast":5.154269559696165,"below_3":0,"minimum_effective_font_px":15.552727272727273}]}
+2026-10-22T21:30:18.5825883Z {"name":"Controlled baseline / PR / repaired comparisons","status":"PASS","detail":{"screenshots":36,"viewport":"390 or 1440 × 1000; device scale 1; top; image 5; stopped"}}
+2026-10-22T21:30:19.5202678Z {"name":"Reduced motion: manual image controls and play request","status":"PASS","detail":{"route":"molecule","hero":4,"path":4,"sampling":1,"samplingImage":4,"energy":1,"energyImage":4,"models":{"Basin60":true,"Targeted60":true},"seeds":1,"seed":"all","frame":145,"group":"CROSSING7","atom":1,"scale":2,"vectors":{"pbe":true,"mtp":true,"error":true},"story":0,"motion":null}}
+2026-10-22T21:30:21.3249421Z {"name":"History, deep links and independent animation stops","status":"PASS","detail":"Back / Forward, #opt-candidate reload, prior chapter stopped"}
+2026-10-22T21:30:29.0372787Z {"name":"No JS, missing / corrupt / partial data and Canvas fallback","status":"PASS","detail":[{"scenario":"nojs","status":"PASS"},{"scenario":"missing-science","status":"PASS"},{"scenario":"corrupt-science","status":"PASS"},{"scenario":"partial-science","status":"PASS"},{"scenario":"missing-opt","status":"PASS"},{"scenario":"corrupt-opt","status":"PASS"},{"scenario":"missing-off","status":"PASS"},{"scenario":"fallback","status":"PASS"}]}
+2026-10-22T21:30:29.8179503Z {"name":"Actual WebGL context loss retains the selected geometry","status":"PASS","detail":{"renderer":"canvas-fallback","savedImage":9,"OO":"2.4991","image":"current-context-loss-image9.png"}}
+2026-10-22T21:30:31.7687461Z {"name":"Normal-load resource and animation timing sample","status":"PASS","detail":{"renderer":{"path-molecule":"canvas-fallback"},"frames":96,"frame_intervals_ms":{"n":95,"median":16.69999999999891,"p95":16.700000000000728},"update_work_ms":{"n":96,"median":0.3999999999650754,"p95":0.5},"resources":[{"name":"/current/style.css","bytes":0,"duration_ms":0},{"name":"/current/app.mjs","bytes":300,"duration_ms":0},{"name":"/current/offpath.css","bytes":0,"duration_ms":0},{"name":"/current/offpath.mjs","bytes":300,"duration_ms":0},{"name":"/current/optimization.css","bytes":0,"duration_ms":0},{"name":"/current/optimization.mjs","bytes":300,"duration_ms":0},{"name":"/current/presentation_review.css","bytes":0,"duration_ms":0},{"name":"/current/cinematic.css","bytes":0,"duration_ms":0},{"name":"/current/cinematic.mjs","bytes":300,"duration_ms":0},{"name":"/current/scientific_finale.css","bytes":0,"duration_ms":0},{"name":"/current/scientific_finale.mjs","bytes":300,"duration_ms":0},{"name":"/current/editorial.css","bytes":0,"duration_ms":0},{"name":"/current/core.mjs","bytes":300,"duration_ms":0},{"name":"/current/molecule.mjs","bytes":300,"duration_ms":0},{"name":"/current/charts.mjs","bytes":300,"duration_ms":0},{"name":"/current/payload_validation.mjs","bytes":300,"duration_ms":0},{"name":"/current/data/science.json","bytes":0,"duration_ms":2.2999999999883585},{"name":"/current/data/offpath.json","bytes":0,"duration_ms":2.3999999999650754},{"name":"/current/data/optimization.json","bytes":0,"duration_ms":1.8000000000465661},{"name":"/current/data/finale.json","bytes":0,"duration_ms":1.2999999999883585},{"name":"/current/cinema/molecular-path.jpg","bytes":0,"duration_ms":0},{"name":"/current/cinema/research-story.jpg","bytes":0,"duration_ms":0},{"name":"/current/favicon.svg","bytes":300,"duration_ms":3.400000000023283},{"name":"/current/vendor/three/three.module.js","bytes":300,"duration_ms":0},{"name":"/current/vendor/three/three.core.js","bytes":300,"duration_ms":0}],"user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36","scope":"Headless software-rendered sample; not real-device or hardware-GPU certification."}}
+2026-10-22T21:30:31.8064317Z {"name":"No unexpected runtime or network errors in normal loads","status":"PASS","detail":"normal routes only; injected failure requests use separate pages"}
+2026-10-22T21:30:31.9480647Z {"status":"PASS","commit":"81efe61100d4913b9306f38616dde1720636d377","checks":[{"name":"Optimization S1 playback / pr","status":"PASS"},{"name":"Optimization S1 playback / current","status":"PASS"},{"name":"120 route / width / theme layouts with accessibility","status":"PASS"},{"name":"Scientific figures and disclosures at desktop / mobile sizes","status":"PASS"},{"name":"Settled shared-training marker contrast in both themes","status":"PASS"},{"name":"No-JavaScript sampling graphics preserve readable scientific marks","status":"PASS"},{"name":"Controlled baseline / PR / repaired comparisons","status":"PASS"},{"name":"Reduced motion: manual image controls and play request","status":"PASS"},{"name":"History, deep links and independent animation stops","status":"PASS"},{"name":"No JS, missing / corrupt / partial data and Canvas fallback","status":"PASS"},{"name":"Actual WebGL context loss retains the selected geometry","status":"PASS"},{"name":"Normal-load resource and animation timing sample","status":"PASS"},{"name":"No unexpected runtime or network errors in normal loads","status":"PASS"}]}
+2026-10-22T21:30:31.9705200Z ##[group]Run actions/upload-artifact@v4
+2026-10-22T21:30:31.9705473Z with:
+2026-10-22T21:30:31.9705686Z   name: independent-review-evidence
+2026-10-22T21:30:31.9705965Z   path: /home/USER/work/_temp/evidence
+2026-10-22T21:30:31.9706225Z   retention-days: 30
+2026-10-22T21:30:31.9706435Z   if-no-files-found: warn
+2026-10-22T21:30:31.9706655Z   compression-level: 6
+2026-10-22T21:30:31.9706871Z   overwrite: false
+2026-10-22T21:30:31.9707119Z   include-hidden-files: false
+2026-10-22T21:30:31.9707345Z env:
+2026-10-22T21:30:31.9707582Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:31.9707974Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T21:30:31.9708357Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:31.9708710Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:31.9709280Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:31.9709654Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T21:30:31.9709953Z ##[endgroup]
+2026-10-22T21:30:32.1328900Z (node:3269) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T21:30:32.1330099Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T21:30:32.2447568Z With the provided path, there will be 370 files uploaded
+2026-10-22T21:30:32.2448145Z Artifact name is valid!
+2026-10-22T21:30:32.2448433Z Root directory input is valid!
+2026-10-22T21:30:32.5504453Z Beginning upload of artifact content to blob storage
+2026-10-22T21:30:32.9017327Z (node:3269) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-22T21:30:33.6787562Z Uploaded bytes 8388608
+2026-10-22T21:30:33.9440754Z Uploaded bytes 16777216
+2026-10-22T21:30:34.0524469Z Uploaded bytes 25165824
+2026-10-22T21:30:34.1601834Z Uploaded bytes 33554432
+2026-10-22T21:30:34.3629051Z Uploaded bytes 41943040
+2026-10-22T21:30:34.7991080Z Uploaded bytes 50331648
+2026-10-22T21:30:34.8720295Z Uploaded bytes 51340047
+2026-10-22T21:30:34.9320732Z Finished uploading artifact content to blob storage!
+2026-10-22T21:30:34.9323498Z SHA256 digest of uploaded artifact zip is c801d62e325f71c77f236163dcfdb996286b5ab8307c50402dbee25e4dfd32c8
+2026-10-22T21:30:34.9326084Z Finalizing artifact upload
+2026-10-22T21:30:35.3954986Z Artifact independent-review-evidence.zip successfully finalized. Artifact ID 12459867866
+2026-10-22T21:30:35.3956322Z Artifact independent-review-evidence has been successfully uploaded! Final size is 51340047 bytes. Artifact ID is 12459867866
+2026-10-22T21:30:35.3957911Z Artifact download URL: https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39856887047/artifacts/12459867866
+2026-10-22T21:30:35.4196171Z ##[group]Run test -d "$EVIDENCE_DIR"
+2026-10-22T21:30:35.4196709Z [36;1mtest -d "$EVIDENCE_DIR"[0m
+2026-10-22T21:30:35.4197149Z [36;1mREVIEW_HEAD="$(git rev-parse HEAD)"[0m
+2026-10-22T21:30:35.4197698Z [36;1mgit fetch origin independent-review-evidence || true[0m
+2026-10-22T21:30:35.4198499Z [36;1mif git show-ref --verify --quiet refs/remotes/origin/independent-review-evidence; then[0m
+2026-10-22T21:30:35.4199418Z [36;1m  git worktree add "$RUNNER_TEMP/evidence-tree" origin/independent-review-evidence[0m
+2026-10-22T21:30:35.4200060Z [36;1melse[0m
+2026-10-22T21:30:35.4200493Z [36;1m  git worktree add --detach "$RUNNER_TEMP/evidence-tree" HEAD[0m
+2026-10-22T21:30:35.4201049Z [36;1m  cd "$RUNNER_TEMP/evidence-tree"[0m
+2026-10-22T21:30:35.4201579Z [36;1m  git checkout --orphan independent-review-evidence[0m
+2026-10-22T21:30:35.4202084Z [36;1m  git rm -rf .[0m
+2026-10-22T21:30:35.4202443Z [36;1m  cd "$GITHUB_WORKSPACE"[0m
+2026-10-22T21:30:35.4203566Z [36;1mfi[0m
+2026-10-22T21:30:35.4204239Z [36;1mmkdir -p "$RUNNER_TEMP/evidence-tree/$REVIEW_HEAD"[0m
+2026-10-22T21:30:35.4204900Z [36;1mcp -R "$EVIDENCE_DIR/." "$RUNNER_TEMP/evidence-tree/$REVIEW_HEAD/"[0m
+2026-10-22T21:30:35.4205490Z [36;1mcd "$RUNNER_TEMP/evidence-tree"[0m
+2026-10-22T21:30:35.4205974Z [36;1mgit config user.name github-actions[bot][0m
+2026-10-22T21:30:35.4206627Z [36;1mgit config user.email 41898282+github-actions[bot]@users.noreply.github.com[0m
+2026-10-22T21:30:35.4207245Z [36;1mgit add "$REVIEW_HEAD"[0m
+2026-10-22T21:30:35.4207771Z [36;1mgit commit -m "Store independent browser evidence for $REVIEW_HEAD"[0m
+2026-10-22T21:30:35.4208474Z [36;1mgit push origin HEAD:refs/heads/independent-review-evidence[0m
+2026-10-22T21:30:35.4293510Z shell: /usr/bin/bash -e {0}
+2026-10-22T21:30:35.4293967Z env:
+2026-10-22T21:30:35.4294417Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:35.4295029Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T21:30:35.4295949Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:35.4296444Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:35.4296958Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T21:30:35.4297457Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T21:30:35.4297944Z   EVIDENCE_DIR: /home/USER/work/_temp/evidence
+2026-10-22T21:30:35.4298437Z ##[endgroup]
+2026-10-22T21:30:35.8243269Z From https://github.com/spicmaff/malonaldehyde-transition-sampling
+2026-10-22T21:30:35.8244541Z  * branch            independent-review-evidence -> FETCH_HEAD
+2026-10-22T21:30:35.8310224Z Preparing worktree (detached HEAD 67a0854)
+2026-10-22T21:30:36.5985957Z HEAD is now at 67a0854 Store independent browser evidence for 9ca3dd19d6c95d9ef9a0e51a396c94d70238245d
+2026-10-22T21:30:37.3842210Z [detached HEAD 4f9b519] Store independent browser evidence for 81efe61100d4913b9306f38616dde1720636d377
+2026-10-22T21:30:37.3843192Z  370 files changed, 60455 insertions(+)
+2026-10-22T21:30:37.3844163Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/INDEPENDENT_BROWSER_QA.json
+2026-10-22T21:30:37.3845295Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-optimization-dark-1440.png
+2026-10-22T21:30:37.3846630Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-optimization-dark-390.png
+2026-10-22T21:30:37.3848061Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-optimization-light-1440.png
+2026-10-22T21:30:37.3849208Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-optimization-light-390.png
+2026-10-22T21:30:37.3850295Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-overview-dark-1440.png
+2026-10-22T21:30:37.3851381Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-overview-dark-390.png
+2026-10-22T21:30:37.3852876Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-overview-light-1440.png
+2026-10-22T21:30:37.3854114Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-overview-light-390.png
+2026-10-22T21:30:37.3855437Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-sampling-dark-1440.png
+2026-10-22T21:30:37.3856875Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-sampling-dark-390.png
+2026-10-22T21:30:37.3858269Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-sampling-light-1440.png
+2026-10-22T21:30:37.3859727Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/baseline-sampling-light-390.png
+2026-10-22T21:30:37.3860969Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-context-loss-image9.png
+2026-10-22T21:30:37.3862218Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-optimization-dark-1440.png
+2026-10-22T21:30:37.3863477Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-optimization-dark-390.png
+2026-10-22T21:30:37.3864948Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-optimization-light-1440.png
+2026-10-22T21:30:37.3866254Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-optimization-light-390.png
+2026-10-22T21:30:37.3867572Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-overview-dark-1440.png
+2026-10-22T21:30:37.3868791Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-overview-dark-390.png
+2026-10-22T21:30:37.3869989Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-overview-light-1440.png
+2026-10-22T21:30:37.3871199Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-overview-light-390.png
+2026-10-22T21:30:37.3872409Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-sampling-dark-1440.png
+2026-10-22T21:30:37.3873747Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-sampling-dark-390.png
+2026-10-22T21:30:37.3874956Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-sampling-light-1440.png
+2026-10-22T21:30:37.3876424Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/current-sampling-light-390.png
+2026-10-22T21:30:37.3877696Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-dark-1440.png
+2026-10-22T21:30:37.3879048Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-dark-1920.png
+2026-10-22T21:30:37.3880415Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-dark-320.png
+2026-10-22T21:30:37.3881753Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-dark-390.png
+2026-10-22T21:30:37.3883091Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-dark-768.png
+2026-10-22T21:30:37.3884580Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-light-1440.png
+2026-10-22T21:30:37.3885993Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-light-1920.png
+2026-10-22T21:30:37.3887379Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-light-320.png
+2026-10-22T21:30:37.3888735Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-light-390.png
+2026-10-22T21:30:37.3890095Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-forces-forcelayout-light-768.png
+2026-10-22T21:30:37.3891515Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-dark-1440.png
+2026-10-22T21:30:37.3892987Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-dark-1920.png
+2026-10-22T21:30:37.3894547Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-dark-320.png
+2026-10-22T21:30:37.3895976Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-dark-390.png
+2026-10-22T21:30:37.3897704Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-dark-768.png
+2026-10-22T21:30:37.3899175Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-light-1440.png
+2026-10-22T21:30:37.3900651Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-light-1920.png
+2026-10-22T21:30:37.3902104Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-light-320.png
+2026-10-22T21:30:37.3903546Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-light-390.png
+2026-10-22T21:30:37.3905139Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-landscape-profilelayout-light-768.png
+2026-10-22T21:30:37.3906739Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-dark-1440.png
+2026-10-22T21:30:37.3908112Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-dark-1920.png
+2026-10-22T21:30:37.3909481Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-dark-320.png
+2026-10-22T21:30:37.3910841Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-dark-390.png
+2026-10-22T21:30:37.3912184Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-dark-768.png
+2026-10-22T21:30:37.3913571Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-light-1440.png
+2026-10-22T21:30:37.3915132Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-light-1920.png
+2026-10-22T21:30:37.3916514Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-light-320.png
+2026-10-22T21:30:37.3917885Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-light-390.png
+2026-10-22T21:30:37.3919260Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathchart-light-768.png
+2026-10-22T21:30:37.3920846Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-dark-1440.png
+2026-10-22T21:30:37.3922216Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-dark-1920.png
+2026-10-22T21:30:37.3923752Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-dark-320.png
+2026-10-22T21:30:37.3925167Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-dark-390.png
+2026-10-22T21:30:37.3926563Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-dark-768.png
+2026-10-22T21:30:37.3927992Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-light-1440.png
+2026-10-22T21:30:37.3929430Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-light-1920.png
+2026-10-22T21:30:37.3930997Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-light-320.png
+2026-10-22T21:30:37.3932459Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-light-390.png
+2026-10-22T21:30:37.3934008Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-molecule-pathmolecule-light-768.png
+2026-10-22T21:30:37.3935468Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-dark-1440.png
+2026-10-22T21:30:37.3936893Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-dark-1920.png
+2026-10-22T21:30:37.3938312Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-dark-320.png
+2026-10-22T21:30:37.3939727Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-dark-390.png
+2026-10-22T21:30:37.3941141Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-dark-768.png
+2026-10-22T21:30:37.3942748Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-light-1440.png
+2026-10-22T21:30:37.3944346Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-light-1920.png
+2026-10-22T21:30:37.3945764Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-light-320.png
+2026-10-22T21:30:37.3947162Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-light-390.png
+2026-10-22T21:30:37.3948568Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edbudgetaudit-light-768.png
+2026-10-22T21:30:37.3949966Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-dark-1440.png
+2026-10-22T21:30:37.3951516Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-dark-1920.png
+2026-10-22T21:30:37.3952962Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-dark-320.png
+2026-10-22T21:30:37.3954564Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-dark-390.png
+2026-10-22T21:30:37.3955974Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-dark-768.png
+2026-10-22T21:30:37.3957402Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-light-1440.png
+2026-10-22T21:30:37.3958798Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-light-1920.png
+2026-10-22T21:30:37.3960218Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-light-320.png
+2026-10-22T21:30:37.3961602Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-light-390.png
+2026-10-22T21:30:37.3963050Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-edsensitivity-light-768.png
+2026-10-22T21:30:37.3964965Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-dark-1440.png
+2026-10-22T21:30:37.3966919Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-dark-1920.png
+2026-10-22T21:30:37.3967815Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-dark-320.png
+2026-10-22T21:30:37.3968733Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-dark-390.png
+2026-10-22T21:30:37.3969882Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-dark-768.png
+2026-10-22T21:30:37.3971088Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-light-1440.png
+2026-10-22T21:30:37.3972341Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-light-1920.png
+2026-10-22T21:30:37.3973579Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-light-320.png
+2026-10-22T21:30:37.3974758Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-light-390.png
+2026-10-22T21:30:37.3975511Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-offpath-offprimarychart-light-768.png
+2026-10-22T21:30:37.3976261Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-dark-1440.png
+2026-10-22T21:30:37.3977013Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-dark-1920.png
+2026-10-22T21:30:37.3977928Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-dark-320.png
+2026-10-22T21:30:37.3978680Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-dark-390.png
+2026-10-22T21:30:37.3979432Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-dark-768.png
+2026-10-22T21:30:37.3980623Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-light-1440.png
+2026-10-22T21:30:37.3981417Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-light-1920.png
+2026-10-22T21:30:37.3982175Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-light-320.png
+2026-10-22T21:30:37.3982917Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-light-390.png
+2026-10-22T21:30:37.3984172Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-cinchaptermap-light-768.png
+2026-10-22T21:30:37.3984951Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-dark-1440.png
+2026-10-22T21:30:37.3985670Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-dark-1920.png
+2026-10-22T21:30:37.3986388Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-dark-320.png
+2026-10-22T21:30:37.3987105Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-dark-390.png
+2026-10-22T21:30:37.3987810Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-dark-768.png
+2026-10-22T21:30:37.3988534Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-light-1440.png
+2026-10-22T21:30:37.3989259Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-light-1920.png
+2026-10-22T21:30:37.3989982Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-light-320.png
+2026-10-22T21:30:37.3990687Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-light-390.png
+2026-10-22T21:30:37.3991450Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edcovlimit-light-768.png
+2026-10-22T21:30:37.3992156Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-dark-1440.png
+2026-10-22T21:30:37.3993041Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-dark-1920.png
+2026-10-22T21:30:37.3993929Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-dark-320.png
+2026-10-22T21:30:37.3994654Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-dark-390.png
+2026-10-22T21:30:37.3995373Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-dark-768.png
+2026-10-22T21:30:37.3996092Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-light-1440.png
+2026-10-22T21:30:37.3996802Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-light-1920.png
+2026-10-22T21:30:37.3997503Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-light-320.png
+2026-10-22T21:30:37.3998199Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-light-390.png
+2026-10-22T21:30:37.3998916Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-optimization-edqledger-light-768.png
+2026-10-22T21:30:37.3999603Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-dark-1440.png
+2026-10-22T21:30:37.4000280Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-dark-1920.png
+2026-10-22T21:30:37.4000959Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-dark-320.png
+2026-10-22T21:30:37.4001631Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-dark-390.png
+2026-10-22T21:30:37.4002298Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-dark-768.png
+2026-10-22T21:30:37.4002976Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-light-1440.png
+2026-10-22T21:30:37.4003929Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-light-1920.png
+2026-10-22T21:30:37.4004636Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-light-320.png
+2026-10-22T21:30:37.4005309Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-light-390.png
+2026-10-22T21:30:37.4005987Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-reproduce-edmethods-light-768.png
+2026-10-22T21:30:37.4006660Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-dark-1440.png
+2026-10-22T21:30:37.4007324Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-dark-1920.png
+2026-10-22T21:30:37.4007990Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-dark-320.png
+2026-10-22T21:30:37.4008646Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-dark-390.png
+2026-10-22T21:30:37.4009306Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-dark-768.png
+2026-10-22T21:30:37.4009973Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-light-1440.png
+2026-10-22T21:30:37.4010643Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-light-1920.png
+2026-10-22T21:30:37.4011308Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-light-320.png
+2026-10-22T21:30:37.4011970Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-light-390.png
+2026-10-22T21:30:37.4012622Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsbarrier-light-768.png
+2026-10-22T21:30:37.4013287Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-dark-1440.png
+2026-10-22T21:30:37.4014120Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-dark-1920.png
+2026-10-22T21:30:37.4014911Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-dark-320.png
+2026-10-22T21:30:37.4015566Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-dark-390.png
+2026-10-22T21:30:37.4016212Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-dark-768.png
+2026-10-22T21:30:37.4016870Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-light-1440.png
+2026-10-22T21:30:37.4017527Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-light-1920.png
+2026-10-22T21:30:37.4018174Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-light-320.png
+2026-10-22T21:30:37.4018829Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-light-390.png
+2026-10-22T21:30:37.4019486Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-seeds-seedsforce-light-768.png
+2026-10-22T21:30:37.4020189Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-dark-1440.png
+2026-10-22T21:30:37.4020900Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-dark-1920.png
+2026-10-22T21:30:37.4021606Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-dark-320.png
+2026-10-22T21:30:37.4022306Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-dark-390.png
+2026-10-22T21:30:37.4023143Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-dark-768.png
+2026-10-22T21:30:37.4024085Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-light-1440.png
+2026-10-22T21:30:37.4024911Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-light-1920.png
+2026-10-22T21:30:37.4025903Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-light-320.png
+2026-10-22T21:30:37.4026735Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-light-390.png
+2026-10-22T21:30:37.4027530Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-forceerrorchart-light-768.png
+2026-10-22T21:30:37.4028309Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-dark-1440.png
+2026-10-22T21:30:37.4029054Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-dark-1920.png
+2026-10-22T21:30:37.4029841Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-dark-320.png
+2026-10-22T21:30:37.4030614Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-dark-390.png
+2026-10-22T21:30:37.4031382Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-dark-768.png
+2026-10-22T21:30:37.4032165Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-light-1440.png
+2026-10-22T21:30:37.4032950Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-light-1920.png
+2026-10-22T21:30:37.4033885Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-light-320.png
+2026-10-22T21:30:37.4034643Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-light-390.png
+2026-10-22T21:30:37.4035438Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/figure-train119-gammachart-light-768.png
+2026-10-22T21:30:37.4036151Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/CINEMATIC_PROGRESS.json
+2026-10-22T21:30:37.4036817Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/CINEMATIC_QA.json
+2026-10-22T21:30:37.4037548Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_dark_1440_optimization.png
+2026-10-22T21:30:37.4038451Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_dark_1440_overview.png
+2026-10-22T21:30:37.4039225Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_dark_390_optimization.png
+2026-10-22T21:30:37.4039973Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_dark_390_overview.png
+2026-10-22T21:30:37.4040738Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_light_1440_optimization.png
+2026-10-22T21:30:37.4041503Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_light_1440_overview.png
+2026-10-22T21:30:37.4042260Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_light_390_optimization.png
+2026-10-22T21:30:37.4043008Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/after_light_390_overview.png
+2026-10-22T21:30:37.4043885Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_dark_1440_optimization.png
+2026-10-22T21:30:37.4044675Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_dark_1440_overview.png
+2026-10-22T21:30:37.4045437Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_dark_390_optimization.png
+2026-10-22T21:30:37.4046184Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_dark_390_overview.png
+2026-10-22T21:30:37.4046963Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_light_1440_optimization.png
+2026-10-22T21:30:37.4047757Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_light_1440_overview.png
+2026-10-22T21:30:37.4048526Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_light_390_optimization.png
+2026-10-22T21:30:37.4049285Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/before_light_390_overview.png
+2026-10-22T21:30:37.4050155Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-candidate_dark_1440.png
+2026-10-22T21:30:37.4050896Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-candidate_dark_390.png
+2026-10-22T21:30:37.4051625Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-candidate_light_1440.png
+2026-10-22T21:30:37.4052342Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-candidate_light_390.png
+2026-10-22T21:30:37.4053116Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-coefficient-atlas_dark_1440.png
+2026-10-22T21:30:37.4054052Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-coefficient-atlas_dark_390.png
+2026-10-22T21:30:37.4054859Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-coefficient-atlas_light_1440.png
+2026-10-22T21:30:37.4055656Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-coefficient-atlas_light_390.png
+2026-10-22T21:30:37.4056422Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-episode_dark_1440.png
+2026-10-22T21:30:37.4057154Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-episode_dark_390.png
+2026-10-22T21:30:37.4057870Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-episode_light_1440.png
+2026-10-22T21:30:37.4058525Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/opt-episode_light_390.png
+2026-10-22T21:30:37.4059242Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_dark_1440.png
+2026-10-22T21:30:37.4059951Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_dark_1920.png
+2026-10-22T21:30:37.4060638Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_dark_320.png
+2026-10-22T21:30:37.4061328Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_dark_390.png
+2026-10-22T21:30:37.4062027Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_dark_768.png
+2026-10-22T21:30:37.4062864Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_light_1440.png
+2026-10-22T21:30:37.4063573Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_light_1920.png
+2026-10-22T21:30:37.4064395Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_light_320.png
+2026-10-22T21:30:37.4065061Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_light_390.png
+2026-10-22T21:30:37.4065668Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/legacy-pr/threshold_light_768.png
+2026-10-22T21:30:37.4066388Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-dark-1440.png
+2026-10-22T21:30:37.4067053Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-dark-1920.png
+2026-10-22T21:30:37.4067684Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-dark-320.png
+2026-10-22T21:30:37.4068402Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-dark-390.png
+2026-10-22T21:30:37.4069026Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-dark-768.png
+2026-10-22T21:30:37.4069649Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-light-1440.png
+2026-10-22T21:30:37.4070284Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-light-1920.png
+2026-10-22T21:30:37.4070916Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-light-320.png
+2026-10-22T21:30:37.4071535Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-light-390.png
+2026-10-22T21:30:37.4072234Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-current-sampling-light-768.png
+2026-10-22T21:30:37.4072858Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-dark-1440.png
+2026-10-22T21:30:37.4073709Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-dark-1920.png
+2026-10-22T21:30:37.4074351Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-dark-320.png
+2026-10-22T21:30:37.4074944Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-dark-390.png
+2026-10-22T21:30:37.4075522Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-dark-768.png
+2026-10-22T21:30:37.4076119Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-light-1440.png
+2026-10-22T21:30:37.4076726Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-light-1920.png
+2026-10-22T21:30:37.4077317Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-light-320.png
+2026-10-22T21:30:37.4077906Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-light-390.png
+2026-10-22T21:30:37.4078491Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/nojs-pr-sampling-light-768.png
+2026-10-22T21:30:37.4079146Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/playback-current.png
+2026-10-22T21:30:37.4079667Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/playback-pr.png
+2026-10-22T21:30:37.4080212Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-optimization-dark-1440.png
+2026-10-22T21:30:37.4080801Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-optimization-dark-390.png
+2026-10-22T21:30:37.4081384Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-optimization-light-1440.png
+2026-10-22T21:30:37.4081968Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-optimization-light-390.png
+2026-10-22T21:30:37.4082538Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-overview-dark-1440.png
+2026-10-22T21:30:37.4083088Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-overview-dark-390.png
+2026-10-22T21:30:37.4083786Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-overview-light-1440.png
+2026-10-22T21:30:37.4084493Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-overview-light-390.png
+2026-10-22T21:30:37.4085044Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-sampling-dark-1440.png
+2026-10-22T21:30:37.4085600Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-sampling-dark-390.png
+2026-10-22T21:30:37.4086152Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-sampling-light-1440.png
+2026-10-22T21:30:37.4086703Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/pr-sampling-light-390.png
+2026-10-22T21:30:37.4087250Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-dark-1440.png
+2026-10-22T21:30:37.4087786Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-dark-1920.png
+2026-10-22T21:30:37.4088331Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-dark-320.png
+2026-10-22T21:30:37.4088886Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-dark-390.png
+2026-10-22T21:30:37.4089418Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-dark-768.png
+2026-10-22T21:30:37.4089960Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-light-1440.png
+2026-10-22T21:30:37.4090517Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-light-1920.png
+2026-10-22T21:30:37.4091059Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-light-320.png
+2026-10-22T21:30:37.4091611Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-light-390.png
+2026-10-22T21:30:37.4092149Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-forces-light-768.png
+2026-10-22T21:30:37.4092818Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-dark-1440.png
+2026-10-22T21:30:37.4093400Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-dark-1920.png
+2026-10-22T21:30:37.4094253Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-dark-320.png
+2026-10-22T21:30:37.4094835Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-dark-390.png
+2026-10-22T21:30:37.4095404Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-dark-768.png
+2026-10-22T21:30:37.4095970Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-light-1440.png
+2026-10-22T21:30:37.4096544Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-light-1920.png
+2026-10-22T21:30:37.4097114Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-light-320.png
+2026-10-22T21:30:37.4097679Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-light-390.png
+2026-10-22T21:30:37.4098246Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-landscape-light-768.png
+2026-10-22T21:30:37.4098814Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-dark-1440.png
+2026-10-22T21:30:37.4099397Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-dark-1920.png
+2026-10-22T21:30:37.4099978Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-dark-320.png
+2026-10-22T21:30:37.4100541Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-dark-390.png
+2026-10-22T21:30:37.4101086Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-dark-768.png
+2026-10-22T21:30:37.4101654Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-light-1440.png
+2026-10-22T21:30:37.4102229Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-light-1920.png
+2026-10-22T21:30:37.4102799Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-light-320.png
+2026-10-22T21:30:37.4103358Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-light-390.png
+2026-10-22T21:30:37.4104101Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-longread-light-768.png
+2026-10-22T21:30:37.4104821Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-dark-1440.png
+2026-10-22T21:30:37.4105378Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-dark-1920.png
+2026-10-22T21:30:37.4105930Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-dark-320.png
+2026-10-22T21:30:37.4106490Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-dark-390.png
+2026-10-22T21:30:37.4107034Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-dark-768.png
+2026-10-22T21:30:37.4107596Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-light-1440.png
+2026-10-22T21:30:37.4108159Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-light-1920.png
+2026-10-22T21:30:37.4108717Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-light-320.png
+2026-10-22T21:30:37.4109291Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-light-390.png
+2026-10-22T21:30:37.4109879Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-molecule-light-768.png
+2026-10-22T21:30:37.4110434Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-dark-1440.png
+2026-10-22T21:30:37.4110993Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-dark-1920.png
+2026-10-22T21:30:37.4111545Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-dark-320.png
+2026-10-22T21:30:37.4112097Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-dark-390.png
+2026-10-22T21:30:37.4112637Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-dark-768.png
+2026-10-22T21:30:37.4113189Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-light-1440.png
+2026-10-22T21:30:37.4114034Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-light-1920.png
+2026-10-22T21:30:37.4114620Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-light-320.png
+2026-10-22T21:30:37.4115181Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-light-390.png
+2026-10-22T21:30:37.4115735Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-offpath-light-768.png
+2026-10-22T21:30:37.4116313Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-dark-1440.png
+2026-10-22T21:30:37.4116907Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-dark-1920.png
+2026-10-22T21:30:37.4117504Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-dark-320.png
+2026-10-22T21:30:37.4118099Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-dark-390.png
+2026-10-22T21:30:37.4118791Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-dark-768.png
+2026-10-22T21:30:37.4119399Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-light-1440.png
+2026-10-22T21:30:37.4120009Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-light-1920.png
+2026-10-22T21:30:37.4120607Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-light-320.png
+2026-10-22T21:30:37.4121203Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-light-390.png
+2026-10-22T21:30:37.4121789Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-optimization-light-768.png
+2026-10-22T21:30:37.4122372Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-dark-1440.png
+2026-10-22T21:30:37.4122928Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-dark-1920.png
+2026-10-22T21:30:37.4123484Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-dark-320.png
+2026-10-22T21:30:37.4124209Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-dark-390.png
+2026-10-22T21:30:37.4124922Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-dark-768.png
+2026-10-22T21:30:37.4125496Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-light-1440.png
+2026-10-22T21:30:37.4126067Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-light-1920.png
+2026-10-22T21:30:37.4126630Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-light-320.png
+2026-10-22T21:30:37.4127193Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-light-390.png
+2026-10-22T21:30:37.4127763Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-overview-light-768.png
+2026-10-22T21:30:37.4128332Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-dark-1440.png
+2026-10-22T21:30:37.4128902Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-dark-1920.png
+2026-10-22T21:30:37.4129460Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-dark-320.png
+2026-10-22T21:30:37.4130024Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-dark-390.png
+2026-10-22T21:30:37.4130575Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-dark-768.png
+2026-10-22T21:30:37.4131147Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-light-1440.png
+2026-10-22T21:30:37.4131731Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-light-1920.png
+2026-10-22T21:30:37.4132297Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-light-320.png
+2026-10-22T21:30:37.4132864Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-light-390.png
+2026-10-22T21:30:37.4133454Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-reproduce-light-768.png
+2026-10-22T21:30:37.4134198Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-dark-1440.png
+2026-10-22T21:30:37.4134938Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-dark-1920.png
+2026-10-22T21:30:37.4135509Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-dark-320.png
+2026-10-22T21:30:37.4136064Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-dark-390.png
+2026-10-22T21:30:37.4136614Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-dark-768.png
+2026-10-22T21:30:37.4137183Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-light-1440.png
+2026-10-22T21:30:37.4137752Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-light-1920.png
+2026-10-22T21:30:37.4138321Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-light-320.png
+2026-10-22T21:30:37.4138881Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-light-390.png
+2026-10-22T21:30:37.4139452Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-sampling-light-768.png
+2026-10-22T21:30:37.4140016Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-dark-1440.png
+2026-10-22T21:30:37.4140556Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-dark-1920.png
+2026-10-22T21:30:37.4141101Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-dark-320.png
+2026-10-22T21:30:37.4141637Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-dark-390.png
+2026-10-22T21:30:37.4142163Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-dark-768.png
+2026-10-22T21:30:37.4142708Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-light-1440.png
+2026-10-22T21:30:37.4143257Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-light-1920.png
+2026-10-22T21:30:37.4143986Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-light-320.png
+2026-10-22T21:30:37.4144545Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-light-390.png
+2026-10-22T21:30:37.4145289Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-seeds-light-768.png
+2026-10-22T21:30:37.4145824Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-dark-1440.png
+2026-10-22T21:30:37.4146357Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-dark-1920.png
+2026-10-22T21:30:37.4146887Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-dark-320.png
+2026-10-22T21:30:37.4147421Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-dark-390.png
+2026-10-22T21:30:37.4147952Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-dark-768.png
+2026-10-22T21:30:37.4148487Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-light-1440.png
+2026-10-22T21:30:37.4149038Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-light-1920.png
+2026-10-22T21:30:37.4149577Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-light-320.png
+2026-10-22T21:30:37.4150114Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-light-390.png
+2026-10-22T21:30:37.4150652Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-story-light-768.png
+2026-10-22T21:30:37.4151203Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-dark-1440.png
+2026-10-22T21:30:37.4151768Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-dark-1920.png
+2026-10-22T21:30:37.4152322Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-dark-320.png
+2026-10-22T21:30:37.4152875Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-dark-390.png
+2026-10-22T21:30:37.4153424Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-dark-768.png
+2026-10-22T21:30:37.4154149Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-light-1440.png
+2026-10-22T21:30:37.4154853Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-light-1920.png
+2026-10-22T21:30:37.4155440Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-light-320.png
+2026-10-22T21:30:37.4155997Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-light-390.png
+2026-10-22T21:30:37.4156549Z  create mode 100644 81efe61100d4913b9306f38616dde1720636d377/view-train119-light-768.png
+2026-10-22T21:30:41.0501046Z To https://github.com/spicmaff/malonaldehyde-transition-sampling
+2026-10-22T21:30:41.0501625Z    67a0854..4f9b519  HEAD -> independent-review-evidence
+2026-10-22T21:30:41.0623528Z Post job cleanup.
+2026-10-22T21:30:41.1798397Z (node:3315) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T21:30:41.1799161Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T21:30:41.1986063Z Post job cleanup.
+2026-10-22T21:30:41.3194149Z (node:3323) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T21:30:41.3195006Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T21:30:41.3369177Z Post job cleanup.
+2026-10-22T21:30:41.4271148Z [command]/usr/bin/git version
+2026-10-22T21:30:41.4317791Z git version 2.55.0
+2026-10-22T21:30:41.4358614Z Temporarily overriding HOME='/home/USER/work/_temp/71dd969f-d2c9-41b5-9085-61032893fd9e' before making global git config changes
+2026-10-22T21:30:41.4359725Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T21:30:41.4364771Z [command]/usr/bin/git config --global --add safe.directory /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling
+2026-10-22T21:30:41.4407214Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T21:30:41.4444802Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T21:30:41.4708745Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T21:30:41.4738140Z http.https://github.com/.extraheader
+2026-10-22T21:30:41.4749655Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-22T21:30:41.4799154Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T21:30:41.5061973Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T21:30:41.5101069Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T21:30:41.5519170Z Cleaning up orphan processes
+2026-10-22T21:30:41.5856195Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

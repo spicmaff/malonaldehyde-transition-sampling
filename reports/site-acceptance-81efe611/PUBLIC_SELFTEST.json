@@ -1,0 +1,21 @@
+{
+  "status": "PASS_PUBLIC_REPOSITORY_SELFTESTS_V003",
+  "root": "/workspace/scratch/73ce71730111/acceptance-repo",
+  "checks": {
+    "required_files": 31,
+    "python_compile": true,
+    "core_manifest_entries": 12,
+    "script_index_entries": 31,
+    "registered_assets_with_presentation_delta": 318,
+    "public_asset_manifest_entries": 289,
+    "data_manifests": true,
+    "primary_recompute": true,
+    "source_root_cli_scripts": 12,
+    "public_audit": true,
+    "ledger_source_semantics_and_mutations": true,
+    "verify_pbe14_offpath.py": true,
+    "verify_optimizer_budget.py": true
+  },
+  "failure_count": 0,
+  "failures": []
+}

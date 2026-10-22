@@ -1,0 +1,21 @@
+{
+  "commit": "81efe61100d4913b9306f38616dde1720636d377",
+  "clean": true,
+  "ordinary_and_optimized_identical": true,
+  "unchanged_from_previous_audit": {
+    "original": true,
+    "PBE14": true,
+    "Train119": true,
+    "optimization": true,
+    "training_logs": true,
+    "source_SHA256": true
+  },
+  "historical_git_diff": "",
+  "build_data_changes": [
+    "offpath.json"
+  ],
+  "only_changed_data_fields": [
+    "source_url",
+    "source_ref"
+  ]
+}

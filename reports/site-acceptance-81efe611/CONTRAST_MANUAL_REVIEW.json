@@ -1,0 +1,2472 @@
+{
+  "source_commit": "81efe61100d4913b9306f38616dde1720636d377",
+  "counts": {
+    "computed-pass": 1556,
+    "manual-complex-background": 94
+  },
+  "gradient_bound_minimum": 5.308363465905154,
+  "complex_records": [
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 19,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 8.33333,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 19,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 19,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 8.33333,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 19,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 9,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".tiny-label"
+      ],
+      "text": "THE CARBON FRAME MOVES TOO",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".tiny-label"
+      ],
+      "text": "THE CARBON FRAME MOVES TOO",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".tiny-label"
+      ],
+      "text": "THE CARBON FRAME MOVES TOO",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(24, 62, 52)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.243508282237906
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(83, 102, 94)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          1,
+          0.9921568627450981,
+          0.9686274509803922,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 5.308363465905154
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-label > span:nth-child(1)"
+      ],
+      "text": "C₃H₄O₂ / MALONALDEHYDE",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-frame"
+      ],
+      "text": "PBE IMAGE 05 / 09",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(1)"
+      ],
+      "text": "O1—O8 2.390 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-roo"
+      ],
+      "text": "2.390",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".exhibit-readout > span:nth-child(2)"
+      ],
+      "text": "qPT 0.000 Å",
+      "font_px": 12,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "span:nth-child(2) > sub"
+      ],
+      "text": "PT",
+      "font_px": 10,
+      "font_weight": "600",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-q"
+      ],
+      "text": "0.000",
+      "font_px": 21,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".tiny-label"
+      ],
+      "text": "THE CARBON FRAME MOVES TOO",
+      "font_px": 8,
+      "font_weight": "600",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        "#hero-reset"
+      ],
+      "text": "↺",
+      "font_px": 20,
+      "font_weight": "400",
+      "foreground": "rgb(238, 238, 221)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 10.477475511913854
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "route": "overview",
+      "target": [
+        ".hero-exhibit > .stage-caption"
+      ],
+      "text": "Nine computed images; smooth in-between motion is display interpolation. Drag horizontally",
+      "font_px": 10,
+      "font_weight": "400",
+      "foreground": "rgb(183, 196, 185)",
+      "opacity": 1,
+      "background_layers": [
+        [
+          0.09803921568627451,
+          0.1803921568627451,
+          0.15294117647058825,
+          1
+        ]
+      ],
+      "scope": "CSS background layers",
+      "status": "manual-complex-background",
+      "manual_gradient_bound": 6.792174127908188
+    }
+  ],
+  "nojs_samples": [
+    {
+      "edition": "pr",
+      "theme": "light",
+      "width": 320,
+      "markers": 120,
+      "minimum_contrast": 2.8378901591623458,
+      "below_3": 96,
+      "minimum_effective_font_px": 5.672727272727273
+    },
+    {
+      "edition": "pr",
+      "theme": "dark",
+      "width": 320,
+      "markers": 120,
+      "minimum_contrast": 3.873574519699756,
+      "below_3": 0,
+      "minimum_effective_font_px": 5.672727272727273
+    },
+    {
+      "edition": "pr",
+      "theme": "light",
+      "width": 390,
+      "markers": 120,
+      "minimum_contrast": 2.8378901591623458,
+      "below_3": 96,
+      "minimum_effective_font_px": 6.9818181818181815
+    },
+    {
+      "edition": "pr",
+      "theme": "dark",
+      "width": 390,
+      "markers": 120,
+      "minimum_contrast": 3.873574519699756,
+      "below_3": 0,
+      "minimum_effective_font_px": 6.9818181818181815
+    },
+    {
+      "edition": "pr",
+      "theme": "light",
+      "width": 768,
+      "markers": 120,
+      "minimum_contrast": 2.8378901591623458,
+      "below_3": 96,
+      "minimum_effective_font_px": 15.229090909090909
+    },
+    {
+      "edition": "pr",
+      "theme": "dark",
+      "width": 768,
+      "markers": 120,
+      "minimum_contrast": 3.873574519699756,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.229090909090909
+    },
+    {
+      "edition": "pr",
+      "theme": "light",
+      "width": 1440,
+      "markers": 120,
+      "minimum_contrast": 2.8378901591623458,
+      "below_3": 96,
+      "minimum_effective_font_px": 13.898181818181818
+    },
+    {
+      "edition": "pr",
+      "theme": "dark",
+      "width": 1440,
+      "markers": 120,
+      "minimum_contrast": 3.873574519699756,
+      "below_3": 0,
+      "minimum_effective_font_px": 13.898181818181818
+    },
+    {
+      "edition": "pr",
+      "theme": "light",
+      "width": 1920,
+      "markers": 120,
+      "minimum_contrast": 2.8378901591623458,
+      "below_3": 96,
+      "minimum_effective_font_px": 15.552727272727273
+    },
+    {
+      "edition": "pr",
+      "theme": "dark",
+      "width": 1920,
+      "markers": 120,
+      "minimum_contrast": 3.873574519699756,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.552727272727273
+    },
+    {
+      "edition": "current",
+      "theme": "light",
+      "width": 320,
+      "markers": 120,
+      "minimum_contrast": 3.464934807578958,
+      "below_3": 0,
+      "minimum_effective_font_px": 12.290909090909091
+    },
+    {
+      "edition": "current",
+      "theme": "dark",
+      "width": 320,
+      "markers": 120,
+      "minimum_contrast": 5.154269559696165,
+      "below_3": 0,
+      "minimum_effective_font_px": 12.290909090909091
+    },
+    {
+      "edition": "current",
+      "theme": "light",
+      "width": 390,
+      "markers": 120,
+      "minimum_contrast": 3.464934807578958,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.127272727272727
+    },
+    {
+      "edition": "current",
+      "theme": "dark",
+      "width": 390,
+      "markers": 120,
+      "minimum_contrast": 5.154269559696165,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.127272727272727
+    },
+    {
+      "edition": "current",
+      "theme": "light",
+      "width": 768,
+      "markers": 120,
+      "minimum_contrast": 3.464934807578958,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.229090909090909
+    },
+    {
+      "edition": "current",
+      "theme": "dark",
+      "width": 768,
+      "markers": 120,
+      "minimum_contrast": 5.154269559696165,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.229090909090909
+    },
+    {
+      "edition": "current",
+      "theme": "light",
+      "width": 1440,
+      "markers": 120,
+      "minimum_contrast": 3.464934807578958,
+      "below_3": 0,
+      "minimum_effective_font_px": 13.898181818181818
+    },
+    {
+      "edition": "current",
+      "theme": "dark",
+      "width": 1440,
+      "markers": 120,
+      "minimum_contrast": 5.154269559696165,
+      "below_3": 0,
+      "minimum_effective_font_px": 13.898181818181818
+    },
+    {
+      "edition": "current",
+      "theme": "light",
+      "width": 1920,
+      "markers": 120,
+      "minimum_contrast": 3.464934807578958,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.552727272727273
+    },
+    {
+      "edition": "current",
+      "theme": "dark",
+      "width": 1920,
+      "markers": 120,
+      "minimum_contrast": 5.154269559696165,
+      "below_3": 0,
+      "minimum_effective_font_px": 15.552727272727273
+    }
+  ],
+  "minimum_current_static_text_px": 12.290909090909091,
+  "manual_method": "Computed opaque foreground with conservative radial-gradient bounds between pale/panel. All endpoint RGB channels are componentwise ordered; label/readout areas are separate from molecular canvas. SVG axes were checked against panels and inspected for sibling overlap. No screenreader or per-pixel WCAG certification.",
+  "inspected_route_contact_sheets": [
+    "routes-1920-dark.jpg",
+    "routes-768-dark.jpg",
+    "routes-390-light.jpg",
+    "routes-1440-light.jpg",
+    "routes-768-light.jpg",
+    "routes-1440-dark.jpg",
+    "routes-1920-light.jpg",
+    "routes-320-dark.jpg",
+    "routes-390-dark.jpg",
+    "routes-320-light.jpg"
+  ],
+  "inspected_full_figures": [
+    "nojs-current-sampling-light-320.png",
+    "nojs-current-sampling-light-390.png",
+    "nojs-current-sampling-dark-320.png",
+    "figure-train119-gammachart-dark-320.png",
+    "figure-offpath-offprimarychart-light-320.png",
+    "figure-optimization-edqledger-light-768.png",
+    "figure-forces-forcelayout-dark-1920.png"
+  ],
+  "summary": "1 556 наблюдений вычисленных стилей проходят проверку;94 наблюдения на градиенте дополнительно проверены по границам палитры и визуально. Подтверждённых оставшихся дефектов контраста не найдено"
+}

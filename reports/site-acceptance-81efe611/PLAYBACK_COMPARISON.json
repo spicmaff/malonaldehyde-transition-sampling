@@ -1,0 +1,500 @@
+{
+  "schema": "optimization-playback-evidence-v1",
+  "historical_negative_control": {
+    "test_driver_commit": "e2a07299e82794e7ffd72ddcb7dada33a2b02b98",
+    "tested_site_source": "3e6eeb9803078fa7a8e7b984389ce0b55d34d816",
+    "status": "FAIL",
+    "raw_report_sha256": "c8cd849f6b1adfb443a02e3a27a467d9f20351b1d466ad5098af809cae1836b7",
+    "playback": {
+      "beforeReset": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S1c",
+          "selectedIndex": 2,
+          "nativeIndex": -1,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": false,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#optimization",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Play native sequence"
+        },
+        "scrollY": 1709
+      },
+      "afterReset": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S0",
+          "selectedIndex": 0,
+          "nativeIndex": 0,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": false,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#optimization",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Play native sequence"
+        },
+        "scrollY": 1709
+      },
+      "afterClick": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S0",
+          "selectedIndex": 0,
+          "nativeIndex": 0,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": false,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#opt-parameters",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Play native sequence",
+          "hitId": "",
+          "hitTag": "A"
+        },
+        "scrollY": 7316
+      },
+      "onTimeout": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S0",
+          "selectedIndex": 0,
+          "nativeIndex": 0,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": false,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#opt-parameters",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Play native sequence",
+          "hitId": "",
+          "hitTag": "A"
+        },
+        "scrollY": 7316
+      }
+    },
+    "failure": "AssertionError [ERR_ASSERTION]: ordinary pointer click reaches Play\n\nfalse !== true\n\n    at file:///home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling/tools/site/browser_cinematic_test.mjs:142:13"
+  },
+  "current_pr_control": {
+    "test_driver_commit": "81efe61100d4913b9306f38616dde1720636d377",
+    "tested_site_source": "3e6eeb9803078fa7a8e7b984389ce0b55d34d816",
+    "status": "PASS",
+    "playback": {
+      "beforeReset": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S1c",
+          "selectedIndex": 2,
+          "nativeIndex": -1,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": false,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#optimization",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Play native sequence"
+        },
+        "scrollY": 1512
+      },
+      "afterReset": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S0",
+          "selectedIndex": 0,
+          "nativeIndex": 0,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": false,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#optimization",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Play native sequence"
+        },
+        "scrollY": 1512
+      },
+      "afterClick": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S0",
+          "selectedIndex": 0,
+          "nativeIndex": 0,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": true,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#optimization",
+        "rail": "false",
+        "button": {
+          "disabled": false,
+          "label": "Pause native sequence",
+          "hitId": "opt-play",
+          "hitTag": "BUTTON"
+        },
+        "scrollY": 7268
+      },
+      "atS1": {
+        "state": {
+          "ready": true,
+          "interactive": true,
+          "selectedState": "S1",
+          "selectedIndex": 1,
+          "nativeIndex": 1,
+          "readerOrder": [
+            "S0",
+            "S1",
+            "S1c",
+            "S2",
+            "S2q",
+            "S3",
+            "S4"
+          ],
+          "nativeOrder": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "playing": true,
+          "reducedMotion": false
+        },
+        "hidden": false,
+        "focus": true,
+        "route": "#optimization",
+        "rail": "true",
+        "button": {
+          "disabled": false,
+          "label": "Pause native sequence",
+          "hitId": "opt-play",
+          "hitTag": "BUTTON"
+        },
+        "scrollY": 7268
+      }
+    }
+  },
+  "current_fixed_short_scenario": {
+    "before": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S0",
+        "selectedIndex": 0,
+        "nativeIndex": 0,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": false,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "selected": "S0",
+      "rail": [
+        {
+          "id": "S0",
+          "pressed": "true"
+        },
+        {
+          "id": "S1",
+          "pressed": "false"
+        },
+        {
+          "id": "S2",
+          "pressed": "false"
+        },
+        {
+          "id": "S3",
+          "pressed": "false"
+        },
+        {
+          "id": "S4",
+          "pressed": "false"
+        }
+      ],
+      "play": {
+        "disabled": false,
+        "label": "Play native sequence"
+      },
+      "scrollY": 21
+    },
+    "immediately": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S0",
+        "selectedIndex": 0,
+        "nativeIndex": 0,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": true,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "selected": "S0",
+      "rail": [
+        {
+          "id": "S0",
+          "pressed": "true"
+        },
+        {
+          "id": "S1",
+          "pressed": "false"
+        },
+        {
+          "id": "S2",
+          "pressed": "false"
+        },
+        {
+          "id": "S3",
+          "pressed": "false"
+        },
+        {
+          "id": "S4",
+          "pressed": "false"
+        }
+      ],
+      "play": {
+        "disabled": false,
+        "label": "Pause native sequence"
+      },
+      "scrollY": 7225
+    },
+    "after": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S1",
+        "selectedIndex": 1,
+        "nativeIndex": 1,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": true,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "selected": "S1",
+      "rail": [
+        {
+          "id": "S0",
+          "pressed": "false"
+        },
+        {
+          "id": "S1",
+          "pressed": "true"
+        },
+        {
+          "id": "S2",
+          "pressed": "false"
+        },
+        {
+          "id": "S3",
+          "pressed": "false"
+        },
+        {
+          "id": "S4",
+          "pressed": "false"
+        }
+      ],
+      "play": {
+        "disabled": false,
+        "label": "Pause native sequence"
+      },
+      "scrollY": 7225
+    },
+    "screenshot": "playback-current.png"
+  },
+  "current_fixed_full_scenario": {
+    "test_driver_and_source_commit": "81efe61100d4913b9306f38616dde1720636d377",
+    "research_site_run": 39856886473,
+    "job": 120097277766,
+    "status": "success",
+    "log": "RESEARCH_SITE_CI.log"
+  },
+  "interpretation": "The prior sticky-map overlap is evidenced by a real pointer hit on A, hash opt-parameters and playing=false. The latest PR control passed, so the failure is not universal across all scroll/timing states. Corrected build passes the full cinematic and independent checks without increasing timeout."
+}
