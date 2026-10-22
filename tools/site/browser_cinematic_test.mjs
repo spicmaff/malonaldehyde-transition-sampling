@@ -81,8 +81,8 @@ try{
     if(i)await p.keyboard.press('ArrowDown');
     await p.waitForFunction(i=>document.querySelector('[data-page].active')?.id===document.getElementById('ed-contents').options[i].value,{},i);
     const focused=await p.$eval('#ed-contents',e=>({route:e.value,focused:document.activeElement===e,focusVisible:e.matches(':focus-visible'),outline:getComputedStyle(e).outlineStyle,scrollY}));
-    assert.ok(focused.focused&&focused.focusVisible&&focused.outline!=='none','native chapter selector keeps visible keyboard focus');assert.equal(focused.scrollY,0);seen.add(focused.route);
     (report.keyboard_navigation??=[]).push({width,mode,kind:'select',...focused});
+    assert.ok(focused.focused&&focused.focusVisible&&focused.outline!=='none','native chapter selector keeps visible keyboard focus');assert.equal(focused.scrollY,0);seen.add(focused.route);
    }
    assert.equal(seen.size,12,'all twelve chapter choices work with real keys');continue;
   }

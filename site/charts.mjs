@@ -47,15 +47,17 @@ export function linePlot(container,{series,xLabel='Proton-transfer coordinate qP
   return {frame:f,reveal(t){clip.setAttribute('width',clamp(t,0,1)*(pw+14));},cursor(xx,explicit=null){cursor.setAttribute('x1',x(xx));cursor.setAttribute('x2',x(xx));cursor.setAttribute('opacity','1');series.forEach((s,i)=>{let yy=explicit?.[s.name];if(yy===undefined){const a=s.values;let j=a.findIndex(p=>p.x>=xx);j=clamp(j<0?a.length-1:j,1,a.length-1);const p=a[j-1],q=a[j];yy=p.y+(q.y-p.y)*clamp((xx-p.x)/(q.x-p.x||1),0,1);}markers[i].setAttribute('cx',x(xx));markers[i].setAttribute('cy',y(yy));markers[i].setAttribute('opacity','1');});},destroy(){container.replaceChildren();}};
 }
 export function samplingPlot(container,points,branch,domain,reference=[]){
-  const{svg,x,y,pad,pw}=frame(container,{xDomain:domain.x,yDomain:domain.y,xLabel:'Proton-transfer coordinate qPT / Å',yLabel:'O1–O8 distance / Å',xTicks:[-.5,0,.5],yTicks:[2.4,2.45,2.5,2.55]});
+  const{svg,x,y,pad,pw}=frame(container,{xDomain:domain.x,yDomain:domain.y,xLabel:'Proton-transfer coordinate qPT / Å',yLabel:'O1–O8 distance / Å',xTicks:[-.5,0,.5],yTicks:[2.4,2.45,2.5,2.55],yFormat:v=>v.toFixed(2)});
   const floor=Math.min(...points.map(p=>p.roo));
   svg.append(el('path',{d:`M${pad.l} ${y(floor)}h${pw}`,class:'ed-floor','data-training-floor':floor}));
+  svg.append(el('text',{x:pad.l+pw-3,y:y(floor)+18,'text-anchor':'end',class:'chart-label',fill:'var(--basin)'},`Training min ${floor.toFixed(3)} Å`));
   const shared=points.filter(p=>p.shared),added=points.filter(p=>!p.shared),nodes=[];
   for(const [kind,arr] of [['shared',shared],['added',added]])arr.forEach((p,i)=>{const n=dot(svg,x(p.q),y(p.roo),kind==='shared'?'var(--muted)':(branch==='basin'||branch==='both'&&p.branch==='basin')?'var(--basin)':'var(--targeted)',{diamond:kind==='added'&&(branch==='targeted'||p.branch==='targeted'),r:kind==='shared'?3.1:4.4,opacity:kind==='shared'?.52:1,title:`${p.id}; ${kind}; qPT ${p.q.toFixed(6)} Å; O–O ${p.roo.toFixed(6)} Å`});n.dataset.kind=kind;n.dataset.candidate=p.id;nodes.push({n,i,kind});});
   if(reference.length){
     svg.append(el('path',{d:reference.map((p,i)=>`${i?'L':'M'}${x(p.q)} ${y(p.roo)}`).join(' '),class:'ed-reference-path'}));
     reference.forEach((p,i)=>{const n=el('rect',{x:x(p.q)-3.6,y:y(p.roo)-3.6,width:7.2,height:7.2,fill:'var(--pbe)',class:'ed-reference-dot','data-pbe-image':i+1});n.append(el('title',{},`Saved PBE image ${i+1}; qPT ${p.q} Å; O1–O8 ${p.roo} Å`));svg.append(n);});
   }
+  if(reference[4])svg.append(el('text',{x:x(reference[4].q),y:y(reference[4].roo)+21,'text-anchor':'middle',class:'chart-label',fill:'var(--pbe)'},`PBE center ${reference[4].roo.toFixed(3)} Å`));
   const selected=el('circle',{r:7.5,class:'ed-reference-selected',opacity:0});svg.append(selected);
   return{select(i){const p=reference[i];if(p){selected.setAttribute('cx',x(p.q));selected.setAttribute('cy',y(p.roo));selected.setAttribute('opacity',1);}},reveal(t){t=clamp(t,0,1);for(const{n,i,kind}of nodes){const local=kind==='shared'?t/.44:((t-.44)/.56),count=kind==='shared'?shared.length:added.length;const opacity=smooth(local*count-i);n.setAttribute('opacity',opacity*(kind==='shared'?.52:1));}return{shared:clamp(Math.floor(t/.44*36),0,36),added:clamp(Math.floor((t-.44)/.56*24),0,24)};}};
 }

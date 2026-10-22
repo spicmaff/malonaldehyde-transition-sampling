@@ -81,7 +81,7 @@ function theme(){const dark=document.documentElement.dataset.theme==='dark';text
 function bind(){
   document.addEventListener('pointerdown',()=>{userAction=true;},{passive:true});
   const event=(id,kind,fn)=>$(id).addEventListener(kind,fn);
-  event('ed-contents','change',e=>{location.hash=e.target.value;});
+  event('ed-contents','change',e=>{const control=e.currentTarget;history.pushState(null,'','#'+control.value);navigate();control.focus({preventScroll:true});});
   event('theme','click',()=>{const dark=document.documentElement.dataset.theme!=='dark';document.documentElement.dataset.theme=dark?'dark':'light';try{localStorage.setItem('proton-theme',dark?'dark':'light');}catch{}theme();});
   event('hero-play','click',()=>play('hero',14000,t=>hero(t*8),state.hero>=8?0:state.hero/8));event('hero-slider','input',e=>{stop();hero(+e.target.value);});event('hero-reset','click',()=>{stop();hero(0);});
   event('path-play','click',()=>play('path',16000,t=>molecularPath(t*8),state.path>=8?0:state.path/8));event('path-slider','input',e=>{stop();molecularPath(+e.target.value);});event('path-snap','change',()=>{stop();molecularPath(state.path);});event('path-reset','click',()=>{stop();stage('path-molecule',data.molecule[0].xyz).resetView();molecularPath(0);});event('path-front','click',()=>{stop();stage('path-molecule',data.molecule[0].xyz).setView(0,0,.65);});event('path-studio','click',()=>stage('path-molecule',data.molecule[0].xyz).resetView());

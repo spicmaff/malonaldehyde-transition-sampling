@@ -121,7 +121,7 @@ def refine_document(document, data, findings):
 </ol></div>'''
     document = once(document, '<div class="editorial-note">', study_map + '<div class="editorial-note">')
     document = once(document, 'Both original models saw 36 shared configurations. The other 24 labels were placed near the minima or toward the proton-transfer region.',
-                    'Both Moment Tensor Potentials saw 36 shared configurations. Only the other 24 geometries changed: near-minimum additions versus perturbations of an endpoint-linear tube. The relaxed PBE path provides a crucial geometry check.')
+                    'Two Moment Tensor Potentials, 60 labels each: 36 shared geometries plus 24 different additions. The relaxed PBE path reveals what the transition-directed tube misses.')
     for branch in ('basin', 'targeted'):
         pattern = rf'(<div id="sampling-{branch}"[^>]*>)(</div>)'
         document, count = re.subn(pattern, lambda m: m[1] + coverage_svg(data, branch) + m[2], document)
@@ -174,6 +174,7 @@ def refine_document(document, data, findings):
     for i, key in enumerate(ORDER):
         start, end = parser.spans[key]
         content = document[start:end]
+        content = re.sub(r'(<p class="eyebrow">)\d{2} / ', lambda m: m[1] + f'{i+1:02d} / ', content, count=1)
         if key != 'overview':
             badge = {'molecule':'Molecule / reference', 'sampling':'A / Train60', 'landscape':'A / Train60', 'seeds':'B / Five seeds', 'offpath':'C / PBE14', 'train119':'D / Train119', 'forces':'D / Train119', 'optimization':'E / Optimizer', 'story':'Original six-scene edition', 'longread':'Research essay', 'reproduce':'Methods / Provenance'}[key]
             content = content.replace('>', '><div class="ed-chapter-tag">' + badge + '</div>', 1)
