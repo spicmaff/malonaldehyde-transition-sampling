@@ -52,14 +52,14 @@ export function samplingPlot(container,points,branch,domain,reference=[]){
   svg.append(el('path',{d:`M${pad.l} ${y(floor)}h${pw}`,class:'ed-floor','data-training-floor':floor}));
   svg.append(el('text',{x:pad.l+pw-3,y:y(floor)+18,'text-anchor':'end',class:'chart-label',fill:'var(--basin)'},`Training min ${floor.toFixed(3)} Å`));
   const shared=points.filter(p=>p.shared),added=points.filter(p=>!p.shared),nodes=[];
-  for(const [kind,arr] of [['shared',shared],['added',added]])arr.forEach((p,i)=>{const n=dot(svg,x(p.q),y(p.roo),kind==='shared'?'var(--muted)':(branch==='basin'||branch==='both'&&p.branch==='basin')?'var(--basin)':'var(--targeted)',{diamond:kind==='added'&&(branch==='targeted'||p.branch==='targeted'),r:kind==='shared'?3.1:4.4,opacity:kind==='shared'?.52:1,title:`${p.id}; ${kind}; qPT ${p.q.toFixed(6)} Å; O–O ${p.roo.toFixed(6)} Å`});n.dataset.kind=kind;n.dataset.candidate=p.id;nodes.push({n,i,kind});});
+  for(const [kind,arr] of [['shared',shared],['added',added]])arr.forEach((p,i)=>{const n=dot(svg,x(p.q),y(p.roo),kind==='shared'?'var(--muted)':(branch==='basin'||branch==='both'&&p.branch==='basin')?'var(--basin)':'var(--targeted)',{diamond:kind==='added'&&(branch==='targeted'||p.branch==='targeted'),r:kind==='shared'?3.1:4.4,opacity:kind==='shared'?.75:1,title:`${p.id}; ${kind}; qPT ${p.q.toFixed(6)} Å; O–O ${p.roo.toFixed(6)} Å`});n.dataset.kind=kind;n.dataset.candidate=p.id;nodes.push({n,i,kind});});
   if(reference.length){
     svg.append(el('path',{d:reference.map((p,i)=>`${i?'L':'M'}${x(p.q)} ${y(p.roo)}`).join(' '),class:'ed-reference-path'}));
     reference.forEach((p,i)=>{const n=el('rect',{x:x(p.q)-3.6,y:y(p.roo)-3.6,width:7.2,height:7.2,fill:'var(--pbe)',class:'ed-reference-dot','data-pbe-image':i+1});n.append(el('title',{},`Saved PBE image ${i+1}; qPT ${p.q} Å; O1–O8 ${p.roo} Å`));svg.append(n);});
   }
   if(reference[4])svg.append(el('text',{x:x(reference[4].q),y:y(reference[4].roo)+21,'text-anchor':'middle',class:'chart-label',fill:'var(--pbe)'},`PBE center ${reference[4].roo.toFixed(3)} Å`));
   const selected=el('circle',{r:7.5,class:'ed-reference-selected',opacity:0});svg.append(selected);
-  return{select(i){const p=reference[i];if(p){selected.setAttribute('cx',x(p.q));selected.setAttribute('cy',y(p.roo));selected.setAttribute('opacity',1);}},reveal(t){t=clamp(t,0,1);for(const{n,i,kind}of nodes){const local=kind==='shared'?t/.44:((t-.44)/.56),count=kind==='shared'?shared.length:added.length;const opacity=smooth(local*count-i);n.setAttribute('opacity',opacity*(kind==='shared'?.52:1));}return{shared:clamp(Math.floor(t/.44*36),0,36),added:clamp(Math.floor((t-.44)/.56*24),0,24)};}};
+  return{select(i){const p=reference[i];if(p){selected.setAttribute('cx',x(p.q));selected.setAttribute('cy',y(p.roo));selected.setAttribute('opacity',1);}},reveal(t){t=clamp(t,0,1);for(const{n,i,kind}of nodes){const local=kind==='shared'?t/.44:((t-.44)/.56),count=kind==='shared'?shared.length:added.length;const opacity=smooth(local*count-i);n.setAttribute('opacity',opacity*(kind==='shared'?.75:1));}return{shared:clamp(Math.floor(t/.44*36),0,36),added:clamp(Math.floor((t-.44)/.56*24),0,24)};}};
 }
 export function seedPlot(container,rows,metric){
   const pairs=pairedSeeds(rows),maximum=Math.max(...pairs.flatMap(p=>[p.basin[metric],p.targeted[metric]]));

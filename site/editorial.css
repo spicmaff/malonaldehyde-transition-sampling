@@ -28,3 +28,6 @@ body{background:var(--paper);color:var(--ink);font-feature-settings:"ss01" 1;-we
 .js-ready .ed-mobile-contents{display:none}.ed-table-scroll:focus-visible{outline:2px solid var(--teal);outline-offset:3px}@media(max-width:780px){.js-ready .site-header nav{display:none}.js-ready .ed-mobile-contents{display:flex;gap:12px;align-items:center;padding-block:10px;border-top:1px solid var(--line)}.ed-mobile-contents label{font-size:11px;color:var(--muted);flex:0 0 auto}.ed-mobile-contents select{min-width:0;flex:1;background:var(--panel);color:var(--ink);font-size:12px;min-height:39px;border:1px solid var(--line);padding:8px 10px}}
 
 .ed-mobile-contents select:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+/* Shared data remain visible against both scientific chart backgrounds. */
+.legend-dot.neutral{opacity:.75}

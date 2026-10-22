@@ -127,6 +127,7 @@ EDITORIAL_ASSETS = {
 
 # Explicit fourth layer; scientific arrays, models and earlier manifests are excluded.
 INDEPENDENT_ASSETS = {
+    'site/charts.mjs', 'site/editorial.css',
     '.github/workflows/independent-review.yml', '.github/workflows/research-site.yml',
     'site/app.mjs', 'site/editorial.py', 'site/presentation_review.py',
     'site/payload_validation.mjs', 'site/literature.json', 'site/molecule.mjs',

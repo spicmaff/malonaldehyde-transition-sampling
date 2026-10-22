@@ -75,6 +75,21 @@ try{
     }
     report.figures=images;save();return {images:images.length,missing:images.filter(x=>x.status==='ABSENT')};
   });
+  await check('Settled shared-training marker contrast in both themes',async()=>{
+    const results=[];
+    for(const theme of ['light','dark']){
+      await choose(p,390,theme,'sampling');await p.evaluate(()=>window.exhibit.seek('sampling',1));
+      const measured=await p.evaluate(()=>{
+        const rgb=s=>{const n=s.match(/[\d.]+/g);if(!n||n.length<3)throw Error('Unsupported computed color '+s);return n.slice(0,3).map(Number).map(v=>v/255);};
+        const lum=c=>c.reduce((v,x,i)=>v+[.2126,.7152,.0722][i]*(x<=.04045?x/12.92:((x+.055)/1.055)**2.4),0);
+        const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+        return [...document.querySelectorAll('#sampling [data-kind="shared"]')].map(n=>{const css=getComputedStyle(n),bg=rgb(getComputedStyle(n.closest('.chart-panel')).backgroundColor),fg=rgb(css.fill),alpha=Number(css.opacity);return {alpha,contrast:ratio(fg.map((v,i)=>alpha*v+(1-alpha)*bg[i]),bg)};});
+      });
+      assert.equal(measured.length,72);assert.ok(measured.every(m=>m.contrast>=3),'all settled shared markers meet 3:1 against their actual panel');
+      results.push({theme,markers:measured.length,minimum_contrast:Math.min(...measured.map(m=>m.contrast))});
+    }
+    return results;
+  });
   await check('Controlled baseline / PR / repaired comparisons',async()=>{
     for(const edition of ['baseline','pr','current']){
       await open(p,edition);
