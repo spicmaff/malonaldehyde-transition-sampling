@@ -92,7 +92,7 @@ def coverage_svg(data, branch):
         if branch == 'targeted' and not p['shared']:
             bits.append(f'<path d="M{xx} {yy-4}l4 4-4 4-4-4Z" fill="{color}"/>')
         else:
-            bits.append(f'<circle cx="{xx}" cy="{yy}" r="3.5" fill="{color}" opacity=".65"/>')
+            bits.append(f'<circle cx="{xx}" cy="{yy}" r="3.5" fill="{color}" opacity="{.75 if p["shared"] else 1}"/>')
     path = ' '.join(('M' if i == 0 else 'L') + f'{x(p["q"])} {y(p["roo"])}' for i, p in enumerate(data['molecule']))
     bits.append(f'<path d="{path}" class="ed-reference-path"/>')
     for p in data['molecule']:

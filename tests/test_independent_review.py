@@ -76,5 +76,19 @@ class IndependentReviewTests(unittest.TestCase):
             (root/'tools').mkdir();(root/'tools/check.py').write_text('pass\n')
             self.assertIn('tools/check.py',build_identity.build_identity(root)['untracked_source_sha256'])
 
+    def test_final_acceptance_cannot_override_science_or_erase_its_parent(self):
+        from io import StringIO
+        manifest=ROOT/'provenance/FINAL_ACCEPTANCE_DELTA.tsv'
+        saved=manifest.read_text();real=Path.open
+        cases=[
+            (saved.replace('site/editorial.py','data/frozen_models_v028/train_targeted60_v028.cfg',1),
+             'Unexpected final acceptance manifest scope'),
+            (saved.replace('NEW','0'*64,1),'Final acceptance manifest previous hash mismatch'),
+        ]
+        for altered,message in cases:
+            def opening(path,*a,**kw):return StringIO(altered) if path==manifest else real(path,*a,**kw)
+            with patch.object(Path,'open',opening),self.assertRaisesRegex(ValueError,message):
+                presentation_review.verify_registered_assets(ROOT)
+
 
 if __name__=='__main__':unittest.main()

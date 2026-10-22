@@ -2,7 +2,7 @@ name: independent-review
 
 on:
   push:
-    branches: [independent-scientific-review]
+    branches: [independent-scientific-review, final-site-acceptance]
   workflow_dispatch:
 
 permissions:

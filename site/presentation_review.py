@@ -103,6 +103,16 @@ def verify_registered_assets(root: Path) -> int:
             if r['previous_repository_sha256'] != (old['repository_sha256'] if old else 'NEW'):
                 raise ValueError('Independent review manifest previous hash mismatch')
             by_path[r['repository_path']] = r
+    acceptance_path = root / 'provenance/FINAL_ACCEPTANCE_DELTA.tsv'
+    if acceptance_path.is_file():
+        acceptance = records('FINAL_ACCEPTANCE_DELTA.tsv')
+        if {r['repository_path'] for r in acceptance} != FINAL_ACCEPTANCE_ASSETS or len(acceptance) != len(FINAL_ACCEPTANCE_ASSETS):
+            raise ValueError('Unexpected final acceptance manifest scope')
+        for r in acceptance:
+            old = by_path.get(r['repository_path'])
+            if r['previous_repository_sha256'] != (old['repository_sha256'] if old else 'NEW'):
+                raise ValueError('Final acceptance manifest previous hash mismatch')
+            by_path[r['repository_path']] = r
     for relative, r in by_path.items():
         p = root / relative
         if not p.is_file() or p.is_symlink():
@@ -136,4 +146,13 @@ INDEPENDENT_ASSETS = {
     'tools/site/browser_cinematic_test.mjs', 'tools/site/browser_independent_test.mjs',
     'tools/site/test_payload_validation.mjs', 'tests/test_independent_review.py',
     'tests/test_presentation_review.py', 'tests/test_offpath_extension.py',
+}
+
+# A fifth layer preserves the complete prior review, including its manifest.
+FINAL_ACCEPTANCE_ASSETS = {
+    '.github/workflows/independent-review.yml', 'site/editorial.py',
+    'site/presentation_review.py', 'tools/run_public_selftests.py',
+    'tools/site/browser_independent_test.mjs', 'tools/verify_published_site.py',
+    'tests/test_presentation_review.py', 'tests/test_offpath_extension.py',
+    'tests/test_independent_review.py', 'docs/FINAL_SITE_ACCEPTANCE_RU.md',
 }

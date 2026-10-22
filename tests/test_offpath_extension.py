@@ -51,6 +51,7 @@ class ExtensionTests(unittest.TestCase):
         verify_registered_assets(ROOT)
         delta={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/EDITORIAL_REDESIGN_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
         independent={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/INDEPENDENT_REVIEW_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
+        acceptance={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/FINAL_ACCEPTANCE_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
         interface={'site/app.mjs','site/charts.mjs','site/core.mjs','site/molecule.mjs','site/literature.json','docs/RESEARCH_SITE.md'}
         for p,h in m['protected_files'].items():
             if p in interface:
@@ -60,6 +61,9 @@ class ExtensionTests(unittest.TestCase):
             if p in independent:
                 self.assertEqual(independent[p]['previous_repository_sha256'],expected,p)
                 expected=independent[p]['repository_sha256']
+            if p in acceptance:
+                self.assertEqual(acceptance[p]['previous_repository_sha256'],expected,p)
+                expected=acceptance[p]['repository_sha256']
             self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),expected,p)
 
     def test_new_sources_exist_with_sha(self):

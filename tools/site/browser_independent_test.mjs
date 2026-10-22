@@ -55,8 +55,33 @@ try{
       for(const route of ['overview','molecule','sampling','landscape','seeds','offpath','train119','forces','optimization','story','longread','reproduce']){
         await choose(p,width,theme,route);
         const view=await p.evaluate(async()=>{const a=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return {overflow:document.documentElement.scrollWidth>innerWidth+1,active:document.querySelectorAll('[data-page].active').length,violations:a.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.map(n=>n.target)})),incomplete:a.incomplete.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))};});
+        // Axe leaves SVG / transparent-background contrast for manual review.
+        // Record the actual computed styles, including inherited opacity, rather
+        // than silently treating its incomplete result as a successful check.
+        view.contrast_review=await p.evaluate(targets=>{
+          const parse=s=>{const m=s.match(/[\d.]+/g);return m&&m.length>=3?[...m.slice(0,3).map(Number).map(x=>x/255),m.length>3?Number(m[3]):1]:null;};
+          const mix=(a,b)=>a.slice(0,3).map((x,i)=>a[3]*x+(1-a[3])*b[i]);
+          const lum=c=>c.reduce((v,x,i)=>v+[.2126,.7152,.0722][i]*(x<=.04045?x/12.92:((x+.055)/1.055)**2.4),0);
+          const contrast=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
+          return targets.map(target=>{
+            let n;try{n=document.querySelector(target[0]);}catch{}
+            if(!n)return {target,status:'manual-target-unresolved'};
+            if(n.closest('[disabled]')||!n.getClientRects().length)return {target,status:'inactive-or-hidden'};
+            const css=getComputedStyle(n),svg=n instanceof SVGElement;
+            const fg=parse(svg?css.fill:css.color),layers=[];let gradient=false,opacity=1;
+            for(let e=n;e;e=e.parentElement){const s=getComputedStyle(e);opacity*=Number(s.opacity);}
+            for(let e=n;e;e=e.parentElement){const s=getComputedStyle(e),c=parse(s.backgroundColor);gradient ||= s.backgroundImage!=='none';if(c&&c[3]>0)layers.push(c);if(c?.[3]===1)break;}
+            const base=layers.at(-1);
+            const record={target,text:n.textContent.trim().slice(0,90),font_px:parseFloat(css.fontSize),font_weight:css.fontWeight,foreground:svg?css.fill:css.color,opacity,background_layers:layers,scope:svg?'SVG: nearest solid ancestor; inspect sibling graphics manually':'CSS background layers'};
+            if(!fg||!base||base[3]!==1||gradient)return {...record,status:'manual-complex-background'};
+            let bg=base.slice(0,3);for(let i=layers.length-2;i>=0;i--)bg=mix(layers[i],bg);
+            const color=mix([...fg.slice(0,3),fg[3]*opacity],bg),value=contrast(color,bg);
+            const required=record.font_px>=24||(record.font_px>=18.6667&&Number(css.fontWeight)>=700)?3:4.5;
+            return {...record,contrast:value,required,status:value>=required?'computed-pass':'inspect-low-contrast'};
+          });
+        },view.incomplete.filter(x=>x.id==='color-contrast').flatMap(x=>x.targets));
         report.views.push({width,theme,route,...view});save();
-        if([390,1440].includes(width))await shot(p,`view-${route}-${theme}-${width}`);
+        await shot(p,`view-${route}-${theme}-${width}`);
       }
       console.log(JSON.stringify({views:report.views.length,width,theme}));
     }
@@ -66,7 +91,7 @@ try{
   await check('Scientific figures and disclosures at desktop / mobile sizes',async()=>{
     const panels={molecule:['#path-molecule','#path-chart'],landscape:['.profile-layout'],seeds:['#seeds-barrier','#seeds-force'],train119:['#gamma-chart','#force-error-chart'],forces:['.force-layout'],offpath:['#off-primary-chart','.ed-budget-audit','.ed-sensitivity'],optimization:['.ed-q-ledger','.ed-cov-limit','.cin-chapter-map'],reproduce:['.ed-methods']};
     const images=[];
-    for(const width of [390,1440])for(const theme of ['light','dark'])for(const [route,selectors] of Object.entries(panels)){
+    for(const width of [320,390,768,1440,1920])for(const theme of ['light','dark'])for(const [route,selectors] of Object.entries(panels)){
       await choose(p,width,theme,route);
       for(const selector of selectors){const el=await p.$(selector);if(!el){images.push({width,theme,route,selector,status:'ABSENT'});continue;}
         await el.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await delay(80);
@@ -89,6 +114,32 @@ try{
       results.push({theme,markers:measured.length,minimum_contrast:Math.min(...measured.map(m=>m.contrast))});
     }
     return results;
+  });
+  await check('No-JavaScript sampling graphics preserve readable scientific marks',async()=>{
+    const rows=[];
+    for(const edition of ['pr','current']){
+      const q=await browser.newPage();await q.setJavaScriptEnabled(false);await q.setViewport({width:390,height:1000});
+      try{
+        await q.goto(root+edition+'/',{waitUntil:'networkidle0'});
+        for(const theme of ['light','dark']){
+          const scores=await q.evaluate(theme=>{
+            document.documentElement.dataset.theme=theme;
+            const rgb=s=>s.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255);
+            const lum=c=>c.reduce((v,x,i)=>v+[.2126,.7152,.0722][i]*(x<=.04045?x/12.92:((x+.055)/1.055)**2.4),0);
+            return [...document.querySelectorAll('.ed-coverage-static circle,.ed-coverage-static path[fill]')].map(n=>{
+              const s=getComputedStyle(n),bg=rgb(getComputedStyle(n.closest('.chart-panel')).backgroundColor),fg=rgb(s.fill),a=Number(s.opacity),blended=fg.map((x,i)=>a*x+(1-a)*bg[i]);
+              return (Math.max(lum(blended),lum(bg))+.05)/(Math.min(lum(blended),lum(bg))+.05);
+            });
+          },theme);
+          assert.equal(scores.length,120);
+          const row={edition,theme,markers:scores.length,minimum_contrast:Math.min(...scores),below_3:scores.filter(x=>x<3).length};rows.push(row);
+          if(edition==='current')assert.equal(row.below_3,0,'static fallback marks also need 3:1');
+          await q.$eval('.ed-coverage-static',e=>e.scrollIntoView({block:'center',behavior:'instant'}));
+          await shot(q,`nojs-${edition}-sampling-${theme}-390`);
+        }
+      }finally{await q.close();}
+    }
+    return rows;
   });
   await check('Controlled baseline / PR / repaired comparisons',async()=>{
     for(const edition of ['baseline','pr','current']){
