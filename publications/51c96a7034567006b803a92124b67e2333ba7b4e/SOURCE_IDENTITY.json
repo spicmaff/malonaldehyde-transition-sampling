@@ -1,0 +1,11 @@
+{
+  "source_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+  "source_tree": "f872b16d606d65edf7ca5c6447e4417ddb86adcf",
+  "working_copy_clean": true,
+  "publication_url": "https://spicmaff.github.io/malonaldehyde-transition-sampling/",
+  "python_tests_on_exact_commit": 201,
+  "javascript_tests": 35,
+  "javascript_local_scope": "Run on the same JavaScript unit-test inputs immediately before final commit creation; final workflow also reruns all 35 tests.",
+  "scientific_data_changed": false,
+  "historical_manifests_changed": false
+}

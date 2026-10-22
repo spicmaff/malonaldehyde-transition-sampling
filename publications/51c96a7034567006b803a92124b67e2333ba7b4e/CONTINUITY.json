@@ -1,0 +1,12 @@
+{
+  "source_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+  "source_tree": "f872b16d606d65edf7ca5c6447e4417ddb86adcf",
+  "working_copy_clean": true,
+  "changed_manifest_members": [
+    "build-identity.json",
+    "data/offpath.json",
+    "index.html"
+  ],
+  "rendered_content_and_science_unchanged_after_commit_label_normalization": true,
+  "resource_count": 54
+}

@@ -1,0 +1,39 @@
+{
+  "source_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+  "reports": [
+    {
+      "path": "reports/site-acceptance-81efe611/Independent_Review_Malonaldehyde_RU.html.gz",
+      "image_count": 8,
+      "unchanged_image_sha256": [
+        "626b4e8a83c1dff21dcebdb1d0f607e48a8733a1f3a724e4f97a9da3f7bea732",
+        "eb2b49637a60da9add5e84473ee5086f1bb1d70a0678004d0107e5d4e2c59604",
+        "49e91c6081f7cf9d8f451233dbb23a9eb195ce47db15dab0cb084813f773da07",
+        "2572b3e2668e28f8beec25ff843a43592c0d55fe9999f6f7be6e5237de841f0d",
+        "522d6aaa5fea84ee150a00f4aaf11ff1701f89e43aae7d59a3a84cd822f0aa90",
+        "7e04786c526ab350828155b94c508c0389732a205ecbf25b7d073960c48babc5",
+        "f99f566c8ee581e56dd48da0e8bc888c20acc3c4b1a8eeb01a7305a6e2575ff1",
+        "ddb8c4ee1c07c5b20b1b7194b5b3924e00e0e2341cfc8a891afdd3b7e08f1ea7"
+      ],
+      "attachment_count": 13,
+      "attachment_names_unchanged": true,
+      "embedded_JSON_valid": true
+    },
+    {
+      "path": "reports/site-acceptance-81efe611/Final_Acceptance_Malonaldehyde_RU.html.gz",
+      "image_count": 8,
+      "unchanged_image_sha256": [
+        "9c08cb8e1cf1e11a4445309e7ecc8d017b498e537b2926c4b3914ab1e3f30ede",
+        "6bdaf46c2df2b0f28b7e53c8c1217b14c7610657de112d12c07ac850f52d7081",
+        "1aa618dfd8e35eefaa0ed054982092b5f2bb497c3a5a42356f1d39689e9e8758",
+        "eb2b49637a60da9add5e84473ee5086f1bb1d70a0678004d0107e5d4e2c59604",
+        "2ad78edc88b14d24415b77978e98c4138616b1ea7200cd5159427adce3e259db",
+        "aab7c982adf7b6ad86daf84d5586eb81bf49bcce0d874d80a048d5b612c262dd",
+        "a918e6d34e24123b7cf80841048dc7a544110176b668a68a3633aef8de69fe45",
+        "b02b6ce3f03be3309dbf4a468274dd5ffb17bfd4cd34c08bbe3184a578845083"
+      ],
+      "attachment_count": 26,
+      "attachment_names_unchanged": true,
+      "embedded_JSON_valid": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "source_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+  "checks": [
+    {
+      "url": "https://spicmaff.github.io/malonaldehyde-transition-sampling/",
+      "status": 200,
+      "sha256": "39544269cbd06585e37adec64b0886a528b91f7e30e3b9fda2ee52f188482b4b",
+      "matches_clean_build": true
+    },
+    {
+      "url": "https://spicmaff.github.io/malonaldehyde-transition-sampling/build-identity.json",
+      "status": 200,
+      "sha256": "1086b951469186ade355d95fb341e042fb0b6529607d25e581aca24d457037fe",
+      "matches_clean_build": true
+    }
+  ]
+}

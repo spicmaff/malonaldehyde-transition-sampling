@@ -1,0 +1,30 @@
+{
+  "source_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+  "workflow_run": 39871765043,
+  "individual_runs": {
+    "tests": [
+      2,
+      10,
+      23
+    ],
+    "pass": [
+      2,
+      10,
+      23
+    ],
+    "fail": [
+      0,
+      0,
+      0
+    ]
+  },
+  "total_tests": 35,
+  "total_pass": 35,
+  "total_fail": 0,
+  "browser_runners": [
+    "PASS_EDITORIAL_BROWSER_QA",
+    "PASS_CINEMATIC_BROWSER_QA",
+    "PASS_OFFPATH_BROWSER_QA",
+    "PASS_OPTIMIZATION_BROWSER_QA"
+  ]
+}
