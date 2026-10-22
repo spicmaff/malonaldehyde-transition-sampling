@@ -141,3 +141,16 @@ configuration: `.mjs` was served as `text/plain`, so Chrome correctly refused
 the module scripts. A review-only HTTP handler explicitly serves JavaScript,
 JSON and CSS MIME types. Browser security settings and site scientific code
 were not bypassed. This is an environment receipt, not a scientific failure.
+
+The next PR run, `39700734014` at `ee5e491`, passed all three original
+HTTP runners, then the full-width presentation audit found prohibited accessible
+naming on two new generic div containers. Both now have an explicit group role,
+with their existing heading labels retained; their interactive descendants remain
+exposed. The new finale runner also rejects unresolved prohibited-name findings.
+
+The retained live-production probe still expected Optimization to be unpublished.
+That pre-PR13 expectation is stale after published main d713f60. The probe now
+requires Optimization to exist and all twelve routes to remain; its HTTP status,
+UTM routing and live navigation assertions are retained. This corrects a release
+baseline, not an accessibility or behavior threshold. The production site itself
+is not changed by this review.

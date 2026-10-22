@@ -125,6 +125,11 @@ class FinaleTests(unittest.TestCase):
         for ink,tint in pairs:
             a,b=sorted((luminance(ink),luminance(tint)))
             self.assertGreaterEqual((b+.05)/(a+.05),4.5)
+    def test_named_finale_containers_have_semantic_roles(self):
+        for target in ['opt-finale-tradeoff','opt-finale-geometry']:
+            attrs=next(a for _,a in self.tags if a.get('id')==target)
+            self.assertEqual(attrs.get('role'),'group')
+            self.assertIn(attrs['aria-labelledby'],{a.get('id') for _,a in self.tags})
     def test_assets_in_build(self):
         for name in ['scientific_finale.css','scientific_finale.mjs']:
             self.assertEqual((ROOT/'site'/name).read_bytes(),(self.out/name).read_bytes())

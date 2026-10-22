@@ -124,13 +124,15 @@ try{
  assert.ok(await nojs.$eval('#opt-recovery-availability',e=>e.innerText.includes('currently unavailable')));
  assert.equal(await nojs.$eval('#opt-state-chart',e=>e.getAttribute('role')),'group');
  await nojs.close();report.static_disclosure='PASS';
- // Production is read only. Failure is recorded, never disguised as a local test.
+ // Production is read only. PR13 has already published Optimization in d713f60.
+ // Keep the live-route probe aligned with that twelve-chapter release, not its old draft status.
+ // Failure is recorded, never disguised as a local test.
  const live=await browser.newPage();
  for(const route of ['overview','offpath']){
   const response=await live.goto('https://spicmaff.github.io/malonaldehyde-transition-sampling/?utm_source=chatgpt.com&still#'+route,{waitUntil:'networkidle0',timeout:45000});
   await live.waitForFunction(()=>document.body.dataset.ready==='true');
   const d=await live.evaluate(()=>({route:window.exhibit.getState().route,routeCount:document.querySelectorAll('[data-page]').length,optimizationPublished:!!document.getElementById('optimization')}));
-  report.live.push({status:response?.status()??null,navigation:response?'document':'same-document',...d});if(response)assert.equal(response.status(),200);assert.equal(d.route,route);assert.equal(d.optimizationPublished,false);
+  report.live.push({status:response?.status()??null,navigation:response?'document':'same-document',...d});if(response)assert.equal(response.status(),200);assert.equal(d.route,route);assert.equal(d.optimizationPublished,true);assert.equal(d.routeCount,12);
  }
  await live.close();await p.close();await old.close();await historical.close();
  assert.equal(report.views.length,120);assert.equal(report.before.length,120);assert.deepEqual(report.errors,[]);

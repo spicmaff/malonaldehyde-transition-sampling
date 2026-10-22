@@ -47,7 +47,7 @@ try{
   await choose(width,mode);await p.evaluate(()=>window.scientificFinale.selectStep(5));
   await p.addScriptTag({path:axe});
   const a=await p.evaluate(async()=>{const r=await axe.run({include:['#opt-finale-tradeoff','#opt-finale-controls','#opt-finale-geometry','#opt-next-study','.sf-counterexample']},{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return {violations:r.violations,incomplete:r.incomplete};});
-  report.accessibility.push({width,mode,...a});assert.deepEqual(a.violations,[],'new finale scoped axe violations');
+  report.accessibility.push({width,mode,...a});assert.deepEqual(a.violations,[],'new finale scoped axe violations');assert.ok(!a.incomplete.some(v=>v.id==='aria-prohibited-attr'),'no unresolved prohibited naming attributes');
  }
  report.checks.push('120 responsive route/theme/width combinations; ten scoped axe runs with incomplete nodes retained');
  await choose(1440,'light');
