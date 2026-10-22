@@ -82,6 +82,15 @@ def verify_registered_assets(root: Path) -> int:
         if r['previous_repository_sha256'] != expected:
             raise ValueError('Presentation manifest previous hash mismatch')
         by_path[r['repository_path']] = r
+    # A new explicit layer preserves both older frozen manifests verbatim.
+    editorial = records('EDITORIAL_REDESIGN_DELTA.tsv')
+    if {r['repository_path'] for r in editorial} != EDITORIAL_ASSETS or len(editorial) != len(EDITORIAL_ASSETS):
+        raise ValueError('Unexpected editorial manifest scope')
+    for r in editorial:
+        old = by_path.get(r['repository_path'])
+        if r['previous_repository_sha256'] != (old['repository_sha256'] if old else 'NEW'):
+            raise ValueError('Editorial manifest previous hash mismatch')
+        by_path[r['repository_path']] = r
     for relative, r in by_path.items():
         p = root / relative
         if not p.is_file() or p.is_symlink():
@@ -90,3 +99,16 @@ def verify_registered_assets(root: Path) -> int:
         if hashlib.sha256(b).hexdigest() != r['repository_sha256'] or len(b) != int(r['size_bytes']):
             raise ValueError('Registered asset differs: ' + relative)
     return len(by_path)
+
+# Source and interpretation changes only. No historical scientific arrays or models.
+EDITORIAL_ASSETS = {
+    '.github/workflows/research-site.yml', 'tools/build_research_site.py',
+    'tools/run_public_selftests.py', 'site/presentation_review.py',
+    'site/editorial.py', 'site/editorial.css', 'site/app.mjs', 'site/charts.mjs',
+    'site/core.mjs', 'site/molecule.mjs', 'site/literature.json',
+    'tests/test_presentation_review.py', 'tests/test_editorial.py', 'tests/test_offpath_extension.py',
+    'tools/verify_editorial_findings.py', 'tools/site/test_editorial.mjs',
+    'tools/site/browser_editorial_test.mjs', 'docs/editorial-findings.json',
+    'docs/EDITORIAL_RESEARCH_REVIEW_RU.md', 'docs/EDITORIAL_REDESIGN.md',
+    'docs/RESEARCH_SITE.md',
+}

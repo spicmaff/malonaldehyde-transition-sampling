@@ -1,5 +1,5 @@
 """Invariants for additive publication/visual extension; all work uses stored data."""
-import hashlib,json,os,sys,tempfile,unittest,xml.etree.ElementTree as ET
+import csv,hashlib,json,os,sys,tempfile,unittest,xml.etree.ElementTree as ET
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'tools'),str(ROOT/'site')]
@@ -47,7 +47,16 @@ class ExtensionTests(unittest.TestCase):
         m=json.loads((ROOT/'provenance/COMPLETED_EXTENSION_BASELINE.json').read_text())
         self.assertEqual(m['base_commit'],'83f52b0fc6dd1b8d5af7832c657fa5361887fe54')
         self.assertGreater(len(m['protected_files']),280)
-        for p,h in m['protected_files'].items():self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),h,p)
+        from presentation_review import verify_registered_assets
+        verify_registered_assets(ROOT)
+        delta={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/EDITORIAL_REDESIGN_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
+        interface={'site/app.mjs','site/charts.mjs','site/core.mjs','site/molecule.mjs','site/literature.json','docs/RESEARCH_SITE.md'}
+        for p,h in m['protected_files'].items():
+            if p in interface:
+                self.assertEqual(delta[p]['previous_repository_sha256'],h,p)
+                expected=delta[p]['repository_sha256']
+            else:expected=h
+            self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),expected,p)
 
     def test_new_sources_exist_with_sha(self):
         for p,h in self.new['source_hashes'].items():self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),h)

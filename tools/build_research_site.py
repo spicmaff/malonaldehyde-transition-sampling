@@ -248,6 +248,8 @@ def build(out: Path) -> dict:
     document = refine_finale(document, finale)
     write_finale(out, finale)
     copy_finale(out)
+    from editorial import build as build_editorial
+    document = build_editorial(document, data, out)
     (out / 'index.html').write_text(document, encoding='utf-8')
     download = []
     refmap = {r['id']: r for r in refs}

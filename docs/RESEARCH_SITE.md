@@ -8,9 +8,7 @@ The English exhibit presents saved scientific evidence through a molecular rende
 
 The initial equal-budget comparison, its five-seed robustness audit, and the later adaptive Train119 diagnosis are distinct studies. `SEED_SENSITIVE` and `STATIC_APPLICABILITY_FAIL` remain visible. No Train119 deployment promotion, prospective independent test, experimental accuracy or general gamma/error calibration is claimed.
 
-The published exhibit includes `#offpath`. This branch adds a review version of
-`#optimization`; its local or packaged preview must be identified separately from
-the production URL above. [Optimization methods and evidence tiers](OPTIMIZATION_STORY.md)
+At editorial baseline `76e0e22967f408480b5a713d8f94f6c9e9981105`, the published exhibit already includes both `#offpath` and `#optimization`. This branch adds a source-verified editorial redesign; its review preview is separate from the production URL above. See [changes, evidence and acceptance criteria](EDITORIAL_REDESIGN.md). [Optimization methods and evidence tiers](OPTIMIZATION_STORY.md)
 · [Public/private boundary](PUBLIC_PRIVATE_BOUNDARY.md).
 
 ## Architecture
@@ -19,7 +17,7 @@ the production URL above. [Optimization methods and evidence tiers](OPTIMIZATION
 
 `site/pages.py` renders the English document, essay, numerical tables, evidence panels and reference list before JavaScript runs. `site/core.mjs` contains the pure coordinate, force and routing functions. `site/molecule.mjs` supplies a locally vendored Three.js renderer with a Canvas fallback. `site/charts.mjs` creates SVG graphics from the generated data. `site/app.mjs` synchronizes selections and finite animation sequences. No runtime CDN, remote API or account is required.
 
-The original ten addressable sections retain their routes: overview, molecular path, training data, original profiles, five seeds, two diagnostic verdicts, atomic forces, directed story, essay and evidence. The published `#offpath` chapter is the eleventh; the additive review `#optimization` is the twelfth. The old `#applicability` route resolves to the two-verdict view. Essay deep links expose the full essay. Unknown routes return to the overview.
+The original ten addressable sections retain their routes: overview, molecular path, training data, original profiles, five seeds, two diagnostic verdicts, atomic forces, directed story, essay and evidence. The existing `#offpath` and `#optimization` chapters complete the twelve routes. Their display order now follows the experiment map. The old `#applicability` route resolves to the two-verdict view. Essay deep links expose the full essay. Unknown routes return to the overview.
 
 ## Scientific display rules
 

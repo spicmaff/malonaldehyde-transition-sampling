@@ -74,3 +74,12 @@ export function journeyState(t) {
   t=clamp(finite(t),0,1); const scaled=Math.min(5.999999,t*6),chapter=Math.floor(scaled);
   return {chapter,local:scaled-chapter,path:8*smooth((scaled-chapter)),...CHAPTERS[chapter]};
 }
+// Round, legible ticks inside a fixed domain. Never rescale to a selected series.
+export function niceTicks(a,b,count=5){
+  if(!Number.isFinite(a)||!Number.isFinite(b)||a===b)throw new Error('Invalid tick domain');
+  const lo=Math.min(a,b),hi=Math.max(a,b),raw=(hi-lo)/Math.max(1,count-1),power=10**Math.floor(Math.log10(raw));
+  const fraction=raw/power;let step=(fraction<=1?1:fraction<=2?2:fraction<=2.5?2.5:fraction<=5?5:10)*power;
+  while(Math.floor((hi+1e-12)/step)-Math.ceil((lo-1e-12)/step)<1)step/=2;
+  const result=[];for(let i=Math.ceil((lo-1e-12)/step);i*step<=hi+1e-12;i++)result.push(Number((i*step).toPrecision(12)));
+  return a>b?result.reverse():result;
+}

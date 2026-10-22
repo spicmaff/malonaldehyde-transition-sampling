@@ -1,0 +1,431 @@
+{
+  "baseline_commit": "76e0e22967f408480b5a713d8f94f6c9e9981105",
+  "geometry": {
+    "OO_gap_below_training_minimum_A": 0.08886882781974492,
+    "central_PBE_OO_A": 2.3901218509287707,
+    "central_targeted_training_OO_range_A": [
+      2.4888121302093094,
+      2.5054598846114073
+    ],
+    "central_targeted_training_count": 10,
+    "generation": {
+      "base": "(1-s)*left + s*right_aligned",
+      "line": 554,
+      "path": "scripts/core_pipeline/step28_fresh_tube_active_selection_v026.py",
+      "scope": "Aligned-endpoint linear interpolation plus prescribed perturbations, not a tube centered on the relaxed NEB path."
+    },
+    "geometry_scope": "O-O range is a two-coordinate projection finding, not a full feature-space or universal extrapolation classification.",
+    "internal_images_below_training_range": {
+      "basin": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targeted": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "pbe_path": [
+      {
+        "OO_A": 2.499240410496781,
+        "image": 1,
+        "qPT_A": -0.4838914049365788
+      },
+      {
+        "OO_A": 2.457733604381563,
+        "image": 2,
+        "qPT_A": -0.3880116402035043
+      },
+      {
+        "OO_A": 2.418006217548474,
+        "image": 3,
+        "qPT_A": -0.26005757218361825
+      },
+      {
+        "OO_A": 2.396677189257832,
+        "image": 4,
+        "qPT_A": -0.12782328092162376
+      },
+      {
+        "OO_A": 2.3901218509287707,
+        "image": 5,
+        "qPT_A": -0.0001802773458876583
+      },
+      {
+        "OO_A": 2.3966462931823207,
+        "image": 6,
+        "qPT_A": 0.127509294253904
+      },
+      {
+        "OO_A": 2.4179600350308545,
+        "image": 7,
+        "qPT_A": 0.25985898147464837
+      },
+      {
+        "OO_A": 2.457715242769816,
+        "image": 8,
+        "qPT_A": 0.38797642164204493
+      },
+      {
+        "OO_A": 2.4990582628674685,
+        "image": 9,
+        "qPT_A": 0.4837794557957307
+      }
+    ],
+    "training_OO_range_A": {
+      "basin": [
+        2.4789906787485156,
+        2.542452839484558
+      ],
+      "targeted": [
+        2.4789906787485156,
+        2.542452839484558
+      ]
+    }
+  },
+  "new_scientific_calls": 0,
+  "offpath": {
+    "budget_difference_decomposition": {
+      "basin_error_change_eV_A": 0.12213927659795354,
+      "basin_fraction_of_gap_growth": 0.969808858921701,
+      "gap_growth_eV_A": 0.12594159712436143,
+      "targeted_error_change_eV_A": -0.0038023205264078874
+    },
+    "cardinality": {
+      "blocks": 160,
+      "cases": 280,
+      "models": 20,
+      "references": 14
+    },
+    "cell_means": [
+      {
+        "branch": "basin",
+        "budget": 2000,
+        "force_RMSE_eV_A": 0.05512734500584278,
+        "region": "BASIN_LEFT"
+      },
+      {
+        "branch": "targeted",
+        "budget": 2000,
+        "force_RMSE_eV_A": 0.06047030967478497,
+        "region": "BASIN_LEFT"
+      },
+      {
+        "branch": "basin",
+        "budget": 8000,
+        "force_RMSE_eV_A": 0.05577833514083581,
+        "region": "BASIN_LEFT"
+      },
+      {
+        "branch": "targeted",
+        "budget": 8000,
+        "force_RMSE_eV_A": 0.06423123719039314,
+        "region": "BASIN_LEFT"
+      },
+      {
+        "branch": "basin",
+        "budget": 2000,
+        "force_RMSE_eV_A": 0.1877508856082289,
+        "region": "TRANSITION_CENTER"
+      },
+      {
+        "branch": "targeted",
+        "budget": 2000,
+        "force_RMSE_eV_A": 0.16755708347341372,
+        "region": "TRANSITION_CENTER"
+      },
+      {
+        "branch": "basin",
+        "budget": 8000,
+        "force_RMSE_eV_A": 0.30989016220618243,
+        "region": "TRANSITION_CENTER"
+      },
+      {
+        "branch": "targeted",
+        "budget": 8000,
+        "force_RMSE_eV_A": 0.16375476294700583,
+        "region": "TRANSITION_CENTER"
+      }
+    ],
+    "directions": [
+      {
+        "contribution_to_primary_mean_eV_A": -0.10257891026205906,
+        "fraction_of_signed_primary_mean": 0.701944298110354,
+        "mode": "OO_breathing",
+        "paired_differences_eV_A": [
+          -0.5937269866076771,
+          -0.010176619894995409,
+          -1.1591092293959333,
+          0.47268342540054326,
+          -0.7612487947431188
+        ],
+        "targeted_win_count": 4
+      },
+      {
+        "contribution_to_primary_mean_eV_A": -0.015585516116849715,
+        "fraction_of_signed_primary_mean": 0.10665120289717223,
+        "mode": "C_skeletal_bend",
+        "paired_differences_eV_A": [
+          0.0004521981289575677,
+          0.04437919718680443,
+          -0.25056933200065906,
+          -0.028813509836962486,
+          -0.07715887581513473
+        ],
+        "targeted_win_count": 3
+      },
+      {
+        "contribution_to_primary_mean_eV_A": -0.014521756678418997,
+        "fraction_of_signed_primary_mean": 0.09937193008700183,
+        "mode": "H_lateral",
+        "paired_differences_eV_A": [
+          0.008508586964852183,
+          -0.028747282133334162,
+          -0.203799155010175,
+          -0.030874213358096925,
+          -0.035523070031626025
+        ],
+        "targeted_win_count": 4
+      },
+      {
+        "contribution_to_primary_mean_eV_A": -0.013449216201848824,
+        "fraction_of_signed_primary_mean": 0.09203256890547194,
+        "mode": "H_out_of_plane",
+        "paired_differences_eV_A": [
+          0.021408695530564965,
+          -0.017972257800175653,
+          -0.211490773775304,
+          -0.010724009057216918,
+          -0.050205978934844867
+        ],
+        "targeted_win_count": 4
+      }
+    ],
+    "equal_geometry_weight_sensitivity": {
+      "mean_difference_eV_A": -0.15932661846657392,
+      "paired_differences_eV_A": [
+        -0.16401767249959565,
+        -0.0010088096404608504,
+        -0.4912066009412626,
+        0.11646677076482151,
+        -0.256866780016372
+      ]
+    },
+    "leave_one_block_out": [
+      {
+        "mean_difference_eV_A": -0.05807531866282338,
+        "paired_differences_eV_A": [
+          0.010123160208124905,
+          -0.0007801142489017957,
+          -0.22195308692871268,
+          -0.023470577417425444,
+          -0.054295974927201875
+        ],
+        "removed_mode": "OO_breathing",
+        "targeted_win_count": 4
+      },
+      {
+        "mean_difference_eV_A": -0.17406651085643585,
+        "paired_differences_eV_A": [
+          -0.18793656803741998,
+          -0.01896538660950174,
+          -0.5247997193938041,
+          0.14369506766174314,
+          -0.28232594790319654
+        ],
+        "removed_mode": "C_skeletal_bend",
+        "targeted_win_count": 4
+      },
+      {
+        "mean_difference_eV_A": -0.17548485677434347,
+        "paired_differences_eV_A": [
+          -0.19062203098271818,
+          0.005410106497211122,
+          -0.5403897783906322,
+          0.14438196883545462,
+          -0.2962045498310328
+        ],
+        "removed_mode": "H_lateral",
+        "targeted_win_count": 3
+      },
+      {
+        "mean_difference_eV_A": -0.17691491074310373,
+        "paired_differences_eV_A": [
+          -0.19492206717128913,
+          0.001818431719491619,
+          -0.5378259054689225,
+          0.13766523406849462,
+          -0.2913102468632932
+        ],
+        "removed_mode": "H_out_of_plane",
+        "targeted_win_count": 3
+      }
+    ],
+    "primary": {
+      "mean_eV_A": -0.1461353992591766,
+      "median_eV_A": -0.1408393764958256,
+      "paired_differences_eV_A": [
+        -0.1408393764958256,
+        -0.003129240660425192,
+        -0.4562421225455178,
+        0.10056792328706676,
+        -0.2310341798811811
+      ],
+      "targeted_wins": 4
+    },
+    "scope": "Primary endpoint uses equal physical-block weights. Leave-one-block-out and equal-geometry weighting are exploratory sensitivity analyses, not replacement endpoints. Arithmetic gap decomposition is not a causal optimizer diagnosis."
+  },
+  "optimization": {
+    "COV": {
+      "candidate_coefficients_exported": false,
+      "candidate_native_EF_or_gradient": "NOT_EVALUATED",
+      "coefficient_increment_l2": 12120.143455723832,
+      "covariance_scope": "For one already chosen D0, transporting M = T D0 T^T preserves its quadratic increment penalty. Rebuilding a diagonal D0 in an arbitrary starting gauge does not make the whole policy gauge invariant.",
+      "off_training_accuracy": "NOT_QUALIFIED",
+      "percent_of_total_data_loss_removed": 0.9881192707740806,
+      "regularized_stack_condition_number": 81237169.35929134,
+      "theorem": "For fixed A, r and positive M on V, choose delta in V = image(Tg) minimizing ||r+A delta||² + delta^T M delta. Because zero is feasible and the penalty is nonnegative, the exact minimizer cannot increase data loss."
+    },
+    "Q_reduction_percent": "28.64275976971342204888360174946431494085729354911494770353013953300571658752932529475788236787664330",
+    "S1c_to_S2_row_deltas": {
+      "Q": "-0.001003479069980959096005021156190099541725712747037865917777493088979993367430828408624093002080097834",
+      "data_loss": "0.0006908115115686796824377662442055472173178295856425278648444278241335495093534910017580558945674272892",
+      "ridge_penalty": "-0.001694290581549638778442787400395646759043542332680393782621920913113542876784319410382148896647525123"
+    },
+    "availability": {
+      "declared_complete_recovery_bundle_unavailable": true,
+      "restricted_source_distribution": "Public aggregate and table arithmetic. Restricted native evidence is identified by source locator and SHA, not distributed or claimed publicly reproducible.",
+      "scope": "Repository declaration inspected; no access to or search of the author's private storage. Public aggregates permit arithmetic checks, not a fresh native replay or independent matrix/proof reconstruction.",
+      "source": "site/presentation_review.py"
+    },
+    "evidence_class": "PUBLISHED_AGGREGATE_ARITHMETIC",
+    "native_J_S2_over_S0": 18.41785975079139,
+    "native_J_S2q_minus_S2": -1.4624392192033597e-12
+  },
+  "original": {
+    "PBE_barrier_meV": 36.072093892926205,
+    "PBE_endpoint_asymmetry_meV": 0.107348919073047,
+    "central_audit_indices_1based": [
+      16,
+      17,
+      18
+    ],
+    "endpoint_overlaps": [
+      {
+        "branch": "basin",
+        "neb_image": 1,
+        "pair_distance_max_A": 8.659739592076221e-15,
+        "training_index": 9
+      },
+      {
+        "branch": "basin",
+        "neb_image": 9,
+        "pair_distance_max_A": 8.637268678057808e-11,
+        "training_index": 10
+      },
+      {
+        "branch": "targeted",
+        "neb_image": 1,
+        "pair_distance_max_A": 8.659739592076221e-15,
+        "training_index": 9
+      },
+      {
+        "branch": "targeted",
+        "neb_image": 9,
+        "pair_distance_max_A": 8.637268678057808e-11,
+        "training_index": 10
+      }
+    ],
+    "five_seed_metric_table": {
+      "joint_wins": 3,
+      "pairs": [
+        {
+          "barrier_win": true,
+          "force_win": true,
+          "joint_win": true,
+          "seed_index": 0
+        },
+        {
+          "barrier_win": true,
+          "force_win": true,
+          "joint_win": true,
+          "seed_index": 1
+        },
+        {
+          "barrier_win": true,
+          "force_win": true,
+          "joint_win": true,
+          "seed_index": 2
+        },
+        {
+          "barrier_win": false,
+          "force_win": false,
+          "joint_win": false,
+          "seed_index": 3
+        },
+        {
+          "barrier_win": true,
+          "force_win": false,
+          "joint_win": false,
+          "seed_index": 4
+        }
+      ],
+      "scope": "Counts from published metric table, not independent replay of the ten seed-model prediction arrays."
+    },
+    "metrics": {
+      "basin": {
+        "barrier_error_meV": 35.245734070031176,
+        "central_force_RMSE_eV_A": 0.1760826457854536,
+        "model_barrier_meV": 0.8263598228950286
+      },
+      "targeted": {
+        "barrier_error_meV": 4.10039360394876,
+        "central_force_RMSE_eV_A": 0.07868490481909637,
+        "model_barrier_meV": 31.971700288977445
+      }
+    }
+  },
+  "reference_precision": {
+    "NEB_source_guard": "CI_scheme=auto; fixed endpoints; 9 images; 0<path_thr<=0.05 eV/A. This is a source guard, not a newly recovered exact final residual or convergence sweep.",
+    "PBE_endpoint_asymmetry_meV": 0.107348919073047,
+    "cell_A": 16,
+    "ecutrho_Ry": 960,
+    "ecutwfc_Ry": 80,
+    "functional": "PBE",
+    "k_points": "Gamma",
+    "pseudopotential_family": "PSlibrary scalar-relativistic PBE PAW",
+    "scope": "Endpoint asymmetry is a diagnostic, not an uncertainty bound. No new cutoff/cell/path convergence sweep was performed.",
+    "settings_source": "docs/SOFTWARE_PROVENANCE.md"
+  },
+  "schema": "proton-editorial-findings-v1",
+  "source_sha256": {
+    "data/frozen_models_v028/audit21_predictions_basin_v029.cfg": "bb710c65309779793cb22f79ce45657abbf9ec6bc1cfcfb669163b4be3dd9ef8",
+    "data/frozen_models_v028/audit21_predictions_targeted_v029.cfg": "88606a1c808612318d5f0847f7138ecae6e2b0195d6894e2bd0ebc763be79210",
+    "data/frozen_models_v028/frozen_audit21_labels_v029.cfg": "0dc2a1c4c64f243de9c646263fd14e840bc78d2f330fbf52b9f6b22dfe17681d",
+    "data/frozen_models_v028/train_basin60_v028.cfg": "b922e7a5dfea9d048440b9edebd5719cfbf7f1a4b37dc01b1006de7cebbff4bb",
+    "data/frozen_models_v028/train_targeted60_v028.cfg": "eb80aed5c5036bbd3c50352ab2401bc742e4b6bcaf8b4ebebbea8703d5837e57",
+    "data/optimization_story/v001/OPTIMIZATION_STORY.json": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131",
+    "data/studies/optimization_budget_v001/INPUT_MANIFEST.json": "69546a39b54f043131afbbcac6b95f75890f572ec9c750f152a82e5dd5c99da3",
+    "data/studies/pbe14_mtp20_v001/INPUT_MANIFEST.json": "24943b75cd244ab60d7b0d7f261ae9026503b56ad4b9fc62e91f6cb68435d5b6",
+    "scripts/core_pipeline/step28_fresh_tube_active_selection_v026.py": "67a20a7be46d45f27f505fa230ea30454c42248f2a0791cbb502c3e92095c7f5"
+  },
+  "status": "PASS_SAVED_EVIDENCE_AND_AGGREGATE_ARITHMETIC",
+  "strict_verification": {
+    "PBE14": "PASS_SAVED_PBE14_MTP20_NUMERICS",
+    "all_visible_increases_at_50_step_boundaries": true,
+    "model_count": 20,
+    "optimizer_budget": "PASS_20_SAVED_STEP_LIMIT_ENDPOINTS",
+    "printed_main_rows": 100000,
+    "visible_long_run_increases": 1163
+  }
+}

@@ -13,6 +13,15 @@ export class MolecularStage {
     this.yaw=-.34; this.pitch=.24; this.roll=.65; this.zoom=1; this.compact=compact;
     this.selected=-1; this.forces=null; this.forceScale=2; this.layers={pbe:true,mtp:true,error:true};
     this.dark=document.documentElement.dataset.theme==='dark'; this.drag=null;this.disposed=false;
+    this.el.tabIndex=0;
+    this.el.setAttribute('aria-keyshortcuts','ArrowLeft ArrowRight ArrowUp ArrowDown Home');
+    this.el.addEventListener('keydown',e=>{
+      if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(e.key))return;
+      e.preventDefault();
+      if(e.key==='Home')this.resetView();
+      else{this.yaw+=(e.key==='ArrowLeft'?-.12:e.key==='ArrowRight'?.12:0);this.pitch=clamp(this.pitch+(e.key==='ArrowUp'?-.10:e.key==='ArrowDown'?.10:0),-1.1,1.1);this.render();}
+      this.el.dataset.orientation=`${this.yaw.toFixed(3)},${this.pitch.toFixed(3)}`;
+    });
     this.canvas=document.createElement('canvas');this.canvas.className='molecule-canvas';
     this.canvas.setAttribute('aria-hidden','true');this.el.append(this.canvas);
     this.labels=document.createElement('div');this.labels.className='atom-labels';this.labels.setAttribute('aria-hidden','true');this.el.append(this.labels);

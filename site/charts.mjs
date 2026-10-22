@@ -1,7 +1,7 @@
 /* SVG charts with explicit units, fixed comparison scales and persistent marks.
  * Motion reveals saved values; it never invents trajectories or error intervals.
  */
-import {clamp,smooth,pairedSeeds} from './core.mjs';
+import {clamp,smooth,pairedSeeds,niceTicks} from './core.mjs';
 const NS='http://www.w3.org/2000/svg';let serial=0;
 const el=(tag,attrs={},text=null)=>{const n=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));if(text!==null)n.textContent=text;return n;};
 const number=(x,d=3)=>Math.abs(x)<1e-12?'0':Number(x.toFixed(d)).toString();
@@ -16,7 +16,7 @@ function frame(container,{xDomain,yDomain,xLabel='',yLabel='',height=null,xTicks
   const y=v=>pad.t+(yDomain[1]-v)/(yDomain[1]-yDomain[0])*ph;
   const svg=el('svg',{viewBox:`0 0 ${w} ${h}`,width:w,height:h,role:'img'});
   svg.append(el('title',{},container.getAttribute('aria-label')||`${yLabel} versus ${xLabel}`));
-  const ticks=(a,b,n)=>Array.from({length:n},(_,i)=>a+(b-a)*i/(n-1));
+  const ticks=niceTicks;
   for(const v of yTicks||ticks(yDomain[0],yDomain[1],5)){
     svg.append(el('line',{x1:pad.l,x2:w-pad.r,y1:y(v),y2:y(v),class:'chart-grid'}));
     svg.append(el('text',{x:pad.l-10,y:y(v)+4,'text-anchor':'end',class:'chart-axis'},yFormat?yFormat(v):number(v,3)));
@@ -41,16 +41,23 @@ export function linePlot(container,{series,xLabel='Proton-transfer coordinate qP
   const clipID='plot-clip-'+(++serial),defs=el('defs'),cp=el('clipPath',{id:clipID}),clip=el('rect',{x:pad.l-7,y:pad.t-12,width:pw+14,height:ph+24});cp.append(clip);defs.append(cp);svg.append(defs);
   for(const th of thresholds){const yy=y(th.value);svg.append(el('line',{x1:pad.l,x2:pad.l+pw,y1:yy,y2:yy,stroke:th.color||'var(--basin)','stroke-width':1.3,'stroke-dasharray':'5 4'}));svg.append(el('text',{x:pad.l+pw-3,y:yy-7,'text-anchor':'end',class:'chart-label',fill:th.color||'var(--basin)'},th.label));}
   const marks=el('g',{'clip-path':`url(#${clipID})`});svg.append(marks);
-  for(const s of series){const path=s.values.map((p,i)=>(i?'L':'M')+x(p.x)+','+y(p.y)).join(' ');marks.append(el('path',{d:path,fill:'none',stroke:s.color||colors[s.name]||'var(--teal)','stroke-width':2.1,'stroke-linejoin':'round','stroke-linecap':'round','data-series':s.name}));for(const p of s.values){dot(marks,x(p.x),y(p.y),s.color||colors[s.name]||'var(--teal)',{diamond:s.name==='Targeted60'||s.diamond,r:3.5,title:`${s.name}; ${xLabel}: ${p.x}; ${yLabel}: ${p.y}`,onClick:onPoint?()=>onPoint(p):null});}}
+  for(const s of series){const path=s.values.map((p,i)=>(i?'L':'M')+x(p.x)+','+y(p.y)).join(' ');marks.append(el('path',{d:path,fill:'none',stroke:s.color||colors[s.name]||'var(--teal)','stroke-width':2.1,'stroke-linejoin':'round','stroke-linecap':'round','data-series':s.name,...(s.name==='PBE'?{'stroke-dasharray':'7 4'}:s.name==='Targeted60'?{'stroke-dasharray':'2 3'}:{})}));for(const p of s.values){dot(marks,x(p.x),y(p.y),s.color||colors[s.name]||'var(--teal)',{diamond:s.name==='Targeted60'||s.diamond,r:3.5,title:`${s.name}; ${xLabel}: ${p.x}; ${yLabel}: ${p.y}`,onClick:onPoint?()=>onPoint(p):null});}}
   const cursor=el('line',{x1:0,x2:0,y1:pad.t-4,y2:pad.t+ph,stroke:'var(--muted)','stroke-width':1,'stroke-dasharray':'3 5',opacity:0});svg.append(cursor);
   const markers=series.map(s=>{const c=el('circle',{r:6,fill:'var(--panel)',stroke:s.color||colors[s.name]||'var(--teal)','stroke-width':2.2,opacity:0});svg.append(c);return c;});
   return {frame:f,reveal(t){clip.setAttribute('width',clamp(t,0,1)*(pw+14));},cursor(xx,explicit=null){cursor.setAttribute('x1',x(xx));cursor.setAttribute('x2',x(xx));cursor.setAttribute('opacity','1');series.forEach((s,i)=>{let yy=explicit?.[s.name];if(yy===undefined){const a=s.values;let j=a.findIndex(p=>p.x>=xx);j=clamp(j<0?a.length-1:j,1,a.length-1);const p=a[j-1],q=a[j];yy=p.y+(q.y-p.y)*clamp((xx-p.x)/(q.x-p.x||1),0,1);}markers[i].setAttribute('cx',x(xx));markers[i].setAttribute('cy',y(yy));markers[i].setAttribute('opacity','1');});},destroy(){container.replaceChildren();}};
 }
-export function samplingPlot(container,points,branch,domain){
-  const{svg,x,y}=frame(container,{xDomain:domain.x,yDomain:domain.y,xLabel:'Proton-transfer coordinate qPT / Å',yLabel:'O1–O8 distance / Å'});
+export function samplingPlot(container,points,branch,domain,reference=[]){
+  const{svg,x,y,pad,pw}=frame(container,{xDomain:domain.x,yDomain:domain.y,xLabel:'Proton-transfer coordinate qPT / Å',yLabel:'O1–O8 distance / Å',xTicks:[-.5,0,.5],yTicks:[2.4,2.45,2.5,2.55]});
+  const floor=Math.min(...points.map(p=>p.roo));
+  svg.append(el('path',{d:`M${pad.l} ${y(floor)}h${pw}`,class:'ed-floor','data-training-floor':floor}));
   const shared=points.filter(p=>p.shared),added=points.filter(p=>!p.shared),nodes=[];
   for(const [kind,arr] of [['shared',shared],['added',added]])arr.forEach((p,i)=>{const n=dot(svg,x(p.q),y(p.roo),kind==='shared'?'var(--muted)':(branch==='basin'||branch==='both'&&p.branch==='basin')?'var(--basin)':'var(--targeted)',{diamond:kind==='added'&&(branch==='targeted'||p.branch==='targeted'),r:kind==='shared'?3.1:4.4,opacity:kind==='shared'?.52:1,title:`${p.id}; ${kind}; qPT ${p.q.toFixed(6)} Å; O–O ${p.roo.toFixed(6)} Å`});n.dataset.kind=kind;n.dataset.candidate=p.id;nodes.push({n,i,kind});});
-  return{reveal(t){t=clamp(t,0,1);for(const{n,i,kind}of nodes){const local=kind==='shared'?t/.44:((t-.44)/.56),count=kind==='shared'?shared.length:added.length;const opacity=smooth(local*count-i);n.setAttribute('opacity',opacity*(kind==='shared'?.52:1));}return{shared:clamp(Math.floor(t/.44*36),0,36),added:clamp(Math.floor((t-.44)/.56*24),0,24)};}};
+  if(reference.length){
+    svg.append(el('path',{d:reference.map((p,i)=>`${i?'L':'M'}${x(p.q)} ${y(p.roo)}`).join(' '),class:'ed-reference-path'}));
+    reference.forEach((p,i)=>{const n=el('rect',{x:x(p.q)-3.6,y:y(p.roo)-3.6,width:7.2,height:7.2,fill:'var(--pbe)',class:'ed-reference-dot','data-pbe-image':i+1});n.append(el('title',{},`Saved PBE image ${i+1}; qPT ${p.q} Å; O1–O8 ${p.roo} Å`));svg.append(n);});
+  }
+  const selected=el('circle',{r:7.5,class:'ed-reference-selected',opacity:0});svg.append(selected);
+  return{select(i){const p=reference[i];if(p){selected.setAttribute('cx',x(p.q));selected.setAttribute('cy',y(p.roo));selected.setAttribute('opacity',1);}},reveal(t){t=clamp(t,0,1);for(const{n,i,kind}of nodes){const local=kind==='shared'?t/.44:((t-.44)/.56),count=kind==='shared'?shared.length:added.length;const opacity=smooth(local*count-i);n.setAttribute('opacity',opacity*(kind==='shared'?.52:1));}return{shared:clamp(Math.floor(t/.44*36),0,36),added:clamp(Math.floor((t-.44)/.56*24),0,24)};}};
 }
 export function seedPlot(container,rows,metric){
   const pairs=pairedSeeds(rows),maximum=Math.max(...pairs.flatMap(p=>[p.basin[metric],p.targeted[metric]]));
