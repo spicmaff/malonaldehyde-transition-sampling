@@ -1,0 +1,14 @@
+{
+  "source_tree": "05523a265aff542977c74baeb9aaf1bad6ac7612",
+  "accepted_frontend_and_science": "81efe61100d4913b9306f38616dde1720636d377",
+  "public_url": "https://spicmaff.github.io/malonaldehyde-transition-sampling/",
+  "branch": "main",
+  "report_directory": "reports/site-acceptance-81efe611",
+  "report_files": 32,
+  "scope": "Public GitHub Pages publication requested by owner. Both private Sites audiences preserved. After the accepted frontend/science source, only audit artifacts and the scoped QA-dependency identity correction were added; all historical inputs, outputs, definitions and frontend modules are unchanged.",
+  "website_source_commit": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+  "new_physical_runs": 0,
+  "first_publication_source_commit": "1362278c995d81793d4f2030eb53005f108657fa",
+  "identity_correction_files": 4,
+  "python_test_count": 198
+}

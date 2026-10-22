@@ -1,0 +1,46 @@
+[
+  {
+    "id": 39864195671,
+    "name": "repository-and-reproduction-selftest",
+    "event": "push",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "head_branch": "main",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671",
+    "created_at": "2026-10-22T22:20:15Z"
+  },
+  {
+    "id": 39864195447,
+    "name": "public-repository-audit",
+    "event": "push",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "head_branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195447",
+    "created_at": "2026-10-22T22:20:15Z"
+  },
+  {
+    "id": 39864195841,
+    "name": "completed-studies-offline",
+    "event": "push",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "head_branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195841",
+    "created_at": "2026-10-22T22:20:15Z"
+  },
+  {
+    "id": 39864195677,
+    "name": "research-site",
+    "event": "push",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "head_branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195677",
+    "created_at": "2026-10-22T22:20:15Z"
+  }
+]

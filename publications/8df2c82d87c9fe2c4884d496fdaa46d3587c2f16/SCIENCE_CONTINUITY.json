@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "source_commit": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+  "scientific_sections_identical": {
+    "definitions": true,
+    "verifier_sha256": true,
+    "original": true,
+    "PBE14": true,
+    "Train119": true,
+    "optimization": true,
+    "training_logs": true,
+    "source_SHA256": true
+  },
+  "new_physical_runs": 0
+}

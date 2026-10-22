@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "references": 358,
+  "unexpected_origin_absolute_local_links": [],
+  "scope": "Generated HTML src/href/poster paths remain relative or fragment/external URLs, compatible with the GitHub Pages repository subpath."
+}

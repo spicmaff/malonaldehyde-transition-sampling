@@ -1,0 +1,318 @@
+[
+  {
+    "id": 120122143599,
+    "run_id": 39864195671,
+    "workflow_name": "repository-and-reproduction-selftest",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOTrNhq88AAAAb99Zzbw",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/actions/jobs/120122143599",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671/job/120122143599",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-10-22T22:20:16Z",
+    "started_at": "2026-10-22T22:20:19Z",
+    "completed_at": null,
+    "name": "visual-story",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-22T22:20:19Z",
+        "completed_at": "2026-10-22T22:20:20Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-22T22:20:20Z",
+        "completed_at": "2026-10-22T22:20:22Z"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-22T22:20:22Z",
+        "completed_at": "2026-10-22T22:20:22Z"
+      },
+      {
+        "name": "Run python -m pip install -r requirements.txt",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-22T22:20:22Z",
+        "completed_at": "2026-10-22T22:20:35Z"
+      },
+      {
+        "name": "Install presentation encoder and system font",
+        "status": "in_progress",
+        "conclusion": null,
+        "number": 5,
+        "started_at": "2026-10-22T22:20:35Z",
+        "completed_at": null
+      },
+      {
+        "name": "Check saved visual inputs and arithmetic",
+        "status": "pending",
+        "conclusion": null,
+        "number": 6,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Render actual four-second 60 fps visual proof",
+        "status": "pending",
+        "conclusion": null,
+        "number": 7,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Build the portable longread and verify local references",
+        "status": "pending",
+        "conclusion": null,
+        "number": 8,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "pending",
+        "conclusion": null,
+        "number": 15,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "pending",
+        "conclusion": null,
+        "number": 16,
+        "started_at": null,
+        "completed_at": null
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/check-runs/120122143599",
+    "labels": [
+      "ubuntu-latest"
+    ],
+    "runner_id": 1000000638,
+    "runner_name": "GitHub Actions 1000000638",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  },
+  {
+    "id": 120122144063,
+    "run_id": 39864195671,
+    "workflow_name": "repository-and-reproduction-selftest",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOTrNhq88AAAAb99Z1Pw",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/actions/jobs/120122144063",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671/job/120122144063",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-22T22:20:16Z",
+    "started_at": "2026-10-22T22:20:18Z",
+    "completed_at": "2026-10-22T22:20:39Z",
+    "name": "integrity",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-22T22:20:19Z",
+        "completed_at": "2026-10-22T22:20:19Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-22T22:20:19Z",
+        "completed_at": "2026-10-22T22:20:20Z"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-22T22:20:20Z",
+        "completed_at": "2026-10-22T22:20:21Z"
+      },
+      {
+        "name": "Run repository self-tests",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-22T22:20:21Z",
+        "completed_at": "2026-10-22T22:20:24Z"
+      },
+      {
+        "name": "Recompute primary metrics",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-10-22T22:20:24Z",
+        "completed_at": "2026-10-22T22:20:25Z"
+      },
+      {
+        "name": "Verify Train119 post-publication saved evidence",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-10-22T22:20:25Z",
+        "completed_at": "2026-10-22T22:20:37Z"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 11,
+        "started_at": "2026-10-22T22:20:37Z",
+        "completed_at": "2026-10-22T22:20:37Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 12,
+        "started_at": "2026-10-22T22:20:37Z",
+        "completed_at": "2026-10-22T22:20:37Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 13,
+        "started_at": "2026-10-22T22:20:37Z",
+        "completed_at": "2026-10-22T22:20:37Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/check-runs/120122144063",
+    "labels": [
+      "ubuntu-latest"
+    ],
+    "runner_id": 1000000639,
+    "runner_name": "GitHub Actions 1000000639",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  },
+  {
+    "id": 120122144093,
+    "run_id": 39864195671,
+    "workflow_name": "repository-and-reproduction-selftest",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOTrNhq88AAAAb99Z1XQ",
+    "head_sha": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/actions/jobs/120122144093",
+    "html_url": "https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195671/job/120122144093",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-22T22:20:16Z",
+    "started_at": "2026-10-22T22:20:19Z",
+    "completed_at": "2026-10-22T22:21:06Z",
+    "name": "reproduction-smoke",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-22T22:20:20Z",
+        "completed_at": "2026-10-22T22:20:20Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-22T22:20:20Z",
+        "completed_at": "2026-10-22T22:20:22Z"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-22T22:20:22Z",
+        "completed_at": "2026-10-22T22:20:22Z"
+      },
+      {
+        "name": "Run python -m pip install -r requirements.txt",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-22T22:20:22Z",
+        "completed_at": "2026-10-22T22:20:35Z"
+      },
+      {
+        "name": "Validate all publication inputs",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-10-22T22:20:35Z",
+        "completed_at": "2026-10-22T22:20:39Z"
+      },
+      {
+        "name": "Render figures, table, and frozen-path quantum chain",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-10-22T22:20:39Z",
+        "completed_at": "2026-10-22T22:21:03Z"
+      },
+      {
+        "name": "Reject private-path fallback",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-10-22T22:21:03Z",
+        "completed_at": "2026-10-22T22:21:03Z"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 13,
+        "started_at": "2026-10-22T22:21:03Z",
+        "completed_at": "2026-10-22T22:21:03Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 14,
+        "started_at": "2026-10-22T22:21:03Z",
+        "completed_at": "2026-10-22T22:21:04Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 15,
+        "started_at": "2026-10-22T22:21:04Z",
+        "completed_at": "2026-10-22T22:21:04Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/spicmaff/malonaldehyde-transition-sampling/check-runs/120122144093",
+    "labels": [
+      "ubuntu-latest"
+    ],
+    "runner_id": 1000000640,
+    "runner_name": "GitHub Actions 1000000640",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  }
+]

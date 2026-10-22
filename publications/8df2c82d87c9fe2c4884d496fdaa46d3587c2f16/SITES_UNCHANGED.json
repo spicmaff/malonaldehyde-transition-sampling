@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "sites": [
+    {
+      "project_id": "appgprj_6ada1822d82c8191a5130cfbc907ff94",
+      "url": "https://proton-potential-editorial-review.fancybead14.chatgpt.site",
+      "version": 4,
+      "status": "active",
+      "mode": "custom",
+      "policy_revision": 1,
+      "users": 1,
+      "groups": 0,
+      "external_visitors": 0
+    },
+    {
+      "project_id": "appgprj_6ada524a12a481918aac17bb1f53ffb5",
+      "url": "https://proton-potential-independent-review.fancybead14.chatgpt.site",
+      "version": 3,
+      "status": "active",
+      "mode": "custom",
+      "policy_revision": 1,
+      "users": 1,
+      "groups": 0,
+      "external_visitors": 0
+    }
+  ]
+}

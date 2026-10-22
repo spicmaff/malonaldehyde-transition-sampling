@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "path": "app.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "build-identity.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "build-manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "charts.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "cinema/manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "cinematic.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "cinematic.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "core.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "data/editorial.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/finale.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/literature.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/offpath.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/optimization.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/optimization/OPTIMIZATION_STORY.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/optimization/PROVENANCE.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/optimization/PUBLICATION_ALLOWLIST.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "data/science.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "editorial.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "molecule.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "offpath.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "offpath.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "optimization.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "optimization.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "payload_validation.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "presentation_review.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "scientific_finale.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "scientific_finale.mjs",
+      "content_type": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "style.css",
+      "content_type": "text/css",
+      "pass": true
+    },
+    {
+      "path": "vendor/three/manifest.json",
+      "content_type": "application/json",
+      "pass": true
+    },
+    {
+      "path": "vendor/three/three.core.js",
+      "content_type": "application/javascript",
+      "pass": true
+    },
+    {
+      "path": "vendor/three/three.module.js",
+      "content_type": "application/javascript",
+      "pass": true
+    }
+  ]
+}

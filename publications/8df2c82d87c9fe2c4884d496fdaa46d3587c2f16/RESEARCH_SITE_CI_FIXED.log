@@ -1,0 +1,1063 @@
+﻿2026-10-22T22:20:19.9176161Z Current runner version: '2.338.0'
+2026-10-22T22:20:19.9197406Z ##[group]Runner Image Provisioner
+2026-10-22T22:20:19.9198190Z Hosted Compute Agent
+2026-10-22T22:20:19.9198678Z Version: 20261012.601
+2026-10-22T22:20:19.9199267Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-22T22:20:19.9199868Z Build Date: 2026-10-12T17:48:21Z
+2026-10-22T22:20:19.9200657Z Worker ID: {83f53f24-f340-45ab-b705-a98bcd6c93b5}
+2026-10-22T22:20:19.9201401Z Region: westus3
+2026-10-22T22:20:19.9201859Z Cloud: Azure
+2026-10-22T22:20:19.9202293Z ##[endgroup]
+2026-10-22T22:20:19.9203484Z ##[group]Operating System
+2026-10-22T22:20:19.9203992Z Ubuntu
+2026-10-22T22:20:19.9204497Z 24.04.5
+2026-10-22T22:20:19.9204946Z LTS
+2026-10-22T22:20:19.9205396Z ##[endgroup]
+2026-10-22T22:20:19.9205911Z ##[group]Runner Image
+2026-10-22T22:20:19.9206415Z Image: ubuntu-24.04
+2026-10-22T22:20:19.9206936Z Version: 20261012.334.1
+2026-10-22T22:20:19.9207984Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-22T22:20:19.9209269Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-22T22:20:19.9210040Z ##[endgroup]
+2026-10-22T22:20:19.9211232Z ##[group]GITHUB_TOKEN Permissions
+2026-10-22T22:20:19.9212943Z Contents: read
+2026-10-22T22:20:19.9213483Z Metadata: read
+2026-10-22T22:20:19.9213961Z ##[endgroup]
+2026-10-22T22:20:19.9215623Z Secret source: Actions
+2026-10-22T22:20:19.9216471Z Cache mode: write
+2026-10-22T22:20:19.9217295Z Prepare workflow directory
+2026-10-22T22:20:20.0555183Z Prepare all required actions
+2026-10-22T22:20:20.0609892Z Getting action download info
+2026-10-22T22:20:20.3648546Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-22T22:20:20.4683673Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-22T22:20:20.6347438Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-22T22:20:20.7376063Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-22T22:20:20.8922546Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+2026-10-22T22:20:21.2278646Z Getting action download info
+2026-10-22T22:20:21.3647537Z Complete job name: site-check
+2026-10-22T22:20:21.4407692Z ##[group]Run actions/checkout@v4
+2026-10-22T22:20:21.4408356Z with:
+2026-10-22T22:20:21.4408782Z   repository: spicmaff/malonaldehyde-transition-sampling
+2026-10-22T22:20:21.4412341Z   token: ***
+2026-10-22T22:20:21.4412697Z   ssh-strict: true
+2026-10-22T22:20:21.4413044Z   ssh-user: git
+2026-10-22T22:20:21.4413395Z   persist-credentials: true
+2026-10-22T22:20:21.4413778Z   clean: true
+2026-10-22T22:20:21.4414130Z   sparse-checkout-cone-mode: true
+2026-10-22T22:20:21.4414536Z   fetch-depth: 1
+2026-10-22T22:20:21.4414882Z   fetch-tags: false
+2026-10-22T22:20:21.4415246Z   show-progress: true
+2026-10-22T22:20:21.4415625Z   lfs: false
+2026-10-22T22:20:21.4415944Z   submodules: false
+2026-10-22T22:20:21.4416294Z   set-safe-directory: true
+2026-10-22T22:20:21.4416691Z   allow-unsafe-pr-checkout: false
+2026-10-22T22:20:21.4417271Z ##[endgroup]
+2026-10-22T22:20:21.5209448Z Syncing repository: spicmaff/malonaldehyde-transition-sampling
+2026-10-22T22:20:21.5211948Z ##[group]Getting Git version info
+2026-10-22T22:20:21.5213311Z Working directory is '/home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling'
+2026-10-22T22:20:21.5214985Z [command]/usr/bin/git version
+2026-10-22T22:20:21.5290380Z git version 2.55.0
+2026-10-22T22:20:21.5308170Z ##[endgroup]
+2026-10-22T22:20:21.5317006Z Temporarily overriding HOME='/home/USER/work/_temp/d8bf0f8b-79ba-4105-8066-7948d81ab81c' before making global git config changes
+2026-10-22T22:20:21.5318770Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T22:20:21.5323683Z [command]/usr/bin/git config --global --add safe.directory /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling
+2026-10-22T22:20:21.5369507Z Deleting the contents of '/home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling'
+2026-10-22T22:20:21.5372590Z ##[group]Initializing the repository
+2026-10-22T22:20:21.5376120Z [command]/usr/bin/git init /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling
+2026-10-22T22:20:21.5474202Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-22T22:20:21.5475497Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-22T22:20:21.5476644Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-22T22:20:21.5477541Z hint: call:
+2026-10-22T22:20:21.5478036Z hint:
+2026-10-22T22:20:21.5478657Z hint: 	git config --global init.defaultBranch <name>
+2026-10-22T22:20:21.5479419Z hint:
+2026-10-22T22:20:21.5480133Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-22T22:20:21.5481490Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-22T22:20:21.5482398Z hint:
+2026-10-22T22:20:21.5482886Z hint: 	git branch -m <name>
+2026-10-22T22:20:21.5483527Z hint:
+2026-10-22T22:20:21.5484346Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-22T22:20:21.5486080Z Initialized empty Git repository in /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling/.git/
+2026-10-22T22:20:21.5488877Z [command]/usr/bin/git remote add origin https://github.com/spicmaff/malonaldehyde-transition-sampling
+2026-10-22T22:20:21.5528843Z ##[endgroup]
+2026-10-22T22:20:21.5529832Z ##[group]Disabling automatic garbage collection
+2026-10-22T22:20:21.5532426Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-22T22:20:21.5568391Z ##[endgroup]
+2026-10-22T22:20:21.5568991Z ##[group]Setting up auth
+2026-10-22T22:20:21.5569831Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T22:20:21.5594611Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T22:20:21.5918295Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T22:20:21.5949752Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T22:20:21.6154111Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T22:20:21.6184991Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T22:20:21.6372530Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-22T22:20:21.6408272Z ##[endgroup]
+2026-10-22T22:20:21.6409265Z ##[group]Fetching the repository
+2026-10-22T22:20:21.6416596Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8df2c82d87c9fe2c4884d496fdaa46d3587c2f16:refs/remotes/origin/main
+2026-10-22T22:20:22.9346440Z From https://github.com/spicmaff/malonaldehyde-transition-sampling
+2026-10-22T22:20:22.9348366Z  * [new ref]         8df2c82d87c9fe2c4884d496fdaa46d3587c2f16 -> origin/main
+2026-10-22T22:20:22.9351989Z ##[endgroup]
+2026-10-22T22:20:22.9353365Z ##[group]Determining the checkout info
+2026-10-22T22:20:22.9354866Z ##[endgroup]
+2026-10-22T22:20:22.9357312Z [command]/usr/bin/git sparse-checkout disable
+2026-10-22T22:20:22.9405661Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-22T22:20:22.9433943Z ##[group]Checking out the ref
+2026-10-22T22:20:22.9437416Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-22T22:20:23.0381895Z Switched to a new branch 'main'
+2026-10-22T22:20:23.0391524Z branch 'main' set up to track 'origin/main'.
+2026-10-22T22:20:23.0397670Z ##[endgroup]
+2026-10-22T22:20:23.0435785Z [command]/usr/bin/git log -1 --format=%H
+2026-10-22T22:20:23.0458397Z 8df2c82d87c9fe2c4884d496fdaa46d3587c2f16
+2026-10-22T22:20:23.0807949Z ##[group]Run actions/setup-python@v5
+2026-10-22T22:20:23.0808882Z with:
+2026-10-22T22:20:23.0809567Z   python-version: 3.11
+2026-10-22T22:20:23.0810364Z   check-latest: false
+2026-10-22T22:20:23.0818496Z   token: ***
+2026-10-22T22:20:23.0819234Z   update-environment: true
+2026-10-22T22:20:23.0820085Z   allow-prereleases: false
+2026-10-22T22:20:23.0821006Z   freethreaded: false
+2026-10-22T22:20:23.0821774Z ##[endgroup]
+2026-10-22T22:20:23.1843382Z ##[group]Installed versions
+2026-10-22T22:20:23.1921492Z (node:2084) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T22:20:23.1924742Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T22:20:23.1926776Z Successfully set up CPython (3.11.17)
+2026-10-22T22:20:23.1928906Z ##[endgroup]
+2026-10-22T22:20:23.2174213Z ##[group]Run actions/setup-node@v4
+2026-10-22T22:20:23.2175405Z with:
+2026-10-22T22:20:23.2176378Z   node-version: 22
+2026-10-22T22:20:23.2177428Z   cache: npm
+2026-10-22T22:20:23.2178571Z   cache-dependency-path: tools/site/package-lock.json
+2026-10-22T22:20:23.2179865Z   always-auth: false
+2026-10-22T22:20:23.2180989Z   check-latest: false
+2026-10-22T22:20:23.2192819Z   token: ***
+2026-10-22T22:20:23.2193985Z env:
+2026-10-22T22:20:23.2195487Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:23.2197450Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:20:23.2198937Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:23.2200840Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:23.2203293Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:23.2205546Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:20:23.2207246Z ##[endgroup]
+2026-10-22T22:20:23.3340100Z (node:2092) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T22:20:23.3342912Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T22:20:23.3344825Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-22T22:20:23.3346384Z ##[group]Environment details
+2026-10-22T22:20:23.6542065Z node: v22.23.3
+2026-10-22T22:20:23.6543196Z npm: 10.9.9
+2026-10-22T22:20:23.6544167Z yarn: 1.22.22
+2026-10-22T22:20:23.6546045Z ##[endgroup]
+2026-10-22T22:20:23.6560858Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+2026-10-22T22:20:23.7471530Z /home/USER/.npm
+2026-10-22T22:20:23.9572088Z Cache hit for: node-cache-Linux-x64-npm-8a4c14436f4533d1daa830a73c2b1828b383697f8bc2a7495d94bd31f91e04a6
+2026-10-22T22:20:23.9690636Z (node:2092) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-22T22:20:25.1852370Z Received 4077579 of 8271883 (49.3%), 3.9 MBs/sec
+2026-10-22T22:20:25.2293866Z Received 8271883 of 8271883 (100.0%), 7.5 MBs/sec
+2026-10-22T22:20:25.2294421Z Cache Size: ~8 MB (8271883 B)
+2026-10-22T22:20:25.2315616Z [command]/usr/bin/tar -xf /home/USER/work/_temp/bf39e608-9b53-4a80-81fa-1578726247a1/cache.tzst -P -C /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling --use-compress-program unzstd
+2026-10-22T22:20:25.2580629Z Cache restored successfully
+2026-10-22T22:20:25.2592185Z Cache restored from key: node-cache-Linux-x64-npm-8a4c14436f4533d1daa830a73c2b1828b383697f8bc2a7495d94bd31f91e04a6
+2026-10-22T22:20:25.2757355Z ##[group]Run npm ci --prefix tools/site --ignore-scripts --no-audit --no-fund
+2026-10-22T22:20:25.2758351Z [36;1mnpm ci --prefix tools/site --ignore-scripts --no-audit --no-fund[0m
+2026-10-22T22:20:25.2993984Z shell: /usr/bin/bash -e {0}
+2026-10-22T22:20:25.2994232Z env:
+2026-10-22T22:20:25.2994489Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:25.2994879Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:20:25.2995252Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:25.2995570Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:25.2995892Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:25.2996238Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:20:25.2996527Z ##[endgroup]
+2026-10-22T22:20:26.8905083Z 
+2026-10-22T22:20:26.8910911Z added 81 packages in 2s
+2026-10-22T22:20:26.9350874Z ##[group]Run python -B tools/site/test_site.py
+2026-10-22T22:20:26.9351257Z [36;1mpython -B tools/site/test_site.py[0m
+2026-10-22T22:20:26.9351545Z [36;1mpython -O -B tools/site/test_site.py[0m
+2026-10-22T22:20:26.9351845Z [36;1mpython -B tools/build_optimizer_story.py --verify[0m
+2026-10-22T22:20:26.9352220Z [36;1mpython -O -B tools/build_optimizer_story.py --verify[0m
+2026-10-22T22:20:26.9352594Z [36;1mpython -B -m unittest discover -s tests -p test_optimization_story.py[0m
+2026-10-22T22:20:26.9353002Z [36;1mpython -O -B -m unittest discover -s tests -p test_optimization_story.py[0m
+2026-10-22T22:20:26.9353403Z [36;1mpython -B -m unittest discover -s tests -p test_presentation_review.py[0m
+2026-10-22T22:20:26.9353799Z [36;1mpython -O -B -m unittest discover -s tests -p test_presentation_review.py[0m
+2026-10-22T22:20:26.9354187Z [36;1mpython -B -m unittest discover -s tests -p test_cinematic.py[0m
+2026-10-22T22:20:26.9354600Z [36;1mpython -O -B -m unittest discover -s tests -p test_cinematic.py[0m
+2026-10-22T22:20:26.9354934Z [36;1mpython -B tools/build_scientific_finale.py[0m
+2026-10-22T22:20:26.9355249Z [36;1mpython -O -B tools/build_scientific_finale.py[0m
+2026-10-22T22:20:26.9355594Z [36;1mpython -B -m unittest discover -s tests -p test_scientific_finale.py[0m
+2026-10-22T22:20:26.9355982Z [36;1mpython -O -B -m unittest discover -s tests -p test_scientific_finale.py[0m
+2026-10-22T22:20:26.9356340Z [36;1mpython -B tools/verify_editorial_findings.py --check[0m
+2026-10-22T22:20:26.9356773Z [36;1mpython -B tools/audit_independent_science.py --out "$RUNNER_TEMP/independent-science.json"[0m
+2026-10-22T22:20:26.9357234Z [36;1mpython -B -m unittest discover -s tests -p test_editorial.py[0m
+2026-10-22T22:20:26.9357551Z [36;1mnode --test tools/site/test_editorial.mjs[0m
+2026-10-22T22:20:26.9357848Z [36;1mnode --test tools/site/test_payload_validation.mjs[0m
+2026-10-22T22:20:26.9358134Z [36;1mnode --test tools/site/test_core.mjs[0m
+2026-10-22T22:20:26.9358470Z [36;1mpython -B tools/build_research_site.py --out "$RUNNER_TEMP/proton-site"[0m
+2026-10-22T22:20:26.9417430Z shell: /usr/bin/bash -e {0}
+2026-10-22T22:20:26.9417667Z env:
+2026-10-22T22:20:26.9417909Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:26.9418268Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:20:26.9418615Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:26.9418930Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:26.9419239Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:26.9419552Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:20:26.9419818Z ##[endgroup]
+2026-10-22T22:20:28.0835342Z test_297_force_components_come_from_primary_output (__main__.SiteTests.test_297_force_components_come_from_primary_output) ... ok
+2026-10-22T22:20:28.0836124Z test_all_paired_seed_strings (__main__.SiteTests.test_all_paired_seed_strings) ... ok
+2026-10-22T22:20:28.0841422Z test_build_has_no_external_font_files (__main__.SiteTests.test_build_has_no_external_font_files) ... ok
+2026-10-22T22:20:28.0844420Z test_curated_literature_has_complete_records (__main__.SiteTests.test_curated_literature_has_complete_records) ... ok
+2026-10-22T22:20:28.0845778Z test_download_has_expanded_source_links (__main__.SiteTests.test_download_has_expanded_source_links) ... ok
+2026-10-22T22:20:28.0872297Z test_english_only_visible_source (__main__.SiteTests.test_english_only_visible_source) ... ok
+2026-10-22T22:20:28.0872949Z test_expected_scientific_snapshot (__main__.SiteTests.test_expected_scientific_snapshot) ... ok
+2026-10-22T22:20:28.0920008Z test_generated_files_match_manifest (__main__.SiteTests.test_generated_files_match_manifest) ... ok
+2026-10-22T22:20:28.0921069Z test_geometry_supports (__main__.SiteTests.test_geometry_supports) ... ok
+2026-10-22T22:20:28.0922313Z test_h2_and_c3_are_not_conflated (__main__.SiteTests.test_h2_and_c3_are_not_conflated) ... ok
+2026-10-22T22:20:28.0923407Z test_known_overlap_and_failures_preserved (__main__.SiteTests.test_known_overlap_and_failures_preserved) ... ok
+2026-10-22T22:20:28.0931477Z test_local_links_and_anchors_exist (__main__.SiteTests.test_local_links_and_anchors_exist) ... ok
+2026-10-22T22:20:28.0938361Z test_longread_and_sources_readable_without_js (__main__.SiteTests.test_longread_and_sources_readable_without_js) ... ok
+2026-10-22T22:20:28.0939297Z test_no_duplicate_dom_ids (__main__.SiteTests.test_no_duplicate_dom_ids) ... ok
+2026-10-22T22:20:28.0940365Z test_no_old_russian_media_in_build (__main__.SiteTests.test_no_old_russian_media_in_build) ... ok
+2026-10-22T22:20:28.0946867Z test_occupied_output_is_not_overwritten (__main__.SiteTests.test_occupied_output_is_not_overwritten) ... ok
+2026-10-22T22:20:28.0947996Z test_old_russian_url_redirect_preserves_hash (__main__.SiteTests.test_old_russian_url_redirect_preserves_hash) ... ok
+2026-10-22T22:20:28.0948884Z test_original_metrics_preserved (__main__.SiteTests.test_original_metrics_preserved) ... ok
+2026-10-22T22:20:28.0949771Z test_profile_residual_is_not_barrier_error (__main__.SiteTests.test_profile_residual_is_not_barrier_error) ... ok
+2026-10-22T22:20:28.0950875Z test_profiles_have_individual_lower_endpoint_zero (__main__.SiteTests.test_profiles_have_individual_lower_endpoint_zero) ... ok
+2026-10-22T22:20:28.1075407Z test_python311_grammar (__main__.SiteTests.test_python311_grammar) ... ok
+2026-10-22T22:20:28.8066358Z test_repeat_build_is_identical (__main__.SiteTests.test_repeat_build_is_identical) ... ok
+2026-10-22T22:20:28.8067312Z test_scaffold_contraction (__main__.SiteTests.test_scaffold_contraction) ... ok
+2026-10-22T22:20:28.8071332Z test_scene_captions_are_english (__main__.SiteTests.test_scene_captions_are_english) ... ok
+2026-10-22T22:20:28.8091602Z test_sources_are_pinned_and_have_real_hashes (__main__.SiteTests.test_sources_are_pinned_and_have_real_hashes) ... ok
+2026-10-22T22:20:28.8101329Z test_stop_and_crossings_preserved (__main__.SiteTests.test_stop_and_crossings_preserved) ... ok
+2026-10-22T22:20:28.8101894Z test_training_budget_and_roles (__main__.SiteTests.test_training_budget_and_roles) ... ok
+2026-10-22T22:20:28.8107879Z test_two_english_films_have_verified_sources (__main__.SiteTests.test_two_english_films_have_verified_sources) ... ok
+2026-10-22T22:20:28.8109963Z test_unsafe_output_is_rejected (__main__.SiteTests.test_unsafe_output_is_rejected) ... ok
+2026-10-22T22:20:28.8125327Z test_vendored_renderer_has_license_and_integrity (__main__.SiteTests.test_vendored_renderer_has_license_and_integrity) ... ok
+2026-10-22T22:20:28.8147998Z 
+2026-10-22T22:20:28.8148386Z ----------------------------------------------------------------------
+2026-10-22T22:20:28.8148750Z Ran 30 tests in 1.560s
+2026-10-22T22:20:28.8148970Z 
+2026-10-22T22:20:28.8149181Z OK
+2026-10-22T22:20:31.0404302Z test_297_force_components_come_from_primary_output (__main__.SiteTests.test_297_force_components_come_from_primary_output) ... ok
+2026-10-22T22:20:31.0405486Z test_all_paired_seed_strings (__main__.SiteTests.test_all_paired_seed_strings) ... ok
+2026-10-22T22:20:31.0409789Z test_build_has_no_external_font_files (__main__.SiteTests.test_build_has_no_external_font_files) ... ok
+2026-10-22T22:20:31.0413757Z test_curated_literature_has_complete_records (__main__.SiteTests.test_curated_literature_has_complete_records) ... ok
+2026-10-22T22:20:31.0415180Z test_download_has_expanded_source_links (__main__.SiteTests.test_download_has_expanded_source_links) ... ok
+2026-10-22T22:20:31.0441002Z test_english_only_visible_source (__main__.SiteTests.test_english_only_visible_source) ... ok
+2026-10-22T22:20:31.0442013Z test_expected_scientific_snapshot (__main__.SiteTests.test_expected_scientific_snapshot) ... ok
+2026-10-22T22:20:31.0487666Z test_generated_files_match_manifest (__main__.SiteTests.test_generated_files_match_manifest) ... ok
+2026-10-22T22:20:31.0488546Z test_geometry_supports (__main__.SiteTests.test_geometry_supports) ... ok
+2026-10-22T22:20:31.0489656Z test_h2_and_c3_are_not_conflated (__main__.SiteTests.test_h2_and_c3_are_not_conflated) ... ok
+2026-10-22T22:20:31.0490907Z test_known_overlap_and_failures_preserved (__main__.SiteTests.test_known_overlap_and_failures_preserved) ... ok
+2026-10-22T22:20:31.0495582Z test_local_links_and_anchors_exist (__main__.SiteTests.test_local_links_and_anchors_exist) ... ok
+2026-10-22T22:20:31.0503356Z test_longread_and_sources_readable_without_js (__main__.SiteTests.test_longread_and_sources_readable_without_js) ... ok
+2026-10-22T22:20:31.0504309Z test_no_duplicate_dom_ids (__main__.SiteTests.test_no_duplicate_dom_ids) ... ok
+2026-10-22T22:20:31.0511667Z test_no_old_russian_media_in_build (__main__.SiteTests.test_no_old_russian_media_in_build) ... ok
+2026-10-22T22:20:31.0512481Z test_occupied_output_is_not_overwritten (__main__.SiteTests.test_occupied_output_is_not_overwritten) ... ok
+2026-10-22T22:20:31.0513174Z test_old_russian_url_redirect_preserves_hash (__main__.SiteTests.test_old_russian_url_redirect_preserves_hash) ... ok
+2026-10-22T22:20:31.0513788Z test_original_metrics_preserved (__main__.SiteTests.test_original_metrics_preserved) ... ok
+2026-10-22T22:20:31.0514399Z test_profile_residual_is_not_barrier_error (__main__.SiteTests.test_profile_residual_is_not_barrier_error) ... ok
+2026-10-22T22:20:31.0515104Z test_profiles_have_individual_lower_endpoint_zero (__main__.SiteTests.test_profiles_have_individual_lower_endpoint_zero) ... ok
+2026-10-22T22:20:31.0592676Z test_python311_grammar (__main__.SiteTests.test_python311_grammar) ... ok
+2026-10-22T22:20:31.7648949Z test_repeat_build_is_identical (__main__.SiteTests.test_repeat_build_is_identical) ... ok
+2026-10-22T22:20:31.7649777Z test_scaffold_contraction (__main__.SiteTests.test_scaffold_contraction) ... ok
+2026-10-22T22:20:31.7651057Z test_scene_captions_are_english (__main__.SiteTests.test_scene_captions_are_english) ... ok
+2026-10-22T22:20:31.7672041Z test_sources_are_pinned_and_have_real_hashes (__main__.SiteTests.test_sources_are_pinned_and_have_real_hashes) ... ok
+2026-10-22T22:20:31.7673137Z test_stop_and_crossings_preserved (__main__.SiteTests.test_stop_and_crossings_preserved) ... ok
+2026-10-22T22:20:31.7674119Z test_training_budget_and_roles (__main__.SiteTests.test_training_budget_and_roles) ... ok
+2026-10-22T22:20:31.7687074Z test_two_english_films_have_verified_sources (__main__.SiteTests.test_two_english_films_have_verified_sources) ... ok
+2026-10-22T22:20:31.7688579Z test_unsafe_output_is_rejected (__main__.SiteTests.test_unsafe_output_is_rejected) ... ok
+2026-10-22T22:20:31.7703109Z test_vendored_renderer_has_license_and_integrity (__main__.SiteTests.test_vendored_renderer_has_license_and_integrity) ... ok
+2026-10-22T22:20:31.7720013Z 
+2026-10-22T22:20:31.7720733Z ----------------------------------------------------------------------
+2026-10-22T22:20:31.7731284Z Ran 30 tests in 1.618s
+2026-10-22T22:20:31.7731475Z 
+2026-10-22T22:20:31.7731585Z OK
+2026-10-22T22:20:31.9712192Z {
+2026-10-22T22:20:31.9712524Z   "claim_rows": 90,
+2026-10-22T22:20:31.9712966Z   "duplicate_short_prefix_increases": 60,
+2026-10-22T22:20:31.9713390Z   "long_printed_increases": 1163,
+2026-10-22T22:20:31.9714124Z   "native_models_executed": 0,
+2026-10-22T22:20:31.9714456Z   "new_scientific_calls": 0,
+2026-10-22T22:20:31.9714813Z   "paired_blocks_reaggregated": 8,
+2026-10-22T22:20:31.9715217Z   "paired_case_scores_reaggregated": 14,
+2026-10-22T22:20:31.9715502Z   "paired_regions_reaggregated": 2,
+2026-10-22T22:20:31.9715884Z   "payload_sha256": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131",
+2026-10-22T22:20:31.9716231Z   "public_H_force_cases": 14,
+2026-10-22T22:20:31.9716444Z   "public_source_hashes": 23,
+2026-10-22T22:20:31.9716644Z   "public_training_logs": 20,
+2026-10-22T22:20:31.9716854Z   "publication_files": 5,
+2026-10-22T22:20:31.9717089Z   "restricted_sources_opened": 0,
+2026-10-22T22:20:31.9717303Z   "source_records": 71,
+2026-10-22T22:20:31.9717540Z   "status": "PASS_OPTIMIZATION_PUBLIC_SUBSET"
+2026-10-22T22:20:31.9717779Z }
+2026-10-22T22:20:32.2602668Z {
+2026-10-22T22:20:32.2603633Z   "claim_rows": 90,
+2026-10-22T22:20:32.2603919Z   "duplicate_short_prefix_increases": 60,
+2026-10-22T22:20:32.2604216Z   "long_printed_increases": 1163,
+2026-10-22T22:20:32.2604463Z   "native_models_executed": 0,
+2026-10-22T22:20:32.2604678Z   "new_scientific_calls": 0,
+2026-10-22T22:20:32.2604913Z   "paired_blocks_reaggregated": 8,
+2026-10-22T22:20:32.2605170Z   "paired_case_scores_reaggregated": 14,
+2026-10-22T22:20:32.2605418Z   "paired_regions_reaggregated": 2,
+2026-10-22T22:20:32.2605794Z   "payload_sha256": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131",
+2026-10-22T22:20:32.2606162Z   "public_H_force_cases": 14,
+2026-10-22T22:20:32.2606377Z   "public_source_hashes": 23,
+2026-10-22T22:20:32.2606581Z   "public_training_logs": 20,
+2026-10-22T22:20:32.2606794Z   "publication_files": 5,
+2026-10-22T22:20:32.2607010Z   "restricted_sources_opened": 0,
+2026-10-22T22:20:32.2607226Z   "source_records": 71,
+2026-10-22T22:20:32.2607461Z   "status": "PASS_OPTIMIZATION_PUBLIC_SUBSET"
+2026-10-22T22:20:32.2607703Z }
+2026-10-22T22:20:35.5732045Z ......................................
+2026-10-22T22:20:35.5732487Z ----------------------------------------------------------------------
+2026-10-22T22:20:35.5732813Z Ran 38 tests in 3.065s
+2026-10-22T22:20:35.5732938Z 
+2026-10-22T22:20:35.5733030Z OK
+2026-10-22T22:20:39.7516987Z ......................................
+2026-10-22T22:20:39.7517395Z ----------------------------------------------------------------------
+2026-10-22T22:20:39.7517731Z Ran 38 tests in 3.093s
+2026-10-22T22:20:39.7517861Z 
+2026-10-22T22:20:39.7517950Z OK
+2026-10-22T22:20:40.7042409Z ............
+2026-10-22T22:20:40.7042935Z ----------------------------------------------------------------------
+2026-10-22T22:20:40.7043386Z Ran 12 tests in 0.824s
+2026-10-22T22:20:40.7043566Z 
+2026-10-22T22:20:40.7043660Z OK
+2026-10-22T22:20:42.1678636Z ............
+2026-10-22T22:20:42.1679202Z ----------------------------------------------------------------------
+2026-10-22T22:20:42.1679717Z Ran 12 tests in 1.089s
+2026-10-22T22:20:42.1679907Z 
+2026-10-22T22:20:42.1680015Z OK
+2026-10-22T22:20:43.0931348Z ....................
+2026-10-22T22:20:43.0931922Z ----------------------------------------------------------------------
+2026-10-22T22:20:43.0932356Z Ran 20 tests in 0.821s
+2026-10-22T22:20:43.0932524Z 
+2026-10-22T22:20:43.0932617Z OK
+2026-10-22T22:20:44.1898173Z ....................
+2026-10-22T22:20:44.1898563Z ----------------------------------------------------------------------
+2026-10-22T22:20:44.1898886Z Ran 20 tests in 0.823s
+2026-10-22T22:20:44.1899019Z 
+2026-10-22T22:20:44.1899102Z OK
+2026-10-22T22:20:44.2308389Z {"status": "PASS_FINALE_SAVED_ARITHMETIC", "source_sha256": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131", "q_drop_percent": 28.64275976971342, "new_scientific_calls": 0, "private_sources_opened": 0}
+2026-10-22T22:20:44.3518040Z {"status": "PASS_FINALE_SAVED_ARITHMETIC", "source_sha256": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131", "q_drop_percent": 28.64275976971342, "new_scientific_calls": 0, "private_sources_opened": 0}
+2026-10-22T22:20:45.2655761Z ....................................
+2026-10-22T22:20:45.2656313Z ----------------------------------------------------------------------
+2026-10-22T22:20:45.2656640Z Ran 36 tests in 0.818s
+2026-10-22T22:20:45.2656762Z 
+2026-10-22T22:20:45.2656850Z OK
+2026-10-22T22:20:46.3709859Z ....................................
+2026-10-22T22:20:46.3710565Z ----------------------------------------------------------------------
+2026-10-22T22:20:46.3711005Z Ran 36 tests in 0.823s
+2026-10-22T22:20:46.3711175Z 
+2026-10-22T22:20:46.3711278Z OK
+2026-10-22T22:20:46.6349514Z {
+2026-10-22T22:20:46.6350008Z   "status": "PASS_SAVED_EVIDENCE_AND_AGGREGATE_ARITHMETIC",
+2026-10-22T22:20:46.6350644Z   "new_scientific_calls": 0,
+2026-10-22T22:20:46.6351007Z   "interior_images_below_Train60_OO": 7,
+2026-10-22T22:20:46.6351434Z   "PBE14_primary_mean_eV_A": -0.1461353992591766,
+2026-10-22T22:20:46.6352252Z   "long_log_increases": 1163
+2026-10-22T22:20:46.6352549Z }
+2026-10-22T22:20:46.9612754Z {
+2026-10-22T22:20:46.9613263Z   "status": "PASS_SAVED_PRIMARY_ARRAYS_AND_AGGREGATE_ARITHMETIC",
+2026-10-22T22:20:46.9613871Z   "out": "/home/USER/work/_temp/independent-science.json",
+2026-10-22T22:20:46.9614330Z   "PBE14_primary_eV_A": -0.1461353992591766,
+2026-10-22T22:20:46.9614665Z   "source_files": 130
+2026-10-22T22:20:46.9614908Z }
+2026-10-22T22:20:48.0043619Z .....
+2026-10-22T22:20:48.0044161Z ----------------------------------------------------------------------
+2026-10-22T22:20:48.0044623Z Ran 5 tests in 0.939s
+2026-10-22T22:20:48.0044793Z 
+2026-10-22T22:20:48.0044887Z OK
+2026-10-22T22:20:48.0504173Z TAP version 13
+2026-10-22T22:20:48.0821861Z # Subtest: ticks remain round inside a fixed molecular comparison domain
+2026-10-22T22:20:48.0828833Z ok 1 - ticks remain round inside a fixed molecular comparison domain
+2026-10-22T22:20:48.0829612Z   ---
+2026-10-22T22:20:48.0837850Z   duration_ms: 1.027037
+2026-10-22T22:20:48.0838225Z   type: 'test'
+2026-10-22T22:20:48.0838432Z   ...
+2026-10-22T22:20:48.0838779Z # Subtest: reversed seed axes and invalid domains are handled explicitly
+2026-10-22T22:20:48.0839237Z ok 2 - reversed seed axes and invalid domains are handled explicitly
+2026-10-22T22:20:48.0839594Z   ---
+2026-10-22T22:20:48.0839863Z   duration_ms: 0.235772
+2026-10-22T22:20:48.0840167Z   type: 'test'
+2026-10-22T22:20:48.0840561Z   ...
+2026-10-22T22:20:48.0892541Z 1..2
+2026-10-22T22:20:48.0893362Z # tests 2
+2026-10-22T22:20:48.0893890Z # suites 0
+2026-10-22T22:20:48.0894412Z # pass 2
+2026-10-22T22:20:48.0894727Z # fail 0
+2026-10-22T22:20:48.0895643Z # cancelled 0
+2026-10-22T22:20:48.0896036Z # skipped 0
+2026-10-22T22:20:48.0896392Z # todo 0
+2026-10-22T22:20:48.0896754Z # duration_ms 47.790694
+2026-10-22T22:20:48.1262257Z TAP version 13
+2026-10-22T22:20:48.9421780Z # Subtest: the real saved payload qualifies for progressive enhancement
+2026-10-22T22:20:48.9424534Z ok 1 - the real saved payload qualifies for progressive enhancement
+2026-10-22T22:20:48.9425240Z   ---
+2026-10-22T22:20:48.9425593Z   duration_ms: 2.464148
+2026-10-22T22:20:48.9425969Z   type: 'test'
+2026-10-22T22:20:48.9426348Z   ...
+2026-10-22T22:20:48.9429507Z # Subtest: rejects finite-shaped but missing energy series
+2026-10-22T22:20:48.9431495Z ok 2 - rejects finite-shaped but missing energy series
+2026-10-22T22:20:48.9432560Z   ---
+2026-10-22T22:20:48.9432842Z   duration_ms: 0.964313
+2026-10-22T22:20:48.9433152Z   type: 'test'
+2026-10-22T22:20:48.9433419Z   ...
+2026-10-22T22:20:48.9434004Z # Subtest: rejects nonfinite energy
+2026-10-22T22:20:48.9435916Z ok 3 - rejects nonfinite energy
+2026-10-22T22:20:48.9436520Z   ---
+2026-10-22T22:20:48.9436785Z   duration_ms: 0.501931
+2026-10-22T22:20:48.9437096Z   type: 'test'
+2026-10-22T22:20:48.9437364Z   ...
+2026-10-22T22:20:48.9437735Z # Subtest: rejects wrong selected geometry
+2026-10-22T22:20:48.9438679Z ok 4 - rejects wrong selected geometry
+2026-10-22T22:20:48.9439063Z   ---
+2026-10-22T22:20:48.9439317Z   duration_ms: 0.931915
+2026-10-22T22:20:48.9439775Z   type: 'test'
+2026-10-22T22:20:48.9440037Z   ...
+2026-10-22T22:20:48.9440832Z # Subtest: rejects permuted atom identities
+2026-10-22T22:20:48.9441748Z ok 5 - rejects permuted atom identities
+2026-10-22T22:20:48.9442143Z   ---
+2026-10-22T22:20:48.9442414Z   duration_ms: 0.612337
+2026-10-22T22:20:48.9442830Z   type: 'test'
+2026-10-22T22:20:48.9443100Z   ...
+2026-10-22T22:20:48.9443574Z # Subtest: rejects reversed force-difference sign
+2026-10-22T22:20:48.9444141Z ok 6 - rejects reversed force-difference sign
+2026-10-22T22:20:48.9444539Z   ---
+2026-10-22T22:20:48.9444872Z   duration_ms: 0.631765
+2026-10-22T22:20:48.9445251Z   type: 'test'
+2026-10-22T22:20:48.9445531Z   ...
+2026-10-22T22:20:48.9446062Z # Subtest: rejects pooled normalization replacing component RMSE
+2026-10-22T22:20:48.9449904Z ok 7 - rejects pooled normalization replacing component RMSE
+2026-10-22T22:20:48.9450651Z   ---
+2026-10-22T22:20:48.9450997Z   duration_ms: 0.712466
+2026-10-22T22:20:48.9451387Z   type: 'test'
+2026-10-22T22:20:48.9451963Z   ...
+2026-10-22T22:20:48.9452459Z # Subtest: rejects rounded numeric uint64 seed
+2026-10-22T22:20:48.9453057Z ok 8 - rejects rounded numeric uint64 seed
+2026-10-22T22:20:48.9453521Z   ---
+2026-10-22T22:20:48.9453803Z   duration_ms: 0.667138
+2026-10-22T22:20:48.9454180Z   type: 'test'
+2026-10-22T22:20:48.9454510Z   ...
+2026-10-22T22:20:48.9455006Z # Subtest: rejects mismatched shared training descriptor
+2026-10-22T22:20:48.9462937Z ok 9 - rejects mismatched shared training descriptor
+2026-10-22T22:20:48.9463436Z   ---
+2026-10-22T22:20:48.9463724Z   duration_ms: 0.849121
+2026-10-22T22:20:48.9464093Z   type: 'test'
+2026-10-22T22:20:48.9464383Z   ...
+2026-10-22T22:20:48.9464843Z # Subtest: rejects wrong saved gamma / frame mapping
+2026-10-22T22:20:48.9465479Z ok 10 - rejects wrong saved gamma / frame mapping
+2026-10-22T22:20:48.9465953Z   ---
+2026-10-22T22:20:48.9466240Z   duration_ms: 1.092405
+2026-10-22T22:20:48.9466636Z   type: 'test'
+2026-10-22T22:20:48.9466984Z   ...
+2026-10-22T22:20:48.9517537Z 1..10
+2026-10-22T22:20:48.9517795Z # tests 10
+2026-10-22T22:20:48.9518013Z # suites 0
+2026-10-22T22:20:48.9518459Z # pass 10
+2026-10-22T22:20:48.9518745Z # fail 0
+2026-10-22T22:20:48.9519194Z # cancelled 0
+2026-10-22T22:20:48.9519515Z # skipped 0
+2026-10-22T22:20:48.9519785Z # todo 0
+2026-10-22T22:20:48.9520084Z # duration_ms 834.643839
+2026-10-22T22:20:48.9879379Z TAP version 13
+2026-10-22T22:20:49.0251741Z # Subtest: qPT uses fixed oxygen and proton identities
+2026-10-22T22:20:49.0257162Z ok 1 - qPT uses fixed oxygen and proton identities
+2026-10-22T22:20:49.0257844Z   ---
+2026-10-22T22:20:49.0258428Z   duration_ms: 0.914899
+2026-10-22T22:20:49.0258973Z   type: 'test'
+2026-10-22T22:20:49.0259444Z   ...
+2026-10-22T22:20:49.0262835Z # Subtest: centering preserves all pair distances
+2026-10-22T22:20:49.0264250Z ok 2 - centering preserves all pair distances
+2026-10-22T22:20:49.0264732Z   ---
+2026-10-22T22:20:49.0265004Z   duration_ms: 0.270355
+2026-10-22T22:20:49.0265342Z   type: 'test'
+2026-10-22T22:20:49.0265635Z   ...
+2026-10-22T22:20:49.0266113Z # Subtest: rigid camera rotation preserves vector magnitude
+2026-10-22T22:20:49.0267788Z ok 3 - rigid camera rotation preserves vector magnitude
+2026-10-22T22:20:49.0268890Z   ---
+2026-10-22T22:20:49.0269172Z   duration_ms: 0.278917
+2026-10-22T22:20:49.0269483Z   type: 'test'
+2026-10-22T22:20:49.0269761Z   ...
+2026-10-22T22:20:49.0270240Z # Subtest: orthographic projection is isotropic in its plane
+2026-10-22T22:20:49.0271634Z ok 4 - orthographic projection is isotropic in its plane
+2026-10-22T22:20:49.0272093Z   ---
+2026-10-22T22:20:49.0272366Z   duration_ms: 0.181832
+2026-10-22T22:20:49.0272777Z   type: 'test'
+2026-10-22T22:20:49.0273048Z   ...
+2026-10-22T22:20:49.0276435Z # Subtest: saved path images are returned exactly
+2026-10-22T22:20:49.0277277Z ok 5 - saved path images are returned exactly
+2026-10-22T22:20:49.0277674Z   ---
+2026-10-22T22:20:49.0277945Z   duration_ms: 1.054889
+2026-10-22T22:20:49.0278339Z   type: 'test'
+2026-10-22T22:20:49.0280628Z   ...
+2026-10-22T22:20:49.0281090Z # Subtest: interpolation is explicitly not a saved image
+2026-10-22T22:20:49.0282155Z ok 6 - interpolation is explicitly not a saved image
+2026-10-22T22:20:49.0282595Z   ---
+2026-10-22T22:20:49.0282869Z   duration_ms: 0.149564
+2026-10-22T22:20:49.0283210Z   type: 'test'
+2026-10-22T22:20:49.0283466Z   ...
+2026-10-22T22:20:49.0283978Z # Subtest: interpolated distances are recomputed from the display geometry
+2026-10-22T22:20:49.0291618Z ok 7 - interpolated distances are recomputed from the display geometry
+2026-10-22T22:20:49.0292323Z   ---
+2026-10-22T22:20:49.0292803Z   duration_ms: 0.18058
+2026-10-22T22:20:49.0293311Z   type: 'test'
+2026-10-22T22:20:49.0293766Z   ...
+2026-10-22T22:20:49.0294306Z # Subtest: NaN interpolation is rejected
+2026-10-22T22:20:49.0294938Z ok 8 - NaN interpolation is rejected
+2026-10-22T22:20:49.0295465Z   ---
+2026-10-22T22:20:49.0295917Z   duration_ms: 0.195102
+2026-10-22T22:20:49.0296382Z   type: 'test'
+2026-10-22T22:20:49.0296827Z   ...
+2026-10-22T22:20:49.0297600Z # Subtest: out-of-range path input is clamped
+2026-10-22T22:20:49.0298240Z ok 9 - out-of-range path input is clamped
+2026-10-22T22:20:49.0298779Z   ---
+2026-10-22T22:20:49.0299219Z   duration_ms: 0.296805
+2026-10-22T22:20:49.0299694Z   type: 'test'
+2026-10-22T22:20:49.0300131Z   ...
+2026-10-22T22:20:49.0302918Z # Subtest: force error is MTP minus PBE, without per-arrow normalization
+2026-10-22T22:20:49.0303915Z ok 10 - force error is MTP minus PBE, without per-arrow normalization
+2026-10-22T22:20:49.0304516Z   ---
+2026-10-22T22:20:49.0304840Z   duration_ms: 0.382523
+2026-10-22T22:20:49.0305187Z   type: 'test'
+2026-10-22T22:20:49.0305474Z   ...
+2026-10-22T22:20:49.0311345Z # Subtest: RMSE denominator is 27, not 9
+2026-10-22T22:20:49.0312006Z ok 11 - RMSE denominator is 27, not 9
+2026-10-22T22:20:49.0312636Z   ---
+2026-10-22T22:20:49.0313158Z   duration_ms: 0.194962
+2026-10-22T22:20:49.0313499Z   type: 'test'
+2026-10-22T22:20:49.0313767Z   ...
+2026-10-22T22:20:49.0314077Z # Subtest: truncated force arrays fail closed
+2026-10-22T22:20:49.0314533Z ok 12 - truncated force arrays fail closed
+2026-10-22T22:20:49.0314839Z   ---
+2026-10-22T22:20:49.0315025Z   duration_ms: 0.098818
+2026-10-22T22:20:49.0315226Z   type: 'test'
+2026-10-22T22:20:49.0315398Z   ...
+2026-10-22T22:20:49.0315655Z # Subtest: truncated component arrays fail closed
+2026-10-22T22:20:49.0315982Z ok 13 - truncated component arrays fail closed
+2026-10-22T22:20:49.0316214Z   ---
+2026-10-22T22:20:49.0316380Z   duration_ms: 0.652437
+2026-10-22T22:20:49.0316572Z   type: 'test'
+2026-10-22T22:20:49.0316744Z   ...
+2026-10-22T22:20:49.0316954Z # Subtest: nonfinite forces fail closed
+2026-10-22T22:20:49.0317219Z ok 14 - nonfinite forces fail closed
+2026-10-22T22:20:49.0317432Z   ---
+2026-10-22T22:20:49.0317597Z   duration_ms: 0.089133
+2026-10-22T22:20:49.0317786Z   type: 'test'
+2026-10-22T22:20:49.0317961Z   ...
+2026-10-22T22:20:49.0318276Z # Subtest: source vector and geometry use the same rigid transform
+2026-10-22T22:20:49.0331521Z ok 15 - source vector and geometry use the same rigid transform
+2026-10-22T22:20:49.0332031Z   ---
+2026-10-22T22:20:49.0332318Z   duration_ms: 0.092399
+2026-10-22T22:20:49.0332641Z   type: 'test'
+2026-10-22T22:20:49.0332905Z   ...
+2026-10-22T22:20:49.0333321Z # Subtest: legacy applicability route remains useful
+2026-10-22T22:20:49.0333873Z ok 16 - legacy applicability route remains useful
+2026-10-22T22:20:49.0334274Z   ---
+2026-10-22T22:20:49.0334536Z   duration_ms: 0.09333
+2026-10-22T22:20:49.0334831Z   type: 'test'
+2026-10-22T22:20:49.0335104Z   ...
+2026-10-22T22:20:49.0335525Z # Subtest: deep link query does not change route identity
+2026-10-22T22:20:49.0336105Z ok 17 - deep link query does not change route identity
+2026-10-22T22:20:49.0336520Z   ---
+2026-10-22T22:20:49.0336783Z   duration_ms: 0.096675
+2026-10-22T22:20:49.0337091Z   type: 'test'
+2026-10-22T22:20:49.0337348Z   ...
+2026-10-22T22:20:49.0337705Z # Subtest: unknown routes fail to overview
+2026-10-22T22:20:49.0338173Z ok 18 - unknown routes fail to overview
+2026-10-22T22:20:49.0338533Z   ---
+2026-10-22T22:20:49.0338802Z   duration_ms: 0.058859
+2026-10-22T22:20:49.0339330Z   type: 'test'
+2026-10-22T22:20:49.0339592Z   ...
+2026-10-22T22:20:49.0339983Z # Subtest: essay anchors resolve to visible essay
+2026-10-22T22:20:49.0340679Z ok 19 - essay anchors resolve to visible essay
+2026-10-22T22:20:49.0341063Z   ---
+2026-10-22T22:20:49.0341326Z   duration_ms: 0.045819
+2026-10-22T22:20:49.0341634Z   type: 'test'
+2026-10-22T22:20:49.0341895Z   ...
+2026-10-22T22:20:49.0342298Z # Subtest: paired seed identities remain exact strings
+2026-10-22T22:20:49.0342864Z ok 20 - paired seed identities remain exact strings
+2026-10-22T22:20:49.0343259Z   ---
+2026-10-22T22:20:49.0343519Z   duration_ms: 0.232808
+2026-10-22T22:20:49.0343820Z   type: 'test'
+2026-10-22T22:20:49.0344075Z   ...
+2026-10-22T22:20:49.0344442Z # Subtest: mismatched paired seeds fail closed
+2026-10-22T22:20:49.0344909Z ok 21 - mismatched paired seeds fail closed
+2026-10-22T22:20:49.0345240Z   ---
+2026-10-22T22:20:49.0345713Z   duration_ms: 0.126719
+2026-10-22T22:20:49.0346003Z   type: 'test'
+2026-10-22T22:20:49.0346247Z   ...
+2026-10-22T22:20:49.0346594Z # Subtest: directed story has six bounded chapters
+2026-10-22T22:20:49.0347078Z ok 22 - directed story has six bounded chapters
+2026-10-22T22:20:49.0347502Z   ---
+2026-10-22T22:20:49.0347772Z   duration_ms: 0.13363
+2026-10-22T22:20:49.0348067Z   type: 'test'
+2026-10-22T22:20:49.0348348Z   ...
+2026-10-22T22:20:49.0348763Z # Subtest: reveal count never exceeds available data
+2026-10-22T22:20:49.0349274Z ok 23 - reveal count never exceeds available data
+2026-10-22T22:20:49.0349682Z   ---
+2026-10-22T22:20:49.0349945Z   duration_ms: 0.068122
+2026-10-22T22:20:49.0350255Z   type: 'test'
+2026-10-22T22:20:49.0350690Z   ...
+2026-10-22T22:20:49.0399599Z 1..23
+2026-10-22T22:20:49.0399862Z # tests 23
+2026-10-22T22:20:49.0400111Z # suites 0
+2026-10-22T22:20:49.0400358Z # pass 23
+2026-10-22T22:20:49.0400740Z # fail 0
+2026-10-22T22:20:49.0401033Z # cancelled 0
+2026-10-22T22:20:49.0401343Z # skipped 0
+2026-10-22T22:20:49.0401637Z # todo 0
+2026-10-22T22:20:49.0401977Z # duration_ms 60.964203
+2026-10-22T22:20:49.8068649Z {"status": "PASS_ENGLISH_CINEMATIC_BUILD", "science_commit": "f44d28cc0b13defb747f625376b083055b577629", "NEB_images": 9, "force_frames_from_primary_data": 11, "force_components": 297, "paired_seeds": 5, "new_physical_calls": 0}
+2026-10-22T22:20:49.8224265Z ##[group]Run python -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/proton-site" > "$RUNNER_TEMP/site-server.log" 2>&1 &
+2026-10-22T22:20:49.8224968Z [36;1mpython -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/proton-site" > "$RUNNER_TEMP/site-server.log" 2>&1 &[0m
+2026-10-22T22:20:49.8225429Z [36;1mSERVER_PID=$![0m
+2026-10-22T22:20:49.8225682Z [36;1mtrap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT[0m
+2026-10-22T22:20:49.8226243Z [36;1mBROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/editorial" node tools/site/browser_editorial_test.mjs[0m
+2026-10-22T22:20:49.8226945Z [36;1mBROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa" node tools/site/browser_test.mjs[0m
+2026-10-22T22:20:49.8227633Z [36;1mBROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/offpath" node tools/site/browser_offpath_test.mjs[0m
+2026-10-22T22:20:49.8228412Z [36;1mBROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/optimization" node tools/site/browser_optimization_test.mjs[0m
+2026-10-22T22:20:49.8284441Z shell: /usr/bin/bash -e {0}
+2026-10-22T22:20:49.8284661Z env:
+2026-10-22T22:20:49.8284892Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:49.8285246Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:20:49.8285587Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:49.8285899Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:49.8286235Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:20:49.8286761Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:20:49.8287062Z   CHROME_BIN: /usr/bin/google-chrome
+2026-10-22T22:20:49.8287294Z   REQUIRE_FILMS: 1
+2026-10-22T22:20:49.8287472Z ##[endgroup]
+2026-10-22T22:21:40.0422598Z {
+2026-10-22T22:21:40.0422954Z   "status": "PASS_EDITORIAL_BROWSER_QA",
+2026-10-22T22:21:40.0423234Z   "checks": [
+2026-10-22T22:21:40.0423604Z     "120 saved training points, 18 PBE overlay points, linked keyboard selection and rotation",
+2026-10-22T22:21:40.0424112Z     "energy geometry linkage; comparison axis unchanged when a branch is hidden",
+2026-10-22T22:21:40.0424733Z     "compact chapter navigation initializes independent modules, stops prior playback, retains focus and supports browser Back",
+2026-10-22T22:21:40.0425309Z     "42 width/theme/chapter views: no page overflow, zero WCAG A/AA violations"
+2026-10-22T22:21:40.0425624Z   ],
+2026-10-22T22:21:40.0425799Z   "screenshots": [
+2026-10-22T22:21:40.0426020Z     "after-overview-light-1440.png",
+2026-10-22T22:21:40.0426282Z     "after-sampling-light-1440.png",
+2026-10-22T22:21:40.0426540Z     "after-optimization-light-1440.png",
+2026-10-22T22:21:40.0426799Z     "after-overview-light-390.png",
+2026-10-22T22:21:40.0427042Z     "after-sampling-light-390.png",
+2026-10-22T22:21:40.0427293Z     "after-optimization-light-390.png",
+2026-10-22T22:21:40.0427540Z     "after-overview-dark-1440.png",
+2026-10-22T22:21:40.0427770Z     "after-sampling-dark-1440.png",
+2026-10-22T22:21:40.0428013Z     "after-optimization-dark-1440.png",
+2026-10-22T22:21:40.0428264Z     "after-overview-dark-390.png",
+2026-10-22T22:21:40.0428502Z     "after-sampling-dark-390.png",
+2026-10-22T22:21:40.0428746Z     "after-optimization-dark-390.png"
+2026-10-22T22:21:40.0428961Z   ],
+2026-10-22T22:21:40.0429119Z   "errors": []
+2026-10-22T22:21:40.0429287Z }
+2026-10-22T22:22:38.3098449Z {
+2026-10-22T22:22:38.3098885Z   "status": "PASS_CINEMATIC_BROWSER_QA",
+2026-10-22T22:22:38.3099296Z   "views": 100,
+2026-10-22T22:22:38.3099582Z   "functional": 13,
+2026-10-22T22:22:38.3099913Z   "axe_checks": 20,
+2026-10-22T22:22:38.3100180Z   "videos": 2,
+2026-10-22T22:22:38.3100589Z   "errors": [],
+2026-10-22T22:22:38.3100859Z   "performance": {
+2026-10-22T22:22:38.3101135Z     "renderer": {
+2026-10-22T22:22:38.3101778Z       "force-molecule": "webgl",
+2026-10-22T22:22:38.3102162Z       "hero-molecule": "webgl",
+2026-10-22T22:22:38.3102446Z       "path-molecule": "webgl"
+2026-10-22T22:22:38.3102648Z     },
+2026-10-22T22:22:38.3102875Z     "sampled_animation_frames": 47,
+2026-10-22T22:22:38.3103148Z     "median_frame_interval_ms": 33.40000000000009,
+2026-10-22T22:22:38.3103440Z     "p95_frame_interval_ms": 50.09999999999991,
+2026-10-22T22:22:38.3103721Z     "median_update_work_ms": 0.7999999999883585,
+2026-10-22T22:22:38.3103981Z     "p95_update_work_ms": 1.1000000000058208,
+2026-10-22T22:22:38.3104463Z     "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+2026-10-22T22:22:38.3104899Z     "device_pixel_ratio": 1,
+2026-10-22T22:22:38.3105347Z     "note": "Measured in this headless browser; not a guarantee of sustained hardware-GPU performance on every device."
+2026-10-22T22:22:38.3105740Z   }
+2026-10-22T22:22:38.3105901Z }
+2026-10-22T22:23:07.9015441Z {
+2026-10-22T22:23:07.9015784Z   "status": "PASS_OFFPATH_BROWSER_QA",
+2026-10-22T22:23:07.9016055Z   "views": [
+2026-10-22T22:23:07.9016228Z     {
+2026-10-22T22:23:07.9016461Z       "width": 1920,
+2026-10-22T22:23:07.9016734Z       "theme": "light",
+2026-10-22T22:23:07.9017011Z       "overflow": false,
+2026-10-22T22:23:07.9017293Z       "active": 1,
+2026-10-22T22:23:07.9017570Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9017846Z       "originalHeadline": true,
+2026-10-22T22:23:07.9018064Z       "cyrillic": false,
+2026-10-22T22:23:07.9018256Z       "renderer": "webgl",
+2026-10-22T22:23:07.9018462Z       "labelSize": 12
+2026-10-22T22:23:07.9018639Z     },
+2026-10-22T22:23:07.9018792Z     {
+2026-10-22T22:23:07.9018958Z       "width": 1920,
+2026-10-22T22:23:07.9019435Z       "theme": "dark",
+2026-10-22T22:23:07.9019615Z       "overflow": false,
+2026-10-22T22:23:07.9019802Z       "active": 1,
+2026-10-22T22:23:07.9019977Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9020189Z       "originalHeadline": true,
+2026-10-22T22:23:07.9020569Z       "cyrillic": false,
+2026-10-22T22:23:07.9020836Z       "renderer": "webgl",
+2026-10-22T22:23:07.9021032Z       "labelSize": 12
+2026-10-22T22:23:07.9021201Z     },
+2026-10-22T22:23:07.9021357Z     {
+2026-10-22T22:23:07.9021515Z       "width": 1440,
+2026-10-22T22:23:07.9021699Z       "theme": "light",
+2026-10-22T22:23:07.9021890Z       "overflow": false,
+2026-10-22T22:23:07.9022070Z       "active": 1,
+2026-10-22T22:23:07.9022243Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9022449Z       "originalHeadline": true,
+2026-10-22T22:23:07.9022661Z       "cyrillic": false,
+2026-10-22T22:23:07.9022851Z       "renderer": "webgl",
+2026-10-22T22:23:07.9023038Z       "labelSize": 12
+2026-10-22T22:23:07.9023218Z     },
+2026-10-22T22:23:07.9023382Z     {
+2026-10-22T22:23:07.9023546Z       "width": 1440,
+2026-10-22T22:23:07.9023728Z       "theme": "dark",
+2026-10-22T22:23:07.9023907Z       "overflow": false,
+2026-10-22T22:23:07.9024084Z       "active": 1,
+2026-10-22T22:23:07.9024269Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9024472Z       "originalHeadline": true,
+2026-10-22T22:23:07.9024668Z       "cyrillic": false,
+2026-10-22T22:23:07.9024847Z       "renderer": "webgl",
+2026-10-22T22:23:07.9025037Z       "labelSize": 12
+2026-10-22T22:23:07.9025204Z     },
+2026-10-22T22:23:07.9025344Z     {
+2026-10-22T22:23:07.9025508Z       "width": 768,
+2026-10-22T22:23:07.9025676Z       "theme": "light",
+2026-10-22T22:23:07.9025850Z       "overflow": false,
+2026-10-22T22:23:07.9026033Z       "active": 1,
+2026-10-22T22:23:07.9026198Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9026395Z       "originalHeadline": true,
+2026-10-22T22:23:07.9026586Z       "cyrillic": false,
+2026-10-22T22:23:07.9026772Z       "renderer": "webgl",
+2026-10-22T22:23:07.9026961Z       "labelSize": 12
+2026-10-22T22:23:07.9027129Z     },
+2026-10-22T22:23:07.9027284Z     {
+2026-10-22T22:23:07.9027433Z       "width": 768,
+2026-10-22T22:23:07.9027603Z       "theme": "dark",
+2026-10-22T22:23:07.9027784Z       "overflow": false,
+2026-10-22T22:23:07.9028132Z       "active": 1,
+2026-10-22T22:23:07.9028311Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9028515Z       "originalHeadline": true,
+2026-10-22T22:23:07.9028718Z       "cyrillic": false,
+2026-10-22T22:23:07.9028895Z       "renderer": "webgl",
+2026-10-22T22:23:07.9029077Z       "labelSize": 12
+2026-10-22T22:23:07.9029248Z     },
+2026-10-22T22:23:07.9029492Z     {
+2026-10-22T22:23:07.9029640Z       "width": 390,
+2026-10-22T22:23:07.9029814Z       "theme": "light",
+2026-10-22T22:23:07.9029991Z       "overflow": false,
+2026-10-22T22:23:07.9030166Z       "active": 1,
+2026-10-22T22:23:07.9030333Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9031239Z       "originalHeadline": true,
+2026-10-22T22:23:07.9031436Z       "cyrillic": false,
+2026-10-22T22:23:07.9031626Z       "renderer": "webgl",
+2026-10-22T22:23:07.9031814Z       "labelSize": 12
+2026-10-22T22:23:07.9031980Z     },
+2026-10-22T22:23:07.9032121Z     {
+2026-10-22T22:23:07.9032273Z       "width": 390,
+2026-10-22T22:23:07.9032446Z       "theme": "dark",
+2026-10-22T22:23:07.9032620Z       "overflow": false,
+2026-10-22T22:23:07.9032795Z       "active": 1,
+2026-10-22T22:23:07.9032969Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9033163Z       "originalHeadline": true,
+2026-10-22T22:23:07.9033359Z       "cyrillic": false,
+2026-10-22T22:23:07.9033542Z       "renderer": "webgl",
+2026-10-22T22:23:07.9033722Z       "labelSize": 12
+2026-10-22T22:23:07.9033885Z     },
+2026-10-22T22:23:07.9034033Z     {
+2026-10-22T22:23:07.9034181Z       "width": 320,
+2026-10-22T22:23:07.9034349Z       "theme": "light",
+2026-10-22T22:23:07.9034536Z       "overflow": false,
+2026-10-22T22:23:07.9034721Z       "active": 1,
+2026-10-22T22:23:07.9034897Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9035108Z       "originalHeadline": true,
+2026-10-22T22:23:07.9035438Z       "cyrillic": false,
+2026-10-22T22:23:07.9035624Z       "renderer": "webgl",
+2026-10-22T22:23:07.9035842Z       "labelSize": 12
+2026-10-22T22:23:07.9036099Z     },
+2026-10-22T22:23:07.9036259Z     {
+2026-10-22T22:23:07.9036426Z       "width": 320,
+2026-10-22T22:23:07.9036606Z       "theme": "dark",
+2026-10-22T22:23:07.9036788Z       "overflow": false,
+2026-10-22T22:23:07.9036973Z       "active": 1,
+2026-10-22T22:23:07.9037149Z       "primaryMarks": 5,
+2026-10-22T22:23:07.9037367Z       "originalHeadline": true,
+2026-10-22T22:23:07.9037573Z       "cyrillic": false,
+2026-10-22T22:23:07.9037758Z       "renderer": "webgl",
+2026-10-22T22:23:07.9037954Z       "labelSize": 12
+2026-10-22T22:23:07.9038134Z     }
+2026-10-22T22:23:07.9038283Z   ],
+2026-10-22T22:23:07.9038445Z   "functional": [
+2026-10-22T22:23:07.9038811Z     "24 region-cap-seed filter combinations agree with source rows; all primary seeds persist",
+2026-10-22T22:23:07.9039252Z     "All fourteen exact stored geometries and qPT/O-O readouts",
+2026-10-22T22:23:07.9039639Z     "Finite fixed-axis reveal, pause, show-all, keyboard scrubbing",
+2026-10-22T22:23:07.9039973Z     "Old route and offpath deep-link reload",
+2026-10-22T22:23:07.9040494Z     "Reduced-motion keeps all final marks and manual controls",
+2026-10-22T22:23:07.9040838Z     "Shared Canvas renderer fallback",
+2026-10-22T22:23:07.9041091Z     "Actual downloadable 280-row table",
+2026-10-22T22:23:07.9041409Z     "No-JavaScript full static charts, tables and numerical primary",
+2026-10-22T22:23:07.9041797Z     "Offpath data-request failure preserves static evidence"
+2026-10-22T22:23:07.9042059Z   ],
+2026-10-22T22:23:07.9042225Z   "accessibility": [
+2026-10-22T22:23:07.9042412Z     {
+2026-10-22T22:23:07.9042574Z       "width": 1920,
+2026-10-22T22:23:07.9042749Z       "mode": "light",
+2026-10-22T22:23:07.9042965Z       "violations": []
+2026-10-22T22:23:07.9043139Z     },
+2026-10-22T22:23:07.9043297Z     {
+2026-10-22T22:23:07.9043448Z       "width": 1920,
+2026-10-22T22:23:07.9043650Z       "mode": "dark",
+2026-10-22T22:23:07.9043829Z       "violations": []
+2026-10-22T22:23:07.9044009Z     },
+2026-10-22T22:23:07.9044157Z     {
+2026-10-22T22:23:07.9044309Z       "width": 1440,
+2026-10-22T22:23:07.9044614Z       "mode": "light",
+2026-10-22T22:23:07.9044794Z       "violations": []
+2026-10-22T22:23:07.9044965Z     },
+2026-10-22T22:23:07.9045118Z     {
+2026-10-22T22:23:07.9045269Z       "width": 1440,
+2026-10-22T22:23:07.9045437Z       "mode": "dark",
+2026-10-22T22:23:07.9045612Z       "violations": []
+2026-10-22T22:23:07.9045784Z     },
+2026-10-22T22:23:07.9045931Z     {
+2026-10-22T22:23:07.9046084Z       "width": 768,
+2026-10-22T22:23:07.9046265Z       "mode": "light",
+2026-10-22T22:23:07.9046438Z       "violations": []
+2026-10-22T22:23:07.9046604Z     },
+2026-10-22T22:23:07.9046754Z     {
+2026-10-22T22:23:07.9046912Z       "width": 768,
+2026-10-22T22:23:07.9047079Z       "mode": "dark",
+2026-10-22T22:23:07.9047250Z       "violations": []
+2026-10-22T22:23:07.9047427Z     },
+2026-10-22T22:23:07.9047571Z     {
+2026-10-22T22:23:07.9047721Z       "width": 390,
+2026-10-22T22:23:07.9047894Z       "mode": "light",
+2026-10-22T22:23:07.9048068Z       "violations": []
+2026-10-22T22:23:07.9048237Z     },
+2026-10-22T22:23:07.9048392Z     {
+2026-10-22T22:23:07.9048550Z       "width": 390,
+2026-10-22T22:23:07.9048726Z       "mode": "dark",
+2026-10-22T22:23:07.9048907Z       "violations": []
+2026-10-22T22:23:07.9049080Z     },
+2026-10-22T22:23:07.9049231Z     {
+2026-10-22T22:23:07.9049390Z       "width": 320,
+2026-10-22T22:23:07.9049562Z       "mode": "light",
+2026-10-22T22:23:07.9049736Z       "violations": []
+2026-10-22T22:23:07.9049903Z     },
+2026-10-22T22:23:07.9050050Z     {
+2026-10-22T22:23:07.9050210Z       "width": 320,
+2026-10-22T22:23:07.9050378Z       "mode": "dark",
+2026-10-22T22:23:07.9050707Z       "violations": []
+2026-10-22T22:23:07.9050880Z     }
+2026-10-22T22:23:07.9051027Z   ],
+2026-10-22T22:23:07.9051185Z   "errors": [],
+2026-10-22T22:23:07.9051373Z   "new_scientific_calls": 0
+2026-10-22T22:23:07.9051682Z }
+2026-10-22T22:23:55.4991840Z {
+2026-10-22T22:23:55.4992280Z   "status": "PASS_OPTIMIZATION_BROWSER_QA",
+2026-10-22T22:23:55.4993455Z   "tested_commit": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+2026-10-22T22:23:55.4993830Z   "views": 10,
+2026-10-22T22:23:55.4994014Z   "functional": 12,
+2026-10-22T22:23:55.4994198Z   "axe_checks": 10,
+2026-10-22T22:23:55.4994372Z   "downloads": 5,
+2026-10-22T22:23:55.4994547Z   "failure_modes": 4,
+2026-10-22T22:23:55.4994732Z   "errors": []
+2026-10-22T22:23:55.4994897Z }
+2026-10-22T22:23:55.5373632Z ##[group]Run actions/upload-artifact@v4
+2026-10-22T22:23:55.5373876Z with:
+2026-10-22T22:23:55.5374056Z   name: research-site-browser-qa
+2026-10-22T22:23:55.5374398Z   path: /home/USER/work/_temp/cinematic-qa
+/home/USER/work/_temp/site-server.log
+
+2026-10-22T22:23:55.5374742Z   retention-days: 14
+2026-10-22T22:23:55.5374943Z   if-no-files-found: warn
+2026-10-22T22:23:55.5375143Z   compression-level: 6
+2026-10-22T22:23:55.5375359Z   overwrite: false
+2026-10-22T22:23:55.5375546Z   include-hidden-files: false
+2026-10-22T22:23:55.5375746Z env:
+2026-10-22T22:23:55.5375957Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:55.5376297Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:23:55.5376637Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:55.5376940Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:55.5377277Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:55.5377588Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:23:55.5377851Z ##[endgroup]
+2026-10-22T22:23:55.6739609Z (node:3247) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T22:23:55.6740879Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T22:23:55.6861907Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-22T22:23:55.6863668Z The least common ancestor is /home/USER/work/_temp. This will be the root directory of the artifact
+2026-10-22T22:23:55.6864559Z With the provided path, there will be 57 files uploaded
+2026-10-22T22:23:55.6868430Z Artifact name is valid!
+2026-10-22T22:23:55.6868836Z Root directory input is valid!
+2026-10-22T22:23:56.0216895Z Beginning upload of artifact content to blob storage
+2026-10-22T22:23:56.2890071Z (node:3247) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-22T22:23:57.1358415Z Uploaded bytes 8388608
+2026-10-22T22:23:57.2826444Z Uploaded bytes 16777216
+2026-10-22T22:23:57.5847279Z Uploaded bytes 25165824
+2026-10-22T22:23:57.7751097Z Uploaded bytes 31443009
+2026-10-22T22:23:57.8363595Z Finished uploading artifact content to blob storage!
+2026-10-22T22:23:57.8365313Z SHA256 digest of uploaded artifact zip is 5aaab5fcfb185b8496aa7ff63ecee0f4e925fa3494948e01842a8eadb6e80f2d
+2026-10-22T22:23:57.8367805Z Finalizing artifact upload
+2026-10-22T22:23:58.3049369Z Artifact research-site-browser-qa.zip successfully finalized. Artifact ID 12463182604
+2026-10-22T22:23:58.3050259Z Artifact research-site-browser-qa has been successfully uploaded! Final size is 31443009 bytes. Artifact ID is 12463182604
+2026-10-22T22:23:58.3056121Z Artifact download URL: https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195677/artifacts/12463182604
+2026-10-22T22:23:58.3273406Z ##[group]Run actions/upload-pages-artifact@v3
+2026-10-22T22:23:58.3273677Z with:
+2026-10-22T22:23:58.3273875Z   path: /home/USER/work/_temp/proton-site
+2026-10-22T22:23:58.3274122Z   name: github-pages
+2026-10-22T22:23:58.3274310Z   retention-days: 1
+2026-10-22T22:23:58.3274481Z env:
+2026-10-22T22:23:58.3274700Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3275214Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:23:58.3275557Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3275866Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3276193Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3276533Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:23:58.3276798Z ##[endgroup]
+2026-10-22T22:23:58.3323262Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run]
+2026-10-22T22:23:58.3344617Z ##[group]Run echo ::group::Archive artifact
+2026-10-22T22:23:58.3344904Z [36;1mecho ::group::Archive artifact[0m
+2026-10-22T22:23:58.3345132Z [36;1mtar \[0m
+2026-10-22T22:23:58.3345337Z [36;1m  --dereference --hard-dereference \[0m
+2026-10-22T22:23:58.3345597Z [36;1m  --directory "$INPUT_PATH" \[0m
+2026-10-22T22:23:58.3345845Z [36;1m  -cvf "$RUNNER_TEMP/artifact.tar" \[0m
+2026-10-22T22:23:58.3346087Z [36;1m  --exclude=.git \[0m
+2026-10-22T22:23:58.3346298Z [36;1m  --exclude=.github \[0m
+2026-10-22T22:23:58.3346497Z [36;1m  .[0m
+2026-10-22T22:23:58.3346668Z [36;1mecho ::endgroup::[0m
+2026-10-22T22:23:58.3369997Z shell: /usr/bin/sh -e {0}
+2026-10-22T22:23:58.3370207Z env:
+2026-10-22T22:23:58.3370557Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3370930Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:23:58.3371300Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3371613Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3371922Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3372224Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:23:58.3372518Z   INPUT_PATH: /home/USER/work/_temp/proton-site
+2026-10-22T22:23:58.3372762Z ##[endgroup]
+2026-10-22T22:23:58.3408705Z ##[group]Archive artifact
+2026-10-22T22:23:58.3420092Z ./
+2026-10-22T22:23:58.3420367Z ./offpath.mjs
+2026-10-22T22:23:58.3420804Z ./social-preview.svg
+2026-10-22T22:23:58.3421141Z ./payload_validation.mjs
+2026-10-22T22:23:58.3421431Z ./favicon.svg
+2026-10-22T22:23:58.3421673Z ./molecule.mjs
+2026-10-22T22:23:58.3421885Z ./vendor/
+2026-10-22T22:23:58.3430974Z ./vendor/three/
+2026-10-22T22:23:58.3431276Z ./vendor/three/manifest.json
+2026-10-22T22:23:58.3431603Z ./vendor/three/LICENSE
+2026-10-22T22:23:58.3431888Z ./vendor/three/three.module.js
+2026-10-22T22:23:58.3432112Z ./vendor/three/three.core.js
+2026-10-22T22:23:58.3435780Z ./cinema/
+2026-10-22T22:23:58.3436044Z ./cinema/manifest.json
+2026-10-22T22:23:58.3436352Z ./cinema/research-story.vtt
+2026-10-22T22:23:58.3436683Z ./cinema/research-story.jpg
+2026-10-22T22:23:58.3437027Z ./cinema/research-story.mp4
+2026-10-22T22:23:58.3444667Z ./cinema/molecular-path.mp4
+2026-10-22T22:23:58.3449189Z ./cinema/molecular-path.jpg
+2026-10-22T22:23:58.3449990Z ./cinema/molecular-path.vtt
+2026-10-22T22:23:58.3450315Z ./longread.en.md
+2026-10-22T22:23:58.3450701Z ./.nojekyll
+2026-10-22T22:23:58.3450970Z ./optimization.mjs
+2026-10-22T22:23:58.3451237Z ./offpath.css
+2026-10-22T22:23:58.3451514Z ./build-identity.json
+2026-10-22T22:23:58.3451816Z ./build-manifest.json
+2026-10-22T22:23:58.3452079Z ./index.html
+2026-10-22T22:23:58.3454669Z ./editorial.css
+2026-10-22T22:23:58.3454934Z ./data/
+2026-10-22T22:23:58.3455203Z ./data/optimization.json
+2026-10-22T22:23:58.3455909Z ./data/science.json
+2026-10-22T22:23:58.3456622Z ./data/offpath.json
+2026-10-22T22:23:58.3458075Z ./data/offpath/
+2026-10-22T22:23:58.3458698Z ./data/offpath/QE_QUALITY_14.tsv
+2026-10-22T22:23:58.3459098Z ./data/offpath/REGION_MODELS_40.tsv
+2026-10-22T22:23:58.3459501Z ./data/offpath/PHYSICAL_BLOCKS_160.tsv
+2026-10-22T22:23:58.3459948Z ./data/offpath/PRIMARY_PAIRED_SEEDS.tsv
+2026-10-22T22:23:58.3460367Z ./data/offpath/BUDGET_REGION_MEANS.tsv
+2026-10-22T22:23:58.3460924Z ./data/offpath/PER_GEOMETRY_280.tsv
+2026-10-22T22:23:58.3461379Z ./data/literature.json
+2026-10-22T22:23:58.3462076Z ./data/editorial.json
+2026-10-22T22:23:58.3462381Z ./data/finale.json
+2026-10-22T22:23:58.3462659Z ./data/optimization/
+2026-10-22T22:23:58.3463032Z ./data/optimization/OPTIMIZATION_STORY.json
+2026-10-22T22:23:58.3463465Z ./data/optimization/CLAIM_DATA_MAP.tsv
+2026-10-22T22:23:58.3463871Z ./data/optimization/PROVENANCE.json
+2026-10-22T22:23:58.3464235Z ./data/optimization/README.md
+2026-10-22T22:23:58.3464660Z ./data/optimization/PUBLICATION_ALLOWLIST.json
+2026-10-22T22:23:58.3465024Z ./ru.html
+2026-10-22T22:23:58.3465255Z ./cinematic.mjs
+2026-10-22T22:23:58.3465519Z ./cinematic.css
+2026-10-22T22:23:58.3465781Z ./optimization.css
+2026-10-22T22:23:58.3466041Z ./charts.mjs
+2026-10-22T22:23:58.3466317Z ./presentation_review.css
+2026-10-22T22:23:58.3466632Z ./scientific_finale.mjs
+2026-10-22T22:23:58.3466900Z ./404.html
+2026-10-22T22:23:58.3467152Z ./scientific_finale.css
+2026-10-22T22:23:58.3467369Z ./.proton-generated
+2026-10-22T22:23:58.3467552Z ./style.css
+2026-10-22T22:23:58.3467735Z ./README.txt
+2026-10-22T22:23:58.3467906Z ./core.mjs
+2026-10-22T22:23:58.3468072Z ./app.mjs
+2026-10-22T22:23:58.3469572Z ##[endgroup]
+2026-10-22T22:23:58.3479392Z ##[end-action id=__actions_upload-pages-artifact.__run;outcome=success;conclusion=success;duration_ms=15]
+2026-10-22T22:23:58.3482807Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_2]
+2026-10-22T22:23:58.3486509Z ##[end-action id=__actions_upload-pages-artifact.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-22T22:23:58.3488520Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_3]
+2026-10-22T22:23:58.3491468Z ##[end-action id=__actions_upload-pages-artifact.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-22T22:23:58.3493022Z ##[start-action display=Upload artifact;id=__actions_upload-pages-artifact.upload-artifact]
+2026-10-22T22:23:58.3521278Z ##[group]Run actions/upload-artifact@v4
+2026-10-22T22:23:58.3521508Z with:
+2026-10-22T22:23:58.3521693Z   name: github-pages
+2026-10-22T22:23:58.3521902Z   path: /home/USER/work/_temp/artifact.tar
+2026-10-22T22:23:58.3522135Z   retention-days: 1
+2026-10-22T22:23:58.3522323Z   if-no-files-found: error
+2026-10-22T22:23:58.3522522Z   compression-level: 6
+2026-10-22T22:23:58.3522706Z   overwrite: false
+2026-10-22T22:23:58.3522886Z   include-hidden-files: false
+2026-10-22T22:23:58.3523082Z env:
+2026-10-22T22:23:58.3523299Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3523637Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-22T22:23:58.3523981Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3524288Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3524595Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-22T22:23:58.3524906Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-22T22:23:58.3525168Z ##[endgroup]
+2026-10-22T22:23:58.4859861Z (node:3264) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T22:23:58.4860845Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T22:23:58.4898937Z With the provided path, there will be 1 file uploaded
+2026-10-22T22:23:58.4907834Z Artifact name is valid!
+2026-10-22T22:23:58.4909381Z Root directory input is valid!
+2026-10-22T22:23:58.8233118Z Beginning upload of artifact content to blob storage
+2026-10-22T22:23:58.9489951Z (node:3264) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-22T22:23:59.5804047Z Uploaded bytes 2466660
+2026-10-22T22:23:59.6427697Z Finished uploading artifact content to blob storage!
+2026-10-22T22:23:59.6428542Z SHA256 digest of uploaded artifact zip is 380ff909576f8078599fc003261f58f3bd68454d6189f6fb300974dc9bc42d38
+2026-10-22T22:23:59.6429657Z Finalizing artifact upload
+2026-10-22T22:24:00.1172093Z Artifact github-pages.zip successfully finalized. Artifact ID 12462913360
+2026-10-22T22:24:00.1173114Z Artifact github-pages has been successfully uploaded! Final size is 2466660 bytes. Artifact ID is 12462913360
+2026-10-22T22:24:00.1179073Z Artifact download URL: https://github.com/spicmaff/malonaldehyde-transition-sampling/actions/runs/39864195677/artifacts/12462913360
+2026-10-22T22:24:00.1282806Z ##[end-action id=__actions_upload-pages-artifact.upload-artifact;outcome=success;conclusion=success;duration_ms=1778]
+2026-10-22T22:24:00.1365832Z Post job cleanup.
+2026-10-22T22:24:00.2345371Z (node:3276) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T22:24:00.2346041Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T22:24:00.2348851Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-8a4c14436f4533d1daa830a73c2b1828b383697f8bc2a7495d94bd31f91e04a6, not saving cache.
+2026-10-22T22:24:00.2471147Z Post job cleanup.
+2026-10-22T22:24:00.3444727Z (node:3284) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T22:24:00.3445930Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T22:24:00.3593111Z Post job cleanup.
+2026-10-22T22:24:00.4292072Z [command]/usr/bin/git version
+2026-10-22T22:24:00.4329870Z git version 2.55.0
+2026-10-22T22:24:00.4363056Z Temporarily overriding HOME='/home/USER/work/_temp/501b88ed-390c-4bb6-b89a-9ca9fc0ed4f6' before making global git config changes
+2026-10-22T22:24:00.4364097Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T22:24:00.4368382Z [command]/usr/bin/git config --global --add safe.directory /home/USER/work/malonaldehyde-transition-sampling/malonaldehyde-transition-sampling
+2026-10-22T22:24:00.4403573Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T22:24:00.4434607Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T22:24:00.4679741Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T22:24:00.4707215Z http.https://github.com/.extraheader
+2026-10-22T22:24:00.4726092Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-22T22:24:00.4756312Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T22:24:00.5003274Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T22:24:00.5039288Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T22:24:00.5388400Z Cleaning up orphan processes
+2026-10-22T22:24:00.5672458Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

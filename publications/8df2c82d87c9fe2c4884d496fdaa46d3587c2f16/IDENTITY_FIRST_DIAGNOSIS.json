@@ -1,0 +1,23 @@
+{
+  "schema": "proton-build-identity-v1",
+  "scope": "Website source identity; historical science and aggregate source IDs remain separate.",
+  "source_commit": "1362278c995d81793d4f2030eb53005f108657fa",
+  "source_tree": "476405c6565759cffbbb93aa20331efbb01d7c35",
+  "tracked_diff_sha256": null,
+  "untracked_file_count": 4067,
+  "working_copy_clean": false,
+  "raw_sha256": "4462eecbb206b24280bf886d1fc07c0ab9003217b5f2540d0f20f789edb57084",
+  "untracked_first_paths": [
+    "tools/site/node_modules/.bin/browsers",
+    "tools/site/node_modules/.bin/escodegen",
+    "tools/site/node_modules/.bin/esgenerate",
+    "tools/site/node_modules/.bin/esparse",
+    "tools/site/node_modules/.bin/esvalidate",
+    "tools/site/node_modules/.bin/extract-zip",
+    "tools/site/node_modules/.bin/semver",
+    "tools/site/node_modules/.package-lock.json",
+    "tools/site/node_modules/@puppeteer/browsers/README.md",
+    "tools/site/node_modules/@puppeteer/browsers/lib/cjs/CLI.d.ts"
+  ],
+  "diagnosis": "Only installed tools/site/node_modules browser QA dependencies were untracked; their exclusion is now scoped by a new tools/site/.gitignore, preserving all original registered files."
+}
