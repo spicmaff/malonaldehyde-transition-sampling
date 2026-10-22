@@ -1,0 +1,78 @@
+name: independent-review
+
+on:
+  push:
+    branches: [independent-scientific-review]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: independent-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefix tools/site --ignore-scripts --no-audit --no-fund
+      - name: Build the three identified editions
+        run: |
+          python3 -B tools/build_research_site.py --out "$RUNNER_TEMP/web/current"
+          for ITEM in baseline:76e0e22967f408480b5a713d8f94f6c9e9981105 pr:3e6eeb9803078fa7a8e7b984389ce0b55d34d816; do
+            NAME="${ITEM%%:*}"
+            REF="${ITEM#*:}"
+            git worktree add --detach "$RUNNER_TEMP/$NAME" "$REF"
+            python3 -B "$RUNNER_TEMP/$NAME/tools/build_research_site.py" --out "$RUNNER_TEMP/web/$NAME"
+          done
+      - name: Independent browser acceptance and timeout diagnosis
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: |
+          python3 -m http.server 8768 --bind 127.0.0.1 --directory "$RUNNER_TEMP/web" > "$RUNNER_TEMP/http.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/evidence" node tools/site/browser_independent_test.mjs
+      - name: Preserve reports and actual rendered comparisons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: independent-review-evidence
+          path: ${{ runner.temp }}/evidence
+          retention-days: 30
+      - name: Make the review evidence inspectable from the public repository
+        if: always()
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/evidence
+        run: |
+          test -d "$EVIDENCE_DIR"
+          REVIEW_HEAD="$(git rev-parse HEAD)"
+          git fetch origin independent-review-evidence || true
+          if git show-ref --verify --quiet refs/remotes/origin/independent-review-evidence; then
+            git worktree add "$RUNNER_TEMP/evidence-tree" origin/independent-review-evidence
+          else
+            git worktree add --detach "$RUNNER_TEMP/evidence-tree" HEAD
+            cd "$RUNNER_TEMP/evidence-tree"
+            git checkout --orphan independent-review-evidence
+            git rm -rf .
+            cd "$GITHUB_WORKSPACE"
+          fi
+          mkdir -p "$RUNNER_TEMP/evidence-tree/$REVIEW_HEAD"
+          cp -R "$EVIDENCE_DIR/." "$RUNNER_TEMP/evidence-tree/$REVIEW_HEAD/"
+          cd "$RUNNER_TEMP/evidence-tree"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add "$REVIEW_HEAD"
+          git commit -m "Store independent browser evidence for $REVIEW_HEAD"
+          git push origin HEAD:refs/heads/independent-review-evidence
