@@ -1,0 +1,28 @@
+{
+  "schema": "pages-publication-identity-fix-v1",
+  "previous_source_commit": "1362278c995d81793d4f2030eb53005f108657fa",
+  "finding": "npm ci created 4067 untracked QA dependency files under tools/site/node_modules; tracked source was unchanged, but the first deployed identity correctly reported dirty and differed from the clean local build.",
+  "fix": "Ignore the locked, reinstallable browser-test dependency directory with a new tools/site/.gitignore. The protected root .gitignore and all existing registered files are unchanged. Source files and tracked diffs remain detectable. No identity checks are weakened and no frontend or scientific data changes.",
+  "acceptance": "Regression fixture proves unchanged identity after dependency installation and dirty identity after genuine source additions or tracked edits. A clean CI build and byte-identical public deployment are required.",
+  "files": [
+    {
+      "path": "tools/site/.gitignore",
+      "previous_repository_sha256": "NEW",
+      "repository_sha256": "f63219dd620ec99132de8cf5299dd279cef773de53c51b65fe13bff76c7aa8a1",
+      "bytes": 89
+    },
+    {
+      "path": "tests/test_publication_identity.py",
+      "previous_repository_sha256": "NEW",
+      "repository_sha256": "eafae5af3abeeac83e194c1c28d90f13cb2d1e03a1bc0a574847f803573a4301",
+      "bytes": 2213
+    },
+    {
+      "path": "docs/GITHUB_PAGES_PUBLICATION_RU.md",
+      "previous_repository_sha256": "NEW",
+      "repository_sha256": "8be1eabcce2a4fd00b8931aef178838a64bda5100bace99c0f711be15b38d07e",
+      "bytes": 3234
+    }
+  ],
+  "historical_provenance_layers": "All five prior delta files and registered scientific assets remain unchanged."
+}
