@@ -121,21 +121,28 @@ try{
       const q=await browser.newPage();await q.setJavaScriptEnabled(false);await q.setViewport({width:390,height:1000});
       try{
         await q.goto(root+edition+'/',{waitUntil:'networkidle0'});
-        for(const theme of ['light','dark']){
-          const scores=await q.evaluate(theme=>{
+        for(const width of [320,390,768,1440,1920])for(const theme of ['light','dark']){
+          await q.setViewport({width,height:1000});
+          const measured=await q.evaluate(theme=>{
             document.documentElement.dataset.theme=theme;
             const rgb=s=>s.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255);
             const lum=c=>c.reduce((v,x,i)=>v+[.2126,.7152,.0722][i]*(x<=.04045?x/12.92:((x+.055)/1.055)**2.4),0);
-            return [...document.querySelectorAll('.ed-coverage-static circle,.ed-coverage-static path[fill]')].map(n=>{
+            const scores=[...document.querySelectorAll('.ed-coverage-static circle,.ed-coverage-static path[fill]')].map(n=>{
               const s=getComputedStyle(n),bg=rgb(getComputedStyle(n.closest('.chart-panel')).backgroundColor),fg=rgb(s.fill),a=Number(s.opacity),blended=fg.map((x,i)=>a*x+(1-a)*bg[i]);
               return (Math.max(lum(blended),lum(bg))+.05)/(Math.min(lum(blended),lum(bg))+.05);
             });
+            const text=[...document.querySelectorAll('.ed-coverage-static text')].map(n=>{const svg=n.ownerSVGElement;return parseFloat(getComputedStyle(n).fontSize)*svg.getBoundingClientRect().width/svg.viewBox.baseVal.width;});
+            return {scores,minimum_effective_font_px:Math.min(...text)};
           },theme);
+          const {scores,minimum_effective_font_px}=measured;
           assert.equal(scores.length,120);
-          const row={edition,theme,markers:scores.length,minimum_contrast:Math.min(...scores),below_3:scores.filter(x=>x<3).length};rows.push(row);
-          if(edition==='current')assert.equal(row.below_3,0,'static fallback marks also need 3:1');
+          const row={edition,theme,width,markers:scores.length,minimum_contrast:Math.min(...scores),below_3:scores.filter(x=>x<3).length,minimum_effective_font_px};rows.push(row);
+          if(edition==='current'){
+            assert.equal(row.below_3,0,'static fallback marks also need 3:1');
+            assert.ok(minimum_effective_font_px>=11,'static axis text remains legible after SVG scaling');
+          }
           await q.$eval('.ed-coverage-static',e=>e.scrollIntoView({block:'center',behavior:'instant'}));
-          await shot(q,`nojs-${edition}-sampling-${theme}-390`);
+          await shot(q,`nojs-${edition}-sampling-${theme}-${width}`);
         }
       }finally{await q.close();}
     }

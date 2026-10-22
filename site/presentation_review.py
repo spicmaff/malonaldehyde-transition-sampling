@@ -150,7 +150,7 @@ INDEPENDENT_ASSETS = {
 
 # A fifth layer preserves the complete prior review, including its manifest.
 FINAL_ACCEPTANCE_ASSETS = {
-    '.github/workflows/independent-review.yml', 'site/editorial.py',
+    '.github/workflows/independent-review.yml', 'site/editorial.py', 'site/editorial.css',
     'site/presentation_review.py', 'tools/run_public_selftests.py',
     'tools/site/browser_independent_test.mjs', 'tools/verify_published_site.py',
     'tests/test_presentation_review.py', 'tests/test_offpath_extension.py',

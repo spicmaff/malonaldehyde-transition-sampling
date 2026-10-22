@@ -31,3 +31,8 @@ body{background:var(--paper);color:var(--ink);font-feature-settings:"ss01" 1;-we
 
 /* Shared data remain visible against both scientific chart backgrounds. */
 .legend-dot.neutral{opacity:.75}
+
+/* Preserve legible axes and natural chart height in the static fallback. */
+.ed-coverage-static{display:block;width:100%;height:auto}
+html:not(.js-ready) #sampling .chart{min-height:0}
+@media(max-width:480px){.ed-coverage-static .chart-axis,.ed-coverage-static .chart-title{font-size:26px}}
