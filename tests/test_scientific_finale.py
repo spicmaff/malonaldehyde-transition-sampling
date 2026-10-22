@@ -111,6 +111,20 @@ class FinaleTests(unittest.TestCase):
     def test_runtime_has_no_unbounded_clock(self):
         script=(ROOT/'site/scientific_finale.mjs').read_text()
         self.assertNotIn('setInterval(',script);self.assertIn('visibilitychange',script);self.assertIn('prefers-reduced-motion',script)
+    def test_counterexample_uses_high_contrast_ink_in_both_themes(self):
+        import re
+        css=(ROOT/'site/scientific_finale.css').read_text()
+        self.assertIn('.optimization-page .sf-counterexample .eyebrow,.optimization-page .sf-counterexample a{color:var(--ink)}',css)
+        palette=(ROOT/'site/style.css').read_text()
+        def luminance(h):
+            c=[int(h[i:i+2],16)/255 for i in (0,2,4)]
+            c=[v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4 for v in c]
+            return sum(v*w for v,w in zip(c,(.2126,.7152,.0722)))
+        pairs=re.findall(r'--ink:#([0-9a-f]{6});.*?--tint:#([0-9a-f]{6})',palette)
+        self.assertEqual(len(pairs),2)
+        for ink,tint in pairs:
+            a,b=sorted((luminance(ink),luminance(tint)))
+            self.assertGreaterEqual((b+.05)/(a+.05),4.5)
     def test_assets_in_build(self):
         for name in ['scientific_finale.css','scientific_finale.mjs']:
             self.assertEqual((ROOT/'site'/name).read_bytes(),(self.out/name).read_bytes())

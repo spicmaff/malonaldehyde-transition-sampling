@@ -123,3 +123,21 @@ runners and presentation/cinematic supplements remain mandatory. The additional
 real HTTP build, records axe incomplete nodes without declaring them passes, and
 captures the final and baseline build in the same browser. Local static renderings
 must be labelled separately and cannot substitute for these CI receipts.
+
+## Retained first-browser findings
+
+The first exact-tree research-site PR run, `39699868218` at `3bd6868`,
+failed its unchanged Optimization axe test. The new main50 counterexample
+used a tinted panel and inherited accent foregrounds for its eyebrow and
+source link; those two text nodes had insufficient contrast in light mode.
+The correction uses the existing theme's ink foreground for those nodes,
+retains the visible underline and adds the counterexample to the new scoped
+axe run. A palette arithmetic regression checks both themes. The old failure
+is retained, not relabelled as success; no old test or numerical criterion
+is relaxed.
+
+The first Windows HTTP supplement independently encountered a server MIME
+configuration: `.mjs` was served as `text/plain`, so Chrome correctly refused
+the module scripts. A review-only HTTP handler explicitly serves JavaScript,
+JSON and CSS MIME types. Browser security settings and site scientific code
+were not bypassed. This is an environment receipt, not a scientific failure.
