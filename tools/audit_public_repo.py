@@ -11,7 +11,7 @@ SECRET_PATTERNS = (
     ("private_key", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----")),
     ("github_classic_pat", re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b")),
     ("github_fine_grained_pat", re.compile(r"\bgithub_pat_[A-Za-z0-9_]{50,}\b")),
-    ("openai_api_key", re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b")),
+    ("provider_api_key", re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b")),
     ("aws_access_key", re.compile(r"\bAKIA[0-9A-Z]{16}\b")),
     ("slack_token", re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{20,}\b")),
     ("google_api_key", re.compile(r"\bAIza[0-9A-Za-z_-]{30,}\b")),

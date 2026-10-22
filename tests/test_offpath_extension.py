@@ -52,6 +52,8 @@ class ExtensionTests(unittest.TestCase):
         delta={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/EDITORIAL_REDESIGN_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
         independent={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/INDEPENDENT_REVIEW_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
         acceptance={r['repository_path']:r for r in csv.DictReader((ROOT/'provenance/FINAL_ACCEPTANCE_DELTA.tsv').read_text().splitlines(),delimiter='\t')}
+        from publication_metadata import load_metadata_overrides
+        metadata=load_metadata_overrides(ROOT)
         interface={'site/app.mjs','site/charts.mjs','site/core.mjs','site/molecule.mjs','site/literature.json','docs/RESEARCH_SITE.md'}
         for p,h in m['protected_files'].items():
             if p in interface:
@@ -64,6 +66,9 @@ class ExtensionTests(unittest.TestCase):
             if p in acceptance:
                 self.assertEqual(acceptance[p]['previous_repository_sha256'],expected,p)
                 expected=acceptance[p]['repository_sha256']
+            if p in metadata:
+                self.assertEqual(metadata[p]['previous_repository_sha256'],expected,p)
+                expected=metadata[p]['repository_sha256']
             self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),expected,p)
 
     def test_new_sources_exist_with_sha(self):

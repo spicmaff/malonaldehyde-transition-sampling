@@ -99,7 +99,7 @@ async function exactPlottedValues(page,payload){
 
 try{
  await p.setViewport({width:1440,height:1000,deviceScaleFactor:1});
- await p.goto(base+'?still&utm_source=chatgpt.com#optimization',{waitUntil:'networkidle0',timeout:45000});
+ await p.goto(base+'?still&utm_source=review#optimization',{waitUntil:'networkidle0',timeout:45000});
  await ready(p);
  report.browser=await browser.version();
  const payload=await p.evaluate(()=>window.optimizationExhibit.data());
@@ -257,12 +257,12 @@ try{
  report.functional.push('Direct module/source deep links focus and reveal their targets, including sources inside details; all chapter hash links resolve');
 
  for(const [hash,route] of [['overview','overview'],['seeds','seeds'],['offpath','offpath'],['train119','train119'],['applicability','train119'],['forces?frame=145&atom=2','forces']]){
-  await p.goto(base+'?utm_source=chatgpt.com&still#'+hash,{waitUntil:'networkidle0'});
+  await p.goto(base+'?utm_source=review&still#'+hash,{waitUntil:'networkidle0'});
   await p.waitForFunction(r=>document.body.dataset.ready==='true'&&window.exhibit.getState().route===r,{},route);
   assert.equal(await p.$$eval('[data-page].active',els=>els.length),1);
  }
  const readAnchor=await p.$eval('#longread [id^="read-"]',e=>e.id);
- await p.goto(base+'?utm_source=chatgpt.com&still#'+readAnchor,{waitUntil:'networkidle0'});
+ await p.goto(base+'?utm_source=review&still#'+readAnchor,{waitUntil:'networkidle0'});
  await p.waitForFunction(()=>window.exhibit.getState().route==='longread');
  report.functional.push('UTM query, overview/seeds/offpath/train119, applicability/read-* aliases and force-parameter routing');
  await p.goto(base+'?fallback&still#optimization',{waitUntil:'networkidle0'});await ready(p);

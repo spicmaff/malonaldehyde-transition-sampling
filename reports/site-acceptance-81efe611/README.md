@@ -22,7 +22,7 @@ sha256sum -c SHA256SUMS
 
 Фактический commit публичной сборки можно проверить по [build-identity.json](https://spicmaff.github.io/malonaldehyde-transition-sampling/build-identity.json), хеши ресурсов — по [build-manifest.json](https://spicmaff.github.io/malonaldehyde-transition-sampling/build-manifest.json). Развёртывание выполняется существующим [research-site workflow](../../.github/workflows/research-site.yml) после успешных проверок; его окончательный статус следует проверять в Actions, а не выводить из наличия этого документа.
 
-В текстовых копиях CI-журналов пути домашнего каталога публичного runner нормализованы в `/home/USER/` согласно существующему аудиту репозитория. Исходные и экспортные хеши сохранены в [PUBLIC_EXPORT.json](PUBLIC_EXPORT.json); статусы и научные числа не менялись. Архивы первоначальных HTML сохраняют исторические байты.
+В текстовых копиях CI-журналов пути домашнего каталога публичного runner нормализованы в `/home/USER/` согласно существующему аудиту репозитория. Исходные и экспортные хеши сохранены в [PUBLIC_EXPORT.json](PUBLIC_EXPORT.json); статусы и научные числа не менялись. Публикуются редакционные копии HTML: адреса прежних приватных предпросмотров и служебные пути опущены, ссылка на текущий сайт обновлена. Научные результаты и исторические статусы сохранены. Исходные байты доступны в истории репозитория до этой редакции; исходные и экспортные хеши перечислены в `PUBLIC_EXPORT.json`.
 
 Полные PNG всех состояний находятся в [ветке независимых свидетельств](https://github.com/spicmaff/malonaldehyde-transition-sampling/tree/independent-review-evidence/81efe61100d4913b9306f38616dde1720636d377).
 

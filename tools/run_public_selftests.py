@@ -78,6 +78,8 @@ def main():
    if independent.is_file():overlay.update({r['repository_path']:r for r in rows(independent)})
    acceptance=root/'provenance/FINAL_ACCEPTANCE_DELTA.tsv'
    if acceptance.is_file():overlay.update({r['repository_path']:r for r in rows(acceptance)})
+   from publication_metadata import load_metadata_overrides
+   overlay.update(load_metadata_overrides(root))
   except (ValueError,OSError,ImportError,KeyError) as e:
    failures.append(f"Presentation asset delta rejected: {e}")
  for r in asset:

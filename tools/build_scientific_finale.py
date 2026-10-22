@@ -103,10 +103,13 @@ def verify_manifest(root: Path = ROOT) -> None:
     with (root/'provenance/SCIENTIFIC_FINALE_MANIFEST.tsv').open(encoding='utf-8',newline='') as stream:
         rows=list(csv.DictReader(stream,delimiter='\t'))
     require(len(rows)==len(FILES) and {r['path'] for r in rows}==set(FILES), 'finale asset scope')
+    from publication_metadata import load_metadata_overrides, effective_record
+    overrides=load_metadata_overrides(root)
     for r in rows:
         p=root/r['path'];require(p.is_file() and not p.is_symlink(), 'missing finale asset')
         b=p.read_bytes()
-        require(hashlib.sha256(b).hexdigest()==r['sha256'] and len(b)==int(r['bytes']), 'finale asset identity: '+r['path'])
+        current=effective_record(r['path'], {'repository_sha256':r['sha256'],'size_bytes':r['bytes']}, overrides)
+        require(hashlib.sha256(b).hexdigest()==current['repository_sha256'] and len(b)==int(current['size_bytes']), 'finale asset identity: '+r['path'])
 
 
 def load(root: Path = ROOT) -> dict:

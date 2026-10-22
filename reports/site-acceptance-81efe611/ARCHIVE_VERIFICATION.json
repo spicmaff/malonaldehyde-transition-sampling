@@ -317,7 +317,7 @@
       "scope": "exact static source bytes"
     },
     {
-      "path": "dist/.openai/hosting.json",
+      "path": "[packaged hosting configuration path omitted]",
       "matches": true,
       "sha256": "38f5ae42f37dedf79ece736bab7118a40d753c7599accf33472093c34c085dce",
       "scope": "helper-packaged hosting config copy"

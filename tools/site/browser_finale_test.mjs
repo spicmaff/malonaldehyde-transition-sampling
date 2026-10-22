@@ -34,7 +34,7 @@ async function full(page,name){
 }
 try{
  report.browser=await browser.version();
- await p.goto(base+'?still&utm_source=chatgpt.com#optimization',{waitUntil:'networkidle0',timeout:60000});
+ await p.goto(base+'?still&utm_source=review#optimization',{waitUntil:'networkidle0',timeout:60000});
  await p.waitForFunction(()=>document.body.dataset.ready==='true'&&window.scientificFinale?.getState().ready,{timeout:30000});
  const d=await p.evaluate(async()=>{const r=await fetch('data/finale.json');return r.json();});
  assert.equal(d.system,'ROW_EXACT_FIXED_D');assert.equal(d.normalization,60);assert.equal(d.native.S3,null);

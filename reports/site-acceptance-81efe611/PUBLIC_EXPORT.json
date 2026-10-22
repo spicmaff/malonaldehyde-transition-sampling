@@ -1,5 +1,5 @@
 {
-  "scope": "Public CI runner home paths are normalized to /home/USER/ to satisfy the existing repository path policy; assertions, statuses, units and scientific numbers are unchanged. Compressed original reports retain their historical bytes. No credential is added.",
+  "scope": "Public CI runner home paths are normalized to /home/USER/. Published report copies omit private preview URLs and deployment-specific paths, and link to the current public site. Assertions, statuses, units, scientific numbers and embedded images are unchanged; source hashes and historical commits identify originals. No credential is added.",
   "files": [
     {
       "file": "INDEPENDENT_SITE_CI.log",
@@ -19,5 +19,49 @@
       "export_sha256": "7b2073a13e796cc376cfc276badbd479c1620b156d4f445b0683bc4285b24f13",
       "runner_path_replacements": 17
     }
-  ]
+  ],
+  "publication_metadata_export": {
+    "parent_commit": "8df2c82d87c9fe2c4884d496fdaa46d3587c2f16",
+    "files": [
+      {
+        "file": "ARCHIVE_VERIFICATION.json",
+        "source_sha256": "2174ee82f1f42ebc3b09d4dd8f47cca0641f989ac8bc6f46369b77cd6e218446",
+        "export_sha256": "9f0a1ebc86319038991c315779bbc0754f11e501c308ba853fa22ea5d927375d"
+      },
+      {
+        "file": "IDENTITY_BEFORE.json",
+        "source_sha256": "9b9779bf719e9eb53b64fa14a2ee24ddf11f17b6994b4c4412d075188af50245",
+        "export_sha256": "1d928cd4260340a0b850fe4bf8ae4c9fd904caa567db4d8a3ca5a5789d0ddee1"
+      },
+      {
+        "file": "FINAL_STATE.json",
+        "source_sha256": "833b9b60016e0b39a7f0c09eab4091b309dce7bb31aaa295aee7ad84438b7bb5",
+        "export_sha256": "f743949a3866fd9decdaac8c020dbb793b1a849c696063be5e551c37fe5ac2c4"
+      },
+      {
+        "file": "live-before-normalized/PUBLISHED_RESOURCE_PARITY.json",
+        "source_sha256": "32786684a363d008514df8d2874d91bb24db063c321249214187c11dc32f111d",
+        "export_sha256": "6e81e33b840a709ec08d5f18c7f4e020f05dcf42ebfc19ab4d9203e2df6009bd"
+      },
+      {
+        "file": "live-after/PUBLISHED_RESOURCE_PARITY.json",
+        "source_sha256": "fc0cc8d5ff09bc2a27fc7be15a4c393598c920dc2f19e62d11a20367d6c07f5b",
+        "export_sha256": "bfd118f009593319989ae3d1b30ce46a1a08b3bd2d93d29eeabb8cfa57cc1589"
+      },
+      {
+        "file": "Independent_Review_Malonaldehyde_RU.html.gz",
+        "source_sha256": "c54e6dcead609deee3f1149a3489325dfee801fa08beda5596ed016b33bf1c62",
+        "export_sha256": "b2216446cc8d5b7ebc7a4f57b5e15b7b50649be7020c7bda6bd1a0315144159a",
+        "source_html_sha256": "f1611ab76a7ba7a35e2f3042053aefa82746991da44f7e01f30edebc93482b0d",
+        "export_html_sha256": "4a185fe5e5e6c8b820885aa260926d70e61ae0c6b8de69a88829ed10554df236"
+      },
+      {
+        "file": "Final_Acceptance_Malonaldehyde_RU.html.gz",
+        "source_sha256": "cd9a5cc496538beab6dcd0cd4a17c1ec0eddd8b801a67d7b1f7c841b67087889",
+        "export_sha256": "75949d0758883079655652227652c4b7d99d0352ffa15c2e4fe0844355c8d8c2",
+        "source_html_sha256": "63ef49a1be60e87d64ff6f63e801bdc211dd2eb46ae88f9b67a41f129d0f4a6a",
+        "export_html_sha256": "399023a7e21d019435daaef8d598f56fae5712ec2ae66a92119745c14aa1abd0"
+      }
+    ]
+  }
 }

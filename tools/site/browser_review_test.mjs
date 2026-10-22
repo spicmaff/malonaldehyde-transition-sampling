@@ -31,7 +31,7 @@ report.browser=await browser.version();
 async function open(url){
  const p=await browser.newPage();p.on('pageerror',e=>report.errors.push(e.message));
  await p.setViewport({width:1440,height:1000,deviceScaleFactor:1});
- await p.goto(url+'?still&utm_source=chatgpt.com#overview',{waitUntil:'networkidle0'});
+ await p.goto(url+'?still&utm_source=review#overview',{waitUntil:'networkidle0'});
  await p.waitForFunction(()=>document.body.dataset.ready==='true');
  await p.addScriptTag({path:axe});return p;
 }
@@ -129,7 +129,7 @@ try{
  // Failure is recorded, never disguised as a local test.
  const live=await browser.newPage();
  for(const route of ['overview','offpath']){
-  const response=await live.goto('https://spicmaff.github.io/malonaldehyde-transition-sampling/?utm_source=chatgpt.com&still#'+route,{waitUntil:'networkidle0',timeout:45000});
+  const response=await live.goto('https://spicmaff.github.io/malonaldehyde-transition-sampling/?utm_source=review&still#'+route,{waitUntil:'networkidle0',timeout:45000});
   await live.waitForFunction(()=>document.body.dataset.ready==='true');
   const d=await live.evaluate(()=>({route:window.exhibit.getState().route,routeCount:document.querySelectorAll('[data-page]').length,optimizationPublished:!!document.getElementById('optimization')}));
   report.live.push({status:response?.status()??null,navigation:response?'document':'same-document',...d});if(response)assert.equal(response.status(),200);assert.equal(d.route,route);assert.equal(d.optimizationPublished,true);assert.equal(d.routeCount,12);

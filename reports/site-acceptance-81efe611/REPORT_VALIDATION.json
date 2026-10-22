@@ -1,10 +1,13 @@
 {
   "status": "PASS",
   "source_commit": "81efe61100d4913b9306f38616dde1720636d377",
-  "report_sha256": "63ef49a1be60e87d64ff6f63e801bdc211dd2eb46ae88f9b67a41f129d0f4a6a",
-  "report_bytes": 4206883,
+  "report_sha256": "399023a7e21d019435daaef8d598f56fae5712ec2ae66a92119745c14aa1abd0",
+  "report_bytes": 4207075,
   "images": 8,
   "embedded_downloads": 26,
   "sections": 7,
-  "scope": "Structural HTML, internal fragments, embedded PNG/JSON integrity. No report-browser rendering claim."
+  "scope": "Structural HTML, internal fragments, embedded PNG/JSON integrity. No report-browser rendering claim.",
+  "source_report_sha256": "63ef49a1be60e87d64ff6f63e801bdc211dd2eb46ae88f9b67a41f129d0f4a6a",
+  "source_report_bytes": 4206883,
+  "publication_export_note": "Private preview URLs and deployment-specific paths omitted; scientific content, images and historical test statuses retained."
 }

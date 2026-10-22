@@ -113,7 +113,10 @@ def verify_registered_assets(root: Path) -> int:
             if r['previous_repository_sha256'] != (old['repository_sha256'] if old else 'NEW'):
                 raise ValueError('Final acceptance manifest previous hash mismatch')
             by_path[r['repository_path']] = r
+    from publication_metadata import load_metadata_overrides, effective_record
+    overrides = load_metadata_overrides(root)
     for relative, r in by_path.items():
+        r = effective_record(relative, r, overrides)
         p = root / relative
         if not p.is_file() or p.is_symlink():
             raise ValueError('Missing registered asset: ' + relative)
