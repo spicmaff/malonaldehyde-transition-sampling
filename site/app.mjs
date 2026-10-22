@@ -73,7 +73,7 @@ function drawActive(){
   if(r==='story'){lastStoryChapter=-1;story(state.story);}
   ensureRendererResize();
 }
-function navigate(){if(!data)return;stop();userAction=true;state.route=route(location.hash);const params=new URLSearchParams(location.hash.split('?')[1]||'');if(params.has('frame')&&datum(params.get('frame')))state.frame=Number(params.get('frame'));if(params.has('atom'))state.atom=clamp(Number(params.get('atom'))||0,0,8);
+function navigate(){if(!data)return;stop();userAction=true;state.route=route(location.hash);$('ed-contents').value=state.route;const params=new URLSearchParams(location.hash.split('?')[1]||'');if(params.has('frame')&&datum(params.get('frame')))state.frame=Number(params.get('frame'));if(params.has('atom'))state.atom=clamp(Number(params.get('atom'))||0,0,8);
   document.querySelectorAll('[data-page]').forEach(p=>p.classList.toggle('active',p.id===state.route));document.querySelectorAll('[data-route]').forEach(a=>{if(a.dataset.route===state.route)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});drawActive();
   if(location.hash.startsWith('#read-'))setTimeout(()=>$(location.hash.slice(1))?.scrollIntoView({behavior:'auto',block:'start'}),0);else window.scrollTo({top:0,behavior:'auto'});
 }
@@ -81,6 +81,7 @@ function theme(){const dark=document.documentElement.dataset.theme==='dark';text
 function bind(){
   document.addEventListener('pointerdown',()=>{userAction=true;},{passive:true});
   const event=(id,kind,fn)=>$(id).addEventListener(kind,fn);
+  event('ed-contents','change',e=>{location.hash=e.target.value;});
   event('theme','click',()=>{const dark=document.documentElement.dataset.theme!=='dark';document.documentElement.dataset.theme=dark?'dark':'light';try{localStorage.setItem('proton-theme',dark?'dark':'light');}catch{}theme();});
   event('hero-play','click',()=>play('hero',14000,t=>hero(t*8),state.hero>=8?0:state.hero/8));event('hero-slider','input',e=>{stop();hero(+e.target.value);});event('hero-reset','click',()=>{stop();hero(0);});
   event('path-play','click',()=>play('path',16000,t=>molecularPath(t*8),state.path>=8?0:state.path/8));event('path-slider','input',e=>{stop();molecularPath(+e.target.value);});event('path-snap','change',()=>{stop();molecularPath(state.path);});event('path-reset','click',()=>{stop();stage('path-molecule',data.molecule[0].xyz).resetView();molecularPath(0);});event('path-front','click',()=>{stop();stage('path-molecule',data.molecule[0].xyz).setView(0,0,.65);});event('path-studio','click',()=>stage('path-molecule',data.molecule[0].xyz).resetView());

@@ -58,7 +58,7 @@ class Pages(HTMLParser):
 
 
 def table(headers, rows, caption):
-    return '<div class="ed-table-scroll"><table><caption>' + caption + '</caption><thead><tr>' + ''.join(
+    return '<div class="ed-table-scroll" tabindex="0" role="region" aria-label="' + escape(caption, quote=True) + '"><table><caption>' + caption + '</caption><thead><tr>' + ''.join(
         '<th scope="col">' + escape(h) + '</th>' for h in headers) + '</tr></thead><tbody>' + ''.join(
             '<tr>' + ''.join(('<th scope="row">' if i == 0 else '<td>') + escape(str(v)) +
                             ('</th>' if i == 0 else '</td>') for i, v in enumerate(row)) + '</tr>' for row in rows
@@ -188,6 +188,9 @@ def refine_document(document, data, findings):
         raise ValueError('Unexpected chapter navigation')
     ordered_nav = re.sub(r'>.*</nav>', '>' + ''.join(links[k] for k in ORDER) + '</nav>', nav[0], flags=re.S)
     document = document[:nav.start()] + ordered_nav + document[nav.end():]
+    contents = '<div class="ed-mobile-contents wrap js-control"><label for="ed-contents">Explore the study</label><select id="ed-contents">' + ''.join(
+        '<option value="' + key + '">' + str(i+1).zfill(2) + ' / ' + LABELS[i] + '</option>' for i, key in enumerate(ORDER)) + '</select></div>'
+    document = once(document, '</header>', contents + '</header>')
     return document
 
 
