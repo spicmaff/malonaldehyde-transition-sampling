@@ -16,6 +16,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const near=(a,b,tol=1e-14)=>assert.ok(Math.abs(a-b)<=tol,`${a} != ${b}`);
 const state=()=>p.evaluate(()=>window.scientificFinale.getState());
 async function choose(width,mode,route='optimization'){
+ await p.bringToFront();
  await p.setViewport({width,height:1000,deviceScaleFactor:1});
  await p.evaluate(({mode,route})=>{window.exhibit.stop();window.optimizationExhibit.stop();if((document.documentElement.dataset.theme==='dark')!==(mode==='dark'))document.getElementById('theme').click();location.hash=route;},{mode,route});
  await p.waitForFunction(r=>window.exhibit.getState().route===r,{},route);await wait(180);
@@ -26,6 +27,7 @@ async function click(selector){
  await p.click(selector);await wait(50);
 }
 async function full(page,name){
+ await page.bringToFront();
  await page.evaluate(()=>{window.exhibit?.stop();window.optimizationExhibit?.stop();window.scientificFinale?.stop();scrollTo({top:0,behavior:'instant'});});await wait(120);
  const file=name+'.png';await page.screenshot({path:path.join(out,file),fullPage:true});report.screenshots.push(file);
  report.regions[file]=await page.evaluate(()=>Object.fromEntries(['opt-finale-tradeoff','opt-finale-controls','opt-finale-geometry','opt-next-study'].map(id=>{const e=document.getElementById(id);if(!e)return [id,null];const r=e.getBoundingClientRect();return [id,{x:r.x,y:r.y+scrollY,width:r.width,height:r.height}];})));

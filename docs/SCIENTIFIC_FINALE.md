@@ -154,3 +154,12 @@ requires Optimization to exist and all twelve routes to remain; its HTTP status,
 UTM routing and live navigation assertions are retained. This corrects a release
 baseline, not an accessibility or behavior threshold. The production site itself
 is not changed by this review.
+
+A Windows supplement completed its functional assertions but timed out while
+capturing the background comparison tab. The capture helper now explicitly
+brings each selected page to the foreground, matching the existing runners'
+controlled capture condition. A separate foreground probe captured the actual
+390px current and baseline pages (24667px and 17440px tall) in 1349ms and 692ms.
+This addresses a screenshot condition, not a relaxation of page or interaction
+acceptance. Earlier partial captures are not final-head evidence; full HTTP
+and image acceptance must still complete on the final commit.
