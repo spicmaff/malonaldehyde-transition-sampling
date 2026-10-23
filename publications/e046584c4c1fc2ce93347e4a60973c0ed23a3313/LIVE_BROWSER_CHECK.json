@@ -1,0 +1,29 @@
+{
+  "url": "https://spicmaff.github.io/malonaldehyde-transition-sampling/#overview",
+  "displayed_commit": "e046584c4c1f",
+  "force_selection": {
+    "url": "https://spicmaff.github.io/malonaldehyde-transition-sampling/#forces?frame=93&atom=7",
+    "caption": "O8 · Replay 93",
+    "RMSE_eV_A_display": "0.02945",
+    "same_after_reload": true
+  },
+  "controlled_live_screenshots": {
+    "viewport": [
+      1348,
+      922
+    ],
+    "theme": "light",
+    "overview_saved_PBE_image": 5,
+    "OO_A_display": "2.390",
+    "before_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+    "after_commit": "e046584c4c1fc2ce93347e4a60973c0ed23a3313"
+  },
+  "limits": "Cloud browser uses the Canvas fallback. CI additionally tests the software WebGL renderer; real mobile devices and screen readers were not certified.",
+  "live_Optimization": {
+    "Play_reached": "S1",
+    "selected_title": "Radial basis changed",
+    "pause_aria_pressed": "false"
+  },
+  "Evidence_title": "Follow the evidence.",
+  "essay_scope_matches_download": true
+}

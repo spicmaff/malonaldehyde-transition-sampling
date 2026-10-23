@@ -1,0 +1,10 @@
+{
+  "schema": "proton-build-identity-v1",
+  "scope": "Website source identity; historical science and aggregate source IDs remain separate.",
+  "source_commit": "e046584c4c1fc2ce93347e4a60973c0ed23a3313",
+  "source_tree": "c52b9214d2c2b391ddc7588aed5d34f7bb7f5f37",
+  "tracked_diff_sha256": null,
+  "untracked_file_count": 0,
+  "untracked_source_sha256": {},
+  "working_copy_clean": true
+}

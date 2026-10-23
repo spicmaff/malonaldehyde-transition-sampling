@@ -1,0 +1,243 @@
+{
+  "published_commit": "e046584c4c1fc2ce93347e4a60973c0ed23a3313",
+  "extended_review_commit": "3a83c4c04c5ec6c02cd4bbc2e4e19c44ae9eb796",
+  "main_workflow_run": 39882769417,
+  "extended_workflow_run": 39882036929,
+  "website_sources_identical_to_extended_review": true,
+  "difference_from_extended_review": [
+    "tools/site/browser_popular_test.mjs",
+    "provenance/POPULAR_READING_DELTA.tsv"
+  ],
+  "reports": {
+    "final-e046": {
+      "OPTIMIZATION_BROWSER_QA.json": {
+        "status": "PASS_OPTIMIZATION_BROWSER_QA",
+        "views": 10,
+        "errors": []
+      },
+      "BROWSER_QA.json": {
+        "status": "PASS_CINEMATIC_BROWSER_QA",
+        "views": 100,
+        "errors": []
+      },
+      "POPULAR_BROWSER_QA.json": {
+        "status": "PASS_POPULAR_BROWSER_QA",
+        "views": 120,
+        "errors": []
+      },
+      "EDITORIAL_BROWSER_QA.json": {
+        "status": "PASS_EDITORIAL_BROWSER_QA",
+        "views": 0,
+        "errors": []
+      },
+      "OFFPATH_BROWSER_QA.json": {
+        "status": "PASS_OFFPATH_BROWSER_QA",
+        "views": 10,
+        "errors": []
+      }
+    },
+    "extended-3a83": {
+      "OPTIMIZATION_BROWSER_QA.json": {
+        "status": "PASS_OPTIMIZATION_BROWSER_QA",
+        "views": 10,
+        "errors": []
+      },
+      "BROWSER_QA.json": {
+        "status": "PASS_CINEMATIC_BROWSER_QA",
+        "views": 100,
+        "errors": []
+      },
+      "POPULAR_BROWSER_QA.json": {
+        "status": "PASS_POPULAR_BROWSER_QA",
+        "views": 120,
+        "errors": []
+      },
+      "PRESENTATION_REVIEW.json": {
+        "status": "PASS_PRESENTATION_REVIEW_AUTOMATION_MANUAL_CONTRAST_PENDING",
+        "views": 120,
+        "errors": []
+      },
+      "EDITORIAL_BROWSER_QA.json": {
+        "status": "PASS_EDITORIAL_BROWSER_QA",
+        "views": 0,
+        "errors": []
+      },
+      "OFFPATH_BROWSER_QA.json": {
+        "status": "PASS_OFFPATH_BROWSER_QA",
+        "views": 10,
+        "errors": []
+      },
+      "EDITORIAL_COMPARISON_QA.json": {
+        "status": "PASS_EDITORIAL_COMPARISON_QA",
+        "views": 0,
+        "errors": []
+      },
+      "CINEMATIC_QA.json": {
+        "status": "PASS",
+        "views": 10,
+        "errors": []
+      },
+      "FINALE_QA.json": {
+        "status": "PASS_SCOPED_HTTP_FINALE",
+        "views": 120,
+        "errors": []
+      }
+    }
+  },
+  "reduced_motion": [
+    "Force frame and atom survive sharing/reload and browser Back/Forward; local choices replace one chapter history entry",
+    "Optional native-state reader selects S1 and stops playback when leaving the chapter",
+    "Reduced motion settles to disabled controls, restores manual playback when cleared, and stops an already running introduction when enabled",
+    "No-JavaScript force fallback: correct saved geometry, atom, score, selected frame and component table"
+  ],
+  "S1_playback": {
+    "beforeReset": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S1c",
+        "selectedIndex": 2,
+        "nativeIndex": -1,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": false,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "rail": "false",
+      "button": {
+        "disabled": false,
+        "label": "Play native sequence"
+      },
+      "scrollY": 951
+    },
+    "afterReset": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S0",
+        "selectedIndex": 0,
+        "nativeIndex": 0,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": false,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "rail": "false",
+      "button": {
+        "disabled": false,
+        "label": "Play native sequence"
+      },
+      "scrollY": 951
+    },
+    "afterClick": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S0",
+        "selectedIndex": 0,
+        "nativeIndex": 0,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": true,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "rail": "false",
+      "button": {
+        "disabled": false,
+        "label": "Pause native sequence",
+        "hitId": "opt-play",
+        "hitTag": "BUTTON"
+      },
+      "scrollY": 5407
+    },
+    "atS1": {
+      "state": {
+        "ready": true,
+        "interactive": true,
+        "selectedState": "S1",
+        "selectedIndex": 1,
+        "nativeIndex": 1,
+        "readerOrder": [
+          "S0",
+          "S1",
+          "S1c",
+          "S2",
+          "S2q",
+          "S3",
+          "S4"
+        ],
+        "nativeOrder": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "playing": true,
+        "reducedMotion": false
+      },
+      "hidden": false,
+      "focus": true,
+      "route": "#optimization",
+      "rail": "true",
+      "button": {
+        "disabled": false,
+        "label": "Pause native sequence",
+        "hitId": "opt-play",
+        "hitTag": "BUTTON"
+      },
+      "scrollY": 5407
+    }
+  }
+}

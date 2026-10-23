@@ -1,0 +1,42 @@
+{
+  "source_commit": "e046584c4c1fc2ce93347e4a60973c0ed23a3313",
+  "parent_commit": "51c96a7034567006b803a92124b67e2333ba7b4e",
+  "data_paths_changed": false,
+  "payloads": [
+    {
+      "path": "data/science.json",
+      "same_bytes": true,
+      "sha256": "5aefec29848451017154fe25f26d427c3ea19eab1615c12dd341b64c385d1b5c"
+    },
+    {
+      "path": "data/finale.json",
+      "same_bytes": true,
+      "sha256": "436fb5114ccb16b9352890f825fe2f2808274a0c75fb94ba99b35e1c78d5f495"
+    },
+    {
+      "path": "data/optimization/CLAIM_DATA_MAP.tsv",
+      "same_bytes": true,
+      "sha256": "4456e169d82a0c12079e5e21f4a2d4c0dfd6d5576ca7078e076eb94b729719f9"
+    },
+    {
+      "path": "data/optimization/PUBLICATION_ALLOWLIST.json",
+      "same_bytes": true,
+      "sha256": "ccc5b4b8bf5c8d0b04b228d083cd5e9f12da8180bbf9c5a4385bcd604c33ec2c"
+    },
+    {
+      "path": "data/optimization/PROVENANCE.json",
+      "same_bytes": true,
+      "sha256": "fa5d7b72d0bdd9a94536c0e3cd4c6e5cdd20cebf53d5120b68d999db066c29bc"
+    },
+    {
+      "path": "data/optimization/README.md",
+      "same_bytes": true,
+      "sha256": "46ffbe8b8610c82d1845cf570fcaf91fa13842c6e8470419c9e0d3e9bd23e64f"
+    },
+    {
+      "path": "data/optimization/OPTIMIZATION_STORY.json",
+      "same_bytes": true,
+      "sha256": "91ba4b11b43a6966b2e1cc4ef43eef765bedd58a7de1f0975ae14b2550185131"
+    }
+  ]
+}

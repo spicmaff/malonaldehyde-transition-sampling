@@ -1,0 +1,125 @@
+{
+  "scope": "Manual source-token contrast checks for text and SVG graphic outlines; does not automatically resolve every axe incomplete node or certify devices. Rendered screenshots are reviewed separately.",
+  "checks": [
+    {
+      "theme": "light",
+      "foreground": "ink",
+      "background": "panel",
+      "ratio": 11.614902082882548,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 10.749144855918885,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "muted",
+      "background": "panel",
+      "ratio": 6.019043493502145,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 5.570393098800338,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "teal",
+      "background": "panel",
+      "ratio": 6.01305926037632,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "teal",
+      "background": "paper",
+      "ratio": 5.564854921357079,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "basin",
+      "background": "panel",
+      "ratio": 5.893656165497269,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "foreground": "basin",
+      "background": "paper",
+      "ratio": 5.45435195250369,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "ink",
+      "background": "panel",
+      "ratio": 12.25467014539742,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 13.669864039451328,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "muted",
+      "background": "panel",
+      "ratio": 7.94426609854353,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 8.861685885613095,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "teal",
+      "background": "panel",
+      "ratio": 7.200774811999474,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "teal",
+      "background": "paper",
+      "ratio": 8.032334733685833,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "basin",
+      "background": "panel",
+      "ratio": 7.179017904823443,
+      "text_AA": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "basin",
+      "background": "paper",
+      "ratio": 8.008065295219795,
+      "text_AA": true
+    },
+    {
+      "theme": "light",
+      "graphic": "static hydrogen outline",
+      "foreground": "ink",
+      "background": "panel",
+      "ratio": 11.614902082882548,
+      "non_text_3_to_1": true
+    }
+  ]
+}

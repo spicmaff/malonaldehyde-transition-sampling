@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "root": "/workspace/scratch/73ce71730111/publication-repo",
+  "file_count": 537,
+  "total_size_mb": 28.227872848510742,
+  "max_git_file_mb": 95.0,
+  "warnings": [],
+  "failures": []
+}

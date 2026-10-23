@@ -1,0 +1,14 @@
+{
+  "commit": "e046584c4c1fc2ce93347e4a60973c0ed23a3313",
+  "tree": "c52b9214d2c2b391ddc7588aed5d34f7bb7f5f37",
+  "working_copy": "",
+  "checks": [
+    "209 Python tests",
+    "30 static site tests",
+    "35 JS unit tests",
+    "public repository selftests",
+    "130-file independent scientific audit",
+    "exact editorial findings check"
+  ],
+  "temporary_directory": "outside checkout"
+}
