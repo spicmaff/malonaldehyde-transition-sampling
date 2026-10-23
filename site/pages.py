@@ -45,7 +45,8 @@ def render(d, article, literature):
         force = next(f for f in d['forces'] if f['index'] == 145) if id == 'force-molecule' else None
         xyz = force['xyz'] if force else d['molecule'][4]['xyz']
         label = 'Malonaldehyde, saved Replay 145 geometry' if force else 'Malonaldehyde, saved PBE image 5 of 9'
-        return f'<div id="{id}" class="molecular-stage {cls}" role="img" aria-label="{label}. Use the adjacent controls to explore.">{fallback(xyz, label)}</div>'
+        interactive_label = label if force else 'Malonaldehyde, selected molecular geometry'
+        return f'<div id="{id}" class="molecular-stage {cls}" role="img" aria-label="{interactive_label}. Use the adjacent controls to explore.">{fallback(xyz, label)}</div>'
     def stat(label, value, unit='', id=''):
         ident = f' id="{id}"' if id else ''
         return f'<div class="stat"><span>{label}</span><strong{ident}>{value}</strong><small>{unit}</small></div>'

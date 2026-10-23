@@ -50,6 +50,10 @@ class PopularTests(unittest.TestCase):
             if n['tag'] == 'circle':
                 self.assertEqual(n['attrs']['stroke'], 'var(--ink)')
         self.assertIn('H2*', svg)
+        for ident in ['hero-molecule', 'path-molecule', 'story-molecule']:
+            label = Elements(self.html).find(ident=ident)['attrs']['aria-label']
+            self.assertNotIn('image 5', label)
+            self.assertIn('selected molecular geometry', label)
         off = fragment(self.html, ident='offpath-molecule')
         self.assertNotIn('central PBE image', off)
 
