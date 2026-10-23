@@ -74,6 +74,8 @@ class PopularTests(unittest.TestCase):
         self.assertIn('independent external testing', self.html)
         self.assertIn('parameterization', self.html)
         self.assertIn('fixed positive metric', self.html)
+        self.assertNotIn('Only the placement of 24 examples changes.', self.html)
+        self.assertIn('Initialization can change the outcome, too.', self.html)
 
     def test_study_specific_reconstruction_links(self):
         original = fragment(self.html, ident='landscape')
