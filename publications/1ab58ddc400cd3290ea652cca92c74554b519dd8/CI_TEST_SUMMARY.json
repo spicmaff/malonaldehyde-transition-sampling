@@ -1,0 +1,45 @@
+{
+  "source_commit": "1ab58ddc400cd3290ea652cca92c74554b519dd8",
+  "run_id": 39885246185,
+  "site_check_job_id": 120191800986,
+  "deploy_job_id": 120193197684,
+  "site_check": "success",
+  "deploy": "success",
+  "browser_statuses": [
+    "PASS_EDITORIAL_BROWSER_QA",
+    "PASS_CINEMATIC_BROWSER_QA",
+    "PASS_OFFPATH_BROWSER_QA",
+    "PASS_OPTIMIZATION_BROWSER_QA",
+    "PASS_POPULAR_BROWSER_QA"
+  ],
+  "main_matrix": {
+    "routes": 12,
+    "widths_px": [
+      320,
+      390,
+      768,
+      1440,
+      1920
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "combinations": 120
+  },
+  "latest_local": {
+    "python_tests": 209,
+    "site_tests": 30,
+    "javascript_tests": 35
+  },
+  "extended_review": {
+    "source_commit": "3a83c4c04c5ec6c02cd4bbc2e4e19c44ae9eb796",
+    "run_id": 39882036929,
+    "scope": "Earlier full accessibility and cinematic review, before the final scene-container accessible-name correction. Runtime JS, CSS and scientific data are unchanged; final template correction is retested in the latest main run."
+  },
+  "scientific_data_changed": false,
+  "limits": [
+    "No certification on physical mobile devices, actual screen readers, or the full range of hardware GPUs.",
+    "No new quantum calculations, native COV candidate validation, or numerical convergence study."
+  ]
+}

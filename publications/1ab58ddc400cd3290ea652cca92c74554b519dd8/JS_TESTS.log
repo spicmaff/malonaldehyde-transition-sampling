@@ -1,0 +1,43 @@
+✔ qPT uses fixed oxygen and proton identities (2.361846ms)
+✔ centering preserves all pair distances (0.576891ms)
+✔ rigid camera rotation preserves vector magnitude (0.42373ms)
+✔ orthographic projection is isotropic in its plane (0.621609ms)
+✔ saved path images are returned exactly (2.799166ms)
+✔ interpolation is explicitly not a saved image (0.316538ms)
+✔ interpolated distances are recomputed from the display geometry (0.388056ms)
+✔ NaN interpolation is rejected (0.493816ms)
+✔ out-of-range path input is clamped (0.31131ms)
+✔ force error is MTP minus PBE, without per-arrow normalization (1.436319ms)
+✔ RMSE denominator is 27, not 9 (0.380845ms)
+✔ truncated force arrays fail closed (0.293373ms)
+✔ truncated component arrays fail closed (0.243588ms)
+✔ nonfinite forces fail closed (0.267093ms)
+✔ source vector and geometry use the same rigid transform (0.352622ms)
+✔ legacy applicability route remains useful (0.299743ms)
+✔ deep link query does not change route identity (0.179732ms)
+✔ unknown routes fail to overview (0.069004ms)
+✔ essay anchors resolve to visible essay (0.085719ms)
+✔ paired seed identities remain exact strings (0.287123ms)
+✔ mismatched paired seeds fail closed (0.202166ms)
+✔ directed story has six bounded chapters (0.262386ms)
+✔ reveal count never exceeds available data (0.450901ms)
+✔ ticks remain round inside a fixed molecular comparison domain (4.642991ms)
+✔ reversed seed axes and invalid domains are handled explicitly (2.528679ms)
+✔ the real saved payload qualifies for progressive enhancement (5.522229ms)
+✔ rejects finite-shaped but missing energy series (3.147983ms)
+✔ rejects nonfinite energy (1.6825ms)
+✔ rejects wrong selected geometry (1.703322ms)
+✔ rejects permuted atom identities (1.843955ms)
+✔ rejects reversed force-difference sign (2.969654ms)
+✔ rejects pooled normalization replacing component RMSE (2.054092ms)
+✔ rejects rounded numeric uint64 seed (1.247885ms)
+✔ rejects mismatched shared training descriptor (1.349638ms)
+✔ rejects wrong saved gamma / frame mapping (0.885146ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1847.489462

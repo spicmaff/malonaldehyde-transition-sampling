@@ -1,0 +1,12 @@
+{
+  "source_commit": "1ab58ddc400cd3290ea652cca92c74554b519dd8",
+  "previous_publication": "e046584c4c1fc2ce93347e4a60973c0ed23a3313",
+  "changed_paths": [
+    "provenance/POPULAR_READING_DELTA.tsv",
+    "site/pages.py",
+    "tests/test_popular.py"
+  ],
+  "scientific_data_changed": false,
+  "runtime_JS_and_CSS_changed": false,
+  "description": "Replace the static initial image-5 number in changing scene container names with a frame-neutral selected-geometry name. Static SVG retains its true initial geometry label; force viewer still updates exact frame and atom."
+}

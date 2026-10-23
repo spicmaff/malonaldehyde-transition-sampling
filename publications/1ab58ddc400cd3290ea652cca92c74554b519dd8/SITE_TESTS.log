@@ -1,0 +1,35 @@
+test_297_force_components_come_from_primary_output (__main__.SiteTests.test_297_force_components_come_from_primary_output) ... ok
+test_all_paired_seed_strings (__main__.SiteTests.test_all_paired_seed_strings) ... ok
+test_build_has_no_external_font_files (__main__.SiteTests.test_build_has_no_external_font_files) ... ok
+test_curated_literature_has_complete_records (__main__.SiteTests.test_curated_literature_has_complete_records) ... ok
+test_download_has_expanded_source_links (__main__.SiteTests.test_download_has_expanded_source_links) ... ok
+test_english_only_visible_source (__main__.SiteTests.test_english_only_visible_source) ... ok
+test_expected_scientific_snapshot (__main__.SiteTests.test_expected_scientific_snapshot) ... ok
+test_generated_files_match_manifest (__main__.SiteTests.test_generated_files_match_manifest) ... ok
+test_geometry_supports (__main__.SiteTests.test_geometry_supports) ... ok
+test_h2_and_c3_are_not_conflated (__main__.SiteTests.test_h2_and_c3_are_not_conflated) ... ok
+test_known_overlap_and_failures_preserved (__main__.SiteTests.test_known_overlap_and_failures_preserved) ... ok
+test_local_links_and_anchors_exist (__main__.SiteTests.test_local_links_and_anchors_exist) ... ok
+test_longread_and_sources_readable_without_js (__main__.SiteTests.test_longread_and_sources_readable_without_js) ... ok
+test_no_duplicate_dom_ids (__main__.SiteTests.test_no_duplicate_dom_ids) ... ok
+test_no_old_russian_media_in_build (__main__.SiteTests.test_no_old_russian_media_in_build) ... ok
+test_occupied_output_is_not_overwritten (__main__.SiteTests.test_occupied_output_is_not_overwritten) ... ok
+test_old_russian_url_redirect_preserves_hash (__main__.SiteTests.test_old_russian_url_redirect_preserves_hash) ... ok
+test_original_metrics_preserved (__main__.SiteTests.test_original_metrics_preserved) ... ok
+test_profile_residual_is_not_barrier_error (__main__.SiteTests.test_profile_residual_is_not_barrier_error) ... ok
+test_profiles_have_individual_lower_endpoint_zero (__main__.SiteTests.test_profiles_have_individual_lower_endpoint_zero) ... ok
+test_python311_grammar (__main__.SiteTests.test_python311_grammar) ... ok
+test_repeat_build_is_identical (__main__.SiteTests.test_repeat_build_is_identical) ... ok
+test_scaffold_contraction (__main__.SiteTests.test_scaffold_contraction) ... ok
+test_scene_captions_are_english (__main__.SiteTests.test_scene_captions_are_english) ... ok
+test_sources_are_pinned_and_have_real_hashes (__main__.SiteTests.test_sources_are_pinned_and_have_real_hashes) ... ok
+test_stop_and_crossings_preserved (__main__.SiteTests.test_stop_and_crossings_preserved) ... ok
+test_training_budget_and_roles (__main__.SiteTests.test_training_budget_and_roles) ... ok
+test_two_english_films_have_verified_sources (__main__.SiteTests.test_two_english_films_have_verified_sources) ... ok
+test_unsafe_output_is_rejected (__main__.SiteTests.test_unsafe_output_is_rejected) ... ok
+test_vendored_renderer_has_license_and_integrity (__main__.SiteTests.test_vendored_renderer_has_license_and_integrity) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 3.134s
+
+OK
