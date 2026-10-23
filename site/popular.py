@@ -117,6 +117,11 @@ def overview(source, data):
     hero = hero.replace('THE CARBON FRAME MOVES TOO', 'O = OXYGEN · H* = TRANSFERRED PROTON')
     hero = hero.replace('Nine computed images; smooth in-between motion is display interpolation. Drag horizontally to rotate.',
                         'Nine saved PBE geometries. In-between motion is a visual interpolation; the slider is position, not time.')
+    # DOM and visual order agree on narrow screens: introduce the subject, show
+    # the molecule, then explain the experiment. Desktop places the scene beside it.
+    intro_heading = fragment(hero, cls='eyebrow') + fragment(hero, tag='h1')
+    description = ''.join(fragment(hero, cls=cls) for cls in ('lede', 'byline', 'actions', 'fineprint'))
+    hero = '<div class="hero"><div class="hero-intro">' + intro_heading + '</div>' + fragment(hero, cls='hero-exhibit') + '<div class="hero-description">' + description + '</div></div>'
     intro = f'''<div class="pop-intro"><p class="eyebrow">The experiment in one minute</p><div class="pop-intro-grid"><div><h2>Same amount of data.<br><em>A different energy landscape.</em></h2><p>Moment Tensor Potentials (MTPs) learn energies and forces from quantum calculations. Here, two models receive <strong>60 training geometries each</strong>. Only the placement of 24 examples changes.</p><p>In the original pair, the targeted model follows the reference hill much more closely. Repeating the training shows why one good fit is only the first test.</p><a class="text-button" href="#landscape">Explore the full comparison →</a></div><figure class="pop-overview-figure">{preview_profiles(data)}<figcaption><span class="pop-key pbe">■ PBE reference</span><span class="pop-key basin">● Basin60</span><span class="pop-key targeted">◆ Targeted60</span></figcaption><p class="small">Original saved model pair · each curve uses its own lower endpoint as zero.</p></figure></div></div>
 <div class="pop-question-grid"><a href="#molecule"><span>01 / The molecule</span><h2>What moves?</h2><p>Follow the proton and the changing molecular frame.</p><b aria-hidden="true">↗</b></a><a href="#sampling"><span>02 / The experiment</span><h2>Where to learn?</h2><p>Compare the two ways of spending the same data budget.</p><b aria-hidden="true">↗</b></a><a href="#seeds"><span>03 / The reality check</span><h2>Does it repeat?</h2><p>Targeted wins both metrics in 3 of 5 training pairs. Inspect the reversals, too.</p><b aria-hidden="true">↗</b></a></div>
 {takeaway('The question is bigger than one molecule.', 'A model can look convincing on one test and behave differently on another. This small system lets us see exactly where that distinction comes from.')}
@@ -246,7 +251,7 @@ def build(document, data, payload, out):
                                 'The proton moves across, but the oxygen atoms also move closer. The targeted examples follow a perturbed straight connection between aligned minima, rather than the relaxed path. This geometric gap alone does not establish extrapolation in MTP feature space.')
     sampling = sampling.replace('These projections do not establish coverage in MTP feature space.', 'These projections do not establish coverage in MTP feature space.')
     fragments['sampling'] = sampling
-    landscape = fragments['landscape']
+    landscape = fragments['landscape'].replace('original transition-focused model', 'original Targeted60 model')
     banner = takeaway('Look at the shape, too.', 'On these nine saved supports, Basin60 predicts a dip at the center where PBE has a hill. Targeted60 follows the hill more closely. This describes the sampled path, rather than proving a minimum or a saddle on the full molecular energy surface.')
     landscape = landscape.replace('<div class="profile-layout">', banner + '<div class="profile-layout">', 1)
     fragments['landscape'] = landscape

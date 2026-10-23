@@ -93,7 +93,7 @@ try{
  }
  report.checks.push('404, malformed JSON, numerical mismatch and false T2 claim all fail closed with intact static evidence');
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(base+'#optimization',{waitUntil:'networkidle0'});
- assert.equal(await nojs.$$eval('[data-sf-exact]',e=>e.length),6);assert.equal(await nojs.$$eval('#opt-finale-tradeoff button:not(:disabled)',e=>e.length),0);assert.match(await nojs.$eval('#opt-next-study',e=>e.textContent),/independent physical tests/);await nojs.close();
+ assert.equal(await nojs.$$eval('[data-sf-exact]',e=>e.length),6);assert.equal(await nojs.$$eval('#opt-finale-tradeoff button:not(:disabled)',e=>e.length),0);assert.match(await nojs.$eval('#opt-next-study',e=>e.textContent),/independent geometries/);await nojs.close();
  report.checks.push('complete no-JavaScript conclusion, figures and table; no enabled fake controls');
  await choose(1440,'light');await p.evaluate(()=>document.body.style.zoom='2');await wait(150);
  assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'200% CSS zoom reflow');await p.evaluate(()=>document.body.style.zoom='');

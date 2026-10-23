@@ -1,7 +1,8 @@
 /* Reading edition: a quiet laboratory notebook with data in the foreground. */
 :root{--accent:#a34731;--soft-shadow:0 16px 48px #183e3408}
 :root[data-theme=dark]{--accent:#efa68a;--soft-shadow:none}
-.hero{gap:56px;min-height:610px;align-items:center;padding-bottom:10px}
+.hero{column-gap:56px;row-gap:0;min-height:610px;align-items:start;padding-bottom:10px}
+.hero-intro{grid-column:1;grid-row:1}.hero-description{grid-column:1;grid-row:2}.hero-exhibit{grid-column:2;grid-row:1 / span 2;align-self:center}
 .hero h1{font-size:clamp(60px,6.5vw,91px);line-height:1.01;letter-spacing:-.05em;margin-bottom:24px}
 .hero .lede{font-size:18px;line-height:1.75;max-width:43ch}
 .hero .eyebrow{font-size:10px;letter-spacing:.13em;color:var(--accent)}
@@ -99,7 +100,7 @@
 @media(min-width:1600px){.hero{min-height:670px}.hero h1{font-size:97px}.hero-exhibit .molecular-stage{height:425px}.pop-intro-grid{gap:90px}}
 @media(max-width:1050px){.hero{gap:32px;min-height:0}.hero h1{font-size:68px}.hero .lede{font-size:17px}.hero-exhibit .molecular-stage{height:350px}.pop-intro-grid{gap:35px}.pop-intro h2{font-size:35px}.pop-opt-hero{gap:30px}.pop-score-symbol{width:230px;height:230px}.pop-reproduce{gap:30px}.pop-methods-grid{gap:23px}}
 @media(max-width:780px){
- .hero{gap:30px;padding:0}.hero h1{font-size:65px;margin-top:20px}.hero .lede{max-width:50ch}.hero .actions{margin-top:22px}.hero .byline{margin-block:22px}.hero .fineprint{margin-bottom:0}
+ .hero{gap:24px;padding:0}.hero-intro{grid-column:1;grid-row:1}.hero-exhibit{grid-column:1;grid-row:2}.hero-description{grid-column:1;grid-row:3}.hero h1{font-size:65px;margin-top:16px;margin-bottom:0}.hero .lede{max-width:50ch}.hero .actions{margin-top:22px}.hero .byline{margin-block:22px}.hero .fineprint{margin-bottom:0}
  .hero-exhibit .molecular-stage{height:325px}.hero-exhibit .tiny-label{max-width:120px}.hero-exhibit .exhibit-readout{gap:12px;flex-wrap:wrap}
  .pop-intro{padding-top:30px;margin-top:40px}.pop-intro-grid{grid-template-columns:1fr;gap:24px}.pop-intro h2,.pop-reproduce h2{font-size:36px}.pop-intro-grid p{max-width:65ch!important}
  .pop-overview-figure{padding:22px 14px 15px}.pop-overview-figure figcaption{gap:15px;font-size:11px}

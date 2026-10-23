@@ -29,11 +29,15 @@ try{
  report.checks.push('Force frame and atom survive sharing/reload and browser Back/Forward; local choices replace one chapter history entry');
  for(const width of [320,390,768,1440,1920])for(const theme of ['light','dark']){
   await p.setViewport({width,height:width<768?844:1000,deviceScaleFactor:1});
-  await p.evaluate(t=>{document.documentElement.dataset.theme=t;},theme);
+  if(await p.evaluate(()=>document.documentElement.dataset.theme||'light')!==theme)await p.click('#theme');
   for(const r of ['overview','molecule','sampling','landscape','seeds','offpath','train119','forces','optimization','story','longread','reproduce']){
    await route(r);
    const view=await p.evaluate(()=>({width:innerWidth,theme:document.documentElement.dataset.theme,route:document.querySelector('[data-page].active').id,overflow:document.documentElement.scrollWidth>innerWidth+1}));
    report.views.push(view);assert.equal(view.overflow,false,`${r} ${width} ${theme}`);
+   if(r==='overview'&&width<=390){
+    const stage=await p.$eval('#hero-molecule',e=>{const b=e.getBoundingClientRect();return {center:b.top+b.height/2,screen:innerHeight};});
+    assert.ok(stage.center<stage.screen,'the molecule is visible on the first mobile screen');
+   }
    if([390,1440].includes(width)&&['overview','landscape','optimization'].includes(r))await p.screenshot({path:path.join(out,`${r}-${theme}-${width}.png`)});
   }
  }
