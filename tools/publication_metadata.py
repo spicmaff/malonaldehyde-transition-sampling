@@ -18,6 +18,8 @@ PARENTS = {
 
 
 def load_metadata_overrides(root: Path) -> dict:
+    from popular_publication import load_popular_overrides
+    popular = load_popular_overrides(root)
     manifest = root / 'provenance/PUBLICATION_METADATA_DELTA.tsv'
     if not manifest.is_file():
         return {}
@@ -32,10 +34,21 @@ def load_metadata_overrides(root: Path) -> dict:
         path = root / relative
         if not path.is_file() or path.is_symlink():
             raise ValueError('Missing publication metadata asset: ' + relative)
+        current = popular.get(relative, row)
+        if relative in popular and current['previous_repository_sha256'] != row['repository_sha256']:
+            raise ValueError('Reading edition metadata chain mismatch: ' + relative)
         data = path.read_bytes()
-        if hashlib.sha256(data).hexdigest() != row['repository_sha256'] or len(data) != int(row['size_bytes']):
+        if hashlib.sha256(data).hexdigest() != current['repository_sha256'] or len(data) != int(current['size_bytes']):
             raise ValueError('Publication metadata asset differs: ' + relative)
-    return {r['repository_path']: r for r in rows}
+    combined = {r['repository_path']: r for r in rows}
+    for relative, row in popular.items():
+        # Existing callers check one edge against the frozen earlier manifests.
+        # Validate the intermediate edge above, then return its composed record.
+        current = dict(row)
+        if relative in combined:
+            current['previous_repository_sha256'] = combined[relative]['previous_repository_sha256']
+        combined[relative] = current
+    return combined
 
 
 def effective_record(relative: str, previous: dict, overrides: dict) -> dict:

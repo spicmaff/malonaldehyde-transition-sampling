@@ -250,6 +250,8 @@ def build(out: Path) -> dict:
     copy_finale(out)
     from editorial import build as build_editorial, ESSAY_SCOPE
     document = build_editorial(document, data, out)
+    from popular import build as build_popular
+    document = build_popular(document, data, optimization, out)
     from build_identity import write_identity
     identity = write_identity(ROOT, out)
     label = identity['source_commit'][:12] if identity['source_commit'] else 'source archive'
@@ -269,8 +271,6 @@ def build(out: Path) -> dict:
         elif line == '@study: optimization':
             line = 'Optimization chapter in this build: ./#optimization; reviewed aggregates: ./data/optimization/CLAIM_DATA_MAP.tsv'
         download.append(line)
-        if line.startswith('# '):
-            download.extend(['', 'Reading scope after the coordinate and evidence audit: ' + ESSAY_SCOPE, ''])
     (out / 'longread.en.md').write_text('\n'.join(download) + '\n', encoding='utf-8')
     for name in ('style.css', 'app.mjs', 'core.mjs', 'molecule.mjs', 'charts.mjs', 'payload_validation.mjs', 'favicon.svg', 'social-preview.svg'):
         shutil.copyfile(ROOT / 'site' / name, out / name)

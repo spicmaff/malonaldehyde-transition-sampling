@@ -13,15 +13,10 @@ ORDER = ['overview', 'molecule', 'sampling', 'landscape', 'seeds', 'offpath',
 LABELS = ['Overview', 'The molecule', 'The data', 'Energy profiles', 'Five seeds',
           'Off the path', 'Two verdicts', 'Inside the forces', 'Optimization',
           'The story', 'Read the essay', 'Evidence']
-ESSAY_SCOPE = ('The original Train60 result concerns two fixed allocations of 60 labels. '
-               'The coordinate audit finds that the targeted tube perturbs aligned endpoint '
-               'interpolation, while all seven internal relaxed PBE images contract O–O '
-               'below the Train60 range (2.479 Å training minimum; 2.390 Å PBE center). '
-               'Read “transition-focused” as the intention of that design, not established '
-               'coverage of the relaxed path or a classification in MTP feature space. '
-               'PBE14, Train119 and Optimization are distinct studies. The complete '
-               'main4500 native recovery archive is currently unavailable; public aggregate '
-               'arithmetic does not reproduce native matrices, states or execution receipts.')
+ESSAY_SCOPE = ('This essay connects five distinct studies of one molecule. '
+               'Geometry and force comparisons use saved calculations; optimizer examples '
+               'use published summary values. The goal is to understand what each test '
+               'reveals about a model, rather than to claim experimental accuracy.')
 
 
 def once(text, old, new):

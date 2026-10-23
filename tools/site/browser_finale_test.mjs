@@ -22,6 +22,7 @@ async function choose(width,mode,route='optimization'){
  await p.waitForFunction(r=>window.exhibit.getState().route===r,{},route);await wait(180);
 }
 async function click(selector){
+ await p.$eval(selector,e=>{for(let n=e.parentElement;n;n=n.parentElement)if(n.tagName==='DETAILS')n.open=true;});
  await p.$eval(selector,e=>e.scrollIntoView({block:'center',behavior:'instant'}));await wait(180);
  assert.equal(await p.$eval(selector,e=>{const r=e.getBoundingClientRect(),h=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return h===e||e.contains(h);}),true,'actual pointer target is not covered');
  await p.click(selector);await wait(50);
@@ -67,6 +68,7 @@ try{
  await click('#sf-reset');await click('#sf-play');await p.evaluate(()=>location.hash='overview');await p.waitForFunction(()=>!window.scientificFinale.getState().playing);await choose(1440,'light');
  report.checks.push('actual pointer Play/Pause/Reset; finite completion; route change stops playback');
  for(const value of [0,.25,.5,.75,1]){
+  await p.$eval('#sf-alpha',e=>{for(let n=e.parentElement;n;n=n.parentElement)if(n.tagName==='DETAILS')n.open=true;});
   await p.focus('#sf-alpha');await p.keyboard.press('Home');for(let n=0;n<value*100;n++)await p.keyboard.press('ArrowRight');
   const current=await p.$eval('#sf-alpha',e=>Number(e.value));near(current,value);
   const expected=d.direction.l0+d.direction.a*value+d.direction.b*value*value/2;
@@ -91,7 +93,7 @@ try{
  }
  report.checks.push('404, malformed JSON, numerical mismatch and false T2 claim all fail closed with intact static evidence');
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(base+'#optimization',{waitUntil:'networkidle0'});
- assert.equal(await nojs.$$eval('[data-sf-exact]',e=>e.length),6);assert.equal(await nojs.$$eval('#opt-finale-tradeoff button:not(:disabled)',e=>e.length),0);assert.match(await nojs.$eval('#opt-next-study',e=>e.textContent),/different objective/);await nojs.close();
+ assert.equal(await nojs.$$eval('[data-sf-exact]',e=>e.length),6);assert.equal(await nojs.$$eval('#opt-finale-tradeoff button:not(:disabled)',e=>e.length),0);assert.match(await nojs.$eval('#opt-next-study',e=>e.textContent),/independent physical tests/);await nojs.close();
  report.checks.push('complete no-JavaScript conclusion, figures and table; no enabled fake controls');
  await choose(1440,'light');await p.evaluate(()=>document.body.style.zoom='2');await wait(150);
  assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'200% CSS zoom reflow');await p.evaluate(()=>document.body.style.zoom='');

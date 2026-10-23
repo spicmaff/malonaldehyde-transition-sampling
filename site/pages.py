@@ -8,21 +8,24 @@ SECTIONS = ['overview','molecule','sampling','landscape','seeds','train119','for
 NAMES = ['Overview','The molecule','The data','Energy profiles','Five seeds','Two verdicts','Inside the forces','The story','Read the essay','Evidence']
 
 
-def fallback(xyz):
+def fallback(xyz, label='Saved geometry of malonaldehyde'):
     # Isotropic orthographic projection of the saved xyz, not a deformed illustration.
     points = [(x, y) for x, y, _ in xyz]
     cx = sum(p[0] for p in points) / 9
     cy = sum(p[1] for p in points) / 9
     scale = 74
     p = [(260 + (x-cx)*scale, 235 - (y-cy)*scale) for x,y in points]
-    bits = ['<svg viewBox="0 0 520 460" role="img" aria-label="Nine atoms of malonaldehyde on the saved central PBE image" class="molecule-fallback"><title>Saved molecular geometry; O-H dashed segments are distance guides</title>']
+    bits = [f'<svg viewBox="0 0 520 460" role="img" aria-label="{esc(label, quote=True)}" class="molecule-fallback"><title>{esc(label)}; dashed O–H segments are distance guides</title>']
     for a,b in [(0,2),(2,3),(2,4),(4,5),(4,6),(6,7),(6,8),(0,1),(1,7)]:
         dash = ' stroke-dasharray="4 6"' if 1 in (a,b) else ''
         bits.append(f'<line x1="{p[a][0]}" y1="{p[a][1]}" x2="{p[b][0]}" y2="{p[b][1]}" stroke="var(--muted)" stroke-width="4"{dash}/>')
     for i,(x,y) in enumerate(p):
         color = 'var(--oxygen)' if i in (0,7) else 'var(--teal)' if i == 1 else 'var(--carbon)' if i in (2,4,6) else 'var(--hydrogen)'
         radius = 17 if i in (0,2,4,6,7) else 12
-        bits.append(f'<circle cx="{x}" cy="{y}" r="{radius}" fill="{color}" stroke="var(--panel)" stroke-width="2"/>')
+        bits.append(f'<circle data-atom-index="{i}" cx="{x}" cy="{y}" r="{radius}" fill="{color}" stroke="var(--ink)" stroke-width="1.6"/>')
+        if i in (0, 1, 7):
+            name = {0: 'O1', 1: 'H2*', 7: 'O8'}[i]
+            bits.append(f'<text x="{x}" y="{y+radius+21}" text-anchor="middle" class="static-atom-label">{name}</text>')
     return ''.join(bits) + '</svg>'
 
 
@@ -30,13 +33,19 @@ def render(d, article, literature):
     metrics = d['metrics']
     def source(title, definition, keys, caveat):
         links = ' · '.join(f'<a href="{d["evidence"][k]["url"]}">{esc(k.replace("_"," "))}</a>' for k in keys)
-        return f'''<details class="evidence"><summary>Read the evidence <span aria-hidden="true">↗</span></summary><div class="evidence-body"><dl><dt>Claim</dt><dd>{title}</dd><dt>Definition</dt><dd>{definition}</dd><dt>Primary sources</dt><dd>{links}</dd><dt>Reconstruct</dt><dd><a href="{REPO}/blob/main/tools/build_research_site.py">Deterministic data builder</a> · <a href="{REPO}/blob/main/tools/verify_train119_diagnostic.py">Saved-data verifier</a></dd><dt>Boundary</dt><dd>{caveat}</dd></dl></div></details>'''
+        verifier = 'verify_train119_diagnostic.py' if any(k.startswith(('train119','geometry_')) for k in keys) else 'recompute_primary_metrics.py'
+        if 'seeds' in keys:
+            verifier = 'audit_independent_science.py'
+        return f'''<details class="evidence"><summary>Read the evidence <span aria-hidden="true">↗</span></summary><div class="evidence-body"><dl><dt>Claim</dt><dd>{title}</dd><dt>Definition</dt><dd>{definition}</dd><dt>Primary sources</dt><dd>{links}</dd><dt>Reconstruct</dt><dd><a href="{REPO}/blob/main/tools/{verifier}">Check these saved results</a> · <a href="{REPO}/blob/main/tools/build_research_site.py">Site data builder</a></dd><dt>Boundary</dt><dd>{caveat}</dd></dl></div></details>'''
     def head(number, kicker, title, text):
         return f'<div class="page-head"><p class="eyebrow">{number} / {kicker}</p><h1>{title}</h1><p class="lede">{text}</p></div>'
     def table(caption, columns, rows):
         return '<div class="table-wrap" tabindex="0" role="region" aria-label="'+esc(caption)+'"><table><caption>'+caption+'</caption><thead><tr>'+''.join('<th scope="col">'+c+'</th>' for c in columns)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+str(v)+'</td>' for v in row)+'</tr>' for row in rows)+'</tbody></table></div>'
     def stage(id, cls=''):
-        return f'<div id="{id}" class="molecular-stage {cls}" role="img" aria-label="Interactive saved molecular geometry. Use the adjacent controls to explore.">{fallback(d["molecule"][4]["xyz"])}</div>'
+        force = next(f for f in d['forces'] if f['index'] == 145) if id == 'force-molecule' else None
+        xyz = force['xyz'] if force else d['molecule'][4]['xyz']
+        label = 'Malonaldehyde, saved Replay 145 geometry' if force else 'Malonaldehyde, saved PBE image 5 of 9'
+        return f'<div id="{id}" class="molecular-stage {cls}" role="img" aria-label="{label}. Use the adjacent controls to explore.">{fallback(xyz, label)}</div>'
     def stat(label, value, unit='', id=''):
         ident = f' id="{id}"' if id else ''
         return f'<div class="stat"><span>{label}</span><strong{ident}>{value}</strong><small>{unit}</small></div>'

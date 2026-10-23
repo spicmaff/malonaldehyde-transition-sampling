@@ -32,7 +32,8 @@ class ExtensionTests(unittest.TestCase):
 
     def test_preserved_science_meanings(self):
         self.assertIn('3 of 5',self.html)
-        self.assertIn('STATIC_APPLICABILITY_FAIL',self.html)
+        self.assertIn('The coverage criterion still fails.',self.html)
+        self.assertEqual(self.old['boundaries']['Train119_status'],'STATIC_APPLICABILITY_FAIL')
         self.assertIn('SEED_SENSITIVE',self.html)
         self.assertEqual(self.new['benchmark']['primary']['targeted_better_count'],4)
         self.assertEqual(self.old['boundaries']['MD'],False)

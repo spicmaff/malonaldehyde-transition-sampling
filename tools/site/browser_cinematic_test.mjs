@@ -34,12 +34,14 @@ async function choose(page,width,mode,route='optimization'){
  await page.waitForFunction(r=>document.getElementById(r).classList.contains('active'),{},route);await wait(220);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
 }
 async function shot(page,name,fullPage=false){await page.bringToFront();await page.screenshot({path:path.join(out,name+'.png'),fullPage});report.screenshots.push(name+'.png');}
-async function click(selector){await p.$eval(selector,e=>e.scrollIntoView({block:'center',behavior:'instant'}));await wait(100);await p.click(selector);}
+async function openAncestors(page,selector){await page.$eval(selector,e=>{for(let n=e.parentElement;n;n=n.parentElement)if(n.tagName==='DETAILS')n.open=true;});}
+async function click(selector){await openAncestors(p,selector);await p.$eval(selector,e=>e.scrollIntoView({block:'center',behavior:'instant'}));await wait(100);await p.click(selector);}
 try{
  await open(p,url);await open(old,before);await p.addScriptTag({path:axe});
  const payload=await p.evaluate(()=>window.optimizationExhibit.data());
  for(const width of [320,390,768,1440,1920])for(const mode of ['light','dark']){
   await choose(p,width,mode);
+  await openAncestors(p,'#opt-coefficient-atlas');await openAncestors(p,'#opt-state-chart');
   const result=await p.evaluate(async()=>{
    const cells=[...document.querySelectorAll('[data-cin-cell]')],sizes=cells.map(e=>e.getBoundingClientRect().width);
    const a=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});
@@ -114,7 +116,7 @@ try{
  }
  report.checks.push('threshold label draws after data marks with an opaque halo at all ten theme-width combinations');
 
- await choose(p,1440,'light');
+ await choose(p,1440,'light');await openAncestors(p,'#opt-coefficient-atlas');await openAncestors(p,'#opt-state-chart');
  for(const id of ['opt-parameters','opt-episode','opt-checkpoints','opt-candidate','opt-evidence','opt-next-study']){
   await p.$eval('#'+id,e=>e.scrollIntoView({block:'start',behavior:'instant'}));
   await p.waitForFunction(s=>document.querySelector('.cin-chapter-map').dataset.readingSection===s,{},id);
@@ -145,7 +147,7 @@ try{
  await click('#opt-play');assert.equal(await p.evaluate(()=>window.optimizationExhibit.getState().playing),false);report.checks.push('existing playback and pause synchronize rail without a second clock');
  await p.focus('.skip-link');await p.keyboard.press('Enter');assert.equal(await p.evaluate(()=>location.hash),'#optimization');assert.equal(await p.evaluate(()=>document.activeElement.id),'optimization');report.checks.push('skip link retains current route and focuses chapter');
  await choose(p,390,'dark','molecule');await click('#path-play');await wait(150);assert.equal(await p.$eval('#path-play',e=>e.getAttribute('aria-label')),await p.$eval('#path-play',e=>e.textContent.trim()));await click('#path-play');await wait(30);assert.equal(await p.$eval('#path-play',e=>e.getAttribute('aria-label')),await p.$eval('#path-play',e=>e.textContent.trim()));report.checks.push('legacy play/pause accessible name follows visible state');
- await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);await choose(p,390,'dark');assert.equal(await p.$eval('.opt-hero-copy',e=>getComputedStyle(e).animationName),'none');await click('#opt-play');assert.equal(await p.evaluate(()=>window.optimizationExhibit.getState().playing),false);report.checks.push('reduced motion disables heading entrance and automatic sequence');
+ await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);await choose(p,390,'dark');assert.equal(await p.$eval('.pop-opt-hero',e=>getComputedStyle(e).animationName),'none');await click('#opt-play');assert.equal(await p.evaluate(()=>window.optimizationExhibit.getState().playing),false);report.checks.push('reduced motion disables heading entrance and automatic sequence');
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(url+'#optimization',{waitUntil:'networkidle0'});assert.equal(await nojs.$$eval('[data-cin-cell]',e=>e.length),248);assert.equal(await nojs.$$eval('#optimization button:not(:disabled)',e=>e.length),0);await nojs.close();report.checks.push('no-JS figures, definitions, unmeasured state and disabled controls');
  const failed=await browser.newPage();await failed.setRequestInterception(true);failed.on('request',r=>r.url().endsWith('/data/optimization.json')?r.abort():r.continue());await failed.goto(url+'?still#optimization',{waitUntil:'networkidle0'});await failed.waitForFunction(()=>document.body.dataset.optimizationReady==='error');assert.equal(await failed.$$eval('#optimization button:not(:disabled)',e=>e.length),0);await failed.close();report.checks.push('missing JSON leaves every new and existing state control disabled');
  assert.deepEqual(report.errors,[]);report.status='PASS';

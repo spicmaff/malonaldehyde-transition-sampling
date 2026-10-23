@@ -37,6 +37,7 @@ async function theme(name){
 // The existing site scrolls smoothly. Check a stable hit target before native
 // pointer input; do not let an in-flight scroll manufacture a wrong click.
 async function scrollForClick(page,selector){
+ await page.$eval(selector,el=>{for(let n=el.parentElement;n;n=n.parentElement)if(n.tagName==='DETAILS')n.open=true;});
  await page.$eval(selector,el=>new Promise((resolve,reject)=>{
   let previous=null,stable=0;const began=performance.now();
   el.scrollIntoView({block:'center'});
@@ -142,7 +143,7 @@ try{
      cyrillic:/[\u0400-\u04ff]/.test(section.innerText),
      stateButtons:section.querySelectorAll('[data-opt-select]').length,
      forceUnitCorrect:section.querySelector('.opt-checkpoint-force .panel-heading .micro').innerText.includes('eV/Å'),
-     wrappedCounts:[...section.querySelectorAll('.opt-parameter-block>strong,.opt-gate-code,.opt-state-row button strong')].filter(el=>{
+     wrappedCounts:[...section.querySelectorAll('.opt-parameter-block>strong,.opt-gate-code,.opt-state-row button strong')].filter(el=>el.getClientRects().length).filter(el=>{
       const range=document.createRange();range.selectNodeContents(el);
       return [...range.getClientRects()].filter(r=>r.width>0).length!==1;
      }).map(el=>el.textContent),
@@ -159,7 +160,7 @@ try{
    assert.equal(view.forceUnitCorrect,true,`${width}/${mode} case-sensitive eV/Å unit`);
    assert.deepEqual(view.wrappedCounts,[],`${width}/${mode} complete numbers, evidence codes and state identifiers`);
    assert.equal(view.staticCharts,4);assert.equal(view.logLabel,true);assert.equal(view.exactLimit,true);
-   assert.match(view.title,/The fit is not the finish/);
+   assert.match(view.title,/A better score\. A better model/);
    await exactStaticRows(p,payload);await exactPlottedValues(p,payload);assert.deepEqual(await axis(),axes);
    report.views.push(view);
    await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));

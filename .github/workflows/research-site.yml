@@ -60,6 +60,7 @@ jobs:
           python -B tools/verify_editorial_findings.py --check
           python -B tools/audit_independent_science.py --out "$RUNNER_TEMP/independent-science.json"
           python -B -m unittest discover -s tests -p test_editorial.py
+          python -B -m unittest discover -s tests -p test_popular.py
           node --test tools/site/test_editorial.mjs
           node --test tools/site/test_payload_validation.mjs
           node --test tools/site/test_core.mjs
@@ -76,6 +77,7 @@ jobs:
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa" node tools/site/browser_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/offpath" node tools/site/browser_offpath_test.mjs
           BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/optimization" node tools/site/browser_optimization_test.mjs
+          BROWSER_DEPS="$PWD/tools/site" SITE_URL=http://127.0.0.1:8768/ QA_OUT="$RUNNER_TEMP/cinematic-qa/popular" node tools/site/browser_popular_test.mjs
       - name: Full-width accessibility and controlled before-after review
         if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
         env:

@@ -92,19 +92,17 @@ function selectState(id, options = {}) {
   $('opt-selected-title').textContent = state.label;
   $('opt-selected-value').textContent = state.native_J === null ? 'Not measured' : String(state.native_J);
   $('opt-selected-scope').textContent = state.scope;
-  $('opt-selected-evidence').textContent = state.evidence_status;
-  $('opt-selected-status').textContent = state.status;
+  $('opt-selected-evidence').textContent = '';
+  $('opt-selected-status').textContent = '';
   const link = document.createElement('a');
   link.className = 'opt-source-link';
   link.href = '#' + sourceAnchor(state.source_id);
   link.textContent = state.source_id + ' ↗';
   $('opt-selected-source').replaceChildren(link);
-  $('opt-selected-source-field').textContent = 'Field: ' + state.source_field;
-  $('opt-selected-live').textContent = state.separate_live_objective_parity
-    ? 'Separate live objective parity: verified.'
-    : (state.native_J === null
-      ? 'No independent objective measurement. No plotted position.'
-      : (branch ? 'New derived copy; detached physical evaluation. No historical byte identity claimed.' : 'Saved live state; detached objective evaluation. No separate live S1 objective was measured.'));
+  $('opt-selected-source-field').textContent = '';
+  $('opt-selected-live').textContent = state.native_J === null
+    ? 'No independent objective measurement is reported; no value is plotted.'
+    : 'Published objective summary; this reader does not rerun the native model.';
   page.querySelectorAll('[data-opt-select]').forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.optSelect === id));
   });

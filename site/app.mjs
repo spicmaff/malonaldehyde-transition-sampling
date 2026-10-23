@@ -45,12 +45,16 @@ function diagnosticFrame(index){const f=datum(index);if(!f)throw new Error('Unkn
 }
 function forceFrame(index=state.frame,atom=state.atom){const f=datum(index);if(!f)throw new Error('Unknown force frame');state.frame=f.index;state.atom=clamp(Math.round(atom),0,8);$('force-frame').value=f.index;
   const s=stage('force-molecule',f.xyz,{onSelect:i=>{stop();forceFrame(state.frame,i);}});s.update(f.xyz,{selected:state.atom,forces:f,scale:state.scale,layers:state.vectors});
+  $('force-molecule').setAttribute('aria-label',`Malonaldehyde, saved Replay ${f.index} geometry; selected atom ${ATOMS[state.atom]}. Use arrow keys to rotate.`);
   document.querySelectorAll('[data-atom]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.atom)===state.atom)));
   text('force-atom-badge',ATOMS[state.atom]);text('force-selection',`${ATOMS[state.atom]} · Replay ${f.index}`);
   const values=[['PBE',f.pbe[state.atom]],['MTP',f.mtp[state.atom]],['ΔF',f.error[state.atom]]];
   const table=document.createElement('table');table.innerHTML='<caption>Original laboratory components / eV/Å</caption><thead><tr><th scope="col">Force</th><th scope="col">x</th><th scope="col">y</th><th scope="col">z</th></tr></thead>';
   const body=document.createElement('tbody');for(const [label,row] of values){const tr=document.createElement('tr');for(const val of [label,...row.map(x=>fmt(x,5))]){const td=document.createElement('td');td.textContent=val;tr.append(td);}body.append(tr);}table.append(body);$('force-components').replaceChildren(table);
   text('selected-error',fmt(norm(f.error[state.atom]),5));text('selected-rmse',fmt(f.rmse,5));const a=document.createElement('a');a.href=data.evidence[f.source_key].url;a.textContent=`Inspect the original QE force block for frame ${f.index} ↗`;$('force-source').replaceChildren(a);
+  // Local inspection replaces this history entry; chapter navigation still adds one.
+  // Reloading or sharing the URL must reproduce the selected frame and atom.
+  if(state.route==='forces')history.replaceState(null,'',`#forces?frame=${f.index}&atom=${state.atom}`);
 }
 function forceReveal(t){const f=datum(state.frame),phase=t*3;const layers={pbe:phase>.05,mtp:phase>1,error:phase>2};if(t===1)Object.assign(layers,state.vectors);stage('force-molecule',f.xyz).update(f.xyz,{selected:state.atom,forces:f,scale:state.scale,layers});}
 function renderTrainProfile(){charts.trainProfile=linePlot($('train119-profile'),{series:profiles(['PBE','Train119']),yLabel:'Development profiles / meV'});charts.trainResidual=linePlot($('train119-residual'),{series:[{name:'Train119',values:data.molecule.map((m,i)=>({x:m.q,y:data.residuals.Train119[i]}))}],yLabel:'Relative profile residual / meV',thresholds:[{value:0,label:'PBE reference',color:'var(--muted)'}]});}

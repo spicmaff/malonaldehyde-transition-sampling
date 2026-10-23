@@ -105,9 +105,9 @@ try{
   }
  }
  await choose(p,'overview','light',1440);
- await stableClick(p,'.review-optimization-entry');
+ await stableClick(p,'a[data-route="optimization"]');
  await p.waitForFunction(()=>document.getElementById('optimization').classList.contains('active'));
- assert.equal(await p.$eval('#opt-recovery-availability',e=>e.getAttribute('role')),'note');
+ assert.match(await p.$eval('#opt-finale-tradeoff',e=>e.innerText),/Arithmetic from published summary values/);
  report.overview_entry='PASS';
  await choose(p,'molecule','light',1440);
  for(let i=0;i<12;i++){
@@ -121,7 +121,7 @@ try{
  }
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);
  await nojs.goto(base+'#optimization',{waitUntil:'networkidle0'});
- assert.ok(await nojs.$eval('#opt-recovery-availability',e=>e.innerText.includes('currently unavailable')));
+ assert.ok(await nojs.$eval('#opt-evidence',e=>e.innerText.includes('not a fresh native replay')));
  assert.equal(await nojs.$eval('#opt-state-chart',e=>e.getAttribute('role')),'group');
  await nojs.close();report.static_disclosure='PASS';
  // Production is read only. PR13 has already published Optimization in d713f60.

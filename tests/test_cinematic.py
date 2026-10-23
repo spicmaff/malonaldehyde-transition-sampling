@@ -70,7 +70,7 @@ class CinematicTests(unittest.TestCase):
             self.assertIn(text,html)
     def test_math_and_evidence_limits_remain(self):
         self.assertIn(self.data['t1']['statuses']['visible_limit'],self.html)
-        self.assertIn('currently unavailable after a failed persistent save',self.html)
+        self.assertIn('not a fresh native replay',self.html)
         self.assertIn('not a parameter landscape',self.html)
     def test_assets_exactly_copied(self):
         for name in ['cinematic.css','cinematic.mjs']:

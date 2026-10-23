@@ -1,203 +1,154 @@
 # One Proton. Several Tests of Trust.
 
+This essay connects five distinct studies of one molecule. Geometry and force comparisons use saved calculations; optimizer examples use published summary values. The goal is to understand what each test reveals about a model, rather than to claim experimental accuracy.
+
 ## 1. A small molecule with a large question
 
-A convincing machine-learned potential is easy to illustrate: draw its energy curve over a reference curve and show that the two nearly coincide. The harder story begins with what the picture leaves out. Which configurations were used for training? Would a different initialization produce the same result? Does the model remain useful when atoms move away from the plotted path? And how accurate was the reference calculation in the first place?
+Malonaldehyde has only nine atoms: three carbons, four hydrogens and two oxygens. One hydrogen sits between the oxygen atoms and can change sides. This small rearrangement makes a useful test for a model of molecular energy. A model must describe both comfortable geometries near a minimum and less familiar geometries along the transfer.
 
-This project approaches those questions through malonaldehyde, C₃H₄O₂. The molecule has only nine atoms, but its compact structure connects several difficult ideas: an intramolecular hydrogen bond, proton transfer, a changing heavy-atom framework, and the approximation of a many-coordinate energy surface using a limited set of electronic-structure calculations. Its small size makes the geometry readable. It does not make the validation problem trivial.
+A Moment Tensor Potential, or MTP, learns an energy function from reference calculations. Its forces come from derivatives of that function. The attraction is practical: once fitted, an interatomic potential can be evaluated much more cheaply than repeatedly solving the electronic problem. The challenge is deciding where that approximation works.
 
-The original experiment compared two ways to place the same number of DFT-labelled configurations. One added examples near the molecular minima; the other added examples near the proton-transfer region. The preserved transition-focused model reproduced the selected PBE-path metrics much better. Subsequent tests made that result more specific, not less worth studying. Repeated training changed the ordering, reused geometries limited independence, and a later model passed local force-error checks while still failing its frozen coverage criterion.
+Here the question is concrete: if two models get the same number of training examples, can their placement change what the models learn?
 
-**The subject of this exhibit is not a model that passed every test. It is the information gained by keeping different tests separate.**
-
-@sources: methods randomness diagnostic
+@sources: methods randomness
+@papers: mtp2016
 
 ## 2. The proton moves, and the scaffold moves with it
 
-In the saved geometries, the transferred hydrogen is H2*, between O1 and O8. The signed coordinate qPT is the distance O1–H2* minus the distance O8–H2*. Negative values place the proton closer to O1, positive values closer to O8. Near the central image the two distances are almost equal. Atom names identify the same atoms throughout; rotating the viewer never changes their identity.
+The highlighted H2* is the transferred proton. O1 and O8 are the two oxygen atoms. Move through the nine saved geometries and watch the frame around the proton: the oxygen atoms approach each other, and the carbon skeleton changes too.
 
-The oxygen atoms are not fixed supports. Their separation decreases from 2.499240 Å at the left endpoint to 2.390122 Å at the central image, a contraction of about 4.37%. The carbon framework changes at the same time. The viewer makes these simultaneous changes visible rather than moving a hydrogen sphere between an artificially rigid pair of oxygens. These distances are recomputed from the actual saved Cartesian coordinates.
+The oxygen separation falls from about 2.499 Å at the left endpoint to 2.390 Å at the center, a contraction of about 4.37%. A useful position coordinate is qPT: the O1–H2* distance minus the O8–H2* distance. It changes sign as the proton changes sides. At zero, the two distances are equal.
 
-That observation has a precise scope. It describes the geometry along this PBE path. It does not, by itself, establish how much the contraction changes a tunneling splitting or a reaction rate. Nor do two useful descriptors, qPT and O–O distance, describe the whole molecular state. A nonlinear nine-atom molecule has 21 internal coordinates after overall translation and rotation are removed. A two-coordinate projection is a readable window into that space, not the space itself.
-
-The solid rods and dashed O–H guides in the display are visual conventions. They are not calculated bond orders, an electron-density map, or proof that a chemical bond changes at a particular animation frame. The scientific content is in the coordinates, distances and saved energies.
+That coordinate makes a readable graph, but a nine-atom nonlinear molecule has 21 internal degrees of freedom. The oxygen separation adds another useful view of the same geometry.
 
 @sources: path methods
 
 ## 3. A path is not a clock
 
-The nine images come from a nudged elastic band calculation. NEB is a way to locate a path through an energy surface; climbing-image refinements help target a saddle point. Its images are configurations used in an optimization, not snapshots separated by a common physical time interval. A minimum-energy path also need not be the trajectory that a thermally moving molecule follows.
+The reference path consists of nine saved PBE geometries, obtained with the nudged elastic band method. The method searches for a path through the energy landscape. It does not tell us how long the proton spends at each position.
 
-The exhibit offers two modes. In saved-image mode, the viewer moves between the nine actual numerical supports. In smooth mode, coordinates and displayed energies are interpolated between neighboring supports. The intervening structures have not received new PBE labels and the potential has not been evaluated on them. Distances displayed during interpolation are calculated from the displayed coordinates; the energy is an interpolation of the two saved energy values. The distinction remains visible next to the controls.
+The site's smooth animation joins the saved structures by coordinate interpolation. The motion helps us follow the rearrangement; its speed is a presentation choice. A point between two saved images is not a new electronic calculation.
 
-This is why the animation has a playback position rather than a reaction time. Its purpose is to preserve correspondence: the same H2*, the same oxygen pair, the same moving marker on the energy plot. It cannot measure how long proton transfer takes. It cannot demonstrate a tunneling trajectory. Pausing on an actual image returns the reader to a genuine data point.
-
-The same boundary matters for the barrier. Here the reported value is the maximum of the nine saved energies minus the lower of the two endpoint energies. It is a discrete fixed-path quantity. A denser path, a different electronic method, a relaxed model-specific path, a free-energy calculation and a quantum spectrum would answer different questions.
+The energy hill is also a specific quantity: the largest of the nine saved electronic energies, measured from the lower endpoint. This discrete barrier is about 36.07 meV. A converged saddle structure, a free-energy barrier and a reaction rate require further calculations and different definitions.
 
 @sources: path methods
 @papers: neb2000
 
 ## 4. Spend the labels differently
 
-Electronic-structure labels are the expensive ingredient in a learned potential. The original design held their configuration count constant. Both L12 Moment Tensor Potentials received 60 configurations: the same 36 common configurations and 24 branch-specific additions. The architecture and training settings were matched. The principal change was where those additional configurations were placed.
+Both original training sets contain 60 geometries. They share 36 examples; the remaining 24 differ. Basin60 adds examples near the minima. Targeted60 adds examples from a tube around a straight connection between aligned endpoint geometries.
 
-The sampling view uses the original configuration identities and coordinates. Shared points and branch-specific points retain their actual positions in the qPT–O–O projection. Revealing points is only a way to explain the composition of the sets; it is not a record of molecular dynamics or a depiction of the optimizer learning in real time.
+This is a transition-directed sampling design, but the straight connection differs from the relaxed path. The training geometries never bring the oxygen atoms closer than about 2.479 Å. All seven internal PBE path images lie below that separation, reaching 2.390 Å at the center. The targeted design moves the proton toward the middle while missing part of the scaffold contraction.
 
-Moment Tensor Potentials provide a symmetry-respecting representation of local atomic environments. The representation can be expanded systematically, but the existence of a flexible representation does not settle which finite data are sufficient for a particular fitted model. Active-learning methods based on D-optimality address a related selection problem in the model's representation space.
-
-There is a consequential detail in this experiment: the transition candidate pool contained exactly 24 candidates and the requested selection size was also 24. All candidates entered the training set. Therefore, the result cannot show that MaxVol found the best 24 examples among a larger pool. **The tested contrast is spatial placement under an equal configuration budget.** Even that budget should not be silently reinterpreted as identical total computational cost, because preparation and subsequent analysis also consume work.
+That observation matters when interpreting the result. It is a gap in a geometric projection. It does not, by itself, classify a configuration as extrapolation in the MTP's full feature space.
 
 @sources: train_basin train_targeted methods
 @papers: mtp2016 maxvol2017
 
 ## 5. The original result is real—and specific
 
-On the preserved PBE path, Basin60 has an absolute lower-endpoint barrier error of approximately 35.2457 meV. Targeted60 has an error of approximately 4.1004 meV. The corresponding transition-force errors are approximately 0.176083 and 0.078685 eV/Å. The force metric combines Cartesian components from the three central images satisfying |qPT| ≤ 0.15 Å.
+For the original saved model pair, the targeted allocation gives a much closer energy profile. Its discrete barrier is about 31.97 meV, compared with the PBE reference of 36.07 meV. Basin60 gives only about 0.83 meV under the same barrier definition.
 
-These are not values reconstructed from a screenshot. They can be recomputed from the published reference and prediction CFG files. The original models have not been replaced with a later, more favorable pair. The source identities and numerical definitions remain part of the record.
+The curve shapes reveal more than that scalar comparison. Basin60 has a central dip along the nine saved supports, where PBE has a hill. Targeted60 follows the hill more closely. This is a statement about the sampled path, not a proof that the full molecular surface has a false minimum at that structure.
 
-An energy-profile comparison nevertheless needs more than a visually impressive overlap. Each plotted series is referenced to its own lower endpoint. The residual panel then shows the signed difference between the relative model profile and the relative PBE profile. A barrier error is one functional of those nine values; it is not a bound on the discrepancy at every image. That difference becomes especially clear in the later Train119 comparison, where a very small barrier error coexists with a larger maximum profile residual.
-
-For this original pair, placing the extra data toward the transition was associated with a much better fixed-path result. The natural next question is not whether those saved numbers exist. It is whether the advantage survives another realization of the same training procedure.
+Forces give a second test. On the three central path images, the component RMSE falls from about 0.176 eV/Å for Basin60 to 0.079 eV/Å for Targeted60. These are comparisons with PBE. They concern one model pair and a reused reference path whose endpoints overlap the shared training set.
 
 @sources: path basin targeted randomness
 
 ## 6. Five seeds change the strength of the claim
 
-The original stochastic training did not record an explicit initialization seed. The model files and their predictions are preserved, but obtaining those exact model bytes by retraining is therefore not guaranteed. A later audit fixed five pairs of seeds and trained both branches for each pair using the locked data and settings. It did not select a winning seed for presentation.
+Repeat the fitting with five paired initializations while keeping the two training sets fixed. The result becomes more interesting: Targeted is better on both primary metrics in three pairs. One pair reverses both rankings, and another gives a mixed ordering.
 
-Targeted was better on the barrier metric in four pairs and on the central-force metric in three. It was better on both simultaneously in three of five pairs. One pair favored Basin on both metrics; another had mixed ordering. The classification is SEED_SENSITIVE.
+All five pairs belong in the figure. Selecting the best fit would erase the part of the experiment that shows how sensitive the conclusion is to training.
 
-The paired plots keep all five results visible. During the introductory sequence, each pair is added without moving the earlier pairs or changing the axes. Afterwards, the reader can inspect an individual seed while retaining the full comparison. The 64-bit seed identities are stored as text so a browser's ordinary numeric representation does not silently round them.
-
-Three wins in five pairs is a description of five prescribed comparisons. It is not a calibrated 60% success probability for an arbitrary future training run. With this small audit, adding a smooth distribution or confident uncertainty band would suggest a statistical result that has not been established.
-
-The audit also had a procedural defect: evaluation was originally interleaved with training instead of waiting for all trainings to finish. A later evaluation-only repair used the same ten already-trained models after training was complete. Its prediction files were byte-identical to the historical ones. The repair confirmed the numerical result but did not erase the historical nonconformance. Reproducible numbers and a conforming sequence of operations are related, but distinct, requirements.
+These are repetitions of optimization, not five independently generated training datasets. Three wins in five pairs describe those pairs; they are not a measured 60% probability that targeted sampling will win in a new experiment.
 
 @sources: seeds randomness
 
 ## 7. Independence is a property of the data
 
-The PBE path was computed separately from the MTP evaluations. That does not mean that every path geometry was absent from training. The two NEB endpoints overlap the common training set. The seven interior images were absent from both Train60 sets within the preserved geometric comparison. Consequently the whole nine-image path and Audit21 cannot be described as wholly independent holdouts.
+Different filenames do not necessarily mean independent evidence. Two models may share endpoint geometries. Neighboring trajectory frames may be strongly correlated. A benchmark used to choose or inspect a model becomes part of development.
 
-The central-force metric uses three interior images and is not directly affected by those endpoint overlaps. The barrier uses endpoint energies, so its interpretation carries a different dependence. Keeping that distinction beside the result is more informative than either calling the entire audit independent or dismissing every number as meaningless.
+The later Train119 study adaptively expands the training set to 119 configurations. That changes both the data budget and its selection history. It answers a useful development question, but it is not a third equal-budget competitor to the original Train60 pair.
 
-The later Train119 history makes the issue broader. Replay228 was repeatedly used to identify coverage deficiencies and choose development additions. Challenge4 comprises frames 93–96, next to later training additions 97–100. Crossing7 contains seven neighboring configurations from another saved segment. Even when two CFG files are not exact duplicates, neighboring frames can be strongly related. Absence of an exact match is not evidence of independent sampling.
-
-A strict ordered-distance threshold of 10⁻¹² Å found one endpoint match in an old Train119 review. The previously established geometric screen of 2.1 × 10⁻⁶ Å identifies both known endpoint correspondences. Both statements have well-defined meanings, but the first is not a complete description of training dependence. The site retains the historical record while displaying the relevant two-endpoint boundary. It does not claim that this ordered-atom screen exhausts all equivalent-atom permutations or every statistical dependency.
+Its small errors on the reused path are therefore best read as development diagnostics. A test designed and kept separate from model development would answer a stronger question about generalization.
 
 @sources: geometry roles corrections diagnostic
 
 ## 8. Coverage is not force error
 
-The applicability question asks whether a configuration is represented adequately under a particular model-space criterion. A direct force-error question asks how the model's force vector differs from an electronic reference on that configuration. The latter requires reference information; the former need not contain that information at all.
+A model can raise an applicability warning and still give a small error on a particular configuration. The two measurements ask different questions.
 
-In the frozen Train119 check, five of 228 saved configurations exceeded the fresh numerical stop, 1.0000012996964838. The crossing frames were 143–147. The historical result was STATIC_APPLICABILITY_FAIL, not a completed deployment validation. A separate output-precision guard also recorded a narrowly nonconforming serialization result.
+The saved Train119 grading crosses its historical stop on five frames. Direct PBE comparisons on eleven selected local frames give force-component RMSE values below the study's 0.09 eV/Å threshold. The warning remains; the force comparison adds a narrower observation about those frames.
 
-The later bounded diagnosis retained the learned model. Seven new PBE single points were computed for Crossing7, frames 142–148, and four existing PBE references were reused for Challenge4, frames 93–96. All eleven local force-component RMSE values were below the inherited A2 threshold of 0.09 eV/Å. Their maxima were about 0.027965 and 0.029823 eV/Å for the two sets.
-
-Those observations coexist without contradiction. Five recorded coverage crossings remained, while direct force errors on these selected configurations were small relative to A2. The animated comparison therefore uses two panels and two units. Gamma is dimensionless; RMSE is in eV/Å. The gamma panel explicitly shows its difference from the frozen stop, multiplied by one thousand, rather than hiding that narrow scale behind a dramatic unlabeled axis.
-
-The result does not justify raising the stop retrospectively. It does not establish a universal relation between gamma and force error. More generally, simulation benchmarks in the ML-force-field literature motivate examining stability and downstream observables separately from pointwise errors. They do not establish a new dynamics verdict for Train119, which was not given an independent deployment test here.
-
-There are other ways to construct a warning signal. Bayesian force models and committee potentials estimate uncertainty using different assumptions, and resampling-based approaches explicitly consider calibration and correlations between models. The existence of those methods does not license adding uncertainty bands to the present plots. Our five paired seeds were a robustness audit, not a validated uncertainty model; our local diagnostic frames were adaptively selected, not a representative prospective test.
+The applicability grade is dimensionless. It is neither an error in eV/Å nor a universal probability of correctness. The eleven frames come from two correlated development segments, so they cannot establish a general calibration from grade to physical error.
 
 @sources: diagnostic train119 continuation
-@papers: maxvol2017 fu2022 bayes2020 committee2020 musil2019
+@papers: maxvol2017
 
 ## 9. Look inside the scalar
 
-Each nine-atom configuration has 27 Cartesian force components. The displayed RMSE is the square root of the mean of their squared errors. It is not the largest component error and not the error magnitude on one chosen atom. On Challenge4, some individual component errors slightly exceed 0.09 eV/Å without violating a 0.09 eV/Å RMSE criterion.
+One nine-atom force comparison contains 27 Cartesian components. The RMSE squares their differences, averages over the 27 components and takes a square root. It summarizes the whole frame, while a selected atom's vector difference describes just that atom.
 
-The force viewer makes that distinction inspectable. For every one of the eleven frames, it reads the PBE force from the official Quantum ESPRESSO output block, checks it against the XML result, and pairs it with the preserved MTP output on the matching geometry. The difference vector is MTP minus PBE. The selected atom's vector magnitude and the whole-frame RMSE are shown separately.
+The force viewer lets you inspect both. PBE, MTP and difference arrows use one declared display scale and undergo the same rigid camera rotation. The table stays in the original laboratory axes. Its difference is always MTP minus PBE.
 
-The camera rotates the atomic geometry and all force arrows together. The numeric component table remains in the original laboratory axes. A common declared arrow scale preserves relative magnitudes; normalizing each arrow independently would erase precisely the information the viewer is intended to explain. These arrows are not atomic displacements or a trajectory generated by integrating the forces.
-
-Atom identity also matters. H2* is the transferred proton. C3/y is a different component involved in an old selector annotation. The original execution scalar was mislabeled, while a later correction separated the two quantities. That correction affects interpretation of the annotation, not the full force arrays or their primary RMSE.
+An arrow shows a force, not the atom's future displacement. The shape, the selected atom, the numerical components and the whole-frame score must all refer to the same saved configuration.
 
 @sources: geometry_crossing7 prediction_crossing7 geometry_challenge4 prediction_challenge4 corrections
 
 ## 10. A reference is another model
 
-A small MTP-to-PBE error establishes agreement with the selected electronic approximation, not automatically with experiment. PBE is a defined density-functional approximation. A comparison with a different electronic method needs matched definitions and careful attention to geometries, basis or plane-wave settings, and whether relaxation and zero-point contributions are included.
+PBE is a density-functional approximation used here to provide electronic energies and forces. Learning that reference accurately is a meaningful computational task. It is different from demonstrating agreement with a higher-level electronic calculation or experiment.
 
-For context, Wang and colleagues constructed a high-level malonaldehyde surface and reported an electronic barrier around 4.1 kcal/mol, alongside full-dimensional nuclear calculations. That barrier should not be subtracted from our discrete PBE result and presented as an exact error for our implementation: the calculations are not a controlled matched-geometry comparison. The literature nevertheless makes clear why the electronic-reference layer deserves its own scrutiny.
+The reference settings include a 16 Å periodic cell, Γ-point sampling and 80/960 Ry wavefunction/charge-density cutoffs. Those settings define the calculation; a convergence study would establish how sensitive the answers are to changing them.
 
-The placement of expensive labels is also important beyond this project. Käser, Richardson and Meuwly used selected CCSD(T) information near an instanton path to improve a surface already trained at MP2 level. The much-cited 25–50 additional high-level configurations are not a complete training-from-scratch budget. Their study illustrates a useful strategy, but it is not a direct contest against either Train60 or Train119.
+The saved endpoint energies differ by about 0.107 meV. Later sub-meV model errors measure agreement with that particular reference. Extra digits allow arithmetic to be checked, but they do not create additional physical accuracy.
 
 @sources: methods diagnostic
-The broader density-functional literature discusses delocalization and static-correlation errors. Those concepts motivate scrutiny of a reference approximation; they are not a diagnosis of the numerical origin of this particular barrier. Establishing that origin would require a controlled electronic-structure comparison rather than a visually persuasive juxtaposition of unrelated published numbers.
-
-@papers: pbe1996 wang2008 kaser2022 dftlimits2008
+@papers: pbe1996 dftlimits2008
 
 ## 11. Quantum motion needs its own evidence
 
-A tunneling splitting is a property of a nuclear quantum problem on a specified potential surface. It is not the height of an electronic energy curve. Replacing H by D changes the nuclear mass, and therefore the nuclear calculation, even when the underlying electronic Born–Oppenheimer surface is kept fixed. A convincing spectral prediction requires more than animating a proton through the center of the path.
+Proton transfer makes malonaldehyde interesting beyond classical pictures of crossing a hill. Quantum nuclei can produce tunneling splittings between energy levels. Their calculation requires a nuclear Hamiltonian, specified masses and a method that resolves the relevant quantum states.
 
-Recent work reinforces that distinction. Baumann, Trenins and Richardson used symmetrized path-integral molecular dynamics to isolate the ground rotational state on a specified surface, reporting 21.1 ± 0.1 cm⁻¹ and identifying contributions from higher rotational states in earlier comparisons. The observable and state projection matter alongside the potential.
+A spectral splitting is an energy difference, whereas a reaction rate describes change per unit time. Neither follows directly from an animated path or one electronic barrier. Comparing them requires matching the physical quantity and computational assumptions.
 
-At the same time, one dimension is not automatically disqualifying. Qu and colleagues tested a rectilinear Qim reaction-path Hamiltonian for H/D transfer and demonstrated useful accuracy in its stated domain. Their work emphasizes the coordinate and kinetic operator, and discusses limitations such as corner-cutting. It does not validate every one-dimensional interpolation of an energy curve.
+The present figures examine an electronic reference and its learned approximations. They do not predict a measured tunneling splitting or a reaction rate.
 
-The older H/D calculation in this repository is retained as a declared frozen-path spectral diagnostic. In its primary targeted-H case, the first excited level lies above that model's barrier; the gap is not a reproduced pair of two subbarrier levels. A stronger physical interpretation would require separate justification of the Hamiltonian and convergence, not a more cinematic picture. This exhibit deliberately does not draw a quantum wavepacket or probability current that was never calculated.
-
-@sources: limits corrections
-@papers: baumann2026 qu2026
+@sources: methods limits
+@papers: wang2008 kaser2022
 
 ## 12. What remains after the attractive plot
 
-The outcome is not a single verdict on an entire class of machine-learned potentials. It is a set of preserved observations with explicit boundaries. The original frozen pair favors transition-focused placement on two fixed-path metrics. Repeated training qualifies that interpretation. Known overlaps qualify independence. The later Train119 diagnosis separates a failed coverage criterion from small force errors on selected local configurations.
+The most useful result is a sharper set of questions. Does the model reproduce the reference hill? Does the ranking survive a different initialization? Does it survive leaving the path? Does a coverage warning agree with a direct force comparison?
 
-Animation can help make those distinctions legible. It can hold the same atom in view while coordinates change, reveal paired results without changing their identity, or move a cursor across two different diagnostic panels. Visualization research also warns against treating motion as an automatic improvement to analytical comparison. Here every sequence can be stopped, every final plot remains available, and the numerical tables and essay remain readable without JavaScript.
+An animation can connect those questions, but each still needs a defined metric and an appropriate test. The static figures, tables and downloadable values keep the answer available when the motion stops.
 
-The final test is whether the reader can follow a number backwards: from a claim to its definition, from the definition to a source file, from the file to a reconstruction, and from the reconstruction to the limit of the conclusion. Source hashes, immutable links and the unchanged scientific verifier make that route practical. They do not turn selected development data into an independent experiment.
-
-**A small error can be an important result without being the final answer.** The next stronger claim—independent deployment, a calibrated warning rule, or quantitative experimental proton-transfer physics—would need its own study. Keeping that future work separate is part of what makes the present evidence useful.
+The studies do not establish experimental accuracy or safe reactive dynamics. They show how a persuasive local fit can be investigated rather than simply trusted.
 
 @sources: science diagnostic randomness
-@papers: animation2007 trends2008 molstories2026
-
 
 ## 13. Off the path, the budget remains part of the result
 
-A later study asks a narrower follow-up than a global test of the potential surface. It fixes fourteen local geometries around the left-minimum and central-transition anchors of the existing PBE path. Three physical directions have positive and negative displacements; the fourth, out-of-plane hydrogen motion, has one positive member. Each region therefore contains seven geometries and four blocks. The maximum single-atom displacement is 0.075 Å. These are stored configurations with completed electronic labels, not an animation of a molecular trajectory.
+PBE14 tests fourteen perturbed geometries around a minimum and the transition center. Four directions probe oxygen breathing, carbon-skeleton bending, lateral proton motion and out-of-plane proton motion. Both models, five paired initializations and two optimizer step caps remain in the comparison.
 
-Twenty model endpoints combine the same two fixed Train60 allocations, five matched initialization seeds and two main optimizer caps, 2000 and 8000. All twenty stopped at the step limit. Their saved predictions on the fourteen geometries can be checked without running a model: the independent verifier reads the physical QE force blocks, validates the CFG conversion and reconstructs all 280 component-RMSE values. The primary statistic first averages the signed geometries within a physical block, then gives the four blocks equal weight. It is not a pooled RMSE across all coordinates.
+The primary transition-region result uses the 8000-step cap. It gives equal weight to four physical direction blocks: paired positive/negative perturbations are averaged within a block, and the single out-of-plane geometry forms its own block. Targeted has lower error in four of the five seed pairs. The mean Targeted-minus-Basin difference is about −0.146 eV/Å.
 
-On that predeclared transition-region endpoint at cap8000, Targeted has lower error in four of the five pairs. The signed mean Targeted−Basin difference is −0.146135 eV/Å and the median is −0.140839 eV/Å. The unfavorable seed remains visible. This **4/5** is not a correction to the earlier **3/5**: the earlier count concerns both original NEB primary metrics, whereas the later count concerns one off-path force endpoint at a specified cap.
+The absolute values help explain the widening gap. From the 2000 to 8000 cap, mean Basin transition error rises from about 0.188 to 0.310 eV/Å. Targeted changes from about 0.168 to 0.164 eV/Å. Most of the gap growth is therefore an increase in Basin error, rather than a large Targeted improvement. This is arithmetic; it does not identify a learning mechanism.
 
-The secondary comparisons make the outcome less uniform. The mean transition error of Basin increases from 0.187751 to 0.309890 eV/Å between the two caps; Targeted changes from 0.167557 to 0.163755. Thus, the larger relative advantage at8000 reflects considerable Basin deterioration rather than a comparable improvement of Targeted. Around the minimum at8000, Basin has lower mean error, 0.055778 versus 0.064231 eV/Å. The site retains both regions, all seeds and all directions. Longer optimization does not become a proxy for demonstrated convergence.
-
-The source histories also remain distinct. An interrupted historical T02m electronic calculation was followed by an independently authorized recovery on the unchanged geometry; the accepted set contains fourteen outputs, not a claim that only fourteen jobs were ever started. The local geometry anchors were already known, nearby historical configurations are disclosed, and PBE14 was reused during later optimizer development. Neither five optimizer seeds nor correlated ± displacements replicate a general sampling policy.
-
-Transition tube sampling, including malonaldehyde, already appears in Brezina and colleagues' work. Transition1x develops broad reactive reference data; Landscape17 asks whether learned landscapes recover global stationary-point and network properties. This project's remaining contribution is more restricted: an inspectable, very small fixed-data experiment showing how initialization, finite optimizer budget and region affect its accuracy ranking. No new reactive-dynamics or global-topology verdict follows.
+Alternative weights and leave-one-direction-out summaries are exploratory checks. The primary four-block definition stays fixed. The perturbed geometries and reused models extend the development picture, rather than constituting a prospective independent holdout.
 
 @study: offpath
-@papers: brezina2023 transition1x2022 landscape172026
+@papers: brezina2023 transition1x2022
 
 ## 14. The fit is not the finish
 
-The training budget leaves another question open: what does each optimizer operation improve? This representation has 248 nominal parameters, split into 216 radial coefficients, 29 invariant coefficients and three species offsets. Those are not the molecule's 27 Cartesian coordinates or its 21 regular internal coordinates. They are coordinates of a model that turns a geometry into energy and forces. The native training objective, a linear subproblem and an external force error are then three different summaries of its behavior.
+A final complication lies inside training itself. A regularized fitting problem combines a data residual with a coefficient penalty. Improving their sum can trade a worse fit for a smaller penalty.
 
-The distinction becomes concrete at one captured boundary, main iteration 4500 of a Basin60 seed-3 diagnostic. Immediately before the periodic refit, the native objective J is about 0.0000396611. After the refit it is about 0.0007304723, an increase by a factor of 18.4179. The next accepted BFGS step brings it down to about 0.0006970149. It improves the post-refit state, but does not undo the complete interruption. The chapter keeps these operations separate and shows all measured values on a declared scale. A temporary radial-frame change has a much larger detached objective, about 1.52507; hiding it behind a clipped axis would obscure the operation being examined.
+In the published optimizer example, the same fixed-row objective Q falls by about 29% between a compensated copy and a refitted state. The data-loss term rises; the coefficient penalty falls by more. The stacked bars show exactly that balance. They explain arithmetic from published summary values, rather than reporting a new native execution.
 
-The state sequence also has gaps and branches. S3, the optimizer rebase, has no independently measured objective. Knowing that its physical model matches the preceding state does not produce another measurement. S1c is a diagnostic copy in which coefficients compensate for the changed radial frame. S2q is another copy with a high-precision solution of a precisely defined fixed-D row problem. Neither copy was an additional step taken by the original optimizer. The new S2q is also distinct from a high-precision analysis of the actually captured native matrix K.
+Native J, fixed-row data loss, regularized Q and external force RMSE remain separate quantities. A conditional incremental update can guarantee non-increasing loss on fixed saved rows when zero is feasible and the nonnegative penalty vanishes at zero. That guarantee does not automatically improve the original native objective or forces on new geometries.
 
-Coefficient transport explains part of the structure without promising a better fit. For this finite L12 graph, the reviewed algebra verifies 29 polynomial identities under its stated channel transformations. On the saved Train60 geometries, the compensated copy preserves energy and force components within the fixed numerical tolerance. Full native J can still change because its radial penalty changes. The known channel and fixed-composition symmetries also reduce a local parameter count, but they do not prove that the physical prediction map has exactly 240 independent directions everywhere. Geometry, representation, prediction and evaluation remain distinct spaces.
-
-More accurate linear algebra does not remove the refit effect in this example. The physically replayed high-precision row solution changes the elevated native J by only about 1.46 × 10⁻¹². The inner linear problem includes a coefficient ridge penalty, while native J includes a different radial penalty. In the fixed row problem, a reduction in the regularized objective can be accompanied by an increase in data loss. The chapter presents that signed identity and the separate numerical systems, rather than assigning causal percentages to BFGS, conditioning and refitting. High-precision agreement resolves a numerical calculation; it is not an interval proof or a global convergence theorem.
-
-The long-log context is broader than one screenshot. Ten 8000-main traces contain 1163 positive adjacent printed changes at multiples of fifty. Ten shorter traces are exact prefixes and repeat sixty of those observations; adding them again would inflate the count. Yet a recovered historical short-run reader shows a decreasing boundary at main50. The source tiers differ too: that short control is a saved, rounded report, while the new main4500 results have actual physical replay outputs. These observations do not support the claim that every periodic refit is harmful or that each printed increase is an independent causal experiment.
-
-A proposed COV correction asks a narrower constructive question. On a fixed feasible subspace, penalize the increment from a compensated incumbent rather than the absolute coefficient vector. For fixed rows and a positive metric, the exact minimizer cannot increase the row data loss, because the zero increment remains feasible. The actual construction uses a constrained 30-dimensional step and transports one chosen metric. It does not establish that rebuilding a diagonal metric in any parameterization gives an invariant optimizer policy.
-
-In the saved-row example, the COV candidate lowers data loss by about 0.988119%. The stationarity, descent identity and independent numerical solutions were checked. The candidate was not exported as a potential or evaluated on new physical configurations. Its off-training accuracy remains unqualified. A future runtime transaction would still have to evaluate the original native objective and either accept under its fixed rule or completely restore the relevant state. A diagram of that transaction is a design explanation, not a record of a trained model becoming more accurate.
-
-Finishing the fit introduces a different decision. In one historical XI saved pair, END_MAIN has native J about 9.5582 × 10⁻⁶, while the serialized TERMINAL model has J about 1.35125 × 10⁻⁴: roughly fourteen times larger. END_MAIN also has lower PBE14 force error in both regions than TERMINAL, although it improves the transition and worsens the basin relative to historical H. The comparison is one development pair with unequal trajectory lengths. The original XI journal remains missing, the END_MAIN PBE14 process retains its failed runtime-snapshot receipt, and TERMINAL's PBE14 values can be reaggregated only from saved errors because its original prediction vectors are absent.
-
-It would still be wrong to turn that pair into an always-END_MAIN policy. In the separate synthetic T1 pipelines, TERMINAL has lower native J than END_MAIN in both control and COV arms, and the fixed BEST policy selects TERMINAL. That is why checkpoint eligibility, objective and tie handling need to be fixed before inspecting external quality. A model reload for evaluation is also different from resuming the entire BFGS state.
-
-Historical T1 supplies engineering evidence: 94 native core assertions, a full 75-plus-150 accepted-step synthetic lifecycle, control parity, two accepted candidate boundaries, checkpoint reloads and injected file/signal faults. It used artificial configurations. The later work needed to recover the missing main4500 inputs used one real diagnostic training and six detached physical replays; those costs belong to a separate ledger and do not turn T1 into a real-data optimizer comparison. Four live-state replay results match retained historical byte identities, while S1c and S2q are explicitly new derived copies. No T2 comparison or independent external validation was performed.
-
-**Engineered and checked on synthetic runs. Not yet demonstrated to be a better real-data optimizer.** Public tables make the displayed arithmetic inspectable, while restricted-source identifiers and hashes preserve the boundary around the underlying native evidence. The original seed-sensitive sampling result, the completed off-path study and Train119's failed static applicability remain distinct findings. The next useful question is whether a fixed candidate and checkpoint policy improve predictive quality across the same prescribed seeds and data allocations at matched cost, followed by an independent physical validation.
+The next useful experiment is a matched comparison of complete training with a fixed checkpoint policy, followed by independent physical tests. The story ends with a testable question: which changes make the model more useful, under the conditions where we actually want to use it?
 
 @study: optimization

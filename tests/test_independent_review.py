@@ -34,9 +34,11 @@ class IndependentReviewTests(unittest.TestCase):
         self.assertIn('nonnegative and vanishes at zero',self.html)
         self.assertIn('An approximate numerical solution must verify',self.html)
 
-    def test_evidence_disclosure_precedes_the_sticky_map(self):
-        self.assertEqual(self.html.count('class="ed-evidence-limit"'),1)
-        self.assertLess(self.html.index('class="ed-evidence-limit"'),self.html.index('class="cin-chapter-map"'))
+    def test_aggregate_scope_stays_next_to_the_optimizer_figure(self):
+        self.assertEqual(self.html.count('class="ed-evidence-limit"'),0)
+        start=self.html.index('id="opt-finale-tradeoff"')
+        self.assertIn('Arithmetic from published summary values',self.html[start:start+1000])
+        self.assertIn('not a fresh native replay',self.html)
 
     def test_build_identity_is_a_hash_bound_output_separate_from_science(self):
         identity=json.loads((self.out/'build-identity.json').read_text())

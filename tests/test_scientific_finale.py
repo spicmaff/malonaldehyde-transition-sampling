@@ -99,13 +99,13 @@ class FinaleTests(unittest.TestCase):
         for p in (ROOT/'data/optimization_story/v001').iterdir():
             if p.is_file():self.assertEqual(p.read_bytes(),(self.out/'data/optimization'/p.name).read_bytes())
     def test_no_new_route_or_physical_evaluation(self):
-        self.assertIn('not a new experiment',self.html);self.assertIn('not a new least-squares solve',self.html)
-        self.assertIn('T2_NOT_AUTHORIZED_NOT_EXECUTED',self.html)
+        self.assertIn('Arithmetic from published summary values',self.html);self.assertIn('not a new least-squares solve',self.html)
+        self.assertIn('not a fresh native replay',self.html)
     def test_wrong_template_and_double_extension_fail(self):
         with self.assertRaises(ValueError):view.refine_document('bad',self.data)
         with self.assertRaises(ValueError):view.refine_document(self.html,self.data)
     def test_visual_scales_and_conclusion_visible(self):
-        self.assertIn('fixed linear scale',self.html);self.assertIn('The improvement was real.',self.html)
+        self.assertIn('fixed linear scale',self.html);self.assertIn('Q falls by about 29%',self.html)
         self.assertIn('not a demonstrated repair of S2',self.html)
         self.assertIn(f.VISIBLE_LIMIT,self.html)
     def test_runtime_has_no_unbounded_clock(self):

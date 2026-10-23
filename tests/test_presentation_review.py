@@ -46,18 +46,15 @@ class PresentationReviewTests(unittest.TestCase):
         self.assertEqual(row['role'], 'group')
         self.assertEqual(sum('data-opt-select' in a for _, a in self.tags.tags), 7)
 
-    def test_availability_disclosure_is_visible_static_content(self):
-        self.assertEqual(self.html.count(review.AVAILABILITY), 1)
-        self.assertIn('currently unavailable', review.AVAILABILITY)
-        self.assertIn('not a fresh native reproduction', review.AVAILABILITY)
-        self.assertNotIn('hidden', review.AVAILABILITY)
-        start = self.html.index('id="opt-sources"')
-        self.assertLess(self.html.index(review.AVAILABILITY), self.html.index('<details', start))
+    def test_published_aggregate_scope_is_visible_static_content(self):
+        self.assertEqual(self.html.count(review.AVAILABILITY), 0)
+        self.assertIn('Arithmetic from published summary values', self.html)
+        self.assertIn('not a fresh native replay', self.html)
 
     def test_existing_essay_link_and_new_overview_entry_are_both_present(self):
         overview = self.html.split('id="overview"', 1)[1].split('</section>', 1)[0]
-        self.assertIn(review.ESSAY_LINK, overview)
-        self.assertIn('class="review-optimization-entry" href="#optimization"', overview)
+        self.assertIn('href="#longread"', overview)
+        self.assertIn('href="#optimization"', self.html)
 
     def test_all_twelve_routes_are_preserved(self):
         self.assertEqual(sum('data-page' in a for _, a in self.tags.tags), 12)

@@ -35,7 +35,7 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual(g['internal_images_below_training_range'], {'basin':list(range(2,9)), 'targeted':list(range(2,9))})
         self.assertAlmostEqual(g['OO_gap_below_training_minimum_A'], .08886882781974492, places=13)
         self.assertIn('aligned minima', self.html)
-        self.assertIn('not established coverage', self.html)
+        self.assertIn('does not establish extrapolation in MTP feature space', self.html)
 
     def test_primary_and_sensitivity_remain_distinct(self):
         off = self.findings['offpath']
@@ -49,9 +49,9 @@ class EditorialTests(unittest.TestCase):
         self.assertGreater(float(opt['S1c_to_S2_row_deltas']['data_loss']), 0)
         self.assertLess(float(opt['S1c_to_S2_row_deltas']['Q']), 0)
         self.assertFalse(opt['COV']['candidate_coefficients_exported'])
-        self.assertIn('Missing matrices, native model states', self.html)
+        self.assertIn('Arithmetic from published summary values', self.html)
         self.assertIn('parameterization', self.html)
-        self.assertIn('new study ID', self.html)
+        self.assertIn('Candidate export, native energy/force parity', self.html)
 
     def test_editorial_order_and_static_coverage_survive_no_js(self):
         pages = Pages(self.html).spans
@@ -59,7 +59,7 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual(self.html.count('ed-coverage-static'), 2)
         self.assertIn('2.479', self.html)
         self.assertIn('2.390', self.html)
-        self.assertIn('Moment Tensor Potentials', self.html[:12000])
+        self.assertIn('Moment Tensor Potentials', self.html[:16000])
         self.assertIn('Hubert Beck', self.html)
         self.assertNotIn('Harald Beck', self.html)
 
