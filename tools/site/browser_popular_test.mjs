@@ -49,8 +49,17 @@ try{
  await route('overview');assert.equal(await p.$eval('#opt-play',e=>e.getAttribute('aria-pressed')),'false');
  report.checks.push('Optional native-state reader selects S1 and stops playback when leaving the chapter');
  await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);await route('overview');
+ // CDP acknowledges emulation before the MediaQueryList change task has to run.
+ // Observe the completed UI response rather than racing that asynchronous event.
+ await p.waitForFunction(()=>matchMedia('(prefers-reduced-motion: reduce)').matches&&document.getElementById('hero-play').disabled,{timeout:5000});
  assert.equal(await p.$eval('#hero-play',e=>e.disabled),true);
- report.checks.push('Reduced motion retains a static complete overview');
+ assert.equal(await p.evaluate(()=>window.exhibit.getState().motion),null);
+ await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'no-preference'}]);
+ await p.waitForFunction(()=>!matchMedia('(prefers-reduced-motion: reduce)').matches&&!document.getElementById('hero-play').disabled,{timeout:5000});
+ await p.click('#hero-play');await p.waitForFunction(()=>window.exhibit.getState().motion==='hero');
+ await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
+ await p.waitForFunction(()=>document.getElementById('hero-play').disabled&&window.exhibit.getState().motion===null,{timeout:5000});
+ report.checks.push('Reduced motion settles to disabled controls, restores manual playback when cleared, and stops an already running introduction when enabled');
  const staticPage=await browser.newPage();await staticPage.setJavaScriptEnabled(false);
  await staticPage.goto(base+'#forces',{waitUntil:'networkidle0'});
  const staticView=await staticPage.$eval('#forces',e=>({text:e.innerText,label:e.querySelector('#force-molecule svg').getAttribute('aria-label'),selected:e.querySelector('#force-frame').value,score:e.querySelector('#selected-rmse').textContent}));
